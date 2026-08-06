@@ -287,36 +287,22 @@
   .stat-card .lab{ margin-top:14px; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--tl-on-navy); }
   .stat-note{ margin:14px auto 0; font-size:12px; line-height:1.55; color:var(--tl-on-navy); max-width:24ch; }
 
-  /* ---------- 9-stage flip grid (pain point front, level+name back) ---------- */
-  .stage-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px;
-    perspective:1600px;
-  }
-  .stage-flip{ position:relative; aspect-ratio:1/1; cursor:pointer; scroll-margin-top:24px; }
-  .stage-flip-inner{
-    position:relative; width:100%; height:100%; transform-style:preserve-3d;
-    transition:transform .6s var(--ease);
-  }
-  .stage-flip:hover .stage-flip-inner,
-  .stage-flip:focus-visible .stage-flip-inner,
-  .stage-flip.is-flipped .stage-flip-inner{ transform:rotateY(180deg); }
-  .stage-flip:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; border-radius:16px; }
-  .stage-flip-front, .stage-flip-back{
-    position:absolute; inset:0; -webkit-backface-visibility:hidden; backface-visibility:hidden;
-    border-radius:16px; border:1px solid var(--line); background:var(--card);
-    padding:22px 22px 18px; display:flex; flex-direction:column; justify-content:space-between;
+  /* ---------- 9-stage split cards (pain point top, level+name bottom) ---------- */
+  .stage-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+  .stage-split{
+    position:relative; display:flex; flex-direction:column; border-radius:16px; overflow:hidden;
+    border:1px solid var(--line); scroll-margin-top:24px;
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
     box-shadow:0 1px 1px rgba(0,0,0,.05), 0 24px 48px -32px rgba(0,0,0,.28);
   }
-  .stage-flip-front p{ font-size:14.5px; color:var(--ink); line-height:1.45; font-weight:500; }
-  .stage-flip-hint{ font-family:'Inter'; font-weight:500; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--slate); align-self:flex-end; }
-  .stage-flip-back{
-    transform:rotateY(180deg); background:var(--navy); border-color:var(--line-on-navy); justify-content:center;
-  }
-  .stage-flip-back .service-num{ font-family:'Inter'; font-weight:600; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-soft); }
-  .stage-flip-back h3{ margin-top:8px; font-size:18px; color:var(--ink); }
-  .stage-flip-back p{ margin-top:8px; font-size:12.5px; color:var(--tl-on-navy); line-height:1.5; }
+  .stage-split:hover{ transform:translateY(-4px); box-shadow:0 1px 1px rgba(0,0,0,.07), 0 30px 56px -30px rgba(0,0,0,.35); }
+  .stage-split-top{ background:#000; padding:22px 22px 20px; flex:1 1 auto; display:flex; align-items:center; min-height:92px; }
+  .stage-split-top p{ font-size:14px; color:var(--ink); line-height:1.45; font-weight:500; }
+  .stage-split-bottom{ background:var(--gold); padding:16px 22px 18px; flex:none; }
+  .stage-split-bottom .service-num{ font-family:'Inter'; font-weight:700; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:rgba(20,14,4,.65); }
+  .stage-split-bottom h3{ margin-top:3px; font-size:17px; color:#140E04; }
   @media(max-width:820px){ .stage-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:480px){ .stage-grid{ grid-template-columns:1fr; } .stage-flip{ aspect-ratio:5/4; } }
+  @media(max-width:480px){ .stage-grid{ grid-template-columns:1fr; } }
 
   /* ---------- framework accordion (unused, kept for reference) ---------- */
   .services-accordion{
@@ -542,6 +528,17 @@
   /* ---------- testimonial stack ---------- */
   .testi-stack-wrap{ display:flex; gap:24px; align-items:flex-start; max-width:1280px; margin:0 auto; }
   .testi-stack{ position:relative; flex:1 1 auto; min-width:0; }
+  .testi-stack::before{
+    content:""; position:absolute; z-index:0; pointer-events:none;
+    top:50%; left:50%; width:120%; aspect-ratio:1/1; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(230,178,90,.65) 0%, rgba(214,150,60,.35) 32%, rgba(182,138,78,.12) 55%, transparent 72%);
+    filter:blur(70px);
+    animation:testi-glow 5s ease-in-out infinite;
+  }
+  @keyframes testi-glow{
+    0%,100%{ opacity:.75; transform:translate(-50%,-50%) scale(1); }
+    50%{ opacity:1; transform:translate(-50%,-50%) scale(1.08); }
+  }
   .testi-card{
     position:absolute; inset:0; display:flex; flex-direction:column; background:var(--card); border:1px solid var(--line);
     border-radius:18px; overflow:hidden;
@@ -561,7 +558,10 @@
   .testi-card-header .cs-name{ font-size:21px; }
   .testi-card-header .cs-result{ font-size:11.5px; }
   .testi-card-media{ position:relative; aspect-ratio:3/1; flex:none; overflow:hidden; }
-  .testi-card-media .testi-vid{ position:absolute; inset:0; border-radius:0; border:0; border-bottom:1px solid var(--line); box-shadow:none; }
+  .testi-card-media .testi-vid{
+    position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; overflow:hidden;
+    border-radius:0; border:0; border-bottom:1px solid var(--line); box-shadow:none;
+  }
   .testi-card-media.no-video{
     display:flex; align-items:center; justify-content:center; text-align:center;
     background:var(--paper); border-bottom:1px dashed var(--line); padding:20px; box-sizing:border-box;
@@ -736,6 +736,7 @@
     .reveal{ opacity:1 !important; transform:none !important; filter:none !important; }
     .hero-bg-video{ display:none; }
     .wins-track{ animation:none !important; }
+    .testi-stack::before{ animation:none !important; }
     html{ scroll-behavior:auto; }
   }
 </style>
@@ -1034,62 +1035,44 @@
       <div class="section-head center reveal">
         <p class="eyebrow center">The framework</p>
         <h2>The 9-Stage Strategy.</h2>
-        <p>Every practice owner struggles with one of 9 things. Hover a card to find yours, and see the level that has the answer.</p>
+        <p>Every practice owner struggles with one of 9 things. Find yours below, and see the level that has the answer.</p>
       </div>
       <div class="stage-grid reveal">
-        <div class="stage-flip" id="stage-1" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know where to start</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 01</span><h3>Setting up</h3><p>The practical first steps to take before you're ready for your first client.</p></div>
-          </div>
+        <div class="stage-split" id="stage-1">
+          <div class="stage-split-top"><p>I don't know where to start.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 01</span><h3>Setting up</h3></div>
         </div>
-        <div class="stage-flip" id="stage-2" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Picking a niche</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 02</span><h3>Selection of client type</h3><p>Who you take on, and who you deliberately turn away.</p></div>
-          </div>
+        <div class="stage-split" id="stage-2">
+          <div class="stage-split-top"><p>I don't know what niche to specialise in.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 02</span><h3>Selection of client type</h3></div>
         </div>
-        <div class="stage-flip" id="stage-3" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Can't generate a reliable lead source</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 03</span><h3>Supply of leads</h3><p>Where new enquiries come from, consistently.</p></div>
-          </div>
+        <div class="stage-split" id="stage-3">
+          <div class="stage-split-top"><p>I can't generate a reliable source of leads.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 03</span><h3>Supply of leads</h3></div>
         </div>
-        <div class="stage-flip" id="stage-4" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know how to close clients on a sales call</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 04</span><h3>Selling the service</h3><p>Turning a conversation into a signed client.</p></div>
-          </div>
+        <div class="stage-split" id="stage-4">
+          <div class="stage-split-top"><p>I don't know how to close clients on a sales call.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 04</span><h3>Selling the service</h3></div>
         </div>
-        <div class="stage-flip" id="stage-5" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know how to price</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 05</span><h3>Structure of offer</h3><p>What's included, how it's packaged, and what it costs.</p></div>
-          </div>
+        <div class="stage-split" id="stage-5">
+          <div class="stage-split-top"><p>I don't know how to price my services.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 05</span><h3>Structure of offer</h3></div>
         </div>
-        <div class="stage-flip" id="stage-6" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know how to deliver the service</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 06</span><h3>Servicing clients</h3><p>How the work actually gets delivered, month to month.</p></div>
-          </div>
+        <div class="stage-split" id="stage-6">
+          <div class="stage-split-top"><p>I don't know how to actually deliver the service.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 06</span><h3>Servicing clients</h3></div>
         </div>
-        <div class="stage-flip" id="stage-7" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know how to scale beyond doing everything themselves</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 07</span><h3>Scaling</h3><p>Growing revenue and capacity without it falling over.</p></div>
-          </div>
+        <div class="stage-split" id="stage-7">
+          <div class="stage-split-top"><p>I don't know how to scale beyond doing everything myself.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 07</span><h3>Scaling</h3></div>
         </div>
-        <div class="stage-flip" id="stage-8" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know what software to use, or how to optimise it</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 08</span><h3>Software</h3><p>Choosing the right tools for your firm, and setting them up to actually save you time.</p></div>
-          </div>
+        <div class="stage-split" id="stage-8">
+          <div class="stage-split-top"><p>I don't know what software to use, or how to get the most out of it.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 08</span><h3>Software</h3></div>
         </div>
-        <div class="stage-flip" id="stage-9" tabindex="0">
-          <div class="stage-flip-inner">
-            <div class="stage-flip-front"><p>Don't know how to systemise their business, so it runs without them</p><span class="stage-flip-hint">Hover to reveal</span></div>
-            <div class="stage-flip-back"><span class="service-num">Level 09</span><h3>Systems</h3><p>Systemising your business so it runs without you having to do everything yourself.</p></div>
-          </div>
+        <div class="stage-split" id="stage-9">
+          <div class="stage-split-top"><p>I don't know how to systemise my business, so it runs without me.</p></div>
+          <div class="stage-split-bottom"><span class="service-num">Level 09</span><h3>Systems</h3></div>
         </div>
       </div>
     </div>
@@ -1715,12 +1698,6 @@
     revealEls.forEach(function(el){ el.classList.add('in'); });
     document.querySelectorAll('[data-count]').forEach(function(el){ animateCount(el); });
   }
-
-  // stage flip-cards — hover flips on desktop (pure CSS); tap toggles on touch,
-  // since touch devices have no hover state to trigger the CSS flip
-  document.querySelectorAll('.stage-flip').forEach(function(card){
-    card.addEventListener('click', function(){ card.classList.toggle('is-flipped'); });
-  });
 
   // testimonial stack — hover a tab to bring that card to front
   var testiTabs = document.querySelectorAll('.testi-tab');
