@@ -30,13 +30,6 @@
     --radius:22px;
   }
 
-  /* ---------- alternate accent colours (background always stays black) ---------- */
-  :root[data-palette="forest"]{ --gold:#3FA76B; --gold-soft:#66CB90; }
-  :root[data-palette="charcoal"]{ --gold:#C1683D; --gold-soft:#E29564; }
-  :root[data-palette="burgundy"]{ --gold:#C1495F; --gold-soft:#E27F92; }
-  :root[data-palette="ink"]{ --gold:#4C8FD1; --gold-soft:#7DBBF2; }
-
-  body.palette-fade{ opacity:0; }
   body{ transition:opacity .22s var(--ease); }
 
   *{ box-sizing:border-box; }
@@ -287,22 +280,37 @@
   .stat-card .lab{ margin-top:14px; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--tl-on-navy); }
   .stat-note{ margin:14px auto 0; font-size:12px; line-height:1.55; color:var(--tl-on-navy); max-width:24ch; }
 
-  /* ---------- 9-stage split cards (pain point top, level+name bottom) ---------- */
-  .stage-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
-  .stage-split{
-    position:relative; display:flex; flex-direction:column; border-radius:16px; overflow:hidden;
-    border:1px solid var(--line); scroll-margin-top:24px;
-    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
-    box-shadow:0 1px 1px rgba(0,0,0,.05), 0 24px 48px -32px rgba(0,0,0,.28);
+  /* ---------- 9-level snake path ---------- */
+  .stage-path{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr) 40px minmax(0,1fr);
+    grid-template-rows:auto 40px auto 40px auto;
+    align-items:stretch; margin-top:52px; max-width:760px; margin-left:auto; margin-right:auto;
   }
-  .stage-split:hover{ transform:translateY(-4px); box-shadow:0 1px 1px rgba(0,0,0,.07), 0 30px 56px -30px rgba(0,0,0,.35); }
-  .stage-split-top{ background:#000; padding:22px 22px 20px; flex:1 1 auto; display:flex; align-items:center; min-height:92px; }
-  .stage-split-top p{ font-size:14px; color:var(--ink); line-height:1.45; font-weight:500; }
-  .stage-split-bottom{ background:var(--gold); padding:16px 22px 18px; flex:none; }
-  .stage-split-bottom .service-num{ font-family:'Inter'; font-weight:700; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:rgba(20,14,4,.65); }
-  .stage-split-bottom h3{ margin-top:3px; font-size:17px; color:#140E04; }
-  @media(max-width:820px){ .stage-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:480px){ .stage-grid{ grid-template-columns:1fr; } }
+  .stage-node{
+    position:relative; background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:22px 16px 18px; text-align:center; display:flex; flex-direction:column; align-items:center;
+    scroll-margin-top:24px;
+    transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+    box-shadow:0 1px 1px rgba(0,0,0,.05), 0 20px 40px -28px rgba(0,0,0,.28);
+  }
+  .stage-node:hover{ transform:translateY(-3px); border-color:var(--gold); }
+  .stage-node .service-num{
+    width:32px; height:32px; border-radius:50%; border:1px solid var(--gold); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; flex:none;
+    font-family:'Inter'; font-weight:700; font-size:12px;
+  }
+  .stage-node h3{ margin-top:10px; font-size:14.5px; letter-spacing:-.01em; }
+  .stage-node p{ margin-top:5px; font-size:10.5px; color:var(--slate); line-height:1.4; }
+  .stage-arrow{ display:flex; align-items:center; justify-content:center; color:var(--gold); opacity:.5; }
+  .stage-arrow svg{ width:18px; height:18px; }
+  .stage-arrow.dir-left{ transform:rotate(180deg); }
+  .stage-arrow.dir-down{ transform:rotate(90deg); }
+  @media(max-width:680px){
+    .stage-path{ grid-template-columns:1fr; grid-template-rows:none; gap:12px; max-width:320px; }
+    .stage-node, .stage-arrow{ grid-column:1 !important; grid-row:auto !important; }
+    .stage-arrow{ transform:rotate(90deg) !important; }
+  }
 
   /* ---------- framework accordion (unused, kept for reference) ---------- */
   .services-accordion{
@@ -335,7 +343,7 @@
     text-decoration:none; cursor:pointer;
   }
   .testi-vid:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
-  .testi-vid img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease), filter .4s var(--ease); }
+  .testi-vid img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; transition:transform .6s var(--ease), filter .4s var(--ease); }
   .testi-vid:hover img{ transform:scale(1.06); filter:brightness(.78); }
   .testi-play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
   .testi-play-btn{
@@ -482,29 +490,6 @@
   }
   .float-cta.show{ transform:translateY(0); opacity:1; }
 
-  /* ---------- theme picker ---------- */
-  .theme-picker{
-    position:fixed; top:88px; right:20px; z-index:70;
-    display:flex; flex-direction:column; align-items:center; gap:9px;
-    background:rgba(255,255,255,.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    border:1px solid var(--line); border-radius:999px; padding:12px 9px;
-    box-shadow:0 1px 1px rgba(0,0,0,.06), 0 20px 40px -22px rgba(0,0,0,.4);
-    transition:background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
-  }
-  .theme-picker-label{
-    font-family:'Inter'; font-weight:500; font-size:9px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--slate); writing-mode:vertical-rl; text-orientation:mixed; margin-bottom:2px; transition:color .4s var(--ease);
-  }
-  .theme-swatch{
-    width:24px; height:24px; border-radius:50%; border:2px solid #fff; cursor:pointer; padding:0;
-    background:linear-gradient(135deg, var(--sw-a) 50%, var(--sw-b) 50%);
-    box-shadow:0 0 0 1px var(--line), 0 6px 14px -6px rgba(0,0,0,.35);
-    transition:transform .35s var(--ease-spring), box-shadow .3s var(--ease);
-  }
-  .theme-swatch:hover{ transform:scale(1.14); }
-  .theme-swatch.active{ box-shadow:0 0 0 2px var(--gold), 0 6px 14px -6px rgba(0,0,0,.35); transform:scale(1.1); }
-  @media(max-width:560px){ .theme-picker{ top:auto; bottom:24px; right:24px; } .float-cta{ bottom:88px; } }
-
   @media(max-width:900px){
     .who-pair, .founder, .cred-grid, .testi-row{ grid-template-columns:1fr; }
     .cred-grid{ grid-template-columns:1fr 1fr; }
@@ -577,14 +562,15 @@
     margin-top:2px; font-family:'Inter'; font-weight:500; font-size:11.5px; letter-spacing:.06em;
     text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:6px;
   }
-  .testi-tabs{ flex:0 0 190px; display:flex; flex-direction:column; gap:8px; }
+  .testi-tabs{ flex:0 0 210px; display:flex; flex-direction:column; gap:6px; }
   .testi-tab{
-    all:unset; box-sizing:border-box; cursor:pointer; padding:12px 14px; border-radius:12px;
-    border:1px solid var(--line); background:var(--card); display:flex; flex-direction:column; gap:3px;
+    all:unset; box-sizing:border-box; cursor:pointer; padding:9px 14px; border-radius:10px;
+    border:1px solid var(--line); background:var(--card); display:flex; align-items:baseline; gap:8px;
+    white-space:nowrap; overflow:hidden;
     transition:border-color .3s var(--ease), background .3s var(--ease), transform .3s var(--ease);
   }
-  .testi-tab-name{ font-family:'Inter'; font-weight:600; font-size:16px; color:var(--ink); }
-  .testi-tab-result{ font-family:'Inter'; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--slate); }
+  .testi-tab-name{ font-family:'Inter'; font-weight:600; font-size:14px; color:var(--ink); flex:none; }
+  .testi-tab-result{ font-family:'Inter'; font-size:9.5px; letter-spacing:.03em; text-transform:uppercase; color:var(--slate); overflow:hidden; text-overflow:ellipsis; }
   .testi-tab.is-active{ border-color:var(--gold); background:linear-gradient(135deg, rgba(201,169,104,.14), transparent); }
   .testi-tab.is-active .testi-tab-result{ color:var(--gold); }
   .testi-tab:hover, .testi-tab:focus-visible{ transform:translateX(4px); }
@@ -1035,44 +1021,61 @@
       <div class="section-head center reveal">
         <p class="eyebrow center">The framework</p>
         <h2>The 9-Stage Strategy.</h2>
-        <p>Every practice owner struggles with one of 9 things. Find yours below, and see the level that has the answer.</p>
+        <p>Every practice owner struggles with one of 9 things. Follow the path below to find yours.</p>
       </div>
-      <div class="stage-grid reveal">
-        <div class="stage-split" id="stage-1">
-          <div class="stage-split-top"><p>I don't know where to start.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 01</span><h3>Setting up</h3></div>
+      <div class="stage-path reveal">
+        <div class="stage-node" id="stage-1" style="grid-column:1; grid-row:1;">
+          <span class="service-num">01</span>
+          <h3>Setting up</h3>
+          <p>I don't know where to start.</p>
         </div>
-        <div class="stage-split" id="stage-2">
-          <div class="stage-split-top"><p>I don't know what niche to specialise in.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 02</span><h3>Selection of client type</h3></div>
+        <div class="stage-arrow dir-right" style="grid-column:2; grid-row:1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-2" style="grid-column:3; grid-row:1;">
+          <span class="service-num">02</span>
+          <h3>Selection of client type</h3>
+          <p>I don't know what niche to specialise in.</p>
         </div>
-        <div class="stage-split" id="stage-3">
-          <div class="stage-split-top"><p>I can't generate a reliable source of leads.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 03</span><h3>Supply of leads</h3></div>
+        <div class="stage-arrow dir-right" style="grid-column:4; grid-row:1;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-3" style="grid-column:5; grid-row:1;">
+          <span class="service-num">03</span>
+          <h3>Supply of leads</h3>
+          <p>I can't generate a reliable source of leads.</p>
         </div>
-        <div class="stage-split" id="stage-4">
-          <div class="stage-split-top"><p>I don't know how to close clients on a sales call.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 04</span><h3>Selling the service</h3></div>
+        <div class="stage-arrow dir-down" style="grid-column:5; grid-row:2;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-4" style="grid-column:5; grid-row:3;">
+          <span class="service-num">04</span>
+          <h3>Selling the service</h3>
+          <p>I don't know how to close clients on a sales call.</p>
         </div>
-        <div class="stage-split" id="stage-5">
-          <div class="stage-split-top"><p>I don't know how to price my services.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 05</span><h3>Structure of offer</h3></div>
+        <div class="stage-arrow dir-left" style="grid-column:4; grid-row:3;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-5" style="grid-column:3; grid-row:3;">
+          <span class="service-num">05</span>
+          <h3>Structure of offer</h3>
+          <p>I don't know how to price my services.</p>
         </div>
-        <div class="stage-split" id="stage-6">
-          <div class="stage-split-top"><p>I don't know how to actually deliver the service.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 06</span><h3>Servicing clients</h3></div>
+        <div class="stage-arrow dir-left" style="grid-column:2; grid-row:3;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-6" style="grid-column:1; grid-row:3;">
+          <span class="service-num">06</span>
+          <h3>Servicing clients</h3>
+          <p>I don't know how to actually deliver the service.</p>
         </div>
-        <div class="stage-split" id="stage-7">
-          <div class="stage-split-top"><p>I don't know how to scale beyond doing everything myself.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 07</span><h3>Scaling</h3></div>
+        <div class="stage-arrow dir-down" style="grid-column:1; grid-row:4;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-7" style="grid-column:1; grid-row:5;">
+          <span class="service-num">07</span>
+          <h3>Scaling</h3>
+          <p>I don't know how to scale beyond doing everything myself.</p>
         </div>
-        <div class="stage-split" id="stage-8">
-          <div class="stage-split-top"><p>I don't know what software to use, or how to get the most out of it.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 08</span><h3>Software</h3></div>
+        <div class="stage-arrow dir-right" style="grid-column:2; grid-row:5;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-8" style="grid-column:3; grid-row:5;">
+          <span class="service-num">08</span>
+          <h3>Software</h3>
+          <p>I don't know what software to use, or how to get the most out of it.</p>
         </div>
-        <div class="stage-split" id="stage-9">
-          <div class="stage-split-top"><p>I don't know how to systemise my business, so it runs without me.</p></div>
-          <div class="stage-split-bottom"><span class="service-num">Level 09</span><h3>Systems</h3></div>
+        <div class="stage-arrow dir-right" style="grid-column:4; grid-row:5;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        <div class="stage-node" id="stage-9" style="grid-column:5; grid-row:5;">
+          <span class="service-num">09</span>
+          <h3>Systems</h3>
+          <p>I don't know how to systemise my business, so it runs without me.</p>
         </div>
       </div>
     </div>
@@ -1529,15 +1532,6 @@
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
 </a>
 
-<div class="theme-picker" id="theme-picker" role="group" aria-label="Colour palette">
-  <span class="theme-picker-label">Palette</span>
-  <button class="theme-swatch active" type="button" data-palette="navy" aria-label="Gold accent" style="--sw-a:#121212; --sw-b:#B68A4E;"></button>
-  <button class="theme-swatch" type="button" data-palette="forest" aria-label="Emerald accent" style="--sw-a:#121212; --sw-b:#3FA76B;"></button>
-  <button class="theme-swatch" type="button" data-palette="charcoal" aria-label="Copper accent" style="--sw-a:#121212; --sw-b:#C1683D;"></button>
-  <button class="theme-swatch" type="button" data-palette="burgundy" aria-label="Rose accent" style="--sw-a:#121212; --sw-b:#C1495F;"></button>
-  <button class="theme-swatch" type="button" data-palette="ink" aria-label="Ice blue accent" style="--sw-a:#121212; --sw-b:#4C8FD1;"></button>
-</div>
-
 <script>
 (function(){
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1579,35 +1573,6 @@
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openYtModal(el.getAttribute('data-yt')); }
     });
   });
-
-  // colour palette picker
-  (function(){
-    var root = document.documentElement;
-    var swatches = document.querySelectorAll('.theme-swatch');
-    var STORAGE_KEY = 'aa-palette';
-    function setActive(name){
-      swatches.forEach(function(s){ s.classList.toggle('active', s.getAttribute('data-palette') === name); });
-    }
-    function applyPalette(name, animate){
-      if(name === 'navy'){ root.removeAttribute('data-palette'); } else { root.setAttribute('data-palette', name); }
-      setActive(name);
-      try{ localStorage.setItem(STORAGE_KEY, name); }catch(e){}
-    }
-    var saved = 'navy';
-    try{ saved = localStorage.getItem(STORAGE_KEY) || 'navy'; }catch(e){}
-    applyPalette(saved);
-    swatches.forEach(function(sw){
-      sw.addEventListener('click', function(){
-        var name = sw.getAttribute('data-palette');
-        if(reduceMotion){ applyPalette(name); return; }
-        document.body.classList.add('palette-fade');
-        setTimeout(function(){
-          applyPalette(name);
-          setTimeout(function(){ document.body.classList.remove('palette-fade'); }, 30);
-        }, 220);
-      });
-    });
-  })();
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
