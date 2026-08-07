@@ -471,6 +471,11 @@
   }
   .waitlist.done .waitlist-form, .waitlist.done .waitlist-note{ display:none; }
   .waitlist.done .waitlist-success{ display:block; }
+  .waitlist-error{
+    display:none; margin-top:16px; font-family:'Inter'; font-size:13px; color:#E0645A; text-align:center;
+  }
+  .waitlist-error.show{ display:block; }
+  .waitlist-form button[type="submit"][disabled]{ opacity:.6; cursor:default; }
 
   /* ---------- footer ---------- */
   footer{ padding:52px 0 40px; border-top:1px solid var(--line); }
@@ -1503,6 +1508,7 @@
         </button>
       </form>
       <div class="waitlist-note">No spam. Just the first invite when seats open.</div>
+      <div class="waitlist-error" id="waitlist-error">Something went wrong submitting that — please try again, or email us directly.</div>
       <div class="waitlist-success">You're on the list — watch your inbox for the founding cohort invite.</div>
     </div>
   </section>
@@ -1698,9 +1704,33 @@
 
   var form = document.getElementById('waitlist-form');
   var waitlistSection = document.getElementById('waitlist');
+  var waitlistErrorEl = document.getElementById('waitlist-error');
+  var WAITLIST_ENDPOINT = 'https://joshbuffin.app.n8n.cloud/webhook/aa-waitlist';
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    waitlistSection.classList.add('done');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    waitlistErrorEl.classList.remove('show');
+    submitBtn.disabled = true;
+    var payload = {
+      firstName: form.firstName.value,
+      surname: form.surname.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      revenue: form.revenue.value,
+      struggle: form.struggle.value,
+      tier: form.tier.value
+    };
+    fetch(WAITLIST_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      if(!res.ok) throw new Error('bad status ' + res.status);
+      waitlistSection.classList.add('done');
+    }).catch(function(err){
+      waitlistErrorEl.classList.add('show');
+      submitBtn.disabled = false;
+    });
   });
 })();
 </script>
