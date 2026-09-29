@@ -1254,6 +1254,65 @@
     </div>
   </section>
 
+  <section class="section-pad waitlist tint" id="waitlist">
+    <div class="container waitlist-inner reveal">
+      <p class="eyebrow center">Founding cohort</p>
+      <h2 style="font-size:clamp(30px,4vw,48px);">Be first in the room.</h2>
+      <p class="waitlist-sub">Join the waitlist and you'll get first access to the founding cohort - before it opens to anyone else.</p>
+      <p class="waitlist-callout"><strong>Not everyone on the waitlist is offered a space.</strong> Applications are reviewed individually, so please put some real effort into yours - especially the last question.</p>
+      <div class="waitlist-tiers" id="waitlist-tiers">
+        <button type="button" class="waitlist-tier-pill" data-tier="Start">Start</button>
+        <button type="button" class="waitlist-tier-pill is-active" data-tier="Scale">Scale</button>
+        <button type="button" class="waitlist-tier-pill" data-tier="Partner">Partner</button>
+      </div>
+      <form class="waitlist-form" id="waitlist-form">
+        <input type="hidden" id="waitlist-tier" name="tier" value="Scale" />
+        <div class="waitlist-row">
+          <div class="waitlist-field">
+            <label for="waitlist-first-name">First name</label>
+            <input type="text" required placeholder="Jane" autocomplete="given-name" id="waitlist-first-name" name="firstName" />
+          </div>
+          <div class="waitlist-field">
+            <label for="waitlist-surname">Surname</label>
+            <input type="text" required placeholder="Smith" autocomplete="family-name" id="waitlist-surname" name="surname" />
+          </div>
+        </div>
+        <div class="waitlist-row">
+          <div class="waitlist-field">
+            <label for="waitlist-email">Email</label>
+            <input type="email" required placeholder="you@yourfirm.com" autocomplete="email" id="waitlist-email" name="email" />
+          </div>
+          <div class="waitlist-field">
+            <label for="waitlist-phone">Phone number</label>
+            <input type="tel" required placeholder="07123 456789" autocomplete="tel" id="waitlist-phone" name="phone" />
+          </div>
+        </div>
+        <div class="waitlist-field">
+          <label for="waitlist-revenue">Current revenue level</label>
+          <select required id="waitlist-revenue" name="revenue">
+            <option value="" disabled selected>Select one&hellip;</option>
+            <option value="not-yet-trading">Not yet trading</option>
+            <option value="0-2k">£0 &ndash; £2k / month</option>
+            <option value="2k-6k">£2k &ndash; £6k / month</option>
+            <option value="6k-10k">£6k &ndash; £10k / month</option>
+            <option value="10k-plus">£10k+ / month</option>
+          </select>
+        </div>
+        <div class="waitlist-field">
+          <label for="waitlist-struggle">What are you struggling with most right now?</label>
+          <textarea required id="waitlist-struggle" name="struggle" placeholder="Tell us where you're stuck, and why you want to fix it - the more specific, the better."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">
+          Join the Waitlist
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <div class="waitlist-note">No spam. Just the first invite when seats open.</div>
+      <div class="waitlist-error" id="waitlist-error">Something went wrong submitting that - please try again, or email us directly.</div>
+      <div class="waitlist-success">You're on the list - watch your inbox for the founding cohort invite.</div>
+    </div>
+  </section>
+
   <section class="section-pad">
     <div class="container">
       <div class="section-head center reveal">
@@ -1422,65 +1481,6 @@
           <div class="faq-a"><p>I used to jump on a call with every accountant before they joined, so you could get a feel for whether it was the right fit. As things have grown, I no longer have the capacity to do that for everyone - which is why I've put this page together instead, and why the community stays capped at a limited number of members at any one time, to protect the quality of support inside.</p></div>
         </details>
       </div>
-    </div>
-  </section>
-
-  <section class="section-pad waitlist tint" id="waitlist">
-    <div class="container waitlist-inner reveal">
-      <p class="eyebrow center">Founding cohort</p>
-      <h2 style="font-size:clamp(30px,4vw,48px);">Be first in the room.</h2>
-      <p class="waitlist-sub">Join the waitlist and you'll get first access to the founding cohort - before it opens to anyone else.</p>
-      <p class="waitlist-callout"><strong>Not everyone on the waitlist is offered a space.</strong> Applications are reviewed individually, so please put some real effort into yours - especially the last question.</p>
-      <div class="waitlist-tiers" id="waitlist-tiers">
-        <button type="button" class="waitlist-tier-pill" data-tier="Start">Start</button>
-        <button type="button" class="waitlist-tier-pill is-active" data-tier="Scale">Scale</button>
-        <button type="button" class="waitlist-tier-pill" data-tier="Partner">Partner</button>
-      </div>
-      <form class="waitlist-form" id="waitlist-form">
-        <input type="hidden" id="waitlist-tier" name="tier" value="Scale" />
-        <div class="waitlist-row">
-          <div class="waitlist-field">
-            <label for="waitlist-first-name">First name</label>
-            <input type="text" required placeholder="Jane" autocomplete="given-name" id="waitlist-first-name" name="firstName" />
-          </div>
-          <div class="waitlist-field">
-            <label for="waitlist-surname">Surname</label>
-            <input type="text" required placeholder="Smith" autocomplete="family-name" id="waitlist-surname" name="surname" />
-          </div>
-        </div>
-        <div class="waitlist-row">
-          <div class="waitlist-field">
-            <label for="waitlist-email">Email</label>
-            <input type="email" required placeholder="you@yourfirm.com" autocomplete="email" id="waitlist-email" name="email" />
-          </div>
-          <div class="waitlist-field">
-            <label for="waitlist-phone">Phone number</label>
-            <input type="tel" required placeholder="07123 456789" autocomplete="tel" id="waitlist-phone" name="phone" />
-          </div>
-        </div>
-        <div class="waitlist-field">
-          <label for="waitlist-revenue">Current revenue level</label>
-          <select required id="waitlist-revenue" name="revenue">
-            <option value="" disabled selected>Select one&hellip;</option>
-            <option value="not-yet-trading">Not yet trading</option>
-            <option value="0-2k">£0 &ndash; £2k / month</option>
-            <option value="2k-6k">£2k &ndash; £6k / month</option>
-            <option value="6k-10k">£6k &ndash; £10k / month</option>
-            <option value="10k-plus">£10k+ / month</option>
-          </select>
-        </div>
-        <div class="waitlist-field">
-          <label for="waitlist-struggle">What are you struggling with most right now?</label>
-          <textarea required id="waitlist-struggle" name="struggle" placeholder="Tell us where you're stuck, and why you want to fix it - the more specific, the better."></textarea>
-        </div>
-        <button type="submit" class="btn btn-gold">
-          Join the Waitlist
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </form>
-      <div class="waitlist-note">No spam. Just the first invite when seats open.</div>
-      <div class="waitlist-error" id="waitlist-error">Something went wrong submitting that - please try again, or email us directly.</div>
-      <div class="waitlist-success">You're on the list - watch your inbox for the founding cohort invite.</div>
     </div>
   </section>
 
