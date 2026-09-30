@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scale Masterclass - Accountancy Accelerator</title>
+<meta name="description" content="£5k to £20k a month: the next milestone for your accounting firm, and how you get there.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#000000;
+  --card:#121212;
+  --ink:#F5F5F7;
+  --muted:#A1A1A6;
+  --slate:#86868B;
+  --line:#2A2A2C;
+  --gold:#B68A4E;
+  --gold-soft:#DDB273;
+  --plat:#E5E4E2;
+  --radius:22px;
+  --container:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate)}
+section{padding:clamp(72px,11vw,140px) 0}
+section.alt{background:var(--card)}
+section.gold{background:var(--gold);color:#0A0A0A}
+section.plat{background:var(--plat);color:#0A0A0A}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+section.gold .eyebrow,section.plat .eyebrow{color:#3A3A3C}
+h1,h2{font-weight:700;letter-spacing:-.035em;line-height:1.05}
+h1{font-size:clamp(44px,8vw,96px)}
+h2{font-size:clamp(34px,5.4vw,64px)}
+h2.big{font-size:clamp(44px,8vw,96px)}
+h3{font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+section.gold .lead{color:#1F1A12}
+section.plat .lead{color:#3A3A3C}
+.gold-t{color:var(--gold-soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:48px}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:12px}
+section.alt .card{background:var(--paper)}
+.card.hl{border-color:var(--gold)}
+.card p{color:var(--muted);font-size:17px}
+.num{font-size:13px;font-weight:600;color:var(--gold-soft);letter-spacing:.1em}
+.label{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.fig{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.fig.g{color:var(--gold-soft)}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:48px}
+.eq .card{flex:1 1 180px}
+.op{font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--slate);flex:0 0 auto}
+.track{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:56px}
+.step{border-top:6px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.step.done{border-top-color:var(--gold)}
+.step.here{border-top:6px dashed var(--gold-soft)}
+.step.here.box{border:1px solid var(--gold);border-top:6px solid var(--gold-soft);border-radius:0 0 var(--radius) var(--radius);padding:20px;background:var(--paper)}
+.step .t{font-size:clamp(22px,2.4vw,28px);font-weight:700}
+.step .r{font-size:18px;font-weight:600;color:var(--gold-soft)}
+.step .ph{font-size:17px;font-weight:700}
+.step p.d{color:var(--muted);font-size:16px}
+.step .label.on{color:var(--ink)}
+.big-fig{display:flex;flex-wrap:wrap;align-items:baseline;gap:20px;margin-top:40px}
+.big-fig .n{font-size:clamp(96px,16vw,200px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.big-fig .u{font-size:clamp(18px,2.4vw,28px);color:var(--muted)}
+ul.pts{margin-top:32px;padding-left:22px;color:var(--muted);font-size:clamp(17px,1.9vw,21px);display:flex;flex-direction:column;gap:10px;max-width:880px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start}
+.split ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:17px}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px 56px;margin-top:48px}
+.line{border-left:2px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;gap:8px}
+.line p{color:var(--muted);font-size:17px}
+.row{border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+.row b{font-size:19px}
+.row span{color:var(--muted);font-size:16px}
+.note{margin-top:28px;color:var(--muted);font-size:clamp(17px,1.9vw,21px)}
+.statement{font-size:clamp(22px,2.8vw,32px);font-weight:600;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+@media (max-width:640px){
+  .op{width:100%;text-align:center;line-height:1}
+  .card{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale Masterclass</span></div></nav>
+
+<!-- 1. Where you are -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Where you are</p>
+<h1>You survived<br>the hardest part.</h1>
+<p class="lead">The £5k sprint is behind you. Be proud of that. You are now in the fortunate position where you can relax, a little.</p>
+<div class="track">
+<div class="step done"><p class="label" style="color:var(--gold-soft)">Done</p><p class="t">£0 to £5k</p><p class="d">The sprint. The hardest part.</p></div>
+<div class="step here"><p class="label on">You are here</p><p class="t">Your first UK hire</p><p class="d">The milestone that changes everything.</p></div>
+<div class="step"><p class="label">The goal</p><p class="t">£20k a month</p><p class="d">Profit, and real freedom.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 2. The destination -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">The destination</p>
+<h2>What does £20k a month actually look like?</h2>
+<div class="eq">
+<div class="card"><p class="fig">£20k</p><p>revenue</p></div>
+<span class="op">−</span>
+<div class="card"><p class="fig">£7k</p><p>staff</p></div>
+<span class="op">−</span>
+<div class="card"><p class="fig">£1k</p><p>software</p></div>
+<span class="op">=</span>
+<div class="card hl"><p class="fig g">£12k</p><p>profit</p></div>
+</div>
+<p class="statement">£12k a month in profit, <span class="gold-t">and freedom.</span></p>
+</div>
+</section>
+
+<!-- 3. How do we get there -->
+<section>
+<div class="wrap">
+<p class="eyebrow">From £5k to £20k</p>
+<h2 class="big">How do we<br>get there<span class="gold-t">?</span></h2>
+</div>
+</section>
+
+<!-- 4. Your number -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Step one</p>
+<h2>Work out the number you actually need to live off... <i>for example</i></h2>
+<div class="big-fig"><span class="n">£4k</span><span class="u">a month, after tax</span></div>
+<p class="lead">This is the fastest route to scaling. Once you know your number, you know exactly what every <b><u>extra pound is for.</u></b></p>
+</div>
+</section>
+
+<!-- 5. Reinvest -->
+<section>
+<div class="wrap split">
+<div>
+<p class="eyebrow">Key concept</p>
+<h2>Extra cash should be spent accelerating growth.</h2>
+<p class="lead">Making the business profitable later is easy, as long as you keep your fees high enough.</p>
+</div>
+<div class="card hl">
+<p class="eyebrow" style="margin:0">Last month</p>
+<p class="fig">£55k</p>
+<p>turned over, and no extra profit, <b><u>intentionally</u></b>. After paying our staff and adding to our <i>rainy day fund</i>, every penny went back in:</p>
+<ul>
+<li>£1,200 on SEO</li>
+<li>£1,000 on an ads manager</li>
+<li>£2,000 on ads</li>
+<li>A recruitment fee, set aside to hire a full-time sales manager</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- 6. Allocation example -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Example: you need £4k a month</p>
+<h2>£5.5k MRR + £1.5k one-offs.</h2>
+<div class="cards two">
+<div class="card">
+<p class="label">Recurring revenue</p>
+<p class="fig">£5.5k</p>
+<div class="row"><b><span class="gold-t">£4k</span> → your salary</b></div>
+<div class="row"><b><span class="gold-t">£1.5k</span> → recurring costs</b><span>Staff (bookkeeper, editor, PA) and software</span></div>
+</div>
+<div class="card hl">
+<p class="label">One-off work</p>
+<p class="fig">£1.5k</p>
+<div class="row"><b><span class="gold-t">£1.5k</span> → marketing, in full</b><span>Ads, events, SEO and so on</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 7. Three jobs -->
+<section>
+<div class="wrap">
+<p class="eyebrow">The extra cash</p>
+<h2>Everything above your number does one of 3 jobs.</h2>
+<div class="cards">
+<div class="card"><p class="num">01</p><h3>Grow MRR</h3><p>Ads, paid groups, or bigger projects where you pay consultants to help you deliver.</p></div>
+<div class="card"><p class="num">02</p><h3>Save time</h3><p>Don't skimp on software. Use contractors who are proven. Invest in mentorship.</p></div>
+<div class="card"><p class="num">03</p><h3>Buy freedom</h3><p>Mainly by hiring a UK based employee.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 8. Milestone -->
+<section class="gold">
+<div class="wrap">
+<p class="eyebrow"><u>The next milestone</u></p>
+<h2 class="big">Your first UK hire.<br>One who is actually good.</h2>
+<p class="lead">This is what everyone should have their sights on next.</p>
+</div>
+</section>
+
+<!-- 9. Hire number -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Your hire number</p>
+<h2>What you need, plus what they cost.</h2>
+<div class="eq">
+<div class="card"><p class="fig">£4k</p><p>to live on</p></div>
+<span class="op">+</span>
+<div class="card"><p class="fig">~£4.3k</p><p>full cost of a £45k hire</p></div>
+<span class="op">=</span>
+<div class="card hl"><p class="fig g">~£8.3k</p><p>a month</p></div>
+</div>
+<ul class="pts">
+<li>It may feel uncomfortable that you're paying a member of staff, whilst your own income isn't increasing</li>
+<li>But this is the hire that unlocks you personally earning over £10k a month, and real freedom (if it's the right fit).</li>
+<li>Your real number sits a little higher: your £4k is after tax, and overheads come out first.</li>
+</ul>
+</div>
+</section>
+
+<!-- 10. MRR -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">The KPI</p>
+<h2 class="big">This is why MRR is the number we track.</h2>
+<p class="lead">Monthly recurring revenue is what gives you the security to hire. A salary is paid every month, so the income covering it needs to arrive every month too.</p>
+</div>
+</section>
+
+<!-- 11. Freedom -->
+<section>
+<div class="wrap">
+<p class="eyebrow">What it really means</p>
+<h2>Freedom, not stepping away.</h2>
+<div class="cards">
+<div class="card"><h3>You stay in</h3><p>It doesn't mean leaving the business. It means you choose how you spend your time.</p></div>
+<div class="card"><h3>More fulfilling</h3><p>Building something with a team is far more rewarding than doing it all yourself.</p></div>
+<div class="card"><h3>How we do it</h3><p>Key employees earn equity over time. It is only worth anything if we sell.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 12. Part two -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Part two</p>
+<h2 class="big">How you get<br>to that number.</h2>
+</div>
+</section>
+
+<!-- 13. Lead generation -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Lead generation</p>
+<h2>The strategy doesn't change. You amplify it.</h2>
+<div class="lines">
+<div class="line"><h3>Keep doing what works</h3><p>If content is working, keep going. Don't fall into the trap of pushing volume past 1 a day.</p></div>
+<div class="line"><h3>Add a second channel</h3><p>Start another one, like YouTube, without dropping the ball on what already works for you.</p></div>
+<div class="line"><h3>Pay for better rooms</h3><p>Higher-level networking, like the entrepreneurs' dinner club I've just joined. Make your story more premium.</p></div>
+<div class="line"><h3>Spot opportunities</h3><p>Lean into markets as they open up. We've gone after Airbnb management and online coaching.</p></div>
+<div class="line"><h3>Be selective with referrals</h3><p>You're now more valuable to referral partners. Be choosy about who you send work to.</p></div>
+<div class="line"><h3>Start spending on ads</h3><p>Start allocating some of your extra cash to ad spend.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 14. Bigger work -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Bigger work</p>
+<h2>Bigger work, higher fees.</h2>
+<div class="cards two">
+<div class="card"><h3>Spot new opportunities</h3><p>Lean into the niches that emerge as you grow. Bigger businesses come as part of it.</p></div>
+<div class="card"><h3>Projects</h3><p>Group structures and holding companies. High value, and you can bring in help.</p></div>
+<div class="card"><h3>Upsells</h3><p>Management accounts, inbox management, virtual offices, holding companies.</p></div>
+<div class="card hl"><h3>Raise your minimum fees</h3><p>You're worth more now. Put your minimum fees up for new clients.</p></div>
+</div>
+<p class="note">And be more selective: qualify the prospect before you take the call.</p>
+</div>
+</section>
+
+<!-- 15. Bottleneck -->
+<section class="gold">
+<div class="wrap">
+<p class="eyebrow">Key concept</p>
+<h2 class="big">Whatever is stressing you out is your bottleneck.</h2>
+<p class="lead">Up to £5k, it was winning clients. From here it will keep changing. Treat the stress as the sign, and address it head on.</p>
+</div>
+</section>
+
+<!-- 16. Waiting list -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">When you're at capacity</p>
+<h2>The waiting list is your most powerful tool.</h2>
+<div class="cards">
+<div class="card"><h3>Buys you time</h3><p>A month to fix systems, or a few months to hire.</p></div>
+<div class="card"><h3>People wait</h3><p>We worried they wouldn't. Everyone did.</p></div>
+<div class="card"><h3>You're in control</h3><p>Anything time sensitive, you let in early, when you choose.</p></div>
+<div class="card"><h3>Less pressure</h3><p>No rush to onboard everyone on time.</p></div>
+</div>
+<div class="card hl" style="margin-top:20px">
+<h3 class="gold-t">It also lets you raise your fees</h3>
+<p style="color:var(--ink)">With a queue, you can afford to be more selective.</p>
+<ul class="pts" style="margin-top:4px">
+<li>Raise fees during this period and your firm naturally steps up a level.</li>
+<li>Over time, higher-paying clients refer more higher-paying clients.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- 17. Sub-par people -->
+<section class="plat">
+<div class="wrap">
+<p class="eyebrow">Key concept</p>
+<h2 class="big">Never put up with sub-par people. Ever.</h2>
+<p class="lead">Most people aren't good enough, so be quick to let them go. Bookkeepers, editors, UK staff, all of it. That's why, when I find someone good, I share them around.</p>
+</div>
+</section>
+
+<!-- 18. The 4 stages -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">The bigger picture</p>
+<h2>The 4 stages of building your firm.</h2>
+<div class="track">
+<div class="step done"><p class="label">Stage 1 · Done</p><p class="t">Start</p><p class="r">£0 to £5k</p><p class="d">Replace your salary and quit your job.</p></div>
+<div class="step here box"><p class="label on">Stage 2 · You are here</p><p class="t">Scale</p><p class="ph">Phase 1: Operator</p><p class="r">£5k to £20k</p><p class="d">Your first UK hire, then £20k a month.</p></div>
+<div class="step"><p class="label">Stage 3</p><p class="t">Scale</p><p class="ph">Phase 2: Owner</p><p class="r">£20k to £50k</p><p class="d">The team and systems run it, so you can step back.</p></div>
+<div class="step"><p class="label">Stage 4</p><p class="t">Sell</p><p class="r">£50k+</p><p class="d">A firm that runs without you is an asset someone will buy.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 19. Sell -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Stage 4 · Sell</p>
+<h2>What selling actually looks like.</h2>
+<div class="eq">
+<div class="card"><p class="label">Revenue</p><p class="fig">£1m</p><p>a year, about £83k a month</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">EBITDA</p><p class="fig">£500k</p><p>a 50% margin</p></div>
+<span class="op">→</span>
+<div class="card hl"><p class="label" style="color:var(--gold-soft)">Valuation</p><p class="fig g">£2.5m</p><p>5x EBITDA</p></div>
+</div>
+<p class="lead">This is why the fees, the MRR and the team matter now. They are what turn a job you own into an asset someone will buy.</p>
+</div>
+</section>
+
+<footer><div class="wrap">© Accountancy Accelerator. All rights reserved.</div></footer>
+
+</body>
+</html>
