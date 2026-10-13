@@ -483,6 +483,21 @@
   .footer-brand .tl{ color:var(--slate); }
 
   /* ---------- floating cta ---------- */
+  /* ---------- cookie consent ---------- */
+  .consent-bar{
+    position:fixed; left:24px; bottom:24px; z-index:70; max-width:420px;
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px 20px; box-shadow:0 20px 50px rgba(0,0,0,.5);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .consent-bar[hidden]{ display:none; }
+  .consent-bar p{ margin:0; font-family:'Inter'; font-size:14px; line-height:1.5; color:var(--ink); }
+  .consent-actions{ display:flex; gap:10px; justify-content:flex-end; }
+  @media(max-width:640px){
+    .consent-bar{ left:12px; right:12px; bottom:12px; max-width:none; }
+    body.consent-open .float-cta{ bottom:150px; }
+  }
+
   .float-cta{
     position:fixed; right:24px; bottom:24px; z-index:60;
     transform:translateY(140%); opacity:0;
@@ -1508,6 +1523,14 @@
   </div>
 </footer>
 
+<div class="consent-bar" id="consent-bar" role="dialog" aria-label="Cookie consent" hidden>
+  <p>We use cookies to measure which ads bring people here (Meta pixel). Nothing else - no cookies are set unless you accept.</p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-ghost btn-sm" id="consent-decline">Decline</button>
+    <button type="button" class="btn btn-gold btn-sm" id="consent-accept">Accept</button>
+  </div>
+</div>
+
 <a href="#waitlist" class="btn btn-gold btn-sm float-cta js-cta" id="float-cta">
   Join the Waitlist
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1715,6 +1738,86 @@
     cta.addEventListener('click', function(){ setWaitlistTier(cta.getAttribute('data-tier')); });
   });
 
+  // ---------- Meta pixel (consent-gated) + attribution capture ----------
+  // Pixel dataset 1767664684506227. The pixel script is only loaded after the
+  // visitor accepts cookies (UK PECR) - until then no Meta cookies are set.
+  // UTM params + fbclid come from the landing URL, not cookies, so they are
+  // captured regardless of consent.
+  var META_PIXEL_ID = '1767664684506227';
+  var CONSENT_KEY = 'aa_cookie_consent';      // 'granted' | 'denied'
+  var ATTR_KEY = 'aa_attribution';
+  var ATTR_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'fbclid'];
+  var ATTR_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000;
+
+  function storeGet(key){ try{ return window.localStorage.getItem(key); }catch(err){ return null; } }
+  function storeSet(key, value){ try{ window.localStorage.setItem(key, value); }catch(err){} }
+  function getCookie(name){
+    var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : '';
+  }
+
+  // First-touch attribution: whenever the landing URL carries any tracked
+  // param, snapshot all of them plus the full URL. Otherwise fall back to the
+  // snapshot from an earlier visit (max 90 days) so a return visit without
+  // params still credits the original click.
+  function captureAttribution(){
+    var params = new URLSearchParams(window.location.search);
+    var fresh = {}, found = false;
+    ATTR_PARAMS.forEach(function(key){
+      var value = params.get(key);
+      if(value){ fresh[key] = value.slice(0, 500); found = true; }
+    });
+    if(found){
+      fresh.landing_page_url = window.location.href.slice(0, 2000);
+      fresh.captured_at = Date.now();
+      storeSet(ATTR_KEY, JSON.stringify(fresh));
+      return fresh;
+    }
+    var stored = null;
+    try{ stored = JSON.parse(storeGet(ATTR_KEY) || 'null'); }catch(err){}
+    if(stored && stored.captured_at && (Date.now() - stored.captured_at) < ATTR_MAX_AGE_MS) return stored;
+    return { landing_page_url: window.location.href.slice(0, 2000) };
+  }
+  var attribution = captureAttribution();
+
+  var pixelLoaded = false;
+  function loadMetaPixel(){
+    if(pixelLoaded) return;
+    pixelLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+  function hasConsent(){ return storeGet(CONSENT_KEY) === 'granted'; }
+
+  var consentBar = document.getElementById('consent-bar');
+  function setConsent(value){
+    storeSet(CONSENT_KEY, value);
+    if(consentBar){ consentBar.hidden = true; }
+    document.body.classList.remove('consent-open');
+    if(value === 'granted') loadMetaPixel();
+  }
+  var consentChoice = storeGet(CONSENT_KEY);
+  if(consentChoice === 'granted'){
+    loadMetaPixel();
+  } else if(consentChoice !== 'denied' && consentBar){
+    consentBar.hidden = false;
+    document.body.classList.add('consent-open');
+  }
+  var consentAccept = document.getElementById('consent-accept');
+  var consentDecline = document.getElementById('consent-decline');
+  if(consentAccept) consentAccept.addEventListener('click', function(){ setConsent('granted'); });
+  if(consentDecline) consentDecline.addEventListener('click', function(){ setConsent('denied'); });
+
+  function makeEventId(){
+    if(window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'aa-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+  }
+
   var form = document.getElementById('waitlist-form');
   var waitlistSection = document.getElementById('waitlist');
   var waitlistErrorEl = document.getElementById('waitlist-error');
@@ -1724,6 +1827,17 @@
     var submitBtn = form.querySelector('button[type="submit"]');
     waitlistErrorEl.classList.remove('show');
     submitBtn.disabled = true;
+
+    // _fbc/_fbp are cookies set by the pixel, so only read them with consent.
+    // If the _fbc cookie is missing but an fbclid was captured from the URL,
+    // build fbc in Meta's documented format (fb.1.<ms>.<fbclid>) so the click
+    // can still be matched server-side.
+    var consented = hasConsent();
+    var fbc = consented ? getCookie('_fbc') : '';
+    if(!fbc && attribution.fbclid) fbc = 'fb.1.' + Date.now() + '.' + attribution.fbclid;
+    var fbp = consented ? getCookie('_fbp') : '';
+    var eventId = makeEventId();
+
     var payload = {
       firstName: form.firstName.value,
       surname: form.surname.value,
@@ -1731,7 +1845,18 @@
       phone: form.phone.value,
       revenue: form.revenue.value,
       struggle: form.struggle.value,
-      tier: form.tier.value
+      tier: form.tier.value,
+      utm_source: attribution.utm_source || '',
+      utm_medium: attribution.utm_medium || '',
+      utm_campaign: attribution.utm_campaign || '',
+      utm_content: attribution.utm_content || '',
+      fbclid: attribution.fbclid || '',
+      fbc: fbc,
+      fbp: fbp,
+      landing_page_url: attribution.landing_page_url || '',
+      page_url: window.location.href.slice(0, 2000),
+      event_id: eventId,
+      consent: storeGet(CONSENT_KEY) || 'none'
     };
     fetch(WAITLIST_ENDPOINT, {
       method: 'POST',
@@ -1739,7 +1864,16 @@
       body: JSON.stringify(payload)
     }).then(function(res){
       if(!res.ok) throw new Error('bad status ' + res.status);
+      return res.json().catch(function(){ return {}; });
+    }).then(function(data){
+      if(data && data.ok === false) throw new Error('n8n reported failure');
       waitlistSection.classList.add('done');
+      // Lead fires only here - after n8n has responded 2xx, i.e. the contact
+      // and opportunity exist in GHL - never on button click. eventID matches
+      // the event_id sent to n8n so a server-side (CAPI) Lead can be deduped.
+      if(pixelLoaded && typeof window.fbq === 'function'){
+        window.fbq('track', 'Lead', { content_name: 'AA Waitlist', content_category: payload.tier }, { eventID: eventId });
+      }
     }).catch(function(err){
       waitlistErrorEl.classList.add('show');
       submitBtn.disabled = false;
