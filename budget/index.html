@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Budget Call - Accountancy Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#000000;
+  --card:#121212;
+  --ink:#F5F5F7;
+  --muted:#A1A1A6;
+  --slate:#86868B;
+  --line:#2A2A2C;
+  --gold:#B68A4E;
+  --gold-soft:#DDB273;
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em}
+.navtag{font-size:13px;color:var(--slate)}
+header{padding:clamp(64px,10vw,120px) 0 clamp(40px,6vw,64px)}
+.eyebrow{font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,7vw,72px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
+.sub{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin-top:20px;max-width:640px}
+.agenda{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.agenda a{font-size:15px;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;transition:border-color .2s}
+.agenda a:hover{border-color:var(--gold)}
+.agenda span{color:var(--gold-soft);font-weight:600;margin-right:6px}
+main{padding-bottom:clamp(80px,12vw,140px)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(28px,4vw,48px);margin-bottom:20px;scroll-margin-top:80px;display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,36px)}
+.num{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700}
+.who{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:20px}
+ul{list-style:none}
+li{font-size:clamp(18px,2vw,21px);padding:10px 0 10px 28px;position:relative;border-top:1px solid var(--line)}
+li:first-child{border-top:none}
+li::before{content:"";position:absolute;left:2px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.arrow{color:var(--gold-soft);padding:0 6px}
+.key{margin-top:22px;padding:18px 22px;border-left:3px solid var(--gold);background:rgba(182,138,78,.08);border-radius:0 12px 12px 0;font-size:clamp(17px,1.9vw,19px)}
+.key b{color:var(--gold-soft)}
+.quote{margin-top:22px;font-size:clamp(17px,1.9vw,19px);color:var(--muted);font-style:italic}
+.step.qa{border-color:var(--gold)}
+@media (max-width:560px){
+  .step{grid-template-columns:1fr;gap:16px}
+  .num{width:44px;height:44px;font-size:18px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><div class="brand">ACCOUNTANCY ACCELERATOR</div><div class="navtag">Mentee call - 28/10/2026</div></div></nav>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Budget 2026</div>
+  <h1>Turning the Budget into client trust and marketing</h1>
+  <p class="sub">How we got the changes out to clients fast, and turned the same work into content.</p>
+  <div class="agenda">
+    <a href="#s1"><span>1</span>Opening</a>
+    <a href="#s2"><span>2</span>YouTube video</a>
+    <a href="#s3"><span>3</span>ManyChat</a>
+    <a href="#s4"><span>4</span>Patrick</a>
+    <a href="#s5"><span>5</span>Opportunities</a>
+    <a href="#s6"><span>6</span>Q&amp;A</a>
+    <a href="#s7"><span>7</span>Close</a>
+  </div>
+</header>
+
+<main>
+  <section class="step" id="s1">
+    <div class="num">1</div>
+    <div>
+      <h2>Opening</h2>
+      <ul>
+        <li>The Budget landed. The firms that win are the ones that tell clients first and turn the same work into marketing.</li>
+        <li>Time for technical questions at the end.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step" id="s2">
+    <div class="num">2</div>
+    <div>
+      <div class="who">Josh</div>
+      <h2>The YouTube video, done fast</h2>
+      <ul>
+        <li>Thumbnail made in advance, before the Budget</li>
+        <li>Watched the Budget with Granola running</li>
+        <li>Made my own notes alongside it</li>
+        <li>Claude summarised it all and I read it off the screen</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step" id="s3">
+    <div class="num">3</div>
+    <div>
+      <div class="who">Josh</div>
+      <h2>ManyChat <span class="arrow">&rarr;</span> email <span class="arrow">&rarr;</span> automation</h2>
+      <ul>
+        <li>Set up the ManyChat flow in advance, tagging everyone who engaged</li>
+        <li>Once the Budget was live, wrote the email</li>
+        <li>Sent it to everyone tagged</li>
+        <li>Now it's an automatic sequence</li>
+      </ul>
+      <div class="key"><b>Key point:</b> prepare before the event, add the content on the day.</div>
+    </div>
+  </section>
+
+  <section class="step" id="s4">
+    <div class="num">4</div>
+    <div>
+      <div class="who">Patrick</div>
+      <h2>Telling existing clients</h2>
+      <ul>
+        <li>How Patrick used Claude and Client Engager to get the message out</li>
+        <li>The actual message and workflow</li>
+      </ul>
+      <p class="quote">"That's how we got it in front of new people. Patrick's going to show how we told the clients we already have."</p>
+    </div>
+  </section>
+
+  <section class="step" id="s5">
+    <div class="num">5</div>
+    <div>
+      <h2>Opportunities it opens up</h2>
+      <ul>
+        <li>BADR halving <span class="arrow">&rarr;</span> holdco videos and content</li>
+        <li>Mileage increasing <span class="arrow">&rarr;</span> video idea</li>
+        <li>What other content angles can you see?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step qa" id="s6">
+    <div class="num">6</div>
+    <div>
+      <h2>Technical Q&amp;A</h2>
+      <ul>
+        <li>Open floor</li>
+        <li>What are your clients asking you this week?</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step" id="s7">
+    <div class="num">7</div>
+    <div>
+      <h2>Close</h2>
+      <ul>
+        <li>One action each: what will you send to clients or post this week?</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</div>
+</body>
+</html>
