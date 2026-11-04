@@ -133,6 +133,20 @@ section.alt .card:hover,section.alt .q:hover{background-color:#FFF8F3}
 .card:hover::before{transform:scaleX(1)}
 .card:hover .fig,.card:hover h3{color:var(--gold-soft);transition:color .3s ease}
 @media (prefers-reduced-motion:reduce){.card,.q,.card::before{transition:none}.card:hover,.q:hover{transform:none}}
+/* Line items: one row on wide screens, 3D tilt on hover */
+@media (min-width:1101px){
+  .lines{display:flex;gap:24px}
+  .lines>.line{flex:1 1 0;min-width:0}
+}
+.line{padding:20px 20px 20px 24px;border-radius:0 18px 18px 0;transform-style:preserve-3d;will-change:transform;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s cubic-bezier(.2,.8,.2,1),background-color .3s ease}
+.line>*{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.line:hover{background-color:#FFF8F3;box-shadow:0 24px 50px -20px rgba(242,107,29,.5),0 2px 8px rgba(0,0,0,.05);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px)}
+.line:hover .num{transform:translateZ(20px)}
+.line:hover h3{transform:translateZ(40px)}
+.line:hover p{transform:translateZ(24px)}
+section.gold .line:hover{background-color:rgba(255,255,255,.16);box-shadow:0 28px 50px -18px rgba(90,30,0,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+section.gold .line:hover h3{color:#FFFFFF}
+@media (prefers-reduced-motion:reduce){.line,.line>*{transition:none}.line:hover,.line:hover>*{transform:none}}
 </style>
 </head>
 <body>
@@ -466,5 +480,17 @@ section.alt .card:hover,section.alt .q:hover{background-color:#FFF8F3}
 
 <footer><div class="wrap">Accountancy Accelerator · Ads Masterclass · 04/11/2026</div></footer>
 
+<script>
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.line').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--ry',(x*14).toFixed(2)+'deg');
+      el.style.setProperty('--rx',(-y*14).toFixed(2)+'deg');
+    });
+    el.addEventListener('mouseleave',function(){el.style.removeProperty('--rx');el.style.removeProperty('--ry')});
+  });
+}
+</script>
 </body>
 </html>
