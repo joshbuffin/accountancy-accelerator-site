@@ -20,7 +20,7 @@
   --gold-soft:#C2410C;
   --plat:#E5E4E2;
   --radius:22px;
-  --container:1140px;
+  --container:1440px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -115,6 +115,24 @@ section.gold .line p,section.gold .num{color:#1F1A12}
 .tbl tr.win td{background:#FFF1E8;font-weight:700}
 .tbl td.bad{color:var(--gold-soft);font-weight:700}
 @media (max-width:640px){.funnel .op{width:100%;text-align:center;line-height:1}}
+/* Box rows: every box in a row sits on one line on wide screens */
+@media (min-width:1101px){
+  .cards:not(.two){display:flex;gap:20px}
+  .cards:not(.two)>.card{flex:1 1 0;min-width:0;padding:28px 24px}
+  .funnel{flex-wrap:nowrap}
+  .funnel .card{flex:1 1 0;min-width:0;padding:24px 20px}
+  .funnel .op{flex:0 0 auto}
+  .checks{grid-template-columns:repeat(5,1fr)}
+}
+.cards .fig,.funnel .fig{font-size:clamp(30px,2.6vw,46px)}
+/* Hover: lift, warm tint, orange edge */
+.card,.q{position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:3px;border-radius:0 0 3px 3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.card:hover,.q:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45),0 2px 6px rgba(0,0,0,.04)}
+section.alt .card:hover,section.alt .q:hover{background-color:#FFF8F3}
+.card:hover::before{transform:scaleX(1)}
+.card:hover .fig,.card:hover h3{color:var(--gold-soft);transition:color .3s ease}
+@media (prefers-reduced-motion:reduce){.card,.q,.card::before{transition:none}.card:hover,.q:hover{transform:none}}
 </style>
 </head>
 <body>
