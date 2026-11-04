@@ -3,255 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>My Story - Accountancy Accelerator</title>
 <meta name="description" content="Start, Level 1 Sprint: My story.">
-<meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#FFFFFF;
-  --card:#F5F5F7;
-  --ink:#111111;
-  --muted:#555555;
-  --slate:#6E6E73;
-  --line:#E2E2E2;
-  --gold:#F26B1D;
-  --gold-soft:#C2410C;
-  --plat:#E5E4E2;
-  --radius:22px;
-  --container:1440px;
-}
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
 a{color:inherit}
 .wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
 nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
 .brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
-.navtag{font-size:13px;color:var(--slate)}
-section{padding:clamp(72px,11vw,140px) 0}
-section.alt{background:var(--card)}
-section.gold{background:var(--gold);color:#0A0A0A}
-section.plat{background:var(--plat);color:#0A0A0A}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.hero{padding:clamp(72px,11vw,140px) 0 clamp(40px,6vw,72px)}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
-section.gold .eyebrow,section.plat .eyebrow{color:#3A3A3C}
-h1,h2{font-weight:700;letter-spacing:-.035em;line-height:1.05}
-h1{font-size:clamp(44px,8vw,96px)}
-h2{font-size:clamp(34px,5.4vw,64px)}
-h2.big{font-size:clamp(44px,8vw,96px)}
-h3{font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
-.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
-section.gold .lead{color:#1F1A12}
-section.plat .lead{color:#3A3A3C}
+h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:48px}
-.cards.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:12px}
-section.alt .card{background:var(--paper)}
-.card.hl{border-color:var(--gold)}
-.card p{color:var(--muted);font-size:17px}
-.num{font-size:13px;font-weight:600;color:var(--gold-soft);letter-spacing:.1em}
-.label{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.fig{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1}
-.fig.g{color:var(--gold-soft)}
-.eq{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:48px}
-.eq .card{flex:1 1 180px}
-.op{font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--slate);flex:0 0 auto}
-.track{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:56px}
-.step{border-top:6px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
-.step.done{border-top-color:var(--gold)}
-.step.here{border-top:6px dashed var(--gold-soft)}
-.step.here.box{border:1px solid var(--gold);border-top:6px solid var(--gold-soft);border-radius:0 0 var(--radius) var(--radius);padding:20px;background:var(--paper)}
-.step .t{font-size:clamp(22px,2.4vw,28px);font-weight:700}
-.step .r{font-size:18px;font-weight:600;color:var(--gold-soft)}
-.step .ph{font-size:17px;font-weight:700}
-.step p.d{color:var(--muted);font-size:16px}
-.step .label.on{color:var(--ink)}
-.big-fig{display:flex;flex-wrap:wrap;align-items:baseline;gap:20px;margin-top:40px}
-.big-fig .n{font-size:clamp(96px,16vw,200px);font-weight:700;letter-spacing:-.05em;line-height:1}
-.big-fig .u{font-size:clamp(18px,2.4vw,28px);color:var(--muted)}
-ul.pts{margin-top:32px;padding-left:22px;color:var(--muted);font-size:clamp(17px,1.9vw,21px);display:flex;flex-direction:column;gap:10px;max-width:880px}
-.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start}
-.split ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:17px}
-.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px 56px;margin-top:48px}
-.line{border-left:2px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;gap:8px}
-.line p{color:var(--muted);font-size:17px}
-.row{border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
-.row b{font-size:19px}
-.row span{color:var(--muted);font-size:16px}
-.note{margin-top:28px;color:var(--muted);font-size:clamp(17px,1.9vw,21px)}
-.statement{font-size:clamp(22px,2.8vw,32px);font-weight:600;margin-top:40px}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+/* Timeline */
+.tl{position:relative;padding:8px 0 clamp(72px,10vw,120px)}
+.tl::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--line))}
+.ev{position:relative;padding-left:52px;margin-bottom:28px}
+.ev::before{content:"";position:absolute;left:3px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
+.ev.key::before{background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18)}
+.when{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;padding-top:28px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.ev.key .box{border-color:var(--gold)}
+.box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.box ul{margin-top:16px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:clamp(16px,1.7vw,18px)}
+.box li b{color:var(--ink)}
+.quote{margin-top:16px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(17px,1.9vw,20px);font-weight:600}
+.stat{display:inline-block;margin-top:16px;font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
+.stat small{font-size:16px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:8px}
+.phase{margin:48px 0 8px 52px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
+.end{background:var(--gold);color:#0A0A0A;padding:clamp(72px,10vw,120px) 0}
+.end h2{font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
-@media (max-width:640px){
-  .op{width:100%;text-align:center;line-height:1}
-  .card{padding:24px}
-}
-</style>
-<style>
-.funnel{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px}
-.funnel .card{flex:1 1 170px}
-.funnel .op{font-size:clamp(24px,3vw,36px)}
-.hyp{margin-top:48px;border:1px solid var(--gold);border-radius:var(--radius);padding:clamp(28px,4vw,48px);font-size:clamp(24px,3.2vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
-.hyp u{text-decoration-color:var(--gold-soft);text-underline-offset:6px;color:var(--gold-soft)}
-.fix .row b{font-size:17px}
-.qs{margin-top:40px;display:flex;flex-direction:column;gap:14px;max-width:880px}
-.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;font-size:clamp(17px,1.9vw,21px)}
-section.alt .q{background:var(--paper)}
-.q .a{display:block;margin-top:6px;color:var(--muted);font-size:16px}
-.checks{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.check{display:flex;gap:14px;align-items:flex-start;border-top:1px solid #3A3A3C;padding-top:16px;font-size:18px;font-weight:600;color:#0A0A0A}
-.check span{flex:0 0 26px;height:26px;border:2px solid #0A0A0A;border-radius:7px}
-section.gold .gold-t{color:#FFFFFF}
-section.gold .line{border-left-color:#0A0A0A}
-section.gold .line p,section.gold .num{color:#1F1A12}
-.tbl{margin-top:40px;overflow-x:auto;border:1px solid var(--line);border-radius:16px}
-.tbl table{width:100%;border-collapse:collapse;font-size:17px;min-width:560px}
-.tbl th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:16px 20px;border-bottom:1px solid var(--line)}
-.tbl td{padding:16px 20px;border-bottom:1px solid var(--line)}
-.tbl tr:last-child td{border-bottom:0}
-.tbl td:first-child{font-weight:600}
-.tbl tr.win td{background:#FFF1E8;font-weight:700}
-.tbl td.bad{color:var(--gold-soft);font-weight:700}
-@media (max-width:640px){.funnel .op{width:100%;text-align:center;line-height:1}}
-/* Box rows: every box in a row sits on one line on wide screens */
-@media (min-width:1101px){
-  .cards:not(.two){display:flex;gap:20px}
-  .cards:not(.two)>.card{flex:1 1 0;min-width:0;padding:28px 24px}
-  .funnel{flex-wrap:nowrap}
-  .funnel .card{flex:1 1 0;min-width:0;padding:24px 20px}
-  .funnel .op{flex:0 0 auto}
-  .checks{grid-template-columns:repeat(5,1fr)}
-}
-.cards .fig,.funnel .fig{font-size:clamp(30px,2.6vw,46px)}
-/* Hover: lift, warm tint, orange edge */
-.card,.q{position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:3px;border-radius:0 0 3px 3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.card:hover,.q:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45),0 2px 6px rgba(0,0,0,.04)}
-section.alt .card:hover,section.alt .q:hover{background-color:#FFF8F3}
-.card:hover::before{transform:scaleX(1)}
-.card:hover .fig,.card:hover h3{color:var(--gold-soft);transition:color .3s ease}
-@media (prefers-reduced-motion:reduce){.card,.q,.card::before{transition:none}.card:hover,.q:hover{transform:none}}
-/* Line items: one row on wide screens, 3D tilt on hover */
-@media (min-width:1101px){
-  .lines{display:flex;gap:24px}
-  .lines>.line{flex:1 1 0;min-width:0}
-}
-.line{padding:20px 20px 20px 24px;border-radius:0 18px 18px 0;transform-style:preserve-3d;will-change:transform;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s cubic-bezier(.2,.8,.2,1),background-color .3s ease}
-.line>*{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.line:hover{background-color:#FFF8F3;box-shadow:0 24px 50px -20px rgba(242,107,29,.5),0 2px 8px rgba(0,0,0,.05);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-6px)}
-.line:hover .num{transform:translateZ(20px)}
-.line:hover h3{transform:translateZ(40px)}
-.line:hover p{transform:translateZ(24px)}
-section.gold .line:hover{background-color:rgba(255,255,255,.16);box-shadow:0 28px 50px -18px rgba(90,30,0,.55),inset 0 1px 0 rgba(255,255,255,.35)}
-section.gold .line:hover h3{color:#FFFFFF}
-@media (prefers-reduced-motion:reduce){.line,.line>*{transition:none}.line:hover,.line:hover>*{transform:none}}
-.cards.seven .fig{font-size:clamp(26px,2.1vw,38px)}
-@media (min-width:1101px){.cards.seven{gap:14px}.cards.seven>.card{padding:24px 16px}.cards.seven .label{letter-spacing:.1em}}
+@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · My story</span></div></nav>
 
-<!-- Intro -->
-<section>
-<div class="wrap">
+<header class="hero"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 1</p>
 <h1>My <span class="gold-t">story.</span></h1>
-<p class="lead">"In December 2022 I was exactly where you are now. I had a full-time job and zero clients."</p>
-<div class="track">
-<div class="step done"><p class="label" style="color:var(--gold-soft)">Part one</p><p class="t">Where I started</p></div>
-<div class="step done"><p class="label" style="color:var(--gold-soft)">Part two</p><p class="t">Starting from zero</p></div>
-<div class="step done"><p class="label" style="color:var(--gold-soft)">Part three</p><p class="t">The turning point</p></div>
-<div class="step done"><p class="label" style="color:var(--gold-soft)">Part four</p><p class="t">What happened next</p></div>
-<div class="step done"><p class="label" style="color:var(--gold-soft)">Part five</p><p class="t">Why I'm telling you this</p></div>
-</div>
-</div>
-</section>
+<p class="lead">"In December 2022 I was exactly where you are now. A full-time job I didn't want, and zero clients."</p>
+</div></header>
 
-<!-- 1 -->
-<section class="gold">
-<div class="wrap">
-<p class="eyebrow">Part one</p>
-<h2>Where I started.</h2>
-<div class="lines">
-<div class="line"><p class="num">01</p><h3>Trained at PwC</h3><p>Then Group Financial Accountant at a multi-billion-pound business.</p></div>
-<div class="line"><p class="num">02</p><h3>A good job</h3><p>A good salary. But I wanted out.</p><p><b>Add yours:</b> why you wanted out.</p></div>
-</div>
-</div>
-</section>
+<main class="wrap tl">
 
-<!-- 2 -->
-<section>
-<div class="wrap">
-<p class="eyebrow">Part two · December 2022</p>
-<h2>Starting from <span class="gold-t">zero.</span></h2>
-<div class="lines">
-<div class="line"><p class="num">01</p><h3>Still employed</h3><p>Started on my own, evenings and weekends.</p></div>
-<div class="line"><p class="num">02</p><h3>Nothing to go on</h3><p>No clients. No network of business owners.</p></div>
-<div class="line"><p class="num">03</p><h3>Walking high streets</h3><p>Wilmslow, Harrogate, Liverpool, Manchester. Talking to business owners face to face.</p></div>
-<div class="line"><p class="num">04</p><h3>Most said no</h3><p><b>Add yours:</b> one rejection moment.</p></div>
-</div>
-</div>
-</section>
+<p class="phase">Before the practice</p>
 
-<!-- 3 -->
-<section class="alt">
-<div class="wrap">
-<p class="eyebrow">Part three · July 2023</p>
-<h2>The turning point.</h2>
-<div class="cards">
-<div class="card hl"><p class="label">First big client</p><p class="fig g">£1,450</p><p>A month, from a café in Harrogate. Signed on a high-street walk.</p></div>
-<div class="card"><p class="label">The feeling</p><h3>"Earning enough not to care if I lost my job."</h3></div>
-<div class="card"><p class="label">Today</p><h3>Still a client.</h3></div>
-<div class="card"><p class="label">How long it took</p><p class="fig">~7 months</p><p>From nothing to there. That's the sprint you're starting now.</p></div>
-</div>
-</div>
-</section>
+<div class="ev"><p class="when">Growing up</p><div class="box">
+<h2>Always wanted my own business</h2>
+<ul>
+<li>At about 12 I was selling sweets and lemonade around school.</li>
+<li>Accounting and finance degree. That's where I met Patrick.</li>
+</ul></div></div>
 
-<!-- 4 -->
-<section>
-<div class="wrap">
-<p class="eyebrow">Part four · keep this short</p>
-<h2>What happened next.</h2>
-<div class="lines">
-<div class="line"><p class="num">01</p><h3>Patrick joined</h3><p>Summer 2023. The firm became Clearcrest.</p></div>
-<div class="line"><p class="num">02</p><h3>£19k to £38k</h3><p>A month in recurring revenue, in 9 months.</p></div>
-<div class="line"><p class="num">03</p><h3>Accountant of the Year</h3><p>Prestige Awards, Manchester & North West England 2025/26.</p></div>
-</div>
-<p class="statement">None of that happens without the first <span class="gold-t">£5k.</span></p>
-</div>
-</section>
+<div class="ev"><p class="when">The safe career</p><div class="box">
+<h2>PwC, then a multi-billion-pound group</h2>
+<ul>
+<li>4 years in audit at PwC, where I trained and qualified.</li>
+<li>2 years as Group Financial Accountant at a multi-billion-pound business.</li>
+<li>A good job and a good salary. It just wasn't my life.</li>
+</ul>
+<p class="quote">I asked for 3 days of annual leave, months in advance. Turned down. That was the catalyst.</p></div></div>
 
-<!-- 5 -->
-<section class="gold">
-<div class="wrap">
-<p class="eyebrow">Part five</p>
-<h2>Why I'm telling you this.</h2>
-<div class="lines">
-<div class="line"><p class="num">01</p><h3>No advantage</h3><p>I had nothing you don't have. I kept going out for clients even when it was uncomfortable.</p></div>
-<div class="line"><p class="num">02</p><h3>What I'd do differently</h3><p><b>Add yours:</b> e.g. get out finding clients sooner, instead of perfecting the set-up.</p></div>
-<div class="line"><p class="num">03</p><h3>Your only job</h3><p>For the next 3 to 6 months: reach your quit number. The next video shows you how to work it out.</p></div>
-</div>
-</div>
-</section>
+<div class="ev"><p class="when">January - November 2022</p><div class="box">
+<h2>Three businesses that didn't work</h2>
+<ul>
+<li>Built side businesses on social media: training apps for fitness influencers, then brand deals.</li>
+<li>Very little success. But I learned websites, landing pages and how to find leads.</li>
+<li><b>November 2022: the worst period of my life.</b> Home from a job I didn't want, onto a business with no direction. Lonely.</li>
+</ul>
+<p class="quote">My dad: "Why don't you start an accounting practice?" Me: "But I absolutely hate accounts."</p></div></div>
+
+<p class="phase">The sprint: £0 to £5k</p>
+
+<div class="ev key"><p class="when">Monday 19 December 2022</p><div class="box">
+<h2>Day one on the high street</h2>
+<ul>
+<li>Suit and tie, a stack of flyers, a list of places. No clients, no one to show me how.</li>
+<li>The hardest part was getting out of the car. I'd sit there for 20 minutes. That never went away.</li>
+<li>"Hi, sorry to bother you. Are you the owner? I've finally made the jump and started my own accounting firm..."</li>
+<li>Most said no: "I've had the same accountant for 15 years."</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">The routine</p><div class="box">
+<h2>Built around the job</h2>
+<ul>
+<li>Couldn't tell work. Couldn't post on social media.</li>
+<li><b>Mon - Wed:</b> 5am to 8am on the business, then work.</li>
+<li><b>Fridays:</b> a networking event before work.</li>
+<li><b>Saturdays:</b> the high street, my big lead generation day.</li>
+<li><b>Lunch breaks:</b> follow-ups from my car. Sometimes a "virtual doctor's appointment" to take a call.</li>
+<li>Gave up sleep, the gym and my mates. Got in trouble at work for being too tired.</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">Learning the high street</p><div class="box">
+<h2>Turning it into a system</h2>
+<ul>
+<li>Googled "posh towns near me", then cafes on Google Maps to find the independents. Lots of Range Rovers was a good sign.</li>
+<li>Wilmslow, Alderley Edge, Clitheroe, Harrogate, eventually Nantwich.</li>
+<li>Arrive 10am, finish 2pm, 3 high streets, about 100 business cards.</li>
+<li>First clients were cafes and bars, because they were the only ones open at weekends.</li>
+<li>Same complaint everywhere: "My accountant takes a week to reply."</li>
+</ul>
+<p class="stat">50 chats<small>= 45 nos, 3 maybes, 2 yeses</small></p></div></div>
+
+<div class="ev"><p class="when">February / March 2023</p><div class="box">
+<h2>The best moment of my life</h2>
+<ul>
+<li>3 or 4 weekends in a row without a single yes. Rain, dark mornings, shattered.</li>
+<li>Driving to work on the M65, asking: is this worth it?</li>
+<li>A call from George. A minute later a WhatsApp from a high-street contact from 6 weeks earlier. Then an email. Three yeses in about 90 seconds.</li>
+<li>"Paradise" by Coldplay on. Drove past my junction and up and down the M65 for half an hour.</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">A Wednesday night</p><div class="box">
+<h2>The free tax return at Tiffany's</h2>
+<ul>
+<li>A stressed cocktail bar owner with his tax return hanging over him.</li>
+<li>I sat in his bar for a few hours and did it for free.</li>
+<li>Told him the monthly price. "A bit more than I expected... but you've just done all this for free." Signed there and then.</li>
+<li>Help first, then ask.</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">Easter Sunday, April 2023</p><div class="box">
+<h2>The worst day, and the luckiest</h2>
+<ul>
+<li>A full Saturday in Harrogate: 100 cards, one warm lead. "Come back tomorrow."</li>
+<li>Drove back at 8am. The cafe was shut. It was Easter Sunday.</li>
+<li>Stood under a canopy in the rain in my suit for an hour. He'd forgotten.</li>
+<li>Went back the next Saturday. Waited an hour. He said no in 10 minutes.</li>
+<li>Walking out, a man grabbed my arm: "Are you an accountant? We're looking for one."</li>
+</ul></div></div>
+
+<div class="ev key"><p class="when">June 2023</p><div class="box">
+<h2>Earning more than my job</h2>
+<ul>
+<li>Six months after that first Monday.</li>
+<li>About £5k a month, from weekends on the high street alone.</li>
+<li>That should have been the day I quit. I'd just applied for a mortgage, so I stayed a bit longer.</li>
+</ul>
+<p class="stat">£5k<small>a month in 6 months</small></p></div></div>
+
+<div class="ev key"><p class="when">Summer 2023</p><div class="box">
+<h2>The client that changed everything</h2>
+<ul>
+<li>The man from the Harrogate cafe signed at £1,450 a month.</li>
+<li>"Earning enough not to care if I lost my job."</li>
+<li>Still a client today, now at £2,250 a month.</li>
+<li>Not luck. Three trips, an hour in the rain and an hour waiting. I put myself there enough times.</li>
+</ul></div></div>
+
+<p class="phase">After the sprint</p>
+
+<div class="ev"><p class="when">Later in 2023</p><div class="box">
+<h2>Handed in my notice. Patrick joins.</h2>
+<ul>
+<li>Told Patrick in Bali: "I'm on to something pretty good here."</li>
+<li>He tried the high street in Newcastle and sat in his car for half an hour.</li>
+<li>Me: "The hard bit is the accounts prep." Him: "No, that's the easy bit."</li>
+<li>I did sales full time. He did client management full time.</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">Months 9 - 18</p><div class="box">
+<h2>Freedom</h2>
+<ul>
+<li>Ran the firm from Morocco, Dubai and Bali. Clients didn't mind.</li>
+<li>Passed six figures.</li>
+<li>Finally allowed to post: first TikTok got 63 views. About 500 videos since.</li>
+</ul></div></div>
+
+<div class="ev"><p class="when">Today</p><div class="box">
+<h2>Clearcrest</h2>
+<ul>
+<li>A fully remote team. Our first proper hire was one of my best mates.</li>
+<li>Accountant of the Year, Manchester & North West England, Prestige Awards 2025/26.</li>
+<li>September 2026: a £55k month, every pound reinvested in growth.</li>
+</ul>
+<p class="quote">None of that happens without the first £5k.</p></div></div>
+
+</main>
+
+<section class="end"><div class="wrap">
+<p class="eyebrow" style="color:#3A3A3C">Why I'm telling you this</p>
+<h2>You have no disadvantage.</h2>
+<ul>
+<li>I had nothing you don't have. I just kept getting out of the car.</li>
+<li>My mum said the work comes back round in 6, 9, 12 months. She was right.</li>
+<li><b>What I'd do differently:</b> tell my mates sooner, chase less (twice, then stop), and write a note after every conversation.</li>
+<li><b>Your only job for the next 3 to 6 months:</b> reach your quit number. The next video shows you how.</li>
+</ul>
+</div></section>
 
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · My story</div></footer>
 
-<script>
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(hover:hover)').matches){
-  document.querySelectorAll('.line').forEach(function(el){
-    el.addEventListener('mousemove',function(e){
-      var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      el.style.setProperty('--ry',(x*14).toFixed(2)+'deg');
-      el.style.setProperty('--rx',(-y*14).toFixed(2)+'deg');
-    });
-    el.addEventListener('mouseleave',function(){el.style.removeProperty('--rx');el.style.removeProperty('--ry')});
-  });
-}
-</script>
 </body>
 </html>
