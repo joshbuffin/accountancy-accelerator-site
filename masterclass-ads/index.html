@@ -103,6 +103,14 @@ section.alt .q{background:var(--paper)}
 .checks{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .check{display:flex;gap:14px;align-items:flex-start;border-top:1px solid #3A3A3C;padding-top:16px;font-size:18px;font-weight:600;color:#0A0A0A}
 .check span{flex:0 0 26px;height:26px;border:2px solid #0A0A0A;border-radius:7px}
+.tbl{margin-top:40px;overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+.tbl table{width:100%;border-collapse:collapse;font-size:17px;min-width:560px}
+.tbl th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);padding:16px 20px;border-bottom:1px solid var(--line)}
+.tbl td{padding:16px 20px;border-bottom:1px solid var(--line)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{font-weight:600}
+.tbl tr.win td{background:#FFF1E8;font-weight:700}
+.tbl td.bad{color:var(--gold-soft);font-weight:700}
 @media (max-width:640px){.funnel .op{width:100%;text-align:center;line-height:1}}
 </style>
 </head>
@@ -233,18 +241,81 @@ section.alt .q{background:var(--paper)}
 <!-- 9. Metrics -->
 <section>
 <div class="wrap">
+<p class="eyebrow">Our last campaign · 06/10/2026 - 27/10/2026</p>
+<h2>£1,636 in. Here's where it went.</h2>
+<div class="funnel">
+<div class="card"><p class="label">Spent</p><p class="fig">£1,636</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">New leads</p><p class="fig">128</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">Booked</p><p class="fig">48</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">Showed up</p><p class="fig">24</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">Proposals</p><p class="fig">14</p></div>
+<span class="op">→</span>
+<div class="card hl"><p class="label">Clients won</p><p class="fig g">2</p></div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
 <p class="eyebrow">What we track</p>
 <h2>Every step of the journey has a cost.</h2>
-<div class="funnel">
-<div class="card"><p class="label">Step 1</p><h3>Cost per lead</h3><p>Ad spend ÷ leads</p></div>
-<span class="op">→</span>
-<div class="card"><p class="label">Step 2</p><h3>Cost per call showed</h3><p>Ad spend ÷ calls attended</p></div>
-<span class="op">→</span>
-<div class="card hl"><p class="label">Step 3</p><h3>Cost per client</h3><p>Ad spend ÷ clients signed</p></div>
-<span class="op">→</span>
-<div class="card"><p class="label">Step 4</p><h3>ROAS</h3><p>Revenue ÷ ad spend</p></div>
+<p class="lead">Look how fast the number climbs as you go down the funnel. That's why cost per lead on its own tells you almost nothing.</p>
+<div class="cards">
+<div class="card"><p class="label">Cost per lead</p><p class="fig">£12.78</p><p>Ad spend ÷ new leads</p></div>
+<div class="card"><p class="label">Cost per booking</p><p class="fig">£34.09</p><p>Ad spend ÷ calls booked</p></div>
+<div class="card"><p class="label">Cost per call showed</p><p class="fig">£68.19</p><p>Ad spend ÷ calls attended</p></div>
+<div class="card"><p class="label">Cost per proposal</p><p class="fig">£116.89</p><p>Ad spend ÷ proposals sent</p></div>
+<div class="card hl"><p class="label">Cost per client</p><p class="fig g">£818</p><p>Ad spend ÷ clients won</p></div>
+<div class="card hl"><p class="label">Return</p><p class="fig g">7.4x</p><p>£12,135 a year of fees won, from £1,636 of spend. Annualised value, not cash collected yet.</p></div>
 </div>
-<p class="note">Live on screen now: our real numbers, and how they've moved over time.</p>
+<p class="note">And £68,230 a year of work is sitting in proposals still to close.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<p class="eyebrow">How it's changed, week by week</p>
+<h2>Cheap leads. Then the show rate fell off a cliff.</h2>
+<div class="tbl"><table>
+<thead><tr><th></th><th>06-11 Oct*</th><th>12-18 Oct</th><th>19-25 Oct</th></tr></thead>
+<tbody>
+<tr><td>Ad spend</td><td>£537</td><td>£580</td><td>£492</td></tr>
+<tr><td>Cost per lead</td><td>£8.66</td><td>£19.34</td><td>£15.88</td></tr>
+<tr><td>Cost per call showed</td><td>£41.31</td><td>£82.88</td><td class="bad">£164.08</td></tr>
+<tr><td>Show rate</td><td>75%</td><td>64%</td><td class="bad">25%</td></tr>
+<tr><td>Clients won</td><td>2</td><td>0</td><td>0</td></tr>
+</tbody></table></div>
+<p class="note" style="font-size:15px">*Part week. Newer leads have had less time to book, show up and sign.</p>
+<div class="cards two">
+<div class="card"><p class="label">Happy with</p><h3>It's paying for itself already</h3><p>Two clients won in three weeks, at 7.4x the spend in annual fees, with £68k of proposals still open.</p></div>
+<div class="card hl"><p class="label">Not happy with</p><h3>Half our calls don't show</h3><p>26 turned up, 24 didn't. By the week of 19 October, only 1 in 4 showed. That's our bottleneck right now.</p></div>
+</div>
+<p class="statement">Remember concept 1? <span class="gold-t">We fixed leads. Now it's show rate.</span></p>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Our topic test · 13/10/2026 - 27/10/2026</p>
+<h2>Same budget. Four topics. Very different results.</h2>
+<p class="lead">Roughly £240 on each. Look at cost per lead, then look at cost per proposal.</p>
+<div class="tbl"><table>
+<thead><tr><th>Topic</th><th>Cost per lead</th><th>Booked</th><th>Proposals</th><th>Cost per proposal</th></tr></thead>
+<tbody>
+<tr class="win"><td>Holding companies</td><td>£10.51</td><td>11</td><td>3</td><td>£80.55</td></tr>
+<tr><td>Ltd company education</td><td>£13.38</td><td>6</td><td>1</td><td class="bad">£240.88</td></tr>
+<tr><td>Our story / reviews</td><td>£46.29</td><td>3</td><td>0</td><td>-</td></tr>
+<tr><td>Pain points</td><td>£31.08</td><td>1</td><td>0</td><td>-</td></tr>
+</tbody></table></div>
+<div class="lines">
+<div class="line"><h3>CPL nearly lied to us</h3><p>Holding companies and Ltd company education cost almost the same per lead. Per proposal, one was 3x the price of the other.</p></div>
+<div class="line"><h3>The topic decides the client</h3><p>So we're making more holding company content, keeping Ltd company education as a second test, and rethinking pain points.</p></div>
+<div class="line"><h3>Still small numbers</h3><p>Three proposals isn't proof. It's a strong hypothesis for the next round (concept 5).</p></div>
+</div>
 </div>
 </section>
 
@@ -267,6 +338,10 @@ section.alt .q{background:var(--paper)}
 <div class="card hl fix">
 <div class="row"><b>No more auto-filled emails</b><span>Letting the form fill in emails automatically gave us dodgy addresses. Now people type their email in themselves.</span></div>
 <div class="row"><b>WhatsApp reminders</b><span>Sent automatically through GoHighLevel before every call. People read WhatsApp. They don't always read email.</span></div>
+<p class="label" style="margin-top:12px;color:var(--gold-soft)">Testing next</p>
+<div class="row"><b>Email reminders as well</b><span>Of 13 recent no-shows, 4 never got the reminder: their number wasn't on WhatsApp.</span></div>
+<div class="row"><b>Confirm, or lose the slot</b><span>Unconfirmed calls get cancelled by a set deadline, with an easy way to rebook.</span></div>
+<div class="row"><b>Start the conversation straight away</b><span>Right after booking: "Can you tell me more about your business and your accounting experience so far?"</span></div>
 </div>
 </div>
 </section>
