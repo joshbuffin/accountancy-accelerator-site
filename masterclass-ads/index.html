@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ads Masterclass - Accountancy Accelerator</title>
+<meta name="description" content="Running ads that actually make money: the numbers to watch, how to test properly, and what we changed in our own ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#000000;
+  --card:#121212;
+  --ink:#F5F5F7;
+  --muted:#A1A1A6;
+  --slate:#86868B;
+  --line:#2A2A2C;
+  --gold:#B68A4E;
+  --gold-soft:#DDB273;
+  --plat:#E5E4E2;
+  --radius:22px;
+  --container:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate)}
+section{padding:clamp(72px,11vw,140px) 0}
+section.alt{background:var(--card)}
+section.gold{background:var(--gold);color:#0A0A0A}
+section.plat{background:var(--plat);color:#0A0A0A}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+section.gold .eyebrow,section.plat .eyebrow{color:#3A3A3C}
+h1,h2{font-weight:700;letter-spacing:-.035em;line-height:1.05}
+h1{font-size:clamp(44px,8vw,96px)}
+h2{font-size:clamp(34px,5.4vw,64px)}
+h2.big{font-size:clamp(44px,8vw,96px)}
+h3{font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+section.gold .lead{color:#1F1A12}
+section.plat .lead{color:#3A3A3C}
+.gold-t{color:var(--gold-soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:48px}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:12px}
+section.alt .card{background:var(--paper)}
+.card.hl{border-color:var(--gold)}
+.card p{color:var(--muted);font-size:17px}
+.num{font-size:13px;font-weight:600;color:var(--gold-soft);letter-spacing:.1em}
+.label{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.fig{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.fig.g{color:var(--gold-soft)}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:48px}
+.eq .card{flex:1 1 180px}
+.op{font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--slate);flex:0 0 auto}
+.track{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:56px}
+.step{border-top:6px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.step.done{border-top-color:var(--gold)}
+.step.here{border-top:6px dashed var(--gold-soft)}
+.step.here.box{border:1px solid var(--gold);border-top:6px solid var(--gold-soft);border-radius:0 0 var(--radius) var(--radius);padding:20px;background:var(--paper)}
+.step .t{font-size:clamp(22px,2.4vw,28px);font-weight:700}
+.step .r{font-size:18px;font-weight:600;color:var(--gold-soft)}
+.step .ph{font-size:17px;font-weight:700}
+.step p.d{color:var(--muted);font-size:16px}
+.step .label.on{color:var(--ink)}
+.big-fig{display:flex;flex-wrap:wrap;align-items:baseline;gap:20px;margin-top:40px}
+.big-fig .n{font-size:clamp(96px,16vw,200px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.big-fig .u{font-size:clamp(18px,2.4vw,28px);color:var(--muted)}
+ul.pts{margin-top:32px;padding-left:22px;color:var(--muted);font-size:clamp(17px,1.9vw,21px);display:flex;flex-direction:column;gap:10px;max-width:880px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start}
+.split ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:17px}
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px 56px;margin-top:48px}
+.line{border-left:2px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;gap:8px}
+.line p{color:var(--muted);font-size:17px}
+.row{border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+.row b{font-size:19px}
+.row span{color:var(--muted);font-size:16px}
+.note{margin-top:28px;color:var(--muted);font-size:clamp(17px,1.9vw,21px)}
+.statement{font-size:clamp(22px,2.8vw,32px);font-weight:600;margin-top:40px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+@media (max-width:640px){
+  .op{width:100%;text-align:center;line-height:1}
+  .card{padding:24px}
+}
+</style>
+<style>
+.funnel{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:48px}
+.funnel .card{flex:1 1 170px}
+.funnel .op{font-size:clamp(24px,3vw,36px)}
+.hyp{margin-top:48px;border:1px solid var(--gold);border-radius:var(--radius);padding:clamp(28px,4vw,48px);font-size:clamp(24px,3.2vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.hyp u{text-decoration-color:var(--gold-soft);text-underline-offset:6px;color:var(--gold-soft)}
+.fix .row b{font-size:17px}
+.qs{margin-top:40px;display:flex;flex-direction:column;gap:14px;max-width:880px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;font-size:clamp(17px,1.9vw,21px)}
+section.alt .q{background:var(--paper)}
+.q .a{display:block;margin-top:6px;color:var(--muted);font-size:16px}
+.checks{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.check{display:flex;gap:14px;align-items:flex-start;border-top:1px solid #3A3A3C;padding-top:16px;font-size:18px;font-weight:600;color:#0A0A0A}
+.check span{flex:0 0 26px;height:26px;border:2px solid #0A0A0A;border-radius:7px}
+@media (max-width:640px){.funnel .op{width:100%;text-align:center;line-height:1}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Ads Masterclass</span></div></nav>
+
+<!-- 1. Intro -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Ads Masterclass</p>
+<h1>Ads that actually<br>make you <span class="gold-t">money.</span></h1>
+<p class="lead">Which numbers to watch, how to test properly, and every change we've made to our own ads so far.</p>
+<div class="track">
+<div class="step done"><p class="label" style="color:var(--gold-soft)">Part one</p><p class="t">Key concepts</p><p class="d">How to think about ads before you spend a penny.</p></div>
+<div class="step done"><p class="label" style="color:var(--gold-soft)">Part two</p><p class="t">Our numbers</p><p class="d">What we track, and how it's changed.</p></div>
+<div class="step done"><p class="label" style="color:var(--gold-soft)">Part three</p><p class="t">What we optimised</p><p class="d">Show rate, quality, intent, cold vs warm.</p></div>
+<div class="step done"><p class="label" style="color:var(--gold-soft)">Part four</p><p class="t">Variety wins</p><p class="d">What Meta wants to see from your ads.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 2. Part one -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Part one</p>
+<h2 class="big">Key concepts.</h2>
+</div>
+</section>
+
+<!-- 3. Bottlenecks -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Concept 1</p>
+<h2>You will always have a bottleneck. That's the game.</h2>
+<p class="lead">Fix one problem and the next one shows up. That isn't failure, it's progress: it means you fixed the last one.</p>
+<div class="funnel">
+<div class="card"><p class="num">01</p><h3>Not enough leads</h3></div>
+<span class="op">→</span>
+<div class="card"><p class="num">02</p><h3>Leads aren't good enough</h3></div>
+<span class="op">→</span>
+<div class="card"><p class="num">03</p><h3>Leads don't show up</h3></div>
+<span class="op">→</span>
+<div class="card"><p class="num">04</p><h3>They show, but don't buy</h3></div>
+</div>
+<p class="statement">Get leads through the door first. <span class="gold-t">Then tweak, over time.</span></p>
+</div>
+</section>
+
+<!-- 4. CPL -->
+<section class="alt">
+<div class="wrap split">
+<div>
+<p class="eyebrow">Concept 2</p>
+<h2>Cost per lead is a vanity metric.</h2>
+<p class="lead">Everyone starts out chasing the cheapest lead. The further you get into ads, the more you realise it's the wrong number to track.</p>
+</div>
+<div class="cards two" style="margin-top:0">
+<div class="card"><p class="label">Cheap lead</p><p class="fig">£5</p><p>Never turns up to the call. You paid £5 for nothing.</p></div>
+<div class="card hl"><p class="label">Expensive lead</p><p class="fig g">£25</p><p>Shows up, signs, pays you every month.</p></div>
+</div>
+</div>
+<div class="wrap">
+<div class="lines">
+<div class="line"><h3>Track this instead</h3><p><b>Cost per qualified call that showed up.</b> Somebody who meets your criteria, and actually turned up.</p></div>
+<div class="line"><h3>And ultimately this</h3><p><b>Cost per signed client.</b> The only number that tells you whether ads are paying for themselves.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 5. A/B testing -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Concept 3</p>
+<h2>A/B testing: change one thing at a time.</h2>
+<p class="lead">Run two versions that are identical except for one thing. If you change three things at once, you'll never know which one made the difference.</p>
+<div class="cards">
+<div class="card"><p class="num">TEST</p><h3>Topic A vs topic B</h3><p>Same style, same length, different subject.</p></div>
+<div class="card"><p class="num">TEST</p><h3>Raw vs polished</h3><p>Same script, filmed on your phone vs properly edited.</p></div>
+<div class="card"><p class="num">TEST</p><h3>Text vs no text</h3><p>Same video, with and without captions on screen.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 6. Wait for the data -->
+<section class="gold">
+<div class="wrap">
+<p class="eyebrow">Concept 4</p>
+<h2 class="big">Don't decide too early.</h2>
+<p class="lead">Spending £30 and calling a winner is deciding on noise. Two leads vs zero leads isn't a result, it's a coin toss.</p>
+<div class="big-fig"><span class="n">£100</span><span class="u" style="color:#1F1A12">per variation, before you look at the data</span></div>
+</div>
+</section>
+
+<!-- 7. Hypothesis -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Concept 5</p>
+<h2>Go into every round of ads with a hypothesis.</h2>
+<p class="lead">Know what you want to learn before you launch. Then book the time to check whether you were right.</p>
+<div class="hyp">"I think <u>topic A</u> will beat <u>topic B</u>, because <u>my clients ask me about it every week</u>."</div>
+<div class="lines">
+<div class="line"><p class="num">BEFORE</p><h3>Write it down</h3><p>One sentence. What you expect, based on what you've learned so far.</p></div>
+<div class="line"><p class="num">DURING</p><h3>Leave it alone</h3><p>Let it spend. Don't tinker halfway through.</p></div>
+<div class="line"><p class="num">AFTER</p><h3>Book the review</h3><p>Put time in your diary for when the ads finish. Were you right? Write down what you learned.</p></div>
+</div>
+<p class="statement">Every round makes the next one smarter. <span class="gold-t">That's the whole point.</span></p>
+</div>
+</section>
+
+<!-- 8. Part two -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Part two</p>
+<h2 class="big">Our numbers.</h2>
+<p class="lead">What we track, how it's changed over time, what we're happy with, what we're not, and what it's taught us.</p>
+</div>
+</section>
+
+<!-- 9. Metrics -->
+<section>
+<div class="wrap">
+<p class="eyebrow">What we track</p>
+<h2>Every step of the journey has a cost.</h2>
+<div class="funnel">
+<div class="card"><p class="label">Step 1</p><h3>Cost per lead</h3><p>Ad spend ÷ leads</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">Step 2</p><h3>Cost per call showed</h3><p>Ad spend ÷ calls attended</p></div>
+<span class="op">→</span>
+<div class="card hl"><p class="label">Step 3</p><h3>Cost per client</h3><p>Ad spend ÷ clients signed</p></div>
+<span class="op">→</span>
+<div class="card"><p class="label">Step 4</p><h3>ROAS</h3><p>Revenue ÷ ad spend</p></div>
+</div>
+<p class="note">Live on screen now: our real numbers, and how they've moved over time.</p>
+</div>
+</section>
+
+<!-- 10. Part three -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Part three</p>
+<h2 class="big">What we've done to optimise.</h2>
+</div>
+</section>
+
+<!-- 11. Show rate -->
+<section>
+<div class="wrap split">
+<div>
+<p class="eyebrow">Optimising for show rate</p>
+<h2>A lead who doesn't turn up costs you twice.</h2>
+<p class="lead">Once in ad spend, and again in the diary slot you kept free for them.</p>
+</div>
+<div class="card hl fix">
+<div class="row"><b>No more auto-filled emails</b><span>Letting the form fill in emails automatically gave us dodgy addresses. Now people type their email in themselves.</span></div>
+<div class="row"><b>WhatsApp reminders</b><span>Sent automatically through GoHighLevel before every call. People read WhatsApp. They don't always read email.</span></div>
+</div>
+</div>
+</section>
+
+<!-- 12. Quality -->
+<section class="alt">
+<div class="wrap split">
+<div>
+<p class="eyebrow">Optimising for quality</p>
+<h2>The topic decides who stops scrolling.</h2>
+<p class="lead">Lead quality is driven by what your video is about. Talk about a problem your ideal client has, and they're the ones who'll stop.</p>
+</div>
+<div class="card">
+<p class="label">For example</p>
+<div class="row"><b>A topic for a hobbyist</b><span>Gets you people who want free advice.</span></div>
+<div class="row"><b>A topic for a business owner who's growing</b><span>Gets you people with a real problem and a budget to fix it.</span></div>
+</div>
+</div>
+</section>
+
+<!-- 13. Intent -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Optimising for intent</p>
+<h2>Ask the blunt question.</h2>
+<p class="lead">We made the questions on our form far more direct. If someone isn't willing to pay, we'd rather find out now than on the call.</p>
+<div class="qs">
+<div class="q">"Are you willing to pay for this?"<span class="a">Answer no, and you don't get a call. Don't waste our time, and we won't waste yours.</span></div>
+</div>
+<p class="statement">Fewer leads. <span class="gold-t">Far less wasted time.</span></p>
+</div>
+</section>
+
+<!-- 14. Cold vs warm -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">Optimising for cold vs warm</p>
+<h2>Warm leads are cheaper. Can you grow on cold?</h2>
+<p class="lead">Retargeting people who already know you is cheaper. The real question is whether your ads keep working when you push to people who've never heard of you.</p>
+<div class="qs">
+<div class="q">"Have you heard of the business before?"<span class="a">We ask this on our form, and it decides whose calendar they book into.</span></div>
+</div>
+<div class="cards two">
+<div class="card hl"><p class="label">Yes, they've heard of us</p><h3>Booked with me</h3><p>The face of the brand. They already know who I am.</p></div>
+<div class="card"><p class="label">No, they're new</p><h3>Booked with a team member</h3><p>So we can compare the numbers for cold and warm side by side.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 15. Part four -->
+<section>
+<div class="wrap">
+<p class="eyebrow">Part four</p>
+<h2 class="big">More ads isn't better.<br><span class="gold-t">Different ads are.</span></h2>
+<p class="lead">Recent guidance from Meta: it wants to see a real variety of styles from you. Five ads that look different will beat 20 versions of the same video.</p>
+</div>
+</section>
+
+<!-- 16. Five styles -->
+<section class="alt">
+<div class="wrap">
+<p class="eyebrow">The five styles</p>
+<h2>Five ads. Five looks. Five topics.</h2>
+<p class="lead">All sitting in the same place, so Meta can find the different groups of people who respond to each one.</p>
+<div class="cards">
+<div class="card"><p class="num">01</p><h3>Raw video</h3><p>Phone in hand, no editing.</p></div>
+<div class="card"><p class="num">02</p><h3>Polished video</h3><p>Properly lit and edited.</p></div>
+<div class="card"><p class="num">03</p><h3>In the car</h3><p>Casual, straight to camera.</p></div>
+<div class="card"><p class="num">04</p><h3>At a whiteboard</h3><p>Teach something, show the working.</p></div>
+<div class="card"><p class="num">05</p><h3>Walking down the street</h3><p>Moving, natural, real.</p></div>
+</div>
+</div>
+</section>
+
+<!-- 17. Actions -->
+<section class="gold">
+<div class="wrap">
+<p class="eyebrow">Before the next call</p>
+<h2 class="big">Your actions.</h2>
+<div class="checks">
+<div class="check"><span></span>Name your bottleneck right now</div>
+<div class="check"><span></span>Write one hypothesis for your next round</div>
+<div class="check"><span></span>Film five ads in five different styles</div>
+<div class="check"><span></span>Set £100 per variation before you judge</div>
+<div class="check"><span></span>Book your review slot in the diary</div>
+</div>
+</div>
+</section>
+
+<footer><div class="wrap">Accountancy Accelerator · Ads Masterclass · 04/11/2026</div></footer>
+
+</body>
+</html>
