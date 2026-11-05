@@ -47,38 +47,56 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* One-page pie layout */
+.pie-page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 90px);padding:clamp(32px,5vw,56px) 24px}
+.pie-page h1{font-size:clamp(40px,5.6vw,76px)}
+.task{margin-top:32px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(16px,1.6vw,18px);color:var(--muted)}
+.task b{color:var(--ink)}
+.pie{width:100%;max-width:620px;margin:0 auto;display:block;overflow:visible}
+.pie .s{transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s ease;transform-box:view-box;transform-origin:300px 300px}
+.pie .lg:hover{transform:translate(6px,6px);filter:drop-shadow(0 18px 24px rgba(242,107,29,.35))}
+.pie .ee:hover{transform:translate(-6px,-6px)}
+.pie text{font-family:'Inter',Arial,sans-serif}
+@media (prefers-reduced-motion:reduce){.pie .s{transition:none}.pie .s:hover{transform:none}}
+@media (max-width:900px){.pie-page{grid-template-columns:1fr;min-height:0}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · 70% of your time needs to be lead generation</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<main class="wrap pie-page">
+<div>
 <p class="eyebrow">Level 1 - Sprint · Video 4</p>
 <h1>70% of your time is <span class="gold-t">lead generation.</span></h1>
 <p class="lead">No clients, no business. Everything else can wait.</p>
-</div></header>
-
-<main class="wrap tl">
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>The rule</h2>
-<ul><li>At least 70% of your 10 hours goes on finding clients.</li><li>That's about 7 hours a week of conversations, events, outreach and follow-ups.</li></ul><p class="stat">70%<small>of your hours on lead generation</small></p></div></div>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>What counts</h2>
-<ul><li>Talking to business owners, in person or online.</li><li>Networking events, referral partners, content that gets you conversations.</li><li>Following up the people you've already met.</li></ul></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>What doesn't count</h2>
-<ul><li>Logos, the perfect website, choosing software.</li><li>Doing technical work because it feels comfortable. Busy is not the same as productive.</li><li>Good enough beats perfect. Set things up fast and get back out.</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>What it looked like for me</h2>
-<ul><li>Saturdays: the high street. My big lead generation day.</li><li>Fridays: a networking event before work.</li><li>Lunch breaks: following up from my car.</li><li>The accounts work fitted round the edges.</li></ul></div></div>
+<p class="task"><b>Your task:</b> audit last week's business hours. If less than 70% went on lead generation, move hours across this week.</p>
+</div>
+<svg class="pie" viewBox="0 0 600 600" role="img" aria-label="Pie chart: 70% lead generation, 30% everything else">
+<g class="s ee">
+<path d="M300,300 L33.7,386.5 A280,280 0 0,1 300,20 Z" fill="#ECEBE9" stroke="#fff" stroke-width="4"/>
+<text x="172" y="150" text-anchor="middle" font-size="48" font-weight="700" fill="#3A3A3C" letter-spacing="-1.5">30%</text>
+<text x="172" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#6E6E73" letter-spacing="2">EVERYTHING ELSE</text>
+<text x="172" y="208" text-anchor="middle" font-size="15" fill="#3A3A3C">The accounts work</text>
+<text x="172" y="230" text-anchor="middle" font-size="15" fill="#3A3A3C">Set-up and software</text>
+<text x="172" y="252" text-anchor="middle" font-size="15" fill="#3A3A3C">Admin</text>
+<text x="172" y="282" text-anchor="middle" font-size="14" font-style="italic" fill="#6E6E73">Good enough beats perfect</text>
+</g>
+<g class="s lg">
+<path d="M300,300 L300,20 A280,280 0 1,1 33.7,386.5 Z" fill="#F26B1D" stroke="#fff" stroke-width="4"/>
+<text x="425" y="200" text-anchor="middle" font-size="84" font-weight="700" fill="#0A0A0A" letter-spacing="-3">70%</text>
+<text x="425" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#0A0A0A" letter-spacing="2">LEAD GENERATION</text>
+<text x="425" y="254" text-anchor="middle" font-size="15" fill="#1F1A12">About 7 of your 10 hours</text>
+<text x="325" y="372" text-anchor="middle" font-size="17" font-weight="600" fill="#0A0A0A">Talking to business owners</text>
+<text x="325" y="400" text-anchor="middle" font-size="17" font-weight="600" fill="#0A0A0A">Networking and referral partners</text>
+<text x="325" y="428" text-anchor="middle" font-size="17" font-weight="600" fill="#0A0A0A">Content that starts conversations</text>
+<text x="325" y="456" text-anchor="middle" font-size="17" font-weight="600" fill="#0A0A0A">Following up who you've met</text>
+<text x="325" y="494" text-anchor="middle" font-size="14" font-style="italic" fill="#1F1A12">Saturdays on the high street,</text>
+<text x="325" y="514" text-anchor="middle" font-size="14" font-style="italic" fill="#1F1A12">follow-ups from my car at lunch</text>
+</g>
+</svg>
 </main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Audit last week.</h2>
-<ul><li>Write down how you spent your business hours last week.</li><li>Work out what % was lead generation.</li><li>If it's under 70%, move hours across this week.</li></ul>
-</div></section>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/setting-expectations/" style="text-decoration:none">&larr; Setting expectations</a><a href="/start/creating-over-chasing/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Creating > Chasing &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · 70% of your time needs to be lead generation</div></footer>
 
