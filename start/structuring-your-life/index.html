@@ -25,117 +25,140 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
 .lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
-/* Timeline */
-.tl{position:relative;padding:8px 0 clamp(72px,10vw,120px)}
-.tl::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--line))}
-.ev{position:relative;padding-left:52px;margin-bottom:28px}
-.ev::before{content:"";position:absolute;left:3px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
-.ev.key::before{background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18)}
-.when{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;padding-top:28px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.ev.key .box{border-color:var(--gold)}
-.box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
-.box ul{margin-top:16px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:clamp(16px,1.7vw,18px)}
-.box li b{color:var(--ink)}
-.quote{margin-top:16px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(17px,1.9vw,20px);font-weight:600}
-.stat{display:inline-block;margin-top:16px;font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
-.stat small{font-size:16px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:8px}
-.phase{margin:48px 0 8px 52px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
-.end{background:var(--gold);color:#0A0A0A;padding:clamp(72px,10vw,120px) 0}
-.end h2{font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
-.end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
-@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
-
-/* One-page week calendar */
-.wk-page{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:clamp(24px,3.5vw,48px);align-items:start;padding:clamp(28px,4vw,44px) 24px 8px}
-.wk-hero{grid-column:1/-1}
-.wk-hero .eyebrow{margin-bottom:12px}
-.wk-hero h1{font-size:clamp(40px,5.4vw,68px)}
-.lbl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
-.cal{display:grid;grid-template-columns:70px repeat(6,minmax(0,1fr));grid-template-rows:auto 104px 60px 46px 60px 76px;gap:6px}
-.cal .d{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-align:center;padding-bottom:4px}
-.cal .d.sat{color:var(--gold-soft)}
-.cal .t{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:flex;align-items:center}
-.b{border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:14px;font-weight:700;line-height:1.2;letter-spacing:-.01em;border:1px solid var(--line);background:var(--card);color:var(--muted);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.b small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-top:3px}
-.b.wide{font-size:17px}.b.sm{font-size:13px}.b.biz{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.b.soft{background:#FFF1E8;border-color:#F9C9A8;color:var(--gold-soft)}
-.b.job{background:#F5F5F7;color:#8E8E93;font-weight:600}
-.b.tired{background:#ECEBE9;color:#3A3A3C}
-.b.sat{grid-row:2/7;grid-column:7;font-size:22px;box-shadow:0 0 0 5px rgba(242,107,29,.16)}
-.b.sat big{font-size:44px;line-height:1;margin-bottom:10px}
-.b:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 14px 30px -16px rgba(242,107,29,.55)}
-.b.job:hover,.b.tired:hover{background-color:#FFF8F3}
-.side{display:flex;flex-direction:column;gap:10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-size:clamp(18px,1.7vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.2;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card .n{color:var(--gold-soft)}
-.card:hover{transform:translateY(-3px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 14px 30px -16px rgba(242,107,29,.45)}
-.seasons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
-.ss{position:relative;border-radius:12px;padding:12px 8px;text-align:center;font-size:15px;font-weight:700;background:var(--card);border:1px solid var(--line);color:var(--muted);transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+/* Late nights vs fresh */
+.page{padding:clamp(20px,3vh,36px) 24px clamp(8px,1.5vh,16px)}
+.hd{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.hd .eyebrow{margin-bottom:8px}
+.hd h1{font-size:clamp(34px,4.6vw,60px)}
+.hd .q{font-size:clamp(18px,1.9vw,24px);font-weight:700;letter-spacing:-.02em;max-width:560px;text-align:right}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(14px,2.4vh,24px)}
+.cv{border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px;background:var(--card);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.cv:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.25)}
+.cv.fresh{background:#FFF8F3;border-color:var(--gold)}
+.cv.fresh:hover{box-shadow:0 18px 40px -18px rgba(242,107,29,.5)}
+.cvh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.cvh h2{font-size:clamp(19px,1.9vw,24px);font-weight:700;letter-spacing:-.02em}
+.cv.fresh .cvh h2{color:var(--gold-soft)}
+.cvh .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.cv.fresh .cvh .k{color:var(--gold-soft)}
+.cal{display:grid;grid-template-columns:68px repeat(6,minmax(0,1fr));grid-auto-rows:minmax(38px,auto);gap:4px}
+.cal .d{font-size:12px;font-weight:700;color:var(--slate);text-align:center;align-self:end;padding-bottom:2px}
+.cal .t{font-size:11px;font-weight:600;color:var(--slate);line-height:1.15;align-self:center}
+.cal .t b{display:block;color:var(--ink);font-size:12px}
+.b{border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:700;line-height:1.15;padding:4px;hyphens:auto}
+.b small{display:block;font-size:10px;font-weight:600;opacity:.8;margin-top:2px}
+.job{background:#E4E4E7;color:#6E6E73}
+.rest{background:transparent;border:1px dashed #D1D1D6;color:#8E8E93;font-weight:600}
+.late{background:#3A3A3C;color:#F2F2F7}
+.late.worse{background:#1C1C1E}
+.biz{background:var(--gold);color:#0A0A0A}
+.soft{background:#FDDCC6;color:#7A2E0B}
+.tired{background:#fff;border:1px dashed var(--gold);color:var(--gold-soft)}
+.cap{margin-top:10px;font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em}
+.cv:not(.fresh) .cap{color:#3A3A3C}
+.cv.fresh .cap{color:var(--gold-soft)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:12px;margin-top:clamp(12px,2vh,20px);align-items:stretch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-size:15px;font-weight:700;letter-spacing:-.01em;display:block;align-self:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3}
+.card .n{color:var(--gold-soft);margin-right:6px}
+.sea{display:flex;flex-direction:column;gap:6px;justify-content:center}
+.sea .l{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.ssr{display:flex;gap:6px}
+.ss{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:7px 4px;font-size:13px;font-weight:700;color:var(--slate);background:#fff}
 .ss.now{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.ss.now::after{content:"You are here";position:absolute;left:50%;top:-9px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;white-space:nowrap}
-.ss:hover{transform:translateY(-3px);border-color:var(--gold)}
-.task{margin-top:6px;border-left:3px solid var(--gold);padding-left:14px;font-size:16px;font-weight:600;color:var(--ink)}
-.task span{color:var(--gold-soft)}
-@media (prefers-reduced-motion:reduce){.b,.card,.ss{transition:none}.b:hover,.card:hover,.ss:hover{transform:none}}
-@media (max-width:900px){.wk-page{grid-template-columns:1fr;gap:22px}}
-@media (max-width:560px){
-.wk-page{padding:20px 16px 4px}
-.wk-hero h1{font-size:38px}
-.cal{grid-template-columns:44px repeat(6,minmax(0,1fr));grid-template-rows:auto 62px 38px 30px 38px 46px;gap:4px}
-.cal .d{font-size:11px;letter-spacing:.04em}
-.cal .t{font-size:9px;letter-spacing:.02em}
-.b{font-size:10px;padding:3px;border-radius:9px;hyphens:manual}
-.b small{font-size:9px;letter-spacing:.02em}
-.b.wide,.b.sm{font-size:10px}.b.sat{font-size:12px}.b.sat big{font-size:26px}
-.card{font-size:17px;padding:12px 16px}
-.ss{font-size:13px}
-}
+.task{margin-top:clamp(10px,1.6vh,16px);border-left:3px solid var(--gold);padding-left:14px;font-size:15px;color:var(--muted)}
+.task b{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.cv,.card{transition:none}.cv:hover,.card:hover{transform:none}}
+@media (max-width:980px){.cmp{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}.hd .q{text-align:left}}
+@media (max-width:520px){.cal{grid-template-columns:44px repeat(6,minmax(0,1fr));grid-auto-rows:minmax(34px,auto);gap:3px}.b{font-size:9.5px;padding:3px 2px;border-radius:6px}.b small{font-size:8.5px}.cal .t{font-size:9px}.cal .t b{font-size:10px}.cal .d{font-size:10px}.cv{padding:12px 10px}.strip{grid-template-columns:1fr}.card{font-size:14px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Structuring your life</span></div></nav>
 
-<main class="wrap wk-page">
-<div class="wk-hero">
-<p class="eyebrow">Level 1 - Sprint · Video 12</p>
-<h1>Structuring your <span class="gold-t">life.</span></h1>
+<main class="wrap page">
+<div class="hd">
+<div><p class="eyebrow">Level 1 - Sprint · Video 12</p>
+<h1>Structuring your <span class="gold-t">life.</span></h1></div>
+<p class="q">Same job. Same hours. <span class="gold-t">Different time of day.</span></p>
 </div>
 
-<section aria-label="My week while employed">
-<p class="lbl">My week, while employed</p>
+<div class="cmp">
+<section class="cv" aria-label="Late nights week">
+<div class="cvh"><h2>Late nights</h2><span class="k">The usual way</span></div>
 <div class="cal">
-<span></span><span class="d">Mon</span><span class="d">Tue</span><span class="d">Wed</span><span class="d">Thu</span><span class="d">Fri</span><span class="d sat">Sat</span>
-<span class="t">Before work</span>
-<div class="b biz wide" style="grid-column:2/5">5am - 8am on the business<small>Mon - Wed</small></div>
-<div class="b tired">Exhaust&shy;ed<small>Sleep</small></div>
-<div class="b biz sm">Network&shy;ing<small>Before work</small></div>
-<div class="b sat biz"><big>&#9733;</big>The high street<small>Big lead gen day</small></div>
-<span class="t">Day job</span>
-<div class="b job" style="grid-column:2/7">Day job</div>
-<span class="t">Lunch</span>
-<div class="b soft" style="grid-column:2/7">Follow-up calls from the car</div>
-<span class="t">Day job</span>
-<div class="b job" style="grid-column:2/7">Day job</div>
-<span class="t">Evening</span>
-<div class="b job" style="grid-column:2/7">Home, dinner, bed</div>
+<span></span>
+<span class="d">Mon</span>
+<span class="d">Tue</span>
+<span class="d">Wed</span>
+<span class="d">Thu</span>
+<span class="d">Fri</span>
+<span class="d">Sat</span>
+<span class="t" style="grid-row:2;grid-column:1"><b>Early</b>5am - 8am</span>
+<span class="t" style="grid-row:3;grid-column:1"><b>Day job</b>9 - 12</span>
+<span class="t" style="grid-row:4;grid-column:1"><b>Lunch</b></span>
+<span class="t" style="grid-row:5;grid-column:1"><b>Day job</b>1 - 5</span>
+<span class="t" style="grid-row:6;grid-column:1"><b>Evening</b>6pm - 9pm</span>
+<span class="t" style="grid-row:7;grid-column:1"><b>Late</b>9pm - 12am</span>
+<div class="b rest" style="grid-row:2/3;grid-column:2/7">Asleep</div>
+<div class="b rest" style="grid-row:2/3;grid-column:7/8">Lie-in</div>
+<div class="b job" style="grid-row:3/4;grid-column:2/7">Day job</div>
+<div class="b job" style="grid-row:4/5;grid-column:2/7">Lunch</div>
+<div class="b job" style="grid-row:5/6;grid-column:2/7">Day job</div>
+<div class="b job" style="grid-row:6/7;grid-column:2/7">Home, dinner</div>
+<div class="b late" style="grid-row:3/6;grid-column:7/8">Catching up<small>Drained</small></div>
+<div class="b rest" style="grid-row:6/8;grid-column:7/8">Out</div>
+<div class="b late" style="grid-row:7/8;grid-column:2/3">Tired</div>
+<div class="b late" style="grid-row:7/8;grid-column:3/4">Scrol&shy;ling</div>
+<div class="b late" style="grid-row:7/8;grid-column:4/5">Low energy</div>
+<div class="b late worse" style="grid-row:7/8;grid-column:5/6">Skipped</div>
+<div class="b late worse" style="grid-row:7/8;grid-column:6/7">Too drained</div>
 </div>
+<p class="cap">Running on empty.</p>
 </section>
+<section class="cv fresh" aria-label="Fresh week, my week while employed">
+<div class="cvh"><h2>Fresh</h2><span class="k">My week, while employed</span></div>
+<div class="cal">
+<span></span>
+<span class="d">Mon</span>
+<span class="d">Tue</span>
+<span class="d">Wed</span>
+<span class="d">Thu</span>
+<span class="d">Fri</span>
+<span class="d">Sat</span>
+<span class="t" style="grid-row:2;grid-column:1"><b>Early</b>5am - 8am</span>
+<span class="t" style="grid-row:3;grid-column:1"><b>Day job</b>9 - 12</span>
+<span class="t" style="grid-row:4;grid-column:1"><b>Lunch</b></span>
+<span class="t" style="grid-row:5;grid-column:1"><b>Day job</b>1 - 5</span>
+<span class="t" style="grid-row:6;grid-column:1"><b>Evening</b>6pm - 9pm</span>
+<span class="t" style="grid-row:7;grid-column:1"><b>Late</b>9pm - 12am</span>
+<div class="b biz" style="grid-row:2/3;grid-column:2/5">5am - 8am on the business<small>Mon - Wed</small></div>
+<div class="b tired" style="grid-row:2/3;grid-column:5/6">Exhaust&shy;ed<small>Sleep</small></div>
+<div class="b biz" style="grid-row:2/3;grid-column:6/7">Network&shy;ing</div>
+<div class="b biz" style="grid-row:2/6;grid-column:7/8">The high street<small>Big lead gen day</small></div>
+<div class="b job" style="grid-row:3/4;grid-column:2/7">Day job</div>
+<div class="b soft" style="grid-row:4/5;grid-column:2/7">Follow-up calls from the car</div>
+<div class="b job" style="grid-row:5/6;grid-column:2/7">Day job</div>
+<div class="b job" style="grid-row:6/7;grid-column:2/7">Home, dinner</div>
+<div class="b rest" style="grid-row:7/8;grid-column:2/7">Bed</div>
+<div class="b rest" style="grid-row:6/8;grid-column:7/8"></div>
+</div>
+<p class="cap">Your best hours go to the business.</p>
+</section>
+</div>
 
-<section class="side" aria-label="Your week">
-<p class="lbl">Your week</p>
+<div class="strip">
 <div class="card"><span class="n">10 hours</span> mapped before the week starts</div>
 <div class="card">Protect family time and non-negotiables</div>
-<div class="card">Don't copy my pace: <span class="n">6 months</span> was too far</div>
-<p class="lbl" style="margin:10px 0 6px">Business comes in seasons</p>
-<div class="seasons"><div class="ss now">Sales</div><div class="ss">Consolidate</div><div class="ss">Build</div></div>
-<p class="task"><span>Your task:</span> block your 10 hours for the next 4 weeks. Aim for 70% lead generation.</p>
-</section>
+<div class="card">Don't copy my pace: <span class="n" style="margin:0">6 months</span> was too far</div>
+<div class="sea"><span class="l">Business comes in seasons</span><div class="ssr"><div class="ss now">Sales</div><div class="ss">Consolidate</div><div class="ss">Build</div></div></div>
+</div>
+<p class="task"><b>Your task:</b> block your 10 hours for the next 4 weeks, while you're fresh. Aim for 70% lead generation.</p>
 </main>
-<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px;font-size:15px;font-weight:600"><a href="/start/fix-the-bottleneck/" style="text-decoration:none">&larr; Fix the bottleneck</a><a href="/start/outsourcing-your-life/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Outsourcing your life &rarr;</a></div>
+<div class="wrap pnav"><a href="/start/fix-the-bottleneck/" style="text-decoration:none">&larr; Fix the bottleneck</a><a href="/start/outsourcing-your-life/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Outsourcing your life &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Structuring your life</div></footer>
 
 </body>
