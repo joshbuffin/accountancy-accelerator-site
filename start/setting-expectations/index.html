@@ -47,6 +47,28 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* Journey diagram */
+.journey{padding:0 0 clamp(40px,6vw,72px)}
+.jbox{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,3vw,40px) clamp(12px,3vw,40px) clamp(20px,3vw,32px)}
+.jbox svg{display:block;width:100%;height:auto;overflow:visible}
+.jcurve{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s cubic-bezier(.6,.1,.3,1) .3s forwards}
+.jdot{fill:var(--gold);stroke:#fff;stroke-width:4;opacity:0;animation:pop .4s ease forwards}
+.jdot.d1{animation-delay:.4s}.jdot.d2{animation-delay:1s}.jdot.d3{animation-delay:1.5s}.jdot.d4{animation-delay:2.1s}.jdot.d5{animation-delay:2.6s}
+.jnote{font-family:'Inter',Arial,sans-serif;font-size:17px;font-weight:600;fill:var(--slate)}
+.jnote.here{fill:var(--gold-soft)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+.jlabels{position:relative;height:56px;margin-top:8px}
+.jlabels h3{position:absolute;top:0;transform:translateX(-50%);width:18%;text-align:center;font-size:clamp(13px,1.5vw,18px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.jlabels h3.v{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.jcurve{animation:none;stroke-dashoffset:0}.jdot{animation:none;opacity:1}}
+@media (max-width:640px){
+  .jnote{font-size:26px}
+  .jlabels{height:auto;display:flex;flex-direction:column;gap:8px;margin-top:16px;counter-reset:st}
+  .jlabels h3{position:static;transform:none;width:auto;text-align:left;font-size:16px;display:flex;gap:10px;align-items:center}
+  .jlabels h3::before{counter-increment:st;content:counter(st);flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -58,6 +80,35 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <h1>Setting <span class="gold-t">expectations.</span></h1>
 <p class="lead">You are in control of your outcome, and of what you'll give up to get it.</p>
 </div></header>
+
+<section class="wrap journey" aria-label="The entrepreneur's journey">
+<div class="jbox">
+<svg viewBox="0 0 1000 420" role="img" aria-label="A curve that starts high at uninformed optimism, falls through informed pessimism into the valley of despair, then climbs through informed optimism to success.">
+<line x1="40" y1="395" x2="960" y2="395" stroke="#E2E2E2" stroke-width="2"/>
+<path class="jcurve" pathLength="1" d="M80,80 C180,80 220,170 300,230 C380,290 410,350 480,350 C560,350 620,260 700,200 C780,140 840,70 920,60"/>
+<circle class="jdot d1" cx="80" cy="80" r="11"/>
+<circle class="jdot d2" cx="300" cy="230" r="11"/>
+<circle class="jdot d3" cx="480" cy="350" r="13"/>
+<circle class="jdot d4" cx="700" cy="200" r="11"/>
+<circle class="jdot d5" cx="920" cy="60" r="11"/>
+<text class="jnote here" x="104" y="60">You start here</text>
+<text class="jnote" x="480" y="315" text-anchor="middle">Most people quit here</text>
+<line x1="80" y1="92" x2="80" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="300" y1="242" x2="300" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="480" y1="364" x2="480" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="700" y1="212" x2="700" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="920" y1="72" x2="920" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+</svg>
+<div class="jlabels">
+<h3 style="left:8%">Uninformed optimism</h3>
+<h3 style="left:30%">Informed pessimism</h3>
+<h3 class="v" style="left:48%">Valley of despair</h3>
+<h3 style="left:70%">Informed optimism</h3>
+<h3 style="left:92%">Success</h3>
+</div>
+</div>
+</section>
+
 
 <main class="wrap tl">
 <div class="ev key"><p class="when">01</p><div class="box">
