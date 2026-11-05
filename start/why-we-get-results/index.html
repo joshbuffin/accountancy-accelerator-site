@@ -25,59 +25,53 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
 .lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
-/* One-screen cut diagram */
-.hero{padding:clamp(24px,3.6vh,40px) 0 clamp(14px,2vh,22px)}
-.eyebrow{margin-bottom:12px}
-h1{font-size:clamp(38px,5.2vw,68px)}
-.cut{display:grid;grid-template-columns:1fr 92px 1.35fr;align-items:stretch;gap:0;margin-top:4px}
-.col-h{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
-.col-h.go{color:var(--gold-soft)}
-.bs{display:flex;flex-direction:column;gap:8px}
-.chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 18px;font-size:clamp(16px,1.5vw,19px);font-weight:600;color:#8A8A8E;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:3px;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,background-color .3s}
-.chip:hover{transform:translateX(-4px);border-color:#F5B892}
-.blade{position:relative;display:flex;justify-content:center;align-items:center}
-.blade::before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:3px dashed var(--gold)}
-.blade svg{position:relative;width:44px;height:44px;background:var(--paper);padding:6px;border-radius:50%;box-shadow:0 0 0 2px var(--gold)}
-.flow{display:flex;flex-direction:column;justify-content:center}
-.steps{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center}
-.step{background:#FFF8F3;border:1px solid var(--gold);border-radius:18px;padding:18px 16px;min-height:132px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),background-color .3s}
-.step.last{background:var(--gold);border-color:var(--gold)}
-.step .n{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft)}
-.step.last .n{color:#0A0A0A}
-.step h2{font-size:clamp(18px,1.75vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-top:10px}
-.step:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.55)}
-.arr{color:var(--gold);font-size:22px;text-align:center;font-weight:700}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(16px,2.6vh,24px)}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.box .n{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft)}
-.box h2{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:6px 0 12px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:13.5px;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
-.tag.add{border:1px dashed var(--gold);color:var(--gold-soft);background:#FFF8F3}
-.tag b{color:var(--gold-soft)}
-.rule{margin-top:clamp(14px,2.4vh,24px);display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.01em}
-.rule span.k{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--gold-soft);border-radius:999px;padding:6px 12px}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
-footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-size:13px}
+/* One-screen energy vs revenue */
+.hero{padding:clamp(22px,3.4vh,38px) 0 clamp(10px,1.6vh,18px)}
+.eyebrow{margin-bottom:10px}
+h1{font-size:clamp(36px,5vw,64px)}
+.legend{display:flex;gap:22px;align-items:center;font-size:13px;font-weight:600;color:var(--slate);margin-bottom:10px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:8px;cursor:default}
+.legend i{display:inline-block;width:26px;border-radius:3px;background:var(--slate)}
+.legend .e i{height:3px}
+.legend .r i{height:7px}
+.legend .t i{height:0;border-top:2px dashed #B8B8BC;background:none}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.panel.go{background:#FFF8F3;border-color:var(--gold)}
+.panel:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.ph{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ph h2{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.02em}
+.panel.go .ph h2{color:var(--gold-soft)}
+.ph .k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.panel.go .ph .k{color:var(--gold-soft)}
+.chart{width:100%;height:auto;display:block;margin-top:6px;overflow:visible}
+.chart text{font-family:'Inter',Arial,sans-serif}
+.ln{fill:none;stroke-linecap:round;stroke-linejoin:round;transition:opacity .3s ease,stroke-width .3s ease}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s cubic-bezier(.4,0,.2,1) forwards}
+.draw.d2{animation-delay:.5s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .6s ease forwards;animation-delay:2.2s}
+@keyframes fade{to{opacity:1}}
+.chart:hover .ln{opacity:.3}
+.chart .ln:hover{opacity:1}
+.chart .ln.e:hover{stroke-width:5}
+.chart .ln.r:hover{stroke-width:9}
+.big{margin-top:clamp(14px,2.6vh,26px);font-size:clamp(30px,4.2vw,56px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.big .gold-t{color:var(--gold)}
+.adds{display:flex;gap:8px;flex-wrap:wrap;margin-top:clamp(10px,1.8vh,16px)}
+.tag{font-size:13.5px;font-weight:600;border:1px dashed var(--gold);color:var(--gold-soft);background:#FFF8F3;border-radius:999px;padding:5px 12px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
 @media (max-width:860px){
- .cut{grid-template-columns:1fr}
- .bs{flex-direction:row;flex-wrap:wrap;gap:8px}
- .chip{padding:8px 12px;font-size:15px}
- .hero{padding:20px 0 14px}
- .blade{height:40px;margin:10px 0}
- .blade::before{top:50%;bottom:auto;left:0;right:0;border-left:0;border-top:3px dashed var(--gold)}
- .blade svg{margin-top:0;width:40px;height:40px;transform:rotate(90deg)}
- .steps{grid-template-columns:1fr;gap:6px}
- .step{min-height:0;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start;padding:12px 16px}
- .step h2{margin-top:0;font-size:18px}
- .arr{transform:rotate(90deg);font-size:16px;line-height:1}
- .why{grid-template-columns:1fr;gap:10px}
- .box{padding:14px 16px}
- .box h2{font-size:19px;margin:4px 0 8px}
- .tag{font-size:12.5px}
+ .panels{grid-template-columns:1fr;gap:12px}
+ .panel{padding:14px 14px 8px}
+ .hero{padding:18px 0 10px}
 }
-@media (prefers-reduced-motion:reduce){.box,.step,.chip{transition:none}.box:hover,.step:hover,.chip:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){
+ .draw{animation:none;stroke-dashoffset:0}
+ .fade{animation:none;opacity:1}
+ .panel,.ln{transition:none}.panel:hover{transform:none}
+}
 </style>
 </head>
 <body>
@@ -90,36 +84,52 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-s
 </div></header>
 
 <main class="wrap">
-<div class="cut" role="img" aria-label="Diagram: cut the distractions, then sell. Set up fast, talk to business owners, clients pay for everything else.">
- <div>
-  <p class="col-h">The bulls**t</p>
-  <div class="bs">
-   <div class="chip">Months on logos</div>
-   <div class="chip">The perfect website</div>
-   <div class="chip">The perfect niche</div>
-   <div class="chip">Spreading yourself thin</div>
-  </div>
- </div>
- <div class="blade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
- <div class="flow">
-  <p class="col-h go">We sell first</p>
-  <div class="steps">
-   <div class="step"><span class="n">01</span><h2>Get set up fast</h2></div>
-   <div class="arr">&rarr;</div>
-   <div class="step"><span class="n">02</span><h2>Talk to business owners</h2></div>
-   <div class="arr">&rarr;</div>
-   <div class="step last"><span class="n">03</span><h2>Clients pay for everything else</h2></div>
-  </div>
- </div>
-</div>
+<div class="legend"><span class="e"><i></i>Energy</span><span class="r"><i></i>Revenue</span><span class="t"><i></i>Burnout and quit number</span></div>
+<div class="panels">
+<div class="panel go"><div class="ph"><h2>Sell first</h2><span class="k">Our way</span></div>
+<svg class="chart" viewBox="0 0 500 250" role="img" aria-label="Sell first: revenue rises early and keeps your energy above burnout until you escape">
+<line x1="40" y1="220" x2="480" y2="220" stroke="#D0D0D3" stroke-width="2"/>
+<line x1="40" y1="20" x2="40" y2="220" stroke="#D0D0D3" stroke-width="2"/>
+<text x="480" y="242" text-anchor="end" font-size="13" font-weight="600" fill="#8A8A8E">Time</text>
 
-<div class="why">
- <div class="box"><span class="n">PROOF</span><h2>It works</h2><div class="tags"><span class="tag">Month 1 beat 3 businesses</span><span class="tag">Beat my salary in 6 months</span><span class="tag add"><b>Add yours:</b> 2-3 member wins</span></div></div>
- <div class="box"><span class="n">FOCUS</span><h2>One thing at a time</h2><div class="tags"><span class="tag">Fix what's stopping clients</span><span class="tag">Then the next thing</span></div></div>
- <div class="box"><span class="n">SUPPORT</span><h2>You're not alone</h2><div class="tags"><span class="tag">Group calls</span><span class="tag">The community</span><span class="tag">People months ahead</span><span class="tag add"><b>Add yours:</b> help between calls</span></div></div>
+<line x1="40" y1="60" x2="480" y2="60" stroke="#B8B8BC" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="210" y="54" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1.5" fill="#8A8A8E">QUIT NUMBER</text>
+<line x1="40" y1="190" x2="480" y2="190" stroke="#E7A07A" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="476" y="184" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#E07B45">BURNOUT</text>
+<path class="fade" d="M40,220 C85,217 115,196 160,172 C220,140 290,100 350,74 C395,56 440,48 480,44 L480,220 Z" fill="rgba(242,107,29,.14)"/>
+<path class="ln r draw" pathLength="1" d="M40,220 C85,217 115,196 160,172 C220,140 290,100 350,74 C395,56 440,48 480,44" stroke="#F26B1D" stroke-width="7"/>
+<path class="ln e draw d2" pathLength="1" d="M40,40 C110,62 160,92 205,100 C245,106 262,86 300,86 C340,86 390,78 480,72" stroke="#C2410C" stroke-width="3"/>
+<circle class="fade" cx="384" cy="60" r="8" fill="#F26B1D" stroke="#fff" stroke-width="3"/>
+<text class="fade" x="384" y="40" text-anchor="middle" font-size="16" font-weight="800" fill="#C2410C">Escape</text>
+<text class="fade" x="128" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#C2410C">Revenue keeps you going</text>
+<text class="fade" x="150" y="206" font-size="13" font-weight="600" fill="#C2410C">First sales</text>
+</svg>
 </div>
-
-<p class="rule"><span class="k">The rule</span>If it doesn't get you closer to a client, it can wait. Ask for help early.</p>
+<div class="panel"><div class="ph"><h2>Bulls**t first</h2><span class="k">The usual way</span></div>
+<svg class="chart" viewBox="0 0 500 250" role="img" aria-label="Bulls**t first: energy drains while revenue stays at zero, and you burn out before you escape">
+<line x1="40" y1="220" x2="480" y2="220" stroke="#D0D0D3" stroke-width="2"/>
+<line x1="40" y1="20" x2="40" y2="220" stroke="#D0D0D3" stroke-width="2"/>
+<text x="480" y="242" text-anchor="end" font-size="13" font-weight="600" fill="#8A8A8E">Time</text>
+<rect x="40" y="196" width="262" height="24" rx="6" fill="rgba(110,110,115,.12)"/>
+<text x="48" y="182" font-size="12" font-weight="700" letter-spacing="2" fill="#6E6E73">THE BULLS**T</text>
+<text x="88" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Logo</text>
+<text x="171" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Website</text>
+<text x="256" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Niche</text>
+<line x1="40" y1="60" x2="480" y2="60" stroke="#B8B8BC" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="476" y="54" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#8A8A8E">QUIT NUMBER</text>
+<line x1="40" y1="190" x2="480" y2="190" stroke="#E7A07A" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="476" y="184" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#E07B45">BURNOUT</text>
+<path class="fade" d="M40,220 L330,220 C370,219 400,214 440,206 L440,220 Z" fill="rgba(58,58,60,.08)"/>
+<path class="ln r draw" pathLength="1" d="M40,220 L330,220 C370,219 400,214 440,206" stroke="#3A3A3C" stroke-width="7"/>
+<path class="ln e draw d2" pathLength="1" d="M40,40 C120,62 210,120 300,190 C320,200 340,205 360,208" stroke="#6E6E73" stroke-width="3"/>
+<g class="fade"><circle cx="300" cy="190" r="9" fill="#fff" stroke="#C2410C" stroke-width="3"/><path d="M295,185 L305,195 M305,185 L295,195" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/></g>
+<text class="fade" x="318" y="146" font-size="15" font-weight="800" fill="#C2410C">Burnt out</text>
+<text class="fade" x="318" y="164" font-size="15" font-weight="800" fill="#C2410C">before you escape</text>
+</svg>
+</div>
+</div>
+<p class="big">I have all the answers. I can't <span class="gold-t">sell</span> for you.</p>
+<div class="adds"><span class="tag"><b>Add yours:</b> 2-3 member wins</span><span class="tag"><b>Add yours:</b> help between calls</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/creating-over-chasing/" style="text-decoration:none">&larr; Creating > Chasing</a><a href="/start/how-to-work-through-the-resources/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to work through the resources &rarr;</a></div>
