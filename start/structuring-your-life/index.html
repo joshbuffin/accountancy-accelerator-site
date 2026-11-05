@@ -47,50 +47,95 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* One-page week calendar */
+.wk-page{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:clamp(24px,3.5vw,48px);align-items:start;padding:clamp(28px,4vw,44px) 24px 8px}
+.wk-hero{grid-column:1/-1}
+.wk-hero .eyebrow{margin-bottom:12px}
+.wk-hero h1{font-size:clamp(40px,5.4vw,68px)}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+.cal{display:grid;grid-template-columns:70px repeat(6,minmax(0,1fr));grid-template-rows:auto 104px 60px 46px 60px 76px;gap:6px}
+.cal .d{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-align:center;padding-bottom:4px}
+.cal .d.sat{color:var(--gold-soft)}
+.cal .t{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:flex;align-items:center}
+.b{border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px;font-size:14px;font-weight:700;line-height:1.2;letter-spacing:-.01em;border:1px solid var(--line);background:var(--card);color:var(--muted);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.b small{display:block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.75;margin-top:3px}
+.b.wide{font-size:17px}.b.sm{font-size:13px}.b.biz{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.b.soft{background:#FFF1E8;border-color:#F9C9A8;color:var(--gold-soft)}
+.b.job{background:#F5F5F7;color:#8E8E93;font-weight:600}
+.b.tired{background:#ECEBE9;color:#3A3A3C}
+.b.sat{grid-row:2/7;grid-column:7;font-size:22px;box-shadow:0 0 0 5px rgba(242,107,29,.16)}
+.b.sat big{font-size:44px;line-height:1;margin-bottom:10px}
+.b:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 14px 30px -16px rgba(242,107,29,.55)}
+.b.job:hover,.b.tired:hover{background-color:#FFF8F3}
+.side{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-size:clamp(18px,1.7vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.2;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card .n{color:var(--gold-soft)}
+.card:hover{transform:translateY(-3px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 14px 30px -16px rgba(242,107,29,.45)}
+.seasons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px}
+.ss{position:relative;border-radius:12px;padding:12px 8px;text-align:center;font-size:15px;font-weight:700;background:var(--card);border:1px solid var(--line);color:var(--muted);transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.ss.now{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.ss.now::after{content:"You are here";position:absolute;left:50%;top:-9px;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.ss:hover{transform:translateY(-3px);border-color:var(--gold)}
+.task{margin-top:6px;border-left:3px solid var(--gold);padding-left:14px;font-size:16px;font-weight:600;color:var(--ink)}
+.task span{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.b,.card,.ss{transition:none}.b:hover,.card:hover,.ss:hover{transform:none}}
+@media (max-width:900px){.wk-page{grid-template-columns:1fr;gap:22px}}
+@media (max-width:560px){
+.wk-page{padding:20px 16px 4px}
+.wk-hero h1{font-size:38px}
+.cal{grid-template-columns:44px repeat(6,minmax(0,1fr));grid-template-rows:auto 62px 38px 30px 38px 46px;gap:4px}
+.cal .d{font-size:11px;letter-spacing:.04em}
+.cal .t{font-size:9px;letter-spacing:.02em}
+.b{font-size:10px;padding:3px;border-radius:9px;hyphens:manual}
+.b small{font-size:9px;letter-spacing:.02em}
+.b.wide,.b.sm{font-size:10px}.b.sat{font-size:12px}.b.sat big{font-size:26px}
+.card{font-size:17px;padding:12px 16px}
+.ss{font-size:13px}
+}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Structuring your life</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<main class="wrap wk-page">
+<div class="wk-hero">
 <p class="eyebrow">Level 1 - Sprint · Video 12</p>
 <h1>Structuring your <span class="gold-t">life.</span></h1>
-<p class="lead">Map your 10 hours before the week starts.</p>
-</div></header>
+</div>
 
-<main class="wrap tl">
-<p class="phase">My week, while employed</p>
-<div class="ev"><p class="when">Mon - Wed</p><div class="box">
-<h2>Early starts</h2>
-<ul><li>Up early. 5am to 8am on the business, then off to work.</li></ul></div></div>
-<div class="ev"><p class="when">Evenings</p><div class="box">
-<h2>Home, dinner, bed</h2>
-<ul><li>By Thursday I was exhausted. I needed sleep.</li></ul></div></div>
-<div class="ev"><p class="when">Friday</p><div class="box">
-<h2>Networking</h2>
-<ul><li>A networking event before work.</li></ul></div></div>
-<div class="ev key"><p class="when">Saturday</p><div class="box">
-<h2>The high street</h2>
-<ul><li>My big lead generation day.</li></ul></div></div>
-<div class="ev"><p class="when">Lunch breaks</p><div class="box">
-<h2>Follow-ups</h2>
-<ul><li>Calling the people I'd met at the weekend, from my car.</li></ul></div></div>
-<p class="phase">Your week</p>
-<div class="ev"><p class="when">Plan it</p><div class="box">
-<h2>Your sprint plan</h2>
-<ul><li>Map your 10 hours: when, and which hat.</li><li>Protect family time and your non-negotiables.</li><li>Don't copy my pace. I did it for 6 months and pushed it too far.</li></ul></div></div>
-<div class="ev"><p class="when">Seasons</p><div class="box">
-<h2>Business comes in seasons</h2>
-<ul><li>A season of sales, a season to consolidate, a season to build.</li><li>Right now you're in a sales season.</li></ul></div></div>
+<section aria-label="My week while employed">
+<p class="lbl">My week, while employed</p>
+<div class="cal">
+<span></span><span class="d">Mon</span><span class="d">Tue</span><span class="d">Wed</span><span class="d">Thu</span><span class="d">Fri</span><span class="d sat">Sat</span>
+<span class="t">Before work</span>
+<div class="b biz wide" style="grid-column:2/5">5am - 8am on the business<small>Mon - Wed</small></div>
+<div class="b tired">Exhaust&shy;ed<small>Sleep</small></div>
+<div class="b biz sm">Network&shy;ing<small>Before work</small></div>
+<div class="b sat biz"><big>&#9733;</big>The high street<small>Big lead gen day</small></div>
+<span class="t">Day job</span>
+<div class="b job" style="grid-column:2/7">Day job</div>
+<span class="t">Lunch</span>
+<div class="b soft" style="grid-column:2/7">Follow-up calls from the car</div>
+<span class="t">Day job</span>
+<div class="b job" style="grid-column:2/7">Day job</div>
+<span class="t">Evening</span>
+<div class="b job" style="grid-column:2/7">Home, dinner, bed</div>
+</div>
+</section>
+
+<section class="side" aria-label="Your week">
+<p class="lbl">Your week</p>
+<div class="card"><span class="n">10 hours</span> mapped before the week starts</div>
+<div class="card">Protect family time and non-negotiables</div>
+<div class="card">Don't copy my pace: <span class="n">6 months</span> was too far</div>
+<p class="lbl" style="margin:10px 0 6px">Business comes in seasons</p>
+<div class="seasons"><div class="ss now">Sales</div><div class="ss">Consolidate</div><div class="ss">Build</div></div>
+<p class="task"><span>Your task:</span> block your 10 hours for the next 4 weeks. Aim for 70% lead generation.</p>
+</section>
 </main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Map your week.</h2>
-<ul><li>Block your 10 hours in your calendar for the next 4 weeks.</li><li>Mark which are lead generation. Aim for 70%.</li></ul>
-</div></section>
-<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/fix-the-bottleneck/" style="text-decoration:none">&larr; Fix the bottleneck</a><a href="/start/outsourcing-your-life/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Outsourcing your life &rarr;</a></div>
+<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:20px 24px;font-size:15px;font-weight:600"><a href="/start/fix-the-bottleneck/" style="text-decoration:none">&larr; Fix the bottleneck</a><a href="/start/outsourcing-your-life/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Outsourcing your life &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Structuring your life</div></footer>
 
 </body>
