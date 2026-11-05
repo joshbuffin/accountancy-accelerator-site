@@ -54,7 +54,10 @@ h1{font-size:clamp(36px,5vw,64px)}
 @keyframes fade{to{opacity:1}}
 .chart:hover .ln{opacity:.3}
 .chart .ln:hover{opacity:1}
-.chart .ln.e:hover{stroke-width:5}
+.chart .ln.e:hover{stroke-width:7}
+.ln.e{filter:drop-shadow(0 0 5px rgba(22,163,74,.45))}
+.legend .e i{background:#16A34A;height:5px!important}
+.legend .e{color:#16A34A}
 .chart .ln.r:hover{stroke-width:9}
 .big{margin-top:clamp(14px,2.6vh,26px);font-size:clamp(30px,4.2vw,56px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .big .gold-t{color:var(--gold)}
@@ -91,6 +94,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <line x1="40" y1="220" x2="480" y2="220" stroke="#D0D0D3" stroke-width="2"/>
 <line x1="40" y1="20" x2="40" y2="220" stroke="#D0D0D3" stroke-width="2"/>
 <text x="480" y="242" text-anchor="end" font-size="13" font-weight="600" fill="#8A8A8E">Time</text>
+<text x="24" y="120" transform="rotate(-90 24 120)" text-anchor="middle" font-size="13" font-weight="700" fill="#16A34A">Energy</text>
 
 <line x1="40" y1="60" x2="480" y2="60" stroke="#B8B8BC" stroke-width="2" stroke-dasharray="6 6"/>
 <text x="210" y="54" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="1.5" fill="#8A8A8E">QUIT NUMBER</text>
@@ -98,7 +102,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <text x="476" y="184" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#E07B45">BURNOUT</text>
 <path class="fade" d="M40,220 C85,217 115,196 160,172 C220,140 290,100 350,74 C395,56 440,48 480,44 L480,220 Z" fill="rgba(242,107,29,.14)"/>
 <path class="ln r draw" pathLength="1" d="M40,220 C85,217 115,196 160,172 C220,140 290,100 350,74 C395,56 440,48 480,44" stroke="#F26B1D" stroke-width="7"/>
-<path class="ln e draw d2" pathLength="1" d="M40,40 C110,62 160,92 205,100 C245,106 262,86 300,86 C340,86 390,78 480,72" stroke="#C2410C" stroke-width="3"/>
+<path class="ln e draw d2" pathLength="1" d="M40,40 C110,62 160,92 205,100 C245,106 262,86 300,86 C340,86 390,78 480,72" stroke="#16A34A" stroke-width="5"/>
 <circle class="fade" cx="384" cy="60" r="8" fill="#F26B1D" stroke="#fff" stroke-width="3"/>
 <text class="fade" x="384" y="40" text-anchor="middle" font-size="16" font-weight="800" fill="#C2410C">Escape</text>
 <text class="fade" x="128" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#C2410C">Revenue keeps you going</text>
@@ -110,18 +114,19 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <line x1="40" y1="220" x2="480" y2="220" stroke="#D0D0D3" stroke-width="2"/>
 <line x1="40" y1="20" x2="40" y2="220" stroke="#D0D0D3" stroke-width="2"/>
 <text x="480" y="242" text-anchor="end" font-size="13" font-weight="600" fill="#8A8A8E">Time</text>
+<text x="24" y="120" transform="rotate(-90 24 120)" text-anchor="middle" font-size="13" font-weight="700" fill="#16A34A">Energy</text>
 <rect x="40" y="196" width="262" height="24" rx="6" fill="rgba(110,110,115,.12)"/>
 <text x="48" y="182" font-size="12" font-weight="700" letter-spacing="2" fill="#6E6E73">THE BULLS**T</text>
 <text x="88" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Logo</text>
 <text x="171" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Website</text>
-<text x="256" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">Niche</text>
+<text x="256" y="213" text-anchor="middle" font-size="13" font-weight="600" fill="#8A8A8E" text-decoration="line-through">How to's</text>
 <line x1="40" y1="60" x2="480" y2="60" stroke="#B8B8BC" stroke-width="2" stroke-dasharray="6 6"/>
 <text x="476" y="54" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#8A8A8E">QUIT NUMBER</text>
 <line x1="40" y1="190" x2="480" y2="190" stroke="#E7A07A" stroke-width="2" stroke-dasharray="6 6"/>
 <text x="476" y="184" text-anchor="end" font-size="12" font-weight="700" letter-spacing="1.5" fill="#E07B45">BURNOUT</text>
 <path class="fade" d="M40,220 L330,220 C370,219 400,214 440,206 L440,220 Z" fill="rgba(58,58,60,.08)"/>
 <path class="ln r draw" pathLength="1" d="M40,220 L330,220 C370,219 400,214 440,206" stroke="#3A3A3C" stroke-width="7"/>
-<path class="ln e draw d2" pathLength="1" d="M40,40 C120,62 210,120 300,190 C320,200 340,205 360,208" stroke="#6E6E73" stroke-width="3"/>
+<path class="ln e draw d2" pathLength="1" d="M40,40 C120,62 210,120 300,190 C320,200 340,205 360,208" stroke="#16A34A" stroke-width="5"/>
 <g class="fade"><circle cx="300" cy="190" r="9" fill="#fff" stroke="#C2410C" stroke-width="3"/><path d="M295,185 L305,195 M305,185 L295,195" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/></g>
 <text class="fade" x="318" y="146" font-size="15" font-weight="800" fill="#C2410C">Burnt out</text>
 <text class="fade" x="318" y="164" font-size="15" font-weight="800" fill="#C2410C">before you escape</text>
@@ -129,7 +134,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 </div>
 </div>
 <p class="big">I have all the answers. I can't <span class="gold-t">sell</span> for you.</p>
-<div class="adds"><span class="tag"><b>Add yours:</b> 2-3 member wins</span><span class="tag"><b>Add yours:</b> help between calls</span></div>
+<div class="adds"><span class="tag"><b>1-2-1 calls:</b> build your lead gen strategy</span><span class="tag"><b>Stuck?</b> Ask in Slack</span><span class="tag"><b>Bi-weekly calls:</b> see the bigger picture</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/creating-over-chasing/" style="text-decoration:none">&larr; Creating > Chasing</a><a href="/start/how-to-work-through-the-resources/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to work through the resources &rarr;</a></div>
