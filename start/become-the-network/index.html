@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Become the network - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: become the network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Hub layout */
+.hb{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center;padding-top:clamp(24px,3.5vw,36px);padding-bottom:8px}
+.steps{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+.step{display:flex;align-items:center;gap:14px;font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.015em;color:#A1A1A6;transition:color .3s ease}
+.step b{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;border:2px solid #D0D0D3;color:#A1A1A6;transition:all .3s ease}
+.step.on{color:var(--ink)}
+.step.on b{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.cards{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,box-shadow .45s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3;box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.card .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}
+.card h2{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.card.add{background:#fff;border-style:dashed}
+.vis{display:flex;flex-direction:column;align-items:center;gap:14px}
+.hub{width:100%;max-width:540px;display:block;overflow:visible}
+.hub text{font-family:'Inter',Arial,sans-serif}
+.hub .orbit{fill:none;stroke:#EDEDEF;stroke-width:2;stroke-dasharray:4 7}
+.hub .sp{stroke:#E4E4E6;stroke-width:3;transition:stroke .5s ease,stroke-width .5s ease}
+.hub .sp.on{stroke:#F26B1D;stroke-width:4}
+.hub .nd circle{fill:#F5F5F7;stroke:#D0D0D3;stroke-width:2;transition:fill .4s ease,stroke .4s ease}
+.hub .nd text{font-size:13px;font-weight:700;fill:#8A8A8E;transition:fill .4s ease}
+.hub .nd.on circle{fill:#FFF1E8;stroke:#F26B1D}
+.hub .nd.on text{fill:#0A0A0A}
+.hub .nd.now circle{fill:#F26B1D;stroke:#F26B1D}
+.hub .nd.now text{fill:#0A0A0A}
+.hub .arc{fill:none;stroke:#F7B48C;stroke-width:2.5;stroke-linecap:round}
+.hub .arc.now{stroke:#C2410C;stroke-width:3.5}
+.hub .core{fill:#F26B1D;transform-box:fill-box;transform-origin:center;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.hub .glow{fill:#F26B1D;opacity:.12;transform-box:fill-box;transform-origin:center;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s ease}
+.ctl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.status{font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-.015em}
+.btn{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:12px 22px;background:var(--gold);color:#0A0A0A;cursor:pointer;transition:transform .2s ease,box-shadow .3s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(242,107,29,.7)}
+.btn:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.card,.btn,.step,.step b,.hub .sp,.hub .core,.hub .glow,.hub .nd circle{transition:none}.card:hover,.btn:hover{transform:none}}
+@media (max-width:900px){.hb{grid-template-columns:1fr}.steps{margin-top:22px}}
+@media (max-width:520px){.navtag{font-size:11px}.cards{gap:10px}.card{padding:14px}.card h2{font-size:15px}.hub{max-width:100%}.hub .nd text{font-size:16.5px}.pnav{font-size:14px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Become the network</span></div></nav>
+
+<main class="wrap hb">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Video 9</p>
+<h1>The universe revolves around <span class="gold-t">you.</span></h1>
+<div class="steps" id="steps">
+<div class="step on" data-s="1"><b>1</b>Meet everyone</div>
+<div class="step" data-s="2"><b>2</b>Connect them</div>
+<div class="step" data-s="3"><b>3</b>Be the first call</div>
+</div>
+<div class="cards">
+<div class="card"><p class="k">Max · from the gym</p><h2>I sent him clients. He hit £10k a month.</h2></div>
+<div class="card add"><p class="k">Add yours</p><h2>Who can you introduce this week?</h2></div>
+</div>
+</div>
+<div class="vis">
+<svg class="hub" id="hub" viewBox="0 0 600 600" role="img" aria-label="Hub and spoke diagram: you in the centre, connected to the gym, run club, dinner club, Creator Club, beach club, founders, friends and partners. Each introduction you make runs through you.">
+<circle class="orbit" cx="300" cy="300" r="205"/>
+<line class="sp" id="sp0" x1="300" y1="300" x2="300.0" y2="95.0"/>
+<line class="sp" id="sp1" x1="300" y1="300" x2="445.0" y2="155.0"/>
+<line class="sp" id="sp2" x1="300" y1="300" x2="505.0" y2="300.0"/>
+<line class="sp" id="sp3" x1="300" y1="300" x2="445.0" y2="445.0"/>
+<line class="sp" id="sp4" x1="300" y1="300" x2="300.0" y2="505.0"/>
+<line class="sp" id="sp5" x1="300" y1="300" x2="155.0" y2="445.0"/>
+<line class="sp" id="sp6" x1="300" y1="300" x2="95.0" y2="300.0"/>
+<line class="sp" id="sp7" x1="300" y1="300" x2="155.0" y2="155.0"/>
+<g id="arcs"></g>
+<g class="nd" id="nd0" data-x="300.0" data-y="95.0"><circle cx="300.0" cy="95.0" r="44"/><text x="300.0" y="99.5" text-anchor="middle">Gym</text></g>
+<g class="nd" id="nd1" data-x="445.0" data-y="155.0"><circle cx="445.0" cy="155.0" r="44"/><text x="445.0" y="159.5" text-anchor="middle">Run club</text></g>
+<g class="nd" id="nd2" data-x="505.0" data-y="300.0"><circle cx="505.0" cy="300.0" r="44"/><text x="505.0" y="297.0" text-anchor="middle">Dinner</text><text x="505.0" y="313.0" text-anchor="middle">club</text></g>
+<g class="nd" id="nd3" data-x="445.0" data-y="445.0"><circle cx="445.0" cy="445.0" r="44"/><text x="445.0" y="442.0" text-anchor="middle">Creator</text><text x="445.0" y="458.0" text-anchor="middle">Club</text></g>
+<g class="nd" id="nd4" data-x="300.0" data-y="505.0"><circle cx="300.0" cy="505.0" r="44"/><text x="300.0" y="502.0" text-anchor="middle">Beach</text><text x="300.0" y="518.0" text-anchor="middle">club</text></g>
+<g class="nd" id="nd5" data-x="155.0" data-y="445.0"><circle cx="155.0" cy="445.0" r="44"/><text x="155.0" y="449.5" text-anchor="middle">Founders</text></g>
+<g class="nd" id="nd6" data-x="95.0" data-y="300.0"><circle cx="95.0" cy="300.0" r="44"/><text x="95.0" y="304.5" text-anchor="middle">Friends</text></g>
+<g class="nd" id="nd7" data-x="155.0" data-y="155.0"><circle cx="155.0" cy="155.0" r="44"/><text x="155.0" y="159.5" text-anchor="middle">Partners</text></g><circle class="glow" id="glow" cx="300" cy="300" r="78"/>
+<circle class="core" id="core" cx="300" cy="300" r="50"/>
+<text x="300" y="308" text-anchor="middle" font-size="22" font-weight="800" fill="#0A0A0A">You</text>
+</svg>
+<div class="ctl"><p class="status" id="status" aria-live="polite">Intros made: 0</p><button class="btn" id="go" type="button">Make an intro &rarr;</button></div>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/the-best-networking-groups/" style="text-decoration:none">&larr; The best networking groups</a><a href="/start/referral-partners/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Referral partners &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Become the network</div></footer>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+var btn=document.getElementById('go'),st=document.getElementById('status'),arcs=document.getElementById('arcs');
+var core=document.getElementById('core'),glow=document.getElementById('glow');
+var steps=document.querySelectorAll('#steps .step');
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var pairs=[[0,5],[3,7],[4,1],[2,6]];
+var n=0;
+function node(i){return document.getElementById('nd'+i);}
+function clearNow(){
+  var a=arcs.querySelectorAll('.now');for(var i=0;i<a.length;i++)a[i].classList.remove('now');
+  var d=document.querySelectorAll('.nd.now');for(var j=0;j<d.length;j++)d[j].classList.remove('now');
+}
+function setSteps(s){for(var i=0;i<steps.length;i++)steps[i].classList.toggle('on',+steps[i].getAttribute('data-s')<=s);}
+function grow(){
+  var k=1+n*0.07;
+  core.style.transform='scale('+k+')';
+  glow.style.transform='scale('+(1+n*0.16)+')';
+  glow.style.opacity=(0.12+n*0.04).toFixed(2);
+}
+function reset(){
+  n=0;arcs.innerHTML='';
+  var a=document.querySelectorAll('.nd,.sp');for(var i=0;i<a.length;i++)a[i].classList.remove('on','now');
+  grow();setSteps(1);
+  st.textContent='Intros made: 0';
+  btn.innerHTML='Make an intro &rarr;';
+}
+btn.addEventListener('click',function(){
+  if(n>=pairs.length){reset();return;}
+  clearNow();
+  var p=pairs[n],A=node(p[0]),B=node(p[1]);
+  var ax=A.getAttribute('data-x'),ay=A.getAttribute('data-y'),bx=B.getAttribute('data-x'),by=B.getAttribute('data-y');
+  var path=document.createElementNS(NS,'path');
+  path.setAttribute('d','M'+ax+' '+ay+' Q300 300 '+bx+' '+by);
+  path.setAttribute('class','arc now');
+  arcs.appendChild(path);
+  if(!reduce&&path.getTotalLength){
+    var L=path.getTotalLength();
+    path.style.strokeDasharray=L;path.style.strokeDashoffset=L;
+    path.getBoundingClientRect();
+    path.style.transition='stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)';
+    path.style.strokeDashoffset=0;
+  }
+  A.classList.add('on','now');B.classList.add('on','now');
+  document.getElementById('sp'+p[0]).classList.add('on');
+  document.getElementById('sp'+p[1]).classList.add('on');
+  n++;grow();
+  setSteps(n>=pairs.length?3:2);
+  if(n>=pairs.length){st.textContent='Everyone calls you first';btn.innerHTML='Start again';}
+  else{st.textContent='Intros made: '+n;}
+});
+reset();
+})();
+</script>
+</body>
+</html>
