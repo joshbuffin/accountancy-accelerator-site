@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>We are in a sprint - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: we are in a sprint.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:16px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
+
+.page{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 56px - 130px);padding:clamp(24px,4vw,40px) 24px}
+.facts{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.fact{display:flex;align-items:baseline;gap:14px;border-left:3px solid var(--gold);padding:4px 0 4px 16px}
+.fact b{font-size:clamp(26px,2.8vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--gold-soft);line-height:1.1;min-width:78px}
+.fact span{font-size:clamp(17px,1.7vw,20px);font-weight:600;line-height:1.2}
+
+.track{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.6vw,30px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.top h2{font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.02em}
+.tog{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.tog button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);padding:8px 16px;border-radius:999px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.tog button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
+.lane{position:relative;margin:22px 0 10px;height:34px}
+.lane .rail{position:absolute;left:0;right:0;top:16px;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 16px)}
+.lane .run{position:absolute;left:0;top:15px;height:4px;border-radius:4px;background:var(--gold);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.lane .dot{position:absolute;top:8px;left:0;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18);transition:left 1.4s cubic-bezier(.2,.8,.2,1)}
+.flag{position:absolute;top:-6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.flag.s{left:0}.flag.f{left:0;transform:translateX(-100%);white-space:nowrap;color:var(--gold-soft);transition:left 1.4s cubic-bezier(.2,.8,.2,1)}
+.weeks{display:grid;gap:4px;height:clamp(150px,22vh,200px);align-items:end}
+.wk{display:flex;flex-direction:column-reverse;gap:2px;height:100%;cursor:default}
+.wk i{flex:1;border-radius:2px;background:#E4E4E7;transition:background-color .3s ease,transform .3s ease}
+.wk i.lg{background:var(--gold)}
+.wk:hover i.lg{background:var(--gold-soft)}
+.wk.off i,.wk.off i.lg{background:#ECECEE}
+.axis{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;font-weight:600;color:var(--slate)}
+.key{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:13px;font-weight:600;color:var(--muted)}
+.key span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--gold)}
+.key span.o::before{background:#E4E4E7}
+.total{margin-top:16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
+.total b{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
+.total span{font-size:clamp(16px,1.6vw,19px);font-weight:700}
+.add{margin-top:14px;font-size:15px;font-weight:700;color:var(--slate)}
+.add em{font-style:normal;color:var(--gold-soft)}
+.still .flag.f,.still .run,.still .dot,.still .wk i{transition:none}
+@media (max-width:900px){.page{grid-template-columns:1fr;min-height:0;padding-top:24px;padding-bottom:16px}.facts{margin-top:18px}}
+@media (max-width:600px){.navtag{font-size:11px}.weeks{gap:2px;height:130px}.wk{gap:1px}.tog button{padding:7px 12px}}
+@media (prefers-reduced-motion:reduce){.flag.f,.lane .run,.lane .dot,.wk i,.tog button{transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · We are in a sprint</span></div></nav>
+
+<main class="wrap page">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Video 1</p>
+<h1>We are in a <span class="gold-t">sprint.</span></h1>
+<div class="facts">
+<div class="fact"><b>3-6</b><span>months, all in</span></div>
+<div class="fact"><b>~10</b><span>hours a week</span></div>
+<div class="fact"><b>70%</b><span>on lead generation</span></div>
+</div>
+</div>
+
+<section class="track" aria-label="Sprint planner: every week is 10 hours, 7 of them on lead generation">
+<div class="top">
+<h2>Your sprint, week by week</h2>
+<div class="tog" role="group" aria-label="Sprint length">
+<button type="button" data-w="13" aria-pressed="true">3 months</button>
+<button type="button" data-w="26" aria-pressed="false">6 months</button>
+</div>
+</div>
+<div class="lane" aria-hidden="true"><span class="flag s">Start</span><span class="flag f" id="flag">Finish</span><div class="rail"></div><div class="run" id="run"></div><div class="dot" id="dot"></div></div>
+<div class="weeks" id="weeks" aria-hidden="true"></div>
+<div class="axis" aria-hidden="true"><span>Week 1</span><span>Week 13</span><span>Week 26</span></div>
+<div class="key"><span>Lead generation: 7 hrs</span><span class="o">Everything else: 3 hrs</span></div>
+<div class="total"><b id="hrs">91</b><span>hours of lead generation</span></div>
+<p class="add"><em>Add yours:</em> your start date and your finish line</p>
+</section>
+</main>
+
+<div class="wrap pnav"><span></span><a href="/start/understanding-lead-time/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Understanding lead time &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · We are in a sprint</div></footer>
+
+<script>
+(function(){
+  var weeks=document.getElementById('weeks'),run=document.getElementById('run'),dot=document.getElementById('dot'),hrs=document.getElementById('hrs'),flag=document.getElementById('flag');
+  var btns=document.querySelectorAll('.tog button');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TOTAL=26,cols=[];
+  weeks.style.gridTemplateColumns='repeat('+TOTAL+',minmax(0,1fr))';
+  for(var w=0;w<TOTAL;w++){
+    var col=document.createElement('div');col.className='wk';col.title='Week '+(w+1)+': 7 hours lead generation, 3 hours everything else';
+    for(var h=0;h<10;h++){var c=document.createElement('i');if(h<7)c.className='lg';col.appendChild(c);}
+    weeks.appendChild(col);cols.push(col);
+  }
+  var timer=null;
+  function set(n){
+    for(var i=0;i<btns.length;i++)btns[i].setAttribute('aria-pressed',String(+btns[i].getAttribute('data-w')===n));
+    var pct=(n/TOTAL*100)+'%';
+    run.style.width=pct;dot.style.left=pct;
+    flag.style.left=pct;
+    for(var j=0;j<TOTAL;j++)cols[j].classList.toggle('off',j>=n);
+    var target=n*7;
+    if(timer)clearInterval(timer);
+    if(reduce){hrs.textContent=target;return;}
+    var cur=+hrs.textContent||0,steps=24,k=0,start=cur;
+    timer=setInterval(function(){k++;hrs.textContent=Math.round(start+(target-start)*k/steps);if(k>=steps){clearInterval(timer);timer=null;}},40);
+  }
+  for(var b=0;b<btns.length;b++)btns[b].addEventListener('click',function(){set(+this.getAttribute('data-w'));});
+  var card=document.querySelector('.track');card.classList.add('still');
+  var r0=reduce;reduce=true;set(13);reduce=r0;
+  setTimeout(function(){card.classList.remove('still');},60);
+})();
+</script>
+</body>
+</html>
