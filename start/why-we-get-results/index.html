@@ -25,28 +25,59 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
 .lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
-/* Timeline */
-.tl{position:relative;padding:8px 0 clamp(72px,10vw,120px)}
-.tl::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--line))}
-.ev{position:relative;padding-left:52px;margin-bottom:28px}
-.ev::before{content:"";position:absolute;left:3px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
-.ev.key::before{background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18)}
-.when{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;padding-top:28px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.ev.key .box{border-color:var(--gold)}
+/* One-screen cut diagram */
+.hero{padding:clamp(24px,3.6vh,40px) 0 clamp(14px,2vh,22px)}
+.eyebrow{margin-bottom:12px}
+h1{font-size:clamp(38px,5.2vw,68px)}
+.cut{display:grid;grid-template-columns:1fr 92px 1.35fr;align-items:stretch;gap:0;margin-top:4px}
+.col-h{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+.col-h.go{color:var(--gold-soft)}
+.bs{display:flex;flex-direction:column;gap:8px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 18px;font-size:clamp(16px,1.5vw,19px);font-weight:600;color:#8A8A8E;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:3px;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,background-color .3s}
+.chip:hover{transform:translateX(-4px);border-color:#F5B892}
+.blade{position:relative;display:flex;justify-content:center;align-items:center}
+.blade::before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:3px dashed var(--gold)}
+.blade svg{position:relative;width:44px;height:44px;background:var(--paper);padding:6px;border-radius:50%;box-shadow:0 0 0 2px var(--gold)}
+.flow{display:flex;flex-direction:column;justify-content:center}
+.steps{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr;align-items:center}
+.step{background:#FFF8F3;border:1px solid var(--gold);border-radius:18px;padding:18px 16px;min-height:132px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),background-color .3s}
+.step.last{background:var(--gold);border-color:var(--gold)}
+.step .n{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft)}
+.step.last .n{color:#0A0A0A}
+.step h2{font-size:clamp(18px,1.75vw,23px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-top:10px}
+.step:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.55)}
+.arr{color:var(--gold);font-size:22px;text-align:center;font-weight:700}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(16px,2.6vh,24px)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
 .box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
-.box ul{margin-top:16px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:clamp(16px,1.7vw,18px)}
-.box li b{color:var(--ink)}
-.quote{margin-top:16px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(17px,1.9vw,20px);font-weight:600}
-.stat{display:inline-block;margin-top:16px;font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
-.stat small{font-size:16px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:8px}
-.phase{margin:48px 0 8px 52px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
-.end{background:var(--gold);color:#0A0A0A;padding:clamp(72px,10vw,120px) 0}
-.end h2{font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
-.end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
-@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+.box .n{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft)}
+.box h2{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:6px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13.5px;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.tag.add{border:1px dashed var(--gold);color:var(--gold-soft);background:#FFF8F3}
+.tag b{color:var(--gold-soft)}
+.rule{margin-top:clamp(14px,2.4vh,24px);display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.01em}
+.rule span.k{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--gold-soft);border-radius:999px;padding:6px 12px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-size:13px}
+@media (max-width:860px){
+ .cut{grid-template-columns:1fr}
+ .bs{flex-direction:row;flex-wrap:wrap;gap:8px}
+ .chip{padding:8px 12px;font-size:15px}
+ .hero{padding:20px 0 14px}
+ .blade{height:40px;margin:10px 0}
+ .blade::before{top:50%;bottom:auto;left:0;right:0;border-left:0;border-top:3px dashed var(--gold)}
+ .blade svg{margin-top:0;width:40px;height:40px;transform:rotate(90deg)}
+ .steps{grid-template-columns:1fr;gap:6px}
+ .step{min-height:0;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start;padding:12px 16px}
+ .step h2{margin-top:0;font-size:18px}
+ .arr{transform:rotate(90deg);font-size:16px;line-height:1}
+ .why{grid-template-columns:1fr;gap:10px}
+ .box{padding:14px 16px}
+ .box h2{font-size:19px;margin:4px 0 8px}
+ .tag{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){.box,.step,.chip{transition:none}.box:hover,.step:hover,.chip:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -55,31 +86,43 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 6</p>
-<h1>Why we get <span class="gold-t">results.</span></h1>
-<p class="lead">We cut the bulls**t and sell.</p>
+<h1>Cut the bulls**t and <span class="gold-t">sell.</span></h1>
 </div></header>
 
-<main class="wrap tl">
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>We sell first</h2>
-<ul><li>No months spent on logos, websites or the perfect niche.</li><li>Get set up fast, then go and talk to business owners.</li><li>Clients pay for everything else.</li></ul></div></div>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>Proof it works</h2>
-<ul><li>My first month as an accountant beat 3 earlier businesses put together.</li><li>The practice overtook my salary in 6 months, built around a full-time job.</li><li><b>Add yours:</b> 2 or 3 member wins, first names only.</li></ul></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>We focus on one thing at a time</h2>
-<ul><li>Whatever is stopping you getting clients right now. Fix that, then the next thing.</li><li>Overwhelm is the most common reason people stall. We don't let you spread yourself thin.</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>You're not doing it alone</h2>
-<ul><li>Group calls, the community and people a few months ahead of you.</li><li>Someone has already solved the problem you're stuck on.</li><li><b>Add yours:</b> how members get help between calls.</li></ul></div></div>
+<main class="wrap">
+<div class="cut" role="img" aria-label="Diagram: cut the distractions, then sell. Set up fast, talk to business owners, clients pay for everything else.">
+ <div>
+  <p class="col-h">The bulls**t</p>
+  <div class="bs">
+   <div class="chip">Months on logos</div>
+   <div class="chip">The perfect website</div>
+   <div class="chip">The perfect niche</div>
+   <div class="chip">Spreading yourself thin</div>
+  </div>
+ </div>
+ <div class="blade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+ <div class="flow">
+  <p class="col-h go">We sell first</p>
+  <div class="steps">
+   <div class="step"><span class="n">01</span><h2>Get set up fast</h2></div>
+   <div class="arr">&rarr;</div>
+   <div class="step"><span class="n">02</span><h2>Talk to business owners</h2></div>
+   <div class="arr">&rarr;</div>
+   <div class="step last"><span class="n">03</span><h2>Clients pay for everything else</h2></div>
+  </div>
+ </div>
+</div>
+
+<div class="why">
+ <div class="box"><span class="n">PROOF</span><h2>It works</h2><div class="tags"><span class="tag">Month 1 beat 3 businesses</span><span class="tag">Beat my salary in 6 months</span><span class="tag add"><b>Add yours:</b> 2-3 member wins</span></div></div>
+ <div class="box"><span class="n">FOCUS</span><h2>One thing at a time</h2><div class="tags"><span class="tag">Fix what's stopping clients</span><span class="tag">Then the next thing</span></div></div>
+ <div class="box"><span class="n">SUPPORT</span><h2>You're not alone</h2><div class="tags"><span class="tag">Group calls</span><span class="tag">The community</span><span class="tag">People months ahead</span><span class="tag add"><b>Add yours:</b> help between calls</span></div></div>
+</div>
+
+<p class="rule"><span class="k">The rule</span>If it doesn't get you closer to a client, it can wait. Ask for help early.</p>
 </main>
 
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">What this means for you</p>
-<h2>Cut the bulls**t.</h2>
-<ul><li>If it doesn't get you closer to a client, it can wait.</li><li>Ask for help early. Don't sit stuck.</li></ul>
-</div></section>
-<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/creating-over-chasing/" style="text-decoration:none">&larr; Creating > Chasing</a><a href="/start/how-to-work-through-the-resources/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to work through the resources &rarr;</a></div>
+<div class="wrap pnav"><a href="/start/creating-over-chasing/" style="text-decoration:none">&larr; Creating > Chasing</a><a href="/start/how-to-work-through-the-resources/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to work through the resources &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Why we achieve such good results in this community</div></footer>
 
 </body>
