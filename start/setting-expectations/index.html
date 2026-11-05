@@ -69,35 +69,50 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
   .jlabels h3{position:static;transform:none;width:auto;text-align:left;font-size:16px;display:flex;gap:10px;align-items:center}
   .jlabels h3::before{counter-increment:st;content:counter(st);flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center}
 }
+
+/* One-screen layout */
+.hero.tight{padding:clamp(24px,4vh,48px) 0 clamp(14px,2vh,24px)}
+.hero.tight h1{font-size:clamp(36px,5vw,60px)}
+.hero.tight .eyebrow{margin-bottom:10px}
+.journey{padding:0 24px 16px}
+.jbox{padding:16px clamp(12px,2.4vw,32px) 14px}
+.jlabels{height:44px}
+.heads{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding-bottom:8px}
+.heads .box{padding:18px 20px;display:flex;align-items:center;gap:12px;min-height:76px}
+.heads .box h2{font-size:clamp(16px,1.5vw,20px);line-height:1.2}
+.heads .n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+footer.slim{padding:16px 0}
+@media (max-width:900px){.heads{grid-template-columns:repeat(2,minmax(0,1fr))}.heads .box{min-height:0;padding:14px 16px}}
+@media (max-width:640px){.jnote{font-size:30px}.jlabels{height:auto}.hero.tight{padding:20px 0 12px}.heads{gap:8px}.heads .box h2{font-size:15px}.pn{font-size:14px;padding:12px 16px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Setting expectations</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero tight"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 3</p>
 <h1>Setting <span class="gold-t">expectations.</span></h1>
-<p class="lead">You are in control of your outcome, and of what you'll give up to get it.</p>
 </div></header>
 
 <section class="wrap journey" aria-label="The entrepreneur's journey">
 <div class="jbox">
-<svg viewBox="0 0 1000 420" role="img" aria-label="A curve that starts high at uninformed optimism, falls through informed pessimism into the valley of despair, then climbs through informed optimism to success.">
-<line x1="40" y1="395" x2="960" y2="395" stroke="#E2E2E2" stroke-width="2"/>
-<path class="jcurve" pathLength="1" d="M80,80 C180,80 220,170 300,230 C380,290 410,350 480,350 C560,350 620,260 700,200 C780,140 840,70 920,60"/>
-<circle class="jdot d1" cx="80" cy="80" r="11"/>
-<circle class="jdot d2" cx="300" cy="230" r="11"/>
-<circle class="jdot d3" cx="480" cy="350" r="13"/>
-<circle class="jdot d4" cx="700" cy="200" r="11"/>
-<circle class="jdot d5" cx="920" cy="60" r="11"/>
-<text class="jnote here" x="104" y="60">You start here</text>
-<text class="jnote" x="480" y="315" text-anchor="middle">Most people quit here</text>
-<line x1="80" y1="92" x2="80" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
-<line x1="300" y1="242" x2="300" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
-<line x1="480" y1="364" x2="480" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
-<line x1="700" y1="212" x2="700" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
-<line x1="920" y1="72" x2="920" y2="395" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<svg viewBox="0 0 1000 290" role="img" aria-label="A curve that starts high at uninformed optimism, falls through informed pessimism into the valley of despair, then climbs through informed optimism to success.">
+<line x1="40" y1="276" x2="960" y2="276" stroke="#E2E2E2" stroke-width="2"/>
+<path class="jcurve" pathLength="1" d="M80,56 C180,56 220,119 300,161 C380,203 410,245 480,245 C560,245 620,182 700,140 C780,98 840,49 920,42"/>
+<circle class="jdot d1" cx="80" cy="56" r="11"/>
+<circle class="jdot d2" cx="300" cy="161" r="11"/>
+<circle class="jdot d3" cx="480" cy="245" r="13"/>
+<circle class="jdot d4" cx="700" cy="140" r="11"/>
+<circle class="jdot d5" cx="920" cy="42" r="11"/>
+<text class="jnote here" x="104" y="42">You start here</text>
+<text class="jnote" x="502" y="270">Most people quit here</text>
+<line x1="80" y1="64" x2="80" y2="276" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="300" y1="169" x2="300" y2="276" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="480" y1="255" x2="480" y2="276" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="700" y1="148" x2="700" y2="276" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
+<line x1="920" y1="50" x2="920" y2="276" stroke="#E2E2E2" stroke-width="1.5" stroke-dasharray="4 6"/>
 </svg>
 <div class="jlabels">
 <h3 style="left:8%">Uninformed optimism</h3>
@@ -110,31 +125,15 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 </section>
 
 
-<main class="wrap tl">
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>You are in control</h2>
-<ul><li>I give you the frameworks and the playbooks. You do the work.</li><li>I will never let you stay stuck. But I won't build it for you.</li><li>Your result comes down to what you do with your hours.</li></ul></div></div>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>About 10 hours a week</h2>
-<ul><li>That's what most people have alongside a full-time job.</li><li>10 hours a week is enough to change your life, if you spend it right.</li></ul></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>A 3 to 6 month sprint</h2>
-<ul><li>This is the hardest part of the whole journey.</li><li>It has a start date and an end date. Once it's done, you're free.</li><li>Pick both dates now.</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>What you'll give up</h2>
-<ul><li>For a while: fewer gym sessions, less cooking, saying no to nights out.</li><li>I gave up sleep, the gym and my mates. I pushed it too far and got in trouble at work for being tired. Don't go that far.</li><li>Respect your family. Agree the non-negotiables with them before you start.</li></ul></div></div>
-<div class="ev"><p class="when">05</p><div class="box">
-<h2>It won't feel like it's working at first</h2>
-<ul><li>I had runs of 3 or 4 weekends without a single yes.</li><li>My mum told me the work comes back round in 6, 9, 12 months. She was right.</li><li>Good enough beats perfect. Most of your attention goes on finding clients.</li></ul></div></div>
+<main class="wrap heads">
+<div class="box"><span class="n">1</span><h2>You are in control</h2></div>
+<div class="box"><span class="n">2</span><h2>10 hours per week</h2></div>
+<div class="box"><span class="n">3</span><h2>A 3 to 6 month sprint</h2></div>
+<div class="box"><span class="n">4</span><h2>What you'll give up</h2></div>
+<div class="box"><span class="n">5</span><h2>It won't feel like it's working at first</h2></div>
 </main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Before the next video</p>
-<h2>Decide what you'll give up.</h2>
-<ul><li>Write down your sprint start date and end date.</li><li>Write down 3 things you'll give up until you hit your quit number.</li><li>Tell the people closest to you what you're doing and why.</li></ul>
-</div></section>
-<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/your-quit-number/" style="text-decoration:none">&larr; Your quit number</a><a href="/start/70-percent-lead-generation/" style="text-decoration:none;color:var(--gold-soft);text-align:right">70% of your time needs to be lead generation &rarr;</a></div>
-<footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Setting expectations</div></footer>
+<div class="wrap pn"><a href="/start/your-quit-number/" style="text-decoration:none">&larr; Your quit number</a><a href="/start/70-percent-lead-generation/" style="text-decoration:none;color:var(--gold-soft);text-align:right">70% of your time needs to be lead generation &rarr;</a></div>
+<footer class="slim"><div class="wrap">Accountancy Accelerator · Start · Sprint · Setting expectations</div></footer>
 
 </body>
 </html>
