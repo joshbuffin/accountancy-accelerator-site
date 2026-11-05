@@ -26,80 +26,52 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 
 /* Page layout */
-.lt-page{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,4vw,48px) 24px}
-.lt-page h1{font-size:clamp(40px,5.4vw,72px)}
-.punch{margin-top:28px;display:flex;flex-direction:column;gap:10px}
-.punch p{font-size:clamp(18px,2vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.2;border-left:3px solid var(--gold);padding-left:14px}
-
-/* Centrepiece */
-.lt{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.6vw,32px)}
-.lt-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:16px}
-.lt-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.lt-count{font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft);text-align:right;white-space:nowrap}
-.lt-count small{font-size:14px;font-weight:600;color:var(--slate);letter-spacing:0;margin-left:6px}
-.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(6px,1vw,10px)}
-.dot{aspect-ratio:1;border-radius:50%;background:#DEDDE0;border:2px solid #DEDDE0;transition:background .5s ease,border-color .5s ease,transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease}
-.dot.on{background:var(--gold);border-color:var(--gold);transform:scale(1.18);box-shadow:0 6px 16px -4px rgba(242,107,29,.6)}
-.track{position:relative;margin:30px 8px 0;height:44px}
-.rail{position:absolute;left:0;right:0;top:9px;height:4px;border-radius:2px;background:#DEDDE0}
-.fill{position:absolute;left:0;top:9px;height:4px;border-radius:2px;background:var(--gold);width:0;transition:width .35s linear}
-.back{position:absolute;top:-22px;left:50%;right:0;text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);border-bottom:2px dashed rgba(242,107,29,.45);padding-bottom:3px}
-.tick{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px}
-.tick i{display:block;width:22px;height:22px;border-radius:50%;background:var(--paper);border:3px solid #CFCED2;transition:border-color .3s ease,background .3s ease}
-.tick.hit i{border-color:var(--gold);background:var(--gold)}
-.tick span{font-size:12px;font-weight:700;color:var(--slate);white-space:nowrap}
-.tick.hit span{color:var(--ink)}
-.cap{margin-top:22px;min-height:2.6em;font-size:clamp(17px,1.9vw,22px);font-weight:700;letter-spacing:-.015em;line-height:1.25}
-.cap b{color:var(--gold-soft)}
-.ctrl{margin-top:16px;display:flex;align-items:center;gap:12px}
-.btn{appearance:none;border:0;border-radius:999px;background:var(--gold);color:#0A0A0A;font:700 15px 'Inter',Arial,sans-serif;padding:12px 22px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(242,107,29,.8)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-input[type=range]{flex:1;min-width:0;accent-color:var(--gold);cursor:pointer}
-@media (max-width:900px){.lt-page{grid-template-columns:1fr;min-height:0;gap:24px;padding:20px 16px}.punch{margin-top:18px;gap:8px}.eyebrow{margin-bottom:12px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.pnav{padding:12px 16px;font-size:14px}footer .wrap{padding:0 16px}}
-@media (max-width:480px){.btn{padding:10px 16px;font-size:14px}.tick span{font-size:11px}.back{font-size:9px;letter-spacing:.06em;white-space:nowrap;left:44%}.ctrl{flex-wrap:wrap}.ctrl .btn{flex:0 0 auto}input[type=range]{flex:1 1 100%}.lt{min-width:0}}
-@media (prefers-reduced-motion:reduce){.dot,.fill,.tick i,.btn{transition:none}.dot.on{transform:none}.btn:hover{transform:none}}
+:root{--container:1240px}
+.lt-hero{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:8px 32px;padding:clamp(14px,2.4vh,26px) 24px clamp(8px,1.4vh,14px)}
+.lt-hero .eyebrow{margin-bottom:8px}
+.lt-hero h1{font-size:clamp(32px,3.8vw,52px)}
+.lt-hero .tag{font-size:clamp(15px,1.4vw,18px);font-weight:700;color:var(--muted);border-left:3px solid var(--gold);padding-left:12px}
+.cards{display:flex;flex-direction:column;gap:clamp(8px,1.4vh,14px);padding:0 24px}
+.dg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,24px) 6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.dg:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 18px 40px -22px rgba(242,107,29,.45)}
+.dg.two{background:#FFF8F3;border-color:#F6C9AD}
+.dh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.dh h2{font-size:clamp(18px,1.8vw,24px);font-weight:700;letter-spacing:-.02em}
+.dh h2 span{color:var(--gold-soft)}
+.dh p{font-size:clamp(14px,1.3vw,16px);font-weight:700;color:var(--slate)}
+.dh .r{display:flex;align-items:center;gap:12px}
+.shuffle{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:7px 16px;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.shuffle:hover{background:var(--gold-soft);transform:translateY(-1px)}
+.dg svg{display:block;width:100%;height:auto}
+.dg svg text{font-family:'Inter',Arial,sans-serif}
+.pop{animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.grow{animation:grow 1.4s cubic-bezier(.4,0,.2,1) both}
+@keyframes grow{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.pop,.grow{animation:none}.dg,.shuffle{transition:none}.dg:hover{transform:none}}
+@media (max-width:900px){.lt-hero,.cards{padding-left:16px;padding-right:16px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.pnav{padding:12px 16px;font-size:14px}footer .wrap{padding:0 16px}.dg{padding:10px 10px 4px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Understanding lead time</span></div></nav>
 
-<main class="wrap lt-page">
-<div>
-<p class="eyebrow">Level 5 - Lead generation · Video 2</p>
-<h1>Handshake today. <span class="gold-t">Yes next year.</span></h1>
-<div class="punch">
-<p>Don't judge the day. Judge the year.</p>
-<p>It comes back round in 6, 9, 12 months.</p>
-<p>Be there when they're ready.</p>
-</div>
-</div>
+<header class="wrap lt-hero">
+<div><p class="eyebrow">Level 5 - Lead generation · Video 2</p>
+<h1>Handshake today. <span class="gold-t">Yes next year.</span></h1></div>
+<p class="tag">Don't judge the day. Judge the year.</p>
+</header>
 
-<section class="lt" aria-label="Lead time: 50 handshakes over 12 months">
-<div class="lt-top">
-<div class="lt-label">50 hands shaken in one village</div>
-<div class="lt-count" aria-live="polite"><span id="yes">1</span><small>of 50 said yes</small></div>
-</div>
-<div class="dots" id="dots" aria-hidden="true"></div>
-<div class="track" aria-hidden="true">
-<div class="back">The work comes back round</div>
-<div class="rail"></div>
-<div class="fill" id="fill"></div>
-<div class="tick" style="left:0%" data-m="0"><i></i><span>Today</span></div>
-<div class="tick" style="left:25%" data-m="3"><i></i><span>3m</span></div>
-<div class="tick" style="left:50%" data-m="6"><i></i><span>6m</span></div>
-<div class="tick" style="left:75%" data-m="9"><i></i><span>9m</span></div>
-<div class="tick" style="left:100%" data-m="12"><i></i><span>12m</span></div>
-</div>
-<p class="cap" id="cap" aria-live="polite"></p>
-<div class="ctrl">
-<button class="btn" id="play" type="button">Fast-forward 12 months</button>
-<input type="range" id="month" min="0" max="12" step="1" value="0" aria-label="Months since the handshake">
-</div>
+<main class="wrap cards">
+<section class="dg" aria-label="One weekend, 50 people">
+<div class="dh"><h2>One weekend. <span>50 people.</span></h2><p>You can't control when they say yes.</p></div>
+<svg id="d1" role="img" aria-label="Timeline: meet 50 people at week 0. One says yes straight away and onboards 6 weeks later. Two say yes in week 10 and onboard 4 and 3 weeks later. One says yes at month 3 and onboards in 3 days. One says yes at month 8 when the deadline comes."></svg>
+</section>
+<section class="dg two" aria-label="50 people every weekend">
+<div class="dh"><h2>50 people. <span>Every weekend.</span></h2><div class="r"><p>Keep meeting 50 a weekend and it stops mattering.</p><button class="shuffle" id="shuf" type="button">Shuffle</button></div></div>
+<svg id="d2" role="img" aria-label="Meet 50 people every weekend for 8 months. 2 say yes every weekend. Each one onboards at a random time, but the total number of clients onboarded climbs steadily."></svg>
 </section>
 </main>
-
 <div class="wrap pnav"><a href="/start/we-are-in-a-sprint/" style="text-decoration:none">&larr; We are in a sprint</a><a href="/start/never-sell-cold/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Never sell cold &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Understanding lead time</div></footer>
 
@@ -140,6 +112,74 @@ input[type=range]{flex:1;min-width:0;accent-color:var(--gold);cursor:pointer}
   });
   range.addEventListener('input',function(){stop();render(+range.value);});
   render(0);
+})();
+</script>
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg",WEEKS=36,O="#F26B1D",OD="#C2410C",G="#6E6E73",LN="#D1D1D6";
+var RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
+function geo(svg){var w=svg.parentNode.clientWidth,m=w<700,W=m?500:1180;return{m:m,W:W,L:m?14:150,R:W-(m?14:36),fs:m?17:13}}
+function X(g,w){return g.L+(g.R-g.L)*w/WEEKS}
+function axis(svg,g,y){
+svg.appendChild(el("line",{x1:g.L,y1:y,x2:g.R,y2:y,stroke:LN,"stroke-width":2}));
+[[0,"Week 0"],[13,"Month 3"],[26,"Month 6"],[35,"Month 8"]].forEach(function(t,i){
+svg.appendChild(el("line",{x1:X(g,t[0]),y1:y,x2:X(g,t[0]),y2:y+6,stroke:LN,"stroke-width":2}));
+svg.appendChild(el("text",{x:X(g,t[0]),y:y+g.fs+8,"text-anchor":i==0?"start":(i==3?"end":"middle"),"font-size":g.fs,"font-weight":600,fill:G},t[1]))})}
+function d1(){
+var svg=document.getElementById("d1"),g=geo(svg);svg.innerHTML="";
+var rh=g.m?50:30,top=g.m?60:40,H=top+rh*5+(g.m?44:34);
+svg.setAttribute("viewBox","0 0 "+g.W+" "+H);
+var x0=X(g,0),ay=top+rh*5-6;
+svg.appendChild(el("line",{x1:x0,y1:18,x2:x0,y2:ay,stroke:O,"stroke-width":2,"stroke-dasharray":"4 5"}));
+svg.appendChild(el("rect",{x:x0-4,y:4,width:g.m?190:150,height:g.fs+12,rx:(g.fs+12)/2,fill:O}));
+svg.appendChild(el("text",{x:x0+(g.m?91:71),y:4+g.fs+3,"text-anchor":"middle","font-size":g.fs,"font-weight":800,fill:"#fff"},"Meet 50 people"));
+var rows=[{y:0,o:6,l:"Yes straight away",b:"6 weeks to onboard"},{y:10,o:14,l:"Yes in week 10",b:"4 weeks"},{y:10,o:13,l:"Yes in week 10",b:"3 weeks"},{y:13,o:13+3/7,l:"Yes at month 3",b:"3 days"},{y:35,o:null,l:"Yes at month 8",b:"The deadline comes"}];
+rows.forEach(function(r,i){
+var cy=top+rh*i+(g.m?10:6),xy=X(g,r.y);
+svg.appendChild(el("line",{x1:g.L,y1:cy,x2:g.R,y2:cy,stroke:"#E9E9EC","stroke-width":1}));
+if(g.m)svg.appendChild(el("text",{x:r.y>30?xy:Math.max(xy,g.L),y:cy-11,"text-anchor":r.y>30?"end":"start","font-size":g.fs-2,"font-weight":700,fill:G},r.l));
+else svg.appendChild(el("text",{x:g.L-16,y:cy+4,"text-anchor":"end","font-size":g.fs,"font-weight":700,fill:"#3A3A3C"},r.l));
+var grp=el("g",{"class":RM?"":"pop",style:"animation-delay:"+(0.15+i*0.18)+"s"});
+if(r.o!=null){var xo=X(g,r.o);
+grp.appendChild(el("rect",{x:xy,y:cy-5,width:Math.max(xo-xy,4),height:10,rx:5,fill:"rgba(242,107,29,.22)"}));
+grp.appendChild(el("circle",{cx:xy,cy:cy,r:7,fill:"#fff",stroke:O,"stroke-width":3}));
+grp.appendChild(el("circle",{cx:xo,cy:cy,r:8,fill:O}));
+grp.appendChild(el("path",{d:"M"+(xo-3.5)+","+cy+" l2.5,2.6 l4.5,-5",stroke:"#fff","stroke-width":2,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}));
+grp.appendChild(el("text",{x:xo+14,y:cy+(g.fs/2.6),"font-size":g.fs,"font-weight":700,fill:OD},r.b));
+}else{
+grp.appendChild(el("circle",{cx:xy,cy:cy,r:8,fill:O}));
+grp.appendChild(el("text",{x:xy-16,y:cy+(g.fs/2.6),"text-anchor":"end","font-size":g.fs,"font-weight":800,fill:OD},r.b));}
+svg.appendChild(grp)});
+axis(svg,g,ay);
+}
+function d2(anim){
+var svg=document.getElementById("d2"),g=geo(svg);svg.innerHTML="";
+var H=g.m?300:236,ty=g.m?20:16,yy=g.m?46:36,base=g.m?232:180,ay=base+12,step=g.m?9:8.5,r=g.m?3.6:3.6;
+svg.setAttribute("viewBox","0 0 "+g.W+" "+(H+(g.m?8:0)));
+if(!g.m){[["Meet 50",ty+4],["2 yeses",yy+4],["Onboarded",base-4]].forEach(function(t){svg.appendChild(el("text",{x:g.L-16,y:t[1],"text-anchor":"end","font-size":g.fs,"font-weight":700,fill:"#3A3A3C"},t[0]))})}
+var cnt={},onb=[],lines=el("g",{}),dots=el("g",{});
+for(var w=0;w<=WEEKS;w++){
+svg.appendChild(el("path",{d:"M"+X(g,w)+","+(ty-5)+" l4,7 h-8 z",fill:O,opacity:.85}));
+for(var k=0;k<2;k++){
+svg.appendChild(el("circle",{cx:X(g,w),cy:yy+(k?6:-2),r:r-0.6,fill:"#fff",stroke:O,"stroke-width":1.8}));
+var o=w+Math.random()*10,ow=Math.round(o);
+if(ow<=WEEKS){var n=cnt[ow]=(cnt[ow]||0)+1,cy=base-(n-1)*step-r;onb.push(ow);
+lines.appendChild(el("line",{x1:X(g,w),y1:yy+4,x2:X(g,ow),y2:cy,stroke:O,"stroke-width":1,opacity:.13}));
+dots.appendChild(el("circle",{cx:X(g,ow),cy:cy,r:r,fill:O,"class":anim&&!RM?"pop":"",style:"animation-delay:"+(w*0.035)+"s"}))}}}
+svg.appendChild(lines);svg.appendChild(dots);
+var maxC=2*(WEEKS+1),cum=0,d="",top=yy+22;
+for(var t=0;t<=WEEKS;t++){onb.forEach(function(v){if(v===t)cum++});var px=X(g,t),py=base-(base-top)*cum/maxC;d+=(t?"H"+px+"V"+py:"M"+px+","+py)}
+svg.appendChild(el("path",{d:d,pathLength:1,"stroke-dasharray":1,fill:"none",stroke:OD,"stroke-width":g.m?4:3.2,"stroke-linejoin":"round","class":anim&&!RM?"grow":""}));
+var ex=X(g,WEEKS),ey=base-(base-top)*cum/maxC;
+svg.appendChild(el("circle",{cx:ex,cy:ey,r:g.m?7:6,fill:OD}));
+svg.appendChild(el("text",{x:ex-12,y:ey-12,"text-anchor":"end","font-size":g.fs+2,"font-weight":800,fill:OD},cum+" clients onboarded"));
+axis(svg,g,ay);
+}
+function all(anim){d1();d2(anim)}
+all(true);
+document.getElementById("shuf").addEventListener("click",function(){d2(true)});
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){all(false)},150)});
 })();
 </script>
 </body>
