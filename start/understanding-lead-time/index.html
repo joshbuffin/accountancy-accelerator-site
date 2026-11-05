@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Understanding lead time - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: understanding lead time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
+
+/* Page layout */
+.lt-page{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,4vw,48px) 24px}
+.lt-page h1{font-size:clamp(40px,5.4vw,72px)}
+.punch{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.punch p{font-size:clamp(18px,2vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.2;border-left:3px solid var(--gold);padding-left:14px}
+
+/* Centrepiece */
+.lt{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.6vw,32px)}
+.lt-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:16px}
+.lt-label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.lt-count{font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft);text-align:right;white-space:nowrap}
+.lt-count small{font-size:14px;font-weight:600;color:var(--slate);letter-spacing:0;margin-left:6px}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(6px,1vw,10px)}
+.dot{aspect-ratio:1;border-radius:50%;background:#DEDDE0;border:2px solid #DEDDE0;transition:background .5s ease,border-color .5s ease,transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease}
+.dot.on{background:var(--gold);border-color:var(--gold);transform:scale(1.18);box-shadow:0 6px 16px -4px rgba(242,107,29,.6)}
+.track{position:relative;margin:30px 8px 0;height:44px}
+.rail{position:absolute;left:0;right:0;top:9px;height:4px;border-radius:2px;background:#DEDDE0}
+.fill{position:absolute;left:0;top:9px;height:4px;border-radius:2px;background:var(--gold);width:0;transition:width .35s linear}
+.back{position:absolute;top:-22px;left:50%;right:0;text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);border-bottom:2px dashed rgba(242,107,29,.45);padding-bottom:3px}
+.tick{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px}
+.tick i{display:block;width:22px;height:22px;border-radius:50%;background:var(--paper);border:3px solid #CFCED2;transition:border-color .3s ease,background .3s ease}
+.tick.hit i{border-color:var(--gold);background:var(--gold)}
+.tick span{font-size:12px;font-weight:700;color:var(--slate);white-space:nowrap}
+.tick.hit span{color:var(--ink)}
+.cap{margin-top:22px;min-height:2.6em;font-size:clamp(17px,1.9vw,22px);font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.cap b{color:var(--gold-soft)}
+.ctrl{margin-top:16px;display:flex;align-items:center;gap:12px}
+.btn{appearance:none;border:0;border-radius:999px;background:var(--gold);color:#0A0A0A;font:700 15px 'Inter',Arial,sans-serif;padding:12px 22px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(242,107,29,.8)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+input[type=range]{flex:1;min-width:0;accent-color:var(--gold);cursor:pointer}
+@media (max-width:900px){.lt-page{grid-template-columns:1fr;min-height:0;gap:24px;padding:20px 16px}.punch{margin-top:18px;gap:8px}.eyebrow{margin-bottom:12px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.pnav{padding:12px 16px;font-size:14px}footer .wrap{padding:0 16px}}
+@media (max-width:480px){.btn{padding:10px 16px;font-size:14px}.tick span{font-size:11px}.back{font-size:9px;letter-spacing:.06em;white-space:nowrap;left:44%}.ctrl{flex-wrap:wrap}.ctrl .btn{flex:0 0 auto}input[type=range]{flex:1 1 100%}.lt{min-width:0}}
+@media (prefers-reduced-motion:reduce){.dot,.fill,.tick i,.btn{transition:none}.dot.on{transform:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Understanding lead time</span></div></nav>
+
+<main class="wrap lt-page">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Video 2</p>
+<h1>Handshake today. <span class="gold-t">Yes next year.</span></h1>
+<div class="punch">
+<p>Don't judge the day. Judge the year.</p>
+<p>It comes back round in 6, 9, 12 months.</p>
+<p>Be there when they're ready.</p>
+</div>
+</div>
+
+<section class="lt" aria-label="Lead time: 50 handshakes over 12 months">
+<div class="lt-top">
+<div class="lt-label">50 hands shaken in one village</div>
+<div class="lt-count" aria-live="polite"><span id="yes">1</span><small>of 50 said yes</small></div>
+</div>
+<div class="dots" id="dots" aria-hidden="true"></div>
+<div class="track" aria-hidden="true">
+<div class="back">The work comes back round</div>
+<div class="rail"></div>
+<div class="fill" id="fill"></div>
+<div class="tick" style="left:0%" data-m="0"><i></i><span>Today</span></div>
+<div class="tick" style="left:25%" data-m="3"><i></i><span>3m</span></div>
+<div class="tick" style="left:50%" data-m="6"><i></i><span>6m</span></div>
+<div class="tick" style="left:75%" data-m="9"><i></i><span>9m</span></div>
+<div class="tick" style="left:100%" data-m="12"><i></i><span>12m</span></div>
+</div>
+<p class="cap" id="cap" aria-live="polite"></p>
+<div class="ctrl">
+<button class="btn" id="play" type="button">Fast-forward 12 months</button>
+<input type="range" id="month" min="0" max="12" step="1" value="0" aria-label="Months since the handshake">
+</div>
+</section>
+</main>
+
+<div class="wrap pnav"><a href="/start/we-are-in-a-sprint/" style="text-decoration:none">&larr; We are in a sprint</a><a href="/start/never-sell-cold/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Never sell cold &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Understanding lead time</div></footer>
+
+<script>
+(function(){
+  var dotsEl=document.getElementById('dots'),yesEl=document.getElementById('yes'),cap=document.getElementById('cap'),
+      fill=document.getElementById('fill'),range=document.getElementById('month'),play=document.getElementById('play'),
+      ticks=document.querySelectorAll('.tick');
+  var dots=[];
+  for(var i=0;i<50;i++){var d=document.createElement('span');d.className='dot';dotsEl.appendChild(d);dots.push(d);}
+  // Which dot lights up, and when (months after the handshake)
+  var yeses=[{dot:12,m:0},{dot:27,m:9},{dot:41,m:12}];
+  function caption(m){
+    if(m===0) return '<b>Today:</b> 1 interested. 49 not yet.';
+    if(m<9) return '<b>Month '+m+':</b> quiet. Stay in touch.';
+    if(m<12) return '<b>Month 9:</b> their accountant let them down. They called me.';
+    return '<b>Month 12:</b> 3 from 50. Same handshakes.';
+  }
+  function render(m){
+    var n=0;
+    yeses.forEach(function(y){var on=m>=y.m;dots[y.dot].classList.toggle('on',on);if(on)n++;});
+    yesEl.textContent=n;
+    fill.style.width=(m/12*100)+'%';
+    ticks.forEach(function(t){t.classList.toggle('hit',m>=+t.getAttribute('data-m'));});
+    cap.innerHTML=caption(m);
+    range.value=m;
+    play.textContent=m>=12?'Back to today':'Fast-forward 12 months';
+  }
+  var timer=null;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  play.addEventListener('click',function(){
+    stop();
+    if(+range.value>=12){render(0);return;}
+    if(reduce){render(12);return;}
+    var m=+range.value;
+    timer=setInterval(function(){m++;render(m);if(m>=12)stop();},380);
+  });
+  range.addEventListener('input',function(){stop();render(+range.value);});
+  render(0);
+})();
+</script>
+</body>
+</html>
