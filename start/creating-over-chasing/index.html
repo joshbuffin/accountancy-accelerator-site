@@ -76,6 +76,19 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .chartcard.hr .chaser{opacity:.18}
 @media (prefers-reduced-motion:reduce){.chart .rev{animation:none}.chartcard{transition:none}}
 @media (max-width:700px){.chart.cd{display:none}.chart.cm{display:block}}
+
+/* Toggle: chaser by default, reveal the creator on click */
+.chartcard .creator path[pathLength]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)}
+.chartcard.sr .creator path[pathLength]{stroke-dashoffset:0}
+.chartcard .creator circle,.chartcard .creator text,.chartcard .lab.creator,.chartcard .gap{opacity:0;transition:opacity .5s ease 1.2s}
+.chartcard.sr .creator circle,.chartcard.sr .creator text,.chartcard.sr .lab.creator{opacity:1}
+.chartcard.sr .gap{opacity:.09}
+.chartcard:not(.sr) .creator,.chartcard:not(.sr) .lab.creator{pointer-events:none}
+.lg[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 2px var(--ink) inset}
+.lg.r[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset;color:var(--gold-soft)}
+.lg.r:not([aria-pressed="true"]){animation:nudge 2.4s ease-in-out 1.5s infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(242,107,29,0)}50%{box-shadow:0 0 0 6px rgba(242,107,29,.18)}}
+@media (prefers-reduced-motion:reduce){.chartcard .creator path[pathLength]{transition:none}.lg.r{animation:none!important}.chartcard .creator circle,.chartcard .creator text,.chartcard .lab.creator,.chartcard .gap{transition:none}}
 </style>
 </head>
 <body>
@@ -90,7 +103,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 
 <main class="wrap chase-main">
 <div class="chartcard" id="cc">
-<div class="legend"><h2>Waiting vs creating</h2><button class="lg c" type="button" data-k="c"><i></i>The chaser</button><button class="lg r" type="button" data-k="r"><i></i>The creator</button></div>
+<div class="legend"><h2>Waiting vs creating</h2><button class="lg c" type="button" data-k="c" aria-pressed="true"><i></i>The chaser</button><button class="lg r" type="button" data-k="r" aria-pressed="false"><i></i>The creator</button></div>
 <svg class="chart cd" viewBox="0 0 1100 370" role="img" aria-label="Line chart. Both start at the same point. The chaser waits on one prospect and their revenue stays flat. The creator keeps making new leads and their revenue steps up week after week.">
 <defs><clipPath id="rv-cd"><rect class="rev" x="0" y="0" width="1100" height="370"/></clipPath></defs>
 <line x1="64" y1="16" x2="64" y2="320" stroke="#D1D1D6" stroke-width="1.5"/><line x1="64" y1="320" x2="880" y2="320" stroke="#D1D1D6" stroke-width="1.5"/>
@@ -104,7 +117,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <circle cx="360.7" cy="284.0" r="6.3" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="360.7" y="305.8" text-anchor="middle" font-size="13.5" fill="#6E6E73" font-weight="600">Chase</text>
 <circle cx="509.1" cy="284.0" r="6.3" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="509.1" y="305.8" text-anchor="middle" font-size="13.5" fill="#6E6E73" font-weight="600">Chase</text>
 </g>
-<g class="ln creator" data-k="r"><path d="M64.0,284.0 H212.4 V258.2 H360.7 V227.2 H449.7 V193.7 H538.8 V155.0 H620.4 V113.7 H709.4 V69.9 H798.4 V26.0 H880.0" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="ln creator" data-k="r"><path d="M64.0,284.0 H212.4 V258.2 H360.7 V227.2 H449.7 V193.7 H538.8 V155.0 H620.4 V113.7 H709.4 V69.9 H798.4 V26.0 H880.0" pathLength="1" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="138.2" cy="284.0" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
 <circle cx="286.5" cy="258.2" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
 <circle cx="405.2" cy="227.2" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
@@ -137,7 +150,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <circle cx="159.1" cy="216.4" r="5.9" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="159.1" y="236.7" text-anchor="middle" font-size="12.6" fill="#6E6E73" font-weight="600">Chase</text>
 <circle cx="223.6" cy="216.4" r="5.9" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="223.6" y="236.7" text-anchor="middle" font-size="12.6" fill="#6E6E73" font-weight="600">Chase</text>
 </g>
-<g class="ln creator" data-k="r"><path d="M30.0,216.4 H94.5 V198.8 H159.1 V177.6 H197.8 V154.7 H236.5 V128.2 H272.0 V100.0 H310.8 V70.0 H349.5 V40.0 H385.0" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="ln creator" data-k="r"><path d="M30.0,216.4 H94.5 V198.8 H159.1 V177.6 H197.8 V154.7 H236.5 V128.2 H272.0 V100.0 H310.8 V70.0 H349.5 V40.0 H385.0" pathLength="1" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="62.3" cy="216.4" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
 <circle cx="126.8" cy="198.8" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
 <circle cx="178.5" cy="177.6" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
@@ -165,10 +178,9 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 
 <script>
 (function(){var cc=document.getElementById("cc");if(!cc)return;
-function on(k){cc.classList.remove("hc","hr");if(k)cc.classList.add(k==="c"?"hc":"hr")}
-cc.querySelectorAll("[data-k]").forEach(function(el){var k=el.getAttribute("data-k");
-el.addEventListener("mouseenter",function(){on(k)});el.addEventListener("mouseleave",function(){on(null)});
-el.addEventListener("focus",function(){on(k)});el.addEventListener("blur",function(){on(null)})});})();
+var bc=cc.querySelector('.lg.c'),br=cc.querySelector('.lg.r');
+function show(r){cc.classList.toggle("sr",r);bc.setAttribute("aria-pressed",r?"false":"true");br.setAttribute("aria-pressed",r?"true":"false")}
+bc.addEventListener("click",function(){show(false)});br.addEventListener("click",function(){show(true)});})();
 </script>
 </body>
 </html>
