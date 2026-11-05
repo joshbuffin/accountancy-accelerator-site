@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How to make opportunities - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: How to make opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
+
+/* Page layout */
+.page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,4vw,40px) 24px}
+.ask{margin-top:28px;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.15;border-left:4px solid var(--gold);padding-left:18px}
+.points{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.points li{font-size:clamp(17px,1.7vw,20px);font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+.points li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+
+/* Centrepiece: the door */
+.stage{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:16px}
+.bubble{align-self:flex-start;position:relative;background:var(--gold);color:#0A0A0A;font-weight:700;font-size:clamp(17px,1.8vw,21px);padding:12px 20px;border-radius:20px 20px 20px 4px;letter-spacing:-.01em}
+.scene{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,2vw,24px);align-items:stretch}
+.frame{position:relative;width:clamp(150px,15vw,200px);aspect-ratio:1/1.75;border:8px solid #3A3A3C;border-bottom-width:0;border-radius:10px 10px 0 0;background:#FFF3EA;perspective:1400px;overflow:hidden;cursor:pointer}
+.frame:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.light{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(242,107,29,.55),rgba(242,107,29,0) 70%);opacity:0;transition:opacity .6s ease}
+.door{position:absolute;inset:0;background:linear-gradient(160deg,#FFFFFF,#ECEBE9);border:1px solid #D6D6D6;transform-origin:left center;transition:transform .8s cubic-bezier(.2,.8,.2,1),box-shadow .8s ease;display:flex;align-items:center;justify-content:center}
+.door::before,.door::after{content:"";position:absolute;left:14%;right:14%;border:2px solid #DCDCDC;border-radius:4px}
+.door::before{top:8%;height:36%}
+.door::after{bottom:8%;height:36%}
+.knob{position:absolute;right:12%;top:52%;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(242,107,29,.2)}
+.frame:hover .door{transform:rotateY(-14deg)}
+.stage.open .door{transform:rotateY(-78deg);box-shadow:-18px 0 30px -12px rgba(0,0,0,.25)}
+.stage.open .light{opacity:1}
+.behind{display:flex;flex-direction:column;justify-content:center;gap:12px}
+.behind h2{font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,.6vw,7px);max-width:300px}
+.grid i{aspect-ratio:1;border-radius:50%;background:#DCDCDC;transform:scale(.4);opacity:.35;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s ease,background-color .4s ease}
+.stage.open .grid i{transform:scale(1);opacity:1}
+.stage.open .grid i.m{background:#F8B98F}
+.stage.open .grid i.y{background:var(--gold);box-shadow:0 0 0 3px rgba(242,107,29,.25)}
+.key{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;font-weight:700;color:var(--slate)}
+.key span{display:flex;align-items:center;gap:6px}
+.key span::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+.key b{color:var(--ink)}
+.btn{align-self:flex-start;font:inherit;font-size:15px;font-weight:700;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer;transition:background-color .3s ease}
+.btn:hover,.btn:focus-visible{background:var(--gold-soft);outline:none}
+.places{display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;border-top:1px solid var(--line)}
+.places h3{width:100%;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.chip{font-size:14px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;transition:border-color .3s ease,color .3s ease}
+.chip:hover{border-color:var(--gold);color:var(--gold-soft)}
+.chip.add{border-style:dashed;border-color:var(--gold);color:var(--gold-soft)}
+
+@media (prefers-reduced-motion:reduce){.door,.light,.grid i,.btn,.chip{transition:none}.frame:hover .door{transform:none}.stage.open .door{transform:rotateY(-78deg)}}
+@media (max-width:900px){.page{grid-template-columns:1fr;min-height:0;gap:24px}}
+@media (max-width:520px){
+  nav .wrap{height:auto;min-height:56px;padding-top:8px;padding-bottom:8px}
+  .navtag{font-size:11px}
+  .brand{font-size:11px}
+  .page{padding:20px 16px}
+  .wrap{padding-left:16px;padding-right:16px}
+  .eyebrow{font-size:11px;margin-bottom:12px}
+  h1{font-size:36px}
+  .ask{margin-top:18px;font-size:23px}
+  .points{margin-top:18px;gap:6px}
+  .points li{font-size:16px}
+  .stage{padding:16px;gap:12px}
+  .frame{width:96px;border-width:6px}
+  .behind{gap:8px}
+  .behind h2{font-size:16px}
+  .key{font-size:12px;gap:4px 10px}
+  .btn{font-size:14px;padding:8px 16px}
+  .chip{font-size:13px;padding:5px 11px}
+  .pnav{font-size:14px;padding:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · How to make opportunities</span></div></nav>
+
+<main class="wrap page">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Video 5</p>
+<h1>One question <span class="gold-t">opens the door.</span></h1>
+<p class="ask">"What do you do for work?"</p>
+<ul class="points">
+<li>Ask it everywhere</li>
+<li>50 conversations, 2 yeses</li>
+<li>One chaser, 2 weeks later</li>
+</ul>
+</div>
+
+<section class="stage" id="stage" aria-label="The question that opens the door">
+<p class="bubble">What do you do for work?</p>
+<div class="scene">
+<div class="frame" id="frame" role="button" tabindex="0" aria-pressed="false" aria-label="Open the door">
+<div class="light"></div>
+<div class="door"><span class="knob"></span></div>
+</div>
+<div class="behind">
+<h2>Behind the door:<br>50 conversations</h2>
+<div class="grid" id="grid" aria-hidden="true"></div>
+<p class="key"><span style="--c:#DCDCDC"><b>45</b>&nbsp;no</span><span style="--c:#F8B98F"><b>3</b>&nbsp;maybe</span><span style="--c:#F26B1D"><b>2</b>&nbsp;yes</span></p>
+<button class="btn" id="btn" type="button">Open the door</button>
+</div>
+</div>
+<div class="places">
+<h3>Where to ask it</h3>
+<span class="chip">The gym</span><span class="chip">Run club</span><span class="chip">The high street</span><span class="chip">Dinner club</span><span class="chip">Beach club</span><span class="chip add">Add yours: where you'll ask it this week</span>
+</div>
+</section>
+</main>
+
+<div class="wrap pnav"><a href="/start/where-to-start/" style="text-decoration:none">&larr; Where to start</a><a href="/start/your-networks-network/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Your network's network &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · How to make opportunities</div></footer>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage'),frame=document.getElementById('frame'),btn=document.getElementById('btn'),grid=document.getElementById('grid');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var maybes=[17,33,46],yeses=[28,41];
+  for(var i=0;i<50;i++){
+    var d=document.createElement('i');
+    if(maybes.indexOf(i)>-1)d.className='m';
+    if(yeses.indexOf(i)>-1)d.className='y';
+    if(!reduce)d.style.transitionDelay=(i*18)+'ms';
+    grid.appendChild(d);
+  }
+  function toggle(){
+    var open=stage.classList.toggle('open');
+    btn.textContent=open?'Close the door':'Open the door';
+    frame.setAttribute('aria-pressed',open?'true':'false');
+    frame.setAttribute('aria-label',open?'Close the door':'Open the door');
+  }
+  btn.addEventListener('click',toggle);
+  frame.addEventListener('click',toggle);
+  frame.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+})();
+</script>
+</body>
+</html>
