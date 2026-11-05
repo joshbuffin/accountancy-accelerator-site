@@ -47,6 +47,40 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* Calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:start;padding-bottom:clamp(72px,10vw,120px)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
+.panel h2{font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-.02em}
+.panel .hint{color:var(--muted);font-size:15px;margin-top:6px}
+.panel+.panel{margin-top:24px}
+.rows{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.r{display:grid;grid-template-columns:minmax(0,1fr) 150px 36px;gap:10px;align-items:center}
+.r input{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--paper);color:var(--ink);width:100%;min-width:0;transition:border-color .2s ease,box-shadow .2s ease}
+.r input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(242,107,29,.15)}
+.money{position:relative}
+.money::before{content:"£";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:16px;pointer-events:none}
+.money input{padding-left:28px;text-align:right}
+.del{border:0;background:none;color:var(--slate);font-size:22px;line-height:1;cursor:pointer;border-radius:10px;height:36px}
+.del:hover{color:var(--gold-soft);background:#FFF1E8}
+.add{margin-top:14px;font:inherit;font-size:15px;font-weight:600;color:var(--gold-soft);background:none;border:1px dashed var(--gold);border-radius:12px;padding:10px 16px;cursor:pointer}
+.add:hover{background:#FFF8F3}
+.sub{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:700}
+.tax{display:flex;align-items:center;gap:12px;margin-top:16px;flex-wrap:wrap}
+.tax input[type=range]{flex:1 1 200px;accent-color:var(--gold)}
+.tax output{font-weight:700;min-width:48px}
+.result{position:sticky;top:80px;background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(24px,3vw,36px)}
+.result .label{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B0B0B5}
+.result .big{font-size:clamp(48px,7vw,80px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold);margin-top:10px}
+.result .per{color:#B0B0B5;font-size:16px;margin-top:6px}
+.result .lines{margin-top:24px;display:flex;flex-direction:column;gap:10px;font-size:16px}
+.result .lines div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #2C2C2E;padding-top:10px}
+.result .lines span:last-child{font-weight:600}
+.result .note{margin-top:20px;font-size:14px;color:#B0B0B5}
+.reset{margin-top:20px;font:inherit;font-size:14px;color:#B0B0B5;background:none;border:1px solid #3A3A3C;border-radius:10px;padding:8px 14px;cursor:pointer}
+.reset:hover{color:#fff;border-color:var(--gold)}
+@media (max-width:900px){.calc{grid-template-columns:1fr}.result{position:static}}
+@media (max-width:520px){.r{grid-template-columns:minmax(0,1fr) 120px 32px;gap:8px}}
 </style>
 </head>
 <body>
@@ -56,37 +90,92 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 2</p>
 <h1>Your quit <span class="gold-t">number.</span></h1>
-<p class="lead">The monthly figure you can live off. Hit it, and you can hand in your notice.</p>
+<p class="lead">Put in what you spend each month. The calculator tells you what your firm needs to bring in before you can hand in your notice.</p>
 </div></header>
 
-<main class="wrap tl">
-<p class="phase">What it is</p>
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>The number that sets you free</h2>
-<ul><li>What do you need each month to live, before you quit?</li><li>That figure is your quit number. For most people in Start it is around £5k a month.</li><li>It turns "one day I will go on my own" into a target with a finish line.</li></ul></div></div>
-<p class="phase">The exercise</p>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>List every cost, line by line</h2>
-<ul><li>Mortgage or rent, bills, car, food, family, savings.</li><li>Look up the real cost of each one. No guesses.</li><li>Add it up. That is your quit number.</li></ul></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>Then your dream-life number</h2>
-<ul><li>Same exercise, but if money were no object.</li><li>The house, the car, the holidays, gifts for family.</li><li>You don't need it yet. It's what keeps you going on the hard weekends.</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>Use the milestone calculator</h2>
-<ul><li>It turns your living costs into your quit number for you.</li><li><b>Add yours:</b> link to the milestone calculator.</li></ul></div></div>
-<p class="phase">My quit number</p>
-<div class="ev key"><p class="when">June 2023</p><div class="box">
-<h2>The day the practice overtook my job</h2>
-<ul><li>6 months after my first day on the high street.</li><li>About £5k a month, from weekends alone.</li><li>I'd just applied for a mortgage, so I stayed a bit longer. Plan for things like that.</li></ul><p class="stat">£5k<small>a month in 6 months</small></p></div></div>
-</main>
+<main class="wrap calc">
+<div>
+<div class="panel">
+<h2>1. Your living costs</h2>
+<p class="hint">Monthly figures. Look up the real number for each one, don't guess.</p>
+<div class="rows" id="life"></div>
+<button class="add" data-add="life" type="button">+ Add a cost</button>
+<div class="sub"><span>Living costs</span><span id="lifeTotal">£0</span></div>
+</div>
 
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Write your number down.</h2>
-<ul><li>Work out your quit number and your dream-life number.</li><li>Put your quit number somewhere you see it every day.</li><li>Check your monthly revenue against it, every month.</li></ul>
-</div></section>
+<div class="panel">
+<h2>2. Your business costs</h2>
+<p class="hint">What the firm costs to run each month.</p>
+<div class="rows" id="biz"></div>
+<button class="add" data-add="biz" type="button">+ Add a cost</button>
+<div class="sub"><span>Business costs</span><span id="bizTotal">£0</span></div>
+</div>
+
+<div class="panel">
+<h2>3. Set aside for tax</h2>
+<p class="hint">A rough share of what you pay yourself, kept back for tax. Your real figure depends on how you pay yourself.</p>
+<div class="tax"><input type="range" id="tax" min="0" max="45" step="1" value="25" aria-label="Tax set-aside percentage"><output id="taxOut">25%</output></div>
+</div>
+</div>
+
+<aside class="result" aria-live="polite">
+<p class="label">Your quit number</p>
+<p class="big" id="quit">£0</p>
+<p class="per">a month in firm revenue · <span id="quitYear">£0</span> a year</p>
+<div class="lines">
+<div><span>Living costs</span><span id="rLife">£0</span></div>
+<div><span>Tax set aside</span><span id="rTax">£0</span></div>
+<div><span>Business costs</span><span id="rBiz">£0</span></div>
+</div>
+<p class="note">Hit this every month and you can quit. Write it down and check your revenue against it every month.</p>
+<button class="reset" id="reset" type="button">Start again</button>
+</aside>
+</main>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/my-story/" style="text-decoration:none">&larr; My story</a><a href="/start/setting-expectations/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Setting expectations &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Your quit number</div></footer>
 
+<script>
+(function(){
+var DEF={life:["Mortgage or rent","Council tax","Gas, electric and water","Phone and internet","Food and groceries","Car and fuel","Insurance","Childcare and family","Debt repayments","Subscriptions","Eating out and social","Savings and pension","Buffer for one-offs"],
+biz:["Software","Professional insurance","Professional body and AML","Other"]};
+var KEY="aa-quit-number-v1",state;
+function fresh(){return{life:DEF.life.map(function(n){return{n:n,v:""}}),biz:DEF.biz.map(function(n){return{n:n,v:""}}),tax:25}}
+try{state=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!state||!state.life)state=fresh();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+function num(v){var x=parseFloat(String(v).replace(/[^0-9.]/g,""));return isFinite(x)?x:0}
+function sum(k){return state[k].reduce(function(a,r){return a+num(r.v)},0)}
+function calc(){
+var life=sum("life"),biz=sum("biz"),t=state.tax/100;
+var gross=t<1?life/(1-t):life,taxAmt=gross-life,q=gross+biz;
+document.getElementById("lifeTotal").textContent=gbp.format(life);
+document.getElementById("bizTotal").textContent=gbp.format(biz);
+document.getElementById("rLife").textContent=gbp.format(life);
+document.getElementById("rTax").textContent=gbp.format(taxAmt);
+document.getElementById("rBiz").textContent=gbp.format(biz);
+document.getElementById("quit").textContent=gbp.format(Math.ceil(q/50)*50);
+document.getElementById("quitYear").textContent=gbp.format(Math.ceil(q/50)*50*12);
+document.getElementById("taxOut").textContent=state.tax+"%";
+save()}
+function render(k){
+var box=document.getElementById(k);box.innerHTML="";
+state[k].forEach(function(r,i){
+var row=document.createElement("div");row.className="r";
+var name=document.createElement("input");name.type="text";name.value=r.n;name.placeholder="Cost";name.setAttribute("aria-label","Cost name");
+name.oninput=function(){r.n=name.value;save()};
+var m=document.createElement("div");m.className="money";
+var val=document.createElement("input");val.type="text";val.inputMode="decimal";val.placeholder="0";val.value=r.v;val.setAttribute("aria-label",(r.n||"Cost")+" per month");
+val.oninput=function(){r.v=val.value;calc()};
+m.appendChild(val);
+var d=document.createElement("button");d.type="button";d.className="del";d.innerHTML="&times;";d.setAttribute("aria-label","Remove");
+d.onclick=function(){state[k].splice(i,1);render(k);calc()};
+row.appendChild(name);row.appendChild(m);row.appendChild(d);box.appendChild(row)})}
+document.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var k=b.getAttribute("data-add");state[k].push({n:"",v:""});render(k);var ins=document.querySelectorAll("#"+k+" input[type=text]");ins[ins.length-2].focus();calc()}});
+var tax=document.getElementById("tax");tax.value=state.tax;tax.oninput=function(){state.tax=+tax.value;calc()};
+document.getElementById("reset").onclick=function(){state=fresh();tax.value=25;render("life");render("biz");calc()};
+render("life");render("biz");calc();
+})();
+</script>
 </body>
 </html>
