@@ -47,41 +47,81 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* One-page chasing layout */
+.hero.compact{padding:clamp(32px,4.5vw,56px) 0 clamp(20px,2.5vw,28px)}
+.hero.compact h1{font-size:clamp(40px,5.2vw,68px)}
+.hero.compact .lead{margin-top:12px;font-size:clamp(17px,1.7vw,21px)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.2vw,28px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.dg.win{background:#FFF8F3;border-color:var(--gold)}
+.dg:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.25)}
+.dg.win:hover{box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.dg .tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.dg.win .tag{color:var(--gold-soft)}
+.dg h2{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.dg svg{display:block;width:100%;height:auto;margin-top:10px}
+.dg svg text{font-family:'Inter',Arial,sans-serif}
+.rule{margin-top:24px;background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,26px) clamp(20px,3vw,36px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 24px}
+.rule .k{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3A3A3C}
+.rule .v{font-size:clamp(22px,2.8vw,34px);font-weight:700;letter-spacing:-.02em}
+.rule .s{font-size:clamp(16px,1.6vw,19px);color:#1F1A12}
+.chase-main{padding-bottom:8px}
+@media (prefers-reduced-motion:reduce){.dg{transition:none}.dg:hover{transform:none}}
+@media (max-width:860px){.duo{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Creating > Chasing</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero compact"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 5</p>
 <h1>Creating <span class="gold-t">&gt;</span> chasing.</h1>
 <p class="lead">Don't spend your time chasing leads. Spend it creating new ones.</p>
 </div></header>
 
-<main class="wrap tl">
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>Why chasing doesn't work</h2>
-<ul><li>When you're desperate for a client, you chase and chase.</li><li>It pushes people away. I did exactly this at the start.</li><li>You can't force someone to buy.</li></ul></div></div>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>My rule: two chases, then stop</h2>
-<ul><li>Chase 1: the next day or the day after.</li><li>Chase 2: once more, two weeks later.</li><li>Then stop, and put that energy into new conversations.</li></ul><p class="stat">2<small>chases, then stop</small></p></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>They come back when they're ready</h2>
-<ul><li>Shake 50 hands and maybe 1 is interested on the day.</li><li>Another 2 might say yes within 12 months.</li><li>Some called me 9 months later, the day their accountant let them down again.</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>My best morning</h2>
-<ul><li>3 yeses in about 90 seconds on the M65.</li><li>One of them was someone I'd met on the high street 6 weeks earlier. I hadn't chased them for weeks.</li></ul></div></div>
-<div class="ev"><p class="when">05</p><div class="box">
-<h2>Make it easy to come back</h2>
-<ul><li>Write a note after every conversation: name, business, did you speak to the owner, follow up or not.</li><li>It takes 6 seconds. I learned the hard way, walking high streets on Google Maps at night to find a shop I'd forgotten.</li></ul></div></div>
+<main class="wrap chase-main">
+<div class="duo">
+<div class="dg"><p class="tag">The chaser</p><h2>All your hope on one person</h2>
+<svg viewBox="0 0 520 250" role="img" aria-label="One person sends chase after chase to a single prospect, who says no.">
+<line x1="96" y1="150" x2="404" y2="150" stroke="#C7C7CC" stroke-width="2" stroke-dasharray="6 6"/>
+<g fill="#6E6E73"><circle cx="60" cy="122" r="16"/><path d="M34,176 Q34,144 60,144 Q86,144 86,176 Z"/></g>
+<text x="60" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#3A3A3C">You</text>
+<g fill="#C7C7CC"><circle cx="440" cy="122" r="16"/><path d="M414,176 Q414,144 440,144 Q466,144 466,176 Z"/></g>
+<text x="440" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#3A3A3C">One prospect</text>
+<g font-size="12" font-weight="600" fill="#6E6E73" text-anchor="middle">
+<rect x="104" y="96" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="137" y="113">Chase 1</text>
+<rect x="176" y="78" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="209" y="95">Chase 2</text>
+<rect x="248" y="60" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="281" y="77">Chase 3</text>
+<rect x="320" y="42" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="353" y="59">Chase 4</text>
+</g>
+<circle cx="478" cy="92" r="19" fill="#B42318"/><text x="478" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">No</text>
+<text x="260" y="236" text-anchor="middle" font-size="14" fill="#6E6E73">Pipeline: 1 person · Clients: 0</text>
+</svg>
+</div>
+<div class="dg win"><p class="tag">The creator</p><h2>Focus on the inputs</h2>
+<svg viewBox="0 0 520 250" role="img" aria-label="One person puts effort into conversations, the high street, events and content, which creates many prospects and several yeses.">
+<path d="M262,28 L508,8 L508,192 L262,172 Z" fill="#F26B1D" opacity=".07"/>
+<g stroke="#F7B48A" stroke-width="2" fill="none">
+<path d="M86,128 C110,128 110,44 138,44"/><path d="M86,128 C110,128 110,88 138,88"/><path d="M86,128 C110,128 110,132 138,132"/><path d="M86,128 C110,128 110,176 138,176"/>
+<path d="M262,44 L306,44"/><path d="M262,88 L306,88"/><path d="M262,132 L306,128"/><path d="M262,176 L306,170"/>
+</g>
+<g fill="#F26B1D"><circle cx="60" cy="100" r="16"/><path d="M34,154 Q34,122 60,122 Q86,122 86,154 Z"/></g>
+<text x="60" y="178" text-anchor="middle" font-size="14" font-weight="600" fill="#0A0A0A">You</text>
+<g font-size="13" font-weight="600" fill="#0A0A0A" text-anchor="middle">
+<rect x="138" y="30" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="49">Conversations</text>
+<rect x="138" y="74" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="93">High street</text>
+<rect x="138" y="118" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="137">Events</text>
+<rect x="138" y="162" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="181">Content</text>
+</g>
+<circle cx="328" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="44" r="15" fill="#F26B1D"/><path d="M364,44 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="412" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="328" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="86" r="15" fill="#F26B1D"/><path d="M448,86 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="496" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="328" cy="128" r="15" fill="#F26B1D"/><path d="M322,128 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="370" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="128" r="15" fill="#F26B1D"/><path d="M490,128 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="328" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="170" r="15" fill="#F26B1D"/><path d="M406,170 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="454" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/>
+<text x="260" y="236" text-anchor="middle" font-size="14" fill="#C2410C" font-weight="600">Pipeline: always full · Yeses keep coming</text>
+</svg>
+</div>
+</div>
+<div class="rule"><span class="k">My rule</span><span class="v">1 chaser only, 2 weeks later.</span><span class="s">Then stop, and go create new leads.</span></div>
 </main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Clear your chase list.</h2>
-<ul><li>List everyone you're currently chasing.</li><li>Anyone chased twice already: stop.</li><li>Book that time into new lead generation instead.</li></ul>
-</div></section>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/70-percent-lead-generation/" style="text-decoration:none">&larr; 70% of your time needs to be lead generation</a><a href="/start/why-we-get-results/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Why we achieve such good results in this community &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Creating > Chasing</div></footer>
 
