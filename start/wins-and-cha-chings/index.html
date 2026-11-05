@@ -47,38 +47,78 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+/* One-page wins layout */
+.win-page{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 90px);padding:clamp(28px,4vw,48px) 24px}
+.win-page h1{font-size:clamp(40px,5.6vw,76px)}
+.why{margin-top:28px;display:flex;flex-direction:column;gap:6px;font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.01em}
+.why span{color:var(--slate);font-weight:600}
+.task{margin-top:28px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(16px,1.6vw,18px);color:var(--muted)}
+.task b{color:var(--ink)}
+.vis{display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2vw,24px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+.stairs{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:end}
+.step{border-radius:14px;padding:12px;display:flex;align-items:flex-end;font-weight:700;font-size:clamp(14px,1.35vw,17px);line-height:1.2;letter-spacing:-.01em;background:#fff;border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.step:hover{transform:translateY(-4px);border-color:var(--gold)}
+.step:nth-child(1){height:72px}.step:nth-child(2){height:104px}.step:nth-child(3){height:136px}
+.step.top{height:176px;background:var(--gold);border-color:var(--gold);color:#0A0A0A;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.step.top em{font-style:normal;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.03em}
+.streak{display:flex;flex-wrap:nowrap;gap:6px;align-items:center}
+.no,.yes{height:30px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.no{width:34px;flex:none;background:#ECEBE9;color:#8E8E93}
+.yes{padding:0 12px;flex:none;background:var(--gold);color:#0A0A0A;box-shadow:0 0 0 4px rgba(242,107,29,.18)}
+.big{margin-top:12px;font-size:clamp(20px,2.1vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.big span{color:var(--gold-soft)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row .card h3{font-size:clamp(17px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.add{border-style:dashed;border-color:var(--gold)}
+.add .lbl{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.card,.step{transition:none}.card:hover,.step:hover{transform:none}}
+@media (max-width:900px){.win-page{grid-template-columns:minmax(0,1fr);min-height:0;gap:16px;padding:20px 16px}.win-page h1{font-size:40px}.lead{margin-top:14px;font-size:17px}.why{font-size:17px;gap:2px}.vis{gap:12px}.why,.task{margin-top:16px}.hidem{display:none}}
+@media (max-width:520px){.stairs{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:6px}.step,.step:nth-child(n){height:auto;padding:9px 12px;font-size:14px}.step:nth-child(1){width:52%}.step:nth-child(2){width:66%}.step:nth-child(3){width:80%}.step.top{width:100%;height:auto;flex-direction:row;align-items:center}.streak{gap:4px}.row{grid-template-columns:minmax(0,1fr)}.no{width:28px;font-size:10px}.yes{padding:0 9px;font-size:11px}.step.top em{font-size:15px}.gold-t{white-space:nowrap}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Wins and cha-chings</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<main class="wrap win-page">
+<div>
 <p class="eyebrow">Level 1 - Sprint · Video 10</p>
 <h1>Wins and <span class="gold-t">cha-chings.</span></h1>
 <p class="lead">Every client signed gets celebrated. Out loud.</p>
-</div></header>
+<p class="why">Most weekends end in nos.<span>The wins keep everyone going.</span></p>
+<p class="task"><b>Your task:</b> post your first win this week, however small.</p>
+</div>
 
-<main class="wrap tl">
-<div class="ev key"><p class="when">01</p><div class="box">
-<h2>Why we celebrate</h2>
-<ul><li>This sprint is hard. Most weekends end in nos.</li><li>The wins are what keep you going, and they keep everyone else going too.</li></ul></div></div>
-<div class="ev"><p class="when">02</p><div class="box">
-<h2>The feeling never gets old</h2>
-<ul><li>3 yeses in 90 seconds on the M65, after weeks of nothing. Still the best moment of my life.</li><li>Even now, when a client signs, I ring Patrick: "Oh my god, guess who's just signed with us."</li></ul></div></div>
-<div class="ev"><p class="when">03</p><div class="box">
-<h2>How to post a cha-ching</h2>
-<ul><li><b>Add yours:</b> where members post wins and what to include (client type, fee, how they won it).</li></ul></div></div>
-<div class="ev"><p class="when">04</p><div class="box">
-<h2>Small wins count</h2>
-<ul><li>A good conversation, a referral, a proposal sent.</li><li>Progress beats perfection.</li></ul></div></div>
+<div class="vis">
+<div class="card">
+<p class="lbl">Small wins count</p>
+<div class="stairs" aria-label="Wins from small to big: a good conversation, a referral, a proposal sent, a client signed">
+<div class="step">Good conversation</div>
+<div class="step">Referral</div>
+<div class="step">Proposal sent</div>
+<div class="step top"><span>Client signed</span><em>Cha-ching!</em></div>
+</div>
+<p class="big" style="font-size:clamp(16px,1.5vw,18px);margin-top:12px">Progress beats perfection.</p>
+</div>
+
+<div class="card">
+<p class="lbl">The feeling never gets old</p>
+<div class="streak" aria-label="Weeks of nos, then three yeses">
+<span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no hidem">No</span><span class="no hidem">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="yes">Yes</span>
+</div>
+<p class="big">3 yeses in 90 seconds <span>on the M65.</span></p>
+</div>
+
+<div class="row">
+<div class="card"><p class="lbl">Still today</p><h3>"Guess who's just signed with us."</h3></div>
+<div class="card add"><p class="lbl">Add yours</p><h3>Where to post a cha-ching + what to include</h3></div>
+</div>
+</div>
 </main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Post your first win.</h2>
-<ul><li>Post something you've done this week, however small.</li></ul>
-</div></section>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/milestones/" style="text-decoration:none">&larr; Milestones</a><a href="/start/fix-the-bottleneck/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Fix the bottleneck &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Wins and cha-chings</div></footer>
 
