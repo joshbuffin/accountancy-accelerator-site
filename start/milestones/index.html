@@ -47,45 +47,88 @@ h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-he
 .end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+.hero.tight{padding:clamp(24px,4vh,44px) 0 clamp(12px,2vh,20px)}
+.hero.tight h1{font-size:clamp(36px,5vw,60px)}
+.hero.tight .eyebrow{margin-bottom:10px}
+.climb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end;height:min(440px,50vh);min-height:360px;position:relative;padding-top:8px}
+.climb::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--line)}
+.step{background:var(--card);border:1px solid var(--line);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0;padding:16px 20px;display:flex;flex-direction:column;gap:4px;position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.step:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.step.s1{height:55%;border-color:var(--gold);background:#FFF8F3}
+.step.s2{height:70%}.step.s3{height:85%}.step.s4{height:100%}
+.step .n{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.step h2{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.step .amt{font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:-.035em;line-height:1;color:var(--gold-soft)}
+.step .amt small{display:block;font-size:13px;font-weight:500;color:var(--slate);letter-spacing:0;margin-top:4px}
+.step h3{margin-top:auto;font-size:clamp(15px,1.4vw,18px);font-weight:600;line-height:1.25}
+.step h3+h3{margin-top:6px}
+.step h3.ms{color:var(--gold-soft)}
+.pin{position:absolute;top:-16px;left:20px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;box-shadow:0 0 0 6px rgba(242,107,29,.18)}
+.track{display:flex;align-items:center;gap:16px;margin-top:18px}
+.track .end-pt{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.03em;white-space:nowrap}
+.track .end-pt.g{color:var(--gold-soft)}
+.track .line{flex:1;position:relative;display:flex;align-items:center;gap:12px}
+.track .line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed var(--gold);z-index:0}
+.track .lbl{position:relative;z-index:1;background:var(--paper);padding:0 10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.addy{position:relative;z-index:1;margin-left:auto;margin-right:auto;background:var(--paper);border:2px dashed var(--gold);border-radius:14px;padding:10px 18px;font-size:clamp(15px,1.5vw,18px);font-weight:700;transition:border-color .3s ease,background-color .3s ease}
+.addy:hover{background:#FFF8F3}
+.addy b{color:var(--gold-soft)}
+.task{margin-top:16px;display:flex;align-items:center;gap:14px;background:var(--gold);color:#0A0A0A;border-radius:16px;padding:14px 22px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em}
+.task span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#3A3A3C;white-space:nowrap}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+footer.slim{padding:16px 0}
+@media (prefers-reduced-motion:reduce){.step{transition:none}.step:hover{transform:none}}
+@media (max-width:760px){
+  .climb{display:flex;flex-direction:column-reverse;height:auto;min-height:0;gap:8px;padding-top:14px}
+  .climb::after{display:none}
+  .step{height:auto!important;border-bottom:1px solid var(--line);border-radius:16px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr;column-gap:12px;row-gap:2px;align-items:baseline}
+  .step.s1{width:85%}.step.s2{width:90%}.step.s3{width:95%}.step.s4{width:100%}
+  .step.s1{border-color:var(--gold)}
+  .step .n{grid-column:1/-1}
+  .step h2{font-size:18px}
+  .step .amt{font-size:17px;text-align:right;white-space:nowrap}
+  .step .amt small{display:none}
+  .step h3{grid-column:1/-1;margin-top:2px;font-size:14px}
+  .step h3+h3{margin-top:0}
+  .pin{top:-11px;left:auto;right:12px;font-size:10px;padding:3px 9px}
+  .track{gap:8px;margin-top:14px}
+  .track .end-pt{font-size:18px}
+  .track .lbl{display:none}
+  .addy{padding:8px 10px;font-size:13px;text-align:center}
+  .task{flex-direction:column;align-items:flex-start;gap:4px;padding:12px 16px;font-size:16px}
+  .hero.tight{padding:20px 0 10px}
+  .pn{font-size:14px;padding:12px 16px}
+}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sprint · Milestones</span></div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero tight"><div class="wrap">
 <p class="eyebrow">Level 1 - Sprint · Video 9</p>
 <h1>Your <span class="gold-t">milestones.</span></h1>
-<p class="lead">Where you are, where you're going, and what comes next.</p>
 </div></header>
 
-<main class="wrap tl">
-<p class="phase">The four stages</p>
-<div class="ev key"><p class="when">Stage 1</p><div class="box">
-<h2>Start: £0 to £5k a month</h2>
-<ul><li>Still employed. Building to your quit number.</li><li>This is you, right now.</li></ul></div></div>
-<div class="ev"><p class="when">Stage 2</p><div class="box">
-<h2>Scale, operator: £5k to £20k a month</h2>
-<ul><li>You've quit. Solo, building recurring revenue.</li><li>The milestone here is your first full-time hire.</li></ul></div></div>
-<div class="ev"><p class="when">Stage 3</p><div class="box">
-<h2>Scale, owner: £20k to £50k a month</h2>
-<ul><li>A team runs the work. You run the business.</li></ul></div></div>
-<div class="ev"><p class="when">Stage 4</p><div class="box">
-<h2>Sell: £50k+ a month</h2>
-<ul><li>A business worth something to someone else.</li></ul></div></div>
-<p class="phase">Your Start milestones</p>
-<div class="ev"><p class="when">Along the way</p><div class="box">
-<h2>The steps to £5k</h2>
-<ul><li><b>Add yours:</b> the Start milestones members should hit (e.g. first client, quit number) and how they report them.</li></ul></div></div>
-</main>
+<main class="wrap" style="padding-bottom:8px">
+<div class="climb" aria-label="The four stages, rising from Start to Sell">
+<div class="step s1"><span class="pin">You are here</span><span class="n">Stage 1</span><h2>Start</h2><p class="amt">£0 to £5k<small>a month</small></p><h3>Still employed</h3><h3 class="ms">Hit your quit number</h3></div>
+<div class="step s2"><span class="n">Stage 2</span><h2>Scale: Operator</h2><p class="amt">£5k to £20k<small>a month</small></p><h3>Quit and solo</h3><h3>Recurring revenue</h3><h3 class="ms">First full-time hire</h3></div>
+<div class="step s3"><span class="n">Stage 3</span><h2>Scale: Owner</h2><p class="amt">£20k to £50k<small>a month</small></p><h3>A team runs the work</h3><h3 class="ms">You run the business</h3></div>
+<div class="step s4"><span class="n">Stage 4</span><h2>Sell</h2><p class="amt">£50k+<small>a month</small></p><h3 class="ms">Worth something to someone else</h3></div>
+</div>
 
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your task</p>
-<h2>Know your next milestone.</h2>
-<ul><li>Write down the next milestone you're aiming for, and the date.</li></ul>
-</div></section>
-<div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/your-workbook/" style="text-decoration:none">&larr; Your workbook</a><a href="/start/wins-and-cha-chings/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Wins and cha-chings &rarr;</a></div>
-<footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Milestones</div></footer>
+<div class="track" aria-label="Your Start milestones, from £0 to £5k">
+<span class="end-pt">£0</span>
+<div class="line"><span class="lbl">The steps to £5k</span><span class="addy"><b>Add yours:</b> your Start milestones (first client, quit number...)</span></div>
+<span class="end-pt g">£5k</span>
+</div>
+
+<div class="task"><span>Your task</span>Write down your next milestone, and the date.</div>
+</main>
+<div class="wrap pn"><a href="/start/your-workbook/" style="text-decoration:none">&larr; Your workbook</a><a href="/start/wins-and-cha-chings/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Wins and cha-chings &rarr;</a></div>
+<footer class="slim"><div class="wrap">Accountancy Accelerator · Start · Sprint · Milestones</div></footer>
 
 </body>
 </html>
