@@ -52,23 +52,30 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .hero.compact{padding:clamp(32px,4.5vw,56px) 0 clamp(20px,2.5vw,28px)}
 .hero.compact h1{font-size:clamp(40px,5.2vw,68px)}
 .hero.compact .lead{margin-top:12px;font-size:clamp(17px,1.7vw,21px)}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.dg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.2vw,28px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
-.dg.win{background:#FFF8F3;border-color:var(--gold)}
-.dg:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(0,0,0,.25)}
-.dg.win:hover{box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.dg .tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.dg.win .tag{color:var(--gold-soft)}
-.dg h2{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;margin-top:4px}
-.dg svg{display:block;width:100%;height:auto;margin-top:10px}
-.dg svg text{font-family:'Inter',Arial,sans-serif}
 .rule{margin-top:24px;background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,26px) clamp(20px,3vw,36px);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 24px}
 .rule .k{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3A3A3C}
 .rule .v{font-size:clamp(22px,2.8vw,34px);font-weight:700;letter-spacing:-.02em}
 .rule .s{font-size:clamp(16px,1.6vw,19px);color:#1F1A12}
 .chase-main{padding-bottom:8px}
-@media (prefers-reduced-motion:reduce){.dg{transition:none}.dg:hover{transform:none}}
-@media (max-width:860px){.duo{grid-template-columns:1fr}}
+
+.chartcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,26px) clamp(16px,2.4vw,32px);transition:box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.chartcard:hover{border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.35)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.legend h2{font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;margin-right:auto}
+.lg{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:14px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;color:var(--ink)}
+.lg i{display:inline-block;width:22px;height:0;border-top:4px solid var(--gold);border-radius:2px}
+.lg.c i{border-top:3px dashed #8E8E93}
+.lg:hover,.lg:focus-visible{border-color:var(--gold);outline:none}
+.chart{display:block;width:100%;height:auto;margin-top:8px;overflow:visible}
+.chart text{font-family:'Inter',Arial,sans-serif}
+.chart .ln,.chart .lab,.chart .gap{transition:opacity .3s ease}
+.chart.cm{display:none}
+.chart .rev{transform-box:fill-box;transform-origin:left center;animation:rev 2.2s cubic-bezier(.4,.1,.2,1) both .2s}
+@keyframes rev{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.chartcard.hc .creator,.chartcard.hc .gap{opacity:.18}
+.chartcard.hr .chaser{opacity:.18}
+@media (prefers-reduced-motion:reduce){.chart .rev{animation:none}.chartcard{transition:none}}
+@media (max-width:700px){.chart.cd{display:none}.chart.cm{display:block}}
 </style>
 </head>
 <body>
@@ -82,48 +89,86 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 </div></header>
 
 <main class="wrap chase-main">
-<div class="duo">
-<div class="dg"><p class="tag">The chaser</p><h2>All your hope on one person</h2>
-<svg viewBox="0 0 520 250" role="img" aria-label="One person sends chase after chase to a single prospect, who says no.">
-<line x1="96" y1="150" x2="404" y2="150" stroke="#C7C7CC" stroke-width="2" stroke-dasharray="6 6"/>
-<g fill="#6E6E73"><circle cx="60" cy="122" r="16"/><path d="M34,176 Q34,144 60,144 Q86,144 86,176 Z"/></g>
-<text x="60" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#3A3A3C">You</text>
-<g fill="#C7C7CC"><circle cx="440" cy="122" r="16"/><path d="M414,176 Q414,144 440,144 Q466,144 466,176 Z"/></g>
-<text x="440" y="200" text-anchor="middle" font-size="14" font-weight="600" fill="#3A3A3C">One prospect</text>
-<g font-size="12" font-weight="600" fill="#6E6E73" text-anchor="middle">
-<rect x="104" y="96" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="137" y="113">Chase 1</text>
-<rect x="176" y="78" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="209" y="95">Chase 2</text>
-<rect x="248" y="60" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="281" y="77">Chase 3</text>
-<rect x="320" y="42" width="66" height="26" rx="13" fill="#FFFFFF" stroke="#C7C7CC"/><text x="353" y="59">Chase 4</text>
+<div class="chartcard" id="cc">
+<div class="legend"><h2>Waiting vs creating</h2><button class="lg c" type="button" data-k="c"><i></i>The chaser</button><button class="lg r" type="button" data-k="r"><i></i>The creator</button></div>
+<svg class="chart cd" viewBox="0 0 1100 370" role="img" aria-label="Line chart. Both start at the same point. The chaser waits on one prospect and their revenue stays flat. The creator keeps making new leads and their revenue steps up week after week.">
+<defs><clipPath id="rv-cd"><rect class="rev" x="0" y="0" width="1100" height="370"/></clipPath></defs>
+<line x1="64" y1="16" x2="64" y2="320" stroke="#D1D1D6" stroke-width="1.5"/><line x1="64" y1="320" x2="880" y2="320" stroke="#D1D1D6" stroke-width="1.5"/>
+<text x="50" y="173.0" transform="rotate(-90 50 173.0)" text-anchor="middle" font-size="15" fill="#6E6E73" font-weight="600">Revenue</text>
+<text x="64.0" y="345" text-anchor="start" font-size="15" fill="#6E6E73">Week 1</text>
+<text x="434.9" y="345" text-anchor="middle" font-size="15" fill="#6E6E73">Week 6</text>
+<text x="880.0" y="345" text-anchor="end" font-size="15" fill="#6E6E73">Week 12</text>
+<g clip-path="url(#rv-cd)"><path class="gap" d="M64.0,284.0 H212.4 V258.2 H360.7 V227.2 H449.7 V193.7 H538.8 V155.0 H620.4 V113.7 H709.4 V69.9 H798.4 V26.0 H880.0 V284.0 Z" fill="#F26B1D" opacity=".09"/>
+<g class="ln chaser" data-k="c"><path d="M64.0,284.0 H880.0" stroke="#8E8E93" stroke-width="3" stroke-dasharray="8 7" fill="none" stroke-linecap="round"/>
+<circle cx="212.4" cy="284.0" r="6.3" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="212.4" y="305.8" text-anchor="middle" font-size="13.5" fill="#6E6E73" font-weight="600">Chase</text>
+<circle cx="360.7" cy="284.0" r="6.3" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="360.7" y="305.8" text-anchor="middle" font-size="13.5" fill="#6E6E73" font-weight="600">Chase</text>
+<circle cx="509.1" cy="284.0" r="6.3" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="509.1" y="305.8" text-anchor="middle" font-size="13.5" fill="#6E6E73" font-weight="600">Chase</text>
 </g>
-<circle cx="478" cy="92" r="19" fill="#B42318"/><text x="478" y="97" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">No</text>
-<text x="260" y="236" text-anchor="middle" font-size="14" fill="#6E6E73">Pipeline: 1 person · Clients: 0</text>
+<g class="ln creator" data-k="r"><path d="M64.0,284.0 H212.4 V258.2 H360.7 V227.2 H449.7 V193.7 H538.8 V155.0 H620.4 V113.7 H709.4 V69.9 H798.4 V26.0 H880.0" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="138.2" cy="284.0" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="286.5" cy="258.2" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="405.2" cy="227.2" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="494.3" cy="193.7" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="579.6" cy="155.0" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="664.9" cy="113.7" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="753.9" cy="69.9" r="5.4" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="212.4" cy="258.2" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="360.7" cy="227.2" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="449.7" cy="193.7" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="538.8" cy="155.0" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="620.4" cy="113.7" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="709.4" cy="69.9" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="798.4" cy="26.0" r="7.2" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<text x="286.5" y="244.7" text-anchor="middle" font-size="13.5" fill="#C2410C" font-weight="700">New lead</text>
+<text x="350.2" y="216.7" text-anchor="end" font-size="13.5" fill="#C2410C" font-weight="700">Yes</text></g></g>
+<text class="lab creator" x="896" y="32.0" font-size="18.0" font-weight="800" fill="#C2410C">The creator</text><text class="lab creator" x="896" y="51.5" font-size="15.0" fill="#C2410C">Revenue keeps climbing</text>
+<text class="lab chaser" x="896" y="290.0" font-size="18.0" font-weight="800" fill="#6E6E73">The chaser</text><text class="lab chaser" x="896" y="309.5" font-size="15.0" fill="#6E6E73">Still waiting</text>
 </svg>
-</div>
-<div class="dg win"><p class="tag">The creator</p><h2>Focus on the inputs</h2>
-<svg viewBox="0 0 520 250" role="img" aria-label="One person puts effort into conversations, the high street, events and content, which creates many prospects and several yeses.">
-<path d="M262,28 L508,8 L508,192 L262,172 Z" fill="#F26B1D" opacity=".07"/>
-<g stroke="#F7B48A" stroke-width="2" fill="none">
-<path d="M86,128 C110,128 110,44 138,44"/><path d="M86,128 C110,128 110,88 138,88"/><path d="M86,128 C110,128 110,132 138,132"/><path d="M86,128 C110,128 110,176 138,176"/>
-<path d="M262,44 L306,44"/><path d="M262,88 L306,88"/><path d="M262,132 L306,128"/><path d="M262,176 L306,170"/>
+<svg class="chart cm" viewBox="0 0 400 300" role="img" aria-label="Line chart. Both start at the same point. The chaser waits on one prospect and their revenue stays flat. The creator keeps making new leads and their revenue steps up week after week.">
+<defs><clipPath id="rv-cm"><rect class="rev" x="0" y="0" width="400" height="300"/></clipPath></defs>
+<line x1="30" y1="30" x2="30" y2="250" stroke="#D1D1D6" stroke-width="1.5"/><line x1="30" y1="250" x2="385" y2="250" stroke="#D1D1D6" stroke-width="1.5"/>
+<text x="16" y="145.0" transform="rotate(-90 16 145.0)" text-anchor="middle" font-size="14" fill="#6E6E73" font-weight="600">Revenue</text>
+<text x="30.0" y="274" text-anchor="start" font-size="14" fill="#6E6E73">Week 1</text>
+<text x="191.4" y="274" text-anchor="middle" font-size="14" fill="#6E6E73">Week 6</text>
+<text x="385.0" y="274" text-anchor="end" font-size="14" fill="#6E6E73">Week 12</text>
+<g clip-path="url(#rv-cm)"><path class="gap" d="M30.0,216.4 H94.5 V198.8 H159.1 V177.6 H197.8 V154.7 H236.5 V128.2 H272.0 V100.0 H310.8 V70.0 H349.5 V40.0 H385.0 V216.4 Z" fill="#F26B1D" opacity=".09"/>
+<g class="ln chaser" data-k="c"><path d="M30.0,216.4 H385.0" stroke="#8E8E93" stroke-width="3" stroke-dasharray="8 7" fill="none" stroke-linecap="round"/>
+<circle cx="94.5" cy="216.4" r="5.9" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="94.5" y="236.7" text-anchor="middle" font-size="12.6" fill="#6E6E73" font-weight="600">Chase</text>
+<circle cx="159.1" cy="216.4" r="5.9" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="159.1" y="236.7" text-anchor="middle" font-size="12.6" fill="#6E6E73" font-weight="600">Chase</text>
+<circle cx="223.6" cy="216.4" r="5.9" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="223.6" y="236.7" text-anchor="middle" font-size="12.6" fill="#6E6E73" font-weight="600">Chase</text>
 </g>
-<g fill="#F26B1D"><circle cx="60" cy="100" r="16"/><path d="M34,154 Q34,122 60,122 Q86,122 86,154 Z"/></g>
-<text x="60" y="178" text-anchor="middle" font-size="14" font-weight="600" fill="#0A0A0A">You</text>
-<g font-size="13" font-weight="600" fill="#0A0A0A" text-anchor="middle">
-<rect x="138" y="30" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="49">Conversations</text>
-<rect x="138" y="74" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="93">High street</text>
-<rect x="138" y="118" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="137">Events</text>
-<rect x="138" y="162" width="124" height="28" rx="14" fill="#FFFFFF" stroke="#F26B1D"/><text x="200" y="181">Content</text>
-</g>
-<circle cx="328" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="44" r="15" fill="#F26B1D"/><path d="M364,44 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="412" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="44" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="328" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="86" r="15" fill="#F26B1D"/><path d="M448,86 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="496" cy="86" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="328" cy="128" r="15" fill="#F26B1D"/><path d="M322,128 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="370" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="454" cy="128" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="128" r="15" fill="#F26B1D"/><path d="M490,128 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="328" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="370" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="412" cy="170" r="15" fill="#F26B1D"/><path d="M406,170 l4,5 l8,-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="454" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/><circle cx="496" cy="170" r="13" fill="#FFFFFF" stroke="#F7B48A" stroke-width="2"/>
-<text x="260" y="236" text-anchor="middle" font-size="14" fill="#C2410C" font-weight="600">Pipeline: always full · Yeses keep coming</text>
+<g class="ln creator" data-k="r"><path d="M30.0,216.4 H94.5 V198.8 H159.1 V177.6 H197.8 V154.7 H236.5 V128.2 H272.0 V100.0 H310.8 V70.0 H349.5 V40.0 H385.0" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="62.3" cy="216.4" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="126.8" cy="198.8" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="178.5" cy="177.6" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="217.2" cy="154.7" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="254.3" cy="128.2" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="291.4" cy="100.0" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="330.1" cy="70.0" r="5.0" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/>
+<circle cx="94.5" cy="198.8" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="159.1" cy="177.6" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="197.8" cy="154.7" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="236.5" cy="128.2" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="272.0" cy="100.0" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="310.8" cy="70.0" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<circle cx="349.5" cy="40.0" r="6.7" fill="#F26B1D" stroke="#fff" stroke-width="2"/>
+<text x="126.8" y="186.2" text-anchor="middle" font-size="12.6" fill="#C2410C" font-weight="700">New lead</text>
+<text x="226.5" y="118.2" text-anchor="end" font-size="12.6" fill="#C2410C" font-weight="700">Yes</text></g></g>
+<text class="lab creator" x="385.0" y="27.4" text-anchor="end" font-size="16.1" font-weight="800" fill="#C2410C">The creator</text>
+<text class="lab chaser" x="385.0" y="205.2" text-anchor="end" font-size="16.1" font-weight="800" fill="#6E6E73">The chaser</text>
 </svg>
-</div>
 </div>
 <div class="rule"><span class="k">My rule</span><span class="v">1 chaser only, 2 weeks later.</span><span class="s">Then stop, and go create new leads.</span></div>
 </main>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/70-percent-lead-generation/" style="text-decoration:none">&larr; 70% of your time needs to be lead generation</a><a href="/start/why-we-get-results/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Why we achieve such good results in this community &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Creating > Chasing</div></footer>
 
+<script>
+(function(){var cc=document.getElementById("cc");if(!cc)return;
+function on(k){cc.classList.remove("hc","hr");if(k)cc.classList.add(k==="c"?"hc":"hr")}
+cc.querySelectorAll("[data-k]").forEach(function(el){var k=el.getAttribute("data-k");
+el.addEventListener("mouseenter",function(){on(k)});el.addEventListener("mouseleave",function(){on(null)});
+el.addEventListener("focus",function(){on(k)});el.addEventListener("blur",function(){on(null)})});})();
+</script>
 </body>
 </html>
