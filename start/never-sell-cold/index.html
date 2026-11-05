@@ -114,12 +114,11 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 (function(){
   var R=[
     {n:'Cold email',d:'Coldest',h:'Avoid.'},
-    {n:'Cold calling',d:'Freezing',h:'Interrupting their day.'},
-    {n:'Cold ads and DMs',d:'Cold',h:'A stranger in their inbox.'},
-    {n:'In-person introductions',d:'Cool',h:'50 handshakes. 1 interested today. 2 more yeses within 12 months.'},
-    {n:'Networking and clubs',d:'Warm',h:'Not many young accountants in a room like that.'},
+    {n:'Cold calling',d:'Cold',h:'Interrupting their day.'},
+    {n:'Networking events',d:'Warm',h:'Still warm. Everyone knows why you\'re there.'},
     {n:'Referrals',d:'Warmer',h:'One beach club chat. Lots of clients.'},
     {n:'Speaking at events',d:'Hot',h:'The whole room hears you first.'},
+    {n:'In person, naturally',d:'Hotter',h:'50 handshakes. 1 interested today. 2 more yeses within 12 months.'},
     {n:'Your content',d:'Hottest',h:'They already know you before you say hello.'}
   ];
   var list=document.getElementById('rungs'),merc=document.getElementById('merc'),th=document.getElementById('thermo'),
@@ -129,7 +128,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
     for(var i=1;i<7;i+=2){var v=Math.round(p(a,i)+(p(b,i)-p(a,i))*t);o+=('0'+v.toString(16)).slice(-2);}return o;}
   for(var i=R.length-1;i>=0;i--){
     var li=document.createElement('li'),b=document.createElement('button');
-    b.type='button';b.className='rung '+(i<3?'cold':'warm');
+    b.type='button';b.className='rung '+(i<2?'cold':'warm');
     b.innerHTML='<span>'+R[i].n+'</span><span class="deg">'+R[i].d+'</span>';
     b.setAttribute('data-i',i);
     b.addEventListener('click',function(){set(+this.getAttribute('data-i'));});
@@ -141,7 +140,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
     root.style.setProperty('--heat',mix('#7FA6D6','#F26B1D',Math.min(1,t*1.25)));
     for(var k=0;k<btns.length;k++){btns[k].classList.toggle('on',k===i);btns[k].classList.toggle('below',k<i);btns[k].setAttribute('aria-pressed',k===i?'true':'false');}
     tag.textContent=R[i].d+' · '+R[i].n;hd.textContent=R[i].h;
-    var hot=i>=4;read.classList.toggle('hot',hot);th.classList.toggle('hot',hot);
+    var hot=i>=2;read.classList.toggle('hot',hot);th.classList.toggle('hot',hot);
     up.disabled=i===R.length-1;
   }
   up.addEventListener('click',function(){if(cur<R.length-1)set(cur+1);});
