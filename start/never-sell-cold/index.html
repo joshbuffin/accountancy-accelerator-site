@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Never sell cold - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: never sell cold. Climb the trust ladder before you ask for anything.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--cold:#7FA6D6;--radius:22px;--container:1100px;--heat:#7FA6D6;--lvl:12%}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+button{font-family:inherit;color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(44px,6vw,84px);font-weight:700;letter-spacing:-.035em;line-height:1.02}
+.gold-t{color:var(--gold-soft)}
+.lead{font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-.01em;margin-top:20px}
+
+.page{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,3.5vw,40px) 24px}
+.rule{margin-top:28px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.rule.add{border-left-style:dashed;color:var(--slate);font-weight:600;margin-top:16px}
+
+/* Readout */
+.read{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px;transition:border-color .4s ease,background-color .4s ease}
+.read .tag{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--heat);transition:color .4s ease}
+.read h2{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-top:6px}
+.read.hot{border-color:var(--gold);background:#FFF8F3}
+.read.hot .tag{color:var(--gold-soft)}
+
+/* Thermometer */
+.thermo{display:grid;grid-template-columns:76px minmax(0,1fr);gap:20px;align-items:stretch}
+.tube-wrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.tube{position:relative;flex:1;width:34px;border-radius:17px 17px 0 0;background:var(--card);border:2px solid var(--line);border-bottom:0;overflow:hidden}
+.merc{position:absolute;left:4px;right:4px;bottom:0;height:var(--lvl);border-radius:13px 13px 0 0;background:linear-gradient(to top,var(--cold),var(--heat));transition:height .7s cubic-bezier(.2,.8,.2,1),background .7s ease}
+.bulb{width:76px;height:76px;border-radius:50%;background:var(--card);border:2px solid var(--line);margin-top:-6px;display:grid;place-items:center;position:relative;z-index:1}
+.bulb span{width:58px;height:58px;border-radius:50%;background:var(--heat);transition:background .7s ease;box-shadow:0 0 0 0 rgba(242,107,29,0)}
+.thermo.hot .bulb span{box-shadow:0 0 28px 4px rgba(242,107,29,.35)}
+.rungs{list-style:none;display:flex;flex-direction:column;justify-content:space-between;padding-bottom:30px;gap:6px}
+.rung{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:14px;padding:10px 14px;cursor:pointer;font-size:clamp(16px,1.5vw,19px);font-weight:600;transition:background-color .25s ease,border-color .25s ease,transform .3s cubic-bezier(.2,.8,.2,1)}
+.rung .deg{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
+.rung:hover{background:var(--card);transform:translateX(4px)}
+.rung.on{background:#FFF8F3;border-color:var(--gold)}
+.rung.on.cold{background:#F1F6FC;border-color:var(--cold)}
+.rung.below{color:var(--slate)}
+.rung.cold .deg{color:#4F79AD}
+.rung.warm .deg{color:var(--gold-soft)}
+.ctrls{display:flex;gap:10px;margin-top:16px;padding-left:96px}
+.btn{border:0;border-radius:999px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;background:var(--gold);color:#0A0A0A;transition:transform .3s ease,box-shadow .3s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(242,107,29,.6)}
+.btn.ghost{background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
+@media (max-width:900px){
+  .page{grid-template-columns:1fr;min-height:0;gap:24px}
+  .navtag{font-size:11px}
+  .brand{font-size:11px}
+}
+@media (max-width:520px){
+  .thermo{grid-template-columns:52px minmax(0,1fr);gap:12px}
+  .tube{width:26px}
+  .bulb{width:52px;height:52px}
+  .bulb span{width:38px;height:38px}
+  .rungs{padding-bottom:18px;gap:2px}
+  .rung{padding:8px 10px;font-size:15px}
+  .rung .deg{font-size:10px;letter-spacing:.12em}
+  .ctrls{padding-left:64px}
+  .rule{margin-top:20px}
+  .read{margin-top:20px;padding:16px 18px}
+}
+@media (prefers-reduced-motion:reduce){.merc,.bulb span,.rung,.btn,.read{transition:none}.rung:hover,.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Never sell cold</span></div></nav>
+
+<main class="wrap page">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Video 3</p>
+<h1>Never sell <span class="gold-t">cold.</span></h1>
+<p class="lead">Warm them up first.</p>
+<p class="rule">Climb as high as you can before you go cold.</p>
+<div class="read" id="read" aria-live="polite">
+<p class="tag" id="readTag">Coldest</p>
+<h2 id="readH">Avoid.</h2>
+</div>
+<p class="rule add">Add yours: the cold pitch that taught you this</p>
+</div>
+
+<div>
+<div class="thermo" id="thermo">
+<div class="tube-wrap" aria-hidden="true"><div class="tube"><div class="merc" id="merc"></div></div><div class="bulb"><span></span></div></div>
+<ol class="rungs" id="rungs" aria-label="The Trust Hierarchy, warmest at the top"></ol>
+</div>
+<div class="ctrls"><button class="btn" id="up" type="button">Warm it up &uarr;</button><button class="btn ghost" id="reset" type="button">Reset</button></div>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/understanding-lead-time/" style="text-decoration:none">&larr; Understanding lead time</a><a href="/start/where-to-start/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Where to start &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Never sell cold</div></footer>
+
+<script>
+(function(){
+  var R=[
+    {n:'Cold email',d:'Coldest',h:'Avoid.'},
+    {n:'Cold calling',d:'Freezing',h:'Interrupting their day.'},
+    {n:'Cold ads and DMs',d:'Cold',h:'A stranger in their inbox.'},
+    {n:'In-person introductions',d:'Cool',h:'50 handshakes. 1 interested today. 2 more yeses within 12 months.'},
+    {n:'Networking and clubs',d:'Warm',h:'Not many young accountants in a room like that.'},
+    {n:'Referrals',d:'Warmer',h:'One beach club chat. Lots of clients.'},
+    {n:'Speaking at events',d:'Hot',h:'The whole room hears you first.'},
+    {n:'Your content',d:'Hottest',h:'They already know you before you say hello.'}
+  ];
+  var list=document.getElementById('rungs'),merc=document.getElementById('merc'),th=document.getElementById('thermo'),
+      read=document.getElementById('read'),tag=document.getElementById('readTag'),hd=document.getElementById('readH'),
+      up=document.getElementById('up'),root=document.documentElement,btns=[],cur=0;
+  function mix(a,b,t){var p=function(h,i){return parseInt(h.substr(i,2),16)},o='#';
+    for(var i=1;i<7;i+=2){var v=Math.round(p(a,i)+(p(b,i)-p(a,i))*t);o+=('0'+v.toString(16)).slice(-2);}return o;}
+  for(var i=R.length-1;i>=0;i--){
+    var li=document.createElement('li'),b=document.createElement('button');
+    b.type='button';b.className='rung '+(i<3?'cold':'warm');
+    b.innerHTML='<span>'+R[i].n+'</span><span class="deg">'+R[i].d+'</span>';
+    b.setAttribute('data-i',i);
+    b.addEventListener('click',function(){set(+this.getAttribute('data-i'));});
+    li.appendChild(b);list.appendChild(li);btns[i]=b;
+  }
+  function set(i){
+    cur=i;var t=i/(R.length-1);
+    root.style.setProperty('--lvl',(12+t*88)+'%');
+    root.style.setProperty('--heat',mix('#7FA6D6','#F26B1D',Math.min(1,t*1.25)));
+    for(var k=0;k<btns.length;k++){btns[k].classList.toggle('on',k===i);btns[k].classList.toggle('below',k<i);btns[k].setAttribute('aria-pressed',k===i?'true':'false');}
+    tag.textContent=R[i].d+' · '+R[i].n;hd.textContent=R[i].h;
+    var hot=i>=4;read.classList.toggle('hot',hot);th.classList.toggle('hot',hot);
+    up.disabled=i===R.length-1;
+  }
+  up.addEventListener('click',function(){if(cur<R.length-1)set(cur+1);});
+  document.getElementById('reset').addEventListener('click',function(){set(0);});
+  var h=parseInt((location.hash||'').slice(1),10);set(h>=0&&h<R.length?h:0);
+})();
+</script>
+</body>
+</html>
