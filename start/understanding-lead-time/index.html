@@ -26,160 +26,102 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 
 /* Page layout */
-:root{--container:1240px}
-.lt-hero{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:8px 32px;padding:clamp(14px,2.4vh,26px) 24px clamp(8px,1.4vh,14px)}
-.lt-hero .eyebrow{margin-bottom:8px}
-.lt-hero h1{font-size:clamp(32px,3.8vw,52px)}
-.lt-hero .tag{font-size:clamp(15px,1.4vw,18px);font-weight:700;color:var(--muted);border-left:3px solid var(--gold);padding-left:12px}
-.cards{display:flex;flex-direction:column;gap:clamp(8px,1.4vh,14px);padding:0 24px}
-.dg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(10px,1.6vh,16px) clamp(14px,2vw,24px) 6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
-.dg:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 18px 40px -22px rgba(242,107,29,.45)}
-.dg.two{background:#FFF8F3;border-color:#F6C9AD}
-.dh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
-.dh h2{font-size:clamp(18px,1.8vw,24px);font-weight:700;letter-spacing:-.02em}
-.dh h2 span{color:var(--gold-soft)}
-.dh p{font-size:clamp(14px,1.3vw,16px);font-weight:700;color:var(--slate)}
-.dh .r{display:flex;align-items:center;gap:12px}
-.shuffle{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:7px 16px;cursor:pointer;transition:background .2s ease,transform .2s ease}
-.shuffle:hover{background:var(--gold-soft);transform:translateY(-1px)}
-.dg svg{display:block;width:100%;height:auto}
-.dg svg text{font-family:'Inter',Arial,sans-serif}
-.pop{animation:pop .5s cubic-bezier(.2,.8,.2,1) both}
-@keyframes pop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
-.grow{animation:grow 1.4s cubic-bezier(.4,0,.2,1) both}
-@keyframes grow{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@media (prefers-reduced-motion:reduce){.pop,.grow{animation:none}.dg,.shuffle{transition:none}.dg:hover{transform:none}}
-@media (max-width:900px){.lt-hero,.cards{padding-left:16px;padding-right:16px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.pnav{padding:12px 16px;font-size:14px}footer .wrap{padding:0 16px}.dg{padding:10px 10px 4px}}
+:root{--container:1180px}
+.hero{padding:clamp(20px,4vh,44px) 0 clamp(14px,2.6vh,28px)}
+.hero .eyebrow{margin-bottom:12px}
+.hero h1{font-size:clamp(34px,4.6vw,64px)}
+.lab{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:10px}
+.times{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.t:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3}
+.t b{display:block;font-size:clamp(15px,1.3vw,17px);letter-spacing:-.01em}
+.t span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.chartbox{margin-top:clamp(16px,3vh,32px);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.4vh,26px) clamp(18px,2.4vw,32px) clamp(10px,1.6vh,16px)}
+.ch{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
+.ch h2{font-size:clamp(20px,2.1vw,28px);font-weight:700;letter-spacing:-.02em}
+.shuffle{font:inherit;font-size:14px;font-weight:600;color:var(--gold-soft);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
+.shuffle:hover{border-color:var(--gold);background:#FFF8F3}
+.chart{width:100%;height:auto;display:block;margin-top:8px;overflow:visible}
+.chart text{font-family:'Inter',Arial,sans-serif}
+.cap{font-size:clamp(16px,1.6vw,19px);font-weight:700;margin-top:4px}
+.cap span{color:var(--gold-soft)}
+#ln.draw{stroke-dasharray:1 1;animation:draw 1.8s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+#area{transition:opacity .6s ease}
+@media (prefers-reduced-motion:reduce){#ln.draw{animation:none}.t{transition:none}.t:hover{transform:none}}
+@media (max-width:600px){.chart .ax{font-size:30px}#endN{font-size:72px}#endL{display:none}.chart{margin-top:12px}}
+@media (max-width:900px){.times{grid-template-columns:repeat(2,minmax(0,1fr))}.t:last-child{grid-column:1/-1}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.wrap{padding:0 16px}.pnav{padding:12px 16px;font-size:14px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Understanding lead time</span></div></nav>
 
-<header class="wrap lt-hero">
-<div><p class="eyebrow">Level 5 - Lead generation · Video 2</p>
-<h1>Handshake today. <span class="gold-t">Yes next year.</span></h1></div>
-<p class="tag">Don't judge the day. Judge the year.</p>
+<main class="wrap">
+<header class="hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 2</p>
+<h1>50 cards. 2 clients.<br><span class="gold-t">You just don't know when.</span></h1>
 </header>
 
-<main class="wrap cards">
-<section class="dg" aria-label="One weekend, 50 people">
-<div class="dh"><h2>One weekend. <span>50 people.</span></h2><p>You can't control when they say yes.</p></div>
-<svg id="d1" role="img" aria-label="Timeline: meet 50 people at week 0. One says yes straight away and onboards 6 weeks later. Two say yes in week 10 and onboard 4 and 3 weeks later. One says yes at month 3 and onboards in 3 days. One says yes at month 8 when the deadline comes."></svg>
-</section>
-<section class="dg two" aria-label="50 people every weekend">
-<div class="dh"><h2>50 people. <span>Every weekend.</span></h2><div class="r"><p>Keep meeting 50 a weekend and it stops mattering.</p><button class="shuffle" id="shuf" type="button">Shuffle</button></div></div>
-<svg id="d2" role="img" aria-label="Meet 50 people every weekend for 8 months. 2 say yes every weekend. Each one onboards at a random time, but the total number of clients onboarded climbs steadily."></svg>
+<p class="lab">How long it takes</p>
+<div class="times">
+<div class="t"><b>Yes today.</b><span>Starts in 6 weeks.</span></div>
+<div class="t"><b>Yes in week 10.</b><span>Starts 3 weeks later.</span></div>
+<div class="t"><b>Yes in week 10.</b><span>Starts 4 weeks later.</span></div>
+<div class="t"><b>Yes in 3 months.</b><span>Starts in 3 days.</span></div>
+<div class="t"><b>Yes in 8 months.</b><span>When the deadline comes.</span></div>
+</div>
+
+<section class="chartbox" aria-label="Clients onboarded if you hand out 50 cards every weekend">
+<div class="ch"><h2>Hand out 50 cards every weekend.</h2><button class="shuffle" id="shuf" type="button">Shuffle</button></div>
+<svg class="chart" viewBox="0 0 1000 290" role="img" aria-label="Clients onboarded rises steadily over 8 months, even though each client starts at a random time">
+<line x1="40" y1="250" x2="860" y2="250" stroke="#D1D1D6" stroke-width="1.5"/>
+<g id="ticks"></g>
+<text class="ax" x="40" y="276" font-size="14" fill="#6E6E73">Week 0</text>
+<text class="ax" x="268" y="276" text-anchor="middle" font-size="14" fill="#6E6E73">Month 3</text>
+<text class="ax" x="496" y="276" text-anchor="middle" font-size="14" fill="#6E6E73">Month 6</text>
+<text class="ax" x="860" y="276" text-anchor="end" font-size="14" fill="#6E6E73">Month 8</text>
+<path id="area" fill="rgba(242,107,29,.08)" d=""/>
+<path id="ln" pathLength="1" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" d=""/>
+<circle id="endDot" r="8" fill="#F26B1D" stroke="#fff" stroke-width="3" cx="860" cy="250"/>
+<text id="endN" x="880" y="0" font-size="44" font-weight="800" fill="#C2410C" letter-spacing="-1.5">0</text>
+<text id="endL" x="882" y="0" font-size="14" font-weight="600" fill="#6E6E73">clients started</text>
+</svg>
+<p class="cap">Random when. <span>Steady overall.</span></p>
 </section>
 </main>
+
+
 <div class="wrap pnav"><a href="/start/we-are-in-a-sprint/" style="text-decoration:none">&larr; We are in a sprint</a><a href="/start/never-sell-cold/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Never sell cold &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Understanding lead time</div></footer>
-
 <script>
 (function(){
-  var dotsEl=document.getElementById('dots'),yesEl=document.getElementById('yes'),cap=document.getElementById('cap'),
-      fill=document.getElementById('fill'),range=document.getElementById('month'),play=document.getElementById('play'),
-      ticks=document.querySelectorAll('.tick');
-  var dots=[];
-  for(var i=0;i<50;i++){var d=document.createElement('span');d.className='dot';dotsEl.appendChild(d);dots.push(d);}
-  // Which dot lights up, and when (months after the handshake)
-  var yeses=[{dot:12,m:0},{dot:27,m:9},{dot:41,m:12}];
-  function caption(m){
-    if(m===0) return '<b>Today:</b> 1 interested. 49 not yet.';
-    if(m<9) return '<b>Month '+m+':</b> quiet. Stay in touch.';
-    if(m<12) return '<b>Month 9:</b> their accountant let them down. They called me.';
-    return '<b>Month 12:</b> 3 from 50. Same handshakes.';
-  }
-  function render(m){
-    var n=0;
-    yeses.forEach(function(y){var on=m>=y.m;dots[y.dot].classList.toggle('on',on);if(on)n++;});
-    yesEl.textContent=n;
-    fill.style.width=(m/12*100)+'%';
-    ticks.forEach(function(t){t.classList.toggle('hit',m>=+t.getAttribute('data-m'));});
-    cap.innerHTML=caption(m);
-    range.value=m;
-    play.textContent=m>=12?'Back to today':'Fast-forward 12 months';
-  }
-  var timer=null;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function stop(){if(timer){clearInterval(timer);timer=null;}}
-  play.addEventListener('click',function(){
-    stop();
-    if(+range.value>=12){render(0);return;}
-    if(reduce){render(12);return;}
-    var m=+range.value;
-    timer=setInterval(function(){m++;render(m);if(m>=12)stop();},380);
-  });
-  range.addEventListener('input',function(){stop();render(+range.value);});
-  render(0);
-})();
-</script>
-<script>
-(function(){
-var NS="http://www.w3.org/2000/svg",WEEKS=36,O="#F26B1D",OD="#C2410C",G="#6E6E73",LN="#D1D1D6";
-var RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
-function geo(svg){var w=svg.parentNode.clientWidth,m=w<700,W=m?500:1180;return{m:m,W:W,L:m?14:150,R:W-(m?14:36),fs:m?17:13}}
-function X(g,w){return g.L+(g.R-g.L)*w/WEEKS}
-function axis(svg,g,y){
-svg.appendChild(el("line",{x1:g.L,y1:y,x2:g.R,y2:y,stroke:LN,"stroke-width":2}));
-[[0,"Week 0"],[13,"Month 3"],[26,"Month 6"],[35,"Month 8"]].forEach(function(t,i){
-svg.appendChild(el("line",{x1:X(g,t[0]),y1:y,x2:X(g,t[0]),y2:y+6,stroke:LN,"stroke-width":2}));
-svg.appendChild(el("text",{x:X(g,t[0]),y:y+g.fs+8,"text-anchor":i==0?"start":(i==3?"end":"middle"),"font-size":g.fs,"font-weight":600,fill:G},t[1]))})}
-function d1(){
-var svg=document.getElementById("d1"),g=geo(svg);svg.innerHTML="";
-var rh=g.m?50:30,top=g.m?60:40,H=top+rh*5+(g.m?44:34);
-svg.setAttribute("viewBox","0 0 "+g.W+" "+H);
-var x0=X(g,0),ay=top+rh*5-6;
-svg.appendChild(el("line",{x1:x0,y1:18,x2:x0,y2:ay,stroke:O,"stroke-width":2,"stroke-dasharray":"4 5"}));
-svg.appendChild(el("rect",{x:x0-4,y:4,width:g.m?190:150,height:g.fs+12,rx:(g.fs+12)/2,fill:O}));
-svg.appendChild(el("text",{x:x0+(g.m?91:71),y:4+g.fs+3,"text-anchor":"middle","font-size":g.fs,"font-weight":800,fill:"#fff"},"Meet 50 people"));
-var rows=[{y:0,o:6,l:"Yes straight away",b:"6 weeks to onboard"},{y:10,o:14,l:"Yes in week 10",b:"4 weeks"},{y:10,o:13,l:"Yes in week 10",b:"3 weeks"},{y:13,o:13+3/7,l:"Yes at month 3",b:"3 days"},{y:35,o:null,l:"Yes at month 8",b:"The deadline comes"}];
-rows.forEach(function(r,i){
-var cy=top+rh*i+(g.m?10:6),xy=X(g,r.y);
-svg.appendChild(el("line",{x1:g.L,y1:cy,x2:g.R,y2:cy,stroke:"#E9E9EC","stroke-width":1}));
-if(g.m)svg.appendChild(el("text",{x:r.y>30?xy:Math.max(xy,g.L),y:cy-11,"text-anchor":r.y>30?"end":"start","font-size":g.fs-2,"font-weight":700,fill:G},r.l));
-else svg.appendChild(el("text",{x:g.L-16,y:cy+4,"text-anchor":"end","font-size":g.fs,"font-weight":700,fill:"#3A3A3C"},r.l));
-var grp=el("g",{"class":RM?"":"pop",style:"animation-delay:"+(0.15+i*0.18)+"s"});
-if(r.o!=null){var xo=X(g,r.o);
-grp.appendChild(el("rect",{x:xy,y:cy-5,width:Math.max(xo-xy,4),height:10,rx:5,fill:"rgba(242,107,29,.22)"}));
-grp.appendChild(el("circle",{cx:xy,cy:cy,r:7,fill:"#fff",stroke:O,"stroke-width":3}));
-grp.appendChild(el("circle",{cx:xo,cy:cy,r:8,fill:O}));
-grp.appendChild(el("path",{d:"M"+(xo-3.5)+","+cy+" l2.5,2.6 l4.5,-5",stroke:"#fff","stroke-width":2,fill:"none","stroke-linecap":"round","stroke-linejoin":"round"}));
-grp.appendChild(el("text",{x:xo+14,y:cy+(g.fs/2.6),"font-size":g.fs,"font-weight":700,fill:OD},r.b));
-}else{
-grp.appendChild(el("circle",{cx:xy,cy:cy,r:8,fill:O}));
-grp.appendChild(el("text",{x:xy-16,y:cy+(g.fs/2.6),"text-anchor":"end","font-size":g.fs,"font-weight":800,fill:OD},r.b));}
-svg.appendChild(grp)});
-axis(svg,g,ay);
+var W=36,X0=40,X1=860,Y0=250,YT=30,MAX=W*2;
+function x(w){return X0+(X1-X0)*w/W}
+function y(n){return Y0-(Y0-YT)*n/MAX}
+var ticks=document.getElementById("ticks"),s="";
+for(var w=0;w<W;w++){s+='<line x1="'+x(w)+'" y1="250" x2="'+x(w)+'" y2="256" stroke="#F6C9AD" stroke-width="2"/>'}
+ticks.innerHTML=s;
+var ln=document.getElementById("ln"),area=document.getElementById("area");
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function run(){
+var c=new Array(W+1).fill(0);
+for(var w=0;w<W;w++){for(var k=0;k<2;k++){var st=w+Math.floor(Math.random()*11);if(st<=W)c[st]++}}
+var n=0,d="M"+x(0)+","+y(0);
+for(var i=0;i<=W;i++){n+=c[i];if(c[i]){d+=" H"+x(i).toFixed(1)+" V"+y(n).toFixed(1)}}
+d+=" H"+x(W);
+ln.setAttribute("d",d);
+area.setAttribute("d",d+" V"+Y0+" H"+x(0)+" Z");
+var ey=y(n);
+document.getElementById("endDot").setAttribute("cy",ey);
+document.getElementById("endN").setAttribute("y",ey+6);
+document.getElementById("endN").textContent=n;
+document.getElementById("endL").setAttribute("y",ey+26);
+if(!reduce){ln.classList.remove("draw");void ln.getBoundingClientRect();ln.classList.add("draw")}
 }
-function d2(anim){
-var svg=document.getElementById("d2"),g=geo(svg);svg.innerHTML="";
-var H=g.m?300:236,ty=g.m?20:16,yy=g.m?46:36,base=g.m?232:180,ay=base+12,step=g.m?9:8.5,r=g.m?3.6:3.6;
-svg.setAttribute("viewBox","0 0 "+g.W+" "+(H+(g.m?8:0)));
-if(!g.m){[["Meet 50",ty+4],["2 yeses",yy+4],["Onboarded",base-4]].forEach(function(t){svg.appendChild(el("text",{x:g.L-16,y:t[1],"text-anchor":"end","font-size":g.fs,"font-weight":700,fill:"#3A3A3C"},t[0]))})}
-var cnt={},onb=[],lines=el("g",{}),dots=el("g",{});
-for(var w=0;w<=WEEKS;w++){
-svg.appendChild(el("path",{d:"M"+X(g,w)+","+(ty-5)+" l4,7 h-8 z",fill:O,opacity:.85}));
-for(var k=0;k<2;k++){
-svg.appendChild(el("circle",{cx:X(g,w),cy:yy+(k?6:-2),r:r-0.6,fill:"#fff",stroke:O,"stroke-width":1.8}));
-var o=w+Math.random()*10,ow=Math.round(o);
-if(ow<=WEEKS){var n=cnt[ow]=(cnt[ow]||0)+1,cy=base-(n-1)*step-r;onb.push(ow);
-lines.appendChild(el("line",{x1:X(g,w),y1:yy+4,x2:X(g,ow),y2:cy,stroke:O,"stroke-width":1,opacity:.13}));
-dots.appendChild(el("circle",{cx:X(g,ow),cy:cy,r:r,fill:O,"class":anim&&!RM?"pop":"",style:"animation-delay:"+(w*0.035)+"s"}))}}}
-svg.appendChild(lines);svg.appendChild(dots);
-var maxC=2*(WEEKS+1),cum=0,d="",top=yy+22;
-for(var t=0;t<=WEEKS;t++){onb.forEach(function(v){if(v===t)cum++});var px=X(g,t),py=base-(base-top)*cum/maxC;d+=(t?"H"+px+"V"+py:"M"+px+","+py)}
-svg.appendChild(el("path",{d:d,pathLength:1,"stroke-dasharray":1,fill:"none",stroke:OD,"stroke-width":g.m?4:3.2,"stroke-linejoin":"round","class":anim&&!RM?"grow":""}));
-var ex=X(g,WEEKS),ey=base-(base-top)*cum/maxC;
-svg.appendChild(el("circle",{cx:ex,cy:ey,r:g.m?7:6,fill:OD}));
-svg.appendChild(el("text",{x:ex-12,y:ey-12,"text-anchor":"end","font-size":g.fs+2,"font-weight":800,fill:OD},cum+" clients onboarded"));
-axis(svg,g,ay);
-}
-function all(anim){d1();d2(anim)}
-all(true);
-document.getElementById("shuf").addEventListener("click",function(){d2(true)});
-var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){all(false)},150)});
+ln.addEventListener("animationend",function(){ln.classList.remove("draw")});
+document.getElementById("shuf").addEventListener("click",run);
+run();
 })();
 </script>
 </body>
