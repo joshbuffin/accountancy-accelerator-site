@@ -19,109 +19,129 @@ nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-f
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
 .brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
 .navtag{font-size:13px;color:var(--slate);text-align:right}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
-h1{font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
+h1{font-weight:700;letter-spacing:-.035em;line-height:1.05;font-size:clamp(34px,4.4vw,54px)}
 .gold-t{color:var(--gold-soft)}
-footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
-
-/* Page layout */
-:root{--container:1180px}
-.hero{padding:clamp(20px,4vh,44px) 0 clamp(14px,2.6vh,28px)}
-.hero .eyebrow{margin-bottom:12px}
-.hero h1{font-size:clamp(34px,4.6vw,64px)}
-.lab{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:10px}
-.times{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.t:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3}
-.t b{display:block;font-size:clamp(15px,1.3vw,17px);letter-spacing:-.01em}
-.t span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
-.chartbox{margin-top:clamp(16px,3vh,32px);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.4vh,26px) clamp(18px,2.4vw,32px) clamp(10px,1.6vh,16px)}
-.ch{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
-.ch h2{font-size:clamp(20px,2.1vw,28px);font-weight:700;letter-spacing:-.02em}
-.shuffle{font:inherit;font-size:14px;font-weight:600;color:var(--gold-soft);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
-.shuffle:hover{border-color:var(--gold);background:#FFF8F3}
-.chart{width:100%;height:auto;display:block;margin-top:8px;overflow:visible}
+.hero{padding-top:clamp(18px,3vh,30px);padding-bottom:clamp(12px,2vh,20px)}
+.frame{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{border-top:3px solid var(--line);padding-top:12px}
+.col.look{border-top-color:var(--gold)}
+.col h2{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+.col.look h2{color:var(--gold-soft)}
+.col ul{padding-left:18px;display:flex;flex-direction:column;gap:3px;font-size:15.5px}
+.col li::marker{color:var(--gold)}
+.col b{font-weight:700}
+.chartcard{margin-top:clamp(14px,2.4vh,24px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px 14px;transition:box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.chartcard:hover{border-color:var(--gold);box-shadow:0 18px 40px -22px rgba(242,107,29,.45)}
+.ch{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.ch h3{font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.02em;margin-right:auto}
+.key{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--slate)}
+.key i{display:inline-block}
+.key .m{width:22px;height:4px;border-radius:2px;background:var(--gold)}
+.key .o{width:6px;height:14px;border-radius:2px;background:#C9C9CE}
+.key .q{width:22px;border-top:2px dashed var(--ink)}
+.shuffle{font:inherit;font-size:14px;font-weight:600;color:var(--gold-soft);background:#fff;border:1px solid var(--gold);border-radius:999px;padding:6px 16px;cursor:pointer;transition:background .2s ease}
+.shuffle:hover{background:#FFF1E8}
+svg.chart{width:100%;height:auto;display:block;margin-top:6px;overflow:visible}
 .chart text{font-family:'Inter',Arial,sans-serif}
-.cap{font-size:clamp(16px,1.6vw,19px);font-weight:700;margin-top:4px}
-.cap span{color:var(--gold-soft)}
-#ln.draw{stroke-dasharray:1 1;animation:draw 1.8s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-#area{transition:opacity .6s ease}
-@media (prefers-reduced-motion:reduce){#ln.draw{animation:none}.t{transition:none}.t:hover{transform:none}}
-@media (max-width:600px){.chart .ax{font-size:30px}#endN{font-size:72px}#endL{display:none}.chart{margin-top:12px}}
-@media (max-width:900px){.times{grid-template-columns:repeat(2,minmax(0,1fr))}.t:last-child{grid-column:1/-1}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.wrap{padding:0 16px}.pnav{padding:12px 16px;font-size:14px}}
+.stats{display:flex;gap:clamp(18px,4vw,56px);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.stat .n{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.stat .n.or{color:var(--gold-soft)}
+.stat .l{font-size:13px;color:var(--slate);font-weight:600}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
+#mline{transition:none}
+@media (max-width:900px){.frame{grid-template-columns:1fr;gap:14px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.wrap{padding:0 16px}.pnav{padding:12px 16px;font-size:14px}.chartcard{padding:14px 12px}.col ul{font-size:15px}}
 </style>
 </head>
 <body>
-
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Understanding lead time</span></div></nav>
-
-<main class="wrap">
-<header class="hero">
+<header class="wrap hero">
 <p class="eyebrow">Level 5 - Lead generation · Video 2</p>
-<h1>50 cards. 2 clients.<br><span class="gold-t">You just don't know when.</span></h1>
+<h1>Lead time is random. <span class="gold-t">Revenue isn't.</span></h1>
 </header>
 
-<p class="lab">How long it takes</p>
-<div class="times">
-<div class="t"><b>Yes today.</b><span>Starts in 6 weeks.</span></div>
-<div class="t"><b>Yes in week 10.</b><span>Starts 3 weeks later.</span></div>
-<div class="t"><b>Yes in week 10.</b><span>Starts 4 weeks later.</span></div>
-<div class="t"><b>Yes in 3 months.</b><span>Starts in 3 days.</span></div>
-<div class="t"><b>Yes in 8 months.</b><span>When the deadline comes.</span></div>
+<main class="wrap">
+<div class="frame">
+<div class="col">
+<h2>How it happens</h2>
+<ul>
+<li>Hand out <b>50 business cards</b> every weekend</li>
+<li><b>2 say yes</b></li>
+<li>Half become <b>monthly clients</b>: £150 to £350 a month</li>
+<li>Half pay a <b>one-off yearly fee</b>: £400 to £800</li>
+<li>You never know when they start: today, or 8 months later</li>
+</ul>
+</div>
+<div class="col look">
+<h2>How it actually looks</h2>
+<ul>
+<li>One-off fees land as <b>random spikes</b></li>
+<li>Monthly fees <b>stack up</b>, one client at a time</li>
+<li>Every start date is random. <b>Your income still climbs.</b></li>
+</ul>
+</div>
 </div>
 
-<section class="chartbox" aria-label="Clients onboarded if you hand out 50 cards every weekend">
-<div class="ch"><h2>Hand out 50 cards every weekend.</h2><button class="shuffle" id="shuf" type="button">Shuffle</button></div>
-<svg class="chart" viewBox="0 0 1000 290" role="img" aria-label="Clients onboarded rises steadily over 8 months, even though each client starts at a random time">
-<line x1="40" y1="250" x2="860" y2="250" stroke="#D1D1D6" stroke-width="1.5"/>
-<g id="ticks"></g>
-<text class="ax" x="40" y="276" font-size="14" fill="#6E6E73">Week 0</text>
-<text class="ax" x="268" y="276" text-anchor="middle" font-size="14" fill="#6E6E73">Month 3</text>
-<text class="ax" x="496" y="276" text-anchor="middle" font-size="14" fill="#6E6E73">Month 6</text>
-<text class="ax" x="860" y="276" text-anchor="end" font-size="14" fill="#6E6E73">Month 8</text>
-<path id="area" fill="rgba(242,107,29,.08)" d=""/>
-<path id="ln" pathLength="1" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" d=""/>
-<circle id="endDot" r="8" fill="#F26B1D" stroke="#fff" stroke-width="3" cx="860" cy="250"/>
-<text id="endN" x="880" y="0" font-size="44" font-weight="800" fill="#C2410C" letter-spacing="-1.5">0</text>
-<text id="endL" x="882" y="0" font-size="14" font-weight="600" fill="#6E6E73">clients started</text>
-</svg>
-<p class="cap">Random when. <span>Steady overall.</span></p>
-</section>
+<div class="chartcard">
+<div class="ch">
+<h3>50 cards every weekend, for 8 months</h3>
+<span class="key"><i class="m"></i>Monthly income</span>
+<span class="key"><i class="o"></i>One-off fees</span>
+<span class="key"><i class="q"></i>Quit number</span>
+<button class="shuffle" id="shuffle" type="button">Shuffle</button>
+</div>
+<svg class="chart" id="chart" viewBox="0 0 1000 270" role="img" aria-label="Revenue over 8 months from handing out 50 business cards every weekend. Monthly income climbs past a £5,000 a month quit number while one-off fees land at random weeks."></svg>
+<div class="stats">
+<div class="stat"><p class="n or" id="sMonthly">£0</p><p class="l">a month by month 8</p></div>
+<div class="stat"><p class="n" id="sQuit">Week 0</p><p class="l">quit number hit</p></div>
+<div class="stat"><p class="n" id="sOne">£0</p><p class="l">one-off fees collected</p></div>
+</div>
+</div>
 </main>
-
 
 <div class="wrap pnav"><a href="/start/we-are-in-a-sprint/" style="text-decoration:none">&larr; We are in a sprint</a><a href="/start/never-sell-cold/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Never sell cold &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Understanding lead time</div></footer>
 <script>
 (function(){
-var W=36,X0=40,X1=860,Y0=250,YT=30,MAX=W*2;
-function x(w){return X0+(X1-X0)*w/W}
-function y(n){return Y0-(Y0-YT)*n/MAX}
-var ticks=document.getElementById("ticks"),s="";
-for(var w=0;w<W;w++){s+='<line x1="'+x(w)+'" y1="250" x2="'+x(w)+'" y2="256" stroke="#F6C9AD" stroke-width="2"/>'}
-ticks.innerHTML=s;
-var ln=document.getElementById("ln"),area=document.getElementById("area");
-var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-function run(){
-var c=new Array(W+1).fill(0);
-for(var w=0;w<W;w++){for(var k=0;k<2;k++){var st=w+Math.floor(Math.random()*11);if(st<=W)c[st]++}}
-var n=0,d="M"+x(0)+","+y(0);
-for(var i=0;i<=W;i++){n+=c[i];if(c[i]){d+=" H"+x(i).toFixed(1)+" V"+y(n).toFixed(1)}}
-d+=" H"+x(W);
-ln.setAttribute("d",d);
-area.setAttribute("d",d+" V"+Y0+" H"+x(0)+" Z");
-var ey=y(n);
-document.getElementById("endDot").setAttribute("cy",ey);
-document.getElementById("endN").setAttribute("y",ey+6);
-document.getElementById("endN").textContent=n;
-document.getElementById("endL").setAttribute("y",ey+26);
-if(!reduce){ln.classList.remove("draw");void ln.getBoundingClientRect();ln.classList.add("draw")}
+var W=36,X0,X1,Y0,Y1=14,QUIT=5000,NS="http://www.w3.org/2000/svg",VW,VH,narrow,m=[],o=[];
+var svg=document.getElementById("chart"),gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+var still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
+function rnd(a,b){return a+Math.random()*(b-a)}
+function roll(){m=[];o=[];for(var w=0;w<W;w++){m.push({s:w+rnd(0,10),f:Math.round(rnd(150,350))});o.push({s:w+rnd(0,10),f:Math.round(rnd(400,800))})}}
+function draw(animate){
+VW=Math.max(300,Math.round(svg.getBoundingClientRect().width||1000));narrow=VW<600;VH=narrow?240:Math.round(Math.min(280,VW*0.26));
+svg.setAttribute("viewBox","0 0 "+VW+" "+VH);X0=narrow?8:16;X1=VW-(narrow?62:78);Y0=VH-30;
+var pts=[],t,inc,q=null;
+for(t=0;t<=W;t+=0.25){inc=0;m.forEach(function(c){if(c.s<=t)inc+=c.f});pts.push([t,inc]);if(q===null&&inc>=QUIT)q=t}
+var end=pts[pts.length-1][1],ymax=Math.max(9000,Math.ceil(end*1.08/1000)*1000);
+function x(v){return X0+(X1-X0)*v/W}function y(v){return Y0-(Y0-Y1)*v/ymax}
+svg.innerHTML="";
+svg.appendChild(el("line",{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:"#D1D1D6","stroke-width":1.5}));
+[[0,"Week 0","start"],[13,"Month 3","middle"],[26,"Month 6","middle"],[35,"Month 8","end"]].filter(function(a){return !(narrow&&a[0]===26)}).forEach(function(a){svg.appendChild(el("text",{x:x(a[0]),y:Y0+24,"text-anchor":a[2],"font-size":narrow?12:14,fill:"#6E6E73"},a[1]))});
+var one=0;o.forEach(function(c){if(c.s>W)return;one+=c.f;var h=(Y0-Y1)*c.f/ymax;svg.appendChild(el("rect",{x:x(c.s)-2.5,y:Y0-h,width:5,height:h,rx:2,fill:"#C9C9CE"}))});
+svg.appendChild(el("line",{x1:X0,y1:y(QUIT),x2:X1,y2:y(QUIT),stroke:"#111","stroke-width":1.5,"stroke-dasharray":"6 6",opacity:.55}));
+svg.appendChild(el("text",{x:X0+4,y:y(QUIT)-8,"font-size":narrow?12:13,"font-weight":700,fill:"#111"},narrow?"Quit number £5k":"Quit number £5k a month"));
+var d="M"+x(0)+","+y(0);pts.forEach(function(p){d+=" H"+x(p[0]).toFixed(1)+" V"+y(p[1]).toFixed(1)});
+var line=el("path",{id:"mline",d:d,fill:"none",stroke:"#F26B1D","stroke-width":4,"stroke-linejoin":"round","stroke-linecap":"round",pathLength:1});
+svg.appendChild(line);
+var mk=el("g",{});
+if(q!==null){mk.appendChild(el("circle",{cx:x(q),cy:y(QUIT),r:8,fill:"#F26B1D",stroke:"#fff","stroke-width":3}));
+if(!narrow)mk.appendChild(el("text",{x:x(q)-12,y:y(QUIT)-14,"text-anchor":"end","font-size":15,"font-weight":800,fill:"#C2410C","class":"qh"},"Quit number hit: week "+Math.ceil(q)))}
+mk.appendChild(el("circle",{cx:x(W),cy:y(end),r:6,fill:"#F26B1D"}));
+mk.appendChild(el("text",{x:x(W)+10,y:y(end)+5,"font-size":narrow?13:15,"font-weight":800,fill:"#C2410C"},gbp.format(end)));
+svg.appendChild(mk);
+document.getElementById("sMonthly").textContent=gbp.format(end);
+document.getElementById("sQuit").textContent=q===null?"Not yet":"Week "+Math.ceil(q);
+document.getElementById("sOne").textContent=gbp.format(one);
+if(animate&&!still){line.style.strokeDasharray="1";line.style.strokeDashoffset="1";mk.style.opacity="0";
+line.getBoundingClientRect();line.style.transition="stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)";line.style.strokeDashoffset="0";
+mk.style.transition="opacity .5s ease 1.6s";mk.style.opacity="1"}
 }
-ln.addEventListener("animationend",function(){ln.classList.remove("draw")});
-document.getElementById("shuf").addEventListener("click",run);
-run();
+document.getElementById("shuffle").addEventListener("click",function(){roll();draw(true)});
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){draw(false)},150)});
+roll();draw(true);
 })();
 </script>
 </body>
