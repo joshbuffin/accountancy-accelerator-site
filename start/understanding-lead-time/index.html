@@ -52,6 +52,28 @@ svg.chart{width:100%;height:auto;display:block;margin-top:6px;overflow:visible}
 footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
 #mline{transition:none}
 @media (max-width:900px){.frame{grid-template-columns:1fr;gap:14px}nav .wrap{padding:0 16px}.navtag{font-size:11px}.brand{font-size:11px}.wrap{padding:0 16px}.pnav{padding:12px 16px;font-size:14px}.chartcard{padding:14px 12px}.col ul{font-size:15px}}
+
+/* Hover / scrub tooltip */
+.chartwrap{position:relative}
+svg.chart{touch-action:pan-y;cursor:crosshair}
+svg.chart:focus{outline:none}
+svg.chart:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:8px}
+.hit{cursor:pointer}
+.tip{position:absolute;top:0;left:0;z-index:5;min-width:250px;max-width:290px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 18px 40px -16px rgba(0,0,0,.28);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease}
+.tip.on{opacity:1;transform:none}
+.tip .wk{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.tip .mrr{font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--gold-soft);line-height:1.1;margin-top:2px}
+.tip .mrr small{font-size:13px;font-weight:600;color:var(--slate);letter-spacing:0;margin-left:6px}
+.tip .rows{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+.tip .r{font-size:13.5px;font-weight:600;display:flex;justify-content:space-between;gap:12px;white-space:nowrap}
+.tip .r.m{color:var(--gold-soft)}
+.tip .r.o{color:#6E6E73}
+.tip .r .d{display:block;font-size:12px;font-weight:500;color:var(--slate)}
+.tip .none{font-size:13.5px;color:#A1A1A6}
+.tip .tot{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--slate)}
+.tip.client .mrr{font-size:20px}
+@media (max-width:600px){.tip{min-width:0;max-width:240px;padding:10px 12px;border-radius:12px}.tip .mrr{font-size:21px}.tip .r{font-size:12.5px}.tip .tot{font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){.tip{transition:none;transform:none}}
 </style>
 </head>
 <body>
@@ -91,7 +113,7 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <span class="key"><i class="q"></i>Quit number</span>
 <button class="shuffle" id="shuffle" type="button">Shuffle</button>
 </div>
-<svg class="chart" id="chart" viewBox="0 0 1000 270" role="img" aria-label="Revenue over 8 months from handing out 50 business cards every weekend. Monthly income climbs past a £5,000 a month quit number while one-off fees land at random weeks."></svg>
+<div class="chartwrap"><svg class="chart" id="chart" tabindex="0" viewBox="0 0 1000 270" role="img" aria-label="Revenue over 8 months from handing out 50 business cards every weekend. Monthly income climbs past a £5,000 a month quit number while one-off fees land at random weeks. Hover, drag or use the arrow keys to see monthly income and new clients week by week."></svg><div class="tip" id="tip" role="status" aria-live="polite"></div></div>
 <div class="stats">
 <div class="stat"><p class="n or" id="sMonthly">£0</p><p class="l">a month by month 8</p></div>
 <div class="stat"><p class="n" id="sQuit">Week 0</p><p class="l">quit number hit</p></div>
@@ -104,12 +126,12 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Understanding lead time</div></footer>
 <script>
 (function(){
-var W=36,X0,X1,Y0,Y1=14,QUIT=5000,NS="http://www.w3.org/2000/svg",VW,VH,narrow,m=[],o=[];
+var SX,SY,cur=null,W=36,X0,X1,Y0,Y1=14,QUIT=5000,NS="http://www.w3.org/2000/svg",VW,VH,narrow,m=[],o=[];
 var svg=document.getElementById("chart"),gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
 var still=matchMedia("(prefers-reduced-motion: reduce)").matches;
 function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
 function rnd(a,b){return a+Math.random()*(b-a)}
-function roll(){m=[];o=[];for(var w=0;w<W;w++){m.push({s:w+rnd(0,10),f:Math.round(rnd(150,350))});o.push({s:w+rnd(0,10),f:Math.round(rnd(400,800))})}}
+function roll(){m=[];o=[];for(var w=0;w<W;w++){m.push({y:w,s:w+rnd(0,10),f:Math.round(rnd(150,350))});o.push({y:w,s:w+rnd(0,10),f:Math.round(rnd(400,800))})}}
 function draw(animate){
 VW=Math.max(300,Math.round(svg.getBoundingClientRect().width||1000));narrow=VW<600;VH=narrow?240:Math.round(Math.min(280,VW*0.26));
 svg.setAttribute("viewBox","0 0 "+VW+" "+VH);X0=narrow?8:16;X1=VW-(narrow?62:78);Y0=VH-30;
@@ -117,10 +139,11 @@ var pts=[],t,inc,q=null;
 for(t=0;t<=W;t+=0.25){inc=0;m.forEach(function(c){if(c.s<=t)inc+=c.f});pts.push([t,inc]);if(q===null&&inc>=QUIT)q=t}
 var end=pts[pts.length-1][1],ymax=Math.max(9000,Math.ceil(end*1.08/1000)*1000);
 function x(v){return X0+(X1-X0)*v/W}function y(v){return Y0-(Y0-Y1)*v/ymax}
+SX=x;SY=y;
 svg.innerHTML="";
 svg.appendChild(el("line",{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:"#D1D1D6","stroke-width":1.5}));
 [[0,"Week 0","start"],[13,"Month 3","middle"],[26,"Month 6","middle"],[35,"Month 8","end"]].filter(function(a){return !(narrow&&a[0]===26)}).forEach(function(a){svg.appendChild(el("text",{x:x(a[0]),y:Y0+24,"text-anchor":a[2],"font-size":narrow?12:14,fill:"#6E6E73"},a[1]))});
-var one=0;o.forEach(function(c){if(c.s>W)return;one+=c.f;var h=(Y0-Y1)*c.f/ymax;svg.appendChild(el("rect",{x:x(c.s)-2.5,y:Y0-h,width:5,height:h,rx:2,fill:"#C9C9CE"}))});
+var one=0;o.forEach(function(c){if(c.s>W)return;one+=c.f;var h=(Y0-Y1)*c.f/ymax;var b=el("rect",{x:x(c.s)-2.5,y:Y0-h,width:5,height:h,rx:2,fill:"#C9C9CE","class":"obar"});b._c=c;svg.appendChild(b)});
 svg.appendChild(el("line",{x1:X0,y1:y(QUIT),x2:X1,y2:y(QUIT),stroke:"#111","stroke-width":1.5,"stroke-dasharray":"6 6",opacity:.55}));
 svg.appendChild(el("text",{x:X0+4,y:y(QUIT)-8,"font-size":narrow?12:13,"font-weight":700,fill:"#111"},narrow?"Quit number £5k":"Quit number £5k a month"));
 var d="M"+x(0)+","+y(0);pts.forEach(function(p){d+=" H"+x(p[0]).toFixed(1)+" V"+y(p[1]).toFixed(1)});
@@ -132,6 +155,7 @@ if(!narrow)mk.appendChild(el("text",{x:x(q)-12,y:y(QUIT)-14,"text-anchor":"end",
 mk.appendChild(el("circle",{cx:x(W),cy:y(end),r:6,fill:"#F26B1D"}));
 mk.appendChild(el("text",{x:x(W)+10,y:y(end)+5,"font-size":narrow?13:15,"font-weight":800,fill:"#C2410C"},gbp.format(end)));
 svg.appendChild(mk);
+layer();
 document.getElementById("sMonthly").textContent=gbp.format(end);
 document.getElementById("sQuit").textContent=q===null?"Not yet":"Week "+Math.ceil(q);
 document.getElementById("sOne").textContent=gbp.format(one);
@@ -139,7 +163,45 @@ if(animate&&!still){line.style.strokeDasharray="1";line.style.strokeDashoffset="
 line.getBoundingClientRect();line.style.transition="stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)";line.style.strokeDashoffset="0";
 mk.style.transition="opacity .5s ease 1.6s";mk.style.opacity="1"}
 }
-document.getElementById("shuffle").addEventListener("click",function(){roll();draw(true)});
+
+var tip=document.getElementById("tip"),guide,dot,hl;
+function wk(t){return Math.max(0,Math.ceil(t))}
+function mrrAt(k){var v=0,n=0;m.forEach(function(c){if(c.s<=k){v+=c.f;n++}});return [v,n]}
+function oneAt(k){var v=0;o.forEach(function(c){if(c.s<=k)v+=c.f});return v}
+function layer(){
+guide=el("line",{x1:0,y1:Y1,x2:0,y2:Y0,stroke:"#111","stroke-width":1,"stroke-dasharray":"3 4",opacity:0,"pointer-events":"none"});
+dot=el("circle",{r:7,fill:"#F26B1D",stroke:"#fff","stroke-width":3,opacity:0,"pointer-events":"none"});
+hl=el("circle",{r:10,fill:"none",stroke:"#C2410C","stroke-width":2.5,opacity:0,"pointer-events":"none"});
+svg.appendChild(guide);svg.appendChild(dot);svg.appendChild(hl);
+var acc=0,ord=m.slice().filter(function(c){return c.s<=W}).sort(function(a,b){return a.s-b.s});
+ord.forEach(function(c){acc+=c.f;var h=el("circle",{cx:SX(c.s),cy:SY(acc),r:narrow?9:7,fill:"transparent","class":"hit",tabindex:0,"aria-label":"Monthly client, "+gbp.format(c.f)+" a month, said yes week "+c.y+", started week "+wk(c.s)});h._c=c;h._k="m";h._v=acc;svg.appendChild(h)});
+svg.querySelectorAll(".obar").forEach(function(b){b.classList.add("hit");b.setAttribute("tabindex","0");b.setAttribute("aria-label","One-off fee "+gbp.format(b._c.f)+", said yes week "+b._c.y+", started week "+wk(b._c.s));b._k="o";
+var r=el("rect",{x:+b.getAttribute("x")-4,y:Math.min(+b.getAttribute("y"),Y0-24),width:13,height:Math.max(24,+b.getAttribute("height")),fill:"transparent","class":"hit"});r._c=b._c;r._k="o";r._bar=b;svg.appendChild(r)});
+if(cur!==null)showWeek(cur)}
+function place(px,py){var r=svg.getBoundingClientRect(),sc=r.width/VW,X=px*sc,Y=py*sc,tw=tip.offsetWidth,th=tip.offsetHeight,L=X+16;
+if(L+tw>r.width)L=X-16-tw;if(L<0)L=Math.max(0,Math.min(r.width-tw,X-tw/2));var T=Math.max(0,Math.min(Y-th/2,r.height-th));
+tip.style.left=L+"px";tip.style.top=T+"px";tip.classList.add("on")}
+function hide(){tip.classList.remove("on");[guide,dot,hl].forEach(function(e){if(e)e.setAttribute("opacity",0)});cur=null}
+function showWeek(k){k=Math.max(0,Math.min(W,k));cur=k;var a=mrrAt(k),gx=SX(k),gy=SY(a[0]);
+guide.setAttribute("x1",gx);guide.setAttribute("x2",gx);guide.setAttribute("opacity",.45);dot.setAttribute("cx",gx);dot.setAttribute("cy",gy);dot.setAttribute("opacity",1);hl.setAttribute("opacity",0);
+var rows="";m.forEach(function(c){if(wk(c.s)===k&&c.s<=W)rows+='<div class="r m"><span>New monthly client</span><span>+'+gbp.format(c.f)+' a month</span></div>'});
+o.forEach(function(c){if(wk(c.s)===k&&c.s<=W)rows+='<div class="r o"><span>One-off fee</span><span>'+gbp.format(c.f)+'</span></div>'});
+tip.className="tip";tip.innerHTML='<p class="wk">Week '+k+'</p><p class="mrr">'+gbp.format(a[0])+'<small>MRR</small></p><div class="rows">'+(rows||'<p class="none">No new clients this week</p>')+'</div><p class="tot">Monthly clients: '+a[1]+' · One-offs: '+gbp.format(oneAt(k))+' collected</p>';
+place(gx,gy)}
+function showClient(t){var c=t._c,mo=t._k==="m",k=wk(c.s),a=mrrAt(c.s);cur=null;guide.setAttribute("opacity",0);dot.setAttribute("opacity",0);
+var px=mo?+t.getAttribute("cx"):SX(c.s),py=mo?+t.getAttribute("cy"):+(t._bar||t).getAttribute("y");
+hl.setAttribute("cx",px);hl.setAttribute("cy",mo?py:Math.max(py,Y1+10));hl.setAttribute("opacity",mo?1:0);
+tip.className="tip client";tip.innerHTML='<p class="wk">'+(mo?"Monthly client":"One-off client")+'</p><p class="mrr">'+(mo?"+"+gbp.format(c.f)+'<small>a month</small>':gbp.format(c.f)+'<small>once a year</small>')+'</p><div class="rows"><div class="r"><span class="d">Said yes week '+c.y+' · Started week '+k+'</span></div></div><p class="tot">MRR after this: '+gbp.format(a[0])+'</p>';
+place(px,py)}
+function fromEvent(e){var r=svg.getBoundingClientRect(),vx=(e.clientX-r.left)*VW/r.width;return Math.round((vx-X0)/(X1-X0)*W)}
+svg.addEventListener("pointermove",function(e){var t=e.target;if(t&&t._c){showClient(t);return}if(e.pointerType==="touch"&&!e.isPrimary)return;showWeek(fromEvent(e))});
+svg.addEventListener("pointerdown",function(e){var t=e.target;if(t&&t._c){showClient(t);return}showWeek(fromEvent(e))});
+svg.addEventListener("pointerleave",function(e){if(e.pointerType!=="touch")hide()});
+document.addEventListener("pointerdown",function(e){if(!svg.contains(e.target))hide()});
+svg.addEventListener("focusin",function(e){var t=e.target;if(t&&t._c)showClient(t);else if(t===svg)showWeek(cur===null?W:cur)});
+svg.addEventListener("focusout",function(e){if(!svg.contains(e.relatedTarget))hide()});
+svg.addEventListener("keydown",function(e){if(e.key==="ArrowLeft"||e.key==="ArrowRight"){e.preventDefault();showWeek((cur===null?W:cur)+(e.key==="ArrowRight"?1:-1))}else if(e.key==="Escape")hide()});
+document.getElementById("shuffle").addEventListener("click",function(){var k=cur;roll();draw(true);if(k!==null)showWeek(k)});
 var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){draw(false)},150)});
 roll();draw(true);
 })();
