@@ -79,6 +79,27 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
   .read{margin-top:20px;padding:16px 18px}
 }
 @media (prefers-reduced-motion:reduce){.merc,.bulb span,.rung,.btn,.read{transition:none}.rung:hover,.btn:hover{transform:none}}
+
+/* My story card */
+.story{margin-top:22px}
+.st-tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:10px}
+.st-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.st{border-radius:18px;padding:16px 18px;border:1px solid var(--line);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.st:hover{transform:translateY(-4px)}
+.st.cold{background:#F1F4F8;border-color:#D6E0EC}
+.st.warm{background:#FFF8F3;border-color:var(--gold)}
+.st.warm:hover{box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.st-h{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.st.cold .st-h{color:#5B7FAE}.st.warm .st-h{color:var(--gold-soft)}
+.st-big{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
+.st.cold .st-big{color:#6E6E73}
+.st-n{font-size:15px;color:#6E6E73;margin-top:4px;text-decoration:line-through;text-decoration-color:rgba(91,127,174,.6)}
+.st-n b{color:#3A3A3C;font-weight:800}
+.st-r{font-size:clamp(16px,1.6vw,19px);font-weight:800;margin-top:10px}
+.st.cold .st-r{color:#5B7FAE}.st.warm .st-r{color:var(--gold-soft)}
+.rung .badge{font-size:11px;font-weight:800;letter-spacing:.04em;color:#5B7FAE;background:#E8EEF6;border-radius:999px;padding:2px 8px;margin-left:8px}
+@media (max-width:520px){.st-grid{gap:8px}.st{padding:12px 14px}}
+@media (prefers-reduced-motion:reduce){.st{transition:none}.st:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -95,7 +116,13 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <p class="tag" id="readTag">Coldest</p>
 <h2 id="readH">Avoid.</h2>
 </div>
-<p class="rule add">Add yours: the cold pitch that taught you this</p>
+<div class="story" aria-label="My story">
+<p class="st-tag">My story · before I started my business</p>
+<div class="st-grid">
+<div class="st cold"><p class="st-h">Cold</p><p class="st-big">9 months</p><p class="st-n"><b>500+</b> cold calls</p><p class="st-n"><b>4,000+</b> cold emails</p><p class="st-r">No progress.</p></div>
+<div class="st warm"><p class="st-h">Warm</p><p class="st-big">Networking. In person.</p><p class="st-r">It all changed.</p></div>
+</div>
+</div>
 </div>
 
 <div>
@@ -113,8 +140,8 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <script>
 (function(){
   var R=[
-    {n:'Cold email',d:'Coldest',h:'Avoid.'},
-    {n:'Cold calling',d:'Cold',h:'Interrupting their day.'},
+    {n:'Cold email',d:'Coldest',h:'Avoid.',b:'4,000+'},
+    {n:'Cold calling',d:'Cold',h:'Interrupting their day.',b:'500+'},
     {n:'Networking events',d:'Warm',h:'Still warm. Everyone knows why you\'re there.'},
     {n:'In person, naturally',d:'Warmer',h:'50 handshakes. 1 interested today. 2 more yeses within 12 months.'},
     {n:'Referrals',d:'Hot',h:'One beach club chat. Lots of clients.'},
@@ -129,7 +156,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
   for(var i=R.length-1;i>=0;i--){
     var li=document.createElement('li'),b=document.createElement('button');
     b.type='button';b.className='rung '+(i<2?'cold':'warm');
-    b.innerHTML='<span>'+R[i].n+'</span><span class="deg">'+R[i].d+'</span>';
+    b.innerHTML='<span>'+R[i].n+(R[i].b?'<span class="badge">'+R[i].b+'</span>':'')+'</span><span class="deg">'+R[i].d+'</span>';
     b.setAttribute('data-i',i);
     b.addEventListener('click',function(){set(+this.getAttribute('data-i'));});
     li.appendChild(b);list.appendChild(li);btns[i]=b;
