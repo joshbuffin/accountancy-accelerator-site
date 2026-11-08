@@ -27,34 +27,36 @@ h1{font-size:clamp(38px,5.2vw,68px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
 
 /* Page */
-.page{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,4vw,40px) 24px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.chip{font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
-.chip.o{background:#FFF3EA;border-color:#F9C9A8;color:var(--gold-soft)}
-
-.ledger{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,2.6vw,32px)}
-.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
-.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.total{font-size:clamp(48px,6.4vw,84px);font-weight:800;letter-spacing:-.045em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
-.total span{color:var(--gold)}
-.ruler{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--slate);margin:20px 2px 6px}
-.bar{display:flex;gap:6px;height:64px}
-.seg{flex:1;border-radius:12px;border:2px dashed #D6D6DA;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#B5B5BA;transition:background-color .35s ease,border-color .35s ease,color .35s ease,transform .35s cubic-bezier(.2,.8,.2,1);font-family:inherit}
-.seg.on,.seg:hover,.seg:focus-visible{border-style:solid;border-color:var(--gold);background:var(--gold);color:#0A0A0A;transform:translateY(-3px);outline:none}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;transition:border-color .3s ease,box-shadow .3s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
-.card.on{border-color:var(--gold);box-shadow:0 14px 30px -16px rgba(242,107,29,.55);transform:translateY(-3px)}
-.num{width:28px;height:28px;border-radius:50%;background:#FFF3EA;color:var(--gold-soft);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.card.on .num{background:var(--gold);color:#0A0A0A}
-.card h3{font-size:15px;font-weight:700;line-height:1.25;letter-spacing:-.01em}
-.card h4{margin-top:8px;font-size:13px;font-weight:600;color:var(--gold-soft);line-height:1.3}
-.add{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);border:1px dashed #C9C9CE;border-radius:6px;padding:2px 6px;margin-bottom:6px}
-.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-.foot h3{font-size:16px;font-weight:700}
-.foot h3 b{color:var(--gold-soft)}
-@media (prefers-reduced-motion:reduce){.seg,.card{transition:none}.seg.on,.seg:hover,.card.on{transform:none}}
-@media (max-width:900px){.page{grid-template-columns:1fr;min-height:0;padding-top:24px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.navtag{font-size:11px}}
-@media (max-width:480px){.bar{height:48px}.card{padding:12px}.card h3{font-size:14px}.chips{margin-top:16px}.ledger{padding:16px}}
+.page{padding:clamp(18px,3vh,32px) 24px clamp(8px,1.6vh,16px)}
+.hero h1 .gold-t{color:var(--gold-soft)}
+.blocks{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:20px;margin-top:clamp(16px,2.6vh,28px)}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.blk:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.blk.dark{background:#111;border-color:#111;color:#fff}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.blk.dark .lbl{color:var(--gold)}
+.blk h2{font-size:clamp(20px,2.1vw,27px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-top:4px}
+.blk h2 .o{color:var(--gold)}
+.tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;background:#FFF3EA;border:1px solid #F9C9A8;color:var(--gold-soft)}
+.blk.dark .tag{background:rgba(242,107,29,.14);border-color:rgba(242,107,29,.4);color:#FFB27F}
+svg.v{width:100%;height:auto;display:block;margin-top:10px;overflow:visible}
+svg.v text{font-family:'Inter',Arial,sans-serif}
+.bd{transform-box:view-box;transform-origin:170px 0;animation:grow 1.4s cubic-bezier(.4,0,.2,1) both}
+.bd.b2{animation-delay:.25s}.bd.b3{animation-delay:.45s}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.cd{opacity:0;animation:fade .6s ease forwards;animation-delay:1.1s}
+@keyframes fade{to{opacity:1}}
+.tl{fill:none;stroke:#F26B1D;stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw .9s cubic-bezier(.4,0,.2,1) forwards}
+.tl.f{stroke:#F9C9A8;stroke-width:2}
+.tl.d1{animation-delay:.2s}.tl.d2{animation-delay:1s}.tl.d3{animation-delay:1.8s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.nd{opacity:0;animation:fade .5s ease forwards}
+.nd.d1{animation-delay:.9s}.nd.d2{animation-delay:1.7s}.nd.d3{animation-delay:2.5s}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px;font-size:13px;font-weight:600;color:#D1D1D6}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+.legend .a i{background:#F26B1D}.legend .b i{border:2.5px solid #F26B1D;background:#fff}
+@media (prefers-reduced-motion:reduce){.bd,.cd,.tl,.nd{animation:none;opacity:1;stroke-dashoffset:0;transform:none}}
+@media (max-width:900px){.blocks{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -62,62 +64,57 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · How I won £72,000 of clients</span></div></nav>
 
 <main class="wrap page">
-<div>
+<header class="hero">
 <p class="eyebrow">Level 5 - Lead generation · Video 7</p>
 <h1>How I won <span class="gold-t">£72,000</span> of clients.</h1>
-<div class="chips"><span class="chip o">Year one</span><span class="chip">Zero social media posts</span></div>
-</div>
+</header>
 
-<section class="ledger" aria-label="£72,000 of clients broken into where it came from">
-<div class="top">
-<div><p class="lbl">Clients won</p><p class="total" id="total" aria-live="off"><span>£</span>72,000</p></div>
-<p class="lbl">Where it came from</p>
-</div>
-<div class="ruler"><span>£0</span><span>£72,000</span></div>
-<div class="bar" role="group" aria-label="Sources">
-<button class="seg on" data-i="0" aria-label="Source 1">1</button>
-<button class="seg" data-i="1" aria-label="Source 2">2</button>
-<button class="seg" data-i="2" aria-label="Source 3">3</button>
-<button class="seg" data-i="3" aria-label="Source 4">4</button>
-</div>
-<div class="cards">
-<div class="card on"><div class="num">1</div><span class="add">Add yours</span><h3>Source</h3><h4>Clients · £</h4></div>
-<div class="card"><div class="num">2</div><span class="add">Add yours</span><h3>Source</h3><h4>Clients · £</h4></div>
-<div class="card"><div class="num">3</div><span class="add">Add yours</span><h3>Source</h3><h4>Clients · £</h4></div>
-<div class="card"><div class="num">4</div><span class="add">Add yours</span><h3>Source</h3><h4>Clients · £</h4></div>
-</div>
-<div class="foot"><h3><span class="add">Add yours</span> Biggest single win</h3><h3><span class="add">Add yours</span> The lesson</h3></div>
+<div class="blocks">
+<section class="blk">
+<p class="lbl">Year one</p>
+<h2>£72,000 a year. <span class="o">83% from the high street.</span></h2>
+<span class="tag">Zero social media posts</span>
+<svg class="v" viewBox="0 0 560 380" role="img" aria-label="£72,000 a year split three ways: £60,000 from door to door on the high street, £7,200 from BNI and £4,800 from a mentor">
+<path class="bd" d="M170,110.0 C255,110.0 245,28.3 330,28.3 L330,161.7 C245,161.7 255,243.3 170,243.3 Z" fill="#F26B1D" opacity=".85"/>
+<path class="bd b2" d="M170,243.3 C255,243.3 245,232.0 330,232.0 L330,248.0 C245,248.0 255,259.3 170,259.3 Z" fill="#3A3A3C" opacity=".55"/>
+<path class="bd b3" d="M170,259.3 C255,259.3 245,329.6 330,329.6 L330,340.4 C245,340.4 255,270.0 170,270.0 Z" fill="#3A3A3C" opacity=".4"/>
+<rect x="10" y="110" width="160" height="160" rx="18" fill="#111"/>
+<text x="90" y="186" text-anchor="middle" font-size="31" font-weight="800" fill="#fff" letter-spacing="-1">£72,000</text>
+<text x="90" y="210" text-anchor="middle" font-size="14" fill="#B0B0B5">a year</text>
+<g class="cd">
+<rect x="338" y="28" width="214" height="134" rx="16" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/>
+<text x="356" y="64" font-size="19" font-weight="800" fill="#111">High street</text>
+<text x="356" y="86" font-size="14" fill="#555">Door to door</text>
+<text x="356" y="126" font-size="28" font-weight="800" fill="#C2410C" letter-spacing="-.5">£60,000</text>
+<text x="356" y="148" font-size="13" font-weight="600" fill="#C2410C">a year · 83%</text>
+<rect x="338" y="212" width="214" height="56" rx="14" fill="#fff" stroke="#E2E2E2"/>
+<text x="356" y="236" font-size="16" font-weight="800" fill="#111">BNI</text>
+<text x="356" y="256" font-size="13" fill="#555">£600 a month · £7,200 a year</text>
+<rect x="338" y="310" width="214" height="56" rx="14" fill="#fff" stroke="#E2E2E2"/>
+<text x="356" y="334" font-size="16" font-weight="800" fill="#111">A mentor</text>
+<text x="356" y="354" font-size="13" fill="#555">£400 a month · £4,800 a year</text>
+</g>
+</svg>
 </section>
-</main>
 
+<section class="blk dark">
+<p class="lbl">Year two onwards</p>
+<h2><span class="o">£80,000+ a year</span> from one online community.</h2>
+<div class="legend"><span class="a"><i></i>Direct sales</span><span class="b"><i></i>Introductions from those sales</span></div>
+<svg class="v" viewBox="0 0 520 380" role="img" aria-label="One online community leads to direct sales, and each of those clients brings introductions, which bring more introductions">
+<g><path class="tl d1" pathLength="1" d="M260,58 C260,96 110,96 110,134"/><path class="tl d1" pathLength="1" d="M260,58 C260,96 260,96 260,134"/><path class="tl d1" pathLength="1" d="M260,58 C260,96 410,96 410,134"/><path class="tl d2" pathLength="1" d="M110,166 C110,202 60,202 60,238"/><path class="tl d2" pathLength="1" d="M110,166 C110,202 160,202 160,238"/><path class="tl d2" pathLength="1" d="M260,166 C260,202 215,202 215,238"/><path class="tl d2" pathLength="1" d="M260,166 C260,202 305,202 305,238"/><path class="tl d2" pathLength="1" d="M410,166 C410,202 360,202 360,238"/><path class="tl d2" pathLength="1" d="M410,166 C410,202 460,202 460,238"/><path class="tl d3 f" pathLength="1" d="M60,262 C60,296 35,296 35,329"/><path class="tl d3 f" pathLength="1" d="M60,262 C60,296 85,296 85,329"/><path class="tl d3 f" pathLength="1" d="M160,262 C160,296 145,296 145,329"/><path class="tl d3 f" pathLength="1" d="M160,262 C160,296 175,296 175,329"/><path class="tl d3 f" pathLength="1" d="M215,262 C215,296 205,296 205,329"/><path class="tl d3 f" pathLength="1" d="M215,262 C215,296 230,296 230,329"/><path class="tl d3 f" pathLength="1" d="M305,262 C305,296 295,296 295,329"/><path class="tl d3 f" pathLength="1" d="M305,262 C305,296 320,296 320,329"/><path class="tl d3 f" pathLength="1" d="M360,262 C360,296 350,296 350,329"/><path class="tl d3 f" pathLength="1" d="M360,262 C360,296 375,296 375,329"/><path class="tl d3 f" pathLength="1" d="M460,262 C460,296 445,296 445,329"/><path class="tl d3 f" pathLength="1" d="M460,262 C460,296 480,296 480,329"/></g>
+<rect x="160" y="22" width="200" height="36" rx="18" fill="#F26B1D"/>
+<text x="260" y="45.5" text-anchor="middle" font-size="14" font-weight="800" fill="#111">One online community</text>
+<g class="nd d1"><circle cx="110" cy="150" r="16" fill="#F26B1D"/><text x="110" y="155.5" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">£</text></g><g class="nd d1"><circle cx="260" cy="150" r="16" fill="#F26B1D"/><text x="260" y="155.5" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">£</text></g><g class="nd d1"><circle cx="410" cy="150" r="16" fill="#F26B1D"/><text x="410" y="155.5" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">£</text></g><circle class="nd d2" cx="60" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d2" cx="160" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d2" cx="215" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d2" cx="305" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d2" cx="360" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d2" cx="460" cy="250" r="12" fill="#fff" stroke="#F26B1D" stroke-width="3"/><circle class="nd d3" cx="35" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="85" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="145" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="175" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="205" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="230" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="295" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="320" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="350" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="375" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="445" cy="335" r="6" fill="#F9C9A8"/><circle class="nd d3" cx="480" cy="335" r="6" fill="#F9C9A8"/>
+<text x="12" y="126" font-size="11" font-weight="700" letter-spacing="1.8" fill="#8E8E93" stroke="#111" stroke-width="7" paint-order="stroke" stroke-linejoin="round">DIRECT SALES</text>
+<text x="12" y="226" font-size="11" font-weight="700" letter-spacing="1.8" fill="#8E8E93" stroke="#111" stroke-width="7" paint-order="stroke" stroke-linejoin="round">INTRODUCTIONS FROM THOSE SALES</text>
+<text x="260" y="372" text-anchor="middle" font-size="13" font-style="italic" fill="#8E8E93">Joined in year 2. It keeps growing.</text>
+</svg>
+</section>
+</div>
+</main>
 <div class="wrap pnav"><a href="/start/your-networks-network/" style="text-decoration:none">&larr; Your network's network</a><a href="/start/the-best-networking-groups/" style="text-decoration:none;color:var(--gold-soft);text-align:right">The best networking groups &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · How I won £72,000 of clients</div></footer>
 
-<script>
-(function(){
-  var segs=document.querySelectorAll('.seg'),cards=document.querySelectorAll('.card');
-  function pick(i){
-    for(var k=0;k<segs.length;k++){segs[k].classList.toggle('on',k===i);cards[k].classList.toggle('on',k===i);}
-  }
-  for(var k=0;k<segs.length;k++){
-    (function(i){
-      segs[i].addEventListener('click',function(){pick(i);});
-      segs[i].addEventListener('mouseenter',function(){pick(i);});
-      cards[i].addEventListener('mouseenter',function(){pick(i);});
-    })(k);
-  }
-  var el=document.getElementById('total');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce||!window.requestAnimationFrame)return;
-  var start=null,dur=1400,target=72000;
-  function step(t){
-    if(start===null)start=t;
-    var p=Math.min((t-start)/dur,1),e=1-Math.pow(1-p,3);
-    el.innerHTML='<span>£</span>'+Math.round(target*e).toLocaleString('en-GB');
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-})();
-</script>
 </body>
 </html>
