@@ -25,152 +25,120 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* Partner web layout */
-.rp{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center;padding-top:clamp(24px,3.5vw,36px);padding-bottom:8px}
-.steps{margin-top:30px;display:flex;flex-direction:column;gap:10px}
-.step{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.015em;color:#A1A1A6;transition:color .3s ease}
-.step b{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;border:2px solid #D0D0D3;color:#A1A1A6;transition:all .3s ease}
-.step:hover{color:#6E6E73}
-.step.on{color:var(--ink)}
-.step.on b{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.step:focus-visible{outline:3px solid var(--gold-soft);outline-offset:4px;border-radius:8px}
-.cards{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,box-shadow .45s ease}
-.card:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3;box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
-.card .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}
-.card h2{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
-.card.add{background:#fff;border-style:dashed}
-.vis{display:flex;flex-direction:column;align-items:center;gap:14px}
-.web{width:100%;max-width:540px;display:block;overflow:visible}
-.web text{font-family:'Inter',Arial,sans-serif}
-.web .ring{fill:none;stroke:#EDEDEF;stroke-width:2;stroke-dasharray:4 7}
-.web .sp{stroke:#E4E4E6;stroke-width:3;transition:stroke .4s ease}
-.web .cl{stroke:#EDEDEF;stroke-width:2;transition:stroke .4s ease}
-.web .cd{fill:#E4E4E6;transition:fill .4s ease}
-.web .pn circle{fill:#F5F5F7;stroke:#D0D0D3;stroke-width:2;transition:fill .4s ease,stroke .4s ease}
-.web .pn text{font-size:15px;font-weight:700;fill:#8A8A8E;transition:fill .4s ease}
-.web .pn{cursor:pointer}
-.web .p.on .sp{stroke:#F7B48C}
-.web .p.on .cl{stroke:#FBD5BC}
-.web .p.on .cd{fill:#F26B1D}
-.web .p.on .pn circle{fill:#FFF1E8;stroke:#F26B1D}
-.web .p.on .pn text{fill:#0A0A0A}
-.web .pk{fill:#F26B1D}
-.web .pk.back{fill:#111}
-.legend{display:flex;gap:18px;font-size:13px;font-weight:600;color:var(--slate)}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:0}
-.ctl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
-.status{font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-.015em}
-.btn{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:12px 22px;background:var(--gold);color:#0A0A0A;cursor:pointer;transition:transform .2s ease,box-shadow .3s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(242,107,29,.7)}
-.btn:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.card,.btn,.step,.step b{transition:none}.card:hover,.btn:hover{transform:none}}
-@media (max-width:900px){.rp{grid-template-columns:1fr}.steps{margin-top:22px}}
-@media (max-width:520px){.navtag{font-size:11px}.cards{gap:10px}.card{padding:14px}.card h2{font-size:15px}.web{max-width:100%}.pnav{font-size:14px}.steps{margin-top:18px;gap:8px}.cards{margin-top:20px}}
+/* Referral partners: contact vs partner, mentorship communities */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.rp{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-top:clamp(18px,2.6vh,30px);padding-bottom:6px}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.cmp{display:flex;flex-direction:column;gap:12px}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 16px 8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
+.cv:hover{transform:translateY(-3px)}
+.cv.pt{background:#FFF8F3;border-color:var(--gold)}
+.cv.pt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.cv.pt .k{color:var(--gold-soft)}
+.cv h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.cv svg{width:100%;height:auto;display:block;margin-top:2px}
+.cv svg text{font-family:'Inter',Arial,sans-serif}
+.give{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;margin-top:2px}
+.give span{color:var(--gold-soft)}
+.hub{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:14px}
+.hub .k{color:#3A2A1E}
+.hub h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;position:relative}
+.fs{background:rgba(255,255,255,.22);border:1px solid rgba(0,0,0,.12);border-radius:14px;padding:10px 12px;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.2;position:relative}
+.fs b{display:block;font-size:11px;letter-spacing:.14em;color:#3A2A1E;margin-bottom:4px}
+.fs:not(:last-child)::after{content:"\2192";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-weight:800;font-size:14px;z-index:1}
+.loop{font-size:13px;font-weight:700;color:#3A2A1E;display:flex;align-items:center;gap:8px}
+.loop svg{flex:none}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.exc{background:#fff;border-radius:16px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.exc:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(0,0,0,.45)}
+.exc .k{color:var(--gold-soft)}
+.exc h3{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:4px}
+.you{border:2px dashed rgba(0,0,0,.35);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;align-self:flex-start}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+@media (max-width:900px){.rp{grid-template-columns:1fr}}
+@media (max-width:560px){.flow{grid-template-columns:1fr 1fr}.fs:nth-child(2)::after{content:none}.ex{grid-template-columns:1fr}.navtag{font-size:11px}.pnav{font-size:14px}}
+@media (prefers-reduced-motion:reduce){.cv,.exc{transition:none}.cv:hover,.exc:hover{transform:none}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Referral partners</span></div></nav>
 
-<main class="wrap rp">
-<div>
+<header class="wrap hero">
 <p class="eyebrow">Level 5 - Lead generation · Video 10</p>
-<h1>Referral <span class="gold-t">partners.</span></h1>
-<div class="steps" id="steps">
-<button class="step" type="button" data-p="0"><b>1</b>Online communities</button>
-<button class="step" type="button" data-p="1"><b>2</b>Lawyers</button>
-<button class="step" type="button" data-p="2"><b>3</b>Property investors</button>
-</div>
-<div class="cards">
-<div class="card"><p class="k">Dubai beach club</p><h2>Two founders. Lots of clients.</h2></div>
-<div class="card"><p class="k">Give first</p><h2>I sent Max clients. He hit £10k a month.</h2></div>
-<div class="card"><p class="k">Like-for-like</p><h2>Swap referrals. Don't buy them.</h2></div>
-<div class="card add"><p class="k">Add yours</p><h2>Your first referral partner</h2></div>
-</div>
-</div>
-<div class="vis">
-<svg class="web" id="web" viewBox="40 22 520 466" role="img" aria-label="Partner web: you in the centre, linked to online communities, lawyers and property investors, each with their own clients who flow to you">
-<circle class="ring" cx="300" cy="290" r="170"/>
-<g id="parts"></g>
-<g id="pks"></g>
-<circle cx="300" cy="290" r="46" fill="#F26B1D"/>
-<text x="300" y="297" text-anchor="middle" font-size="20" font-weight="800" fill="#0A0A0A">You</text>
+<h1>Find partners who <span class="gold-t">keep sending.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="rp">
+
+<div class="cmp">
+<div class="cv">
+<p class="k">A contact</p>
+<h2>One referral. Then nothing.</h2>
+<svg viewBox="0 0 420 96" role="img" aria-label="A contact sends you one client, then nothing">
+<circle cx="52" cy="48" r="26" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="52" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#3A3A3C">You</text>
+<circle cx="200" cy="48" r="28" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="200" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3A3A3C">Contact</text>
+<path d="M172,48 L84,48" stroke="#8E8E93" stroke-width="2.5" marker-end="url(#ag)"/>
+<circle cx="128" cy="48" r="6" fill="#8E8E93"/>
+<path d="M228,48 L404,48" stroke="#C7C7CC" stroke-width="2.5" stroke-dasharray="6 7"/>
+<text x="316" y="34" text-anchor="middle" font-size="13" font-weight="600" fill="#8E8E93">Then nothing</text>
+<defs><marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8E8E93"/></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F26B1D"/></marker>
+<marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#111"/></marker></defs>
 </svg>
-<div class="legend" aria-hidden="true"><span><i style="background:#F26B1D"></i>Clients to you</span><span><i style="background:#111"></i>Clients back</span></div>
-<div class="ctl"><p class="status" id="status" aria-live="polite">Just you</p><button class="btn" id="go" type="button">Add a partner &rarr;</button></div>
 </div>
+<div class="cv pt">
+<p class="k">A partner</p>
+<h2>Referrals both ways. On repeat.</h2>
+<svg class="anim" viewBox="0 -16 420 132" role="img" aria-label="A partner and you send clients to each other, over and over">
+<circle cx="52" cy="56" r="26" fill="#F26B1D"/><text x="52" y="61" text-anchor="middle" font-size="14" font-weight="800" fill="#0A0A0A">You</text>
+<circle cx="300" cy="56" r="26" fill="#fff" stroke="#F26B1D" stroke-width="3"/><text x="300" y="60" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">Partner</text>
+<path id="pt-in" d="M276,40 C220,4 132,4 76,40" fill="none" stroke="#F26B1D" stroke-width="3" marker-end="url(#ao)"/>
+<path id="pt-out" d="M76,72 C132,108 220,108 276,72" fill="none" stroke="#111" stroke-width="2.5" marker-end="url(#ak)"/>
+<text x="176" y="-4" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">They send you clients</text>
+<text x="176" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#3A3A3C">You send work back</text>
+<circle r="6" fill="#F26B1D"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#pt-in"/></animateMotion></circle>
+<circle r="6" fill="#F26B1D"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#pt-in"/></animateMotion></circle>
+<circle r="5" fill="#111"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite"><mpath href="#pt-out"/></animateMotion></circle>
+<path d="M344,56 L404,56" stroke="#F26B1D" stroke-width="3"/>
+<text x="374" y="44" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C">Again</text>
+<text x="374" y="78" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C">and again</text>
+</svg>
+</div>
+<p class="give">Give first. <span>They send back.</span></p>
+</div>
+
+<div class="hub">
+<p class="k">My best referral partners</p>
+<h2>Online mentorship communities.</h2>
+<div class="flow">
+<div class="fs"><b>1</b>I give value to the group</div>
+<div class="fs"><b>2</b>Members trust me</div>
+<div class="fs"><b>3</b>Members become clients</div>
+<div class="fs"><b>4</b>They keep referring me</div>
+</div>
+<p class="loop"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round"/><path d="M20 4v5h-5" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>And round again</p>
+<div class="ex">
+<div class="exc"><p class="k">Airbnb mentorship groups</p><h3>I provide the materials.</h3></div>
+<div class="exc"><p class="k">Online influencer communities</p><h3>I host calls for their members.</h3></div>
+</div>
+<p class="you">Your version: what can you give a community?</p>
+</div>
+
+</div>
+<div class="where"><span class="k">Where to find partners</span><span class="chip">Online communities</span><span class="chip">Lawyers</span><span class="chip">Property investors</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/become-the-network/" style="text-decoration:none">&larr; Become the network</a><span></span></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Referral partners</div></footer>
 
 <script>
-(function(){
-var NS='http://www.w3.org/2000/svg',CX=300,CY=290,R=170,CR=78;
-var web=document.getElementById('web'),parts=document.getElementById('parts'),pks=document.getElementById('pks');
-var btn=document.getElementById('go'),st=document.getElementById('status'),steps=document.querySelectorAll('#steps .step');
-var P=[{a:-90,l:['Online','communities']},{a:30,l:['Lawyers']},{a:150,l:['Property','investors']}];
-var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function el(n,at,p){var e=document.createElementNS(NS,n);for(var k in at)e.setAttribute(k,at[k]);if(p)p.appendChild(e);return e;}
-var groups=[];
-P.forEach(function(p,i){
-  var r=p.a*Math.PI/180,px=CX+R*Math.cos(r),py=CY+R*Math.sin(r);
-  var g=el('g',{'class':'p'},parts);
-  p.x=px;p.y=py;p.c=[];
-  el('line',{'class':'sp',x1:CX,y1:CY,x2:px,y2:py},g);
-  for(var j=0;j<5;j++){
-    var t=r+(j-2)*0.52,cx=px+CR*Math.cos(t),cy=py+CR*Math.sin(t);
-    el('line',{'class':'cl',x1:px,y1:py,x2:cx,y2:cy},g);
-    p.c.push([cx,cy]);
-  }
-  p.c.forEach(function(c){el('circle',{'class':'cd',cx:c[0],cy:c[1],r:10},g);});
-  var n=el('g',{'class':'pn',tabindex:'-1'},g);
-  el('circle',{cx:px,cy:py,r:58},n);
-  p.l.forEach(function(t,k){var tx=el('text',{x:px,y:py+5+(k-(p.l.length-1)/2)*18,'text-anchor':'middle'},n);tx.textContent=t;});
-  n.addEventListener('click',function(){toggle(i);});
-  groups.push(g);
-});
-var on=[false,false,false];
-var names=['Online communities','Lawyers','Property investors'];
-function render(){
-  var c=0;
-  for(var i=0;i<3;i++){groups[i].classList.toggle('on',on[i]);steps[i].classList.toggle('on',on[i]);if(on[i])c++;}
-  st.textContent=c===0?'Just you':c===3?'Their clients. Your pipeline.':c===1?'One partner. Their whole client list.':'Two partners. Two client lists.';
-  btn.innerHTML=c<3?'Add a partner &rarr;':'Start again';
-}
-function toggle(i){on[i]=!on[i];render();}
-btn.addEventListener('click',function(){
-  var i=on.indexOf(false);
-  if(i<0){on=[false,false,false];}else{on[i]=true;}
-  render();
-});
-for(var s=0;s<steps.length;s++){(function(i){steps[i].addEventListener('click',function(){toggle(i);});})(s);}
-render();
-if(reduce)return;
-var live=[],last=0,acc=0;
-function spawn(){
-  var act=[];for(var i=0;i<3;i++)if(on[i])act.push(i);
-  if(!act.length)return;
-  var p=P[act[Math.floor(Math.random()*act.length)]];
-  var back=Math.random()<0.3;
-  var c=p.c[Math.floor(Math.random()*5)];
-  var path=back?[[CX,CY],[p.x,p.y]]:[c,[p.x,p.y],[CX,CY]];
-  live.push({e:el('circle',{'class':'pk'+(back?' back':''),r:7},pks),path:path,t:0,d:back?900:1500});
-}
-function pos(path,f){var seg=path.length-1,s=Math.min(seg-1,Math.floor(f*seg)),lf=f*seg-s;var a=path[s],b=path[s+1];return [a[0]+(b[0]-a[0])*lf,a[1]+(b[1]-a[1])*lf];}
-function tick(ts){
-  var dt=last?Math.min(ts-last,50):16;last=ts;acc+=dt;
-  if(acc>420){acc=0;spawn();}
-  for(var k=live.length-1;k>=0;k--){
-    var q=live[k];q.t+=dt;var f=q.t/q.d;
-    if(f>=1){pks.removeChild(q.e);live.splice(k,1);continue;}
-    var xy=pos(q.path,f);q.e.setAttribute('cx',xy[0]);q.e.setAttribute('cy',xy[1]);
-  }
-  requestAnimationFrame(tick);
-}
-requestAnimationFrame(tick);
-})();
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('svg.anim').forEach(function(s){if(s.pauseAnimations)s.pauseAnimations()})}
 </script>
 </body>
 </html>
