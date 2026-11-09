@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Content should do 1 of 3 things - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: content should do 1 of 3 things - entertain, motivate or educate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Content should do 1 of 3 things: pie + post tester */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(36px,4.4vw,60px)}
+.c3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center;padding-top:clamp(16px,2.6vh,30px);padding-bottom:6px}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.pie{width:100%;max-width:min(440px,52vh);margin:0 auto;display:block}
+.pie svg{width:100%;height:auto;display:block;overflow:visible}
+.pie text{font-family:'Inter',Arial,sans-serif}
+.sl path{fill:#FDE6D6;stroke:#fff;stroke-width:6;transition:fill .4s ease,transform .45s cubic-bezier(.2,.8,.2,1);transform-origin:220px 220px;cursor:pointer}
+.sl text{fill:#C2410C;transition:fill .4s ease;pointer-events:none}
+.sl .sub{fill:#9A3412;opacity:.8}
+.sl:hover path{transform:scale(1.025)}
+.sl.on path{fill:#F26B1D;transform:scale(1.05)}
+.sl.on text,.sl.on .sub{fill:#fff;opacity:1}
+.pie.off .sl path{fill:#EDEDEF}
+.pie.off .sl text,.pie.off .sl .sub{fill:#AEAEB2}
+.ctr1{font-size:11px;font-weight:700;letter-spacing:.16em;fill:#6E6E73}
+.ctr2{font-size:21px;font-weight:800;fill:#111;letter-spacing:-.02em;transition:fill .3s ease}
+.pie.off .ctr2{fill:#8E8E93}
+.side{display:flex;flex-direction:column;gap:14px}
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.post{font:inherit;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;cursor:pointer;color:var(--ink);display:flex;gap:12px;align-items:flex-start;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease,background-color .3s ease}
+.post:hover{transform:translateY(-3px);box-shadow:0 14px 30px -20px rgba(0,0,0,.35)}
+.post .av{flex:none;width:30px;height:30px;border-radius:50%;background:#D1D1D6;margin-top:2px}
+.post b{display:block;font-size:clamp(15px,1.45vw,18px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.post span.t{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:4px}
+.post[aria-pressed="true"]{background:#FFF8F3;border-color:var(--gold);box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.post[aria-pressed="true"] .av{background:var(--gold)}
+.post.none[aria-pressed="true"]{background:#F5F5F7;border-color:#8E8E93;box-shadow:0 14px 30px -20px rgba(0,0,0,.35)}
+.post.none[aria-pressed="true"] .av{background:#8E8E93}
+.verdict{border-radius:var(--radius);padding:clamp(16px,2vw,24px);background:var(--gold);color:#0A0A0A;transition:background-color .35s ease,color .35s ease}
+.verdict .k{color:#3A2A1E}
+.verdict h2{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:6px}
+.verdict.bad{background:#EDEDEF;color:#3A3A3C}
+.verdict.bad .k{color:#6E6E73}
+.rule{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em}
+.rule span{color:var(--gold-soft)}
+@media (max-width:900px){.c3{grid-template-columns:1fr}.pie{max-width:340px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.post{padding:12px;gap:10px}.post .av{width:22px;height:22px}}
+@media (prefers-reduced-motion:reduce){.sl path,.post,.verdict,.sl text{transition:none}.sl:hover path,.post:hover{transform:none}.sl.on path{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Content should do 1 of 3 things</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 13</p>
+<h1>Entertain, motivate <span class="gold-t">or educate.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="c3">
+
+<div class="pie" id="pie">
+<svg viewBox="0 0 440 440" role="img" aria-label="A pie split into three slices: entertain, motivate and educate. Every post should land in one of them.">
+<g class="sl" data-k="ent"><path d="M220,20 A200,200 0 0 1 393.2,320 L289.3,260 A80,80 0 0 0 220,140 Z"/>
+<text x="326" y="152" text-anchor="middle" font-size="24" font-weight="800">Entertain</text>
+<text class="sub" x="326" y="176" text-anchor="middle" font-size="13" font-weight="700">Make them smile</text></g>
+<g class="sl" data-k="mot"><path d="M393.2,320 A200,200 0 0 1 46.8,320 L150.7,260 A80,80 0 0 0 289.3,260 Z"/>
+<text x="220" y="362" text-anchor="middle" font-size="24" font-weight="800">Motivate</text>
+<text class="sub" x="220" y="386" text-anchor="middle" font-size="13" font-weight="700">Make them believe</text></g>
+<g class="sl" data-k="edu"><path d="M46.8,320 A200,200 0 0 1 220,20 L220,140 A80,80 0 0 0 150.7,260 Z"/>
+<text x="114" y="152" text-anchor="middle" font-size="24" font-weight="800">Educate</text>
+<text class="sub" x="114" y="176" text-anchor="middle" font-size="13" font-weight="700">Make them smarter</text></g>
+<text class="ctr1" x="220" y="212" text-anchor="middle">LANDS IN</text>
+<text class="ctr2" id="ctr" x="220" y="240" text-anchor="middle">Nothing</text>
+</svg>
+</div>
+
+<div class="side">
+<p class="k">Test a post</p>
+<div class="posts" id="posts">
+<button class="post none" type="button" data-k="none" aria-pressed="true"><i class="av"></i><span><span class="t">Post</span><b>"Office closed Friday"</b></span></button>
+<button class="post" type="button" data-k="ent" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>A tax deadline meme</b></span></button>
+<button class="post" type="button" data-k="mot" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>50 doors. 45&nbsp;nos. 2&nbsp;yeses.</b></span></button>
+<button class="post" type="button" data-k="edu" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>How a group structure works</b></span></button>
+</div>
+<div class="verdict bad" id="verdict" aria-live="polite"><p class="k" id="vk">Does none of the 3</p><h2 id="vh">Scrolled past.</h2></div>
+<p class="rule">None of the 3? <span>Don't post it.</span></p>
+</div>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/how-often-should-i-post/" style="text-decoration:none">&larr; How often should I post?</a><a href="/start/how-should-your-content-look/" style="text-decoration:none">How should your content look &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Content should do 1 of 3 things</div></footer>
+
+<script>
+(function(){
+var S={none:["Does none of the 3","Scrolled past.","Nothing"],ent:["Entertains","Stops the scroll.","Entertain"],mot:["Motivates","Stops the scroll.","Motivate"],edu:["Educates","Stops the scroll.","Educate"]};
+var pie=document.getElementById("pie"),sl=pie.querySelectorAll(".sl"),btns=document.querySelectorAll("#posts .post"),v=document.getElementById("verdict");
+function pick(k){
+ for(var i=0;i<sl.length;i++)sl[i].classList.toggle("on",sl[i].getAttribute("data-k")===k);
+ for(var j=0;j<btns.length;j++)btns[j].setAttribute("aria-pressed",btns[j].getAttribute("data-k")===k?"true":"false");
+ pie.classList.toggle("off",k==="none");v.classList.toggle("bad",k==="none");
+ document.getElementById("vk").textContent=S[k][0];document.getElementById("vh").textContent=S[k][1];document.getElementById("ctr").textContent=S[k][2];
+}
+for(var j=0;j<btns.length;j++)btns[j].addEventListener("click",function(){pick(this.getAttribute("data-k"))});
+for(var i=0;i<sl.length;i++)sl[i].addEventListener("click",function(){pick(this.getAttribute("data-k"))});
+pick("none");
+})();
+</script>
+</body>
+</html>
