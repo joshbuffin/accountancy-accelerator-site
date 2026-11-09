@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AdobeSign - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: AdobeSign, e-signatures for your engagement letters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* AdobeSign: getting the engagement letter signed, without vs with */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{padding-top:clamp(18px,2.6vh,30px);display:flex;flex-direction:column;gap:12px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.lane{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.lane:hover{transform:translateY(-3px)}
+.lane.on{background:#FFF8F3;border-color:var(--gold)}
+.lane.on:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.lane.on .k{color:var(--gold-soft)}
+.lt{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.lt h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.res{font-size:13px;font-weight:800;border-radius:999px;padding:6px 14px;white-space:nowrap;opacity:0;transform:translateY(4px);transition:opacity .35s ease,transform .35s ease}
+.res.show{opacity:1;transform:none}
+.res.bad{background:#fff;border:1px solid #C7C7CC;color:#3A3A3C}
+.res.good{background:var(--gold);color:#0A0A0A}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;list-style:none}
+.st{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:clamp(12px,1.1vw,14px);font-weight:700;line-height:1.2;color:#8E8E93;transition:color .3s ease}
+.st:not(:last-child)::after{content:"";position:absolute;top:27px;left:calc(50% + 34px);right:calc(-50% + 28px);height:2px;background:#D1D1D6}
+.ic{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid #D1D1D6;display:grid;place-items:center;transition:border-color .3s ease,background-color .3s ease,transform .3s ease}
+.ic svg{width:26px;height:26px;fill:none;stroke:#AEAEB2;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .3s ease}
+.lane:not(.on) .st.lit{color:#3A3A3C}
+.lane:not(.on) .st.lit .ic{border-color:#8E8E93;transform:scale(1.06)}
+.lane:not(.on) .st.lit .ic svg{stroke:#3A3A3C}
+.lane.on .st.lit{color:var(--ink)}
+.lane.on .st.lit .ic{background:var(--gold);border-color:var(--gold);transform:scale(1.06)}
+.lane.on .st.lit .ic svg{stroke:#0A0A0A}
+.lane.on .st.lit:not(:last-child)::after{background:var(--gold)}
+.st.chase .ic{border-style:dashed}
+.big{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
+.big span{color:var(--gold-soft)}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.hl{background:var(--gold);border-color:var(--gold);color:#0A0A0A;font-weight:800}
+.arr{color:#AEAEB2;font-weight:800}
+.when{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:10px;font-size:14px;font-weight:600}
+.when .k{margin-right:4px}
+.now{border:1px solid var(--gold);background:#FFF8F3;color:var(--gold-soft);border-radius:999px;padding:6px 14px;font-weight:800}
+.you{border:2px dashed #C7C7CC;border-radius:999px;padding:5px 14px;font-weight:700;color:#3A3A3C}
+@media (max-width:700px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}.st:nth-child(3)::after{content:none}.ic{width:46px;height:46px}.ic svg{width:22px;height:22px}.st:not(:last-child)::after{top:22px;left:calc(50% + 28px);right:calc(-50% + 22px)}.lane{padding:12px 12px 14px}.lt{flex-wrap:wrap;margin-bottom:10px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.where,.when{font-size:13px}.where .arr{display:none}}
+@media (prefers-reduced-motion:reduce){.lane,.ic,.res,.st,.ic svg{transition:none}.lane:hover{transform:none}.st.lit .ic{transform:none!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · AdobeSign</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 6</p>
+<h1>Signed before you <span class="gold-t">start.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="stage">
+<div class="head"><p class="k">Getting the engagement letter signed</p><button class="play" id="play" type="button">Play</button></div>
+
+<div class="lane" id="laneA">
+<div class="lt"><div><p class="k">Without AdobeSign</p><h2>Print, sign, scan, chase.</h2></div><span class="res bad" id="resA">Still waiting...</span></div>
+<ol class="steps">
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>Email the PDF</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg></span>Client prints it</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M14 4l4 4-9 9H5v-4z"/></svg></span>Signs by hand</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 12h18"/></svg></span>Scans it</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></span>Emails it back</li>
+<li class="st chase"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg></span>You chase</li>
+</ol>
+</div>
+
+<div class="lane on" id="laneB">
+<div class="lt"><div><p class="k">With AdobeSign</p><h2>Send, sign, done.</h2></div><span class="res good" id="resB">Signed. Start work.</span></div>
+<ol class="steps">
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></span>Send for signature</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M9 14c1-2 2 1 3-1s2 1 3 0"/></svg></span>Client signs on their phone</li>
+<li class="st"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M9 14l2 2 4-4"/></svg></span>Signed copy back</li>
+</ol>
+</div>
+
+<p class="big">Same letter. <span>Half the steps.</span></p>
+</div>
+
+<div class="where"><span class="k">Where it sits</span><span class="chip">Sales call</span><span class="arr">&rarr;</span><span class="chip">Proposal</span><span class="arr">&rarr;</span><span class="chip hl">Engagement letter</span><span class="arr">&rarr;</span><span class="chip">Deposit</span><span class="arr">&rarr;</span><span class="chip">Onboarding</span></div>
+<div class="when"><span class="k">When</span><span class="now">Now: cheap starter option</span><span class="chip">Later: LEGL, at around £10k a month</span><span class="you">Add yours: your letter template</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/adfin/" style="text-decoration:none">&larr; Adfin</a><a href="/start/granola/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Granola &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · AdobeSign</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var A=[].slice.call(document.querySelectorAll("#laneA .st")),B=[].slice.call(document.querySelectorAll("#laneB .st"));
+var btn=$("play"),timers=[];
+function all(on){A.concat(B).forEach(function(s){s.classList.toggle("lit",on)});$("resA").classList.toggle("show",on);$("resB").classList.toggle("show",on)}
+function reset(){timers.forEach(clearTimeout);timers=[];all(false)}
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function play(){
+ if(RM){all(true);btn.textContent="Replay";return}
+ reset();btn.disabled=true;var gap=650;
+ A.forEach(function(s,i){later(function(){s.classList.add("lit")},gap*(i+1))});
+ B.forEach(function(s,i){later(function(){s.classList.add("lit")},gap*(i+1))});
+ later(function(){$("resB").classList.add("show")},gap*(B.length+1));
+ later(function(){$("resA").classList.add("show");btn.disabled=false;btn.textContent="Replay"},gap*(A.length+1));
+}
+btn.addEventListener("click",play);
+all(true);
+})();
+</script>
+</body>
+</html>
