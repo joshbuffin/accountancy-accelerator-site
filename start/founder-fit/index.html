@@ -24,75 +24,58 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
 h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
 
-/* Layout */
-.grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:stretch}
-.stage{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 16px;display:flex;flex-direction:column}
-.toggle{display:inline-flex;align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
-.toggle button{font:inherit;font-size:14px;font-weight:700;border:0;background:none;color:var(--slate);padding:7px 16px;border-radius:999px;cursor:pointer;transition:background-color .3s ease,color .3s ease}
-.toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.toggle button.f[aria-pressed="true"]{background:var(--gold);color:#fff}
+/* Block 1: the realisation */
+.clients{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cl{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.cl:hover{transform:translateY(-4px);border-color:var(--gold);background:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.cl .ind{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.cl h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;line-height:1.2;margin:4px 0 10px}
+.tr{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink);padding:3px 6px;margin:0 -6px;border-radius:8px;transition:background-color .25s ease,color .25s ease}
+.tr i{flex:none;width:16px;height:16px;border-radius:50%;background:var(--gold);position:relative}
+.tr i::after{content:"";position:absolute;left:5px;top:2.5px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.clients.hl .tr{color:var(--slate)}
+.clients.hl .tr.on{background:#FFE7D8;color:var(--gold-soft)}
+.brace{position:relative;height:30px;margin:4px 6% 0}
+.brace::before{content:"";position:absolute;left:0;right:0;top:4px;height:12px;border:2px solid var(--gold);border-top:0;border-radius:0 0 12px 12px}
+.brace>span{position:absolute;left:50%;top:9px;transform:translateX(-50%);background:var(--paper);padding:0 14px;font-size:clamp(15px,1.5vw,18px);font-weight:800;letter-spacing:-.01em;white-space:nowrap}
 
-/* Magnet diagram */
-.mag{position:relative;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:10px;margin-top:12px;flex:1;min-height:262px}
-.mag svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.wire{stroke:var(--gold);stroke-width:3;stroke-linecap:round;fill:none;stroke-dasharray:6 7;transition:opacity .45s ease;animation:flow 1.2s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-13}}
-.chip{position:relative;z-index:1;align-self:center;justify-self:center;width:100%;max-width:200px;text-align:center;background:#fff;border:2px solid var(--gold);border-radius:16px;padding:12px 10px;font-size:clamp(14px,1.45vw,18px);font-weight:700;letter-spacing:-.01em;line-height:1.2;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease,color .3s ease}
-.chip:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.chip small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:3px}
-.c1{grid-area:1/1}.c2{grid-area:1/2}.c3{grid-area:1/3}.c4{grid-area:3/1}.c5{grid-area:3/2}.c6{grid-area:3/3}
-.core{grid-area:2/2;position:relative;z-index:2;align-self:center;justify-self:center;width:clamp(110px,10vw,128px);aspect-ratio:1;border-radius:50%;background:var(--gold);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 10px rgba(242,107,29,.14),0 0 0 22px rgba(242,107,29,.07);transition:background-color .45s ease,box-shadow .45s ease}
-.core small{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
-.core b{font-size:clamp(22px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
-.side{grid-row:2;display:flex;align-items:center;font-size:clamp(13px,1.2vw,15px);font-weight:700;color:var(--gold-soft);line-height:1.25;z-index:1}
-.s1{grid-column:1;justify-content:flex-end;text-align:right}.s3{grid-column:3}
+/* Block 2: how you attract them */
+.attract{margin-top:clamp(12px,2vh,22px);display:grid;grid-template-columns:1fr auto 1fr auto 1.05fr;gap:12px;align-items:stretch}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.box:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.box h2{font-size:clamp(17px,1.6vw,21px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+.pill b{display:block;font-size:14px}
+.pill span{display:block;font-size:12.5px;color:var(--slate);line-height:1.3;margin-top:2px}
+.op{align-self:center;font-size:clamp(26px,3vw,38px);font-weight:300;color:var(--slate);line-height:1}
+.profile{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.profile .lbl{color:#3A1A06}
+.profile .tr{font-size:15px;color:#0A0A0A;margin-top:4px}
+.profile .tr i{background:#0A0A0A}
+.chip{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600;color:var(--gold-soft);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:6px 14px;background:#fff;transition:background-color .25s ease}
+.chip:hover{background:#FFF8F3}
 
-/* Industry mode */
-.mag.ind .core{background:var(--ink);box-shadow:0 0 0 10px rgba(17,17,17,.08)}
-.mag.ind .chip.off{opacity:.35;border:2px dashed #B8B8BC;color:var(--slate)}
-.mag.ind .chip.off small{color:var(--slate)}
-.mag.ind .chip.on{border-color:var(--ink)}
-.mag.ind .chip.on small{color:var(--ink)}
-.mag.ind .wire{stroke:var(--ink)}
-.mag.ind .wire.off{opacity:0}
-.mag .s-ind{display:none}
-.mag.ind .s-ind{display:flex;color:var(--ink)}
-.mag.ind .s-fit{display:none}
-
-/* Story cards */
-.stories{display:flex;flex-direction:column;gap:12px}
-.card{flex:1;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;display:flex;flex-direction:column;justify-content:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45);border-color:var(--gold);background:#FFF8F3}
-.card .k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:4px}
-.card h2{font-size:clamp(19px,1.9vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
-
-.big{margin-top:clamp(12px,2.2vh,22px);font-size:clamp(28px,3.8vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
-.big .gold-t{color:var(--gold)}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
 
-@media (max-width:860px){
- .grid{grid-template-columns:1fr;gap:12px}
- .stage{padding:12px 10px 12px}
- .mag{gap:6px;min-height:270px}
- .chip{padding:9px 6px;border-radius:12px;font-size:14px}
- .chip small{font-size:9.5px;letter-spacing:.1em}
- .side{font-size:12px}
- .core small{font-size:9.5px}
- .hero{padding:18px 0 10px}
- .card{padding:12px 14px}
- .stories{gap:8px}
- .toggle button{font-size:13px;padding:6px 12px}
+@media (max-width:900px){
+ .clients{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .clients .cl:last-child{grid-column:1 / -1}
+ .attract{grid-template-columns:1fr}
+ .op{justify-self:center;font-size:28px}
+ .brace>span{white-space:normal;text-align:center;width:max-content;max-width:90%}
 }
-@media (max-width:480px){
- .side{display:none!important}
+@media (max-width:520px){
+ .pair{grid-template-columns:1fr}
+ .brace{margin:4px 0 0}
+ .cl{padding:12px}
+ .cl h3{margin:2px 0 6px}
+ .cl .tr{display:inline-flex;font-size:0;gap:0;margin:0 5px 0 0;padding:0}
 }
-@media (prefers-reduced-motion:reduce){
- .wire{animation:none}
- .chip,.card,.core,.wire{transition:none}
- .chip:hover,.card:hover{transform:none}
-}
+@media (prefers-reduced-motion:reduce){.cl,.box,.tr{transition:none}.cl:hover,.box:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -101,46 +84,35 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Level 4 - Niche · Video 3</p>
-<h1>Niche by <span class="gold-t">founder,</span> not industry.</h1>
+<h1>It's the <span class="gold-t">founder,</span> not the industry.</h1>
 </div></header>
 
 <main class="wrap">
-<div class="grid">
-<section class="stage" aria-label="Founder fit versus industry niche">
-<div class="toggle" role="group" aria-label="Choose how to niche">
-<button type="button" class="i" aria-pressed="false" data-mode="ind">By industry</button>
-<button type="button" class="f" aria-pressed="true" data-mode="fit">By founder fit</button>
+<p class="lbl">The realisation · your favourite clients</p>
+<div class="clients" id="clients">
+<div class="cl"><p class="ind">Hospitality</p><h3>Cafe owner</h3><p class="tr" data-t="c"><i></i>Great communicator</p><p class="tr" data-t="a"><i></i>Ambitious</p><p class="tr" data-t="s"><i></i>Values good service</p></div>
+<div class="cl"><p class="ind">Property</p><h3>Airbnb management</h3><p class="tr" data-t="c"><i></i>Great communicator</p><p class="tr" data-t="a"><i></i>Ambitious</p><p class="tr" data-t="s"><i></i>Values good service</p></div>
+<div class="cl"><p class="ind">Coaching</p><h3>Online coach</h3><p class="tr" data-t="c"><i></i>Great communicator</p><p class="tr" data-t="a"><i></i>Ambitious</p><p class="tr" data-t="s"><i></i>Values good service</p></div>
+<div class="cl"><p class="ind">Fitness</p><h3>Gym group</h3><p class="tr" data-t="c"><i></i>Great communicator</p><p class="tr" data-t="a"><i></i>Ambitious</p><p class="tr" data-t="s"><i></i>Values good service</p></div>
+<div class="cl"><p class="ind">Groups</p><h3>Holding company</h3><p class="tr" data-t="c"><i></i>Great communicator</p><p class="tr" data-t="a"><i></i>Ambitious</p><p class="tr" data-t="s"><i></i>Values good service</p></div>
 </div>
-<div class="mag" id="mag">
-<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-<line class="wire on" x1="50" y1="50" x2="16.7" y2="16.7" vector-effect="non-scaling-stroke"/>
-<line class="wire on" x1="50" y1="50" x2="50" y2="16.7" vector-effect="non-scaling-stroke"/>
-<line class="wire off" x1="50" y1="50" x2="83.3" y2="16.7" vector-effect="non-scaling-stroke"/>
-<line class="wire off" x1="50" y1="50" x2="16.7" y2="83.3" vector-effect="non-scaling-stroke"/>
-<line class="wire off" x1="50" y1="50" x2="50" y2="83.3" vector-effect="non-scaling-stroke"/>
-<line class="wire off" x1="50" y1="50" x2="83.3" y2="83.3" vector-effect="non-scaling-stroke"/>
-</svg>
-<div class="chip on c1"><small>Hospitality</small>Cafes</div>
-<div class="chip on c2"><small>Hospitality</small>Bars</div>
-<div class="chip off c3"><small>Accommodation</small>Airbnb management</div>
-<div class="chip off c4"><small>Best leads</small>Holding companies</div>
-<div class="chip off c5"><small>Best leads</small>Growing founders</div>
-<div class="chip off c6"><small>Coaching</small>Online coaches</div>
-<div class="side s1 s-fit">They relate to you</div>
-<div class="side s1 s-ind">One door</div>
-<div class="core" id="core"><small id="coreK">Founder fit</small><b id="coreB">You</b></div>
-<div class="side s3 s-fit">Any industry</div>
-<div class="side s3 s-ind">Wrong pick, or stall</div>
-</div>
-</section>
+<div class="brace"><span>Different industries. <b class="gold-t">Same founder.</b></span></div>
 
-<div class="stories">
-<div class="card"><p class="k">Year one</p><h2>Hospitality by accident</h2></div>
-<div class="card"><p class="k">Dubai beach club</p><h2>Two Airbnb founders. One referral partnership.</h2></div>
-<div class="card"><p class="k">The high street</p><h2>"I've finally made the jump."</h2></div>
+<p class="lbl" style="margin-top:clamp(8px,1.4vh,14px)">How you attract them</p>
+<div class="attract">
+<div class="box"><h2>Your environments</h2>
+<div class="pair"><div class="pill"><b>Physical</b><span>Gyms, clubs, dinners</span></div><div class="pill"><b>Digital</b><span>Communities, content</span></div></div>
+</div>
+<div class="op" aria-hidden="true">+</div>
+<div class="box"><h2>How you show up</h2>
+<div class="pair"><div class="pill"><b>How you communicate</b></div><div class="pill"><b>How you hold yourself</b></div></div>
+<a class="chip" href="/start/become-the-network/">See: The universe revolves around you &rarr;</a>
+</div>
+<div class="op" aria-hidden="true">=</div>
+<div class="box profile"><p class="lbl">Your founder</p>
+<p class="tr"><i></i>Great communicator</p><p class="tr"><i></i>Ambitious</p><p class="tr"><i></i>Values good service</p>
 </div>
 </div>
-<p class="big">People who relate to you are <span class="gold-t">drawn to you.</span></p>
 </main>
 
 <div class="wrap pnav"><a href="/start/you-are-the-niche/" style="text-decoration:none">&larr; You are the niche</a><a href="/start/perfect-future-client/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Optimising for our perfect future client &rarr;</a></div>
@@ -148,18 +120,15 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var mag=document.getElementById('mag'),k=document.getElementById('coreK'),b=document.getElementById('coreB');
-var btns=document.querySelectorAll('.toggle button');
-function set(mode){
- var ind=mode==='ind';
- mag.classList.toggle('ind',ind);
- k.textContent=ind?'Industry':'Founder fit';
- b.textContent=ind?'Hospitality':'You';
- b.style.fontSize=ind?'clamp(15px,1.7vw,22px)':'';
- for(var i=0;i<btns.length;i++){btns[i].setAttribute('aria-pressed',btns[i].getAttribute('data-mode')===mode?'true':'false');}
+var box=document.getElementById('clients'),trs=box.querySelectorAll('.tr');
+function hl(t){
+ box.classList.toggle('hl',!!t);
+ for(var i=0;i<trs.length;i++){trs[i].classList.toggle('on',!!t&&trs[i].getAttribute('data-t')===t);}
 }
-for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){set(this.getAttribute('data-mode'));});}
-set(location.hash==="#industry"?"ind":"fit");
+for(var i=0;i<trs.length;i++){
+ trs[i].addEventListener('mouseenter',function(){hl(this.getAttribute('data-t'))});
+ trs[i].addEventListener('mouseleave',function(){hl(null)});
+}
 })();
 </script>
 </body>
