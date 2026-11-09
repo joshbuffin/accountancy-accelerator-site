@@ -59,17 +59,34 @@ h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-
 .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s ease}
 .copy{font:inherit;font-size:13px;font-weight:700;color:#fff;background:var(--ink);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
 .copy:hover{background:var(--gold-soft)}
-.qs{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow:auto;min-height:0;padding:2px}
-.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 11px;transition:border-color .25s ease,background-color .25s ease}
-.q.done{border-color:var(--gold);background:#FFF8F3}
-.q label{display:flex;gap:8px;align-items:baseline;font-size:14.5px;font-weight:700;line-height:1.25}
-.q label .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center;transform:translateY(3px)}
-.q.done label .n{background:var(--gold)}
-.q .tip{display:block;font-size:11.5px;color:var(--gold-soft);font-weight:600;margin:3px 0 0 28px}
-.q textarea{display:block;width:100%;margin-top:5px;font:inherit;font-size:14px;line-height:1.35;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 9px;resize:vertical;min-height:40px}
-.q textarea::placeholder{color:#A1A1A6}
-.q textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,107,29,.15)}
-.q.wide{grid-column:1 / -1}
+
+/* Worksheet: tabs + people/place tables */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tab{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 6px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .2s ease,background-color .2s ease}
+.tab .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.tab.done .n{background:var(--gold)}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:#FFF1E8;border-color:var(--gold);color:var(--gold-soft)}
+.pane{margin-top:10px;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.pane .tip{font-size:13px;font-weight:600;color:var(--gold-soft);margin-bottom:8px}
+.rows{overflow:auto;min-height:0;padding:2px;display:flex;flex-direction:column;gap:6px}
+.rw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) 30px;gap:6px;align-items:center}
+.rw.head{position:sticky;top:0;background:#fff;z-index:1;padding-bottom:2px}
+.rw.head span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);line-height:1.2}
+.cell{min-width:0}
+.cell .cl{display:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:3px}
+.cell input,.cell select,.show textarea{display:block;width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 9px;min-width:0}
+.cell select{appearance:none;-webkit-appearance:none;cursor:pointer}
+.cell input::placeholder,.show textarea::placeholder{color:#A1A1A6}
+.cell input:focus,.cell select:focus,.show textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(242,107,29,.15)}
+.rw.filled .cell input,.rw.filled .cell select{background:#FFF8F3;border-color:#F6C9AE}
+.rdel{width:30px;height:30px;border:0;background:none;color:var(--slate);font-size:20px;line-height:1;border-radius:8px;cursor:pointer}
+.rdel:hover{color:var(--gold-soft);background:#FFF1E8}
+.addrow{align-self:flex-start;margin-top:8px;font:inherit;font-size:13.5px;font-weight:700;color:var(--gold-soft);background:none;border:1px dashed var(--gold);border-radius:10px;padding:6px 12px;cursor:pointer}
+.addrow:hover{background:#FFF8F3}
+.show{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.show label{display:block;font-size:14px;font-weight:700;margin-bottom:5px}
+.show textarea{min-height:110px;resize:vertical;line-height:1.4}
 .toast{font-size:13px;font-weight:700;color:var(--gold-soft);min-width:60px}
 
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
@@ -80,15 +97,21 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
  .grid>*{min-width:0}
  .q textarea{min-height:56px}
  .task{max-height:none}
- .qs{overflow:visible}
+ .rows{overflow:visible}
 }
 @media (max-width:560px){
- .qs{grid-template-columns:1fr}
- .q.wide{grid-column:auto}
+ .rw.head{display:none}
+ .rw{grid-template-columns:1fr;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;position:relative}
+ .rw .cell input,.rw .cell select{background:#fff}
+ .cell .cl{display:block}
+ .rdel{position:absolute;top:4px;right:4px}
+ .show{grid-template-columns:1fr}
  .pair{grid-template-columns:1fr}
  .thead{flex-direction:column;align-items:flex-start}
+ .tools{flex-wrap:wrap;width:100%}
+ .copy{margin-left:auto}
 }
-@media (prefers-reduced-motion:reduce){.box,.q,.bar i{transition:none}.box:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.box,.tab,.bar i{transition:none}.box:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -134,9 +157,10 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <section class="task" aria-labelledby="taskh">
 <div class="thead">
 <div><p class="lbl" style="margin-bottom:2px">Your task</p><h2 id="taskh">Where can you get access to these founders?</h2></div>
-<div class="tools"><span class="prog" id="prog">0 of 7 done</span><span class="bar" aria-hidden="true"><i id="bar"></i></span><span class="toast" id="toast" aria-live="polite"></span><button class="copy" id="copy" type="button">Copy my answers</button></div>
+<div class="tools"><span class="prog" id="prog">0 of 5 done</span><span class="bar" aria-hidden="true"><i id="bar"></i></span><span class="toast" id="toast" aria-live="polite"></span><button class="copy" id="copy" type="button">Copy my answers</button></div>
 </div>
-<div class="qs" id="qs"></div>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="pane" id="pane" role="tabpanel"></div>
 </section>
 </main>
 
@@ -145,36 +169,93 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var Q=[
- {h:"Your contacts",t:"Who do you already know who fits?",p:"e.g. a friend who runs a gym"},
- {h:"High-level entrepreneurs",t:"Who could you ask for advice?",p:"e.g. the agency owner down the road"},
- {h:"Sports and clubs",t:"Run clubs, padel, golf, pilates, sauna, David Lloyd",p:"e.g. Saturday run club, padel on Tuesday nights"},
- {h:"Communities",t:"Search for them and your algorithm will start showing you more",p:"e.g. an online group for Airbnb hosts"},
- {h:"The best rooms",t:"Founder dinners, paid founder communities, the best gyms, a panel",p:"e.g. a founder dinner club"},
- {h:"Referral partners",t:"Which mentorship communities could you give value to?",p:"e.g. host a call for their members"},
- {h:"How you'll show up",t:"How will you introduce yourself and tell your why?",p:"e.g. I've just started my own firm because...",w:1}
+var S=[
+ {k:"contacts",t:"Your contacts",add:"+ Add a person",tip:"Who do you already know who fits? Then find the rooms they're in.",
+  c:["Who","What they do","Where they go","Where can you go that they go?"],
+  ph:["Sam","Runs an e-com brand","Padel, WhatsApp","The padel club"]},
+ {k:"advice",t:"Ask for advice",add:"+ Add a person",tip:"High-level entrepreneurs. Ask for advice, not for work.",
+  c:["Who","What they've built","Where they go","How you'll ask"],
+  ph:["Priya","A 30-staff agency","Founder dinners","Coffee, ask for advice"]},
+ {k:"rooms",t:"Rooms",add:"+ Add a room",tip:"Sports and clubs, communities, the best rooms. Search for communities and your algorithm will start showing you more.",
+  c:["Room or place","Physical or online","Who's in it","When you'll go or join"],
+  ph:["Saturday run club","Physical","Local founders","This Saturday"],sel:1},
+ {k:"partners",t:"Referral partners",add:"+ Add a partner",tip:"Give value first: materials, a call for their members.",
+  c:["Who or which community","Who they serve","What you can give","First step"],
+  ph:["Airbnb mentor group","New Airbnb hosts","Tax guide for hosts","Message the founder"]},
+ {k:"show",t:"How you'll show up",tip:"How will you introduce yourself and tell your why?",show:1}
 ];
-var KEY="aa-pfc-access-v1",ans={};
-try{ans=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){ans={}}
-var qs=document.getElementById("qs"),prog=document.getElementById("prog"),bar=document.getElementById("bar"),toast=document.getElementById("toast");
-Q.forEach(function(q,i){
- var d=document.createElement("div");d.className="q"+(q.w?" wide":"");
- var id="q"+i;
- d.innerHTML='<label for="'+id+'"><span class="n">'+(i+1)+'</span><span>'+q.h+'</span></label><span class="tip">'+q.t+'</span>';
- var ta=document.createElement("textarea");ta.id=id;ta.rows=1;ta.placeholder=q.p;ta.value=ans[i]||"";
- ta.addEventListener("input",function(){ans[i]=ta.value;try{localStorage.setItem(KEY,JSON.stringify(ans))}catch(e){}update()});
- d.appendChild(ta);qs.appendChild(d);
-});
+var KEY="aa-pfc-access-v2",st;
+function blank(){return["","","",""]}
+function fresh(){var o={};S.forEach(function(x){o[x.k]=x.show?{intro:"",why:""}:[blank(),blank(),blank()]});return o}
+try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!st||typeof st!=="object")st=fresh();
+S.forEach(function(x){if(x.show){if(!st.show||typeof st.show!=="object")st.show={intro:"",why:""}}else if(!Array.isArray(st[x.k]))st[x.k]=[blank(),blank(),blank()]});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var tabs=document.getElementById("tabs"),pane=document.getElementById("pane"),prog=document.getElementById("prog"),bar=document.getElementById("bar"),toast=document.getElementById("toast"),cur=0;
+function filledRow(r){return r.some(function(v){return v&&String(v).trim()})}
+function done(x){return x.show?!!((st.show.intro||"").trim()||(st.show.why||"").trim()):st[x.k].some(filledRow)}
 function update(){
- var n=0;Q.forEach(function(q,i){var on=!!(ans[i]&&ans[i].trim());if(on)n++;qs.children[i].classList.toggle("done",on)});
- prog.textContent=n+" of 7 done";bar.style.width=(n/7*100)+"%";
+ var n=0;S.forEach(function(x,i){var d=done(x);if(d)n++;tabs.children[i].classList.toggle("done",d)});
+ prog.textContent=n+" of 5 done";bar.style.width=(n/5*100)+"%";save();
 }
-update();
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+S.forEach(function(x,i){
+ var b=el("button","tab");b.type="button";b.setAttribute("role","tab");b.id="tab-"+x.k;
+ var n=el("span","n",String(i+1));b.appendChild(n);b.appendChild(el("span",null,x.t));
+ b.addEventListener("click",function(){open(i)});
+ b.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();var j=(i+(e.key==="ArrowRight"?1:-1)+S.length)%S.length;open(j);tabs.children[j].focus()}});
+ tabs.appendChild(b);
+});
+function open(i){
+ cur=i;var x=S[i];
+ for(var j=0;j<tabs.children.length;j++){tabs.children[j].setAttribute("aria-selected",j===i?"true":"false");tabs.children[j].tabIndex=j===i?0:-1}
+ pane.setAttribute("aria-labelledby","tab-"+x.k);pane.innerHTML="";
+ pane.appendChild(el("p","tip",x.tip));
+ if(x.show){
+  var g=el("div","show");
+  [["intro","How I'll introduce myself","e.g. I've just started my own firm, I help founders who..."],["why","My why","e.g. I want to build a firm that gives me freedom because..."]].forEach(function(f){
+   var w=el("div");var id="show-"+f[0];var l=el("label",null,f[1]);l.htmlFor=id;
+   var ta=el("textarea");ta.id=id;ta.placeholder=f[2];ta.value=st.show[f[0]]||"";
+   ta.addEventListener("input",function(){st.show[f[0]]=ta.value;update()});
+   w.appendChild(l);w.appendChild(ta);g.appendChild(w)});
+  pane.appendChild(g);update();return;
+ }
+ var rows=el("div","rows");
+ var hd=el("div","rw head");x.c.forEach(function(c){hd.appendChild(el("span",null,c))});hd.appendChild(el("span"));rows.appendChild(hd);
+ st[x.k].forEach(function(r,ri){rows.appendChild(row(x,r,ri))});
+ pane.appendChild(rows);
+ var add=el("button","addrow",x.add);add.type="button";
+ add.addEventListener("click",function(){st[x.k].push(blank());open(cur);var rs=pane.querySelectorAll(".rw:not(.head)");var last=rs[rs.length-1];if(last){last.querySelector("input,select").focus();last.scrollIntoView({block:"nearest"})}});
+ pane.appendChild(add);update();
+}
+function row(x,r,ri){
+ var rw=el("div","rw");if(filledRow(r))rw.classList.add("filled");
+ x.c.forEach(function(c,ci){
+  var cell=el("div","cell");var cl=el("span","cl",c);cell.appendChild(cl);
+  var inp;
+  if(x.sel&&ci===1){inp=el("select");[["","Physical or online?"],["Physical","Physical"],["Online","Online"]].forEach(function(o){var op=el("option",null,o[1]);op.value=o[0];inp.appendChild(op)});inp.value=r[ci]||"";inp.addEventListener("change",ch)}
+  else{inp=el("input");inp.type="text";inp.value=r[ci]||"";if(ri===0)inp.placeholder=x.ph[ci];inp.addEventListener("input",ch)}
+  inp.setAttribute("aria-label",c+", row "+(ri+1));
+  function ch(){r[ci]=inp.value;rw.classList.toggle("filled",filledRow(r));update()}
+  cell.appendChild(inp);rw.appendChild(cell);
+ });
+ var d=el("button","rdel");d.type="button";d.innerHTML="&times;";d.setAttribute("aria-label","Remove row "+(ri+1));
+ d.addEventListener("click",function(){st[x.k].splice(ri,1);if(!st[x.k].length)st[x.k].push(blank());open(cur)});
+ rw.appendChild(d);return rw;
+}
+open(0);
 document.getElementById("copy").addEventListener("click",function(){
- var txt="Where can I get access to these founders?\n\n"+Q.map(function(q,i){return (i+1)+". "+q.h+": "+((ans[i]||"").trim()||"-")}).join("\n");
+ var out=["Where can I get access to these founders?",""];
+ S.forEach(function(x,i){
+  out.push((i+1)+". "+x.t);
+  if(x.show){out.push("How I'll introduce myself: "+((st.show.intro||"").trim()||"-"));out.push("My why: "+((st.show.why||"").trim()||"-"))}
+  else{var rs=st[x.k].filter(filledRow);if(!rs.length)out.push("-");rs.forEach(function(r){out.push(x.c.map(function(c,ci){return c+": "+((r[ci]||"").trim()||"-")}).join(" | "))})}
+  out.push("");
+ });
+ var txt=out.join("\n").trim();
  function ok(){toast.textContent="Copied";setTimeout(function(){toast.textContent=""},1800)}
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback)}else{fallback()}
  function fallback(){var t=document.createElement("textarea");t.value=txt;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(e){toast.textContent="Select and copy"}document.body.removeChild(t)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback)}else{fallback()}
 });
 })();
 </script>
