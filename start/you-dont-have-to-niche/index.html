@@ -25,8 +25,8 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
 
-.panels{display:grid;grid-template-columns:1fr 1.75fr;gap:18px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
 .panel:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
 .panel.go{background:#FFF8F3;border-color:var(--gold)}
 .ph{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
@@ -34,64 +34,29 @@ h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.035em;line-he
 .panel.go .ph h2{color:var(--gold-soft)}
 .ph .k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
 .panel.go .ph .k{color:var(--gold-soft)}
-svg text{font-family:'Inter',Arial,sans-serif}
-
-/* Force it: fork */
-.fork{width:100%;max-width:340px;height:auto;display:block;margin:8px auto 0}
-.out{transition:transform .35s cubic-bezier(.2,.8,.2,1);transform-box:fill-box;transform-origin:center}
-.out:hover{transform:scale(1.06)}
-
-/* Let it find you: magnet field */
-.field{position:relative;aspect-ratio:640/350;margin-top:8px}
-.field svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.ring{fill:none;stroke:var(--gold);stroke-opacity:.25;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-out infinite}
-.ring.r2{animation-delay:1.05s}.ring.r3{animation-delay:2.1s}
-@keyframes pulse{0%{transform:scale(.55);stroke-opacity:.55}100%{transform:scale(1.15);stroke-opacity:0}}
-.pull{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-dasharray:4 9;stroke-linecap:round;animation:flow 1.1s linear infinite;opacity:.7}
-@keyframes flow{to{stroke-dashoffset:-13}}
-.dot{fill:#B8B8BC;animation:drawn 4s ease-in infinite}
-@keyframes drawn{0%{transform:translate(var(--x),var(--y));opacity:0;fill:#B8B8BC}20%{opacity:1}75%{fill:#F26B1D}100%{transform:translate(0,0);opacity:0;fill:#F26B1D}}
-.chip{position:absolute;background:#fff;border:1.5px solid var(--gold);border-radius:16px;padding:10px 14px;box-shadow:0 10px 26px -18px rgba(194,65,12,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;width:36%}
-.chip:hover{transform:translateY(-4px);box-shadow:0 18px 36px -16px rgba(242,107,29,.55)}
-.chip b{display:block;font-size:clamp(15px,1.45vw,19px);font-weight:800;letter-spacing:-.02em;color:var(--gold-soft);line-height:1.15}
-.chip span{display:block;font-size:12.5px;font-weight:600;color:var(--slate);margin-top:3px;line-height:1.3}
-.c1{left:0;top:0}.c2{right:0;top:0}.c3{left:50%;bottom:0;transform:translateX(-50%)}
-.c3:hover{transform:translate(-50%,-4px)}
-
-.big{margin-top:clamp(14px,2.6vh,24px);font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.jr{width:100%;height:auto;display:block;margin-top:6px;overflow:visible}
+.jr text{font-family:'Inter',Arial,sans-serif}
+.jr .lab{font-size:15px;font-weight:800}
+.jr .sub{font-size:11.5px;font-weight:600}
+.jr .ax{font-size:12px;font-weight:600;fill:#8A8A8E}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.4,0,.2,1) forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.9s}.d3{animation-delay:1.7s}.d4{animation-delay:2.5s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .5s ease forwards}
+.f1{animation-delay:1s}.f2{animation-delay:1.8s}.f3{animation-delay:2.6s}.f4{animation-delay:3.2s}
+@keyframes fade{to{opacity:1}}
+.big{margin-top:clamp(14px,2.4vh,22px);font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .big .gold-t{color:var(--gold)}
+.small{margin-top:8px;font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--slate)}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
-
-@media (max-width:860px){
- .panels{grid-template-columns:1fr;gap:12px}
- .panel{padding:14px 14px 12px}
- .hero{padding:18px 0 10px}
- .fork{max-width:280px}
-}
+@media (max-width:860px){.panels{grid-template-columns:1fr;gap:12px}.panel{padding:14px 14px 8px}.hero{padding:18px 0 10px}}
 @media (max-width:600px){
- .wrap{padding:0 16px}
- .pnav{padding:14px 16px}
- .navtag{font-size:11.5px}
- .brand{font-size:11.5px;letter-spacing:.12em}
- .field{aspect-ratio:auto;display:grid;gap:8px}
- .field svg{position:relative;inset:auto;height:150px;width:100%;margin:-4px 0 -4px}
- .fork{max-width:230px;margin-top:4px}
- .ph{flex-wrap:wrap;gap:2px 12px}
- .ph .k{font-size:11px}
- .field svg .pull{display:none}
- .chip{position:static;width:auto;transform:none}
- .c3{transform:none}.c3:hover{transform:translateY(-4px)}
+ .wrap{padding:0 16px}.pnav{padding:14px 16px}.navtag{font-size:11.5px}.brand{font-size:11.5px;letter-spacing:.12em}
+ .ph{flex-wrap:wrap;gap:2px 12px}.ph .k{font-size:11px}
+ .jr .lab{font-size:17px}.jr .sub{font-size:13px}.jr .ax{font-size:14px}.jr .sso{font-size:14.5px}
 }
-@media (prefers-reduced-motion:reduce){
- .ring,.pull,.dot{animation:none}
- .dot{opacity:0}
- .ring{transform:scale(.9)}
- .panel,.chip,.out{transition:none}
- .panel:hover,.chip:hover,.out:hover{transform:none}
- .c3:hover{transform:translateX(-50%)}
-}
-@media (prefers-reduced-motion:reduce) and (max-width:600px){.c3:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.draw{animation:none;stroke-dashoffset:0}.fade{animation:none;opacity:1}.panel{transition:none}.panel:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -105,55 +70,53 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 
 <main class="wrap">
 <div class="panels">
-
-<div class="panel"><div class="ph"><h2>Force it</h2><span class="k">Backfires</span></div>
-<svg class="fork" viewBox="0 0 340 330" role="img" aria-label="Forcing a niche backfires: you pick the wrong one, or you stall">
-<rect x="60" y="14" width="220" height="56" rx="28" fill="#fff" stroke="#D0D0D3" stroke-width="2"/>
-<text x="170" y="49" text-anchor="middle" font-size="19" font-weight="700" fill="#111">Pick a niche now</text>
-<path d="M170,70 L170,120 M170,120 C170,150 90,150 90,190 M170,120 C170,150 250,150 250,190" fill="none" stroke="#B8B8BC" stroke-width="3" stroke-linecap="round"/>
-<g class="out">
-<circle cx="90" cy="234" r="44" fill="#fff" stroke="#C2410C" stroke-width="3"/>
-<path d="M74,218 L106,250 M106,218 L74,250" stroke="#C2410C" stroke-width="6" stroke-linecap="round"/>
-<text x="90" y="312" text-anchor="middle" font-size="21" font-weight="800" fill="#C2410C">Wrong one</text>
-</g>
-<g class="out">
-<circle cx="250" cy="234" r="44" fill="#fff" stroke="#C2410C" stroke-width="3"/>
-<rect x="234" y="214" width="10" height="40" rx="3" fill="#C2410C"/><rect x="256" y="214" width="10" height="40" rx="3" fill="#C2410C"/>
-<text x="250" y="312" text-anchor="middle" font-size="21" font-weight="800" fill="#C2410C">Stall</text>
-</g>
+<div class="panel"><div class="ph"><h2>If I'd picked a niche on day one</h2><span class="k">What would have happened</span></div>
+<svg class="jr" viewBox="0 30 560 264" role="img" aria-label="What would have happened: pick niche A, realise 3 months later it is the wrong niche, start again with niche B, wrong again 3 months later, then niche C, and still starting over.">
+<line x1="30" y1="240" x2="548" y2="240" stroke="#D0D0D3" stroke-width="2"/>
+<path class="draw d1" pathLength="1" d="M34,240 C84,236 114,130 154,110" fill="none" stroke="#8E8E93" stroke-width="5" stroke-linecap="round"/>
+<g class="fade f1"><line x1="160" y1="84" x2="160" y2="196" stroke="#C2410C" stroke-width="5" stroke-linecap="round"/>
+<text class="sub" x="160" y="70" text-anchor="middle" fill="#C2410C">Wrong niche</text>
+<path d="M160,198 L168,240" stroke="#8E8E93" stroke-width="2.5" stroke-dasharray="4 5" fill="none"/>
+<text class="ax" x="160" y="284" text-anchor="middle">3 months</text></g>
+<text class="lab" x="92" y="264" text-anchor="middle" fill="#3A3A3C">Niche A</text>
+<path class="draw d2" pathLength="1" d="M168,240 C218,236 248,130 288,110" fill="none" stroke="#8E8E93" stroke-width="5" stroke-linecap="round"/>
+<g class="fade f2"><line x1="294" y1="84" x2="294" y2="196" stroke="#C2410C" stroke-width="5" stroke-linecap="round"/>
+<text class="sub" x="294" y="70" text-anchor="middle" fill="#C2410C">Wrong niche</text>
+<path d="M294,198 L302,240" stroke="#8E8E93" stroke-width="2.5" stroke-dasharray="4 5" fill="none"/>
+<text class="ax" x="294" y="284" text-anchor="middle">3 months</text></g>
+<text class="lab" x="226" y="264" text-anchor="middle" fill="#3A3A3C">Niche B</text>
+<path class="draw d3" pathLength="1" d="M302,240 C352,236 382,130 422,110" fill="none" stroke="#8E8E93" stroke-width="5" stroke-linecap="round"/>
+<g class="fade f3"><line x1="428" y1="84" x2="428" y2="196" stroke="#C2410C" stroke-width="5" stroke-linecap="round"/>
+<text class="sub" x="428" y="70" text-anchor="middle" fill="#C2410C">Wrong niche</text>
+<path d="M428,198 L436,240" stroke="#8E8E93" stroke-width="2.5" stroke-dasharray="4 5" fill="none"/>
+<text class="ax" x="428" y="284" text-anchor="middle">3 months</text></g>
+<text class="lab" x="360" y="264" text-anchor="middle" fill="#3A3A3C">Niche C</text>
+<path class="draw d4" pathLength="1" d="M436,240 H546" fill="none" stroke="#8E8E93" stroke-width="5" stroke-linecap="round"/>
+<text class="lab sso fade f4" x="552" y="264" text-anchor="end" fill="#3A3A3C">Still starting over</text>
 </svg>
 </div>
-
-<div class="panel go"><div class="ph"><h2>Let it find you</h2><span class="k">Founder fit, not industry</span></div>
-<div class="field">
-<svg viewBox="0 0 640 350" role="img" aria-label="You at the centre, drawing in the niches that found Clearcrest: hospitality, serviced accommodation and growing founders">
-<path class="pull" d="M190,62 C250,90 280,130 304,160"/>
-<path class="pull" d="M450,62 C390,90 360,130 336,160"/>
-<path class="pull" d="M320,280 L320,214"/>
-<circle class="ring" cx="320" cy="175" r="110"/>
-<circle class="ring r2" cx="320" cy="175" r="110"/>
-<circle class="ring r3" cx="320" cy="175" r="110"/>
-<g transform="translate(320 175)">
-<circle class="dot" r="5" style="--x:-150px;--y:-20px;animation-delay:0s"/>
-<circle class="dot" r="5" style="--x:150px;--y:30px;animation-delay:.6s"/>
-<circle class="dot" r="5" style="--x:-120px;--y:90px;animation-delay:1.2s"/>
-<circle class="dot" r="5" style="--x:130px;--y:-95px;animation-delay:1.8s"/>
-<circle class="dot" r="5" style="--x:-60px;--y:-140px;animation-delay:2.4s"/>
-<circle class="dot" r="5" style="--x:90px;--y:120px;animation-delay:3s"/>
-<circle class="dot" r="5" style="--x:-170px;--y:50px;animation-delay:3.5s"/>
-</g>
-<circle cx="320" cy="175" r="50" fill="#F26B1D"/>
-<circle cx="320" cy="175" r="50" fill="none" stroke="#fff" stroke-width="3" stroke-opacity=".5"/>
-<text x="320" y="184" text-anchor="middle" font-size="26" font-weight="800" letter-spacing="1" fill="#fff">YOU</text>
+<div class="panel go"><div class="ph"><h2>What actually happened</h2><span class="k">My journey</span></div>
+<svg class="jr" viewBox="0 30 560 264" role="img" aria-label="What actually happened: started general, taking anyone who would talk to me, then branched into hospitality, then online coaches, then Airbnb management, with every branch still growing.">
+<line x1="30" y1="240" x2="548" y2="240" stroke="#E7C9B5" stroke-width="2"/>
+<text class="ax" x="30" y="264">Start</text><text class="ax" x="548" y="264" text-anchor="end">Today</text>
+<path class="draw d1" pathLength="1" d="M34,236 C200,232 380,220 546,210" fill="none" stroke="#F26B1D" stroke-width="7" stroke-linecap="round"/>
+<text class="lab" x="38" y="216" fill="#C2410C">General</text>
+<text class="sub" x="38" y="198" fill="#8A6A55">Anyone who'll talk to me</text>
+<text class="sub fade f1" x="546" y="230" text-anchor="end" fill="#8A6A55">Still general</text>
+<path class="draw d2" pathLength="1" d="M160,231 C220,228 270,52 360,52 H546" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linecap="round"/>
+<path class="draw d3" pathLength="1" d="M270,227 C310,224 320,108 390,108 H546" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+<path class="draw d4" pathLength="1" d="M380,222 C410,220 415,162 445,162 H546" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<g class="fade f2"><circle cx="160" cy="231" r="11" fill="#F26B1D" stroke="#fff" stroke-width="3"/><text x="160" y="235.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">1</text>
+<text class="lab" x="546" y="42" text-anchor="end" fill="#C2410C">Hospitality</text><text class="sub" x="546" y="70" text-anchor="end" fill="#8A6A55">Cafes and bars open at weekends</text></g>
+<g class="fade f3"><circle cx="270" cy="227" r="11" fill="#F26B1D" stroke="#fff" stroke-width="3"/><text x="270" y="231.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">2</text>
+<text class="lab" x="546" y="98" text-anchor="end" fill="#C2410C">Online coaches</text></g>
+<g class="fade f4"><circle cx="380" cy="222" r="11" fill="#F26B1D" stroke="#fff" stroke-width="3"/><text x="380" y="226.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">3</text>
+<text class="lab" x="546" y="152" text-anchor="end" fill="#C2410C">Airbnb management</text><text class="sub" x="546" y="130" text-anchor="end" fill="#8A6A55">A Dubai beach club chat</text></g>
 </svg>
-<div class="chip c1"><b>Hospitality</b><span>By accident: open at weekends</span></div>
-<div class="chip c2"><b>Serviced accommodation</b><span>A chat at a Dubai beach club</span></div>
-<div class="chip c3"><b>Growing founders</b><span>Holding companies: best leads</span></div>
 </div>
 </div>
-
-</div>
-<p class="big">People who relate to you are <span class="gold-t">drawn to you.</span></p>
+<p class="big">Start general. <span class="gold-t">Let the niches find you.</span></p>
+<p class="small">People who relate to you are drawn to you.</p>
 </main>
 
 <div class="wrap pnav"><span></span><a href="/start/you-are-the-niche/" style="text-decoration:none;color:var(--gold-soft);text-align:right">You are the niche &rarr;</a></div>
