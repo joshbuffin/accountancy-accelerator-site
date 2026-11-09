@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Xama - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: Xama for AML checks and risk assessments, LEGL later.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Xama: now vs later onboarding strip */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(18px,2.6vh,30px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.2vw,26px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.seg button:hover:not([aria-pressed="true"]){color:var(--ink)}
+.strip{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(40px,5.4vh,52px)}
+.bracket{position:absolute;left:0;top:-34px;height:26px;border:2.5px solid var(--gold);border-bottom:0;border-radius:12px 12px 0 0;transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.bracket span{position:absolute;left:50%;top:-14px;transform:translateX(-50%);background:var(--card);padding:0 12px;font-size:14px;font-weight:800;color:var(--gold-soft);white-space:nowrap}
+.st{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:14px 16px 16px;min-height:132px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s ease,background-color .35s ease,box-shadow .45s ease}
+.st:hover{transform:translateY(-3px)}
+.st svg{width:30px;height:30px;flex:none}
+.st svg *{stroke:#AEAEB2;transition:stroke .35s ease}
+.st h3{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.st .tag{margin-top:auto;align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;background:var(--card);color:var(--slate);border:1px dashed #C7C7CC}
+.st.on{border-color:var(--gold);background:#FFF8F3;box-shadow:0 14px 30px -20px rgba(242,107,29,.55)}
+.st.on svg *{stroke:var(--gold)}
+.st.on .tag{background:var(--gold);color:#0A0A0A;border:1px solid var(--gold)}
+.say{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:clamp(16px,2.4vh,24px);flex-wrap:wrap}
+.say h2{font-size:clamp(24px,2.7vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.say h2 span{color:var(--gold-soft)}
+.pill{font-size:14px;font-weight:700;border-radius:999px;padding:8px 16px;background:#fff;border:1px solid var(--line)}
+.pill b{color:var(--gold-soft)}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px;padding-bottom:6px}
+.mini{border:1px solid var(--line);border-radius:18px;padding:12px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.mini:hover{transform:translateY(-3px);box-shadow:0 14px 28px -20px rgba(0,0,0,.35)}
+.mini h3{font-size:clamp(16px,1.6vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:2px}
+.mini.add{border:2px dashed #C7C7CC}
+.mini.add .k{color:var(--gold-soft)}
+@media (max-width:820px){.strip{grid-template-columns:1fr 1fr}.bracket{display:none}.row{grid-template-columns:1fr}.st{min-height:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{padding:7px 12px;font-size:13px}.st{padding:12px}.strip{gap:8px;margin-top:16px}.st h3{font-size:15px}.say h2{font-size:22px}}
+@media (prefers-reduced-motion:reduce){.st,.mini,.bracket,.seg button,.st svg *{transition:none}.st:hover,.mini:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Xama</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 9</p>
+<h1>Xama now. <span class="gold-t">LEGL later.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="stage" aria-label="Client onboarding: Xama now versus LEGL later">
+<div class="top">
+<p class="k">Client journey · onboarding a new client</p>
+<div class="seg" role="group" aria-label="Choose stage">
+<button type="button" id="bNow" aria-pressed="true">Now · Xama</button>
+<button type="button" id="bLater" aria-pressed="false">Later · LEGL</button>
+</div>
+</div>
+
+<div class="strip" id="strip">
+<div class="bracket" id="bracket" aria-hidden="true"><span id="blabel">Xama</span></div>
+<div class="st on" data-now="1">
+<svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 L27 7 V15 C27 22 22 27 16 29 C10 27 5 22 5 15 V7 Z"/><path d="M11 16 L15 20 L21 12"/></svg>
+<h3>AML check</h3><span class="tag" data-a="Xama" data-b="LEGL">Xama</span>
+</div>
+<div class="st">
+<svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 H20 L25 8 V29 H8 Z"/><path d="M12 22 C14 18 15 25 17 21 C18 19 19 23 21 21"/><path d="M12 13 H21"/></svg>
+<h3>Engagement letter</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+</div>
+<div class="st">
+<svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="20" height="25" rx="3"/><path d="M11 11 H21"/><path d="M11 17 H21"/><path d="M11 23 H17"/></svg>
+<h3>Client info form</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+</div>
+<div class="st">
+<svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="24" height="17" rx="3"/><path d="M4 14 H28"/><path d="M9 20 H14"/></svg>
+<h3>Deposit paid</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+</div>
+</div>
+
+<div class="say">
+<h2 id="say">Covers the <span>AML step.</span> Cheap to start.</h2>
+<p class="pill" id="pill">Start: <b>too early for LEGL</b></p>
+</div>
+</section>
+
+<div class="row">
+<div class="mini"><p class="k">What it's for</p><h3>AML checks and risk assessments.</h3></div>
+<div class="mini"><p class="k">When you need it</p><h3>Before you take on client one.</h3></div>
+<div class="mini add"><p class="k">Add yours</p><h3>When you switch to LEGL.</h3></div>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/slack/" style="text-decoration:none">&larr; Slack (when you hire your first team member)</a><a href="/start/our-ai-stack/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Our AI stack (Claude + VS Code + Grok) &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Xama</div></footer>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var steps=[].slice.call(document.querySelectorAll(".st")),br=$("bracket"),strip=$("strip");
+var copy={
+ now:{label:"Xama",say:'Covers the <span>AML step.</span> Cheap to start.',pill:'Start: <b>too early for LEGL</b>'},
+ later:{label:"LEGL · one flow, auto-chased",say:'The whole onboarding. <span>One flow.</span>',pill:'Later: <b>worth it once you grow</b>'}
+};
+var mode="now";
+function size(){
+ var first=steps[0],last=mode==="now"?steps[0]:steps[steps.length-1];
+ var r0=strip.getBoundingClientRect(),a=first.getBoundingClientRect(),b=last.getBoundingClientRect();
+ br.style.left=(a.left-r0.left)+"px";br.style.width=(b.right-a.left)+"px";
+}
+function set(m){
+ mode=m;var later=m==="later";
+ $("bNow").setAttribute("aria-pressed",String(!later));$("bLater").setAttribute("aria-pressed",String(later));
+ steps.forEach(function(s){var on=later||s.hasAttribute("data-now");s.classList.toggle("on",on);var t=s.querySelector(".tag");t.textContent=later?t.getAttribute("data-b"):t.getAttribute("data-a")});
+ $("blabel").textContent=copy[m].label;$("say").innerHTML=copy[m].say;$("pill").innerHTML=copy[m].pill;
+ size();
+}
+$("bNow").addEventListener("click",function(){set("now")});
+$("bLater").addEventListener("click",function(){set("later")});
+window.addEventListener("resize",size);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(size);
+set("now");
+if(location.hash==="#later")set("later");
+})();
+</script>
+</body>
+</html>
