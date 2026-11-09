@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pricing calculator - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 6 Pricing &amp; Proposals: pricing calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
+h1{font-size:clamp(34px,4.4vw,56px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
+
+/* Pricing calculator: line by line vs one bundled price */
+.hero{padding-top:clamp(18px,3vh,36px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.calc{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(16px,2.4vw,32px);padding-top:clamp(16px,2.6vh,28px);padding-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,2vw,24px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(0,0,0,.35)}
+.card h2{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-top:4px}
+.rows{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 74px 112px 84px;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;transition:border-color .25s ease}
+.row:focus-within{border-color:var(--gold)}
+.row.core{border-color:#F4B48F;background:#FFF8F3}
+.nm{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.nm small{display:block;font-size:11px;font-weight:600;color:var(--slate);letter-spacing:.02em;margin-top:2px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:1px}
+.fld{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:0 8px;height:38px}
+.fld:focus-within{border-color:var(--gold)}
+.fld span{font-size:13px;font-weight:700;color:var(--slate)}
+.fld input{font:inherit;font-size:15px;font-weight:700;border:0;outline:0;width:100%;min-width:0;background:transparent;color:var(--ink);padding:0 4px;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.fld input::-webkit-outer-spin-button,.fld input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.fld input::placeholder{color:#B5B5BA;font-weight:600}
+.qty.na{visibility:hidden}
+.lt{text-align:right;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;color:#3A3A3C}
+.hdr{display:grid;grid-template-columns:minmax(0,1fr) 74px 112px 84px;gap:10px;padding:0 13px;margin-top:12px}
+.hdr .k{font-size:10px}
+.hdr .k:last-child{text-align:right}
+.addyours{display:inline-block;margin-top:12px;border:2px dashed rgba(0,0,0,.25);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--muted)}
+
+.res{background:var(--gold);border-color:var(--gold);color:#0A0A0A;display:flex;flex-direction:column;gap:14px}
+.res .k{color:#3A2A1E}
+.res:hover{box-shadow:0 18px 34px -20px rgba(242,107,29,.6)}
+.seg{display:flex;background:rgba(255,255,255,.25);border-radius:999px;padding:4px;gap:4px;align-self:flex-start}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:8px 16px;background:transparent;color:#0A0A0A;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:#0A0A0A;color:#fff}
+.seg button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.big{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.big .n{font-size:clamp(46px,5.4vw,72px);font-weight:800;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.big .s{font-size:16px;font-weight:700}
+.bar{height:44px;border-radius:12px;background:rgba(255,255,255,.3);display:flex;overflow:hidden;border:2px dashed rgba(0,0,0,.18)}
+.bar.has{border-style:solid;border-color:rgba(0,0,0,.08)}
+.bar i{display:block;height:100%;transition:width .5s cubic-bezier(.2,.8,.2,1),opacity .4s ease}
+.bar.has i+i{border-left:2px solid var(--gold)}
+.bar:not(.has) i{width:0!important}
+.bar.bundled i:not(:first-child){opacity:.18}
+.lost{background:#fff;border-radius:16px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:opacity .35s ease,transform .35s ease}
+.lost h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.lost .amt{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;color:var(--gold-soft);font-variant-numeric:tabular-nums;text-align:right;line-height:1}
+.lost .amt small{display:block;font-size:12px;letter-spacing:0;color:var(--slate);margin-top:4px}
+.lost.ok .amt{color:#3A3A3C}
+.tag{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-top:auto}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+@media (max-width:560px){
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .hdr{display:none}
+ .row{grid-template-columns:64px minmax(0,1fr) 72px;row-gap:8px}
+ .row .nm{grid-column:1/-1}
+ .row.core .qty{display:none}
+ .row.core .fld:not(.qty){grid-column:1/3}
+ .qty::after{content:"qty";font-size:11px;font-weight:700;color:var(--slate)}
+ .addyours{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){.card,.bar i,.lost{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · Pricing calculator</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 6</p>
+<h1>Price it <span class="gold-t">line by line.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="calc">
+
+<section class="card" aria-labelledby="inH">
+<p class="k">Your minimum fees</p>
+<h2 id="inH">Start from your minimums.</h2>
+<div class="hdr" aria-hidden="true"><span class="k">Line</span><span class="k">How many</span><span class="k">£ a month</span><span class="k">Total</span></div>
+<div class="rows" id="rows">
+<div class="row core" data-i="0"><p class="nm"><span class="sw" style="background:#0A0A0A"></span>Monthly package<small>Your minimum</small></p><div class="fld qty na"><input type="number" value="1" tabindex="-1" aria-hidden="true"></div><label class="fld"><span>£</span><input type="number" min="0" step="1" inputmode="decimal" placeholder="Add yours" aria-label="Monthly package minimum fee, £ a month"></label><span class="lt">-</span></div>
+<div class="row" data-i="1"><p class="nm"><span class="sw" style="background:#7A2A06"></span>Self assessments<small>Non-director</small></p><label class="fld qty"><input type="number" min="0" step="1" inputmode="numeric" value="0" aria-label="Number of non-director self assessments"></label><label class="fld"><span>£</span><input type="number" min="0" step="1" inputmode="decimal" placeholder="Add yours" aria-label="Self assessment fee each, £ a month"></label><span class="lt">-</span></div>
+<div class="row" data-i="2"><p class="nm"><span class="sw" style="background:#B8460F"></span>Payroll<small>Non-director staff</small></p><label class="fld qty"><input type="number" min="0" step="1" inputmode="numeric" value="0" aria-label="Number of non-director staff on payroll"></label><label class="fld"><span>£</span><input type="number" min="0" step="1" inputmode="decimal" placeholder="Add yours" aria-label="Payroll fee per person, £ a month"></label><span class="lt">-</span></div>
+<div class="row" data-i="3"><p class="nm"><span class="sw" style="background:#FFFFFF;border:1.5px solid #3A2A1E"></span>Subscriptions<small>Software</small></p><label class="fld qty"><input type="number" min="0" step="1" inputmode="numeric" value="0" aria-label="Number of software subscriptions"></label><label class="fld"><span>£</span><input type="number" min="0" step="1" inputmode="decimal" placeholder="Add yours" aria-label="Subscription cost each, £ a month"></label><span class="lt">-</span></div>
+</div>
+<p class="addyours">Add yours: link to the full pricing calculator</p>
+</section>
+
+<section class="card res" aria-labelledby="outH" aria-live="polite">
+<div class="seg" role="group" aria-label="How you price it"><button type="button" id="bLine" aria-pressed="true">Line by line</button><button type="button" id="bBund" aria-pressed="false">One bundled price</button></div>
+<div><p class="k" id="outH">Monthly package</p>
+<div class="big"><span class="n" id="tot">£0</span><span class="s" id="totS">a month</span></div></div>
+<div class="bar" id="bar" aria-hidden="true"><i style="background:#0A0A0A"></i><i style="background:#7A2A06"></i><i style="background:#B8460F"></i><i style="background:#FFFFFF"></i></div>
+<div class="lost ok" id="lost"><div><p class="k" id="lostK">Extras</p><h3 id="lostH">Every extra is its own line.</h3></div><div class="amt" id="lostA">£0<small>a year</small></div></div>
+<p class="tag" id="tagline">Add it up. Don't make it up.</p>
+</section>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/how-our-pricing-changed/" style="text-decoration:none">&larr; How our pricing changed over time</a><a href="/start/always-take-a-deposit/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Always take a deposit &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · Pricing calculator</div></footer>
+
+<script>
+(function(){
+var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+var $=function(id){return document.getElementById(id)};
+var rows=[].slice.call(document.querySelectorAll("#rows .row")),segs=[].slice.call(document.querySelectorAll("#bar i"));
+var bundled=false;
+function num(v){var n=parseFloat(v);return isFinite(n)&&n>0?n:0}
+function calc(){
+ var lines=rows.map(function(r,i){var ins=r.querySelectorAll("input");var q=i===0?1:num(ins[0].value);var p=num(ins[1].value);var t=q*p;r.querySelector(".lt").textContent=t?gbp.format(t):"-";return t});
+ var core=lines[0],extras=lines[1]+lines[2]+lines[3],full=core+extras;
+ var shown=bundled?core:full;
+ $("tot").textContent=gbp.format(shown);
+ $("totS").textContent=full?(bundled?"a month, all in":"a month"):"a month. Add your minimums.";
+ var bar=$("bar");bar.classList.toggle("has",full>0);bar.classList.toggle("bundled",bundled);
+ segs.forEach(function(s,i){s.style.width=(full?lines[i]/full*100:0)+"%"});
+ var lost=$("lost");
+ if(bundled){lost.classList.remove("ok");$("lostK").textContent="Given away";$("lostH").textContent="Bundled in for free.";$("lostA").innerHTML=gbp.format(extras*12)+"<small>a year</small>";$("tagline").textContent="Bundle it and you give it away."}
+ else{lost.classList.add("ok");$("lostK").textContent="Extras";$("lostH").textContent="Every extra is its own line.";$("lostA").innerHTML=gbp.format(extras*12)+"<small>a year</small>";$("tagline").textContent="Add it up. Don't make it up."}
+}
+function setMode(b){bundled=b;$("bLine").setAttribute("aria-pressed",String(!b));$("bBund").setAttribute("aria-pressed",String(b));calc()}
+$("bLine").addEventListener("click",function(){setMode(false)});
+$("bBund").addEventListener("click",function(){setMode(true)});
+$("rows").addEventListener("input",calc);
+calc();
+})();
+</script>
+</body>
+</html>
