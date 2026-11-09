@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sales call template - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 7 Sales: the sales call template.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+
+/* Sales call template: the sheet, step by step */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(36px,4.4vw,58px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.sc{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(18px,2.6vw,34px);align-items:stretch;padding-top:clamp(16px,2.4vh,28px);padding-bottom:4px}
+
+.sheet{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -30px rgba(0,0,0,.35)}
+.bar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:5px}.dots i{width:9px;height:9px;border-radius:50%;background:#D1D1D6;display:block}
+.fname{font-size:13px;font-weight:700;color:var(--ink)}
+.cols{display:grid;grid-template-columns:34px minmax(0,1fr) 96px;font-size:10.5px;font-weight:700;color:#AEAEB2;background:#FAFAFA;border-bottom:1px solid var(--line)}
+.cols span{padding:3px 10px;border-right:1px solid var(--line);text-align:center}.cols span:last-child{border-right:0}
+.row{display:grid;grid-template-columns:34px minmax(0,1fr) 96px;border-bottom:1px solid var(--line);transition:background-color .35s ease,box-shadow .35s ease,opacity .35s ease;cursor:pointer}
+.row:last-child{border-bottom:0}
+.row .n{font-size:12px;font-weight:700;color:#AEAEB2;text-align:center;padding-top:10px;border-right:1px solid var(--line);background:#FAFAFA}
+.row .c{padding:8px 12px;min-width:0}
+.row h3{font-size:clamp(15px,1.35vw,17px);font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.fields{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.f{font-size:11.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:2px 8px;background:#fff;display:inline-flex;align-items:center;gap:6px}
+.f::after{content:"";width:22px;height:1px;background:#C7C7CC}
+.who{display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line);padding:6px}
+.tag{font-size:11px;font-weight:800;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.tag.them{background:#FFF1E8;color:var(--gold-soft)}
+.tag.you{background:#EDEDF0;color:#3A3A3C}
+.row:hover{background:#FFFBF8}
+.row.on{background:#FFF8F3;box-shadow:inset 4px 0 0 var(--gold)}
+.row.on .n{color:var(--gold-soft);background:#FFF1E8}
+.row.on .tag.them{background:var(--gold);color:#0A0A0A}
+.row.on .tag.you{background:#3A3A3C;color:#fff}
+.sheet.run .row:not(.on):not(.past){opacity:.45}
+
+.side{display:flex;flex-direction:column;gap:12px}
+.stage{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;justify-content:space-between;gap:12px;flex:1;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.stage:hover{transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(242,107,29,.6)}
+.stage .k{color:#3A2A1E}
+.stage h2{font-size:clamp(24px,2.5vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.08;min-height:2.16em}
+.ppl{display:flex;gap:10px}
+.p{flex:1;border-radius:16px;padding:clamp(12px,2.2vh,22px) 14px;background:rgba(255,255,255,.22);border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;transition:background-color .3s ease,transform .3s ease}
+.p .av{width:12px;height:12px;border-radius:50%;background:rgba(0,0,0,.2);flex:none;transition:background-color .3s ease}
+.p b{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em}
+.p.talk{background:#fff;transform:translateY(-2px)}
+.p.talk .av{background:var(--gold);box-shadow:0 0 0 4px rgba(242,107,29,.25)}
+.ratio{display:flex;flex-direction:column;gap:6px}
+.rbar{display:flex;height:30px;border-radius:10px;overflow:hidden;font-size:13px;font-weight:800}
+.rbar .t{flex:70;background:#0A0A0A;color:#fff;display:flex;align-items:center;padding-left:10px}
+.rbar .y{flex:30;background:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:flex-end;padding-right:10px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:#0A0A0A;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:#2A2A2A}
+.play.ghost{background:transparent;color:#0A0A0A;border:1.5px solid rgba(0,0,0,.35)}
+.play.ghost:hover{background:rgba(255,255,255,.3)}
+.add{border:2px dashed var(--gold);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:700;color:var(--gold-soft);background:#FFF8F3}
+
+@media (max-width:900px){.sc{grid-template-columns:1fr}.stage h2{min-height:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.cols,.row{grid-template-columns:26px minmax(0,1fr) 74px}.row .c{padding:7px 9px}.tag{font-size:10px;padding:3px 7px}.f{font-size:11px;padding:2px 6px}.f::after{width:12px}.hero h1{font-size:34px}}
+@media (prefers-reduced-motion:reduce){.row,.stage,.p{transition:none}.stage:hover,.p.talk{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sales · Sales call template</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 7 - Sales · Video 4</p>
+<h1>They talk. <span class="gold-t">You fill it in.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="sc">
+
+<div class="sheet" id="sheet">
+<div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="fname">Sales call template</span></div>
+<div class="cols" aria-hidden="true"><span></span><span>A</span><span>B</span></div>
+<div class="row" data-i="0" data-who="them"><span class="n">1</span><div class="c"><h3>The golden question</h3><div class="fields"><span class="f">Tell me about your business and why you reached out today</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="1" data-who="them"><span class="n">2</span><div class="c"><h3>Pain points</h3><div class="fields"><span class="f">Note it. Don't fix it yet</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="2" data-who="you"><span class="n">3</span><div class="c"><h3>Companies House lookup</h3><div class="fields"><span class="f">Company</span></div></div><div class="who"><span class="tag you">You check</span></div></div>
+<div class="row" data-i="3" data-who="them"><span class="n">4</span><div class="c"><h3>Scope of work</h3><div class="fields"><span class="f">Revenue</span><span class="f">Transactions</span><span class="f">Bank accounts</span><span class="f">Systems</span><span class="f">Loans</span><span class="f">VAT period and scheme</span><span class="f">Payroll</span><span class="f">Pension provider</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="4" data-who="you"><span class="n">5</span><div class="c"><h3>Give value back</h3><div class="fields"><span class="f">Answer their pain points</span></div></div><div class="who"><span class="tag you">You talk</span></div></div>
+<div class="row" data-i="5" data-who="them"><span class="n">6</span><div class="c"><h3>Agree a start date</h3><div class="fields"><span class="f">They choose it</span></div></div><div class="who"><span class="tag them">They pick</span></div></div>
+</div>
+
+<div class="side">
+<div class="stage">
+<p class="k" id="stepk">30-minute call</p>
+<h2 id="steph">Six boxes. In this order.</h2>
+<div class="ppl"><div class="p" id="pThem"><span class="av"></span><b>Prospect</b></div><div class="p" id="pYou"><span class="av"></span><b>You</b></div></div>
+<div class="ratio"><p class="k">Talk time</p><div class="rbar" role="img" aria-label="They talk 70 percent, you talk 30 percent"><span class="t">Them 70%</span><span class="y">You 30%</span></div></div>
+<div class="ctl"><button class="play" id="next" type="button">Run the call</button><button class="play ghost" id="reset" type="button" hidden>Reset</button></div>
+</div>
+<p class="add">Add yours: link to the template</p>
+</div>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/learn-your-connectors/" style="text-decoration:none">&larr; Learn your connectors</a><a href="/start/find-the-painpoint/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Find the painpoint &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Sales · Sales call template</div></footer>
+
+<script>
+(function(){
+var rows=[].slice.call(document.querySelectorAll(".row")),sheet=document.getElementById("sheet");
+var nx=document.getElementById("next"),rs=document.getElementById("reset"),k=document.getElementById("stepk"),h=document.getElementById("steph");
+var pT=document.getElementById("pThem"),pY=document.getElementById("pYou");
+var heads=["Ask it. Then listen.","Write them down. Don't solve them.","Look them up while they talk.","Get the full scope. Every box.","Now solve their pain points.","Let them pick the date."];
+var cur=-1;
+function show(i){
+ cur=i;sheet.classList.add("run");
+ rows.forEach(function(r,j){r.classList.toggle("on",j===i);r.classList.toggle("past",j<i)});
+ var who=rows[i].getAttribute("data-who");
+ pT.classList.toggle("talk",who==="them");pY.classList.toggle("talk",who==="you");
+ k.textContent="Step "+(i+1)+" of 6";h.textContent=heads[i];
+ nx.textContent=i<5?"Next step":"Start again";rs.hidden=false;
+}
+function reset(){
+ cur=-1;sheet.classList.remove("run");
+ rows.forEach(function(r){r.classList.remove("on","past")});
+ pT.classList.remove("talk");pY.classList.remove("talk");
+ k.textContent="30-minute call";h.textContent="Six boxes. In this order.";
+ nx.textContent="Run the call";rs.hidden=true;
+}
+nx.addEventListener("click",function(){if(cur>=5)reset();show(cur+1)});
+rs.addEventListener("click",reset);
+rows.forEach(function(r,j){r.addEventListener("click",function(){show(j)})});
+})();
+</script>
+</body>
+</html>
