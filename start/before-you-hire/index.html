@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>What do you need to do before you hire? - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: what do you need to do before you hire? You need Slack and you need standard templates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Before you hire: two locks on the door to your first hire */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero .eyebrow{margin-bottom:14px}
+.hero h1{font-size:clamp(36px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(16px,2.4vh,28px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);gap:clamp(14px,2vw,28px);align-items:center}
+.lock{min-height:268px;font:inherit;color:inherit;text-align:left;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,box-shadow .45s ease}
+.lock:hover{transform:translateY(-3px)}
+.lock:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.lock[aria-pressed="true"]{background:#FFF8F3;border-color:var(--gold);box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.lock[aria-pressed="true"] .k{color:var(--gold-soft)}
+.lt{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sw{flex:none;width:46px;height:26px;border-radius:99px;background:#D1D1D6;position:relative;transition:background-color .3s ease}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.lock[aria-pressed="true"] .sw{background:var(--gold)}
+.lock[aria-pressed="true"] .sw::after{transform:translateX(20px)}
+.lock h2{font-size:clamp(24px,2.5vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.lock h2 span{color:var(--gold-soft)}
+.lock h3{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600;line-height:1.3}
+.chip.no{color:var(--slate);text-decoration:line-through;text-decoration-color:rgba(194,65,12,.6)}
+.lock[aria-pressed="true"] .chip{border-color:#F8C9AD}
+.door{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.door svg{width:100%;max-width:340px;height:auto;display:block}
+.door svg text{font-family:'Inter',Arial,sans-serif}
+.leaf{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.open .leafL{transform:translateX(-58px)}
+.open .leafR{transform:translateX(58px)}
+.leaf text{transition:opacity .3s ease}.open .leaf text{opacity:0}
+.pad .shk{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pad.on .shk{transform:translate(0,-6px)}
+.pad .bd{transition:fill .3s ease}
+.pad.on .bd{fill:#F26B1D}
+.hire{opacity:.25;transition:opacity .6s ease .2s}
+.open .hire{opacity:1}
+.status{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1;text-align:center;min-height:1.1em}
+.status.ready{color:var(--gold-soft)}
+.ctl{display:flex;gap:8px;align-items:center;justify-content:center}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.ghost{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.ghost:hover{color:var(--ink)}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;margin-top:clamp(14px,2.2vh,24px);padding-top:14px;border-top:1px solid var(--line)}
+.story{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.015em}
+.story span{color:var(--gold-soft)}
+.you{border:2px dashed #D1D1D6;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--slate)}
+@media (max-width:900px){
+ .stage{grid-template-columns:1fr 1fr;gap:12px}
+ .door{grid-column:1/-1;order:-1}
+ .door svg{max-width:250px}.stage{align-items:stretch}
+ .lock{padding:14px 14px;gap:8px;min-height:0}
+}
+@media (max-width:560px){
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .hero h1{font-size:34px}
+ .lock h2{font-size:21px}.lock h3{font-size:14px}
+ .chip{font-size:11.5px;padding:3px 9px}
+ .sw{width:38px;height:22px}.sw::after{width:16px;height:16px}.lock[aria-pressed="true"] .sw::after{transform:translateX(16px)}
+ .story{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.lock,.leaf,.pad .shk,.pad .bd,.hire,.sw,.sw::after{transition:none}.lock:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · What do you need to do before you hire?</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 5</p>
+<h1>Two locks before <span class="gold-t">you hire.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="stage">
+
+<button class="lock" id="l1" type="button" aria-pressed="false">
+<div class="lt"><p class="k">Lock 1</p><span class="sw" aria-hidden="true"></span></div>
+<h2>You need <span>Slack.</span></h2>
+<h3>One channel per client.</h3>
+<div class="chips"><span class="chip no">Email</span><span class="chip no">WhatsApp</span></div>
+</button>
+
+<div class="door" id="door">
+<svg viewBox="0 0 300 250" role="img" aria-label="A door to your first hire with two padlocks: Slack and standard templates. It opens only when both are unlocked.">
+<defs>
+<clipPath id="fr"><rect x="44" y="18" width="212" height="200" rx="10"/></clipPath>
+<radialGradient id="glow" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#FFE3D1"/><stop offset="1" stop-color="#FFF8F3"/></radialGradient>
+</defs>
+<rect x="36" y="10" width="228" height="216" rx="14" fill="#fff" stroke="#E2E2E2" stroke-width="2"/>
+<g clip-path="url(#fr)">
+<rect x="44" y="18" width="212" height="200" fill="url(#glow)"/>
+<g class="hire">
+<circle cx="150" cy="92" r="20" fill="#F26B1D"/>
+<path d="M112,168 C112,138 130,122 150,122 C170,122 188,138 188,168 Z" fill="#F26B1D"/>
+<text x="150" y="196" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C">Your first hire</text>
+</g>
+<g class="leaf leafL">
+<rect x="44" y="18" width="106" height="200" fill="#F5F5F7" stroke="#C7C7CC" stroke-width="2"/>
+<rect x="58" y="34" width="78" height="70" rx="6" fill="none" stroke="#D1D1D6" stroke-width="2"/>
+<rect x="58" y="132" width="78" height="70" rx="6" fill="none" stroke="#D1D1D6" stroke-width="2"/>
+<g class="pad" id="p1" transform="translate(126,112)">
+<path class="shk" d="M-8,0 V-8 a8,8 0 0 1 16,0 V0" fill="none" stroke="#3A3A3C" stroke-width="3.2" stroke-linecap="round"/>
+<rect class="bd" x="-12" y="-1" width="24" height="20" rx="4" fill="#8E8E93"/>
+<circle cx="0" cy="8" r="2.6" fill="#fff"/>
+</g>
+<text x="97" y="172" text-anchor="middle" font-size="11" font-weight="800" fill="#6E6E73">Slack</text>
+</g>
+<g class="leaf leafR">
+<rect x="150" y="18" width="106" height="200" fill="#F5F5F7" stroke="#C7C7CC" stroke-width="2"/>
+<rect x="164" y="34" width="78" height="70" rx="6" fill="none" stroke="#D1D1D6" stroke-width="2"/>
+<rect x="164" y="132" width="78" height="70" rx="6" fill="none" stroke="#D1D1D6" stroke-width="2"/>
+<g class="pad" id="p2" transform="translate(174,112)">
+<path class="shk" d="M-8,0 V-8 a8,8 0 0 1 16,0 V0" fill="none" stroke="#3A3A3C" stroke-width="3.2" stroke-linecap="round"/>
+<rect class="bd" x="-12" y="-1" width="24" height="20" rx="4" fill="#8E8E93"/>
+<circle cx="0" cy="8" r="2.6" fill="#fff"/>
+</g>
+<text x="203" y="172" text-anchor="middle" font-size="11" font-weight="800" fill="#6E6E73">Templates</text>
+</g>
+</g>
+<rect x="20" y="226" width="260" height="6" rx="3" fill="#E2E2E2"/>
+</svg>
+<p class="status" id="status" aria-live="polite">Not ready yet.</p>
+<div class="ctl"><button class="play" id="play" type="button">Unlock both</button><button class="ghost" id="reset" type="button">Reset</button></div>
+</div>
+
+<button class="lock" id="l2" type="button" aria-pressed="false">
+<div class="lt"><p class="k">Lock 2</p><span class="sw" aria-hidden="true"></span></div>
+<h2>You need <span>templates.</span></h2>
+<h3>Standard. Same task, same way.</h3>
+<div class="chips"><span class="chip">Payroll registration</span><span class="chip">Processing LEGL</span><span class="chip">Invoices to draft</span></div>
+</button>
+
+</div>
+<div class="foot">
+<p class="story">A friend showed me Slack. <span>Within 2 months, it ran my business.</span></p>
+<span class="you">Add yours: your template list</span>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/when-to-hire-a-bookkeeper/" style="text-decoration:none">&larr; When should you hire a bookkeeper and admin assistant?</a><a href="/start/setting-expectations-for-your-team/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Setting expectations &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · What do you need to do before you hire?</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var l1=$("l1"),l2=$("l2"),p1=$("p1"),p2=$("p2"),door=$("door"),st=$("status"),play=$("play"),timers=[];
+function render(){
+ var a=l1.getAttribute("aria-pressed")==="true",b=l2.getAttribute("aria-pressed")==="true";
+ p1.classList.toggle("on",a);p2.classList.toggle("on",b);
+ var both=a&&b;door.classList.toggle("open",both);st.classList.toggle("ready",both);
+ st.textContent=both?"Ready to hire.":(a||b)?"1 of 2. Still locked.":"Not ready yet.";
+ play.disabled=both;
+}
+function set(btn,v){btn.setAttribute("aria-pressed",v?"true":"false");render()}
+function clear(){timers.forEach(clearTimeout);timers=[]}
+l1.addEventListener("click",function(){clear();set(l1,l1.getAttribute("aria-pressed")!=="true")});
+l2.addEventListener("click",function(){clear();set(l2,l2.getAttribute("aria-pressed")!=="true")});
+play.addEventListener("click",function(){clear();if(RM){l1.setAttribute("aria-pressed","true");set(l2,true);return}
+ set(l1,true);timers.push(setTimeout(function(){set(l2,true)},700));});
+$("reset").addEventListener("click",function(){clear();l1.setAttribute("aria-pressed","false");set(l2,false)});
+render();
+})();
+</script>
+</body>
+</html>
