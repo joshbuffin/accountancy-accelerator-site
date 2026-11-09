@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Look after your team - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: look after your team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px;--bad:#C53030}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Look after your team: blame them vs fix your process */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:clamp(18px,2.8vh,32px)}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);padding-top:14px}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:clamp(12px,1.8vh,18px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.cv:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(0,0,0,.25)}
+.cv.ok{background:#FFF8F3;border-color:var(--gold)}
+.cv.ok:hover{box-shadow:0 16px 32px -18px rgba(242,107,29,.45)}
+.cv.ok .k{color:var(--gold-soft)}
+.cv h2{font-size:clamp(24px,2.7vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-top:6px}
+.cv.no h2{color:#3A3A3C}
+.weeks{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.wk{display:flex;flex-direction:column;align-items:center;gap:6px}
+.tile{width:100%;aspect-ratio:1;border-radius:14px;border:1.5px dashed #C7C7CC;background:#fff;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .3s ease,border-color .3s ease}
+.tile svg{width:52%;height:52%;opacity:0;transform:scale(.6);transition:opacity .3s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+.tile.on svg{opacity:1;transform:none}
+.tile.x.on{background:#FDECEC;border:1.5px solid #F2B8B5}
+.tile.t.on{background:#fff;border:1.5px solid #D1D1D6}
+.cv.ok .tile.t.on{border-color:#F4B48F}
+.tile.f.on{background:var(--gold);border:1.5px solid var(--gold)}
+.wl{font-size:11px;font-weight:700;color:var(--slate);letter-spacing:.04em}
+.tile.f + .wl{color:var(--gold-soft)}
+.res{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-top:1px solid var(--line);padding-top:clamp(10px,1.6vh,16px)}
+.cv.ok .res{border-top-color:#F8D3BC}
+.res p{font-size:clamp(18px,1.9vw,24px);font-weight:800;letter-spacing:-.02em;line-height:1.15;opacity:0;transition:opacity .4s ease}
+.res.on p{opacity:1}
+.cv.no .res p{color:var(--bad)}
+.cv.ok .res p{color:var(--gold-soft)}
+.cnt{text-align:right;line-height:1;flex:none}
+.cnt .n{display:block;font-size:clamp(30px,3.2vw,42px);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#3A3A3C}
+.cnt .s{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-top:6px}
+.cv.ok .cnt .n{color:var(--gold-soft)}
+.fix{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:clamp(14px,2.2vh,22px) 0 0;font-size:14px;font-weight:600}
+.fix .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .3s ease,border-color .3s ease}
+.chip:hover{transform:translateY(-2px);border-color:var(--gold)}
+.you{border:2px dashed #C7C7CC;border-radius:999px;padding:5px 14px;font-weight:700;color:var(--slate);margin-left:auto}
+@media (max-width:820px){.vs{grid-template-columns:1fr}.you{margin-left:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.weeks{gap:6px}.tile{border-radius:10px}.wl{font-size:10px}.bar .k{font-size:10px}.fix{font-size:13px}.chip{padding:5px 11px}}
+@media (prefers-reduced-motion:reduce){.cv,.tile,.tile svg,.res p,.chip{transition:none}.cv:hover,.chip:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Look after your team</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 1</p>
+<h1>Their mistake? <span class="gold-t">Your fault first.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="bar"><p class="k">Same mistake. Two reactions.</p><button class="play" id="play" type="button">Play 6 weeks</button></div>
+
+<div class="vs">
+<div class="cv no" id="cvA">
+<div><p class="k">Wrong way · Blame them</p><h2>&ldquo;Why did you do that?&rdquo;</h2></div>
+<div class="weeks" id="wA"></div>
+<div class="res" id="rA"><p>Same mistake. Again.</p><div class="cnt"><span class="n" id="nA">0</span><span class="s">mistakes</span></div></div>
+</div>
+<div class="cv ok" id="cvB">
+<div><p class="k">Right way · Assume it's on you</p><h2>&ldquo;What did I miss?&rdquo;</h2></div>
+<div class="weeks" id="wB"></div>
+<div class="res" id="rB"><p>Fixed. For good.</p><div class="cnt"><span class="n" id="nB">0</span><span class="s">mistakes</span></div></div>
+</div>
+</div>
+
+<div class="fix"><span class="k">Fix the process with</span><span class="chip">Checklist</span><span class="chip">Loom video</span><span class="chip">Template</span><span class="chip">SOP</span><span class="you">Add yours: a mistake you fixed</span></div>
+</main>
+
+<div class="wrap pnav"><span></span><a href="/start/can-ai-do-this/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Can AI do this? &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Look after your team</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var ICON={
+ x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="#C53030" stroke-width="3" stroke-linecap="round" fill="none"/></svg>',
+ t:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#8E8E93" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
+ to:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#F26B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>',
+ f:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L4 16.7 7.3 20l5.3-5.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4z" fill="#fff"/></svg>'
+};
+var A=["x","t","x","t","x","x"],B=["x","f","t","t","t","t"];
+var LA=["Wk 1","Wk 2","Wk 3","Wk 4","Wk 5","Wk 6"],LB=["Wk 1","Fix it","Wk 3","Wk 4","Wk 5","Wk 6"];
+function build(box,seq,lab,ok){box.innerHTML="";var out=[];seq.forEach(function(s,i){var w=document.createElement("div");w.className="wk";var t=document.createElement("div");t.className="tile "+s;t.innerHTML=s==="t"&&ok?ICON.to:ICON[s];var l=document.createElement("span");l.className="wl";l.textContent=lab[i];w.appendChild(t);w.appendChild(l);box.appendChild(w);out.push(t)});return out}
+var tA=build($("wA"),A,LA,false),tB=build($("wB"),B,LB,true);
+var btn=$("play"),timers=[];
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function reset(){timers.forEach(clearTimeout);timers=[];tA.concat(tB).forEach(function(t){t.classList.remove("on")});$("nA").textContent="0";$("nB").textContent="0";$("rA").classList.remove("on");$("rB").classList.remove("on")}
+function step(i){tA[i].classList.add("on");tB[i].classList.add("on");
+ var a=0,b=0;for(var j=0;j<=i;j++){if(A[j]==="x")a++;if(B[j]==="x")b++}
+ $("nA").textContent=a;$("nB").textContent=b}
+function finish(){$("rA").classList.add("on");$("rB").classList.add("on");btn.disabled=false;btn.textContent="Replay"}
+function endState(){reset();for(var i=0;i<6;i++)step(i);finish()}
+function play(){if(RM){endState();return}reset();btn.disabled=true;
+ for(var i=0;i<6;i++)(function(i){later(function(){step(i)},300+i*750)})(i);
+ later(finish,300+6*750)}
+btn.addEventListener("click",play);
+if(RM||location.hash==="#end")endState();
+})();
+</script>
+</body>
+</html>
