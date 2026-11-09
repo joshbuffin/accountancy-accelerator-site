@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Research task - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: research task. Finalise the look, hook and topic for 20 videos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.hero{padding:clamp(16px,2.6vh,30px) 0 clamp(10px,1.6vh,18px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
+
+/* Layout */
+.grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,2fr);gap:20px;align-items:start}
+.grid>*{min-width:0}
+
+/* Left: the phone preview */
+.prev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .3s ease}
+.prev:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.prev .lbl{align-self:flex-start}
+.phone{position:relative;width:min(100%,190px);aspect-ratio:9/16;max-height:calc(100vh - 56px - 380px);min-height:250px;background:#1C1C1E;border-radius:26px;padding:7px;box-shadow:0 18px 36px -20px rgba(0,0,0,.6)}
+.scr{position:relative;height:100%;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,#3A3A3C,#141414 75%);display:flex;flex-direction:column;justify-content:space-between;padding:12px 10px 12px}
+.z{position:relative;border-radius:12px;transition:box-shadow .3s ease,opacity .3s ease}
+.z.hook{background:#fff;color:#0A0A0A;font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.2;padding:8px 10px;text-align:center;overflow-wrap:anywhere}
+.z.look{align-self:center;display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff;font-size:12px;font-weight:700;padding:6px 10px}
+.z.look svg{display:block}
+.z.topic{align-self:flex-start;background:var(--gold);color:#0A0A0A;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px;max-width:100%;overflow-wrap:anywhere}
+.scr.focus .z{opacity:.3}
+.scr.f-look .z.look,.scr.f-hook .z.hook,.scr.f-topic .z.topic{opacity:1;box-shadow:0 0 0 3px var(--gold)}
+.vnum{font-size:13px;font-weight:700;color:var(--slate)}
+.vnum b{color:var(--gold-soft)}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
+.part{font:inherit;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:7px 8px;cursor:pointer;transition:border-color .2s ease,transform .2s ease,background-color .2s ease}
+.part:hover{border-color:var(--gold);transform:translateY(-2px)}
+.part[aria-pressed="true"]{background:#FFF1E8;border-color:var(--gold)}
+.part b{display:block;font-size:14px;font-weight:800;letter-spacing:-.01em}
+.part span{display:block;font-size:11.5px;font-weight:600;color:var(--slate);line-height:1.25;margin-top:1px}
+.part:focus-visible{outline:3px solid rgba(242,107,29,.4);outline-offset:2px}
+
+/* Right: the task */
+.task{background:#fff;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;max-height:calc(100vh - 56px - 236px);min-height:380px}
+.thead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.thead h2{font-size:clamp(19px,1.9vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.tools{display:flex;align-items:center;gap:10px;flex-wrap:nowrap}
+.prog{font-size:13px;font-weight:700;color:var(--slate);white-space:nowrap;font-variant-numeric:tabular-nums}
+.prog b{color:var(--gold-soft)}
+.dots{display:grid;grid-template-columns:repeat(20,8px);gap:3px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background-color .3s ease}
+.dots i.on{background:var(--gold)}
+.copy{font:inherit;font-size:13px;font-weight:700;color:#fff;background:var(--ink);border:0;border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap}
+.copy:hover{background:var(--gold-soft)}
+.toast{font-size:13px;font-weight:700;color:var(--gold-soft);min-width:54px}
+.steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;font-size:13.5px;font-weight:700}
+.steps span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.steps i{font-style:normal;color:var(--gold);font-weight:800}
+.rows{margin-top:10px;overflow:auto;min-height:0;padding:2px;display:flex;flex-direction:column;gap:6px}
+.rw{display:grid;grid-template-columns:30px minmax(0,1fr) minmax(0,1.7fr) minmax(0,1.2fr);gap:6px;align-items:center}
+.rw.head{position:sticky;top:0;background:#fff;z-index:1;padding-bottom:2px}
+.rw.head span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);line-height:1.2}
+.num{width:26px;height:26px;border-radius:50%;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
+.rw.ready .num{background:var(--gold);border-color:var(--gold);color:#fff}
+.rw.cur .num{border-color:var(--gold)}
+.cell{min-width:0}
+.cell .cl{display:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:3px}
+.cell input,.cell select{display:block;width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 9px;min-width:0}
+.cell select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,#6E6E73 50%),linear-gradient(135deg,#6E6E73 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:26px}
+.cell select.empty{color:#A1A1A6}
+.cell input::placeholder{color:#A1A1A6}
+.cell input:focus,.cell select:focus{outline:none;border-color:var(--gold);background-color:#fff;box-shadow:0 0 0 3px rgba(242,107,29,.15)}
+.rw.ready .cell input,.rw.ready .cell select{background-color:#FFF8F3;border-color:#F6C9AE}
+
+@media (max-width:980px){
+ .grid{grid-template-columns:minmax(0,1fr)}
+ .prev{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center}
+ .phone{max-height:none;width:150px;min-height:0}
+ .parts{grid-template-columns:1fr;width:auto;flex:1;min-width:150px}
+ .task{max-height:none;min-height:0}
+ .rows{overflow:visible}
+}
+@media (max-width:560px){
+ .wrap{padding:0 16px}
+ .navtag{font-size:11px}
+ .hero h1{font-size:30px}
+ .eyebrow{font-size:11.5px;letter-spacing:.14em}
+ .prev{padding:12px;gap:10px}
+ .prev .lbl{width:100%}
+ .phone{width:128px;border-radius:22px;padding:6px}
+ .scr{border-radius:17px;padding:9px 7px}
+ .z.hook{font-size:11.5px;padding:6px 7px}
+ .z.look,.z.topic{font-size:10.5px}
+ .z.look svg{width:36px;height:36px}
+ .parts{min-width:0}
+ .part span{font-size:11px}
+ .vnum{display:none}
+ .prev{flex-wrap:nowrap;align-items:center}
+ .prev .lbl{display:none}
+ .parts{gap:6px}
+ .part{padding:6px 8px}
+ .steps{font-size:12px;gap:4px}
+ .steps span{padding:3px 8px}
+ .task{padding:12px}
+ .thead{flex-direction:column;align-items:flex-start}
+ .tools{flex-wrap:wrap;width:100%}
+ .dots{grid-template-columns:repeat(10,8px)}
+ .copy{margin-left:auto}
+ .rw.head{display:none}
+ .rw{grid-template-columns:26px minmax(0,1fr);gap:5px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px}
+ .rw .cell{grid-column:2}
+ .rw .num{grid-row:1}
+ .rw .cell input,.rw .cell select{background-color:#fff;padding:6px 8px}
+ .pnav{padding:12px 16px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.prev,.part,.z,.dots i{transition:none}.prev:hover,.part:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Research task</span></div></nav>
+
+<header class="hero"><div class="wrap">
+<p class="eyebrow">Level 5 - Lead generation · Video 17</p>
+<h1>Lock in your <span class="gold-t">20 videos.</span></h1>
+</div></header>
+
+<main class="wrap grid">
+<aside class="prev" aria-label="Video preview">
+<p class="lbl">Every video has 3 parts</p>
+<div class="phone" aria-hidden="true"><div class="scr" id="scr">
+<div class="z hook" id="pHook">If you run a limited company, watch this</div>
+<div class="z look" id="pLook"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="none" stroke="#F26B1D" stroke-width="2"/><circle cx="23" cy="18" r="7" fill="#fff"/><path d="M10,37c2-8,7-11,13-11s11,3,13,11" fill="#fff"/></svg><span id="pLookT">Talking head</span></div>
+<div class="z topic" id="pTopic">Group structures</div>
+</div></div>
+<p class="vnum" id="vnum">Example video</p>
+<div class="parts" id="parts">
+<button class="part" type="button" data-z="look" aria-pressed="false"><b>Look</b><span>How it's filmed</span></button>
+<button class="part" type="button" data-z="hook" aria-pressed="false"><b>Hook</b><span>The first 3 seconds</span></button>
+<button class="part" type="button" data-z="topic" aria-pressed="false"><b>Topic</b><span>What it's about</span></button>
+</div>
+</aside>
+
+<section class="task" aria-labelledby="taskh">
+<div class="thead">
+<div><p class="lbl" style="margin-bottom:2px">Your task</p><h2 id="taskh">Research and write your 20.</h2></div>
+<div class="tools"><span class="prog" id="prog"><b>0</b>/20 ready</span><span class="dots" id="dots" aria-hidden="true"></span><span class="toast" id="toast" aria-live="polite"></span><button class="copy" id="copy" type="button">Copy my answers</button></div>
+</div>
+<div class="steps" aria-label="How to do it"><span>Find what already works</span><i>&rarr;</i><span>Make it for your founder</span><i>&rarr;</i><span>Write it down</span></div>
+<div class="rows" id="rows"></div>
+</section>
+</main>
+
+<div class="wrap pnav"><a href="/start/understanding-the-topics/" style="text-decoration:none">&larr; Understanding the topics</a><a href="/start/the-ad-strategy/" style="text-decoration:none;color:var(--gold-soft);text-align:right">The ad strategy &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Research task</div></footer>
+
+<script>
+(function(){
+var N=20,KEY="aa-research-task-v1",st=null;
+var LOOKS=["Talking head","Text on screen","Carousel","Whiteboard or prop","Still image","Testimonial screenshot","Meme","Other"];
+var PH=[
+ ["Talking head","If you run a limited company, watch this","Group structures"],
+ ["Text on screen","3 mistakes founders make with their accountant","Choosing an accountant"],
+ ["Whiteboard or prop","This is how a holding company works","Holding companies"],
+ ["Carousel","Salary or dividends?","Paying yourself"],
+ ["Talking head","Why I started my own practice","My story"]
+];
+var EX={look:"Talking head",hook:"If you run a limited company, watch this",topic:"Group structures"};
+function blank(){return{look:"",hook:"",topic:""}}
+try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!Array.isArray(st))st=[];
+for(var i=0;i<N;i++){var r=st[i];if(!r||typeof r!=="object")st[i]=blank();else{st[i]={look:String(r.look||""),hook:String(r.hook||""),topic:String(r.topic||"")}}}
+st.length=N;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function t(v){return String(v||"").trim()}
+function ready(r){return !!(t(r.look)&&t(r.hook)&&t(r.topic))}
+function el(tag,c,txt){var e=document.createElement(tag);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
+var $=function(id){return document.getElementById(id)};
+var rows=$("rows"),dots=$("dots"),prog=$("prog"),scr=$("scr"),cur=-1,rowEls=[];
+for(var d=0;d<N;d++)dots.appendChild(el("i"));
+
+/* Phone preview */
+function preview(i){
+ var r=i>=0?st[i]:null,p=i>=0&&i<PH.length?PH[i]:null;
+ var look=r&&t(r.look)?r.look:(r?(p?p[0]:"Your look"):EX.look);
+ var hook=r&&t(r.hook)?r.hook:(r?(p?p[1]:"Your hook"):EX.hook);
+ var topic=r&&t(r.topic)?r.topic:(r?(p?p[2]:"Your topic"):EX.topic);
+ $("pLookT").textContent=look;$("pHook").textContent=hook;$("pTopic").textContent=topic;
+ $("vnum").innerHTML=i>=0?"Your video <b>#"+(i+1)+"</b>":"Example video";
+}
+var parts=$("parts").querySelectorAll(".part"),on="";
+function focusZone(z){
+ on=on===z?"":z;
+ scr.className="scr"+(on?" focus f-"+on:"");
+ for(var k=0;k<parts.length;k++)parts[k].setAttribute("aria-pressed",parts[k].getAttribute("data-z")===on?"true":"false");
+}
+for(var k=0;k<parts.length;k++)(function(b){b.addEventListener("click",function(){focusZone(b.getAttribute("data-z"))})})(parts[k]);
+
+function update(){
+ var n=0;
+ st.forEach(function(r,i){var ok=ready(r);if(ok)n++;rowEls[i].classList.toggle("ready",ok)});
+ prog.innerHTML="<b>"+n+"</b>/20 ready";
+ for(var j=0;j<N;j++)dots.children[j].classList.toggle("on",j<n);
+ save();
+}
+function setCur(i){
+ if(cur>=0)rowEls[cur].classList.remove("cur");
+ cur=i;rowEls[i].classList.add("cur");preview(i);
+}
+
+/* Worksheet */
+var hd=el("div","rw head");["#","Look","Hook","Topic"].forEach(function(c){hd.appendChild(el("span",null,c))});rows.appendChild(hd);
+st.forEach(function(r,i){
+ var rw=el("div","rw"),p=PH[i];
+ rw.appendChild(el("span","num",String(i+1)));
+ var c1=el("div","cell");c1.appendChild(el("span","cl","Look"));
+ var s=el("select");
+ var o0=el("option",null,p?"e.g. "+p[0]:"Pick a look");o0.value="";s.appendChild(o0);
+ LOOKS.forEach(function(l){var o=el("option",null,l);o.value=l;s.appendChild(o)});
+ s.value=LOOKS.indexOf(r.look)>-1?r.look:"";s.classList.toggle("empty",!s.value);
+ s.setAttribute("aria-label","Look, video "+(i+1));
+ s.addEventListener("change",function(){r.look=s.value;s.classList.toggle("empty",!s.value);update();preview(i)});
+ c1.appendChild(s);rw.appendChild(c1);
+ [["hook","Hook",1],["topic","Topic",2]].forEach(function(f){
+  var c=el("div","cell");c.appendChild(el("span","cl",f[1]));
+  var inp=el("input");inp.type="text";inp.value=r[f[0]];inp.maxLength=140;
+  inp.placeholder=p?"e.g. "+p[f[2]]:(f[0]==="hook"?"The first 3 seconds":"What it's about");
+  inp.setAttribute("aria-label",f[1]+", video "+(i+1));
+  inp.addEventListener("input",function(){r[f[0]]=inp.value;update();preview(i)});
+  c.appendChild(inp);rw.appendChild(c);
+ });
+ rw.addEventListener("focusin",function(){setCur(i)});
+ rows.appendChild(rw);rowEls.push(rw);
+});
+update();preview(-1);
+
+/* Copy */
+var toast=$("toast");
+$("copy").addEventListener("click",function(){
+ var out=["My 20 videos: look, hook, topic",""];
+ st.forEach(function(r,i){out.push((i+1)+". Look: "+(t(r.look)||"-")+" | Hook: "+(t(r.hook)||"-")+" | Topic: "+(t(r.topic)||"-"))});
+ var txt=out.join("\n");
+ function ok(){toast.textContent="Copied";setTimeout(function(){toast.textContent=""},1800)}
+ function fallback(){var a=document.createElement("textarea");a.value=txt;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){toast.textContent="Select and copy"}document.body.removeChild(a)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback)}else{fallback()}
+});
+})();
+</script>
+</body>
+</html>
