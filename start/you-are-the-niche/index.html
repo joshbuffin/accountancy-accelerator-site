@@ -26,53 +26,58 @@ h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.035em;line-he
 .gold-t{color:var(--gold-soft)}
 .sub{margin-top:8px;font-size:clamp(18px,2vw,24px);font-weight:600;color:var(--muted)}
 
-/* Crowd */
-.stage{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+/* Two crowds */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px)}
+.col{display:flex;flex-direction:column;gap:8px}
 .crowd{width:100%;height:auto;display:block;overflow:visible;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
 .crowd text{font-family:'Inter',Arial,sans-serif}
+.cap{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cap b{font-size:clamp(18px,1.8vw,22px);font-weight:800;letter-spacing:-.02em}
+.cap span{font-size:15px;font-weight:600;color:var(--slate);transition:color .4s ease}
+.on .cap span{color:var(--gold-soft)}
 .wave{fill:none;stroke:var(--gold);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:wave 3.6s ease-out infinite}
 .wave.w2{animation-delay:1.2s}.wave.w3{animation-delay:2.4s}
 @keyframes wave{0%{transform:scale(.35);opacity:.45}100%{transform:scale(2.6);opacity:0}}
 .p{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1);transform-box:fill-box;transform-origin:center}
 .p .mk{fill:none;stroke:var(--gold);stroke-width:2.5;opacity:0;transition:opacity .4s ease}
 .p .sh{transition:fill .4s ease}
-.crowd.reveal .p{opacity:.16}
-.crowd.reveal .p.enq{opacity:1;transform:scale(1.3)}
-.crowd.reveal .p.rel .sh{fill:var(--gold)}
-.crowd.reveal .p.enq .mk{opacity:1}
-.crowd.reveal .p.oth .mk{stroke-dasharray:3 3}
-.crowd.reveal .wave{animation-play-state:paused;opacity:0}
-
-/* Side panel */
-.side{display:flex;flex-direction:column;gap:clamp(12px,2vh,20px)}
-.k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.side h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
-.btn{align-self:flex-start;font:inherit;font-size:17px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 10px 24px -12px rgba(242,107,29,.7);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s ease}
+.on .crowd .p{opacity:.16}
+.on .crowd .p.enq{opacity:1;transform:scale(1.3)}
+.on .crowd .p.rel .sh{fill:var(--gold)}
+.on .crowd .p.enq .mk{opacity:1}
+.on .crowd .p.oth .mk{stroke:#6E6E73;stroke-width:1.5}
+.on .crowd .p.oth .sh,.on .crowd .p.oth circle:not(.mk),.on .crowd .p.oth path:not(.sh){fill:#fff;stroke:#6E6E73;stroke-width:1.1}
+.on .crowd .wave{animation-play-state:paused;opacity:0}
+/* Controls */
+.ctrl{display:grid;grid-template-columns:auto auto 1fr;gap:clamp(14px,2.4vw,32px);align-items:center;margin-top:clamp(12px,2vh,20px);border-top:1px solid var(--line);padding-top:clamp(12px,2vh,18px)}
+.btn{font:inherit;font-size:17px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;white-space:nowrap;box-shadow:0 10px 24px -12px rgba(242,107,29,.7);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s ease}
 .btn:hover{transform:translateY(-2px);background:var(--gold-soft)}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .btn[aria-pressed="true"]{background:var(--ink)}
-.legend{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600;opacity:.35;transition:opacity .4s ease}
+.legend{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;opacity:.35;transition:opacity .4s ease}
 .legend span{display:flex;align-items:center;gap:10px}
-.legend i{flex:none;width:18px;height:18px;border-radius:50%;border:2.5px solid var(--gold)}
+.legend i{flex:none;width:16px;height:16px;border-radius:50%;border:2.5px solid var(--gold)}
 .legend .r i{background:var(--gold)}
-.legend .o i{border-style:dashed;background:#fff}
-.result{font-size:clamp(18px,1.8vw,22px);font-weight:700;color:var(--gold-soft);min-height:2.6em;opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease}
+.legend .o i{border:1.5px solid #6E6E73;background:#fff}
 .on .legend{opacity:1}
-.on .result{opacity:1;transform:none}
-.big{font-size:clamp(26px,3.2vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.08;border-top:1px solid var(--line);padding-top:clamp(12px,2vh,20px)}
-.big .gold-t{color:var(--gold)}
+.take h2{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.take p{font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--muted);margin-top:4px}
+.take p .gold-t{color:var(--gold-soft)}
+.take .result{font-size:15px;font-weight:700;color:var(--gold-soft);min-height:1.5em;opacity:0;transition:opacity .4s ease}
+.on .take .result{opacity:1}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
 @media (max-width:860px){
- .stage{grid-template-columns:1fr;gap:14px}
+ .pair{grid-template-columns:1fr;gap:16px}
+ .ctrl{grid-template-columns:1fr;gap:12px}
+ .btn{width:100%}
  .hero{padding:18px 0 6px}
  .navtag{font-size:12px}
- .btn{align-self:stretch;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){
  .wave{animation:none;opacity:0}
- .p,.p .mk,.p .sh,.legend,.result,.btn{transition:none}
- .crowd.reveal .p.enq{transform:none}
+ .p,.p .mk,.p .sh,.legend,.result,.btn,.cap span{transition:none}
+ .on .crowd .p.enq{transform:none}
  .btn:hover{transform:none}
 }
 </style>
@@ -87,33 +92,27 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <p class="sub">It's personality fit, not industry.</p>
 </div></header>
 
-<main class="wrap">
-<div class="stage" id="stage">
-<svg class="crowd" id="crowd" viewBox="0 0 640 440" role="img" aria-label="You on a stage in the middle, talking to a crowd of 100 very different people">
-<g id="people"></g>
-<circle class="wave" cx="320" cy="214" r="40"/>
-<circle class="wave w2" cx="320" cy="214" r="40"/>
-<circle class="wave w3" cx="320" cy="214" r="40"/>
-<g id="you">
-<rect x="282" y="230" width="76" height="20" rx="6" fill="#111"/>
-<rect x="290" y="250" width="60" height="10" rx="4" fill="#3A3A3C"/>
-<circle cx="320" cy="200" r="24" fill="none" stroke="#F26B1D" stroke-width="3"/>
-<circle cx="320" cy="194" r="8" fill="#E0B48F"/>
-<path d="M307,214 a13,11 0 0 1 26,0 z" fill="#F26B1D"/>
-<text x="320" y="245" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" letter-spacing="1.5">YOU</text>
-</g>
-</svg>
-
-<div class="side" id="side">
-<p class="k">Your audience</p>
-<h2>100 people. All different.</h2>
+<main class="wrap" id="main">
+<div class="pair">
+<div class="col">
+<svg class="crowd" id="cJosh" viewBox="0 0 640 440" role="img" aria-label="Josh on a stage talking to a crowd of 100 very different people"></svg>
+<div class="cap"><b>Josh</b><span>People who relate to me</span></div>
+</div>
+<div class="col">
+<svg class="crowd" id="cGrace" viewBox="0 0 640 440" role="img" aria-label="Grace Hardy on a stage talking to the same crowd of 100 people"></svg>
+<div class="cap"><b>Grace Hardy</b><span>Women who relate to her</span></div>
+</div>
+</div>
+<div class="ctrl">
 <button class="btn" id="btn" type="button" aria-pressed="false">Who enquired?</button>
 <div class="legend" aria-hidden="true">
-<span class="r"><i></i>Relates to you</span>
-<span class="o"><i></i>Doesn't, still enquired</span>
+<span class="r"><i></i>Relates, and enquired</span>
+<span class="o"><i></i>Doesn't relate, still enquired</span>
 </div>
+<div class="take">
+<h2>Same crowd. Different people <span class="gold-t">enquire.</span></h2>
+<p>People who relate to you are <span class="gold-t">drawn to you.</span></p>
 <p class="result" id="result" aria-live="polite"></p>
-<p class="big">People who relate to you are <span class="gold-t">drawn to you.</span></p>
 </div>
 </div>
 </main>
@@ -123,37 +122,59 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var NS="http://www.w3.org/2000/svg",g=document.getElementById("people");
+var NS="http://www.w3.org/2000/svg";
 var seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
 var skin=["#F5DEC8","#F1D3B8","#E0B48F","#C68E64","#9A6440","#6B4429"];
 var top=["#9CA3AF","#A8B5C7","#B9A79A","#8FA8A0","#C4B1C9","#7D8B99","#D1C2A8","#A3A3A3","#B7C4B0","#C9B8A6"];
-var hair=["#2B2B2B","#5A3E2B","#A0703F","#D9B26F","#8C8C8C","#1F1A17",null];
+var hair=["#2B2B2B","#5A3E2B","#A0703F","#D9B26F","#8C8C8C","#1F1A17"];
 var rings=[[96,14],[136,22],[176,28],[214,36]],cx=320,cy=214,people=[];
+// One crowd, drawn twice: same people, same places
 rings.forEach(function(rg,ri){var r=rg[0],n=rg[1],off=rnd()*Math.PI;
  for(var i=0;i<n;i++){var a=off+i*2*Math.PI/n+(rnd()-.5)*.12,rr=r+(rnd()-.5)*10;
-  var x=cx+Math.cos(a)*rr*1.38,y=cy+Math.sin(a)*rr*.9;
-  people.push({x:x,y:y,ring:ri,s:.82+rnd()*.36})}});
+  people.push({x:cx+Math.cos(a)*rr*1.38,y:cy+Math.sin(a)*rr*.9,ring:ri,s:.82+rnd()*.36,
+   woman:rnd()<.5,skin:skin[Math.floor(rnd()*skin.length)],top:top[Math.floor(rnd()*top.length)],
+   hair:rnd()<.12?null:hair[Math.floor(rnd()*hair.length)],st:Math.floor(rnd()*3),i:people.length})}});
+people.forEach(function(p){if(p.woman&&!p.hair)p.hair=hair[p.i%hair.length]});
 function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
-people.forEach(function(p,i){
- var s=p.s,grp=el("g",{"class":"p"});
- var inner=el("g",{transform:"translate("+p.x.toFixed(1)+","+p.y.toFixed(1)+") scale("+s.toFixed(2)+")"});
- inner.appendChild(el("circle",{"class":"mk",cx:0,cy:-1,r:13}));
- inner.appendChild(el("path",{"class":"sh",d:"M-9,9 a9,8 0 0 1 18,0 z",fill:top[Math.floor(rnd()*top.length)]}));
- inner.appendChild(el("circle",{cx:0,cy:-5,r:5.4,fill:skin[Math.floor(rnd()*skin.length)]}));
- var h=hair[Math.floor(rnd()*hair.length)],st=Math.floor(rnd()*3);
- if(h){if(st===0)inner.appendChild(el("path",{d:"M-5.6,-6 a5.6,5.6 0 0 1 11.2,0 z",fill:h}));
-  else if(st===1)inner.appendChild(el("path",{d:"M-6,-4 a6,6.6 0 0 1 12,0 v3 h-2 v-3 a4,4 0 0 0 -8,0 v3 h-2 z",fill:h}));
-  else inner.appendChild(el("circle",{cx:0,cy:-11.2,r:2.6,fill:h}))}
- grp.appendChild(inner);g.appendChild(grp);p.node=grp});
-// Enquirers: mostly people who relate (closer rings), a few who don't (outer rings)
-var inner=people.filter(function(p){return p.ring<2}),outer=people.filter(function(p){return p.ring>=2});
 function pick(arr,n){var c=arr.slice(),out=[];while(out.length<n&&c.length){out.push(c.splice(Math.floor(rnd()*c.length),1)[0])}return out}
-pick(inner,8).concat(pick(outer.filter(function(p){return p.ring===2}),3)).forEach(function(p){p.node.classList.add("enq","rel")});
-pick(outer.filter(function(p){return !p.node.classList.contains("enq")}),3).forEach(function(p){p.node.classList.add("enq","oth")});
-var crowd=document.getElementById("crowd"),side=document.getElementById("side"),btn=document.getElementById("btn"),res=document.getElementById("result");
+// Josh: 4 who relate (closer rings), 1 who doesn't (outermost ring)
+var josh={};
+pick(people.filter(function(p){return p.ring<2}),3).concat(pick(people.filter(function(p){return p.ring===2}),1)).forEach(function(p){josh[p.i]="rel"});
+pick(people.filter(function(p){return p.ring===3}),1).forEach(function(p){josh[p.i]="oth"});
+// Grace: about 5 women who relate to her
+var grace={};
+pick(people.filter(function(p){return p.woman&&p.ring<2}),3).concat(pick(people.filter(function(p){return p.woman&&p.ring===2}),2)).forEach(function(p){grace[p.i]="rel"});
+function speaker(svg,name,longHair){
+ [0,1,2].forEach(function(k){svg.appendChild(el("circle",{"class":"wave"+(k?" w"+(k+1):""),cx:320,cy:214,r:40}))});
+ var g=el("g",{});
+ g.appendChild(el("rect",{x:272,y:230,width:96,height:20,rx:6,fill:"#111"}));
+ g.appendChild(el("rect",{x:290,y:250,width:60,height:10,rx:4,fill:"#3A3A3C"}));
+ g.appendChild(el("circle",{cx:320,cy:200,r:24,fill:"none",stroke:"#F26B1D","stroke-width":3}));
+ if(longHair)g.appendChild(el("path",{d:"M310,196 a10,10 0 0 1 20,0 v12 h-4 v-10 a6,6 0 0 0 -12,0 v10 h-4 z",fill:"#5A3E2B"}));
+ g.appendChild(el("circle",{cx:320,cy:194,r:8,fill:"#E0B48F"}));
+ g.appendChild(el("path",{d:"M307,214 a13,11 0 0 1 26,0 z",fill:"#F26B1D"}));
+ var t=el("text",{x:320,y:245,"text-anchor":"middle","font-size":12,"font-weight":800,fill:"#fff","letter-spacing":1.5});t.textContent=name;g.appendChild(t);
+ svg.appendChild(g)}
+function draw(svg,who){
+ var g=el("g",{});svg.appendChild(g);
+ people.forEach(function(p){
+  var grp=el("g",{"class":"p"+(who[p.i]?" enq "+who[p.i]:"")});
+  var inner=el("g",{transform:"translate("+p.x.toFixed(1)+","+p.y.toFixed(1)+") scale("+p.s.toFixed(2)+")"});
+  inner.appendChild(el("circle",{"class":"mk",cx:0,cy:-1,r:13}));
+  if(p.woman)inner.appendChild(el("path",{d:"M-6.2,-5 a6.2,6.6 0 0 1 12.4,0 v9 h-2.6 v-8 a3.6,4 0 0 0 -7.2,0 v8 h-2.6 z",fill:p.hair}));
+  inner.appendChild(el("path",{"class":"sh",d:"M-9,9 a9,8 0 0 1 18,0 z",fill:p.top}));
+  inner.appendChild(el("circle",{cx:0,cy:-5,r:5.4,fill:p.skin}));
+  if(p.hair){if(p.woman)inner.appendChild(el("path",{d:"M-5.6,-6 a5.6,5.6 0 0 1 11.2,0 z",fill:p.hair}));
+   else if(p.st===2)inner.appendChild(el("path",{d:"M-5.6,-7 a5.6,4.4 0 0 1 11.2,0 z",fill:p.hair}));
+   else inner.appendChild(el("path",{d:"M-5.6,-6 a5.6,5.6 0 0 1 11.2,0 z",fill:p.hair}))}
+  grp.appendChild(inner);g.appendChild(grp)})}
+var cj=document.getElementById("cJosh"),cg=document.getElementById("cGrace");
+draw(cj,josh);speaker(cj,"JOSH",false);
+draw(cg,grace);speaker(cg,"GRACE",true);
+var main=document.getElementById("main"),btn=document.getElementById("btn"),res=document.getElementById("result");
 btn.addEventListener("click",function(){var on=btn.getAttribute("aria-pressed")!=="true";
  btn.setAttribute("aria-pressed",on?"true":"false");btn.textContent=on?"Show everyone":"Who enquired?";
- crowd.classList.toggle("reveal",on);side.classList.toggle("on",on);
+ main.classList.toggle("on",on);
  res.textContent=on?"Mostly people who relate to you. Not only.":""});
 })();
 </script>
