@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Client Engager - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: Client Engager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Client Engager: scattered vs one home */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:clamp(16px,2.4vh,28px);padding-bottom:12px}
+.play{white-space:nowrap;flex:none;font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.ce{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);gap:16px;align-items:stretch}
+.side{border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.side:hover{transform:translateY(-3px)}
+.side h2{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.mess{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.mess:hover{box-shadow:0 16px 30px -20px rgba(0,0,0,.35)}
+.home{background:#FFF8F3;border:2px solid var(--gold)}
+.home:hover{box-shadow:0 16px 34px -18px rgba(242,107,29,.5)}
+.home .k{color:var(--gold-soft)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:30px 28px;padding:6px 4px;flex:1;align-content:center}
+.tile{background:#fff;border:1px solid #D6D6DA;border-radius:14px;padding:14px 14px;display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.3vw,17px);font-weight:700;color:#3A3A3C;box-shadow:0 6px 14px -10px rgba(0,0,0,.3);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease}
+.tile svg{flex:none}
+.tile:nth-child(1){transform:rotate(-4deg) translateY(4px)}
+.tile:nth-child(2){transform:rotate(3deg) translate(6px,-6px)}
+.tile:nth-child(3){transform:rotate(2.5deg) translate(-4px,2px)}
+.tile:nth-child(4){transform:rotate(-3deg) translate(8px,6px)}
+.tile.gone{opacity:.18;filter:grayscale(1);transform:translateX(10px) scale(.92)}
+.arrow{display:flex;align-items:center;justify-content:center}
+.arrow svg{width:56px;height:56px}
+.rows{display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center}
+.row{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px dashed #F4B48F;border-radius:14px;padding:11px 14px;font-size:clamp(15px,1.4vw,18px);font-weight:700;color:#B9B9BE;transition:color .4s ease,border-color .4s ease,box-shadow .4s ease}
+.row .tk{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid #F4B48F;display:flex;align-items:center;justify-content:center;transition:background-color .4s ease,border-color .4s ease}
+.row .tk svg{opacity:0;transition:opacity .3s ease}
+.row.on{color:var(--ink);border:1.5px solid var(--gold);box-shadow:0 8px 18px -14px rgba(242,107,29,.7)}
+.row.on .tk{background:var(--gold);border-color:var(--gold)}
+.row.on .tk svg{opacity:1}
+.cnt{font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.04em;color:var(--gold-soft);line-height:1;font-variant-numeric:tabular-nums}
+.sh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.lost{font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.04em;color:#8E8E93;line-height:1}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:2px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A;font-weight:800}
+.chip.add{background:#fff;border:2px dashed rgba(0,0,0,.3)}
+.sep{width:1px;height:22px;background:var(--line);margin:0 6px}
+@media (max-width:900px){.ce{grid-template-columns:1fr;gap:10px}.arrow svg{transform:rotate(90deg);width:40px;height:40px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.tiles{gap:10px 12px}.tile{padding:10px;font-size:14px}.tile svg{width:20px;height:20px}.row{padding:9px 12px}.sep{display:none}.bar{padding-bottom:8px}.where{gap:6px 8px;font-size:13px}.chip{padding:5px 11px}}
+@media (prefers-reduced-motion:reduce){.side,.tile,.row,.row .tk,.row .tk svg{transition:none}.side:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Client Engager</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 1</p>
+<h1>One home for <span class="gold-t">every client.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="bar"><p class="k">Your client info, without vs with Client Engager</p><button class="play" id="play" type="button">Move it in</button></div>
+
+<div class="ce">
+<section class="side mess" aria-label="Without Client Engager">
+<div class="sh"><div><p class="k">Without it</p><h2>Scattered.</h2></div><span class="lost" id="lost">4 places</span></div>
+<div class="tiles">
+<div class="tile" data-i="0"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="#8E8E93" stroke-width="2"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="#8E8E93" stroke-width="2" stroke-linejoin="round"/></svg>Inbox</div>
+<div class="tile" data-i="1"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5z" fill="none" stroke="#8E8E93" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v5h5" fill="none" stroke="#8E8E93" stroke-width="2" stroke-linejoin="round"/></svg>Paper notes</div>
+<div class="tile" data-i="2"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="#8E8E93" stroke-width="2"/><path d="M3 9.5h18M3 15h18M9 4v16" stroke="#8E8E93" stroke-width="2"/></svg>Spreadsheet</div>
+<div class="tile" data-i="3"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#8E8E93" stroke-width="2"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.6v.6" fill="none" stroke="#8E8E93" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.2" fill="#8E8E93"/></svg>Your head</div>
+</div>
+</section>
+
+<div class="arrow" aria-hidden="true"><svg viewBox="0 0 56 56"><circle cx="28" cy="28" r="26" fill="#FFF8F3" stroke="#F26B1D" stroke-width="2"/><path d="M17 28h20M30 20l8 8-8 8" fill="none" stroke="#F26B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+<section class="side home" aria-label="With Client Engager">
+<div class="sh"><div><p class="k">With Client Engager</p><h2>One place.</h2></div><span class="cnt" id="cnt">0 of 4</span></div>
+<div class="rows">
+<div class="row" data-i="0"><span class="tk"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.7 2.7L11 4.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Client details</div>
+<div class="row" data-i="1"><span class="tk"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.7 2.7L11 4.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Onboarding checklist</div>
+<div class="row" data-i="2"><span class="tk"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.7 2.7L11 4.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A checklist for every service</div>
+<div class="row" data-i="3"><span class="tk"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.7 2.7L11 4.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Risk assessment</div>
+</div>
+</section>
+</div>
+
+<div class="where"><span class="k">When</span><span class="chip hot">Day one. Essential.</span><span class="sep"></span><span class="k">Used in</span><span class="chip">Selling: onboarding</span><span class="chip">Servicing: checklists</span><span class="sep"></span><span class="chip add">Add yours: your set-up link</span></div>
+</main>
+
+<div class="wrap pnav"><span></span><a href="/start/gsuite/" style="text-decoration:none;color:var(--gold-soft);text-align:right">GSuite &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Client Engager</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var btn=document.getElementById("play"),cnt=document.getElementById("cnt"),lost=document.getElementById("lost");
+var tiles=document.querySelectorAll(".tile"),rows=document.querySelectorAll(".row"),timers=[],done=false;
+function set(n){cnt.textContent=n+" of 4";var l=4-n;lost.textContent=l===0?"0 places":(l===1?"1 place":l+" places")}
+function reset(){timers.forEach(clearTimeout);timers=[];for(var i=0;i<4;i++){tiles[i].classList.remove("gone");rows[i].classList.remove("on")}set(0)}
+function step(i){tiles[i].classList.add("gone");rows[i].classList.add("on");set(i+1)}
+function run(){
+ if(done){reset();done=false;btn.textContent="Move it in";return}
+ reset();
+ if(RM){for(var j=0;j<4;j++)step(j);finish();return}
+ btn.disabled=true;
+ for(var i=0;i<4;i++)(function(i){timers.push(setTimeout(function(){step(i);if(i===3)finish()},250+i*650))})(i);
+}
+function finish(){done=true;btn.disabled=false;btn.textContent="Reset"}
+btn.addEventListener("click",run);
+})();
+</script>
+</body>
+</html>
