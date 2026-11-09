@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>GSuite - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: GSuite. Automating your calendar, scheduling emails and email templates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* GSuite: a day of firm admin, by hand vs automated */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(36px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.day{margin-top:clamp(18px,2.6vh,30px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,2vw,22px);transition:border-color .4s ease,background-color .4s ease}
+.day.on{background:#FFF8F3;border-color:var(--gold)}
+.dhead{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.verdict{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.1;transition:opacity .25s ease}
+.verdict span{color:var(--gold-soft)}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:8px 18px;cursor:pointer;background:transparent;color:var(--slate);transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.seg button.auto[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.2fr) minmax(0,1fr);gap:8px}
+.ch{display:flex;align-items:center;gap:8px;padding:0 4px 2px}
+.ch svg{flex:none}
+.lab{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:clamp(14px,1.3vw,16px);font-weight:800;letter-spacing:-.01em;line-height:1.15;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.lab:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.ic{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--card);transition:background-color .4s ease}
+.day.on .ic{background:var(--gold)}
+.cell{border-radius:16px;padding:10px;display:flex;align-items:center;min-height:68px}
+.cell.job{background:repeating-linear-gradient(135deg,rgba(0,0,0,.035) 0 8px,transparent 8px 16px);border:1px dashed #D1D1D6}
+.cell.eve{background:rgba(255,255,255,.6);border:1px dashed #D1D1D6}
+.pill{display:flex;align-items:center;gap:8px;border-radius:12px;padding:9px 12px;font-size:clamp(13px,1.2vw,15px);font-weight:700;line-height:1.2;width:100%;transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.pill i{flex:none;width:10px;height:10px;border-radius:50%}
+.pill.wait{background:#fff;color:#6E6E73;border:1px solid #D1D1D6}
+.pill.wait i{background:#C7C7CC}
+.pill.slog{background:#E5E5EA;color:#3A3A3C}
+.pill.slog i{background:#8E8E93}
+.pill.go{background:var(--gold);color:#0A0A0A;box-shadow:0 10px 22px -14px rgba(242,107,29,.9)}
+.pill.go i{background:#0A0A0A}
+.pill.done{background:#fff;color:var(--gold-soft);border:1px solid #F4B48F}
+.pill.done i{background:var(--gold)}
+.pill.hide{opacity:0;transform:translateY(6px)}
+.foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.now{background:var(--gold);border-color:var(--gold);color:#0A0A0A;font-weight:800}
+.you{border:2px dashed #C7C7CC;border-radius:999px;padding:5px 14px;font-weight:700;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:700px){
+ .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}
+ .ch.c0{display:none}
+ .lab{grid-column:1 / -1;padding:7px 10px;border-radius:12px;margin-top:6px}
+ .ic{width:26px;height:26px;border-radius:8px}
+ .ic svg{width:15px;height:15px}
+ .cell{min-height:0;padding:6px;border-radius:12px}
+ .pill{padding:7px 9px;gap:6px}
+ .pill i{width:8px;height:8px}
+ .seg button{padding:7px 14px;font-size:13px}
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .foot{font-size:13px}
+ .chip.tl{display:none}
+}
+@media (prefers-reduced-motion:reduce){.day,.pill,.lab,.ic,.verdict,.seg button{transition:none}.lab:hover{transform:none}.pill.hide{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · GSuite</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 2</p>
+<h1>Let GSuite do <span class="gold-t">the admin.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="day" id="day" aria-label="A day of firm admin, by hand versus automated in GSuite">
+<div class="dhead">
+<p class="verdict" id="verdict" aria-live="polite">Everything waits for <span>your evening.</span></p>
+<div class="seg" role="group" aria-label="Show the day"><button type="button" id="bHand" aria-pressed="true">By hand</button><button type="button" id="bAuto" class="auto" aria-pressed="false">With GSuite</button></div>
+</div>
+
+<div class="grid">
+<div class="ch c0"></div>
+<div class="ch"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5" fill="none" stroke="#6E6E73" stroke-width="2"/><path d="M9 7V5h6v2" fill="none" stroke="#6E6E73" stroke-width="2"/></svg><span class="k">Day job</span></div>
+<div class="ch"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="#6E6E73" stroke-width="2" stroke-linejoin="round"/></svg><span class="k">Evening</span></div>
+
+<div class="lab"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="#111" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span>Calendar booking page</div>
+<div class="cell job"><p class="pill" data-r="0" data-c="0"></p></div>
+<div class="cell eve"><p class="pill" data-r="0" data-c="1"></p></div>
+
+<div class="lab"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="#111" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></span>Schedule send</div>
+<div class="cell job"><p class="pill" data-r="1" data-c="0"></p></div>
+<div class="cell eve"><p class="pill" data-r="1" data-c="1"></p></div>
+
+<div class="lab"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5" fill="none" stroke="#111" stroke-width="2"/><path d="M4 6.5l8 6 8-6" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/></svg></span>Email templates</div>
+<div class="cell job"><p class="pill" data-r="2" data-c="0"></p></div>
+<div class="cell eve"><p class="pill" data-r="2" data-c="1"></p></div>
+</div>
+</section>
+
+<div class="foot"><span class="k">When</span><span class="chip now">Set up now</span><span class="chip tl">Gmail</span><span class="chip tl">Calendar</span><span class="you">Add yours: your booking link and first 3 templates</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/client-engager/" style="text-decoration:none">&larr; Client Engager</a><a href="/start/xero-hubdoc-xerotax/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Xero / Hubdoc / XeroTax &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · GSuite</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var S={
+ hand:{v:'Everything waits for <span>your evening.</span>',p:[
+  [["wait","Client asks when you're free"],["slog","Emails back and forth to find a time"]],
+  [["wait","Nothing goes out"],["slog","Email lands late at night"]],
+  [["wait","Enquiry sits unanswered"],["slog","Typed out from scratch"]]]},
+ auto:{v:'Your firm works <span>while you work.</span>',p:[
+  [["go","Client books a slot themselves"],["done","Already in your calendar"]],
+  [["go","Email lands first thing"],["done","Written and scheduled"]],
+  [["wait","Enquiry waits for you"],["go","Template, tweak, send"]]]}
+};
+var pills=document.querySelectorAll(".pill"),day=document.getElementById("day"),ver=document.getElementById("verdict");
+var bH=document.getElementById("bHand"),bA=document.getElementById("bAuto"),timers=[];
+function fill(p,d){p.className="pill "+d[0];p.innerHTML="<i></i>"+d[1]}
+function show(key){
+ timers.forEach(clearTimeout);timers=[];
+ var s=S[key];
+ bH.setAttribute("aria-pressed",key==="hand");bA.setAttribute("aria-pressed",key==="auto");
+ day.classList.toggle("on",key==="auto");ver.innerHTML=s.v;
+ pills.forEach(function(p){
+  var d=s.p[+p.dataset.r][+p.dataset.c];
+  if(RM){fill(p,d);return}
+  p.classList.add("hide");
+  var delay=180+(+p.dataset.r)*220+(+p.dataset.c)*110;
+  timers.push(setTimeout(function(){fill(p,d);p.classList.add("hide");void p.offsetWidth;p.classList.remove("hide")},delay));
+ });
+}
+pills.forEach(function(p){fill(p,S.hand.p[+p.dataset.r][+p.dataset.c])});
+bH.addEventListener("click",function(){show("hand")});
+bA.addEventListener("click",function(){show("auto")});
+})();
+</script>
+</body>
+</html>
