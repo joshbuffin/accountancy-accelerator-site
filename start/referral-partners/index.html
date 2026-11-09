@@ -59,6 +59,24 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
 .where .k{margin-right:4px}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+
+/* Dynamic: referral fee vs client back */
+.cmphead{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.cvt{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.tot{text-align:right;line-height:1}
+.tot .n{display:block;font-size:clamp(30px,3.2vw,42px);font-weight:800;letter-spacing:-.04em;color:#3A3A3C;font-variant-numeric:tabular-nums}
+.cv.pt .tot .n{color:var(--gold-soft)}
+.tot .s{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-top:6px;letter-spacing:.02em}
+.cv.pt .tot .s{color:var(--gold-soft)}
+.cv.done .tot .n{transition:color .3s ease}
+.months{display:flex;align-items:center;gap:10px}
+.mbar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.mbar i{display:block;height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .3s linear}
+.mn{font-size:13px;font-weight:700;color:var(--ink);min-width:58px;text-align:right;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.mbar i{transition:none}}
 @media (max-width:900px){.rp{grid-template-columns:1fr}}
 @media (max-width:560px){.flow{grid-template-columns:1fr 1fr}.fs:nth-child(2)::after{content:none}.ex{grid-template-columns:1fr}.navtag{font-size:11px}.pnav{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.cv,.exc{transition:none}.cv:hover,.exc:hover{transform:none}}
@@ -76,41 +94,36 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <main class="wrap">
 <div class="rp">
 
-<div class="cmp">
-<div class="cv">
-<p class="k">A contact</p>
-<h2>One referral. Then nothing.</h2>
-<svg viewBox="0 0 420 96" role="img" aria-label="A contact sends you one client, then nothing">
-<circle cx="52" cy="48" r="26" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="52" y="53" text-anchor="middle" font-size="14" font-weight="700" fill="#3A3A3C">You</text>
-<circle cx="200" cy="48" r="28" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="200" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3A3A3C">Contact</text>
-<path d="M172,48 L84,48" stroke="#8E8E93" stroke-width="2.5" marker-end="url(#ag)"/>
-<circle cx="128" cy="48" r="6" fill="#8E8E93"/>
-<path d="M228,48 L404,48" stroke="#C7C7CC" stroke-width="2.5" stroke-dasharray="6 7"/>
-<text x="316" y="34" text-anchor="middle" font-size="13" font-weight="600" fill="#8E8E93">Then nothing</text>
-<defs><marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8E8E93"/></marker>
-<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F26B1D"/></marker>
-<marker id="ak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#111"/></marker></defs>
+<div class="cmp" id="cmp">
+<div class="cmphead"><p class="k">Same £150 sent back</p><button class="play" id="play" type="button">Send 3 leads</button></div>
+<div class="cv" id="cvA">
+<div class="cvt"><div><p class="k">Referral fee</p><h2>£50 a lead.</h2></div><div class="tot"><span class="n" id="totA">£0</span><span class="s" id="subA">back</span></div></div>
+<svg viewBox="0 0 320 96" role="img" aria-label="You send a partner 3 leads and they pay you £50 for each one: £150 back, once">
+<path d="M70,40 L244,40" stroke="#C7C7CC" stroke-width="2.5" marker-end="url(#ag)"/>
+<path d="M250,64 L76,64" stroke="#C7C7CC" stroke-width="2.5" stroke-dasharray="5 6" marker-end="url(#ag)"/>
+<text x="157" y="30" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6E6E73">Lead</text>
+<text x="157" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6E6E73">£50 each</text>
+<circle cx="44" cy="52" r="25" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="44" y="57" text-anchor="middle" font-size="14" font-weight="700" fill="#3A3A3C">You</text>
+<circle cx="276" cy="52" r="25" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/><text x="276" y="56" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3A3A3C">Partner</text>
+<g id="layA"></g>
+<defs><marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#AEAEB2"/></marker>
+<marker id="ao" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F26B1D"/></marker></defs>
 </svg>
 </div>
-<div class="cv pt">
-<p class="k">A partner</p>
-<h2>Referrals both ways. On repeat.</h2>
-<svg class="anim" viewBox="0 -16 420 132" role="img" aria-label="A partner and you send clients to each other, over and over">
-<circle cx="52" cy="56" r="26" fill="#F26B1D"/><text x="52" y="61" text-anchor="middle" font-size="14" font-weight="800" fill="#0A0A0A">You</text>
-<circle cx="300" cy="56" r="26" fill="#fff" stroke="#F26B1D" stroke-width="3"/><text x="300" y="60" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">Partner</text>
-<path id="pt-in" d="M276,40 C220,4 132,4 76,40" fill="none" stroke="#F26B1D" stroke-width="3" marker-end="url(#ao)"/>
-<path id="pt-out" d="M76,72 C132,108 220,108 276,72" fill="none" stroke="#111" stroke-width="2.5" marker-end="url(#ak)"/>
-<text x="176" y="-4" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">They send you clients</text>
-<text x="176" y="113" text-anchor="middle" font-size="12" font-weight="700" fill="#3A3A3C">You send work back</text>
-<circle r="6" fill="#F26B1D"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#pt-in"/></animateMotion></circle>
-<circle r="6" fill="#F26B1D"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite"><mpath href="#pt-in"/></animateMotion></circle>
-<circle r="5" fill="#111"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite"><mpath href="#pt-out"/></animateMotion></circle>
-<path d="M344,56 L404,56" stroke="#F26B1D" stroke-width="3"/>
-<text x="374" y="44" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C">Again</text>
-<text x="374" y="78" text-anchor="middle" font-size="13" font-weight="800" fill="#C2410C">and again</text>
+<div class="cv pt" id="cvB">
+<div class="cvt"><div><p class="k">Client back</p><h2>1 client for every 3 leads.</h2></div><div class="tot"><span class="n" id="totB">£0</span><span class="s" id="subB">back</span></div></div>
+<svg viewBox="0 0 320 96" role="img" aria-label="You send a partner 3 leads and they send you one client paying £150 a month">
+<path d="M70,40 L244,40" stroke="#F4B48F" stroke-width="2.5" marker-end="url(#ao)"/>
+<path d="M250,64 L76,64" stroke="#F4B48F" stroke-width="2.5" stroke-dasharray="5 6" marker-end="url(#ao)"/>
+<text x="157" y="30" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C2410C">Lead</text>
+<text x="157" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#C2410C">1 client, £150 a month</text>
+<circle cx="44" cy="52" r="25" fill="#F26B1D"/><text x="44" y="57" text-anchor="middle" font-size="14" font-weight="800" fill="#0A0A0A">You</text>
+<circle cx="276" cy="52" r="25" fill="#fff" stroke="#F26B1D" stroke-width="3"/><text x="276" y="56" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C2410C">Partner</text>
+<g id="layB"></g>
 </svg>
 </div>
-<p class="give">Give first. <span>They send back.</span></p>
+<div class="months" aria-hidden="true"><span class="k">Month</span><div class="mbar"><i id="mfill"></i></div><span class="mn" id="mn">0 of 12</span></div>
+<p class="give">Same £150. One <span>keeps paying.</span></p>
 </div>
 
 <div class="hub">
@@ -138,7 +151,30 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Referral partners</div></footer>
 
 <script>
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('svg.anim').forEach(function(s){if(s.pauseAnimations)s.pauseAnimations()})}
+(function(){
+var NS="http://www.w3.org/2000/svg",RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+var $=function(id){return document.getElementById(id)};
+var layA=$("layA"),layB=$("layB"),btn=$("play"),timers=[],raf=[];
+function el(tag,at,txt){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);if(txt)e.textContent=txt;return e}
+function token(lay,fill,label,stroke){var g=el("g",{});g.appendChild(el("circle",{r:label?13:7,fill:fill,stroke:stroke||"none","stroke-width":2}));if(label)g.appendChild(el("text",{y:4,"text-anchor":"middle","font-size":label.length>3?8.5:9.5,"font-weight":800,fill:"#fff","font-family":"Inter,Arial,sans-serif"},label));lay.appendChild(g);return g}
+function move(g,x1,x2,y,ms,done){if(RM){g.setAttribute("transform","translate("+x2+","+y+")");done&&done();return}var t0=null;function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/ms),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;g.setAttribute("transform","translate("+(x1+(x2-x1)*e)+","+y+")");if(p<1)raf.push(requestAnimationFrame(f));else done&&done()}raf.push(requestAnimationFrame(f))}
+function later(fn,ms){timers.push(setTimeout(fn,RM?0:ms))}
+function set(a,sa,b,sb,m){$("totA").textContent=gbp.format(a);$("subA").textContent=sa;$("totB").textContent=gbp.format(b);$("subB").textContent=sb;$("mfill").style.width=(m/12*100)+"%";$("mn").textContent=m+" of 12"}
+function reset(){timers.forEach(clearTimeout);raf.forEach(cancelAnimationFrame);timers=[];raf=[];layA.innerHTML="";layB.innerHTML="";set(0,"back",0,"back",0)}
+function endState(){reset();for(var i=0;i<3;i++){var c=token(layA,"#AEAEB2","£50");c.setAttribute("transform","translate("+(108+i*30)+",64)")}var cl=token(layB,"#F26B1D","£150");cl.setAttribute("transform","translate(108,64)");set(150,"back. Once.",1800,"£150 a month",12);btn.disabled=false;btn.textContent="Replay"}
+function play(){if(RM){endState();return}reset();btn.disabled=true;var a=0;
+ for(var i=0;i<3;i++)(function(i){later(function(){
+  var la=token(layA,"#8E8E93");move(la,70,250,40,600,function(){la.remove();var c=token(layA,"#AEAEB2","£50");move(c,250,108+i*30,64,650,function(){a+=50;set(a,i==2?"back. Once.":"back",0,"back",0)})});
+  var lb=token(layB,"#F26B1D");move(lb,70,250,40,600,function(){lb.remove()});
+ },i*1300)})(i);
+ later(function(){var cl=token(layB,"#F26B1D","£150","#fff");move(cl,250,108,64,900,function(){
+  var m=0;(function tick(){m++;set(150,"back. Once.",150*m,"£150 a month",m);if(m<12)later(tick,420);else{btn.disabled=false;btn.textContent="Replay"}})();
+ })},3*1300+400);
+}
+btn.addEventListener("click",play);
+if(RM)endState();
+})();
 </script>
 </body>
 </html>
