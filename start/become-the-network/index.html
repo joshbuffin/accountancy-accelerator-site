@@ -83,8 +83,7 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-s
 <div class="panel on"><div class="ph"><h2>Everyone calls you first</h2><span class="k">The centre</span></div>
 <svg class="solar" id="sysR" viewBox="0 0 520 300" role="img" aria-label="You are the sun. The ecosystem orbits you, and introductions and work flow through you.">
 <defs><radialGradient id="glow"><stop offset="0" stop-color="#F26B1D" stop-opacity=".35"/><stop offset="1" stop-color="#F26B1D" stop-opacity="0"/></radialGradient></defs>
-<circle cx="260" cy="155" r="70" fill="none" stroke="#F6C3A3" stroke-width="1.5"/>
-<circle cx="260" cy="155" r="124" fill="none" stroke="#F6C3A3" stroke-width="1.5"/>
+<circle cx="260" cy="155" r="96" fill="none" stroke="#F6C3A3" stroke-width="1.5"/>
 <g id="lnR"></g>
 <circle cx="260" cy="155" r="58" fill="url(#glow)"/>
 <circle cx="260" cy="155" r="34" fill="#F26B1D"/>
@@ -116,33 +115,40 @@ footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-s
 <script>
 (function(){
 var NS="http://www.w3.org/2000/svg";
-var P=[{n:"Founders",r:70,a:.3,s:.12},{n:"Gym",r:70,a:2.4,s:.12},{n:"Run club",r:70,a:4.4,s:.12},
-{n:"Dinner club",r:124,a:1.1,s:.07},{n:"Partners",r:124,a:3.2,s:.07},{n:"Clients",r:124,a:5.2,s:.07}];
+var N=[["Founder","(E-com)"],["Lawyer"],["Commercial","financer"],["Financial","advisor"],["Property","investor"],["Founder","(online PT)"],["Founder","(video editor)"]];
+var P=N.map(function(n,i){return{n:n,r:96,a:-Math.PI/2+i*2*Math.PI/7,s:.08}});
+function lab(t,n,pos){while(t.firstChild)t.removeChild(t.firstChild);
+  n.forEach(function(w,i){var sp=document.createElementNS(NS,"tspan");sp.setAttribute("x",0);
+    sp.setAttribute("dy",i===0?(pos==="above"?(-(n.length-1)*1.1)+"em":pos==="below"?"0.8em":(0.35-(n.length-1)*0.55)+"em"):"1.1em");
+    sp.textContent=w;t.appendChild(sp)})}
 function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
 function build(gid,cx,cy,on,lid){
   var g=document.getElementById(gid),L=lid?document.getElementById(lid):null,out=[];
   P.forEach(function(p){
     var pg=el("g",{}),c=el("circle",{r:9,fill:on?"#fff":"#fff",stroke:on?"#F26B1D":"#8E8E93","stroke-width":2.5}),
     t=el("text",{"font-size":13,"font-weight":700,fill:on?"#C2410C":"#6E6E73",stroke:on?"#FFF8F3":"#F5F5F7","stroke-width":4,"text-anchor":"middle"});
-    t.textContent=p.n;pg.appendChild(c);pg.appendChild(t);g.appendChild(pg);
+    pg.appendChild(c);pg.appendChild(t);g.appendChild(pg);
     var ln=null;if(L){ln=el("line",{x1:cx,y1:cy,stroke:"#F26B1D","stroke-width":1.6,"stroke-opacity":.55,"class":"flow"});L.appendChild(ln)}
     out.push({p:p,g:pg,t:t,ln:ln});
   });
   return {cx:cx,cy:cy,items:out};
 }
 var B=build("pR",260,155,true,"lnR"),you=document.getElementById("youL");
-var M=[["Founders",90,78],["Gym",232,58],["Run club",360,112],["Dinner club",104,212],["Partners",252,176],["Clients",386,238]],
-E=[[0,1],[0,3],[0,4],[1,2],[2,5],[2,4],[3,5],[4,5]],mg=document.getElementById("meshL"),pg=document.getElementById("pulseL"),gL=document.getElementById("pL");
+var M=[[N[0],80,75],[N[1],235,60],[N[2],370,120],[N[3],95,190],[N[4],240,170],[N[5],385,250],[N[6],195,270]],
+E=[[0,1],[0,3],[1,2],[1,4],[2,4],[2,5],[3,6],[4,6],[5,6]],mg=document.getElementById("meshL"),pg=document.getElementById("pulseL"),gL=document.getElementById("pL");
 E.forEach(function(e){var a=M[e[0]],b=M[e[1]];mg.appendChild(el("line",{x1:a[1],y1:a[2],x2:b[1],y2:b[2],stroke:"#C7C7CC","stroke-width":1.6}))});
 M.forEach(function(m){var g=el("g",{transform:"translate("+m[1]+","+m[2]+")"}),c=el("circle",{r:9,fill:"#fff",stroke:"#8E8E93","stroke-width":2.5}),
-t=el("text",{"font-size":13,"font-weight":700,fill:"#6E6E73",stroke:"#F5F5F7","stroke-width":4,"text-anchor":"middle",y:m[2]<150?-15:25});
-t.textContent=m[0];g.appendChild(c);g.appendChild(t);gL.appendChild(g)});
-var PU=[0,4,6,7].map(function(i,k){var d=el("circle",{r:3.5,fill:"#8E8E93"});pg.appendChild(d);return{e:E[i],d:d,o:k*.27}});
+t=el("text",{"font-size":13,"font-weight":700,fill:"#6E6E73",stroke:"#F5F5F7","stroke-width":4,"text-anchor":"middle",y:-15});
+lab(t,m[0],"above");g.appendChild(c);g.appendChild(t);gL.appendChild(g)});
+var PU=[0,4,6,8].map(function(i,k){var d=el("circle",{r:3.5,fill:"#8E8E93"});pg.appendChild(d);return{e:E[i],d:d,o:k*.27}});
 function pulse(time){PU.forEach(function(q){var a=M[q.e[0]],b=M[q.e[1]],f=((time*.35+q.o)%1),u=f<.5?f*2:2-f*2;
   q.d.setAttribute("cx",(a[1]+(b[1]-a[1])*u).toFixed(1));q.d.setAttribute("cy",(a[2]+(b[2]-a[2])*u).toFixed(1))})}
 function place(S,time){S.items.forEach(function(o){var ang=o.p.a+o.p.s*time,x=S.cx+Math.cos(ang)*o.p.r,y=S.cy+Math.sin(ang)*o.p.r;
   o.g.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")");
-  o.t.setAttribute("y",(y<S.cy?-15:25));
+  var cs=Math.cos(ang),sn=Math.sin(ang),pos=sn<-.35?"above":sn>.35?"below":"side";
+  o.t.setAttribute("transform","translate("+(cs*20).toFixed(1)+","+(sn*20).toFixed(1)+")");
+  o.t.setAttribute("text-anchor",cs>.35?"start":cs<-.35?"end":"middle");
+  if(o.pos!==pos){lab(o.t,o.p.n,pos);o.pos=pos}
   if(o.ln){o.ln.setAttribute("x2",x.toFixed(1));o.ln.setAttribute("y2",y.toFixed(1))}})}
 function drift(time){var x=470+Math.sin(time*.4)*8,y=48+Math.cos(time*.3)*6;you.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")")}
 var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
