@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Setting up your ads - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: setting up your ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Setting up your ads: on your own vs with Ryan */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(18px,2.8vh,32px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,26px) clamp(16px,2.4vw,30px) clamp(14px,1.8vw,22px);transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .4s ease,box-shadow .45s ease}
+.stage:hover{transform:translateY(-3px)}
+.stage.ryan{background:#FFF8F3;border-color:var(--gold);box-shadow:0 18px 40px -26px rgba(242,107,29,.5)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.top h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.top h2 span{color:var(--gold-soft)}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background-color .25s ease,color .25s ease,transform .2s ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.seg button.go[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.seg button.go[aria-pressed="false"]{color:var(--gold-soft)}
+.viz{position:relative;margin-top:6px}
+.viz svg{width:100%;height:auto;display:block}
+.viz svg text{font-family:'Inter',Arial,sans-serif}
+.portrait{display:none!important}
+.alone,.with{transition:opacity .5s ease}
+.with{opacity:0}
+.stage.ryan .alone{opacity:0}
+.stage.ryan .with{opacity:1}
+.rline{stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1) .15s}
+.portrait .rline{stroke-dasharray:330;stroke-dashoffset:330}
+.stage.ryan .rline{stroke-dashoffset:0}
+.endn{transition:fill .5s ease .6s,stroke .5s ease .6s}
+.stage.ryan .endn{fill:var(--gold);stroke:var(--gold)}
+.stage.ryan .endt{fill:#0A0A0A}
+.step{display:flex;justify-content:space-between;align-items:center;gap:12px 18px;flex-wrap:wrap;margin-top:clamp(14px,2vh,22px);background:var(--gold);color:#0A0A0A;border-radius:18px;padding:14px 20px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.step:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(242,107,29,.7)}
+.step .k{color:#3A2A1E}
+.step h3{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.add{border:2px dashed rgba(0,0,0,.35);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;text-decoration:none;background:rgba(255,255,255,.22)}
+@media (max-width:640px){.landscape{display:none!important}.portrait{display:block!important;max-width:380px;margin:0 auto}.seg button{padding:8px 12px;font-size:13px}.navtag{font-size:11px}.pnav{font-size:14px}}
+@media (prefers-reduced-motion:reduce){.stage,.step,.alone,.with,.rline,.endn,.seg button{transition:none}.stage:hover,.step:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Setting up your ads</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 20</p>
+<h1>Don't set up ads <span class="gold-t">alone.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="stage" id="stage" aria-live="polite">
+<div class="top">
+<h2 id="verdict">Stuck in set-up.</h2>
+<div class="seg" role="group" aria-label="Choose a set-up path">
+<button type="button" id="bAlone" aria-pressed="true">On your own</button>
+<button type="button" id="bRyan" class="go" aria-pressed="false">Talk to Ryan</button>
+</div>
+</div>
+
+<div class="viz">
+<svg class="landscape" viewBox="0 0 960 250" role="img" aria-label="On your own, the path from your proven video to live ads tangles at verification, card approval loops and the 30% app fee. With Ryan it runs straight to live ads.">
+<g class="alone">
+<path d="M134,150 H256 C312,150 324,82 290,82 C256,82 268,150 324,150 H446 C502,150 514,82 480,82 C446,82 458,150 514,150 H636 C692,150 704,82 670,82 C636,82 648,150 704,150 H826" fill="none" stroke="#AEAEB2" stroke-width="4" stroke-linecap="round"/>
+<g font-size="17" font-weight="700" fill="#3A3A3C" text-anchor="middle">
+<text x="290" y="56">Verification</text><text x="480" y="56">Card approval loops</text><text x="670" y="56">30% app fee</text>
+</g>
+<g stroke="#fff" stroke-width="2.6" stroke-linecap="round">
+<circle cx="290" cy="82" r="12" fill="#3A3A3C" stroke="none"/><path d="M285,77 L295,87 M295,77 L285,87"/>
+<circle cx="480" cy="82" r="12" fill="#3A3A3C" stroke="none"/><path d="M475,77 L485,87 M485,77 L475,87"/>
+<circle cx="670" cy="82" r="12" fill="#3A3A3C" stroke="none"/><path d="M665,77 L675,87 M675,77 L665,87"/>
+</g>
+</g>
+<g class="with">
+<path class="rline" d="M134,150 H826" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linecap="round"/>
+<circle cx="480" cy="150" r="58" fill="#F26B1D"/>
+<text x="480" y="145" text-anchor="middle" font-size="19" font-weight="800" fill="#0A0A0A">Talk to</text>
+<text x="480" y="168" text-anchor="middle" font-size="19" font-weight="800" fill="#0A0A0A">Ryan</text>
+<text x="480" y="236" text-anchor="middle" font-size="15" font-weight="700" fill="#C2410C">My ads manager · till.agency</text>
+</g>
+<circle cx="90" cy="150" r="44" fill="#fff" stroke="#3A3A3C" stroke-width="3"/>
+<path d="M82,134 L104,150 L82,166 Z" fill="#3A3A3C"/>
+<text x="90" y="222" text-anchor="middle" font-size="17" font-weight="700" fill="#111">Your proven video</text>
+<circle class="endn" cx="870" cy="150" r="44" fill="#fff" stroke="#AEAEB2" stroke-width="3"/>
+<text class="endt" x="870" y="156" text-anchor="middle" font-size="17" font-weight="800" fill="#6E6E73">LIVE</text>
+<text x="870" y="222" text-anchor="middle" font-size="17" font-weight="700" fill="#111">Ads live</text>
+</svg>
+
+<svg class="portrait" viewBox="0 0 360 400" role="img" aria-label="On your own, the path from your proven video to live ads tangles at verification, card approval loops and the 30% app fee. With Ryan it runs straight to live ads.">
+<g class="alone">
+<path d="M120,66 V95 C120,145 52,155 52,125 C52,95 120,105 120,155 V170 C120,220 52,230 52,200 C52,170 120,180 120,230 V245 C120,295 52,305 52,275 C52,245 120,255 120,305 V334" fill="none" stroke="#AEAEB2" stroke-width="4" stroke-linecap="round"/>
+<g font-size="16" font-weight="700" fill="#3A3A3C">
+<text x="146" y="131">Verification</text><text x="146" y="206">Card approval loops</text><text x="146" y="281">30% app fee</text>
+</g>
+<g stroke="#fff" stroke-width="2.4" stroke-linecap="round">
+<circle cx="52" cy="125" r="11" fill="#3A3A3C" stroke="none"/><path d="M47.5,120.5 L56.5,129.5 M56.5,120.5 L47.5,129.5"/>
+<circle cx="52" cy="200" r="11" fill="#3A3A3C" stroke="none"/><path d="M47.5,195.5 L56.5,204.5 M56.5,195.5 L47.5,204.5"/>
+<circle cx="52" cy="275" r="11" fill="#3A3A3C" stroke="none"/><path d="M47.5,270.5 L56.5,279.5 M56.5,270.5 L47.5,279.5"/>
+</g>
+</g>
+<g class="with">
+<path class="rline" d="M120,66 V334" fill="none" stroke="#F26B1D" stroke-width="5" stroke-linecap="round"/>
+<circle cx="120" cy="200" r="48" fill="#F26B1D"/>
+<text x="120" y="196" text-anchor="middle" font-size="17" font-weight="800" fill="#0A0A0A">Talk to</text>
+<text x="120" y="216" text-anchor="middle" font-size="17" font-weight="800" fill="#0A0A0A">Ryan</text>
+<text x="184" y="196" font-size="15" font-weight="700" fill="#C2410C">My ads manager</text>
+<text x="184" y="216" font-size="15" font-weight="700" fill="#C2410C">till.agency</text>
+</g>
+<circle cx="120" cy="40" r="26" fill="#fff" stroke="#3A3A3C" stroke-width="3"/>
+<path d="M114,30 L128,40 L114,50 Z" fill="#3A3A3C"/>
+<text x="162" y="46" font-size="17" font-weight="700" fill="#111">Your proven video</text>
+<circle class="endn" cx="120" cy="360" r="26" fill="#fff" stroke="#AEAEB2" stroke-width="3"/>
+<text class="endt" x="120" y="365" text-anchor="middle" font-size="12" font-weight="800" fill="#6E6E73">LIVE</text>
+<text x="162" y="366" font-size="17" font-weight="700" fill="#111">Ads live</text>
+</svg>
+</div>
+</section>
+
+<div class="step">
+<div><p class="k">The step</p><h3>Talk to Ryan.</h3></div>
+<a class="add" href="#">Add yours: Ryan's link</a>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/optimising-your-ads/" style="text-decoration:none">&larr; Optimising your ads</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Setting up your ads</div></footer>
+
+<script>
+(function(){
+var s=document.getElementById("stage"),a=document.getElementById("bAlone"),r=document.getElementById("bRyan"),v=document.getElementById("verdict");
+function set(ryan){s.classList.toggle("ryan",ryan);a.setAttribute("aria-pressed",String(!ryan));r.setAttribute("aria-pressed",String(ryan));v.innerHTML=ryan?"Set up right. <span>Ads live.</span>":"Stuck in set-up."}
+a.addEventListener("click",function(){set(false)});
+r.addEventListener("click",function(){set(true)});
+})();
+</script>
+</body>
+</html>
