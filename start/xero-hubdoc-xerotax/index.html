@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Xero / Hubdoc / XeroTax - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: Xero, Hubdoc and XeroTax, from receipt to year-end accounts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Xero / Hubdoc / XeroTax: one receipt's journey */
+.hero{padding-top:clamp(22px,3.6vh,44px)}
+.hero h1{font-size:clamp(38px,4.8vw,64px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(20px,3.4vh,36px);background:#FFF8F3;border:1px solid #F7C9AC;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px)}
+.shead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:clamp(16px,2.4vh,24px)}
+.shead h2{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:10px 20px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease;flex:none}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.pipe{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr) 116px minmax(0,1fr) 44px minmax(0,1fr);align-items:stretch}
+.st{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .45s ease}
+.st:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--card);display:grid;place-items:center;transition:background-color .35s ease}
+.ic svg{width:26px;height:26px;stroke:#6E6E73;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s ease}
+.st .k{transition:color .35s ease}
+.st h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.st .do{font-size:14px;font-weight:600;color:var(--muted);line-height:1.3}
+.st.on{border-color:var(--gold);box-shadow:0 14px 30px -18px rgba(242,107,29,.55)}
+.st.on .ic{background:var(--gold)}
+.st.on .ic svg{stroke:#fff}
+.st.on .k{color:var(--gold-soft)}
+.st.client{background:transparent;border-style:dashed}
+.ln{position:relative;display:flex;align-items:center;justify-content:center}
+.ln .bar{position:absolute;left:8px;right:8px;top:50%;height:4px;margin-top:-2px;border-radius:99px;background:#F1D5C3;overflow:hidden}
+.ln .bar i{display:block;height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .55s ease}
+.ln.done .bar i{width:100%}
+.ln .tag{position:relative;z-index:1;background:#fff;border:1.5px solid #F1D5C3;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);padding:4px 7px;white-space:nowrap;transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+.ln.done .tag{background:var(--gold);border-color:var(--gold);color:#fff}
+.ln.key .tag{border-color:var(--gold)}
+.status{margin-top:clamp(14px,2.2vh,22px);display:flex;align-items:center;gap:10px;font-size:clamp(16px,1.6vw,19px);font-weight:700;min-height:28px}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
+.status span{color:var(--gold-soft)}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.now{background:var(--gold);border-color:var(--gold);color:#0A0A0A;font-weight:700}
+.chip.add{background:#fff;border:2px dashed #C7C7CC;color:var(--muted)}
+.sep{width:1px;height:20px;background:var(--line);margin:0 6px}
+@media (max-width:900px){
+ .pipe{grid-template-columns:1fr;gap:0}
+ .st{flex-direction:row;align-items:center;gap:12px;padding:12px 14px}
+ .st .txt{display:flex;flex-direction:column;gap:2px}
+ .ln{height:34px}
+ .ln .bar{left:50%;right:auto;top:4px;bottom:4px;width:4px;height:auto;margin:0 0 0 -2px}
+ .ln .bar i{width:100%;height:0;transition:height .55s ease}
+ .ln.done .bar i{height:100%}
+}
+@media (min-width:901px){.st .txt{display:flex;flex-direction:column;gap:6px}}
+@media (max-width:560px){
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .hero h1{font-size:34px}
+ .eyebrow{font-size:11px;margin-bottom:12px}
+ .shead{flex-direction:column;align-items:flex-start}
+ .shead h2{font-size:17px}
+ .ic{width:40px;height:40px;flex:none}.ic svg{width:22px;height:22px}
+ .st h3{font-size:17px}.st .do{font-size:13px}
+ .ln{height:28px}
+ .sep{display:none}
+}
+@media (prefers-reduced-motion:reduce){.st,.ic,.ic svg,.ln .bar i,.ln .tag,.st .k{transition:none}.st:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Xero / Hubdoc / XeroTax</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 3</p>
+<h1>From receipt to <span class="gold-t">accounts.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="stage" aria-label="One receipt's journey through Hubdoc, Xero and XeroTax">
+<div class="shead"><h2>One receipt. Three tools. One flow.</h2><button class="play" id="play" type="button">Send a receipt</button></div>
+
+<div class="pipe">
+<div class="st client" id="s0">
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+<div class="txt"><p class="k">Your client</p><h3>Sends the receipt</h3><p class="do">App · email · upload</p></div>
+</div>
+<div class="ln" id="l0"><span class="bar"><i></i></span></div>
+<div class="st" id="s1">
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div>
+<div class="txt"><p class="k">Hubdoc</p><h3>Captures it</h3><p class="do">Processes the invoice</p></div>
+</div>
+<div class="ln key" id="l1"><span class="bar"><i></i></span><span class="tag">Connect once</span></div>
+<div class="st" id="s2">
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></div>
+<div class="txt"><p class="k">Xero</p><h3>Books it</h3><p class="do">Bookkeeping and VAT</p></div>
+</div>
+<div class="ln" id="l2"><span class="bar"><i></i></span></div>
+<div class="st" id="s3">
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 2.5V8h5.5"/><path d="m8.5 14.5 2.3 2.3 4.7-4.8"/></svg></div>
+<div class="txt"><p class="k">XeroTax</p><h3>Year-end accounts</h3><p class="do">Accounts prep</p></div>
+</div>
+</div>
+
+<p class="status" aria-live="polite"><i class="dot"></i><span id="msg">Press play to follow one receipt.</span></p>
+</section>
+
+<div class="where"><span class="k">When you need it</span><span class="chip now">Day one</span><span class="sep"></span><span class="chip add">Add yours: your Hubdoc set-up checklist</span><span class="chip add">Add yours: how clients send you receipts</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/gsuite/" style="text-decoration:none">&larr; GSuite</a><a href="/start/brightpay/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Brightpay &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Xero / Hubdoc / XeroTax</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var btn=$("play"),msg=$("msg"),timers=[];
+var steps=[
+ {s:"s0",t:"Your client snaps a receipt."},
+ {s:"s1",l:"l0",t:"Hubdoc captures it and processes the invoice."},
+ {s:"s2",l:"l1",t:"Connected once, Hubdoc sends it straight to Xero."},
+ {s:"s3",l:"l2",t:"Xero books it. XeroTax turns the year into accounts."}
+];
+function reset(){timers.forEach(clearTimeout);timers=[];["s0","s1","s2","s3"].forEach(function(id){$(id).classList.remove("on")});["l0","l1","l2"].forEach(function(id){$(id).classList.remove("done")})}
+function show(i){var st=steps[i];if(st.l)$(st.l).classList.add("done");$(st.s).classList.add("on");msg.textContent=st.t}
+function endState(){reset();for(var i=0;i<steps.length;i++)show(i);msg.textContent="Receipt in. Accounts out.";btn.disabled=false;btn.textContent="Replay"}
+function play(){if(RM){endState();return}reset();btn.disabled=true;
+ steps.forEach(function(_,i){timers.push(setTimeout(function(){show(i)},i*1300))});
+ timers.push(setTimeout(function(){msg.textContent="Receipt in. Accounts out.";btn.disabled=false;btn.textContent="Replay"},steps.length*1300+400));
+}
+btn.addEventListener("click",play);
+if(RM)endState();
+})();
+</script>
+</body>
+</html>
