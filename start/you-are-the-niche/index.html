@@ -24,59 +24,56 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
 h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
+.sub{margin-top:8px;font-size:clamp(18px,2vw,24px);font-weight:600;color:var(--muted)}
 
-/* Magnet layout */
-.stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-.field{width:100%;max-width:540px;height:auto;display:block;margin:0 auto;overflow:visible}
-.field text{font-family:'Inter',Arial,sans-serif}
-.ring{fill:none;stroke:#F2C9AE;stroke-width:2;stroke-dasharray:4 8}
-.pulse{fill:none;stroke:var(--gold);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-out infinite}
-.pulse.p2{animation-delay:1.6s}
-@keyframes pulse{0%{transform:scale(1.9);opacity:0}30%{opacity:.35}100%{transform:scale(1);opacity:0}}
-.pull{fill:none;stroke:#E7C2A8;stroke-width:3;stroke-linecap:round;stroke-dasharray:2 12;animation:flow 1.2s linear infinite;transition:stroke .3s ease,stroke-width .3s ease}
-@keyframes flow{to{stroke-dashoffset:-14}}
-.node{cursor:pointer;outline:none}
-.node rect{fill:#fff;stroke:var(--line);stroke-width:2;transition:fill .3s ease,stroke .3s ease,transform .35s cubic-bezier(.2,.8,.2,1);transform-box:fill-box;transform-origin:center}
-.node text{font-size:17px;font-weight:700;fill:var(--ink);pointer-events:none;transition:fill .3s ease}
-.node:hover rect,.node:focus-visible rect{stroke:var(--gold);transform:scale(1.05)}
-.node.on rect{fill:var(--gold);stroke:var(--gold)}
-.node.on text{fill:#fff}
-.pull.on{stroke:var(--gold);stroke-width:4}
-.dot{fill:#C9C9CD}
-.dot.on{fill:var(--gold)}
+/* Crowd */
+.stage{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+.crowd{width:100%;height:auto;display:block;overflow:visible;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.crowd text{font-family:'Inter',Arial,sans-serif}
+.wave{fill:none;stroke:var(--gold);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center;animation:wave 3.6s ease-out infinite}
+.wave.w2{animation-delay:1.2s}.wave.w3{animation-delay:2.4s}
+@keyframes wave{0%{transform:scale(.35);opacity:.45}100%{transform:scale(2.6);opacity:0}}
+.p{transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1);transform-box:fill-box;transform-origin:center}
+.p .mk{fill:none;stroke:var(--gold);stroke-width:2.5;opacity:0;transition:opacity .4s ease}
+.p .sh{transition:fill .4s ease}
+.crowd.reveal .p{opacity:.16}
+.crowd.reveal .p.enq{opacity:1;transform:scale(1.3)}
+.crowd.reveal .p.rel .sh{fill:var(--gold)}
+.crowd.reveal .p.enq .mk{opacity:1}
+.crowd.reveal .p.oth .mk{stroke-dasharray:3 3}
+.crowd.reveal .wave{animation-play-state:paused;opacity:0}
 
-.card{background:#FFF8F3;border:1px solid var(--gold);border-radius:var(--radius);padding:clamp(18px,2.6vh,28px) clamp(18px,2vw,28px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
-.card h2{margin-top:8px;font-size:clamp(26px,2.8vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
-.chain{display:flex;flex-direction:column;gap:8px;margin-top:18px}
-.step{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:clamp(15px,1.4vw,17px);font-weight:700}
-.step i{flex:none;font-style:normal;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);width:64px}
-.step.end{background:var(--gold);border-color:var(--gold);color:#fff}
-.step.end i{color:#FFE3D1}
-.swap{transition:opacity .25s ease}
-.swap.out{opacity:0}
-.tabs{display:none}
-
-.big{margin-top:clamp(12px,2.2vh,24px);font-size:clamp(28px,3.8vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+/* Side panel */
+.side{display:flex;flex-direction:column;gap:clamp(12px,2vh,20px)}
+.k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.side h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.btn{align-self:flex-start;font:inherit;font-size:17px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 10px 24px -12px rgba(242,107,29,.7);transition:transform .3s cubic-bezier(.2,.8,.2,1),background-color .3s ease}
+.btn:hover{transform:translateY(-2px);background:var(--gold-soft)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn[aria-pressed="true"]{background:var(--ink)}
+.legend{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600;opacity:.35;transition:opacity .4s ease}
+.legend span{display:flex;align-items:center;gap:10px}
+.legend i{flex:none;width:18px;height:18px;border-radius:50%;border:2.5px solid var(--gold)}
+.legend .r i{background:var(--gold)}
+.legend .o i{border-style:dashed;background:#fff}
+.result{font-size:clamp(18px,1.8vw,22px);font-weight:700;color:var(--gold-soft);min-height:2.6em;opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease}
+.on .legend{opacity:1}
+.on .result{opacity:1;transform:none}
+.big{font-size:clamp(26px,3.2vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.08;border-top:1px solid var(--line);padding-top:clamp(12px,2vh,20px)}
 .big .gold-t{color:var(--gold)}
-.adds{display:flex;gap:8px;flex-wrap:wrap;margin-top:clamp(10px,1.6vh,14px)}
-.tag{font-size:13.5px;font-weight:600;border:1px dashed var(--gold);color:var(--gold-soft);background:#FFF8F3;border-radius:999px;padding:5px 12px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
 @media (max-width:860px){
- .stage{grid-template-columns:1fr;gap:12px}
+ .stage{grid-template-columns:1fr;gap:14px}
  .hero{padding:18px 0 6px}
- .field{max-width:420px}
- .card{padding:16px}
- .step{padding:8px 12px}
  .navtag{font-size:12px}
+ .btn{align-self:stretch;text-align:center}
 }
 @media (prefers-reduced-motion:reduce){
- .pulse{animation:none;opacity:0}
- .pull{animation:none}
- .node rect,.card,.swap{transition:none}
- .node:hover rect,.card:hover{transform:none}
+ .wave{animation:none;opacity:0}
+ .p,.p .mk,.p .sh,.legend,.result,.btn{transition:none}
+ .crowd.reveal .p.enq{transform:none}
+ .btn:hover{transform:none}
 }
 </style>
 </head>
@@ -87,50 +84,38 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Level 4 - Niche · Video 2</p>
 <h1>You are the <span class="gold-t">niche.</span></h1>
+<p class="sub">It's personality fit, not industry.</p>
 </div></header>
 
 <main class="wrap">
-<div class="stage">
-<svg class="field" viewBox="0 0 540 400" role="img" aria-label="A magnet: you in the centre, pulling in the people who relate to you through your story, your weekends, your circles and your stage">
-<circle class="ring" cx="270" cy="200" r="150"/>
-<circle class="ring" cx="270" cy="200" r="104"/>
-<circle class="pulse" cx="270" cy="200" r="70"/>
-<circle class="pulse p2" cx="270" cy="200" r="70"/>
-
-<path class="pull" data-i="0" d="M120,72 Q170,150 222,170"/>
-<path class="pull" data-i="1" d="M420,72 Q370,150 318,170"/>
-<path class="pull" data-i="2" d="M120,328 Q170,250 222,230"/>
-<path class="pull" data-i="3" d="M420,328 Q370,250 318,230"/>
-
-<g aria-hidden="true">
-<circle class="dot" data-i="0" cx="62" cy="128" r="7"/><circle class="dot" data-i="0" cx="176" cy="118" r="6"/>
-<circle class="dot" data-i="1" cx="478" cy="128" r="7"/><circle class="dot" data-i="1" cx="364" cy="118" r="6"/>
-<circle class="dot" data-i="2" cx="62" cy="272" r="7"/><circle class="dot" data-i="2" cx="176" cy="282" r="6"/>
-<circle class="dot" data-i="3" cx="478" cy="272" r="7"/><circle class="dot" data-i="3" cx="364" cy="282" r="6"/>
-<circle class="dot" cx="30" cy="200" r="5"/><circle class="dot" cx="510" cy="200" r="5"/><circle class="dot" cx="270" cy="22" r="5"/><circle class="dot" cx="270" cy="384" r="5"/>
+<div class="stage" id="stage">
+<svg class="crowd" id="crowd" viewBox="0 0 640 440" role="img" aria-label="You on a stage in the middle, talking to a crowd of 100 very different people">
+<g id="people"></g>
+<circle class="wave" cx="320" cy="214" r="40"/>
+<circle class="wave w2" cx="320" cy="214" r="40"/>
+<circle class="wave w3" cx="320" cy="214" r="40"/>
+<g id="you">
+<rect x="282" y="230" width="76" height="20" rx="6" fill="#111"/>
+<rect x="290" y="250" width="60" height="10" rx="4" fill="#3A3A3C"/>
+<circle cx="320" cy="200" r="24" fill="none" stroke="#F26B1D" stroke-width="3"/>
+<circle cx="320" cy="194" r="8" fill="#E0B48F"/>
+<path d="M307,214 a13,11 0 0 1 26,0 z" fill="#F26B1D"/>
+<text x="320" y="245" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" letter-spacing="1.5">YOU</text>
 </g>
-
-<circle cx="270" cy="200" r="66" fill="#F26B1D"/>
-<circle cx="270" cy="200" r="66" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="6"/>
-<text x="270" y="210" text-anchor="middle" font-size="30" font-weight="800" fill="#fff" letter-spacing="-.5">YOU</text>
-
-<g class="node on" data-i="0" tabindex="0" role="button" aria-label="Your weekends"><rect x="40" y="46" width="160" height="48" rx="24"/><text x="120" y="76" text-anchor="middle">Your weekends</text></g>
-<g class="node" data-i="1" tabindex="0" role="button" aria-label="Your circles"><rect x="340" y="46" width="160" height="48" rx="24"/><text x="420" y="76" text-anchor="middle">Your circles</text></g>
-<g class="node" data-i="2" tabindex="0" role="button" aria-label="Your story"><rect x="40" y="306" width="160" height="48" rx="24"/><text x="120" y="336" text-anchor="middle">Your story</text></g>
-<g class="node" data-i="3" tabindex="0" role="button" aria-label="Your stage"><rect x="340" y="306" width="160" height="48" rx="24"/><text x="420" y="336" text-anchor="middle">Your stage</text></g>
 </svg>
 
-<div class="card" aria-live="polite">
-<div class="swap" id="swap">
-<p class="k" id="k">Josh · Your weekends</p>
-<h2 id="h">Hospitality by accident</h2>
-<div class="chain" id="chain"></div>
+<div class="side" id="side">
+<p class="k">Your audience</p>
+<h2>100 people. All different.</h2>
+<button class="btn" id="btn" type="button" aria-pressed="false">Who enquired?</button>
+<div class="legend" aria-hidden="true">
+<span class="r"><i></i>Relates to you</span>
+<span class="o"><i></i>Doesn't, still enquired</span>
 </div>
-</div>
-</div>
-
+<p class="result" id="result" aria-live="polite"></p>
 <p class="big">People who relate to you are <span class="gold-t">drawn to you.</span></p>
-<div class="adds"><span class="tag"><b>Don't force it:</b> you are the niche</span><span class="tag"><b>Add yours:</b> a member who became the niche</span></div>
+</div>
+</div>
 </main>
 
 <div class="wrap pnav"><a href="/start/you-dont-have-to-niche/" style="text-decoration:none">&larr; You don't have to niche</a><a href="/start/founder-fit/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Founder fit &rarr;</a></div>
@@ -138,44 +123,38 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-  var data=[
-    {k:'Your weekends',h:'Hospitality by accident',s:[['Where','Free at weekends'],['Who','Cafes and bars, the only ones open'],['Niche','Year one: nearly all hospitality']]},
-    {k:'Your circles',h:'A beach club chat',s:[['Where','A Dubai beach club'],['Who','Two Airbnb management founders'],['Niche','Serviced accommodation']]},
-    {k:'Your story',h:'"I\'ve finally made the jump"',s:[['Where','The high street'],['Who','People who relate to you'],['Niche','They buy from you']]},
-    {k:'Your stage',h:'Founder fit, not industry',s:[['Where','You are a founder'],['Who','Growing founders, holding companies'],['Niche','Best-quality leads']]}
-  ];
-  var nodes=document.querySelectorAll('.node'),pulls=document.querySelectorAll('.pull'),dots=document.querySelectorAll('.dot');
-  var swap=document.getElementById('swap'),k=document.getElementById('k'),h=document.getElementById('h'),chain=document.getElementById('chain');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cur=-1;
-  function fill(i){
-    var d=data[i];
-    k.textContent='Josh · '+d.k;
-    h.textContent=d.h;
-    chain.innerHTML='';
-    d.s.forEach(function(s,j){
-      var el=document.createElement('div');
-      el.className='step'+(j===d.s.length-1?' end':'');
-      var lab=document.createElement('i');lab.textContent=s[0];
-      el.appendChild(lab);el.appendChild(document.createTextNode(s[1]));
-      chain.appendChild(el);
-    });
-  }
-  function mark(list,i){list.forEach(function(el){el.classList.toggle('on',el.getAttribute('data-i')===String(i));});}
-  function show(i){
-    if(i===cur)return;cur=i;
-    mark(nodes,i);mark(pulls,i);mark(dots,i);
-    if(reduce){fill(i);return;}
-    swap.classList.add('out');
-    setTimeout(function(){fill(i);swap.classList.remove('out');},180);
-  }
-  nodes.forEach(function(n){
-    var i=+n.getAttribute('data-i');
-    n.addEventListener('click',function(){show(i);});
-    n.addEventListener('mouseenter',function(){show(i);});
-    n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i);}});
-  });
-  cur=0;fill(0);mark(pulls,0);mark(dots,0);
+var NS="http://www.w3.org/2000/svg",g=document.getElementById("people");
+var seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
+var skin=["#F5DEC8","#F1D3B8","#E0B48F","#C68E64","#9A6440","#6B4429"];
+var top=["#9CA3AF","#A8B5C7","#B9A79A","#8FA8A0","#C4B1C9","#7D8B99","#D1C2A8","#A3A3A3","#B7C4B0","#C9B8A6"];
+var hair=["#2B2B2B","#5A3E2B","#A0703F","#D9B26F","#8C8C8C","#1F1A17",null];
+var rings=[[96,14],[136,22],[176,28],[214,36]],cx=320,cy=214,people=[];
+rings.forEach(function(rg,ri){var r=rg[0],n=rg[1],off=rnd()*Math.PI;
+ for(var i=0;i<n;i++){var a=off+i*2*Math.PI/n+(rnd()-.5)*.12,rr=r+(rnd()-.5)*10;
+  var x=cx+Math.cos(a)*rr*1.38,y=cy+Math.sin(a)*rr*.9;
+  people.push({x:x,y:y,ring:ri,s:.82+rnd()*.36})}});
+function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+people.forEach(function(p,i){
+ var s=p.s,grp=el("g",{"class":"p"});
+ var inner=el("g",{transform:"translate("+p.x.toFixed(1)+","+p.y.toFixed(1)+") scale("+s.toFixed(2)+")"});
+ inner.appendChild(el("circle",{"class":"mk",cx:0,cy:-1,r:13}));
+ inner.appendChild(el("path",{"class":"sh",d:"M-9,9 a9,8 0 0 1 18,0 z",fill:top[Math.floor(rnd()*top.length)]}));
+ inner.appendChild(el("circle",{cx:0,cy:-5,r:5.4,fill:skin[Math.floor(rnd()*skin.length)]}));
+ var h=hair[Math.floor(rnd()*hair.length)],st=Math.floor(rnd()*3);
+ if(h){if(st===0)inner.appendChild(el("path",{d:"M-5.6,-6 a5.6,5.6 0 0 1 11.2,0 z",fill:h}));
+  else if(st===1)inner.appendChild(el("path",{d:"M-6,-4 a6,6.6 0 0 1 12,0 v3 h-2 v-3 a4,4 0 0 0 -8,0 v3 h-2 z",fill:h}));
+  else inner.appendChild(el("circle",{cx:0,cy:-11.2,r:2.6,fill:h}))}
+ grp.appendChild(inner);g.appendChild(grp);p.node=grp});
+// Enquirers: mostly people who relate (closer rings), a few who don't (outer rings)
+var inner=people.filter(function(p){return p.ring<2}),outer=people.filter(function(p){return p.ring>=2});
+function pick(arr,n){var c=arr.slice(),out=[];while(out.length<n&&c.length){out.push(c.splice(Math.floor(rnd()*c.length),1)[0])}return out}
+pick(inner,8).concat(pick(outer.filter(function(p){return p.ring===2}),3)).forEach(function(p){p.node.classList.add("enq","rel")});
+pick(outer.filter(function(p){return !p.node.classList.contains("enq")}),3).forEach(function(p){p.node.classList.add("enq","oth")});
+var crowd=document.getElementById("crowd"),side=document.getElementById("side"),btn=document.getElementById("btn"),res=document.getElementById("result");
+btn.addEventListener("click",function(){var on=btn.getAttribute("aria-pressed")!=="true";
+ btn.setAttribute("aria-pressed",on?"true":"false");btn.textContent=on?"Show everyone":"Who enquired?";
+ crowd.classList.toggle("reveal",on);side.classList.toggle("on",on);
+ res.textContent=on?"Mostly people who relate to you. Not only.":""});
 })();
 </script>
 </body>
