@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Package types - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 6 Pricing & Proposals: package types.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Package types: one-off vs monthly stacking */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero .eyebrow{margin-bottom:12px}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.pk{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.42fr);gap:clamp(16px,2.4vw,32px);padding-top:clamp(16px,2.4vh,28px);padding-bottom:6px;align-items:stretch}
+.types{display:flex;flex-direction:column;gap:10px}
+.ty{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;gap:2px;justify-content:center;flex:1;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
+.ty:hover{transform:translateY(-3px)}
+.ty h2{font-size:clamp(19px,1.9vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.12}
+.ty .tag{font-size:13px;font-weight:700;color:var(--slate);margin-top:2px}
+.ty.win{background:#FFF8F3;border:2px solid var(--gold)}
+.ty.win:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.ty.win .k,.ty.win .tag{color:var(--gold-soft)}
+.ty.later{opacity:.72}
+.badge{align-self:flex-start;background:var(--gold);color:#0A0A0A;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 10px;margin-bottom:6px}
+.add{border:2px dashed #D1D1D6;border-radius:16px;padding:10px 16px;font-size:14px;font-weight:700;color:var(--slate)}
+.add b{color:var(--gold-soft)}
+
+.chart{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:10px;box-shadow:0 20px 40px -32px rgba(0,0,0,.35);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.chart:hover{transform:translateY(-3px)}
+.ch-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.ch-top h2{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:4px}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.seg button#bM[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.seg button:hover{color:var(--ink)}
+.chart svg{width:100%;height:auto;display:block}
+.chart svg text{font-family:'Inter',Arial,sans-serif}
+.bar{transform-box:fill-box;transform-origin:50% 100%;transition:transform .7s cubic-bezier(.2,.8,.2,1),fill .4s ease}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.st{background:var(--card);border-radius:14px;padding:10px 14px;line-height:1.1}
+.st .n{display:block;font-size:clamp(26px,2.8vw,36px);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#3A3A3C;transition:color .4s ease}
+.st .s{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-top:4px}
+.chart.m .st .n{color:var(--gold-soft)}
+.say{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
+.say span{color:var(--gold-soft)}
+@media (max-width:900px){.pk{grid-template-columns:1fr}.types{order:2}}
+@media (max-width:560px){.chart svg text{font-size:19px}.chart svg text.yt{font-size:14px}.axg{display:none}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{padding:7px 12px;font-size:13px}.ty{padding:12px 16px}}
+@media (prefers-reduced-motion:reduce){.ty,.chart,.bar{transition:none}.ty:hover,.chart:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · Package types</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 3</p>
+<h1>Build on <span class="gold-t">monthly.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="pk">
+
+<div class="types">
+<div class="ty"><p class="k">One-off / annual</p><h2>Paid once. Start again.</h2></div>
+<div class="ty win"><span class="badge">Optimise for this</span><p class="k">Comprehensive monthly</p><h2>Paid every month. It stacks.</h2></div>
+<div class="ty later"><p class="k">Project / restructuring</p><h2>Bigger. Rarer.</h2><p class="tag">More likely later</p></div>
+<p class="add"><b>Add yours:</b> what goes in your monthly package</p>
+</div>
+
+<div class="chart" id="chart">
+<div class="ch-top">
+<div><p class="k">Win 1 client a month for a year</p><h2 id="cht">One-off: back to one.</h2></div>
+<div class="seg" role="group" aria-label="Package type"><button type="button" id="bO" aria-pressed="true">One-off</button><button type="button" id="bM" aria-pressed="false">Monthly</button></div>
+</div>
+<svg viewBox="0 0 600 250" role="img" aria-label="Clients paying you each month. One-off: one client pays each month. Monthly: paying clients stack from 1 to 12.">
+<g stroke="#EEEEF0" stroke-width="1">
+<line x1="40" y1="20" x2="590" y2="20"/><line x1="40" y1="80" x2="590" y2="80"/><line x1="40" y1="140" x2="590" y2="140"/>
+</g>
+<line x1="40" y1="200" x2="590" y2="200" stroke="#C7C7CC" stroke-width="1.5"/>
+<g font-size="11" font-weight="600" fill="#8E8E93" text-anchor="end" class="axg">
+<text x="32" y="24">12</text><text x="32" y="84">8</text><text x="32" y="144">4</text><text x="32" y="204">0</text>
+</g>
+<text class="yt" x="40" y="12" font-size="11" font-weight="700" fill="#6E6E73" letter-spacing="1">CLIENTS PAYING YOU</text>
+<g id="bars"></g>
+<g id="mlab" font-size="11" font-weight="600" fill="#8E8E93" text-anchor="middle"></g>
+<text x="315" y="242" font-size="11" font-weight="700" fill="#6E6E73" text-anchor="middle" letter-spacing="1">MONTH</text>
+</svg>
+<div class="stats">
+<div class="st"><span class="n" id="sA">1</span><span class="s">paying you in month 12</span></div>
+<div class="st"><span class="n" id="sB">12</span><span class="s">payments in year one</span></div>
+</div>
+<p class="say" id="say">Same work. <span>Every month you start again.</span></p>
+</div>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/our-fee-structure/" style="text-decoration:none">&larr; Our fee structure</a><a href="/start/start-with-your-minimum-fees/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Start with your minimum fees &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · Package types</div></footer>
+
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg",$=function(id){return document.getElementById(id)};
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var bars=$("bars"),mlab=$("mlab"),rects=[],x0=40,w=550,step=w/12,bw=step*0.62,base=200,unit=15;
+for(var i=0;i<12;i++){
+ var x=x0+i*step+(step-bw)/2,h=(i+1)*unit;
+ var r=document.createElementNS(NS,"rect");
+ r.setAttribute("x",x.toFixed(1));r.setAttribute("y",base-h);r.setAttribute("width",bw.toFixed(1));r.setAttribute("height",h);r.setAttribute("rx",5);r.setAttribute("class","bar");
+ bars.appendChild(r);rects.push(r);
+ var t=document.createElementNS(NS,"text");t.setAttribute("x",(x+bw/2).toFixed(1));t.setAttribute("y",218);t.textContent=i+1;mlab.appendChild(t);
+}
+function count(el,to){
+ var from=parseInt(el.textContent,10)||0;
+ if(RM||from===to){el.textContent=to;return}
+ var t0=null;(function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/700);el.textContent=Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(f)})(performance.now());
+}
+function show(m){
+ rects.forEach(function(r,i){var s=m?1:1/(i+1);r.style.transform="scaleY("+s+")";r.setAttribute("fill",m?"#F26B1D":"#AEAEB2");if(!RM&&m)r.style.transitionDelay=(i*45)+"ms";else r.style.transitionDelay="0ms"});
+ $("bO").setAttribute("aria-pressed",String(!m));$("bM").setAttribute("aria-pressed",String(m));
+ $("chart").classList.toggle("m",m);
+ $("cht").textContent=m?"Monthly: it stacks.":"One-off: back to one.";
+ $("say").innerHTML=m?"Same work. <span>Every client keeps paying.</span>":"Same work. <span>Every month you start again.</span>";
+ count($("sA"),m?12:1);count($("sB"),m?78:12);
+}
+$("bO").addEventListener("click",function(){show(false)});
+$("bM").addEventListener("click",function(){show(true)});
+show(false);
+})();
+</script>
+</body>
+</html>
