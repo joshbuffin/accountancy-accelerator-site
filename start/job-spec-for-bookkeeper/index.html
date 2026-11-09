@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Job spec for bookkeeper - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: the job spec for your bookkeeper.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Job spec: vague post vs clear spec */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:clamp(16px,2.4vh,26px);padding-bottom:12px}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.top h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.top h2 span{color:var(--gold-soft)}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:10px 20px;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.vs{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(16px,2.4vw,28px);align-items:stretch}
+.side{border-radius:var(--radius);padding:clamp(16px,1.8vw,22px);border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.side:hover{transform:translateY(-3px)}
+.side.ok{background:#FFF8F3;border-color:var(--gold)}
+.side.ok:hover{box-shadow:0 16px 32px -20px rgba(242,107,29,.5)}
+.side.ok .k{color:var(--gold-soft)}
+.side h3{font-size:clamp(18px,1.8vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:2px}
+.post{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center}
+.av{flex:none;width:38px;height:38px;border-radius:50%;background:#E5E5EA;display:grid;place-items:center}
+.post p{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.post small{display:block;font-size:12px;font-weight:600;color:var(--slate);margin-top:3px}
+.qs{display:flex;flex-wrap:wrap;gap:8px}
+.q{font-size:13.5px;font-weight:700;color:#3A3A3C;background:#fff;border:1px solid #D1D1D6;border-radius:999px;padding:6px 12px;transition:opacity .35s ease,color .35s ease,background-color .35s ease,border-color .35s ease}
+.q.gone{opacity:.45;text-decoration:line-through;background:transparent;border-color:var(--line);color:var(--slate)}
+.verdict{margin-top:auto;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em}
+.side.ok .verdict span{color:var(--gold-soft)}
+.doc{background:#fff;border:1px solid #F4C9AE;border-radius:16px;padding:6px 16px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:22px}
+.sec{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #F3F3F5;opacity:.28;transition:opacity .4s ease,transform .4s cubic-bezier(.2,.8,.2,1);transform:translateY(4px)}
+.sec:nth-child(3n){border-bottom:0}
+.sec.on{opacity:1;transform:none}
+.sec b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--card);color:var(--slate);font-size:12px;font-weight:800;display:grid;place-items:center;transition:background-color .3s ease,color .3s ease}
+.sec.on b{background:var(--gold);color:#fff}
+.sec h4{font-size:clamp(14px,1.3vw,16px);font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.sec span{display:block;font-size:12px;font-weight:600;color:var(--gold-soft);margin-top:2px}
+.bars{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.bars i{display:block;height:5px;border-radius:9px;background:#ECECEF}
+.bars i:nth-child(2){width:72%}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.add{border-style:dashed;border-color:var(--gold);background:#FFF8F3;color:var(--gold-soft)}
+@media (max-width:900px){.vs{grid-template-columns:1fr}}
+@media (max-width:560px){.top{align-items:flex-start}.top h2{font-size:19px}.play{padding:9px 14px;font-size:13px}.side{padding:14px;gap:10px;border-radius:18px}.doc{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;padding:2px 14px}.sec{padding:7px 0}.sec:nth-child(3){border-bottom:1px solid #F3F3F5}.bars{display:none}.q{font-size:12.5px;padding:5px 10px}.post{padding:10px 12px}.navtag{font-size:11px}.pnav{font-size:14px}.where{font-size:13px}}
+@media (prefers-reduced-motion:reduce){.side,.sec,.q{transition:none}.side:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Job spec for bookkeeper</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 10</p>
+<h1>Spell out the <span class="gold-t">job.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="top"><div><p class="k">Same job. Two posts.</p><h2>Every question answered <span>before they apply.</span></h2></div><button class="play" id="play" type="button">Write the spec</button></div>
+
+<div class="vs">
+<div class="side">
+<div><p class="k">Wrong way</p><h3>A vague post.</h3></div>
+<div class="post"><span class="av" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#AEAEB2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="#AEAEB2"/></svg></span><div><p>"Bookkeeper needed. Message me."</p><small>What they're left asking</small></div></div>
+<div class="qs" id="qs">
+<span class="q" data-i="0">What's the role?</span>
+<span class="q" data-i="1">What would I do?</span>
+<span class="q" data-i="2">Which software?</span>
+<span class="q" data-i="3">What hours?</span>
+<span class="q" data-i="4">How do we talk?</span>
+<span class="q" data-i="5">How do I apply?</span>
+</div>
+<p class="verdict">They guess.</p>
+</div>
+
+<div class="side ok">
+<div><p class="k">Right way</p><h3>A clear job spec.</h3></div>
+<div class="doc" id="doc">
+<div class="sec" data-i="0"><b>1</b><div><h4>The role</h4><span>Bookkeeper</span><div class="bars"><i></i><i></i></div></div></div>
+<div class="sec" data-i="1"><b>2</b><div><h4>The tasks</h4><span>Week to week</span><div class="bars"><i></i><i></i></div></div></div>
+<div class="sec" data-i="2"><b>3</b><div><h4>Software</h4><span>Your stack</span><div class="bars"><i></i><i></i></div></div></div>
+<div class="sec" data-i="3"><b>4</b><div><h4>Hours</h4><span>Part-time to start · time zone</span><div class="bars"><i></i><i></i></div></div></div>
+<div class="sec" data-i="4"><b>5</b><div><h4>How we work</h4><span>Slack</span><div class="bars"><i></i><i></i></div></div></div>
+<div class="sec" data-i="5"><b>6</b><div><h4>How to apply</h4><span>Skill test + video</span><div class="bars"><i></i><i></i></div></div></div>
+</div>
+<p class="verdict">They <span>know.</span></p>
+</div>
+</div>
+
+<div class="where"><span class="k">Add yours</span><span class="chip add">Link to the job spec</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/paying-overseas/" style="text-decoration:none">&larr; Paying overseas (Wise)</a><a href="/start/skills-test-and-video/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Skills test &amp; video &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Job spec for bookkeeper</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var btn=document.getElementById("play"),timers=[];
+var secs=[].slice.call(document.querySelectorAll(".sec")),qs=[].slice.call(document.querySelectorAll(".q"));
+function find(list,i){for(var n=0;n<list.length;n++)if(list[n].getAttribute("data-i")==i)return list[n]}
+function reset(){timers.forEach(clearTimeout);timers=[];secs.forEach(function(s){s.classList.remove("on")});qs.forEach(function(q){q.classList.remove("gone")})}
+function show(i){find(secs,i).classList.add("on");find(qs,i).classList.add("gone")}
+function done(){btn.disabled=false;btn.textContent="Replay"}
+function play(){reset();if(RM){for(var i=0;i<6;i++)show(i);done();return}btn.disabled=true;
+ for(var j=0;j<6;j++)(function(j){timers.push(setTimeout(function(){show(j);if(j==5)done()},300+j*650))})(j);
+}
+btn.addEventListener("click",play);
+})();
+</script>
+</body>
+</html>
