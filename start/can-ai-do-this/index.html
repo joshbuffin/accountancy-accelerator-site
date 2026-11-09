@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Can AI do this? - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: before you hire for a task, ask whether AI can do it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Can AI do this?: tasks pass through one question before anyone is hired */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:clamp(18px,2.6vh,30px);padding-bottom:12px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+
+.flow{display:grid;min-height:390px;grid-template-columns:minmax(0,.9fr) auto minmax(0,1.5fr);gap:clamp(16px,2.4vw,34px);align-items:stretch}
+.col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.col:hover,.lane:hover{transform:translateY(-3px)}
+.col h2,.lane h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.stack{display:flex;flex-direction:column;gap:8px;min-height:40px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 14px;font-size:15px;font-weight:700;letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:baseline;gap:10px;will-change:transform}
+.chip small{font-size:12px;font-weight:600;color:var(--slate);display:none;white-space:nowrap}
+.sorted .chip small{display:inline}
+.lane.ai .chip{border-color:#F7C3A3}
+.lane.ai .chip small{color:var(--gold-soft)}
+
+.gate{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative}
+.gate::before,.gate::after{content:"";position:absolute;top:50%;height:2px;width:clamp(16px,2.4vw,34px);background:#D1D1D6}
+.gate::before{right:100%}
+.gate::after{left:100%;background:var(--gold)}
+.q{width:clamp(150px,13vw,180px);aspect-ratio:1;border-radius:50%;background:var(--gold);color:#0A0A0A;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;box-shadow:0 18px 40px -22px rgba(242,107,29,.9);transition:transform .3s ease,box-shadow .3s ease}
+.q svg{margin-bottom:6px}
+.q b{font-size:clamp(19px,1.7vw,23px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.q.yes{transform:scale(1.06)}
+.q.no{transform:scale(1.06);background:#3A3A3C;color:#fff}
+.q.no svg path{stroke:#fff}
+.ans{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);min-height:20px}
+.first{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+
+.lanes{display:grid;grid-template-rows:1fr 1fr;gap:12px}
+.lane{border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.lane.ai{background:#FFF8F3;border:1px solid var(--gold)}
+.lane.ai:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.lane.hire{background:var(--card);border:1px solid var(--line)}
+.lh{display:flex;align-items:center;gap:10px}
+.ic{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
+.ai .ic{background:var(--gold)}
+.hire .ic{background:#fff;border:1.5px solid #8E8E93}
+.ai .k{color:var(--gold-soft)}
+.lane .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-height:44px}
+.lane .chip{font-size:14px;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px;white-space:nowrap}
+
+.end{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 20px;padding:16px 0 4px}
+.give{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
+.give span{color:var(--gold-soft)}
+.you{border:2px dashed rgba(0,0,0,.3);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700}
+
+@media (max-width:900px){
+ .flow{grid-template-columns:1fr;min-height:0}
+ .gate::before,.gate::after{left:50%;right:auto;width:2px;height:12px;top:auto;transform:translateX(-50%)}
+ .gate::before{bottom:100%;top:auto}
+ .gate::after{top:100%}
+ .gate{flex-direction:row;gap:14px}
+ .q{width:auto;aspect-ratio:auto;border-radius:999px;flex-direction:row;gap:8px;padding:12px 20px}
+ .q svg{margin:0}
+ .col .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .col .stack .chip{font-size:13px;padding:8px 10px}
+ .lanes{grid-template-rows:auto}
+}
+@media (max-width:560px){
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .hero h1{font-size:36px}
+ .eyebrow{margin-bottom:10px;font-size:12px}
+ .bar{padding-top:14px;padding-bottom:10px}
+ .col,.lane{padding:12px;gap:8px}
+ .flow{gap:14px}
+ .col .stack,.lane .stack{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .chip,.lane .chip,.col .stack .chip{font-size:13px;padding:7px 10px}
+ .gate{flex-direction:column;gap:4px}
+ .ans{min-height:0}
+ .lane .ic{width:30px;height:30px}
+}
+@media (prefers-reduced-motion:reduce){.col,.lane,.q,.play{transition:none}.col:hover,.lane:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Can AI do this?</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 2</p>
+<h1>Ask AI <span class="gold-t">before you hire.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="bar"><p class="k">Every task goes through one question</p><button class="play" id="play" type="button">Run the check</button></div>
+
+<div class="flow" id="flow">
+<div class="col">
+<p class="k">Your tasks</p>
+<h2>On your plate.</h2>
+<div class="stack" id="todo">
+<div class="chip" data-ai="1">Meeting notes<small>Granola</small></div>
+<div class="chip" data-ai="0">Bookkeeping<small>Philippines bookkeeper</small></div>
+<div class="chip" data-ai="1">Proposals<small>AI proposal tool</small></div>
+<div class="chip" data-ai="0">Payroll<small>Outsource</small></div>
+<div class="chip" data-ai="1">Client chasing<small>AI onboarding tool</small></div>
+<div class="chip" data-ai="0">Video editing<small>Editor</small></div>
+</div>
+</div>
+
+<div class="gate">
+<p class="first">Ask first</p>
+<div class="q" id="q"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2" fill="none" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/></svg><b>Can AI do this?</b></div>
+<p class="ans" id="ans" aria-live="polite"></p>
+</div>
+
+<div class="lanes">
+<div class="lane ai">
+<div class="lh"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0A0A0A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="k">Yes</p><h2>Let AI do it.</h2></div></div>
+<div class="stack sorted" id="laneAI"></div>
+</div>
+<div class="lane hire">
+<div class="lh"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6" fill="none" stroke="#3A3A3C" stroke-width="2.2"/><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.3 1.8 7.5 5.4" fill="none" stroke="#3A3A3C" stroke-width="2.2" stroke-linecap="round"/></svg></span><div><p class="k">No</p><h2>Then hire for it. Part-time first.</h2></div></div>
+<div class="stack sorted" id="laneHire"></div>
+</div>
+</div>
+</div>
+
+<div class="end"><p class="give">AI first. <span>Hire for the rest.</span></p><p class="you">Add yours: the tasks AI already does for you</p></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/look-after-your-team/" style="text-decoration:none">&larr; Look after your team</a><a href="/start/understanding-your-value/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Understanding your value &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Can AI do this?</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var todo=$("todo"),ai=$("laneAI"),hire=$("laneHire"),q=$("q"),ans=$("ans"),btn=$("play"),timers=[];
+var chips=[].slice.call(todo.children);
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+function flip(c,dest){
+ var a=c.getBoundingClientRect();dest.appendChild(c);
+ if(RM)return;
+ var b=c.getBoundingClientRect();
+ c.style.transition="none";c.style.transform="translate("+(a.left-b.left)+"px,"+(a.top-b.top)+"px)";
+ c.getBoundingClientRect();
+ c.style.transition="transform .7s cubic-bezier(.2,.8,.2,1)";c.style.transform="";
+}
+function mark(yes){q.className="q "+(yes?"yes":"no");ans.textContent=yes?"Yes":"No"}
+function reset(){timers.forEach(clearTimeout);timers=[];chips.forEach(function(c){c.style.transition="none";c.style.transform="";todo.appendChild(c)});q.className="q";ans.textContent=""}
+function endState(){reset();chips.forEach(function(c){(c.dataset.ai==="1"?ai:hire).appendChild(c)});btn.disabled=false;btn.textContent="Replay"}
+function play(){
+ if(RM){endState();return}
+ reset();btn.disabled=true;
+ chips.forEach(function(c,i){later(function(){var y=c.dataset.ai==="1";mark(y);flip(c,y?ai:hire)},300+i*900)});
+ later(function(){q.className="q";ans.textContent="";btn.disabled=false;btn.textContent="Replay"},300+chips.length*900+400);
+}
+btn.addEventListener("click",play);
+})();
+</script>
+</body>
+</html>
