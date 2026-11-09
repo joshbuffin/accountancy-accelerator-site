@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Granola - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: Granola, AI meeting notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Granola: where it sits in the client journey */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(18px,2.6vh,28px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.2vw,26px)}
+.shead{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease;white-space:nowrap}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+
+.journey{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:16px;position:relative}
+.journey::before{content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;background:var(--line);z-index:0}
+.st{position:relative;z-index:1;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 10px 12px;text-align:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease,background-color .3s ease}
+.st:hover{transform:translateY(-3px)}
+.ic{width:44px;height:44px;border-radius:50%;margin:0 auto 8px;display:grid;place-items:center;background:var(--card);color:#3A3A3C}
+.ic svg{width:22px;height:22px}
+.st h3{font-size:clamp(13px,1.35vw,17px);font-weight:700;letter-spacing:-.015em;line-height:1.15}
+.tag{display:inline-block;margin-top:7px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:999px;padding:3px 9px;color:var(--slate);background:var(--card)}
+.st.on{border-color:var(--gold);background:#FFF8F3}
+.st.on .ic{background:var(--gold);color:#fff}
+.st.on .tag{background:var(--gold);color:#fff}
+.st.on:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.st.live{box-shadow:0 0 0 4px rgba(242,107,29,.22)}
+.st.lit{border-color:var(--gold);background:#FFF8F3}
+.st.lit .ic{background:#fff;color:var(--gold-soft);box-shadow:inset 0 0 0 2px var(--gold)}
+.st.lit .tag{background:#fff;color:var(--gold-soft);box-shadow:inset 0 0 0 1px var(--gold)}
+
+.flow{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1.25fr);gap:12px;align-items:stretch;margin-top:16px}
+.pane{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.pane:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(0,0,0,.35)}
+.pane h2{font-size:clamp(18px,1.9vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.15;margin-top:4px}
+.wave{display:flex;align-items:center;gap:5px;height:64px;margin-top:10px}
+.wave i{flex:1;max-width:9px;border-radius:9px;background:#C7C7CC;height:10%;transition:height .25s ease,background-color .3s ease}
+.call.playing .wave i{background:var(--gold)}
+.who{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.who span{font-size:13px;font-weight:700;border-radius:999px;padding:5px 12px;background:var(--card)}
+.who span.me{background:#FFF1E8;color:var(--gold-soft)}
+.arrow{display:grid;place-items:center;color:var(--gold)}
+.arrow svg{width:40px;height:40px}
+.notes .rows{list-style:none;margin-top:10px;display:grid;gap:8px}
+.notes li{display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.35vw,16px);font-weight:700;color:#AEAEB2;transition:color .3s ease}
+.notes li b{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid #D1D1D6;display:grid;place-items:center;transition:background-color .3s ease,border-color .3s ease}
+.notes li b svg{width:12px;height:12px;opacity:0;transition:opacity .3s ease}
+.notes li .bar{flex:1;height:8px;border-radius:9px;background:var(--card);overflow:hidden}
+.notes li .bar i{display:block;height:100%;width:0;background:#FBD3BC;border-radius:9px;transition:width .5s ease}
+.notes li.done{color:var(--ink)}
+.notes li.done b{background:var(--gold);border-color:var(--gold)}
+.notes li.done b svg{opacity:1}
+.notes li.done .bar i{width:100%}
+
+.punch{margin-top:16px;font-size:clamp(20px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+.punch span{color:var(--gold-soft)}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+a.chip:hover{transform:translateY(-2px);border-color:var(--gold)}
+.chip.now{background:var(--gold);border-color:var(--gold);color:#fff}
+.chip.add{background:#fff;border:2px dashed #C7C7CC}
+
+@media (max-width:760px){.flow{grid-template-columns:1fr}.arrow{display:none}.wave{height:44px}}
+@media (max-width:560px){
+.navtag{font-size:11px}.pnav{font-size:14px}
+.journey{gap:5px}.journey::before{top:26px}
+.st{padding:8px 2px;border-radius:12px}
+.ic{width:34px;height:34px;margin-bottom:5px}.ic svg{width:17px;height:17px}
+.st h3{font-size:10.5px;letter-spacing:-.02em}
+.tag{font-size:8.5px;padding:2px 4px;letter-spacing:0;white-space:nowrap}.st.lit .tag{white-space:normal}.dk{display:none}.st h3{min-height:2.3em;display:grid;place-items:center}
+.pane{padding:12px 14px}
+.shead .k{font-size:10px}
+.play{padding:8px 14px;font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.st,.pane,.chip,.wave i,.notes li,.notes li b,.notes li .bar i{transition:none}.st:hover,.pane:hover,a.chip:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Granola</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 7</p>
+<h1>You talk. Granola <span class="gold-t">takes the notes.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="stage" aria-label="Where Granola sits in your client journey">
+<div class="shead"><p class="k">Where Granola sits in your client journey</p><button class="play" id="play" type="button">&#9654; Play a sales call</button></div>
+
+<ol class="journey">
+<li class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>Lead</h3><span class="tag">Before</span></li>
+<li class="st on" id="sSales"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3>Sales call</h3><span class="tag">Granola on</span></li>
+<li class="st" id="sProp"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div><h3>Proposal</h3><span class="tag" id="propTag">After</span></li>
+<li class="st on"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3>Onboarding<span class="dk"> call</span></h3><span class="tag">Granola on</span></li>
+<li class="st on"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div><h3>Client calls</h3><span class="tag">Granola on</span></li>
+</ol>
+
+<div class="flow">
+<div class="pane call" id="call">
+<p class="k">The call</p>
+<h2>Eyes on the client.</h2>
+<div class="wave" id="wave" aria-hidden="true"></div>
+<div class="who"><span>Client: talking</span><span class="me">You: listening</span></div>
+</div>
+<div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></div>
+<div class="pane notes">
+<p class="k">Your notes, written for you</p>
+<h2>Ready when you hang up.</h2>
+<ul class="rows" id="rows">
+<li><b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg></b>Their situation<span class="bar"><i></i></span></li>
+<li><b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg></b>What they need<span class="bar"><i></i></span></li>
+<li><b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg></b>Next steps<span class="bar"><i></i></span></li>
+</ul>
+</div>
+</div>
+
+<p class="punch">Notes done. <span id="punchEnd">Straight to the proposal.</span></p>
+</section>
+
+<div class="where"><span class="k">When</span><span class="chip now">Now: from your first sales call</span><a class="chip" href="/start/recording-your-meetings/">How I use it: Recording your meetings &rarr;</a><span class="chip add">Add yours: your Granola set-up</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/adobesign/" style="text-decoration:none">&larr; AdobeSign</a><a href="/start/slack/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Slack (when you hire your first team member) &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Granola</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var wave=$("wave"),btn=$("play"),call=$("call"),sales=$("sSales"),prop=$("sProp"),propTag=$("propTag");
+var rows=[].slice.call($("rows").children),bars=[],timers=[],waveT=null,N=26;
+for(var i=0;i<N;i++){var b=document.createElement("i");wave.appendChild(b);bars.push(b)}
+function later(fn,ms){timers.push(setTimeout(fn,RM?0:ms))}
+function still(){bars.forEach(function(b,i){b.style.height=(18+28*Math.abs(Math.sin(i*0.7)))+"%"})}
+function animateWave(){bars.forEach(function(b){b.style.height=(14+Math.random()*86)+"%"})}
+function reset(){timers.forEach(clearTimeout);timers=[];clearInterval(waveT);call.classList.remove("playing");sales.classList.remove("live");prop.classList.remove("lit");propTag.textContent="After";rows.forEach(function(r){r.classList.remove("done")});still()}
+function endState(){reset();rows.forEach(function(r){r.classList.add("done")});prop.classList.add("lit");propTag.textContent="From your notes";btn.disabled=false;btn.innerHTML="&#8635; Replay"}
+function play(){if(RM){endState();return}reset();btn.disabled=true;call.classList.add("playing");sales.classList.add("live");animateWave();waveT=setInterval(animateWave,260);
+ rows.forEach(function(r,i){later(function(){r.classList.add("done")},1100+i*900)});
+ later(function(){clearInterval(waveT);call.classList.remove("playing");sales.classList.remove("live");still();prop.classList.add("lit");propTag.textContent="From your notes";btn.disabled=false;btn.innerHTML="&#8635; Replay"},1100+rows.length*900+300);
+}
+btn.addEventListener("click",play);
+if(RM||location.hash==="#end")endState();else still();
+})();
+</script>
+</body>
+</html>
