@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Understanding your value - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: understanding your value.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Understanding your value: draw the line at your hour */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.uv{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-top:clamp(18px,2.6vh,30px);padding-bottom:6px}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.side{display:flex;flex-direction:column;gap:12px}
+.val{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;gap:12px}
+.val .k{color:#3A2A1E}
+.val h2{font-size:clamp(24px,2.5vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.rate{display:flex;align-items:center;gap:6px;background:#fff;border-radius:16px;padding:10px 14px;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.02em}
+.rate input{font:inherit;width:3.6em;border:0;border-bottom:2px dashed var(--gold);background:transparent;color:var(--gold-soft);text-align:center;padding:0 2px;outline:none;-moz-appearance:textfield}
+.rate input::-webkit-outer-spin-button,.rate input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.rate input:focus{border-bottom-style:solid}
+.rate small{font-size:14px;font-weight:700;color:var(--slate)}
+.play{font:inherit;font-size:15px;font-weight:700;color:#fff;background:#111;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;align-self:flex-start;box-shadow:0 10px 22px -12px rgba(0,0,0,.6);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:#2A2A2A}
+.myth{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.myth:hover{transform:translateY(-3px)}
+.myth h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:4px}
+.myth h3 s{display:block;color:var(--slate);font-weight:700;text-decoration-color:var(--gold);text-decoration-thickness:2px}
+.myth h3 span{color:var(--gold-soft)}
+.add{border:2px dashed #D4D4D8;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--slate);align-self:flex-start}
+.board{justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px);display:flex;flex-direction:column;gap:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.board:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(0,0,0,.35)}
+.zone{flex:1;display:flex;flex-direction:column;gap:10px;padding:10px 0;min-height:clamp(118px,15vh,150px)}
+.zh{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.zh h2{font-size:clamp(18px,1.8vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.zh .cnt{font-size:13px;font-weight:700;color:var(--slate);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pills{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;min-height:44px}
+.pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:clamp(13px,1.15vw,15px);font-weight:700;line-height:1.1;will-change:transform}
+.pill svg{flex:none;width:16px;height:16px}
+.pill.hi{background:#FFF1E8;border-color:var(--gold);color:#7C2D12}
+.pill.lo{color:#3A3A3C}
+.board.drawn .pill.lo{background:#fff;color:var(--slate);border-style:dashed}
+.board.drawn .pill.hi{background:var(--gold);color:#0A0A0A;border-color:var(--gold)}
+.pill a{color:inherit;text-decoration:none}
+.empty{border:2px dashed #D4D4D8;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:#A1A1AA}
+.line{position:relative;height:30px;display:flex;align-items:center}
+.line::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;margin-top:-1.5px;background:repeating-linear-gradient(90deg,#C7C7CC 0 10px,transparent 10px 18px);border-radius:2px;transition:background .5s ease}
+.board.drawn .line::before{background:var(--gold)}
+.line b{position:relative;margin:0 auto;background:#fff;border:2px solid #C7C7CC;border-radius:999px;padding:4px 14px;font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--slate);transition:border-color .5s ease,color .5s ease}
+.board.drawn .line b{border-color:var(--gold);color:var(--gold-soft)}
+.zone.below .zh h2{color:var(--slate)}
+.board.drawn .zone.below .zh h2{color:var(--ink)}
+.tag{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-right:6px}
+.next{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.next a{color:var(--gold-soft);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .2s ease}
+.next a:hover{transform:translateY(-2px)}
+@media (max-width:900px){.uv{grid-template-columns:1fr}.side{order:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.pill{padding:7px 11px}.zone{min-height:0}}
+@media (prefers-reduced-motion:reduce){.board,.myth,.play,.next a{transition:none}.board:hover,.myth:hover,.next a:hover{transform:none}.line::before,.line b{transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Understanding your value</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 3</p>
+<h1>Know what your hour is <span class="gold-t">worth.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="uv">
+
+<div class="side">
+<div class="val">
+<p class="k">Step 1 - Your number</p>
+<h2>My time is worth</h2>
+<label class="rate">£<input id="rate" type="number" inputmode="numeric" min="1" step="1" placeholder="X" aria-label="Your hourly value in pounds"><small>an hour</small></label>
+<button class="play" id="draw" type="button">Draw the line</button>
+</div>
+<div class="myth">
+<p class="k">The mistake</p>
+<h3><s>"I'm too small to outsource."</s> <span>You're too busy not to.</span></h3>
+</div>
+<p class="add">Add yours: what Josh's hour is worth</p>
+</div>
+
+<div class="board" id="board">
+<div class="zone above">
+<div class="zh"><h2 id="hA">On you: everything.</h2><span class="cnt" id="cA">9 jobs</span></div>
+<div class="pills" id="pA">
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>Bookkeeping</span>
+<span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Sales calls</span>
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/><path d="M9 11h6M9 15h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Invoice chasing</span>
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M8 12h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><a href="/start/outsourcing-your-life/">Meal prep</a></span>
+<span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="2.2" fill="none"/><circle cx="16" cy="11" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>Client relationships</span>
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M4 10h16M9 3v4M15 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Payroll</span>
+<span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Tax planning</span>
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M16 10l5-3v10l-5-3" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Video editing</span>
+<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Onboarding admin</span>
+<span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Reviewing the work</span>
+</div>
+</div>
+<div class="line"><b id="lineLbl">Your hour: £X</b></div>
+<div class="zone below">
+<div class="zh"><h2 id="hB">Outsourced: nothing.</h2><span class="cnt" id="cB">0 jobs</span></div>
+<div class="pills" id="pB"><span class="empty" id="empty">Still all on you</span></div>
+</div>
+</div>
+
+</div>
+<div class="next"><span class="k">Below the line?</span><a href="/start/outsourcing-your-life/">Start with your life &rarr;</a></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/can-ai-do-this/" style="text-decoration:none">&larr; Can AI do this?</a><a href="/start/when-to-hire-a-bookkeeper/" style="text-decoration:none;color:var(--gold-soft);text-align:right">When should you hire a bookkeeper and admin assistant? &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Understanding your value</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var board=$("board"),pA=$("pA"),pB=$("pB"),btn=$("draw"),rate=$("rate"),lbl=$("lineLbl"),empty=$("empty");
+var pills=[].slice.call(pA.querySelectorAll(".pill")),order=pills.slice(),drawn=false;
+var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+function label(){var v=parseFloat(rate.value);lbl.textContent="Your hour: "+(v>0?gbp.format(v):"£X")}
+function counts(){var a=pA.querySelectorAll(".pill").length,b=pB.querySelectorAll(".pill").length;
+ $("cA").textContent=a+(a==1?" job":" jobs");$("cB").textContent=b+(b==1?" job":" jobs");
+ $("hA").textContent=drawn?"Above your hour: you.":"On you: everything.";
+ $("hB").textContent=drawn?"Below your hour: outsource it.":"Outsourced: nothing.";
+ empty.style.display=b?"none":""}
+function flip(change){
+ var first=pills.map(function(p){return p.getBoundingClientRect()});
+ change();
+ if(RM)return;
+ pills.forEach(function(p,i){var r=p.getBoundingClientRect(),dx=first[i].left-r.left,dy=first[i].top-r.top;
+  if(!dx&&!dy)return;
+  p.style.transition="none";p.style.transform="translate("+dx+"px,"+dy+"px)";
+  p.getBoundingClientRect();
+  p.style.transition="transform .75s cubic-bezier(.2,.8,.2,1) "+(i*45)+"ms";p.style.transform="";
+ });
+}
+function toggle(){
+ flip(function(){
+  drawn=!drawn;board.classList.toggle("drawn",drawn);
+  if(drawn){pills.forEach(function(p){(p.getAttribute("data-z")=="hi"?pA:pB).appendChild(p)})}
+  else{order.forEach(function(p){pA.appendChild(p)})}
+  counts();
+ });
+ btn.textContent=drawn?"Reset":"Draw the line";
+}
+btn.addEventListener("click",toggle);
+rate.addEventListener("input",label);
+label();counts();
+})();
+</script>
+</body>
+</html>
