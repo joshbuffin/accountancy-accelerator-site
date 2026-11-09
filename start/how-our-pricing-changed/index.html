@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How our pricing changed over time - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 6 Pricing &amp; Proposals: how our pricing changed over time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* How our pricing changed: one client's fee, step by step */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{margin-top:clamp(18px,2.6vh,30px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.2vw,26px) clamp(16px,2.4vw,30px) clamp(14px,2vw,22px)}
+.sh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.btns{display:flex;gap:8px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.ghost{font:inherit;font-size:14px;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer;transition:transform .2s ease,border-color .2s ease}
+.ghost:hover{transform:translateY(-1px);border-color:var(--gold)}
+.chart{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.6vw,22px);height:clamp(230px,34vh,320px);margin-top:14px;border-bottom:2px solid #D1D1D6}
+.col{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;min-width:0}
+.val{text-align:center;font-size:clamp(17px,2.4vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease}
+.val small{display:block;font-size:clamp(10px,.95vw,12px);font-weight:700;letter-spacing:0;color:var(--slate);margin-top:4px}
+.bar{height:0;border-radius:12px 12px 0 0;background:#C7C7CC;transition:height .8s cubic-bezier(.2,.8,.2,1),background-color .4s ease,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.col.on .val{opacity:1;transform:none}
+.col.on .bar:hover{transform:translateY(-3px)}
+.col.now .bar{background:var(--gold);box-shadow:0 14px 30px -16px rgba(242,107,29,.6)}
+.col.now .val{color:var(--gold-soft)}
+.up{position:absolute;left:50%;transform:translate(-50%,6px);top:-6px;white-space:nowrap;background:#FFF8F3;border:1px solid var(--gold);color:var(--gold-soft);border-radius:999px;padding:5px 12px;font-size:clamp(11px,1.1vw,14px);font-weight:800;opacity:0;transition:opacity .4s ease .5s,transform .4s ease .5s}
+.col.on .up{opacity:1;transform:translate(-50%,0)}
+.yours .bar{background:transparent;border:2px dashed #AEAEB2;border-bottom:0;height:0}
+.yours.on .bar{border-color:var(--gold)}
+.yours .val{opacity:1;transform:none;color:var(--slate)}
+.yours.set .val{color:var(--gold-soft)}
+.inp{display:flex;align-items:center;justify-content:center;gap:2px;margin:0 auto 8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 10px;width:min(100%,120px);font-size:15px;font-weight:800;transition:border-color .2s ease}
+.inp:focus-within{border-color:var(--gold)}
+.inp input{font:inherit;border:0;outline:0;width:100%;min-width:0;background:transparent;color:var(--ink);font-variant-numeric:tabular-nums}
+.labels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(8px,1.6vw,22px);margin-top:10px}
+.lb{min-width:0;text-align:center;transition:opacity .4s ease}
+.lb h2{font-size:clamp(12px,1.35vw,17px);font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.lb .k{font-size:clamp(9px,.85vw,11px);letter-spacing:.1em;display:block;margin-bottom:3px}
+.lb.off{opacity:.35}
+.lb.hl .k{color:var(--gold-soft)}
+.take{display:flex;justify-content:space-between;align-items:baseline;gap:12px 20px;flex-wrap:wrap;margin-top:clamp(12px,2vh,18px)}
+.take p{font-size:clamp(20px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.take p span{color:var(--gold-soft)}
+.year{font-size:clamp(13px,1.2vw,15px);font-weight:700;color:var(--slate);opacity:0;transition:opacity .4s ease}
+.year.on{opacity:1}
+.year b{color:var(--gold-soft)}
+@media (max-width:640px){.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:34px}.eyebrow{font-size:11px;margin-bottom:10px}.chart{height:240px}.val small{display:none}.up{padding:4px 8px}.inp{font-size:11px;padding:4px 5px}.lb h2{font-size:11.5px}.lb .k{font-size:8.5px;letter-spacing:.06em}.btns button{padding:8px 13px;font-size:13px}.bar{border-radius:8px 8px 0 0}}
+@media (prefers-reduced-motion:reduce){.bar,.val,.up,.lb,.year,.play,.ghost{transition:none}.col.on .bar:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · How our pricing changed over time</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 5</p>
+<h1>Our prices kept going <span class="gold-t">up.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="stage" aria-label="Our monthly fees over time">
+<div class="sh"><p class="k">Our monthly fees over time</p><div class="btns"><button class="ghost" id="all" type="button">Show all</button><button class="play" id="next" type="button">Next step</button></div></div>
+
+<div class="chart" id="chart">
+<div class="col" data-v="100"><div class="val">£100<small>minimum a month</small></div><div class="bar"></div></div>
+<div class="col" data-v="340"><div class="val">£340<small>a month</small></div><div class="bar"></div></div>
+<div class="col" data-v="1450"><div class="val">£1,450<small>a month</small></div><div class="bar"></div></div>
+<div class="col" data-v="2250"><span class="up">+£800 a month</span><div class="val">£2,250<small>a month</small></div><div class="bar"></div></div>
+<div class="col yours" id="yours"><label class="inp" for="yv">£<input id="yv" type="text" inputmode="numeric" placeholder="Yours" aria-label="Add yours: your fee today, per month"></label><div class="bar"></div></div>
+</div>
+
+<div class="labels" id="labels">
+<div class="lb"><span class="k">Josh's minimum fees</span><h2>Where we started</h2></div>
+<div class="lb"><span class="k">Year one</span><h2>Cafe client</h2></div>
+<div class="lb"><span class="k">Harrogate · 07/2023</span><h2>The client who changed everything</h2></div>
+<div class="lb hl"><span class="k">After fee increases</span><h2>Same client today</h2></div>
+<div class="lb hl"><span class="k">Add yours</span><h2>Your fee today</h2></div>
+</div>
+
+<div class="take"><p>Start at your minimum. <span>Then keep climbing.</span></p><p class="year" id="year">Same client: <b>+£9,600 a year</b></p></div>
+</section>
+</main>
+
+<div class="wrap pnav"><a href="/start/start-with-your-minimum-fees/" style="text-decoration:none">&larr; Start with your minimum fees</a><a href="/start/pricing-calculator/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Pricing calculator &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · How our pricing changed over time</div></footer>
+
+<script>
+(function(){
+var MAX=2400,STEPS=4;
+var cols=[].slice.call(document.querySelectorAll("#chart .col")),lbs=[].slice.call(document.querySelectorAll("#labels .lb"));
+var next=document.getElementById("next"),all=document.getElementById("all"),year=document.getElementById("year");
+var yours=document.getElementById("yours"),yv=document.getElementById("yv");
+var step=1;
+function pct(v){return Math.max(1.5,Math.min(100,v/MAX*100))*0.7+"%"}
+function render(){
+ for(var i=0;i<STEPS;i++){
+  var c=cols[i],on=i<step;
+  c.classList.toggle("on",on);
+  c.classList.toggle("now",on&&i===step-1);
+  c.querySelector(".bar").style.height=on?pct(+c.getAttribute("data-v")):"0";
+  lbs[i].classList.toggle("off",!on);
+ }
+ var done=step>=STEPS;
+ year.classList.toggle("on",done);
+ yours.classList.toggle("on",done);
+ lbs[4].classList.toggle("off",!done);
+ next.textContent=done?"Replay":"Next step";
+ drawYours();
+}
+function drawYours(){
+ var n=parseInt(String(yv.value).replace(/[^0-9]/g,""),10);
+ var b=yours.querySelector(".bar");
+ if(n>0){yours.classList.add("set");b.style.height=pct(n)}
+ else{yours.classList.remove("set");b.style.height=step>=STEPS?"24%":"0"}
+}
+yv.addEventListener("input",function(){
+ var n=parseInt(String(yv.value).replace(/[^0-9]/g,""),10);
+ yv.value=n>0?n.toLocaleString("en-GB"):"";
+ drawYours();
+});
+next.addEventListener("click",function(){step=step>=STEPS?1:step+1;render()});
+all.addEventListener("click",function(){step=STEPS;render()});
+if(location.hash==="#full")step=STEPS;
+requestAnimationFrame(render);
+})();
+</script>
+</body>
+</html>
