@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How to send proposals - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 6 Pricing &amp; Proposals: how to send proposals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* How to send proposals: long PDF vs simple email */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.vs{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(16px,2.4vw,32px);padding-top:clamp(18px,2.6vh,30px);align-items:stretch}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
+.cv:hover{transform:translateY(-3px)}
+.cv.pt{background:#FFF8F3;border-color:var(--gold)}
+.cv.pt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.cv.pt .k{color:var(--gold-soft)}
+.cv h2{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.cvt{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+
+/* Wrong way: PDF stack */
+.pdf{position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:200px}
+.pdf svg{width:100%;max-width:300px;height:auto;display:block}
+.pdf svg text{font-family:'Inter',Arial,sans-serif}
+.miss{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.miss span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:700;color:#6E6E73;text-decoration:line-through;text-decoration-color:#AEAEB2;text-decoration-thickness:2px}
+
+/* Right way: email */
+.mail{background:#fff;border:1px solid #F4D3BF;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -28px rgba(194,65,12,.5);transition:box-shadow .4s ease}
+.mbar{display:flex;align-items:center;gap:6px;padding:9px 14px;background:#FBEADF;border-bottom:1px solid #F4D3BF}
+.mbar i{width:9px;height:9px;border-radius:50%;background:#F4B48F;display:block}
+.mbar span{margin-left:8px;font-size:12px;font-weight:700;color:var(--gold-soft);letter-spacing:.04em}
+.mhead{padding:10px 16px 8px;border-bottom:1px solid var(--line);display:grid;gap:3px;font-size:14px}
+.mhead p{display:flex;gap:10px}
+.mhead b{width:58px;flex:none;color:var(--slate);font-weight:600}
+.mhead em{font-style:normal;font-weight:700}
+.rows{padding:6px 10px 8px}
+.row{display:flex;align-items:center;gap:12px;padding:8px 6px;border-radius:12px;transition:background-color .25s ease,transform .25s ease}
+.row:hover{background:#FFF3EA;transform:translateX(2px)}
+.num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#0A0A0A;font-size:14px;font-weight:800;display:grid;place-items:center}
+.row h3{font-size:clamp(16px,1.5vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.15;flex:1;min-width:0}
+.ph{flex:none;font-size:13px;font-weight:700;color:var(--gold-soft);border:1.5px dashed #F4B48F;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.mfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px 12px;border-top:1px solid var(--line)}
+.status{font-size:14px;font-weight:700;color:var(--slate)}
+.status strong{color:var(--gold-soft)}
+.send{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 20px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease;display:inline-flex;align-items:center;gap:8px}
+.send:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.send svg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.sent .send{background:#fff;color:var(--gold-soft);box-shadow:none;border:1.5px solid var(--gold)}
+.sent .send svg{transform:translate(4px,-4px)}
+.sent .mail{box-shadow:0 0 0 3px rgba(242,107,29,.35),0 18px 40px -28px rgba(194,65,12,.5)}
+.tpl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.o{background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
+
+@media (max-width:900px){.vs{grid-template-columns:1fr}.pdf{min-height:0}.pdf svg{max-width:240px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.wrap{padding:0 16px}.pnav{padding:16px}.cv{padding:14px}.mhead b{width:52px}.row{gap:10px;padding:7px 4px}.ph{font-size:12px;padding:3px 8px}.rows{padding:4px 6px 6px}.miss span{font-size:13px;padding:7px 10px}.pdf svg{max-width:150px}.row h3{font-size:15px}.mfoot{padding:10px 12px}}
+@media (prefers-reduced-motion:reduce){.cv,.row,.send,.send svg,.mail{transition:none}.cv:hover,.row:hover,.send:hover{transform:none}.sent .send svg{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · How to send proposals</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 8</p>
+<h1>Send it as a simple <span class="gold-t">email.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="vs" id="vs">
+
+<div class="cv">
+<div><p class="k">Wrong way</p><h2>A long PDF.</h2></div>
+<div class="pdf">
+<svg viewBox="0 0 300 200" role="img" aria-label="A thick stack of PDF pages">
+<rect x="96" y="14" width="124" height="160" rx="8" fill="#fff" stroke="#D1D1D6" stroke-width="2" transform="rotate(7 158 94)"/>
+<rect x="90" y="16" width="124" height="160" rx="8" fill="#fff" stroke="#D1D1D6" stroke-width="2" transform="rotate(3 152 96)"/>
+<rect x="84" y="18" width="124" height="160" rx="8" fill="#fff" stroke="#C7C7CC" stroke-width="2"/>
+<rect x="100" y="34" width="56" height="20" rx="5" fill="#AEAEB2"/>
+<text x="128" y="48" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">PDF</text>
+<g fill="#E5E5EA"><rect x="100" y="66" width="92" height="7" rx="3"/><rect x="100" y="80" width="84" height="7" rx="3"/><rect x="100" y="94" width="92" height="7" rx="3"/><rect x="100" y="108" width="70" height="7" rx="3"/><rect x="100" y="122" width="88" height="7" rx="3"/><rect x="100" y="136" width="92" height="7" rx="3"/><rect x="100" y="150" width="60" height="7" rx="3"/></g>
+<text x="146" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#8E8E93">Proposal_FINAL_v3.pdf</text>
+</svg>
+</div>
+<div class="miss" aria-label="What the PDF misses">
+<span>Pages to read</span><span>No start date</span><span>Everything bundled</span><span>No deposit</span>
+</div>
+</div>
+
+<div class="cv pt" id="right">
+<div class="cvt"><div><p class="k">Right way</p><h2>One short email.</h2></div></div>
+<div class="mail">
+<div class="mbar" aria-hidden="true"><i></i><i></i><i></i><span>New message</span></div>
+<div class="mhead">
+<p><b>To</b><em>[Client name]</em></p>
+<p><b>Subject</b><em>Your proposal</em></p>
+</div>
+<div class="rows">
+<div class="row"><span class="num">1</span><h3>Your start date</h3><span class="ph">[Date]</span></div>
+<div class="row"><span class="num">2</span><h3>Your monthly fee</h3><span class="ph">£[Add yours]</span></div>
+<div class="row"><span class="num">3</span><h3>Add-ons, priced separately</h3><span class="ph">Self-assessment · Payroll</span></div>
+<div class="row"><span class="num">4</span><h3>Pay the deposit to start</h3><span class="ph">[Link]</span></div>
+</div>
+<div class="mfoot">
+<p class="status" id="status" aria-live="polite">Ready to send.</p>
+<button class="send" id="send" type="button"><span id="sendt">Send</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 21 3l-7.5 18-2.6-7.4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></button>
+</div>
+</div>
+</div>
+
+</div>
+<div class="tpl"><span class="k">Do it once</span><span class="chip o">Save it as a Gmail template</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/always-take-a-deposit/" style="text-decoration:none">&larr; Always take a deposit</a><a href="/start/do-not-chase-your-proposals/" style="text-decoration:none;color:var(--gold-soft);text-align:right">DO NOT CHASE YOUR PROPOSALS &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · How to send proposals</div></footer>
+
+<script>
+(function(){
+var right=document.getElementById("right"),btn=document.getElementById("send"),t=document.getElementById("sendt"),st=document.getElementById("status");
+btn.addEventListener("click",function(){
+ var on=right.classList.toggle("sent");
+ t.textContent=on?"Sent":"Send";
+ st.innerHTML=on?"<strong>Sent.</strong> One chaser, 2 weeks later. Then stop.":"Ready to send.";
+});
+})();
+</script>
+</body>
+</html>
