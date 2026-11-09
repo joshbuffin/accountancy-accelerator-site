@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The fundamentals of the sales call - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 7 Sales: the fundamentals of the sales call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Fundamentals: who talks on the call */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.sc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-top:clamp(16px,2.4vh,28px);padding-bottom:6px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.pc:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(0,0,0,.35)}
+.pch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.tg button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer}
+.tg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.tg button.r[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.pie{display:flex;flex-direction:column;align-items:center;gap:10px}
+.pie svg{width:min(100%,370px);height:auto;display:block}
+.pie svg text{font-family:'Inter',Arial,sans-serif}
+#lbl{transition:opacity .25s ease}
+.verdict{text-align:center}
+.verdict h2{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08;transition:color .3s ease}
+.verdict h2 span{display:inline}
+.pc.right .verdict h2 span+span{color:var(--gold-soft)}
+.pc.wrong .verdict h2 span+span{color:#8E8E93}
+.side{display:flex;flex-direction:column;gap:12px}
+.hub{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.hub:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px rgba(242,107,29,.6)}
+.hub .k{color:#3A2A1E}
+.hub h2{font-size:clamp(24px,2.5vw,33px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.tile:hover{transform:translateY(-3px);border-color:var(--gold)}
+.tile .n{font-size:clamp(24px,2.4vw,30px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--gold-soft)}
+.tile .k{margin-top:4px;display:block}
+@media (max-width:900px){.sc{grid-template-columns:1fr}}
+@media (max-width:640px){.pie svg{max-width:340px}.pch{justify-content:center}.tg{width:100%}.tg button{flex:1;padding:8px 10px}.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:38px}}
+@media (prefers-reduced-motion:reduce){.pc,.hub,.tile,#lbl,.tg button{transition:none}.pc:hover,.hub:hover,.tile:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sales · The fundamentals of the sales call</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 7 - Sales · Video 1</p>
+<h1>Let them <span class="gold-t">talk.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="sc">
+
+<div class="pc wrong" id="pc">
+<div class="pch"><p class="k">Who talks on the call</p>
+<div class="tg" role="group" aria-label="Choose a sales call"><button type="button" id="bW" aria-pressed="true">The pitch</button><button type="button" class="r" id="bR" aria-pressed="false">The right way</button></div></div>
+<div class="pie">
+<svg viewBox="0 0 400 400" role="img" id="pieSvg" aria-label="The pitch: you talk 70% of the call, they talk 30%">
+<path id="sThem" fill="#F26B1D" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+<path id="sYou" fill="#3A3A3C" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+<g id="lbl"></g>
+</svg>
+<div class="verdict" aria-live="polite"><h2 id="vd"><span>You pitch.</span> <span>They switch off.</span></h2></div>
+</div>
+</div>
+
+<div class="side">
+<div class="hub">
+<p class="k">The golden question</p>
+<h2>"Tell me about your business and why you reached out today?"</h2>
+</div>
+<div class="tiles">
+<div class="tile"><p class="n">30 mins</p><span class="k">Every call</span></div>
+<div class="tile"><p class="n">Start date</p><span class="k">Agreed on the call</span></div>
+</div>
+</div>
+
+</div>
+</main>
+
+<div class="wrap pnav"><span></span><a href="/start/how-to-structure-your-sales-calls/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to structure your sales calls &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Sales · The fundamentals of the sales call</div></footer>
+
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg",RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var CX=200,CY=200,R=192,cur=0.3,raf=0,tm=0,tm2=0;
+var MODES={
+ wrong:{them:0.3,you:["You","70%","Pitching","Solving","Selling"],th:["Them","30%","Nodding"],v:["You pitch.","They switch off."],aria:"The pitch: you talk 70% of the call, they talk 30%"},
+ right:{them:0.7,you:["You","30%","Golden question","Empathise","Start date"],th:["Them","70%","Their business","Their pain","Their scope"],v:["They talk.","You find the pain."],aria:"The right way: they talk 70% of the call, you talk 30%"}
+};
+function pt(a,r){return [CX+r*Math.cos(a),CY+r*Math.sin(a)]}
+function arc(a0,a1){var p0=pt(a0,R),p1=pt(a1,R),lg=(a1-a0)>Math.PI?1:0;return "M"+CX+","+CY+" L"+p0[0].toFixed(2)+","+p0[1].toFixed(2)+" A"+R+","+R+" 0 "+lg+" 1 "+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" Z"}
+function draw(t){var top=-Math.PI/2,mid=top+t*2*Math.PI,end=top+2*Math.PI-0.0001;$("sThem").setAttribute("d",arc(top,mid));$("sYou").setAttribute("d",arc(mid,end))}
+function el(tag,at,txt){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);if(txt)e.textContent=txt;return e}
+function block(g,lines,t0,t1,big,ink,sub){
+ var a=-Math.PI/2+((t0+t1)/2)*2*Math.PI,rr=big?R*0.48:R*0.6,p=pt(a,rr);
+ var n=lines.length,lh=big?24:19,gap=big?42:34,h=gap+8+(n-2)*lh,y=p[1]-h/2+14;
+ g.appendChild(el("text",{x:p[0],y:y,"text-anchor":"middle","font-size":15,"font-weight":700,fill:sub,"letter-spacing":"1.5"},lines[0].toUpperCase()));
+ g.appendChild(el("text",{x:p[0],y:y+gap,"text-anchor":"middle","font-size":big?44:34,"font-weight":800,fill:ink,"letter-spacing":"-1.5"},lines[1]));
+ for(var i=2;i<n;i++)g.appendChild(el("text",{x:p[0],y:y+gap+(i-1)*lh+2,"text-anchor":"middle","font-size":big?19:14.5,"font-weight":700,fill:ink},lines[i]));
+}
+function labels(m){var g=$("lbl"),d=MODES[m];g.innerHTML="";var t=d.them;
+ block(g,d.th,0,t,t>0.5,"#0A0A0A","#3A2A1E");
+ block(g,d.you,t,1,t<0.5,"#FFFFFF","#C7C7CC");
+ $("pieSvg").setAttribute("aria-label",d.aria);
+ $("vd").innerHTML="<span>"+d.v[0]+"</span> <span>"+d.v[1]+"</span>";
+}
+function set(m){
+ var d=MODES[m],from=cur,to=d.them;
+ $("bW").setAttribute("aria-pressed",m==="wrong");$("bR").setAttribute("aria-pressed",m==="right");
+ $("pc").className="pc "+m;
+ cancelAnimationFrame(raf);clearTimeout(tm);clearTimeout(tm2);
+ if(RM||from===to){cur=to;draw(to);labels(m);$("lbl").style.opacity=1;return}
+ $("lbl").style.opacity=0;
+ var t0=null;function f(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;cur=from+(to-from)*e;draw(cur);if(p<1)raf=requestAnimationFrame(f);else done()}
+ function done(){cancelAnimationFrame(raf);clearTimeout(tm2);cur=to;draw(to);labels(m);$("lbl").style.opacity=1}
+ tm=setTimeout(function(){raf=requestAnimationFrame(f)},200);tm2=setTimeout(done,1500);
+}
+$("bW").addEventListener("click",function(){set("wrong")});
+$("bR").addEventListener("click",function(){set("right")});
+draw(cur);labels("wrong");
+})();
+</script>
+</body>
+</html>
