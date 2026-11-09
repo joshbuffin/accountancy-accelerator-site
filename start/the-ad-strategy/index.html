@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The ad strategy - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: the ad strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
+
+/* The ad strategy: optimise for booked calls, not cheap leads */
+.hero{padding-top:clamp(20px,3vh,36px)}
+.hero h1{font-size:clamp(36px,4.4vw,58px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.board{margin-top:clamp(16px,2.4vh,26px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);transition:background-color .4s ease,border-color .4s ease}
+.board.right{background:#FFF8F3;border-color:var(--gold)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:9px 16px;cursor:pointer;background:transparent;color:var(--slate);transition:background-color .25s ease,color .25s ease,transform .2s ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.board.right .seg button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.track{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.track .k{margin-right:2px}
+.pill{border-radius:999px;padding:6px 12px;background:#fff;border:1px solid var(--line)}
+.board.right .pill{border-color:var(--gold);color:var(--gold-soft)}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,380px);align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .3s ease}
+.row:hover{transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(0,0,0,.35)}
+.st{font-size:clamp(15px,1.4vw,18px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.bar{height:26px;border-radius:8px;background:var(--card);overflow:hidden;position:relative}
+.bar i{display:block;height:100%;border-radius:8px;background:#AEAEB2;transition:width .8s cubic-bezier(.2,.8,.2,1),background-color .4s ease}
+.board.right .bar i{background:var(--gold)}
+.tag{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#3A3A3C;background:#fff;border:1px solid var(--line);border-radius:999px;padding:2px 8px;opacity:0;transition:opacity .3s ease}
+.tag.on{opacity:1}
+.lv{font-size:clamp(14px,1.25vw,16px);font-weight:700;line-height:1.2;display:flex;align-items:center;gap:8px}
+.lv b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:#E5E5EA;color:#6E6E73}
+.board.right .lv b{background:var(--gold);color:#0A0A0A}
+.board:not(.right) .lv span{color:var(--slate)}
+.sum{margin-top:14px;font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.board.right .sum em{color:var(--gold-soft)}
+.sum em{font-style:normal}
+.lessons{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
+.lessons .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .3s ease}
+.chip:hover{transform:translateY(-2px)}
+.chip.sc{background:#fff;border-color:var(--gold);color:var(--gold-soft)}
+@media (max-width:900px){.row{grid-template-columns:110px minmax(0,1fr)}.lv{grid-column:1/-1}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{font-size:13px;padding:8px 12px}.row{grid-template-columns:96px minmax(0,1fr);gap:8px 10px;padding:8px 12px}.bar{height:22px}.lv{font-size:13px}.board{padding:14px}.lessons{gap:6px 6px;font-size:13px}.chip{padding:5px 11px}.lessons .k{flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){.row,.chip,.bar i,.board,.tag{transition:none}.row:hover,.chip:hover{transform:none;box-shadow:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · The ad strategy</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 18</p>
+<h1>Ads that book <span class="gold-t">calls.</span></h1>
+</header>
+
+<main class="wrap">
+<section class="board" id="board" aria-live="polite">
+<div class="top">
+<div class="seg" role="group" aria-label="What the ad is optimised for">
+<button type="button" id="bCheap" aria-pressed="true">Cheap leads</button>
+<button type="button" id="bCalls" aria-pressed="false">Booked calls</button>
+</div>
+<p class="track"><span class="k">You track</span><span class="pill" id="metric">Cost per lead</span></p>
+</div>
+
+<div class="rows">
+<div class="row"><p class="st">Video ad</p><div class="bar"><i data-a="100" data-b="100"></i></div><p class="lv"><b>1</b><span data-a="Pain-point topic" data-b="Holding companies, 7-figure founders">Pain-point topic</span></p></div>
+<div class="row"><p class="st">Lead</p><div class="bar"><i data-a="92" data-b="62"></i><span class="tag on" id="looks">Looks great</span></div><p class="lv"><b>2</b><span data-a="No questions asked" data-b="&ldquo;What are you looking for from this call?&rdquo;">No questions asked</span></p></div>
+<div class="row"><p class="st">Call booked</p><div class="bar"><i data-a="38" data-b="52"></i></div><p class="lv"><b>3</b><span data-a="Book any day, weeks out" data-b="Book 3-4 days ahead only">Book any day, weeks out</span></p></div>
+<div class="row"><p class="st">Call showed</p><div class="bar"><i data-a="16" data-b="44"></i></div><p class="lv"><b>4</b><span data-a="No reminder" data-b="Own email typed + WhatsApp reminder">No reminder</span></p></div>
+<div class="row"><p class="st">Client signed</p><div class="bar"><i data-a="5" data-b="30"></i></div><p class="lv"><b>5</b><span data-a="Price shoppers" data-b="Ongoing monthly support">Price shoppers</span></p></div>
+</div>
+
+<p class="sum" id="sum">Lots of leads. <em>Empty diary.</em></p>
+</section>
+
+<div class="lessons"><span class="k">Lessons we have learnt</span><span class="chip">Start with a hypothesis</span><span class="chip">Test one thing at a time</span><span class="chip">About £100 of data per version</span><span class="chip">5 different ad styles</span><span class="chip sc">More in Scale</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/research-task/" style="text-decoration:none">&larr; Research task</a><a href="/start/optimising-your-ads/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Optimising your ads &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · The ad strategy</div></footer>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var board=$("board"),bA=$("bCheap"),bB=$("bCalls");
+var bars=document.querySelectorAll(".bar i"),levers=document.querySelectorAll(".lv span");
+function set(right){
+ board.classList.toggle("right",right);
+ bA.setAttribute("aria-pressed",String(!right));bB.setAttribute("aria-pressed",String(right));
+ for(var i=0;i<bars.length;i++)bars[i].style.width=bars[i].getAttribute(right?"data-b":"data-a")+"%";
+ for(var j=0;j<levers.length;j++)levers[j].innerHTML=levers[j].getAttribute(right?"data-b":"data-a");
+ $("metric").textContent=right?"Cost per call that showed":"Cost per lead";
+ $("looks").classList.toggle("on",!right);
+ $("sum").innerHTML=right?"Fewer leads. <em>Calls that show up.</em>":"Lots of leads. <em>Empty diary.</em>";
+}
+bA.addEventListener("click",function(){set(false)});
+bB.addEventListener("click",function(){set(true)});
+set(false);
+})();
+</script>
+</body>
+</html>
