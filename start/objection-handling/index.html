@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Objection handling - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 7 Sales: objection handling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Objection handling: wrong way vs the 5 steps */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero .eyebrow{margin-bottom:12px}
+.hero h1{font-size:clamp(36px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.oh{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.5fr);gap:clamp(18px,2.6vw,34px);align-items:start;padding-top:clamp(16px,2.4vh,28px)}
+.side{display:flex;flex-direction:column;gap:12px}
+.bubble{position:relative;background:var(--ink);color:#fff;border-radius:20px 20px 20px 6px;padding:16px 20px;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.15;min-height:96px;display:flex;align-items:center;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.bubble:hover{transform:translateY(-3px)}
+.who{font-size:12px;font-weight:700;color:var(--slate);margin-top:-4px}
+.picks{display:flex;flex-direction:column;gap:8px}
+.pick{font:inherit;font-size:14px;font-weight:700;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;cursor:pointer;color:var(--ink);transition:transform .25s ease,border-color .25s ease,background-color .25s ease}
+.pick:hover{transform:translateY(-2px);border-color:#C7C7CC}
+.pick[aria-pressed="true"]{background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
+.you{border:2px dashed #C7C7CC;border-radius:14px;padding:10px 14px;font-size:14px;font-weight:700;color:var(--slate)}
+.you b{color:var(--gold-soft)}
+.board{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px)}
+.bhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.bhead h2{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em}
+.btns{display:flex;gap:8px;flex:none}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.ghost{font:inherit;font-size:14px;font-weight:700;color:var(--slate);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.ghost:hover{color:var(--ink)}
+.cols,.row{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1.15fr);gap:10px;align-items:center}
+.cols{margin-bottom:6px}
+.cols .k:last-child{color:var(--gold-soft)}
+.rows{display:flex;flex-direction:column;gap:7px}
+.wr{background:#fff;border:1px solid var(--line);border-radius:14px;padding:9px 14px;font-size:clamp(14px,1.3vw,16px);font-weight:700;color:#8E8E93;transition:opacity .35s ease}
+.row.on .wr{text-decoration:line-through;text-decoration-color:#AEAEB2;opacity:.75}
+.vs{font-size:11px;font-weight:800;color:#AEAEB2;text-align:center}
+.rt{display:flex;align-items:center;gap:12px;background:#fff;border:1px dashed #D1D1D6;border-radius:14px;padding:7px 12px;min-height:46px;transition:background-color .4s ease,border-color .4s ease,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.rt .n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;background:var(--line);color:#8E8E93;transition:background-color .4s ease,color .4s ease}
+.rt .t{display:flex;flex-direction:column;line-height:1.15;opacity:.18;transition:opacity .4s ease}
+.rt .t b{font-size:clamp(15px,1.45vw,18px);font-weight:800;letter-spacing:-.02em}
+.rt .t span{font-size:13px;font-weight:600;color:var(--muted)}
+.row.on .rt{background:#FFF8F3;border:1px solid var(--gold)}
+.row.on .rt:hover{transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(242,107,29,.55)}
+.row.on .rt .n{background:var(--gold);color:#0A0A0A}
+.row.on .rt .t{opacity:1}
+.row.on .rt .t b{color:var(--gold-soft)}
+.res{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1.15fr);gap:10px;margin-top:10px}
+.out{border-radius:14px;padding:10px 14px;font-size:clamp(14px,1.35vw,17px);font-weight:800;letter-spacing:-.015em;opacity:.2;transition:opacity .45s ease}
+.out.bad{background:#EDEDF0;color:#3A3A3C}
+.out.good{background:var(--gold);color:#0A0A0A}
+.board.done .out{opacity:1}
+@media (max-width:900px){.oh{grid-template-columns:1fr}.picks{flex-direction:row;flex-wrap:wrap}.bubble{min-height:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.cols,.row,.res{grid-template-columns:minmax(0,.8fr) 16px minmax(0,1.2fr);gap:6px}.wr{padding:8px 10px;font-size:13px}.rt{gap:8px;padding:6px 9px}.rt .n{width:24px;height:24px;font-size:12px}.rt .t span{font-size:12px}.out{padding:9px 10px;font-size:13px}.bhead{flex-wrap:wrap}.pick{font-size:13px;padding:8px 12px}.bubble{font-size:20px;padding:14px 16px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.bubble:hover,.pick:hover,.row.on .rt:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Sales · Objection handling</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 7 - Sales · Video 6</p>
+<h1>Don't argue. <span class="gold-t">Hand it back.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="oh">
+
+<div class="side">
+<p class="k">They say</p>
+<div class="bubble" id="bubble" aria-live="polite">"It's too expensive."</div>
+<div class="picks" role="group" aria-label="Pick an objection">
+<button class="pick" type="button" aria-pressed="true" data-q="&quot;It's too expensive.&quot;">Price</button>
+<button class="pick" type="button" aria-pressed="false" data-q="&quot;Let's wait till year-end.&quot;">Timing</button>
+<button class="pick" type="button" aria-pressed="false" data-q="&quot;I want my own access to Xero.&quot;">Xero access</button>
+</div>
+<p class="you"><b>Add yours:</b> Josh's objection answers bank</p>
+</div>
+
+<div class="board" id="board">
+<div class="bhead"><h2>Same 5 steps. Any objection.</h2><div class="btns"><button class="ghost" id="reset" type="button">Reset</button><button class="play" id="next" type="button">Next step</button></div></div>
+<div class="cols"><p class="k">Wrong way</p><span></span><p class="k">Right way</p></div>
+<div class="rows" id="rows">
+<div class="row"><div class="wr">Jump in</div><span class="vs">vs</span><div class="rt"><span class="n">1</span><span class="t"><b>Listen</b><span>Let them finish</span></span></div></div>
+<div class="row"><div class="wr">Get defensive</div><span class="vs">vs</span><div class="rt"><span class="n">2</span><span class="t"><b>Empathise</b><span>"That makes sense"</span></span></div></div>
+<div class="row"><div class="wr">Dodge it</div><span class="vs">vs</span><div class="rt"><span class="n">3</span><span class="t"><b>Handle</b><span>Answer it honestly</span></span></div></div>
+<div class="row"><div class="wr">"Trust me"</div><span class="vs">vs</span><div class="rt"><span class="n">4</span><span class="t"><b>Justify</b><span>A reason or a story</span></span></div></div>
+<div class="row"><div class="wr">Leave it hanging</div><span class="vs">vs</span><div class="rt"><span class="n">5</span><span class="t"><b>Progress</b><span>Ask a question</span></span></div></div>
+</div>
+<div class="res"><div class="out bad">Resistance goes up</div><span></span><div class="out good">They're back in control</div></div>
+</div>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/find-the-painpoint/" style="text-decoration:none">&larr; Find the painpoint</a><a href="/start/recording-your-meetings/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Recording your meetings &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Sales · Objection handling</div></footer>
+
+<script>
+(function(){
+var rows=document.querySelectorAll("#rows .row"),board=document.getElementById("board"),next=document.getElementById("next"),bubble=document.getElementById("bubble"),picks=document.querySelectorAll(".pick"),step=0;
+function render(){for(var i=0;i<rows.length;i++)rows[i].classList.toggle("on",i<step);board.classList.toggle("done",step>=rows.length);next.textContent=step>=rows.length?"Replay":"Next step"}
+next.addEventListener("click",function(){step=step>=rows.length?1:step+1;render()});
+document.getElementById("reset").addEventListener("click",function(){step=0;render()});
+for(var j=0;j<picks.length;j++)picks[j].addEventListener("click",function(){for(var x=0;x<picks.length;x++)picks[x].setAttribute("aria-pressed",picks[x]===this?"true":"false");bubble.textContent=this.getAttribute("data-q");step=0;render()});
+render();
+})();
+</script>
+</body>
+</html>
