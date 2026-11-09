@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Our AI stack - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: our AI stack (Claude + VS Code + Grok). Not now: lead generation first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Our AI stack: your 10 hours, AI tinkering vs lead gen first */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.ai{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);gap:clamp(18px,2.6vw,32px);align-items:stretch;padding-top:clamp(18px,2.8vh,32px);padding-bottom:6px}
+.wk{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;gap:16px;transition:background-color .4s ease,border-color .4s ease}
+.wk.on{background:#FFF8F3;border-color:var(--gold)}
+.wkh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.tg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.tg button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:transparent;color:var(--slate);transition:background-color .25s ease,color .25s ease}
+.tg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.tg button.lg[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
+.hrs{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px}
+.h{aspect-ratio:1/1.35;border-radius:12px;background:#D1D1D6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:11px;font-weight:800;transition:background-color .35s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+.h:hover{transform:translateY(-3px)}
+.h svg{width:clamp(16px,1.9vw,24px);height:auto}
+.h.l{background:var(--gold);color:#0A0A0A}
+.lab{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--slate)}
+.res{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:14px}
+.res h2{font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.wk.on .res h2{color:var(--gold-soft)}
+.leg{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--muted);flex:none}
+.leg span{display:flex;align-items:center;gap:8px}
+.leg i{width:12px;height:12px;border-radius:4px;background:#D1D1D6;display:inline-block}
+.leg i.o{background:var(--gold)}
+.park{border:2px dashed #C7C7CC;border-radius:var(--radius);padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:10px}
+.park h2{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.tool{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,opacity .35s ease}
+.tool:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(0,0,0,.35)}
+.tool svg{flex:none}
+.tool h3{font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.tool p{font-size:13px;font-weight:600;color:var(--slate);line-height:1.2}
+.park.out .tool{opacity:.35}
+.add{border:2px dashed var(--gold);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;color:var(--gold-soft);align-self:flex-start;margin-top:auto}
+@media (max-width:900px){.ai{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.hrs{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}.h{aspect-ratio:1/0.8}.res{flex-direction:column;align-items:flex-start}.leg{flex-direction:row;gap:14px}.tg button{padding:8px 12px;font-size:13px}}
+@media (prefers-reduced-motion:reduce){.wk,.h,.tool,.tg button{transition:none}.h:hover,.tool:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Our AI stack (Claude + VS Code + Grok)</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 10</p>
+<h1>Our AI stack? <span class="gold-t">Not yet.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="ai">
+
+<section class="wk" id="wk" aria-live="polite">
+<div class="wkh"><p class="k">Your 10 hours a week</p>
+<div class="tg" role="group" aria-label="How you spend your week">
+<button type="button" id="bA" aria-pressed="true">Tinker with AI</button>
+<button type="button" id="bB" class="lg" aria-pressed="false">Lead gen first</button>
+</div></div>
+<div class="hrs" id="hrs"></div>
+<div class="lab"><span>Hour 1</span><span>Hour 10</span></div>
+<div class="res">
+<h2 id="msg">Busy. No new clients.</h2>
+<div class="leg"><span><i></i>AI set-up</span><span><i class="o"></i>Lead gen</span></div>
+</div>
+</section>
+
+<aside class="park" id="park">
+<p class="k">The stack · parked for later</p>
+<h2>Leads first. Tools later.</h2>
+<div class="tool">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#fff" stroke="#E2E2E2"/><path d="M10 12h14v9H16l-4 3v-3h-2z" fill="none" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/></svg>
+<div><h3>Claude</h3><p>AI assistant</p></div></div>
+<div class="tool">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#fff" stroke="#E2E2E2"/><path d="M13 12l-5 5 5 5M21 12l5 5-5 5" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div><h3>VS Code</h3><p>Code editor</p></div></div>
+<div class="tool">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#fff" stroke="#E2E2E2"/><path d="M17 9l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="none" stroke="#C2410C" stroke-width="2" stroke-linejoin="round"/></svg>
+<div><h3>Grok</h3><p>AI assistant</p></div></div>
+<p class="add">Add yours: when to come back to it</p>
+</aside>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/xama/" style="text-decoration:none">&larr; Xama</a><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Our AI stack (Claude + VS Code + Grok)</div></footer>
+
+<script>
+(function(){
+var hrs=document.getElementById("hrs"),wk=document.getElementById("wk"),park=document.getElementById("park"),msg=document.getElementById("msg"),bA=document.getElementById("bA"),bB=document.getElementById("bB");
+var gear='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+var person='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+var cells=[];
+for(var i=0;i<10;i++){var d=document.createElement("div");d.className="h";hrs.appendChild(d);cells.push(d)}
+function set(lead){
+ bA.setAttribute("aria-pressed",String(!lead));bB.setAttribute("aria-pressed",String(lead));
+ wk.classList.toggle("on",lead);park.classList.toggle("out",!lead);
+ msg.textContent=lead?"Every hour goes on leads.":"Busy. No new clients.";
+ cells.forEach(function(c,j){c.className="h"+(lead?" l":"");c.innerHTML=(lead?person:gear)+"<span>"+(lead?"Leads":"Set-up")+"</span>"});
+}
+bA.addEventListener("click",function(){set(false)});
+bB.addEventListener("click",function(){set(true)});
+set(location.hash==="#lead");
+})();
+</script>
+</body>
+</html>
