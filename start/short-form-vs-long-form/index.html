@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Short form vs long form - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: short form vs long form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+
+/* Short form vs long form: two rulebooks */
+.hero{padding-top:clamp(20px,3vh,36px)}
+.hero h1{font-size:clamp(36px,4.4vw,58px)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:clamp(14px,2.2vh,24px);padding-bottom:12px}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.play{white-space:nowrap;font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px)}
+.fm{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.fm:hover{transform:translateY(-3px);box-shadow:0 16px 32px -22px rgba(0,0,0,.35)}
+.fm.lf{background:#FFF8F3;border-color:var(--gold)}
+.fm.lf:hover{box-shadow:0 16px 32px -20px rgba(242,107,29,.45)}
+.fm.lf .k{color:var(--gold-soft)}
+.fm h2{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+.fm h2 span{color:var(--gold-soft)}
+.stage{display:flex;gap:16px;align-items:center;flex:1}
+.lf .stage{flex-direction:column;align-items:stretch;gap:12px}
+.dev{flex:none;display:block}
+.sf .dev{width:clamp(120px,12vw,150px);height:auto}
+.lf .dev{width:100%;max-width:320px;height:auto;margin:0 auto}
+.dev text{font-family:'Inter',Arial,sans-serif}
+.rules{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.rules li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:clamp(14px,1.25vw,16px);font-weight:700;letter-spacing:-.01em;line-height:1.2;display:flex;align-items:center;gap:10px;transition:border-color .25s ease,background-color .25s ease,color .25s ease}
+.rules li b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink);font-size:11px;display:grid;place-items:center;transition:background-color .25s ease,color .25s ease}
+.rules li.on{border-color:var(--gold);background:#FFF1E7}
+.rules li.on b{background:var(--gold);color:#0A0A0A}
+.lf .rules li{border-color:#F6C9AC}
+.lf .rules li b{background:var(--gold);color:#0A0A0A}
+.proof{font-size:clamp(13px,1.15vw,15px);font-weight:700;border-top:1px solid var(--line);padding-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.proof .n{color:var(--gold-soft)}
+.proof .ar{color:var(--slate);font-weight:600}
+.lf .proof{border-top-color:#F6C9AC}
+.you{border:2px dashed rgba(194,65,12,.45);border-radius:999px;padding:5px 12px;color:var(--gold-soft)}
+@media (max-width:900px){.duo{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.bar{padding-top:12px}.sf .dev{width:118px}.rules li{padding:8px 10px}}
+@media (prefers-reduced-motion:reduce){.fm,.rules li,.rules li b,.play{transition:none}.fm:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Short form vs long form</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 11</p>
+<h1>Two formats. <span class="gold-t">Two rulebooks.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="bar"><p class="k">Same idea, two ways to film it</p><button class="play" id="play" type="button">Play both</button></div>
+<div class="duo">
+
+<section class="fm sf" aria-label="Short form">
+<div><p class="k">Short form</p><h2>Play <span>the game.</span></h2></div>
+<div class="stage">
+<svg class="dev" viewBox="0 0 150 266" role="img" aria-label="A vertical phone video that switches scene every few seconds">
+<rect x="2" y="2" width="146" height="262" rx="22" fill="#111"/>
+<g id="scr">
+<rect id="sbg" x="9" y="9" width="132" height="248" rx="16" fill="#2C2C2E"/>
+<g id="ppl"><circle cx="75" cy="128" r="22" fill="#636366"/><path d="M33,206 C33,170 117,170 117,206 L117,257 L33,257 Z" fill="#636366"/></g>
+<rect id="cap" x="20" y="54" width="110" height="30" rx="8" fill="#F26B1D"/>
+<text id="capt" x="75" y="74" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0A0A0A">WHO IT'S FOR</text>
+</g>
+<rect id="flash" x="9" y="9" width="132" height="248" rx="16" fill="#fff" opacity="0"/>
+<rect x="18" y="20" width="114" height="4" rx="2" fill="rgba(255,255,255,.25)"/>
+<rect id="sprog" x="18" y="20" width="0" height="4" rx="2" fill="#F26B1D"/>
+<rect x="58" y="8" width="34" height="6" rx="3" fill="#111"/>
+</svg>
+<ol class="rules" id="sr">
+<li data-s="0"><b>1</b>Who it's for, in 3 seconds</li>
+<li data-s="1"><b>2</b>Open a loop</li>
+<li data-s="2"><b>3</b>Switch it up every 3-5 seconds</li>
+<li data-s="3"><b>4</b>Pay it off</li>
+</ol>
+</div>
+<p class="proof">First TikTok <span class="n">63 views</span><span class="ar">&rarr;</span><span class="n">~500 videos</span><span class="ar">&rarr;</span>Group structures <span class="n">20k+ views</span></p>
+</section>
+
+<section class="fm lf" aria-label="Long form">
+<div><p class="k">Long form</p><h2>Less <span>bullshit.</span></h2></div>
+<div class="stage">
+<svg class="dev" viewBox="0 0 320 186" role="img" aria-label="A landscape video of one person talking, one steady shot">
+<rect x="1" y="1" width="318" height="184" rx="16" fill="#111"/>
+<rect x="8" y="8" width="304" height="150" rx="11" fill="#2C2C2E"/>
+<circle cx="160" cy="72" r="24" fill="#8E8E93"/><path d="M110,158 C110,112 210,112 210,158 Z" fill="#8E8E93"/>
+<rect x="22" y="20" width="74" height="22" rx="6" fill="rgba(255,255,255,.12)"/><text x="59" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#E5E5EA">Just talking</text>
+<path id="lpi" d="M20,166 L28,171 L20,176 Z" fill="#F26B1D"/>
+<rect x="38" y="169" width="268" height="4" rx="2" fill="rgba(255,255,255,.25)"/>
+<rect id="lprog" x="38" y="169" width="0" height="4" rx="2" fill="#F26B1D"/>
+</svg>
+<ol class="rules">
+<li><b>1</b>One question, answered properly</li>
+<li><b>2</b>Talk like you're on a call</li>
+<li><b>3</b>No tricks</li>
+</ol>
+</div>
+<p class="proof"><span class="you">Add yours: your best long-form video</span></p>
+</section>
+
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/referral-partners/" style="text-decoration:none">&larr; Referral partners</a><a href="/start/how-often-should-i-post/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How often should I post? &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Short form vs long form</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var btn=$("play"),items=[].slice.call(document.querySelectorAll("#sr li")),timers=[],raf=0;
+var DUR=7000,SEG=[0,.22,.42,.82,1];
+var CAPS=["WHO IT'S FOR","OPEN A LOOP","SWITCH IT UP","PAY IT OFF"];
+var LOOKS=[["#2C2C2E","#636366",20,54,"#F26B1D","#0A0A0A"],["#3A2A1E","#8A6A55",20,170,"#fff","#111"],["#1C2B3A","#5A7A99",20,110,"#F26B1D","#0A0A0A"],["#2C2C2E","#636366",20,54,"#fff","#111"]];
+function look(i){var L=LOOKS[i%LOOKS.length];$("sbg").setAttribute("fill",L[0]);[].forEach.call($("ppl").children,function(c){c.setAttribute("fill",L[1])});$("cap").setAttribute("y",L[3]);$("cap").setAttribute("fill",L[4]);$("capt").setAttribute("y",L[3]+20);$("capt").setAttribute("fill",L[5])}
+function flash(){if(RM)return;var f=$("flash");f.setAttribute("opacity",".55");setTimeout(function(){f.setAttribute("opacity","0")},90)}
+function seg(p){for(var i=0;i<4;i++)if(p<SEG[i+1])return i;return 3}
+function render(p){var s=seg(p);items.forEach(function(li,i){li.classList.toggle("on",i===s)});$("capt").textContent=CAPS[s];
+ var lk=s===2?1+Math.floor((p-SEG[2])/(SEG[3]-SEG[2])*6):(s===3?3:s===1?2:0);
+ if(lk!==render.lk){if(render.lk!==undefined&&p<1)flash();look(lk);render.lk=lk}
+ $("sprog").setAttribute("width",(114*p).toFixed(1));$("lprog").setAttribute("width",(268*p*.12).toFixed(1))}
+function reset(){cancelAnimationFrame(raf);render.lk=undefined;items.forEach(function(li){li.classList.remove("on")});look(0);$("capt").textContent=CAPS[0];$("sprog").setAttribute("width",0);$("lprog").setAttribute("width",0)}
+function play(){reset();if(RM){render(1);btn.textContent="Replay";return}btn.disabled=true;var t0=null;
+ (function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/DUR);render(p);if(p<1)raf=requestAnimationFrame(f);else{btn.disabled=false;btn.textContent="Replay"}})(performance.now());}
+btn.addEventListener("click",play);
+})();
+</script>
+</body>
+</html>
