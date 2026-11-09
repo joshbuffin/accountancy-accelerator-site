@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Adfin - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 3 Software: an introduction to Adfin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Adfin: without vs with, collecting monthly fees */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.75fr);gap:clamp(16px,2.4vw,28px);padding-top:clamp(18px,2.6vh,30px)}
+.board{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,22px);transition:border-color .4s ease,background-color .4s ease,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.board:hover{transform:translateY(-3px)}
+.board.on{background:#FFF8F3;border-color:var(--gold)}
+.board.on:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.bhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:none;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.board.on .seg button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
+.status{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.status h2{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.board.on .status h2{color:var(--gold-soft)}
+.cnt{margin-left:auto;text-align:right;line-height:1}
+.cnt .n{display:block;font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#3A3A3C}
+.board.on .cnt .n{color:var(--gold-soft)}
+.cnt .s{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-top:4px}
+.months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+.mo{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 8px;display:flex;flex-direction:column;gap:6px;min-height:196px}
+.mo .m{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);text-align:center}
+.c{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700;border-radius:9px;padding:5px 6px;line-height:1.15;transition:opacity .35s ease,transform .35s ease}
+.c svg{flex:none}
+.c.inv{background:var(--card);color:#3A3A3C}
+.c.ch{background:#FBE3E1;color:#9F1D14}
+.c.late{background:#3A3A3C;color:#fff;margin-top:auto}
+.c.ok{background:var(--gold);color:#0A0A0A;margin-top:auto}
+.c.hide{opacity:0;transform:translateY(6px)}
+.board .w{display:contents}
+.board.on .w{display:none}
+.board .y{display:none}
+.board.on .y{display:contents}
+.journey{display:flex;flex-direction:column;gap:10px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(0,0,0,.35)}
+.tile h3{font-size:clamp(17px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:3px}
+.tile.hot{background:var(--gold);border-color:var(--gold)}
+.tile.hot .k{color:#3A2A1E}
+.tile.add{border:2px dashed #C7C7CC;background:none}
+.tile.add .k{color:var(--gold-soft)}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:14px 0 0;font-size:14px;font-weight:600}
+.where .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
+.chip.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A;font-weight:800}
+.arr{color:#AEAEB2;font-weight:800}
+@media (max-width:900px){.grid{grid-template-columns:1fr}.journey{display:grid;grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.months{grid-template-columns:repeat(3,minmax(0,1fr))}.mo:nth-child(n+4){display:none}.mo{min-height:178px}.c{font-size:11px;gap:4px}.journey{gap:8px}.tile{padding:10px 12px;border-radius:14px}.tile h3{font-size:15px}.tile .k{font-size:10px;letter-spacing:.12em}.seg button{padding:7px 12px;font-size:13px}.where{gap:6px}.chip{padding:5px 10px;font-size:13px}}
+@media (prefers-reduced-motion:reduce){.board,.tile,.c{transition:none}.board:hover,.tile:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Adfin</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 3 - Software · Video 5</p>
+<h1>Stop chasing your <span class="gold-t">fees.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="grid">
+
+<section class="board" id="board" aria-label="Collecting monthly fees without Adfin and with Adfin">
+<div class="bhead">
+<p class="k">Your monthly fees · illustration</p>
+<div class="seg" role="group" aria-label="Show"><button type="button" id="bW" aria-pressed="true">Without Adfin</button><button type="button" id="bY" aria-pressed="false">With Adfin</button></div>
+</div>
+<div class="status"><h2 id="st">You invoice. You chase.</h2><div class="cnt"><span class="n" id="cn">9</span><span class="s">chases sent</span></div></div>
+<div class="months" id="months"></div>
+</section>
+
+<aside class="journey">
+<div class="tile"><p class="k">What it's for</p><h3>Collecting your fees.</h3></div>
+<div class="tile hot"><p class="k">Where it starts</p><h3>Set up at onboarding.</h3></div>
+<div class="tile add"><p class="k">Add yours</p><h3>When we switched it on.</h3></div>
+<div class="tile add"><p class="k">Add yours</p><h3>Our set-up and link.</h3></div>
+</aside>
+
+</div>
+<div class="where"><span class="k">Client journey</span><span class="chip">Lead</span><span class="arr">&rarr;</span><span class="chip">Sales call</span><span class="arr">&rarr;</span><span class="chip">Proposal</span><span class="arr">&rarr;</span><span class="chip hot">Onboarding</span><span class="arr">&rarr;</span><span class="chip hot">Every month</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/brightpay/" style="text-decoration:none">&larr; Brightpay</a><a href="/start/adobesign/" style="text-decoration:none;color:var(--gold-soft);text-align:right">AdobeSign &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Adfin</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var names=["Jan","Feb","Mar","Apr","May","Jun"],chases=[1,2,0,3,1,2];
+var I={
+ inv:'<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+ ch:'<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+ late:'<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+ ok:'<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+};
+function chip(cls,icon,txt){return '<span class="c '+cls+'">'+I[icon]+txt+'</span>'}
+var h="";
+names.forEach(function(n,i){
+ var w=chip("inv","inv","Invoice");for(var j=0;j<chases[i];j++)w+=chip("ch","ch","Chase");
+ w+=chases[i]?chip("late","late","Paid late"):chip("late","late","Paid");
+ h+='<div class="mo"><span class="m">'+n+'</span><span class="w">'+w+'</span><span class="y">'+chip("ok","ok","Collected")+'</span></div>';
+});
+$("months").innerHTML=h;
+var board=$("board"),bW=$("bW"),bY=$("bY"),timers=[];
+function visTotal(){var n=(window.matchMedia&&matchMedia("(max-width:560px)").matches)?3:6;return chases.slice(0,n).reduce(function(a,b){return a+b},0)}
+function setMode(on){
+ timers.forEach(clearTimeout);timers=[];
+ board.classList.toggle("on",on);bW.setAttribute("aria-pressed",String(!on));bY.setAttribute("aria-pressed",String(on));
+ $("st").textContent=on?"Collected. Every month.":"You invoice. You chase.";
+ $("cn").textContent=on?"0":String(visTotal());
+ var cs=board.querySelectorAll(on?".y .c":".w .c");
+ if(RM)return;
+ cs.forEach(function(c,i){c.classList.add("hide");timers.push(setTimeout(function(){c.classList.remove("hide")},60+i*(on?110:45)))});
+}
+$("cn").textContent=String(visTotal());
+if(location.hash==="#with")setMode(true);
+window.addEventListener("resize",function(){if(!board.classList.contains("on"))$("cn").textContent=String(visTotal())});
+bW.addEventListener("click",function(){setMode(false)});
+bY.addEventListener("click",function(){setMode(true)});
+})();
+</script>
+</body>
+</html>
