@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Paying overseas (Wise) - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: paying overseas staff with Wise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Paying overseas: bank transfer vs Wise, what actually lands */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(36px,4.6vw,62px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.stage{padding-top:clamp(16px,2.4vh,28px);display:flex;flex-direction:column;gap:12px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.play:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.play:disabled{opacity:.55;cursor:default;transform:none}
+.lane{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 20px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.lane:hover{transform:translateY(-3px)}
+.lane.w{background:#FFF8F3;border-color:var(--gold)}
+.lane.w:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.lane.w .k{color:var(--gold-soft)}
+.pipe{position:relative;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0 30px}
+.line{position:absolute;left:28px;right:28px;top:calc(50% - 13px);height:6px;border-radius:9px;background:#C7C7CC}
+.lane.w .line{background:#F4B48F}
+.node,.st{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;text-align:center}
+.node{flex:none;width:56px;height:56px;border-radius:50%;background:#fff;border:2.5px solid #8E8E93;font-size:16px;font-weight:800;color:#3A3A3C}
+.node.end{font-size:22px;transition:background-color .4s ease,box-shadow .4s ease}
+.node.end.got{background:#E5E5EA}
+.lane.w .node.end.got{background:#FFE4D3;box-shadow:0 0 0 6px rgba(242,107,29,.15)}
+.lane.w .node{border-color:var(--gold);border-width:3px}
+.lane.w .node.me{background:var(--gold);color:#0A0A0A}
+.st{flex:0 1 150px;min-height:44px;padding:6px 10px;border-radius:12px;background:#fff;border:2px solid #AEAEB2;font-size:13px;font-weight:700;line-height:1.15;color:#3A3A3C}
+.st.wise{flex-basis:190px;flex-direction:column;background:var(--gold);border-color:var(--gold);font-size:16px;font-weight:800;color:#0A0A0A}
+.st.wise em{font-style:normal;font-size:11.5px;font-weight:700;color:#3A2A1E}
+.node small,.st small{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11.5px;font-weight:700;color:#8E8E93;display:flex;align-items:center;gap:4px}
+.lane.w small{color:var(--gold-soft)}
+.drop{width:9px;height:9px;background:#AEAEB2;border-radius:0 50% 50% 50%;transform:rotate(45deg);display:inline-block}
+.coin{position:absolute;z-index:0;left:0;top:calc(50% - 10px);width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:2.5px solid #fff;background:#8E8E93;opacity:0;transition:width .3s ease,height .3s ease,margin .3s ease}
+#cB{background:var(--gold)}
+.fall{position:absolute;z-index:0;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#AEAEB2}
+.out h2{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:4px}
+.lane.w .out h2{color:var(--gold-soft)}
+.rcv{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;border-radius:999px;padding:5px 12px;background:#fff;border:1px solid var(--line);color:var(--slate);opacity:0;transition:opacity .4s ease}
+.lane.w .rcv{border-color:var(--gold);color:var(--gold-soft)}
+.rcv.on{opacity:1}
+.give{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
+.give span{color:var(--gold-soft)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px}
+.adds{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px dashed #C7C7CC;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+@media (max-width:760px){.lane{grid-template-columns:1fr;gap:2px;padding:8px 14px 12px}.rcv{margin-top:4px}.st{font-size:11.5px;padding:5px 6px;min-height:40px}.st.wise{font-size:14px}.st.wise em{font-size:10px}.node{width:44px;height:44px;font-size:13px}.line{left:22px;right:22px}.node small,.st small{font-size:10.5px}.pipe{gap:6px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.head .k{font-size:10px;letter-spacing:.12em}.chip{font-size:13px}}
+@media (prefers-reduced-motion:reduce){.lane,.rcv,.play{transition:none}.lane:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Paying overseas (Wise)</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing · Video 9</p>
+<h1>Pay your team. <span class="gold-t">Know what lands.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="stage">
+<div class="head"><p class="k">Same pay, sent two ways</p><button class="play" id="play" type="button">Send pay</button></div>
+
+<div class="lane" id="laneA">
+<div class="pipe" id="pA" role="img" aria-label="Bank transfer: your pounds pass through the bank's own exchange rate and middleman banks, and some leaks out on the way, so your bookkeeper receives an amount you can't see in advance">
+<span class="line"></span>
+<span class="node me">You<small>£</small></span>
+<span class="st" id="s1">Bank's own rate<small><i class="drop"></i>Leaks</small></span>
+<span class="st" id="s2">Middleman banks<small><i class="drop"></i>Leaks</small></span>
+<span class="node end">?<small>Bookkeeper</small></span>
+<span class="coin" id="cA"></span>
+</div>
+<div class="out"><p class="k">Bank transfer</p><h2>They get... less. You don't know how much.</h2><span class="rcv" id="rcvA">Lands: unknown</span></div>
+</div>
+
+<div class="lane w" id="laneB">
+<div class="pipe" id="pB" role="img" aria-label="Wise: your pounds go through one step with the real exchange rate and the fee shown upfront, so your bookkeeper receives exactly the amount you saw before you sent it">
+<span class="line"></span>
+<span class="node me">You<small>£</small></span>
+<span class="st wise">Wise<em>Real rate · fee upfront</em><small>No leaks</small></span>
+<span class="node end"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#C2410C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><small>Bookkeeper</small></span>
+<span class="coin" id="cB"></span>
+</div>
+<div class="out"><p class="k">Wise</p><h2>They get exactly what you saw.</h2><span class="rcv" id="rcvB">Lands: known before you send</span></div>
+</div>
+
+<div class="foot">
+<p class="give">Paid right. Paid on time. <span>Every time.</span></p>
+<div class="adds"><span class="chip">Add yours: the going rate</span><span class="chip">Add yours: your pay day</span></div>
+</div>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/monitask/" style="text-decoration:none">&larr; Monitask</a><a href="/start/job-spec-for-bookkeeper/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Job spec for bookkeeper &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Paying overseas (Wise)</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var btn=$("play"),cA=$("cA"),cB=$("cB"),pA=$("pA"),raf=[];
+function ends(p){var n=p.querySelectorAll(".node");return[n[0].offsetLeft+n[0].offsetWidth/2,n[1].offsetLeft+n[1].offsetWidth/2]}
+function mid(e){return e.offsetLeft+e.offsetWidth/2}
+function size(c,d){c.style.width=c.style.height=d+"px";c.style.margin=(-d/2)+"px 0 0 "+(-d/2)+"px"}
+function anim(ms,step,done){if(RM){step(1);done&&done();return}var t0=null;function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/ms);step(p);if(p<1)raf.push(requestAnimationFrame(f));else done&&done()}raf.push(requestAnimationFrame(f))}
+function drip(x){var d=document.createElement("span");d.className="fall";d.style.left=x+"px";pA.appendChild(d);var y0=pA.offsetHeight/2+12;anim(700,function(p){d.style.top=(y0+p*26)+"px";d.style.opacity=1-p},function(){d.remove()})}
+function lands(on){document.querySelectorAll(".node.end").forEach(function(n){n.classList.toggle("got",on)});$("rcvA").classList.toggle("on",on);$("rcvB").classList.toggle("on",on)}
+function reset(){raf.forEach(cancelAnimationFrame);raf=[];[cA,cB].forEach(function(c){c.style.opacity=0;size(c,30)});lands(false)}
+function finish(){cA.style.opacity=cB.style.opacity=0;lands(true);btn.disabled=false;btn.textContent="Send again"}
+function play(){reset();if(RM){finish();return}btn.disabled=true;
+ var e=ends(pA),x0=e[0],x1=e[1],s1=mid($("s1")),s2=mid($("s2")),d1=false,d2=false;
+ cA.style.opacity=cB.style.opacity=1;
+ anim(2600,function(p){var k=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2,x=x0+(x1-x0)*k;
+  cA.style.left=cB.style.left=x+"px";
+  if(x>s1&&!d1){d1=true;size(cA,22);drip(s1)}if(x>s2&&!d2){d2=true;size(cA,14);drip(s2)}
+ },finish);
+}
+btn.addEventListener("click",play);
+if(RM)finish();
+})();
+</script>
+</body>
+</html>
