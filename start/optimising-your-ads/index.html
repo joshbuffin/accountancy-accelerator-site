@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimising your ads - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 5 Lead generation: optimising your ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
+
+/* Optimising your ads: fix the bottleneck in front of you, then the next one */
+.hero{padding-top:clamp(20px,3vh,36px)}
+.hero h1{font-size:clamp(36px,4.4vw,58px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.board{margin-top:clamp(16px,2.4vh,26px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);transition:background-color .4s ease,border-color .4s ease}
+.board.done{background:#FFF8F3;border-color:var(--gold)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.top h2{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.top h2 span{color:var(--gold-soft)}
+.btns{display:flex;gap:8px;align-items:center}
+.fix{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:10px 20px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.fix:hover{transform:translateY(-1px);background:var(--gold-soft)}
+.fix:disabled{opacity:.55;cursor:default;transform:none}
+.again{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer}
+.again:hover{color:var(--ink)}
+.pipe{width:100%;height:auto;display:block;margin:10px 0 6px}
+.pipe text{font-family:'Inter',Arial,sans-serif}
+.flowline{stroke-dasharray:10 16;animation:flow 1.1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-26}}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease,opacity .3s ease}
+.st:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(0,0,0,.35)}
+.st .k b{color:var(--ink)}
+.st h3{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.st.wait{opacity:.5}
+.st.now{border-color:var(--gold);box-shadow:0 14px 30px -18px rgba(242,107,29,.55)}
+.st.now .k{color:var(--gold-soft)}
+.fx{display:flex;flex-direction:column;gap:5px;margin-top:2px}
+.fx span{font-size:13px;font-weight:700;line-height:1.25;border-radius:10px;padding:6px 9px;background:var(--card);color:var(--slate)}
+.st.ok .fx span{background:#FFF1E8;color:var(--gold-soft)}
+.st.ok h3{text-decoration:line-through;text-decoration-color:rgba(194,65,12,.55);text-decoration-thickness:2px;color:var(--slate)}
+.tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:3px 8px;align-self:flex-start}
+.st.now .tag{background:var(--gold);color:#0A0A0A}
+.st.ok .tag{background:#FFF1E8;color:var(--gold-soft)}
+.st.wait .tag{background:var(--line);color:var(--slate)}
+.rules{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:700}
+.rules .k{margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .3s ease,border-color .3s ease}
+.chip:hover{transform:translateY(-2px);border-color:var(--gold)}
+.chip.hot{background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
+@media (max-width:820px){.stages{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.top h2{font-size:18px}.fix{padding:9px 14px}.st{padding:10px 11px 12px}.fx span{font-size:12px;padding:5px 7px}.st h3{font-size:15px}.rules{font-size:13px}.chip{padding:5px 11px}}
+@media (prefers-reduced-motion:reduce){.flowline{animation:none}.st,.chip,.board{transition:none}.st:hover,.chip:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Optimising your ads</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 5 - Lead generation · Video 19</p>
+<h1>Fix the next <span class="gold-t">bottleneck.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="board" id="board">
+<div class="top">
+<h2 id="msg">Your ads have a bottleneck. <span>Find it.</span></h2>
+<div class="btns"><button class="again" id="again" type="button" hidden>Start again</button><button class="fix" id="fix" type="button">Fix the bottleneck</button></div>
+</div>
+
+<svg class="pipe" viewBox="0 0 1000 150" role="img" aria-label="A pipe from your ads to signed clients, squeezed at one stage at a time. Fix one squeeze and the flow runs on to the next one.">
+<defs>
+<clipPath id="pclip"><path id="pclipPath"/></clipPath>
+<marker id="tri" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F26B1D"/></marker>
+</defs>
+<path id="pbody" fill="#fff" stroke="#C7C7CC" stroke-width="2.5" stroke-linejoin="round"/>
+<g clip-path="url(#pclip)">
+<rect id="water" x="20" y="40" width="0" height="80" fill="#F26B1D"/>
+<rect id="trickle" x="0" y="77" width="0" height="6" fill="#F26B1D" opacity=".55"/>
+<line id="fline" class="flowline" x1="20" y1="80" x2="20" y2="80" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+</g>
+<g id="pin">
+<rect x="-56" y="0" width="112" height="26" rx="13" fill="#0A0A0A"/>
+<text x="0" y="17.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" letter-spacing="1.5">BOTTLENECK</text>
+<path d="M-6,26 L6,26 L0,34 Z" fill="#0A0A0A"/>
+</g>
+<text x="20" y="140" font-size="12" font-weight="700" fill="#6E6E73" letter-spacing="1.5">ADS</text>
+<text x="980" y="140" text-anchor="end" font-size="12" font-weight="700" fill="#C2410C" letter-spacing="1.5">SIGNED CLIENTS</text>
+</svg>
+
+<div class="stages" id="stages">
+<div class="st"><p class="k">1 · <b>Leads</b></p><span class="tag"></span><h3>Not enough leads</h3><div class="fx"><span>5 different ad styles</span><span>Variety beats volume</span></div></div>
+<div class="st"><p class="k">2 · <b>Quality</b></p><span class="tag"></span><h3>Wrong leads</h3><div class="fx"><span>The topic picks the client</span><span>Ask: "What are you looking for from this call?"</span></div></div>
+<div class="st"><p class="k">3 · <b>Show rate</b></p><span class="tag"></span><h3>They don't turn up</h3><div class="fx"><span>They type their own email</span><span>WhatsApp reminders</span><span>Book 3-4 days ahead</span></div></div>
+<div class="st"><p class="k">4 · <b>Signed</b></p><span class="tag"></span><h3>They show, but don't buy</h3><div class="fx"><span>Track cost per signed client</span></div></div>
+</div>
+</div>
+
+<div class="rules"><span class="k">Every fix is a test</span><span class="chip">Hypothesis first</span><span class="chip">One change at a time</span><span class="chip">£100 per version</span><span class="chip hot">Track cost per call showed, not per lead</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/the-ad-strategy/" style="text-decoration:none">&larr; The ad strategy</a><a href="/start/setting-up-your-ads/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Setting up your ads &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Optimising your ads</div></footer>
+
+<script>
+(function(){
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var X0=20,X1=980,SEG=(X1-X0)/4,C=80,R=30,MIN=5;
+var pinch=[1,0,0,0],stage=0,flowX=0,busy=false;
+var cards=[].slice.call($("stages").children),btn=$("fix"),again=$("again"),board=$("board"),msg=$("msg");
+var MSGS=['Your ads have a bottleneck. <span>Find it.</span>','Fixed. <span>The next one shows up.</span>','Fixed again. <span>Next one.</span>','Nearly there. <span>Last one.</span>','Fix one, the next shows up. <span>That\'s the game.</span>'];
+function mid(i){return X0+SEG*i+SEG/2}
+function edge(sign){
+ var d="",pts=[];
+ for(var i=0;i<4;i++){
+  var m=mid(i),h=R-(R-MIN)*pinch[i],a=X0+SEG*i,b=a+SEG;
+  pts.push([a,b,m,h]);
+ }
+ if(sign<0){
+  d="M"+X0+","+(C-R);
+  pts.forEach(function(p){var m=p[2],h=p[3];d+=" L"+(m-80)+","+(C-R)+" C"+(m-34)+","+(C-R)+" "+(m-34)+","+(C-h)+" "+m+","+(C-h)+" C"+(m+34)+","+(C-h)+" "+(m+34)+","+(C-R)+" "+(m+80)+","+(C-R)});
+  d+=" L"+X1+","+(C-R);
+ }else{
+  d=" L"+X1+","+(C+R);
+  pts.slice().reverse().forEach(function(p){var m=p[2],h=p[3];d+=" L"+(m+80)+","+(C+R)+" C"+(m+34)+","+(C+R)+" "+(m+34)+","+(C+h)+" "+m+","+(C+h)+" C"+(m-34)+","+(C+h)+" "+(m-34)+","+(C+R)+" "+(m-80)+","+(C+R)});
+  d+=" L"+X0+","+(C+R)+" Z";
+ }
+ return d;
+}
+function draw(){
+ var d=edge(-1)+edge(1);
+ $("pbody").setAttribute("d",d);$("pclipPath").setAttribute("d",d);
+ $("water").setAttribute("width",Math.max(0,flowX-X0));
+ $("fline").setAttribute("x2",flowX);
+ $("trickle").setAttribute("x",flowX);$("trickle").setAttribute("width",stage<4?Math.max(0,X1-flowX):0);
+ var pin=$("pin");
+ if(stage<4){pin.style.display="";pin.setAttribute("transform","translate("+mid(stage)+","+(C-R-38+ (R-MIN)*pinch[stage]*0.5)+")")}else pin.style.display="none";
+}
+function ui(){
+ cards.forEach(function(c,i){
+  c.className="st "+(i<stage?"ok":i===stage?"now":"wait");
+  c.querySelector(".tag").textContent=i<stage?"Fixed":i===stage?"Bottleneck":"Next";
+ });
+ msg.innerHTML=MSGS[stage];
+ board.classList.toggle("done",stage>=4);
+ btn.hidden=stage>=4;again.hidden=stage<4;btn.disabled=busy;
+}
+function tween(ms,f,done){
+ if(RM){f(1);done&&done();return}
+ var t0=null;function s(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/ms),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;f(e);if(p<1)requestAnimationFrame(s);else done&&done()}
+ requestAnimationFrame(s);
+}
+function fix(){
+ if(busy||stage>=4)return;busy=true;ui();
+ var i=stage,from=flowX,to=i<3?mid(i+1):X1;
+ tween(500,function(e){pinch[i]=1-e;draw()},function(){
+  stage++;
+  tween(800,function(e){flowX=from+(to-from)*e;draw()},function(){
+   if(stage<4){tween(450,function(e){pinch[stage]=e;draw()},function(){busy=false;ui()})}
+   else{busy=false;ui()}
+   ui();
+  });
+  ui();
+ });
+}
+function reset(){pinch=[1,0,0,0];stage=0;flowX=mid(0);busy=false;draw();ui()}
+btn.addEventListener("click",fix);
+again.addEventListener("click",reset);
+reset();
+})();
+</script>
+</body>
+</html>
