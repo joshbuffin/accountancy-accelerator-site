@@ -26,7 +26,7 @@ h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-
 .gold-t{color:var(--gold-soft)}
 .lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
 
-.grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.6fr);gap:20px;align-items:start}
+.grid{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,2fr);gap:20px;align-items:start}
 
 /* Left: profile + where they are */
 .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
@@ -131,27 +131,6 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <p class="tr"><i></i>Ambitious</p>
 <p class="tr"><i></i>Values good service</p>
 </div>
-<div class="arrow" aria-hidden="true">&#9650;</div>
-<div class="box"><p class="lbl">Where they are</p>
-<h2>Your environments</h2>
-<div class="pair">
-<div class="pill"><b>Physical</b><span>Gyms, clubs, dinners</span></div>
-<div class="pill"><b>Digital</b><span>Communities, content</span></div>
-</div>
-<p class="plus" aria-hidden="true">+</p>
-<h2>How you show up</h2>
-<div class="pair">
-<div class="pill"><b>How you communicate</b></div>
-<div class="pill"><b>How you hold yourself</b></div>
-</div>
-<div class="links">
-<a class="chip" href="/start/founder-fit/">Founder fit</a>
-<a class="chip" href="/start/where-to-start/">Where to start</a>
-<a class="chip" href="/start/the-best-networking-groups/">The best rooms</a>
-<a class="chip" href="/start/referral-partners/">Referral partners</a>
-<a class="chip" href="/start/become-the-network/">The universe revolves around you</a>
-</div>
-</div>
 </div>
 
 <section class="task" aria-labelledby="taskh">
@@ -172,24 +151,25 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 var S=[
  {k:"contacts",t:"Your contacts",add:"+ Add a person",tip:"Who do you already know who fits? Then find the rooms they're in.",
   c:["Who","What they do","Where they go","Where can you go that they go?"],
-  ph:["Sam","Runs an e-com brand","Padel, WhatsApp","The padel club"]},
+  ph:[["Sam","Runs an e-com brand","Padel club, founder WhatsApp group","Join the padel club"],["Priya","Online PT coach","Run club, a coaching community","Join the Saturday run club"],["Tom","Commercial finance broker","Founder dinners","Ask to come to the next dinner"],["Aisha","Property investor","Property meet-ups","Go to the next property meet-up"],["Ben","Video editor for creators","Co-working cafe, creator community","Work from that cafe on Fridays"]]},
  {k:"advice",t:"Ask for advice",add:"+ Add a person",tip:"High-level entrepreneurs. Ask for advice, not for work.",
   c:["Who","What they've built","Where they go","How you'll ask"],
-  ph:["Priya","A 30-staff agency","Founder dinners","Coffee, ask for advice"]},
+  ph:[["Mark","A gym group with 3 sites","Soho House, founder dinners","Coffee: what do you wish your accountant did?"],["Lucy","A 30-staff agency","Founder dinners","Ask how she found her best clients"],["Dan","An e-com brand","Paid founder community","DM: ask what he wishes he knew in year one"],["Raj","A property portfolio","Property networks","Ask how he structures his companies"],["Ella","Two local restaurants","Local business awards","Lunch: ask what her accountant gets wrong"]]},
  {k:"rooms",t:"Rooms",add:"+ Add a room",tip:"Sports and clubs, communities, the best rooms. Search for communities and your algorithm will start showing you more.",
   c:["Room or place","Physical or online","Who's in it","When you'll go or join"],
-  ph:["Saturday run club","Physical","Local founders","This Saturday"],sel:1},
+  ph:[["Padel club","","Founders, sales people","Tuesday nights"],["Founder dinner club","","Business owners","Monthly"],["Paid founder community","","Ambitious founders","Join this week"],["Run club","","Mixed, lots of founders","Saturday mornings"],["Industry panel or event","","Your niche","Next event, offer to speak"]],sel:1},
  {k:"partners",t:"Referral partners",add:"+ Add a partner",tip:"Give value first: materials, a call for their members.",
   c:["Who or which community","Who they serve","What you can give","First step"],
-  ph:["Airbnb mentor group","New Airbnb hosts","Tax guide for hosts","Message the founder"]},
+  ph:[["Airbnb mentorship group","New Airbnb hosts","Tax materials for members","Message the founder"],["Online influencer community","Creators","Host a call on tax for creators","Pitch a call"],["Commercial lawyer","Growing companies","Swap referrals","Coffee"],["Financial advisor","Business owners","Tax planning input","Intro call"],["Property investor network","Investors","Explain holding companies","Offer a talk"]]},
  {k:"show",t:"How you'll show up",tip:"How will you introduce yourself and tell your why?",show:1}
 ];
 var KEY="aa-pfc-access-v2",st;
 function blank(){return["","","",""]}
-function fresh(){var o={};S.forEach(function(x){o[x.k]=x.show?{intro:"",why:""}:[blank(),blank(),blank()]});return o}
+function five(){return[blank(),blank(),blank(),blank(),blank()]}
+function fresh(){var o={};S.forEach(function(x){o[x.k]=x.show?{intro:"",why:""}:five()});return o}
 try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!st||typeof st!=="object")st=fresh();
-S.forEach(function(x){if(x.show){if(!st.show||typeof st.show!=="object")st.show={intro:"",why:""}}else if(!Array.isArray(st[x.k]))st[x.k]=[blank(),blank(),blank()]});
+S.forEach(function(x){if(x.show){if(!st.show||typeof st.show!=="object")st.show={intro:"",why:""}}else{if(!Array.isArray(st[x.k]))st[x.k]=five();while(st[x.k].length<5)st[x.k].push(blank())}});
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 var tabs=document.getElementById("tabs"),pane=document.getElementById("pane"),prog=document.getElementById("prog"),bar=document.getElementById("bar"),toast=document.getElementById("toast"),cur=0;
 function filledRow(r){return r.some(function(v){return v&&String(v).trim()})}
@@ -213,7 +193,7 @@ function open(i){
  pane.appendChild(el("p","tip",x.tip));
  if(x.show){
   var g=el("div","show");
-  [["intro","How I'll introduce myself","e.g. I've just started my own firm, I help founders who..."],["why","My why","e.g. I want to build a firm that gives me freedom because..."]].forEach(function(f){
+  [["intro","How I'll introduce myself","e.g. I help ambitious founders keep more of what they earn. I've just started my own firm and I work with people building something."],["why","My why","e.g. I left a corporate job to build something of my own. I want freedom, and I want my clients to have an accountant who actually replies."]].forEach(function(f){
    var w=el("div");var id="show-"+f[0];var l=el("label",null,f[1]);l.htmlFor=id;
    var ta=el("textarea");ta.id=id;ta.placeholder=f[2];ta.value=st.show[f[0]]||"";
    ta.addEventListener("input",function(){st.show[f[0]]=ta.value;update()});
@@ -234,7 +214,7 @@ function row(x,r,ri){
   var cell=el("div","cell");var cl=el("span","cl",c);cell.appendChild(cl);
   var inp;
   if(x.sel&&ci===1){inp=el("select");[["","Physical or online?"],["Physical","Physical"],["Online","Online"]].forEach(function(o){var op=el("option",null,o[1]);op.value=o[0];inp.appendChild(op)});inp.value=r[ci]||"";inp.addEventListener("change",ch)}
-  else{inp=el("input");inp.type="text";inp.value=r[ci]||"";if(ri===0)inp.placeholder=x.ph[ci];inp.addEventListener("input",ch)}
+  else{inp=el("input");inp.type="text";inp.value=r[ci]||"";if(x.ph[ri]&&x.ph[ri][ci])inp.placeholder=x.ph[ri][ci];inp.addEventListener("input",ch)}
   inp.setAttribute("aria-label",c+", row "+(ri+1));
   function ch(){r[ci]=inp.value;rw.classList.toggle("filled",filledRow(r));update()}
   cell.appendChild(inp);rw.appendChild(cell);
