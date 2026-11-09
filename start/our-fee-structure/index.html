@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Our fee structure - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 6 Pricing & Proposals: our fee structure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Our fee structure: bundled vs base + add-ons */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero h1{font-size:clamp(34px,4.4vw,58px)}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:clamp(18px,2.6vh,28px)}
+.bar .k{margin-right:4px}
+.ext{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:transform .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease}
+.ext:hover{transform:translateY(-1px);border-color:var(--gold)}
+.ext[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.ext .p{display:inline-block;width:16px;margin-right:2px;font-weight:800}
+.reset{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:none;border:0;padding:8px 6px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);padding-top:16px}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px 20px;display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
+.cv:hover{transform:translateY(-3px)}
+.cv.rt{background:#FFF8F3;border-color:var(--gold)}
+.cv.rt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
+.cv.rt .k{color:var(--gold-soft)}
+.cvt{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cv h2{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:3px}
+.tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.tag.no{background:#E9E9EC;color:#3A3A3C}
+.tag.yes{background:var(--gold);color:#0A0A0A}
+.row{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;gap:10px}
+.row .k{font-size:10.5px}
+.track{display:flex;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;line-height:1.1;text-align:center;overflow:hidden;white-space:nowrap;border-right:2px solid #fff;flex:0 0 auto;width:0;transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.seg.base{width:34%;flex:0 0 34%}
+.cv .seg.base{background:#3A3A3C;color:#fff}
+.cv.rt .seg.base{background:var(--gold-soft);color:#fff}
+.seg.w{background:#AEAEB2;color:#1C1C1E}
+.cv.rt .seg.w{background:#F8A877;color:#3A2A1E}
+.seg.free{background:repeating-linear-gradient(135deg,#fff 0 6px,#F1D9CC 6px 12px);color:var(--gold-soft);font-weight:800;border-right:0}
+.seg.on{width:13%}
+.seg.free.on{width:var(--fw,0%)}
+.res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:12px}
+.res .big{font-size:clamp(26px,2.8vw,36px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.cv .res .big{color:#3A3A3C}
+.cv.rt .res .big{color:var(--gold-soft)}
+.res .s{font-size:14px;font-weight:700;color:var(--slate);text-align:right}
+.cv.rt .res .s{color:var(--gold-soft)}
+.mine{font-size:12px;font-weight:700;color:var(--slate);border:1.5px dashed #C7C7CC;border-radius:999px;padding:6px 12px;align-self:flex-start}
+.cv.rt .mine{border-color:#F4B48F;color:var(--gold-soft)}
+.give{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 20px;padding-top:18px}
+.give p{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.03em}
+.give p span{color:var(--gold-soft)}
+.give .lesson{font-size:13px;font-weight:700;color:var(--slate);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px}
+@media (max-width:820px){.cmp{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.cv{padding:14px 14px 16px;gap:10px}.track{height:38px}.seg{font-size:10.5px}.ext{font-size:13px;padding:7px 12px}.seg.w{font-size:0}.row{grid-template-columns:44px minmax(0,1fr)}.bar{padding-top:14px}}
+@media (prefers-reduced-motion:reduce){.cv,.ext,.seg{transition:none}.cv:hover,.ext:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · Our fee structure</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 2</p>
+<h1>Price the core. Charge the <span class="gold-t">extras.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="bar" role="group" aria-label="Extras the client asks for">
+<span class="k">The client asks for</span>
+<button class="ext" type="button" aria-pressed="false" data-i="0"><span class="p">+</span>Non-director payroll</button>
+<button class="ext" type="button" aria-pressed="false" data-i="1"><span class="p">+</span>Non-director tax returns</button>
+<button class="ext" type="button" aria-pressed="false" data-i="2"><span class="p">+</span>Ad-hoc work</button>
+<button class="ext" type="button" aria-pressed="false" data-i="3"><span class="p">+</span>Subscriptions</button>
+<button class="ext" type="button" aria-pressed="false" data-i="4"><span class="p">+</span>Filing fees</button>
+<button class="reset" type="button" id="reset">Reset</button>
+</div>
+
+<div class="cmp">
+<div class="cv" id="cvA">
+<div class="cvt"><div><p class="k">Wrong way</p><h2>One price for everything.</h2></div><span class="tag no">Bundled</span></div>
+<div class="row"><span class="k">Work</span><div class="track" id="wA"><div class="seg base">Package</div></div></div>
+<div class="row"><span class="k">Fee</span><div class="track" id="fA"><div class="seg base">Base fee</div><div class="seg free" id="freeA">Free work</div></div></div>
+<div class="res"><span class="big" id="nA">0 extras</span><span class="s" id="sA">done for free</span></div>
+</div>
+
+<div class="cv rt" id="cvB">
+<div class="cvt"><div><p class="k">Right way</p><h2>Base fee + add-ons.</h2></div><span class="tag yes">Unbundled</span></div>
+<div class="row"><span class="k">Work</span><div class="track" id="wB"><div class="seg base">Package</div></div></div>
+<div class="row"><span class="k">Fee</span><div class="track" id="fB"><div class="seg base">Base fee</div></div></div>
+<div class="res"><span class="big" id="nB">0 extras</span><span class="s" id="sB">charged on top</span></div>
+</div>
+</div>
+
+<div class="give"><p>Every extra gets <span>its own price.</span></p><span class="lesson">Add yours: your minimum monthly fee</span></div>
+</main>
+
+<div class="wrap pnav"><a href="/start/your-only-kpi/" style="text-decoration:none">&larr; Your only KPI</a><a href="/start/package-types/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Package types &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · Our fee structure</div></footer>
+
+<script>
+(function(){
+var NAMES=["Payroll","SA","Ad-hoc","Subs","Filing"];
+var $=function(id){return document.getElementById(id)};
+var btns=[].slice.call(document.querySelectorAll(".ext"));
+var tracks={wA:$("wA"),wB:$("wB"),fB:$("fB")},segs={wA:[],wB:[],fB:[]};
+Object.keys(tracks).forEach(function(t){NAMES.forEach(function(n){var d=document.createElement("div");d.className="seg w";d.textContent=n;d.setAttribute("aria-hidden","true");tracks[t].appendChild(d);segs[t].push(d)})});
+function plural(n){return n+(n===1?" extra":" extras")}
+function render(){
+ var on=btns.map(function(b){return b.getAttribute("aria-pressed")==="true"}),n=on.filter(Boolean).length;
+ Object.keys(segs).forEach(function(t){segs[t].forEach(function(s,i){s.classList.toggle("on",on[i])})});
+ var f=$("freeA");f.style.setProperty("--fw",(n*13)+"%");f.classList.toggle("on",n>0);
+ $("nA").textContent=plural(n);$("nB").textContent=plural(n);
+ $("freeA").textContent=n>1?"Free work":(n?"Free":"");
+}
+btns.forEach(function(b){b.addEventListener("click",function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");b.querySelector(".p").textContent=b.getAttribute("aria-pressed")==="true"?"✓":"+";render()})});
+$("reset").addEventListener("click",function(){btns.forEach(function(b){b.setAttribute("aria-pressed","false");b.querySelector(".p").textContent="+"});render()});
+var m=/^#x([0-5])$/.exec(location.hash);if(m)btns.slice(0,+m[1]).forEach(function(b){b.click()});
+render();
+})();
+</script>
+</body>
+</html>
