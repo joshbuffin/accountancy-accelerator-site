@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1180px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
 a{color:inherit}
@@ -19,93 +19,98 @@ nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-f
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
 .brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
 .navtag{font-size:13px;color:var(--slate);text-align:right}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
-h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
-footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:18px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 
-/* Hub layout */
-.hb{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,4vw,56px);align-items:center;padding-top:clamp(24px,3.5vw,36px);padding-bottom:8px}
-.steps{margin-top:30px;display:flex;flex-direction:column;gap:10px}
-.step{display:flex;align-items:center;gap:14px;font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.015em;color:#A1A1A6;transition:color .3s ease}
-.step b{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;border:2px solid #D0D0D3;color:#A1A1A6;transition:all .3s ease}
-.step.on{color:var(--ink)}
-.step.on b{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.cards{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,box-shadow .45s ease}
-.card:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3;box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
-.card .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}
-.card h2{font-size:17px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
-.card.add{background:#fff;border-style:dashed}
-.vis{display:flex;flex-direction:column;align-items:center;gap:14px}
-.hub{width:100%;max-width:540px;display:block;overflow:visible}
-.hub text{font-family:'Inter',Arial,sans-serif}
-.hub .orbit{fill:none;stroke:#EDEDEF;stroke-width:2;stroke-dasharray:4 7}
-.hub .sp{stroke:#E4E4E6;stroke-width:3;transition:stroke .5s ease,stroke-width .5s ease}
-.hub .sp.on{stroke:#F26B1D;stroke-width:4}
-.hub .nd circle{fill:#F5F5F7;stroke:#D0D0D3;stroke-width:2;transition:fill .4s ease,stroke .4s ease}
-.hub .nd text{font-size:13px;font-weight:700;fill:#8A8A8E;transition:fill .4s ease}
-.hub .nd.on circle{fill:#FFF1E8;stroke:#F26B1D}
-.hub .nd.on text{fill:#0A0A0A}
-.hub .nd.now circle{fill:#F26B1D;stroke:#F26B1D}
-.hub .nd.now text{fill:#0A0A0A}
-.hub .arc{fill:none;stroke:#F7B48C;stroke-width:2.5;stroke-linecap:round}
-.hub .arc.now{stroke:#C2410C;stroke-width:3.5}
-.hub .core{fill:#F26B1D;transform-box:fill-box;transform-origin:center;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.hub .glow{fill:#F26B1D;opacity:.12;transform-box:fill-box;transform-origin:center;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s ease}
-.ctl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
-.status{font-size:clamp(18px,2vw,22px);font-weight:700;letter-spacing:-.015em}
-.btn{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:12px 22px;background:var(--gold);color:#0A0A0A;cursor:pointer;transition:transform .2s ease,box-shadow .3s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(242,107,29,.7)}
-.btn:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.card,.btn,.step,.step b,.hub .sp,.hub .core,.hub .glow,.hub .nd circle{transition:none}.card:hover,.btn:hover{transform:none}}
-@media (max-width:900px){.hb{grid-template-columns:1fr}.steps{margin-top:22px}}
-@media (max-width:520px){.navtag{font-size:11px}.cards{gap:10px}.card{padding:14px}.card h2{font-size:15px}.hub{max-width:100%}.hub .nd text{font-size:16.5px}.pnav{font-size:14px}}
+/* Solar systems */
+.hero{padding-top:clamp(18px,2.6vh,28px)}
+.sys{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(12px,1.8vh,18px)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px 8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.panel.on{background:#FFF8F3;border-color:var(--gold)}
+.panel:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.ph{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ph h2{font-size:clamp(19px,1.9vw,24px);font-weight:700;letter-spacing:-.02em}
+.panel.on .ph h2{color:var(--gold-soft)}
+.ph .k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.panel.on .ph .k{color:var(--gold-soft)}
+.solar{display:block;width:100%;height:auto;max-height:min(34vh,300px);margin:0 auto}
+.solar text{font-family:'Inter',Arial,sans-serif;paint-order:stroke;stroke-linejoin:round}
+.flow{stroke-dasharray:4 7;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-22}}
+.take{margin-top:clamp(12px,2vh,20px);font-size:clamp(28px,3.6vw,48px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.take .gold-t{color:var(--gold)}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(12px,1.8vh,18px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.card h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.card .sub{font-size:13px;color:var(--slate);font-weight:600;margin-left:6px}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:14px;font-weight:600}
+.chip.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.ar{color:var(--gold);font-weight:800}
+.loop{display:grid;grid-template-columns:1fr 28px 1fr;grid-template-rows:auto 18px auto;align-items:center;margin-top:10px;text-align:center}
+.nd{background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 10px;font-size:13.5px;font-weight:600;line-height:1.3}
+.nd.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.la{color:var(--gold);font-weight:800;font-size:16px;line-height:1}
+@media (prefers-reduced-motion:reduce){.flow{animation:none}.panel,.card{transition:none}.panel:hover,.card:hover{transform:none}}
+@media (max-width:820px){.sys,.ex{grid-template-columns:1fr}.solar{max-height:none}}
+@media (max-width:520px){.panel{padding:12px 8px 6px}.solar text{font-size:20px}.solar text.sun{font-size:14px}.solar text.sunb{font-size:19px}.navtag{font-size:11px}.chip{font-size:13px;padding:6px 11px}.nd{font-size:12.5px}.pnav{font-size:14px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Lead generation · Become the network</span></div></nav>
 
-<main class="wrap hb">
-<div>
+<main class="wrap hero">
 <p class="eyebrow">Level 5 - Lead generation · Video 9</p>
 <h1>The universe revolves around <span class="gold-t">you.</span></h1>
-<div class="steps" id="steps">
-<div class="step on" data-s="1"><b>1</b>Meet everyone</div>
-<div class="step" data-s="2"><b>2</b>Connect them</div>
-<div class="step" data-s="3"><b>3</b>Be the first call</div>
-</div>
-<div class="cards">
-<div class="card"><p class="k">Max · from the gym</p><h2>I sent him clients. He hit £10k a month.</h2></div>
-<div class="card add"><p class="k">Add yours</p><h2>Who can you introduce this week?</h2></div>
-</div>
-</div>
-<div class="vis">
-<svg class="hub" id="hub" viewBox="0 0 600 600" role="img" aria-label="Hub and spoke diagram: you in the centre, connected to the gym, run club, dinner club, Creator Club, beach club, founders, friends and partners. Each introduction you make runs through you.">
-<circle class="orbit" cx="300" cy="300" r="205"/>
-<line class="sp" id="sp0" x1="300" y1="300" x2="300.0" y2="95.0"/>
-<line class="sp" id="sp1" x1="300" y1="300" x2="445.0" y2="155.0"/>
-<line class="sp" id="sp2" x1="300" y1="300" x2="505.0" y2="300.0"/>
-<line class="sp" id="sp3" x1="300" y1="300" x2="445.0" y2="445.0"/>
-<line class="sp" id="sp4" x1="300" y1="300" x2="300.0" y2="505.0"/>
-<line class="sp" id="sp5" x1="300" y1="300" x2="155.0" y2="445.0"/>
-<line class="sp" id="sp6" x1="300" y1="300" x2="95.0" y2="300.0"/>
-<line class="sp" id="sp7" x1="300" y1="300" x2="155.0" y2="155.0"/>
-<g id="arcs"></g>
-<g class="nd" id="nd0" data-x="300.0" data-y="95.0"><circle cx="300.0" cy="95.0" r="44"/><text x="300.0" y="99.5" text-anchor="middle">Gym</text></g>
-<g class="nd" id="nd1" data-x="445.0" data-y="155.0"><circle cx="445.0" cy="155.0" r="44"/><text x="445.0" y="159.5" text-anchor="middle">Run club</text></g>
-<g class="nd" id="nd2" data-x="505.0" data-y="300.0"><circle cx="505.0" cy="300.0" r="44"/><text x="505.0" y="297.0" text-anchor="middle">Dinner</text><text x="505.0" y="313.0" text-anchor="middle">club</text></g>
-<g class="nd" id="nd3" data-x="445.0" data-y="445.0"><circle cx="445.0" cy="445.0" r="44"/><text x="445.0" y="442.0" text-anchor="middle">Creator</text><text x="445.0" y="458.0" text-anchor="middle">Club</text></g>
-<g class="nd" id="nd4" data-x="300.0" data-y="505.0"><circle cx="300.0" cy="505.0" r="44"/><text x="300.0" y="502.0" text-anchor="middle">Beach</text><text x="300.0" y="518.0" text-anchor="middle">club</text></g>
-<g class="nd" id="nd5" data-x="155.0" data-y="445.0"><circle cx="155.0" cy="445.0" r="44"/><text x="155.0" y="449.5" text-anchor="middle">Founders</text></g>
-<g class="nd" id="nd6" data-x="95.0" data-y="300.0"><circle cx="95.0" cy="300.0" r="44"/><text x="95.0" y="304.5" text-anchor="middle">Friends</text></g>
-<g class="nd" id="nd7" data-x="155.0" data-y="155.0"><circle cx="155.0" cy="155.0" r="44"/><text x="155.0" y="159.5" text-anchor="middle">Partners</text></g><circle class="glow" id="glow" cx="300" cy="300" r="78"/>
-<circle class="core" id="core" cx="300" cy="300" r="50"/>
-<text x="300" y="308" text-anchor="middle" font-size="22" font-weight="800" fill="#0A0A0A">You</text>
+
+<div class="sys">
+<div class="panel"><div class="ph"><h2>Excluded</h2><span class="k">On the outside</span></div>
+<svg class="solar" id="sysL" viewBox="0 0 520 300" role="img" aria-label="The ecosystem orbits someone else. You drift outside it, unconnected.">
+<circle cx="250" cy="155" r="70" fill="none" stroke="#D1D1D6" stroke-width="1.5"/>
+<circle cx="250" cy="155" r="124" fill="none" stroke="#D1D1D6" stroke-width="1.5"/>
+<circle cx="250" cy="155" r="34" fill="#C7C7CC"/>
+<text x="250" y="152" text-anchor="middle" class="sun" font-size="12" font-weight="700" fill="#3A3A3C">The</text>
+<text x="250" y="166" text-anchor="middle" class="sun" font-size="12" font-weight="700" fill="#3A3A3C">ecosystem</text>
+<g id="pL"></g>
+<g id="youL">
+<circle r="22" fill="none" stroke="#B8B8BC" stroke-width="1.5" stroke-dasharray="3 5"/>
+<circle r="11" fill="#fff" stroke="#8E8E93" stroke-width="2.5"/>
+<text y="-28" text-anchor="middle" font-size="14" font-weight="800" fill="#6E6E73" stroke="#F5F5F7" stroke-width="4">You</text>
+</g>
 </svg>
-<div class="ctl"><p class="status" id="status" aria-live="polite">Intros made: 0</p><button class="btn" id="go" type="button">Make an intro &rarr;</button></div>
+</div>
+<div class="panel on"><div class="ph"><h2>Everyone calls you first</h2><span class="k">The centre</span></div>
+<svg class="solar" id="sysR" viewBox="0 0 520 300" role="img" aria-label="You are the sun. The ecosystem orbits you, and introductions and work flow through you.">
+<defs><radialGradient id="glow"><stop offset="0" stop-color="#F26B1D" stop-opacity=".35"/><stop offset="1" stop-color="#F26B1D" stop-opacity="0"/></radialGradient></defs>
+<circle cx="260" cy="155" r="70" fill="none" stroke="#F6C3A3" stroke-width="1.5"/>
+<circle cx="260" cy="155" r="124" fill="none" stroke="#F6C3A3" stroke-width="1.5"/>
+<g id="lnR"></g>
+<circle cx="260" cy="155" r="58" fill="url(#glow)"/>
+<circle cx="260" cy="155" r="34" fill="#F26B1D"/>
+<text x="260" y="161" text-anchor="middle" class="sunb" font-size="17" font-weight="800" fill="#0A0A0A">You</text>
+<g id="pR"></g>
+</svg>
+</div>
+</div>
+
+<p class="take">People just want to get you <span class="gold-t">involved.</span></p>
+
+<div class="ex">
+<div class="card"><h3>Max from the gym <span class="sub">22 · building an AI product · couldn't win clients</span></h3>
+<div class="chips"><span class="chip">I helped Max</span><span class="ar">&rarr;</span><span class="chip">Sent him clients</span><span class="ar">&rarr;</span><span class="chip">He hit £10k a month</span><span class="ar">&rarr;</span><span class="chip hot">He tells everyone how good I am</span></div>
+</div>
+<div class="card"><h3>Send work to people who are good</h3>
+<div class="loop" aria-label="A loop: I send work to people I know are good, clients tell their network I'm well connected, those businesses win clients, they send clients back to me.">
+<div class="nd">I send work to people I know are good</div><span class="la">&rarr;</span><div class="nd">Clients tell their network I'm well connected</div>
+<span class="la">&uarr;</span><span></span><span class="la">&darr;</span>
+<div class="nd hot">They send clients back to me</div><span class="la">&larr;</span><div class="nd">Those businesses win clients</div>
+</div>
+</div>
 </div>
 </main>
 
@@ -114,57 +119,31 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var NS='http://www.w3.org/2000/svg';
-var btn=document.getElementById('go'),st=document.getElementById('status'),arcs=document.getElementById('arcs');
-var core=document.getElementById('core'),glow=document.getElementById('glow');
-var steps=document.querySelectorAll('#steps .step');
-var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var pairs=[[0,5],[3,7],[4,1],[2,6]];
-var n=0;
-function node(i){return document.getElementById('nd'+i);}
-function clearNow(){
-  var a=arcs.querySelectorAll('.now');for(var i=0;i<a.length;i++)a[i].classList.remove('now');
-  var d=document.querySelectorAll('.nd.now');for(var j=0;j<d.length;j++)d[j].classList.remove('now');
+var NS="http://www.w3.org/2000/svg";
+var P=[{n:"Founders",r:70,a:.3,s:.12},{n:"Gym",r:70,a:2.4,s:.12},{n:"Run club",r:70,a:4.4,s:.12},
+{n:"Dinner club",r:124,a:1.1,s:.07},{n:"Partners",r:124,a:3.2,s:.07},{n:"Clients",r:124,a:5.2,s:.07}];
+function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+function build(gid,cx,cy,on,lid){
+  var g=document.getElementById(gid),L=lid?document.getElementById(lid):null,out=[];
+  P.forEach(function(p){
+    var pg=el("g",{}),c=el("circle",{r:9,fill:on?"#fff":"#fff",stroke:on?"#F26B1D":"#8E8E93","stroke-width":2.5}),
+    t=el("text",{"font-size":13,"font-weight":700,fill:on?"#C2410C":"#6E6E73",stroke:on?"#FFF8F3":"#F5F5F7","stroke-width":4,"text-anchor":"middle"});
+    t.textContent=p.n;pg.appendChild(c);pg.appendChild(t);g.appendChild(pg);
+    var ln=null;if(L){ln=el("line",{x1:cx,y1:cy,stroke:"#F26B1D","stroke-width":1.6,"stroke-opacity":.55,"class":"flow"});L.appendChild(ln)}
+    out.push({p:p,g:pg,t:t,ln:ln});
+  });
+  return {cx:cx,cy:cy,items:out};
 }
-function setSteps(s){for(var i=0;i<steps.length;i++)steps[i].classList.toggle('on',+steps[i].getAttribute('data-s')<=s);}
-function grow(){
-  var k=1+n*0.07;
-  core.style.transform='scale('+k+')';
-  glow.style.transform='scale('+(1+n*0.16)+')';
-  glow.style.opacity=(0.12+n*0.04).toFixed(2);
-}
-function reset(){
-  n=0;arcs.innerHTML='';
-  var a=document.querySelectorAll('.nd,.sp');for(var i=0;i<a.length;i++)a[i].classList.remove('on','now');
-  grow();setSteps(1);
-  st.textContent='Intros made: 0';
-  btn.innerHTML='Make an intro &rarr;';
-}
-btn.addEventListener('click',function(){
-  if(n>=pairs.length){reset();return;}
-  clearNow();
-  var p=pairs[n],A=node(p[0]),B=node(p[1]);
-  var ax=A.getAttribute('data-x'),ay=A.getAttribute('data-y'),bx=B.getAttribute('data-x'),by=B.getAttribute('data-y');
-  var path=document.createElementNS(NS,'path');
-  path.setAttribute('d','M'+ax+' '+ay+' Q300 300 '+bx+' '+by);
-  path.setAttribute('class','arc now');
-  arcs.appendChild(path);
-  if(!reduce&&path.getTotalLength){
-    var L=path.getTotalLength();
-    path.style.strokeDasharray=L;path.style.strokeDashoffset=L;
-    path.getBoundingClientRect();
-    path.style.transition='stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)';
-    path.style.strokeDashoffset=0;
-  }
-  A.classList.add('on','now');B.classList.add('on','now');
-  document.getElementById('sp'+p[0]).classList.add('on');
-  document.getElementById('sp'+p[1]).classList.add('on');
-  n++;grow();
-  setSteps(n>=pairs.length?3:2);
-  if(n>=pairs.length){st.textContent='Everyone calls you first';btn.innerHTML='Start again';}
-  else{st.textContent='Intros made: '+n;}
-});
-reset();
+var A=build("pL",250,155,false),B=build("pR",260,155,true,"lnR"),you=document.getElementById("youL");
+function place(S,time){S.items.forEach(function(o){var ang=o.p.a+o.p.s*time,x=S.cx+Math.cos(ang)*o.p.r,y=S.cy+Math.sin(ang)*o.p.r;
+  o.g.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")");
+  o.t.setAttribute("y",(y<S.cy?-15:25));
+  if(o.ln){o.ln.setAttribute("x2",x.toFixed(1));o.ln.setAttribute("y2",y.toFixed(1))}})}
+function drift(time){var x=470+Math.sin(time*.4)*8,y=48+Math.cos(time*.3)*6;you.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+")")}
+var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(still){place(A,0);place(B,0);drift(0);return}
+var t0=null;function tick(ts){if(t0===null)t0=ts;var t=(ts-t0)/1000;place(A,t);place(B,t);drift(t);requestAnimationFrame(tick)}
+place(A,0);place(B,0);drift(0);requestAnimationFrame(tick);
 })();
 </script>
 </body>
