@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Outreach Template - Accountancy Accelerator</title>
-<meta name="description" content="The four-part introduction message: unique opener, compliment, story, ask for an intro.">
+<meta name="description" content="The introduction message, the way Josh teaches it: opener, compliment, story, ask for an intro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -20,40 +20,71 @@ nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-f
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
 .brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
 .navtag{font-size:13px;color:var(--slate);text-align:right}
-.hero{padding:clamp(72px,11vw,140px) 0 clamp(40px,6vw,72px)}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
-h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.navlinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.navlinks a{font-size:14px;font-weight:600;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink);transition:border-color .2s,color .2s}
+.navlinks a:hover{border-color:var(--gold);color:var(--gold-soft)}
+.hero{padding:clamp(56px,9vw,120px) 0 clamp(24px,4vw,48px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(42px,7.4vw,88px);font-weight:700;letter-spacing:-.035em;line-height:1.04}
+h2{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+h3{font-size:clamp(19px,2vw,23px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
 .gold-t{color:var(--gold-soft)}
-.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
-/* Timeline */
-.tl{position:relative;padding:8px 0 clamp(72px,10vw,120px)}
-.tl::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--line))}
-.ev{position:relative;padding-left:52px;margin-bottom:28px}
-.ev::before{content:"";position:absolute;left:3px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
-.ev.key::before{background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18)}
-.when{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;padding-top:28px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.ev.key .box{border-color:var(--gold)}
-.box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
-.box ul{margin-top:16px;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:clamp(16px,1.7vw,18px)}
-.box li b{color:var(--ink)}
-.quote{margin-top:16px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(17px,1.9vw,20px);font-weight:600}
-.stat{display:inline-block;margin-top:16px;font-size:clamp(36px,5vw,56px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
-.stat small{font-size:16px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:8px}
-.phase{margin:48px 0 8px 52px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
-.end{background:var(--gold);color:#0A0A0A;padding:clamp(72px,10vw,120px) 0}
-.end h2{font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
-.end ul{margin-top:32px;padding-left:22px;display:flex;flex-direction:column;gap:12px;font-size:clamp(18px,2vw,22px);max-width:880px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
-@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
-
-.tpl{margin-top:20px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;font-size:clamp(17px,1.9vw,20px);line-height:1.6}
-.tpl .p{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-top:14px}
-.tpl .p:first-child{margin-top:0}
-.copy{margin-top:16px;font:inherit;font-size:14px;font-weight:600;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:20px}
+section{padding:clamp(48px,7vw,88px) 0}
+section.alt{background:var(--card)}
+.sub{color:var(--muted);font-size:clamp(16px,1.7vw,19px);margin-top:10px;max-width:760px}
+.grid{display:grid;gap:18px;margin-top:32px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,2.4vw,28px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+section:not(.alt) .card{background:var(--card)}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.card.hl{border-color:var(--gold);background:#FFF8F3}
+.card p{color:var(--muted);font-size:16px;margin-top:8px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;margin-bottom:12px}
+.k{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px;display:block}
+/* script parts */
+.part{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,.8fr);gap:28px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
+.part:last-child{border-bottom:1px solid var(--line)}
+.part .lab{display:flex;gap:12px;align-items:center}
+.part .lab .num{margin:0;flex:none}
+.say{font-size:clamp(18px,2vw,22px);font-weight:600;line-height:1.45;border-left:3px solid var(--gold);padding-left:16px}
+.say em{font-style:normal;color:var(--gold-soft)}
+.why .k{color:var(--slate)}
+.why p{color:var(--muted);font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--ink)}
+/* scripts */
+.script{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:14px;font-size:17px;line-height:1.6;white-space:pre-wrap}
+.script b{color:var(--gold-soft);font-weight:600}
+.main-script{font-size:clamp(18px,2vw,21px);padding:24px 26px;border-color:var(--gold)}
+.copy{margin-top:14px;font:inherit;font-size:14px;font-weight:600;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer;transition:background .2s}
 .copy:hover{background:var(--gold-soft)}
-.dont .box{border-color:#E2E2E2}
+.copy.done{background:var(--gold)}
+.note{margin-top:12px;font-size:15px;color:var(--slate)}
+.note b{color:var(--ink)}
+.callout{margin-top:32px;background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(24px,3vw,36px);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:24px;align-items:center}
+.callout .k{color:var(--gold)}
+.callout .say{border-left-color:var(--gold);color:#fff}
+/* odds */
+.odds{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;margin-top:28px}
+.odds svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-direction:column;gap:14px}
+.legend div{display:flex;gap:12px;align-items:center;font-size:18px;font-weight:600}
+.legend i{flex:none;width:16px;height:16px;border-radius:50%}
+.illus{font-size:12px;color:var(--slate);margin-top:6px}
+/* don't */
+.dont{text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:2px;font-weight:600;font-size:17px;color:var(--muted)}
+.end{background:var(--gold);color:#0A0A0A;padding:clamp(56px,8vw,96px) 0}
+.end h2{font-size:clamp(40px,6vw,72px)}
+.end .eyebrow{color:#3A3A3C}
+.end .grid .card{background:rgba(255,255,255,.92);border-color:transparent}
+.end .grid .card p{color:#3A3A3C}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+@media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.part{grid-template-columns:1fr;gap:12px}.callout,.odds{grid-template-columns:1fr}}
+@media (max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}.script{font-size:16px;padding:16px}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -62,139 +93,160 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 
 <header class="hero"><div class="wrap">
 <p class="eyebrow">Supply of leads · Outreach</p>
-<h1>The intro <span class="gold-t">message.</span></h1>
-<p class="lead">You're not selling. You're asking for an introduction. Four parts, sent as a voice note, a call or a WhatsApp, to everyone in your phone who's even remotely valuable.</p>
+<h1>Ask for an intro.<br><span class="gold-t">Not for work.</span></h1>
+<p class="lead">You're not selling. You're asking for an introduction. Compliment them, tell them your story, and ask who they know.</p>
+<div class="navlinks"><a href="#script">The script</a><a href="#message">The full message</a><a href="#versions">Other versions</a><a href="#odds">The odds</a><a href="#ten">Send ten today</a></div>
 </div></header>
 
-<main class="wrap tl">
-
-<p class="phase">The four parts</p>
-
-<div class="ev key"><p class="when">Part 1</p><div class="box">
-<h2>Make it unique to them</h2>
-<ul>
-<li>Open with something specific to that person. Never a copy-and-paste blast.</li>
-<li>Their work, a hobby, something you know they've done.</li>
-<li><b>e.g.</b> "Saw you've been smashing it with the management company." / "I know you've been doing loads of running."</li>
-</ul></div></div>
-
-<div class="ev"><p class="when">Part 2</p><div class="box">
-<h2>Compliment their network</h2>
-<ul>
-<li>Tell them you know they're really well connected in their area, industry or space.</li>
-<li>In a group chat: "I know people in here are really well connected."</li>
-</ul></div></div>
-
-<div class="ev"><p class="when">Part 3</p><div class="box">
-<h2>Tell a personal story</h2>
-<ul>
-<li>Why you're making the jump. Make it about life, not business.</li>
-<li><b>e.g.</b> "My kids are growing up way too fast. I want to work from home and watch them grow up."</li>
-<li><b>e.g.</b> "We've just had a baby and I've realised how much I want to be around for it."</li>
-<li>Use your real reason. That's what makes people care.</li>
-</ul></div></div>
-
-<div class="ev key"><p class="when">Part 4</p><div class="box">
-<h2>Ask for an intro, not work</h2>
-<ul>
-<li>"Does anyone come to mind you could introduce me to, who might be a good contact for me?"</li>
-<li>No pitch. No price. No "do you need an accountant?"</li>
-</ul></div></div>
-
-<p class="phase">Put together</p>
-
-<div class="ev"><p class="when">The template</p><div class="box">
-<h2>Copy it, then make it yours</h2>
-<div class="tpl" id="tpl">
-<span class="p">Unique</span>Hi [Name], hope you're well. [Something specific to them.]
-<span class="p">Compliment</span>I know you're really well connected in [area / industry].
-<span class="p">Story</span>I'm making the jump from employment to running my own accounting practice, because [your real reason].
-<span class="p">Ask</span>Does anyone come to mind you could introduce me to, who might be a good contact for me?
+<section class="alt"><div class="wrap">
+<p class="eyebrow">The mindset</p>
+<h2>Baby step selling.</h2>
+<p class="sub">Break "stranger to client" into as many small steps as possible. This message is just one small step.</p>
+<div class="grid g3">
+<div class="card"><span class="k">All you want</span><h3>For them to like and trust you a little.</h3><p>Let it progress from there.</p></div>
+<div class="card hl"><span class="k">Job one</span><h3>Access to their network.</h3><p>They know another 30 people. You don't.</p></div>
+<div class="card hl"><span class="k">Job two</span><h3>They now know you're an accountant.</h3><p>If they need one, they'll come to you anyway.</p></div>
 </div>
-<button class="copy" id="copyBtn" type="button">Copy template</button>
-</div></div>
+</div></section>
 
-<p class="phase">Why it works</p>
+<section><div class="wrap">
+<p class="eyebrow">Who to message</p>
+<h2>Everyone in your phone.</h2>
+<p class="sub">Anyone even remotely valuable: they've had a business, or they know people. Even someone you worked with in a pub two years ago. Just not anyone who'd get you in trouble at work.</p>
+<div class="grid g4">
+<div class="card"><span class="num">1</span><h3>Go through every contact</h3><p>Phone and WhatsApp.</p></div>
+<div class="card"><span class="num">2</span><h3>Put them in a spreadsheet</h3><p>Grade each one out of 5.</p></div>
+<div class="card"><span class="num">3</span><h3>Send 10 a day</h3><p>In protected, high-energy time, like 10am to 2pm on your best days.</p></div>
+<div class="card"><span class="num">4</span><h3>Note every conversation</h3><p>So you remember what each person said.</p></div>
+</div>
+<div class="callout"><div><span class="k">Format</span><h3>Voice note or call beats text.</h3></div><p class="say" style="font-size:clamp(18px,2vw,22px)">When it suits the person, send a voice note or just ring them. The more personal, the better.</p></div>
+</div></section>
 
-<div class="ev"><p class="when">Attention</p><div class="box">
-<h2>The compliment earns it</h2>
-<ul><li>Compliment first, then story, and people are far more likely to care about what you say next.</li></ul>
-</div></div>
+<section class="alt" id="script"><div class="wrap">
+<p class="eyebrow">The script, part by part</p>
+<h2>Four parts. One favour.</h2>
+<div style="margin-top:28px">
+<div class="part"><div class="lab"><span class="num">1</span><h3>Make it personal</h3></div>
+<p class="say">"Hi <em>[Name]</em>, hope you're well. <em>[Something specific to them: their work, a hobby, or "it's been a while!"]</em>"</p>
+<div class="why"><span class="k">Why</span><p>Never a copy-and-paste blast. One line that only fits them.</p></div></div>
+<div class="part"><div class="lab"><span class="num">2</span><h3>Compliment their network</h3></div>
+<p class="say">"I wanted to drop you a message because I know you're really well connected in <em>[area / industry / space]</em>."</p>
+<div class="why"><span class="k">Why</span><p>Now they want to prove you right. "You think I'm a useful guy? Let me show you."</p></div></div>
+<div class="part"><div class="lab"><span class="num">3</span><h3>Tell your story</h3></div>
+<div><p class="say">"I'm in the process of handing in my notice and making the jump to running my own accounting firm, because <em>[your real reason]</em>."</p>
+<div class="chips"><span class="chip">My kids are growing up too fast. I want to work from home and watch them grow up.</span><span class="chip">We've got a baby on the way.</span><span class="chip">I got married and want more control over my life.</span><span class="chip">We've just bought a house.</span></div></div>
+<div class="why"><span class="k">Why</span><p>A compliment and a story make them care about what you say next. The people best placed to help are often 10+ years ahead of you. They remember how fast it went.</p></div></div>
+<div class="part"><div class="lab"><span class="num">4</span><h3>Ask for an intro, not work</h3></div>
+<div><p class="say">"I'm just wondering, is there anyone in your network you could introduce me to who might need an accountant, or anyone who's mentioned it to you recently?"</p>
+<p class="note"><b>Optional:</b> "I know if it came from you, it would carry a lot of weight, because I know how well respected you are."</p></div>
+<div class="why"><span class="k">Why</span><p>You're asking for a favour, not money. There's nothing to object to.</p></div></div>
+</div>
+</div></section>
 
-<div class="ev"><p class="when">Connection</p><div class="box">
-<h2>The story makes them want to help</h2>
-<ul>
-<li>The people best placed to help are often 10+ years ahead of you. Their kids are 10 or 16 now. They remember how fast it went.</li>
-<li>They relate to you, so they want to help. You're appealing to feelings, not selling.</li>
-</ul></div></div>
+<section id="message"><div class="wrap">
+<p class="eyebrow">Put together</p>
+<h2>The full message.</h2>
+<p class="sub">Copy it, then make it yours. Use your real reason.</p>
+<div class="script main-script" id="s0">Hi [Name], hope you're well. [Something personal to them.]
 
-<div class="ev"><p class="when">Low pressure</p><div class="box">
-<h2>An intro is an easy yes</h2>
-<ul><li>You're asking for a favour, not money. There's nothing to object to.</li></ul>
-</div></div>
+I wanted to drop you a message because I know you're really well connected in [area / industry].
 
-<div class="ev key"><p class="when">Two for one</p><div class="box">
-<h2>It does two jobs at once</h2>
-<ul>
-<li>You get access to their network.</li>
-<li>They now know you're an accountant. If they need one, they'll come to you anyway.</li>
-</ul></div></div>
+I'm in the process of handing in my notice and making the jump to running my own accounting firm, because [your real reason].
 
-<div class="ev"><p class="when">Baby step selling</p><div class="box">
-<h2>A step of trust, not a sale</h2>
-<ul><li>Break "stranger to client" into as many small steps as possible. All you want here is for them to like and trust you a little. Let it progress from there.</li></ul>
-</div></div>
+I'm just wondering, is there anyone in your network you could introduce me to who might need an accountant, or anyone who's mentioned it to you recently? I know if it came from you, it would carry a lot of weight.</div>
+<button class="copy" type="button" data-target="s0">Copy message</button>
+<div class="callout"><div><span class="k">If they ask about a specialism</span><h3>You don't need to niche publicly.</h3></div><p class="say">"To be honest, for most of the small businesses I work with, the tax isn't overly complex. What they really need is someone proactive and good at communicating."</p></div>
+</div></section>
 
-<div class="ev"><p class="when">The numbers</p><div class="box">
-<h2>Play the odds</h2>
-<ul><li>Most people will just say "amazing, good for you". That's fine.</li></ul>
-<p class="stat">1 in 10<small>might open six doors for you</small></p>
-</div></div>
+<section class="alt" id="versions"><div class="wrap">
+<p class="eyebrow">Same structure, every channel</p>
+<h2>Other versions.</h2>
+<div class="grid g2">
+<div class="card"><span class="k">Group chat or paid community</span><h3>Add value first. Then post.</h3>
+<div class="script" id="s1">Hey guys, I know people in here are really well connected. I'm making the move from full-time employment to running my own accounting practice, because [your story]. Does anyone have someone they could introduce me to who might be a good contact for me?</div>
+<button class="copy" type="button" data-target="s1">Copy</button>
+<p class="note"><b>Before you post:</b> reply to people, link people together, share useful articles. In paid networks, going to the in-person events and following up beats messaging the group.</p></div>
+<div class="card"><span class="k">Someone 10 years ahead of you</span><h3>Ask for advice, not work.</h3>
+<div class="script" id="s2">Hi [Name], I know you're doing really well in [their space]. I'm just starting my own business and I'd love to borrow a few minutes of your time to pick your brain on [marketing / chasing clients / your question]. Would you be up for a quick call or a coffee?</div>
+<button class="copy" type="button" data-target="s2">Copy</button>
+<p class="note"><b>On the call:</b> go in to genuinely get value. By the end they often offer intros themselves: "That's me ten years ago. I know someone who can help."</p></div>
+<div class="card"><span class="k">Door to door</span><h3>Find the owner. Keep it short.</h3>
+<div class="script" id="s3">Hi, are you the owner? Really sorry to bother you, I know you're busy. I've finally made the jump and started my own accounting firm, and I'm looking for introductions locally because I live just down the road. Do you know anyone who's looking for an accountant? I'll get out of your way. Here's my card.</div>
+<button class="copy" type="button" data-target="s3">Copy</button>
+<p class="note"><b>Then:</b> try to get their WhatsApp number or email, and write a note straight after.</p></div>
+<div class="card"><span class="k">Everyday life</span><h3>Padel, sauna, gym, co-working, school gates.</h3>
+<div class="script" id="s4">"How's your week looking?"
+"What do you do for work?"
+[Wait for them to ask you back.]
+"I'm actually making the jump to running my own accounting firm, because [your story]."</div>
+<button class="copy" type="button" data-target="s4">Copy</button>
+<p class="note"><b>No pitch.</b> Swap WhatsApp numbers, not business cards. Your input is how many people you ask.</p></div>
+</div>
+</div></section>
 
-<p class="phase">Where to use it</p>
+<section id="odds"><div class="wrap">
+<p class="eyebrow">The odds</p>
+<h2>You're looking for <span class="gold-t">one golden intro.</span></h2>
+<div class="odds">
+<div><svg id="oddsSvg" viewBox="0 0 600 260" role="img" aria-label="Fifty messages: most get no reply, a few reply with good for you, one opens several doors"></svg><p class="illus">Illustrative</p></div>
+<div class="legend">
+<div><i style="background:#E5E5E7"></i>Most won't reply.</div>
+<div><i style="background:#A1A1A6"></i>Most who do say "Amazing, good for you."</div>
+<div><i style="background:var(--gold)"></i>One opens several doors.</div>
+<p class="sub" style="margin-top:6px">One or two super-referrers is all you need.</p>
+</div>
+</div>
+</div></section>
 
-<div class="ev"><p class="when">Everywhere</p><div class="box">
-<h2>Same structure, every channel</h2>
-<ul>
-<li><b>Phone and WhatsApp contacts:</b> list them in a spreadsheet, grade each out of 5, add notes after every conversation.</li>
-<li><b>Group chats and paid networks:</b> add value first (reply, link people together, share articles), then post it.</li>
-<li><b>Niche pockets:</b> lean into why you know their world.</li>
-<li><b>Face to face</b> (padel, the gym, coworking, the school gates): ask "what do you do for work?", wait for them to ask you back, then tell the story.</li>
-<li><b>Voice notes and calls</b> beat text when it suits the person.</li>
-</ul></div></div>
+<section class="alt"><div class="wrap">
+<p class="eyebrow">Don't</p>
+<h2>Anything that sounds like a pitch.</h2>
+<div class="grid g3">
+<div class="card"><p class="dont">"Hey guys, here's what I've just launched."</p></div>
+<div class="card"><p class="dont">"My service is better than the firm down the road."</p></div>
+<div class="card"><p class="dont">"Do you need an accountant?" as your opener.</p></div>
+</div>
+</div></section>
 
-<div class="ev dont"><p class="when">Don't</p><div class="box">
-<h2>What not to say</h2>
-<ul>
-<li>"Hey guys, here's what I've just launched."</li>
-<li>"My service is better than the firm down the road."</li>
-<li>Anything that sounds like a pitch.</li>
-</ul></div></div>
-
-</main>
-
-<section class="end"><div class="wrap">
-<p class="eyebrow" style="color:#3A3A3C">Your input</p>
+<section class="end" id="ten"><div class="wrap">
+<p class="eyebrow">Your input</p>
 <h2>Send ten today.</h2>
-<ul>
-<li>Block your highest-energy mornings for outreach only.</li>
-<li>Your number to track: how many people you've asked.</li>
-<li>Note every reply in your spreadsheet so you remember each conversation.</li>
-</ul>
+<div class="grid g3">
+<div class="card"><span class="k">Track</span><h3>How many people you've asked.</h3><p>That's the only number you control.</p></div>
+<div class="card"><span class="k">Chasing</span><h3>One chaser only, 2 weeks later.</h3><p>Then move on.</p></div>
+<div class="card"><span class="k">Protect it</span><h3>Your highest-energy hours.</h3><p>Outreach only. Nothing else.</p></div>
+</div>
 </div></section>
 
 <footer><div class="wrap">Accountancy Accelerator · Supply of leads · Outreach template</div></footer>
 
 <script>
-document.getElementById('copyBtn').addEventListener('click',function(){
-  var t=[].slice.call(document.querySelectorAll('#tpl')).map(function(el){
-    return el.innerText.replace(/^(Unique|Compliment|Story|Ask)\s*$/gim,'').replace(/\n{2,}/g,'\n').trim();
-  })[0];
-  var b=this;
-  var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy template'},1800)};
-  if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){})}
+(function(){
+function copyText(t,btn){
+  var label=btn.textContent;
+  function done(){btn.textContent='Copied';btn.classList.add('done');setTimeout(function(){btn.textContent=label;btn.classList.remove('done')},1800)}
+  function fallback(){var ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(ta)}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+}
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){var el=document.getElementById(b.getAttribute('data-target'));if(el)copyText(el.innerText.trim(),b)});
 });
+var svg=document.getElementById('oddsSvg');if(!svg)return;
+var NS='http://www.w3.org/2000/svg',cols=10,rows=5,gap=34,ox=20,oy=30,html='';
+var mid=[3,11,17,24,27,36,42,46],gold=29;
+for(var i=0;i<cols*rows;i++){
+  var x=ox+(i%cols)*gap,y=oy+Math.floor(i/cols)*gap;
+  var fill=i===gold?'#F26B1D':(mid.indexOf(i)>-1?'#A1A1A6':'#E5E5E7');
+  html+='<circle cx="'+x+'" cy="'+y+'" r="'+(i===gold?11:9)+'" fill="'+fill+'"/>';
+}
+var gx=ox+(gold%cols)*gap,gy=oy+Math.floor(gold/cols)*gap,tx=520,ys=[40,85,130,175,220];
+ys.forEach(function(ty,k){
+  html+='<path class="door" d="M'+gx+' '+gy+' C '+(gx+70)+' '+gy+', '+(tx-80)+' '+ty+', '+(tx-12)+' '+ty+'" fill="none" stroke="#F26B1D" stroke-width="2.5" stroke-linecap="round"/>';
+  html+='<rect x="'+(tx-12)+'" y="'+(ty-13)+'" width="20" height="26" rx="3" fill="#FFF1E8" stroke="#F26B1D" stroke-width="2"/><circle cx="'+(tx+3)+'" cy="'+ty+'" r="2" fill="#C2410C"/>';
+});
+html+='<text x="'+(tx+18)+'" y="134" font-size="15" font-weight="700" fill="#C2410C" font-family="Inter,Arial,sans-serif">Intros</text>';
+svg.innerHTML=html;
+})();
 </script>
-
 </body>
 </html>
