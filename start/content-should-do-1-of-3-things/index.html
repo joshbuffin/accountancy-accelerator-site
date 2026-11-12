@@ -98,13 +98,13 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="side">
 <p class="k">Test a post</p>
 <div class="posts" id="posts">
-<button class="post none" type="button" data-k="none" aria-pressed="true"><i class="av"></i><span><span class="t">Post</span><b>"Office closed Friday"</b></span></button>
-<button class="post" type="button" data-k="ent" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>A tax deadline meme</b></span></button>
-<button class="post" type="button" data-k="mot" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>50 doors. 45&nbsp;nos. 2&nbsp;yeses.</b></span></button>
-<button class="post" type="button" data-k="edu" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>How a group structure works</b></span></button>
+<button class="post none" type="button" data-k="none" aria-pressed="true"><i class="av"></i><span><span class="t">Post</span><b>"We do accounts. Book a call."</b></span></button>
+<button class="post" type="button" data-k="ent" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>A tax horror story</b></span></button>
+<button class="post" type="button" data-k="mot" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>How I started on weekends, still employed</b></span></button>
+<button class="post" type="button" data-k="edu" aria-pressed="false"><i class="av"></i><span><span class="t">Post</span><b>5 tax saving tips for directors</b></span></button>
 </div>
-<div class="verdict bad" id="verdict" aria-live="polite"><p class="k" id="vk">Does none of the 3</p><h2 id="vh">Scrolled past.</h2></div>
-<p class="rule">None of the 3? <span>Don't post it.</span></p>
+<div class="verdict bad" id="verdict" aria-live="polite"><p class="k" id="vk">Sells, gives nothing</p><h2 id="vh">Nobody cares.</h2></div>
+<p class="rule">None of the 3? <span>Don't post it.</span> Let your bio do the selling.</p>
 </div>
 
 </div>
@@ -115,7 +115,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var S={none:["Does none of the 3","Scrolled past.","Nothing"],ent:["Entertains","Stops the scroll.","Entertain"],mot:["Motivates","Stops the scroll.","Motivate"],edu:["Educates","Stops the scroll.","Educate"]};
+var S={none:["Sells, gives nothing","Nobody cares.","Nothing"],ent:["Entertains","Worth watching.","Entertain"],mot:["Motivates","Worth watching.","Motivate"],edu:["Educates","Worth watching.","Educate"]};
 var pie=document.getElementById("pie"),sl=pie.querySelectorAll(".sl"),btns=document.querySelectorAll("#posts .post"),v=document.getElementById("verdict");
 function pick(k){
  for(var i=0;i<sl.length;i++)sl[i].classList.toggle("on",sl[i].getAttribute("data-k")===k);
