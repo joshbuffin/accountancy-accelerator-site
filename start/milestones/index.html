@@ -51,7 +51,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .hero.tight{padding:clamp(24px,4vh,44px) 0 clamp(12px,2vh,20px)}
 .hero.tight h1{font-size:clamp(36px,5vw,60px)}
 .hero.tight .eyebrow{margin-bottom:10px}
-.climb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end;height:min(440px,50vh);min-height:360px;position:relative;padding-top:8px}
+.climb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end;height:min(350px,39vh);min-height:300px;position:relative;padding-top:8px}
 .climb::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--line)}
 .step{background:var(--card);border:1px solid var(--line);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0;padding:16px 20px;display:flex;flex-direction:column;gap:4px;position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
 .step:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
@@ -65,20 +65,28 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .step h3+h3{margin-top:6px}
 .step h3.ms{color:var(--gold-soft)}
 .pin{position:absolute;top:-16px;left:20px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;box-shadow:0 0 0 6px rgba(242,107,29,.18)}
-.track{display:flex;align-items:center;gap:16px;margin-top:18px}
+.track{display:flex;align-items:center;gap:16px;margin-top:14px}
 .track .end-pt{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.03em;white-space:nowrap}
 .track .end-pt.g{color:var(--gold-soft)}
 .track .line{flex:1;position:relative;display:flex;align-items:center;gap:12px}
 .track .line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed var(--gold);z-index:0}
-.track .lbl{position:relative;z-index:1;background:var(--paper);padding:0 10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.addy{position:relative;z-index:1;margin-left:auto;margin-right:auto;background:var(--paper);border:2px dashed var(--gold);border-radius:14px;padding:10px 18px;font-size:clamp(15px,1.5vw,18px);font-weight:700;transition:border-color .3s ease,background-color .3s ease}
-.addy:hover{background:#FFF8F3}
-.addy b{color:var(--gold-soft)}
+.track .tick{position:absolute;left:var(--x);top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--paper);border:3px solid var(--gold);z-index:1;transition:transform .3s ease,background-color .3s ease}
+.track .tick b{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap}
+.track .tick:hover{transform:scale(1.3);background:var(--gold)}
+.track .cap{position:absolute;top:36px;left:0;right:0;text-align:center;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.track .line{height:56px}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.rule{border-top:2px solid var(--gold);padding-top:10px}
+.rule h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.rule p{margin-top:4px;font-size:15px;color:var(--muted);line-height:1.4}
 .task{margin-top:16px;display:flex;align-items:center;gap:14px;background:var(--gold);color:#0A0A0A;border-radius:16px;padding:14px 22px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em}
+.task p{flex:1}
+.task .fill{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:700}
+.task input{width:120px;border:none;border-radius:10px;padding:8px 10px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
 .task span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#3A3A3C;white-space:nowrap}
 .pn{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 footer.slim{padding:16px 0}
-@media (prefers-reduced-motion:reduce){.step{transition:none}.step:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.step,.track .tick{transition:none}.step:hover,.track .tick:hover{transform:none}}
 @media (max-width:760px){
   .climb{display:flex;flex-direction:column-reverse;height:auto;min-height:0;gap:8px;padding-top:14px}
   .climb::after{display:none}
@@ -94,9 +102,13 @@ footer.slim{padding:16px 0}
   .pin{top:-11px;left:auto;right:12px;font-size:10px;padding:3px 9px}
   .track{gap:8px;margin-top:14px}
   .track .end-pt{font-size:18px}
-  .track .lbl{display:none}
-  .addy{padding:8px 10px;font-size:13px;text-align:center}
-  .task{flex-direction:column;align-items:flex-start;gap:4px;padding:12px 16px;font-size:16px}
+  .track .tick b{font-size:11px}
+  .track .cap{font-size:10px;letter-spacing:.1em}
+  .track .end-pt.g{white-space:normal;width:70px;font-size:15px;line-height:1.1}
+  .rules{grid-template-columns:1fr;gap:10px;margin-top:16px}
+  .rule p{font-size:14px}
+  .task{flex-direction:column;align-items:flex-start;gap:6px;padding:12px 16px;font-size:16px}
+  .task input{width:130px}
   .hero.tight{padding:20px 0 10px}
   .pn{font-size:14px;padding:12px 16px}
 }
@@ -114,21 +126,38 @@ footer.slim{padding:16px 0}
 <main class="wrap" style="padding-bottom:8px">
 <div class="climb" aria-label="The four stages, rising from Start to Sell">
 <div class="step s1"><span class="pin">You are here</span><span class="n">Stage 1</span><h2>Start</h2><p class="amt">£0 to £5k<small>a month</small></p><h3>Still employed</h3><h3 class="ms">Hit your quit number</h3></div>
-<div class="step s2"><span class="n">Stage 2</span><h2>Scale: Operator</h2><p class="amt">£5k to £20k<small>a month</small></p><h3>Quit and solo</h3><h3>Recurring revenue</h3><h3 class="ms">First full-time hire</h3></div>
+<div class="step s2"><span class="n">Stage 2</span><h2>Scale: Operator</h2><p class="amt">£5k to £20k<small>a month</small></p><h3>Quit and solo</h3><h3>Recurring revenue</h3><h3 class="ms">First full-time UK hire</h3></div>
 <div class="step s3"><span class="n">Stage 3</span><h2>Scale: Owner</h2><p class="amt">£20k to £50k<small>a month</small></p><h3>A team runs the work</h3><h3 class="ms">You run the business</h3></div>
 <div class="step s4"><span class="n">Stage 4</span><h2>Sell</h2><p class="amt">£50k+<small>a month</small></p><h3 class="ms">Worth something to someone else</h3></div>
 </div>
 
-<div class="track" aria-label="Your Start milestones, from £0 to £5k">
+<div class="track" aria-label="Your Start milestones: monthly revenue climbing from £0 to your quit number">
 <span class="end-pt">£0</span>
-<div class="line"><span class="lbl">The steps to £5k</span><span class="addy"><b>Add yours:</b> your Start milestones (first client, quit number...)</span></div>
-<span class="end-pt g">£5k</span>
+<div class="line"><span class="tick" style="--x:28%"><b>£2k</b></span><span class="tick" style="--x:42%"><b>£2.4k</b></span><span class="tick" style="--x:63%"><b>£3.6k</b></span><span class="tick" style="--x:84%"><b>£4.5k</b></span><span class="cap">Every month, one step closer</span></div>
+<span class="end-pt g">Your quit number</span>
 </div>
 
-<div class="task"><span>Your task</span>Write down your next milestone, and the date.</div>
+<div class="rules">
+<div class="rule"><h3>Set it in revenue, not clients</h3><p>Two self assessments barely move you. Two companies at £600 a month do. Make every milestone a monthly figure.</p></div>
+<div class="rule"><h3>Know what it's for</h3><p>Late nights, weekends and networking are ten times harder when you don't know what you're working towards.</p></div>
+<div class="rule"><h3>Hit it, then set the next</h3><p>Recognise it when you get there. Once you've quit, your next milestone is your first full-time UK hire.</p></div>
+</div>
+
+<div class="task"><span>Your task</span><p>Write down your next milestone, and the date.</p><label class="fill">£<input id="msAmt" inputmode="numeric" placeholder="5,000" aria-label="Your next milestone, monthly revenue"></label><label class="fill">by<input id="msDate" placeholder="dd/mm/yyyy" aria-label="Date you'll hit it"></label></div>
 </main>
 <div class="wrap pn"><a href="/start/your-workbook/" style="text-decoration:none">&larr; Your workbook</a><a href="/start/wins-and-cha-chings/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Wins and cha-chings &rarr;</a></div>
 <footer class="slim"><div class="wrap">Accountancy Accelerator · Start · Sprint · Milestones</div></footer>
 
+<script>
+(function(){
+var K="aa-next-milestone-v1",d={};
+try{d=JSON.parse(localStorage.getItem(K))||{}}catch(e){d={}}
+["msAmt","msDate"].forEach(function(id){
+var el=document.getElementById(id);if(!el)return;
+if(d[id])el.value=d[id];
+el.addEventListener("input",function(){d[id]=el.value;try{localStorage.setItem(K,JSON.stringify(d))}catch(e){}});
+});
+})();
+</script>
 </body>
 </html>
