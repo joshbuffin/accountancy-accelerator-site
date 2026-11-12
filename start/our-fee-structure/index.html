@@ -22,58 +22,50 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:5
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
 h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
 .gold-t{color:var(--gold-soft)}
-footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 
-/* Our fee structure: bundled vs base + add-ons */
-.hero{padding-top:clamp(22px,3.4vh,40px)}
-.hero h1{font-size:clamp(34px,4.4vw,58px)}
+/* Our fee structure: the profitable proposal */
+.hero{padding-top:clamp(20px,3vh,36px)}
+.hero h1{font-size:clamp(36px,4.4vw,60px)}
+.sub{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.015em;color:var(--slate);margin-top:6px}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:clamp(18px,2.6vh,28px)}
-.bar .k{margin-right:4px}
-.ext{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:transform .2s ease,background-color .2s ease,border-color .2s ease,color .2s ease}
-.ext:hover{transform:translateY(-1px);border-color:var(--gold)}
-.ext[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.ext .p{display:inline-block;width:16px;margin-right:2px;font-weight:800}
-.reset{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:none;border:0;padding:8px 6px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);padding-top:16px}
-.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px 20px;display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
-.cv:hover{transform:translateY(-3px)}
-.cv.rt{background:#FFF8F3;border-color:var(--gold)}
-.cv.rt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
-.cv.rt .k{color:var(--gold-soft)}
-.cvt{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.cv h2{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:3px}
-.tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 11px;white-space:nowrap}
-.tag.no{background:#E9E9EC;color:#3A3A3C}
-.tag.yes{background:var(--gold);color:#0A0A0A}
-.row{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;gap:10px}
-.row .k{font-size:10.5px}
-.track{display:flex;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);overflow:hidden}
-.seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;line-height:1.1;text-align:center;overflow:hidden;white-space:nowrap;border-right:2px solid #fff;flex:0 0 auto;width:0;transition:width .55s cubic-bezier(.2,.8,.2,1)}
-.seg.base{width:34%;flex:0 0 34%}
-.cv .seg.base{background:#3A3A3C;color:#fff}
-.cv.rt .seg.base{background:var(--gold-soft);color:#fff}
-.seg.w{background:#AEAEB2;color:#1C1C1E}
-.cv.rt .seg.w{background:#F8A877;color:#3A2A1E}
-.seg.free{background:repeating-linear-gradient(135deg,#fff 0 6px,#F1D9CC 6px 12px);color:var(--gold-soft);font-weight:800;border-right:0}
-.seg.on{width:13%}
-.seg.free.on{width:var(--fw,0%)}
-.res{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:12px}
-.res .big{font-size:clamp(26px,2.8vw,36px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.cv .res .big{color:#3A3A3C}
-.cv.rt .res .big{color:var(--gold-soft)}
-.res .s{font-size:14px;font-weight:700;color:var(--slate);text-align:right}
-.cv.rt .res .s{color:var(--gold-soft)}
-.mine{font-size:12px;font-weight:700;color:var(--slate);border:1.5px dashed #C7C7CC;border-radius:999px;padding:6px 12px;align-self:flex-start}
-.cv.rt .mine{border-color:#F4B48F;color:var(--gold-soft)}
-.give{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 20px;padding-top:18px}
-.give p{font-size:clamp(22px,2.4vw,30px);font-weight:800;letter-spacing:-.03em}
-.give p span{color:var(--gold-soft)}
-.give .lesson{font-size:13px;font-weight:700;color:var(--slate);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px}
-@media (max-width:820px){.cmp{grid-template-columns:1fr}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.cv{padding:14px 14px 16px;gap:10px}.track{height:38px}.seg{font-size:10.5px}.ext{font-size:13px;padding:7px 12px}.seg.w{font-size:0}.row{grid-template-columns:44px minmax(0,1fr)}.bar{padding-top:14px}}
-@media (prefers-reduced-motion:reduce){.cv,.ext,.seg{transition:none}.cv:hover,.ext:hover{transform:none}}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;margin-top:clamp(12px,2vh,20px)}
+.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:none;border-radius:999px;padding:8px 16px;cursor:pointer;color:var(--slate);transition:background-color .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
+.seg button.old[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.stage{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);margin-top:12px;align-items:start}
+.mail{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -32px rgba(0,0,0,.3)}
+.mhead{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--line);font-size:12px;font-weight:700;color:var(--slate)}
+.mhead i{width:10px;height:10px;border-radius:50%;background:#D1D1D6;display:inline-block}
+.ln{display:grid;grid-template-columns:28px 108px minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 16px;border-bottom:1px solid #EFEFF1;cursor:pointer;transition:background-color .2s}
+.ln:last-child{border-bottom:0}
+.ln:hover{background:#FFF8F3}
+.ln.sel{background:#FFF1E6}
+.pin{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.lab{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.val{font-size:clamp(15px,1.3vw,17px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.val em{font-style:normal;color:var(--gold-soft);background:#FFF1E6;border:1px dashed #F4B48F;border-radius:6px;padding:0 6px}
+.tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 9px;white-space:nowrap}
+.tag.in{background:#E9E9EC;color:#3A3A3C}
+.tag.sep{background:var(--gold);color:#0A0A0A}
+.tag.bad{background:#3A3A3C;color:#fff}
+body.old .ln .pin{background:#8E8E93}
+body.old .ln.chg .val{color:#8E8E93;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:2px}
+body.old .ln.sel{background:#F2F2F4}
+.why{background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(20px,2.6vw,30px);min-height:260px;display:flex;flex-direction:column}
+.why .k{color:var(--gold)}
+.why h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-top:10px}
+.why p{font-size:clamp(15px,1.3vw,17px);color:#BDBDC2;margin-top:12px;line-height:1.45}
+.why .n{margin-top:auto;padding-top:16px;font-size:13px;font-weight:700;color:#8E8E93}
+body.old .why{background:#3A3A3C}
+.give{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;margin-top:clamp(12px,2vh,18px)}
+.give span{color:var(--gold-soft)}
+.fade{animation:fade .3s ease}
+@keyframes fade{from{opacity:.2}to{opacity:1}}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.why{min-height:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.ln{grid-template-columns:24px minmax(0,1fr) auto;gap:8px;padding:9px 12px}.ln .lab{display:none}.pin{width:22px;height:22px}.seg button{font-size:13px;padding:7px 12px}.tag{font-size:10px;padding:3px 7px}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}.ln,.seg button{transition:none}}
 </style>
 </head>
 <body>
@@ -82,37 +74,25 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <header class="wrap hero">
 <p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 2</p>
-<h1>Price the core. Charge the <span class="gold-t">extras.</span></h1>
+<h1>The profitable <span class="gold-t">proposal.</span></h1>
+<p class="sub">One simple email. Every extra priced separately.</p>
 </header>
 
 <main class="wrap">
-<div class="bar" role="group" aria-label="Extras the client asks for">
-<span class="k">The client asks for</span>
-<button class="ext" type="button" aria-pressed="false" data-i="0"><span class="p">+</span>Non-director payroll</button>
-<button class="ext" type="button" aria-pressed="false" data-i="1"><span class="p">+</span>Non-director tax returns</button>
-<button class="ext" type="button" aria-pressed="false" data-i="2"><span class="p">+</span>Ad-hoc work</button>
-<button class="ext" type="button" aria-pressed="false" data-i="3"><span class="p">+</span>Subscriptions</button>
-<button class="ext" type="button" aria-pressed="false" data-i="4"><span class="p">+</span>Filing fees</button>
-<button class="reset" type="button" id="reset">Reset</button>
+<div class="seg" role="group" aria-label="Which proposal">
+<button type="button" id="bNow" aria-pressed="true">Our proposal now</button>
+<button type="button" id="bOld" class="old" aria-pressed="false">How we used to do it</button>
 </div>
 
-<div class="cmp">
-<div class="cv" id="cvA">
-<div class="cvt"><div><p class="k">Wrong way</p><h2>One price for everything.</h2></div><span class="tag no">Bundled</span></div>
-<div class="row"><span class="k">Work</span><div class="track" id="wA"><div class="seg base">Package</div></div></div>
-<div class="row"><span class="k">Fee</span><div class="track" id="fA"><div class="seg base">Base fee</div><div class="seg free" id="freeA">Free work</div></div></div>
-<div class="res"><span class="big" id="nA">0 extras</span><span class="s" id="sA">done for free</span></div>
+<div class="stage">
+<div class="mail" id="mail">
+<div class="mhead"><i></i><i></i><i></i>&nbsp; New email</div>
+<div id="lines"></div>
+</div>
+<div class="why" aria-live="polite" id="why"></div>
 </div>
 
-<div class="cv rt" id="cvB">
-<div class="cvt"><div><p class="k">Right way</p><h2>Base fee + add-ons.</h2></div><span class="tag yes">Unbundled</span></div>
-<div class="row"><span class="k">Work</span><div class="track" id="wB"><div class="seg base">Package</div></div></div>
-<div class="row"><span class="k">Fee</span><div class="track" id="fB"><div class="seg base">Base fee</div></div></div>
-<div class="res"><span class="big" id="nB">0 extras</span><span class="s" id="sB">charged on top</span></div>
-</div>
-</div>
-
-<div class="give"><p>Every extra gets <span>its own price.</span></p><span class="lesson">Add yours: your minimum monthly fee</span></div>
+<p class="give">Keep it simple. <span>Charge for every extra.</span></p>
 </main>
 
 <div class="wrap pnav"><a href="/start/your-only-kpi/" style="text-decoration:none">&larr; Your only KPI</a><a href="/start/package-types/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Package types &rarr;</a></div>
@@ -120,22 +100,55 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var NAMES=["Payroll","SA","Ad-hoc","Subs","Filing"];
+var L=[
+ {lab:"Subject",now:"Your proposal · <em>Company</em> LTD",nt:"",old:"Proposal attached (6 page PDF)",ot:"bad",
+  w:"Same subject, every time.",p:"Keeps it professional, and you can always search your inbox for what you quoted.",
+  ow:"An hour on every PDF.",op:"A long PDF slows the sale down. Prospects put off reading it. Just send the prices in an email."},
+ {lab:"Monthly fee",now:"<em>£ fee</em> a month, starting <em>date</em>",nt:"",old:"Monthly fee, start whenever",ot:"bad",
+  w:"Price at the top. Always a start date.",p:"A start date holds the client to it once they say yes. It also tells you how much catch-up work to charge.",
+  ow:"No start date.",op:"Nothing to hold them to, and no way to know how much catch-up work there is."},
+ {lab:"Included",now:"Monthly bookkeeping",nt:"in",old:null,
+  w:"Monthly for most clients.",p:"Some clients pay for weekly bookkeeping. Most are monthly."},
+ {lab:"Included",now:"Payroll",nt:"in",old:"Payroll for every employee",ot:"bad",
+  w:"Payroll in the package.",p:"Employee payroll is quoted separately. Payroll isn't a profitable part of the business.",
+  ow:"All payroll bundled in.",op:"Five, six, seven, eight employees, all for the same monthly fee."},
+ {lab:"Included",now:"Access to <em>name</em>",nt:"in",old:null,
+  w:"Name a real person.",p:"Put the name of who they'll deal with. A personal touch."},
+ {lab:"Separately",now:"Self assessments <em>£</em>",nt:"sep",old:"Self assessments included",ot:"bad",
+  w:"Never bundle self assessments.",p:"Charge for them separately. A big spike of cash in April and May.",
+  ow:"Self assessments bundled in.",op:"Money left on the table for every client, every year."},
+ {lab:"Separately",now:"Employee payroll <em>£</em>",nt:"sep",old:null,hideOld:1,
+  w:"A bolt-on service.",p:"Price payroll for employees separately. We're still testing this, and so far it's going well."},
+ {lab:"Separately",now:"Catch-up work and accounts <em>£</em>, deposit",nt:"sep",old:"Catch-up work: free",ot:"bad",
+  w:"Charge for catch-up. Take a deposit.",p:"Joining part way through the year? Explain why catch-up is charged. Accounts due? Take the deposit up front.",
+  ow:"Afraid to charge for catch-up.",op:"We worried it would stop clients converting. Clients are happy to pay when they understand why."},
+ {lab:"Software",now:"Client pays for their own Xero",nt:"",old:"We pay for their Xero",ot:"bad",
+  w:"Don't pay for their software.",p:"Keep it off your costs.",
+  ow:"£30 a month, per client.",op:"10 clients is £3,600 a year you're paying. That's another client's fees."},
+ {lab:"Sign off",now:"Let me know either way. I won't chase.",nt:"",old:"I'll follow up next week",ot:"bad",
+  w:"Tell them you won't chase.",p:"Replies come faster when they know it's on them. If they're not ready now, chasing kills a future lead.",
+  ow:"Chasing everyone.",op:"Follow-up sequences took time and killed sales that would have come back later."}
+];
 var $=function(id){return document.getElementById(id)};
-var btns=[].slice.call(document.querySelectorAll(".ext"));
-var tracks={wA:$("wA"),wB:$("wB"),fB:$("fB")},segs={wA:[],wB:[],fB:[]};
-Object.keys(tracks).forEach(function(t){NAMES.forEach(function(n){var d=document.createElement("div");d.className="seg w";d.textContent=n;d.setAttribute("aria-hidden","true");tracks[t].appendChild(d);segs[t].push(d)})});
-function plural(n){return n+(n===1?" extra":" extras")}
+var old=false,sel=1;
 function render(){
- var on=btns.map(function(b){return b.getAttribute("aria-pressed")==="true"}),n=on.filter(Boolean).length;
- Object.keys(segs).forEach(function(t){segs[t].forEach(function(s,i){s.classList.toggle("on",on[i])})});
- var f=$("freeA");f.style.setProperty("--fw",(n*13)+"%");f.classList.toggle("on",n>0);
- $("nA").textContent=plural(n);$("nB").textContent=plural(n);
- $("freeA").textContent=n>1?"Free work":(n?"Free":"");
+ document.body.classList.toggle("old",old);
+ var h="";
+ L.forEach(function(r,i){
+  if(old&&r.hideOld)return;
+  var chg=old&&r.old!=null, v=chg?r.old:r.now, t=chg?r.ot:r.nt;
+  var tg=t==="in"?'<span class="tag in">Included</span>':t==="sep"?'<span class="tag sep">Extra</span>':t==="bad"?'<span class="tag bad">Mistake</span>':'<span></span>';
+  h+='<div class="ln'+(i===sel?' sel':'')+(chg?' chg':'')+'" data-i="'+i+'" role="button" tabindex="0"><span class="pin">'+(i+1)+'</span><span class="lab">'+r.lab+'</span><span class="val">'+v+'</span>'+tg+'</div>';
+ });
+ $("lines").innerHTML=h;
+ var r=L[sel],o=old&&r.old!=null;
+ $("why").innerHTML='<div class="fade"><span class="k">'+(o?"Mistake we made":"Why")+'</span><h2>'+(o?r.ow:r.w)+'</h2><p>'+(o?r.op:r.p)+'</p></div><p class="n">'+(sel+1)+' of '+L.length+' · click any line</p>';
 }
-btns.forEach(function(b){b.addEventListener("click",function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true");b.querySelector(".p").textContent=b.getAttribute("aria-pressed")==="true"?"✓":"+";render()})});
-$("reset").addEventListener("click",function(){btns.forEach(function(b){b.setAttribute("aria-pressed","false");b.querySelector(".p").textContent="+"});render()});
-var m=/^#x([0-5])$/.exec(location.hash);if(m)btns.slice(0,+m[1]).forEach(function(b){b.click()});
+$("lines").addEventListener("click",function(e){var ln=e.target.closest(".ln");if(ln){sel=+ln.dataset.i;render()}});
+$("lines").addEventListener("keydown",function(e){var ln=e.target.closest(".ln");if(ln&&(e.key==="Enter"||e.key===" ")){e.preventDefault();sel=+ln.dataset.i;render();var n=$("lines").querySelector('[data-i="'+sel+'"]');n&&n.focus()}});
+function mode(o){old=o;$("bNow").setAttribute("aria-pressed",!o);$("bOld").setAttribute("aria-pressed",o);if(o&&(L[sel].old==null||L[sel].hideOld))sel=0;render()}
+$("bNow").addEventListener("click",function(){mode(false)});
+$("bOld").addEventListener("click",function(){mode(true)});
 render();
 })();
 </script>
