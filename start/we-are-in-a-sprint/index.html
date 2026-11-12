@@ -26,42 +26,36 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--slate);font-s
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:16px 24px;font-size:15px;font-weight:600}
 
 .page{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 56px - 130px);padding:clamp(24px,4vw,40px) 24px}
-.facts{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.sub{margin-top:18px;font-size:clamp(18px,1.8vw,22px);font-weight:600;color:var(--muted);line-height:1.35;max-width:440px}
+.facts{margin-top:26px;display:flex;flex-direction:column;gap:10px}
 .fact{display:flex;align-items:baseline;gap:14px;border-left:3px solid var(--gold);padding:4px 0 4px 16px}
-.fact b{font-size:clamp(26px,2.8vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--gold-soft);line-height:1.1;min-width:78px}
-.fact span{font-size:clamp(17px,1.7vw,20px);font-weight:600;line-height:1.2}
+.fact b{font-size:clamp(26px,2.8vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--gold-soft);line-height:1.1;min-width:96px}
+.fact span{font-size:clamp(16px,1.6vw,19px);font-weight:600;line-height:1.25}
 
 .track{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2.6vw,30px)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .top h2{font-size:clamp(18px,1.9vw,22px);font-weight:700;letter-spacing:-.02em}
-.tog{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
-.tog button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);padding:8px 16px;border-radius:999px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
-.tog button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
-.lane{position:relative;margin:22px 0 10px;height:34px}
-.lane .rail{position:absolute;left:0;right:0;top:16px;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 16px)}
-.lane .run{position:absolute;left:0;top:15px;height:4px;border-radius:4px;background:var(--gold);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
-.lane .dot{position:absolute;top:8px;left:0;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(242,107,29,.18);transition:left 1.4s cubic-bezier(.2,.8,.2,1)}
-.flag{position:absolute;top:-6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.flag.s{left:0}.flag.f{left:0;transform:translateX(-100%);white-space:nowrap;color:var(--gold-soft);transition:left 1.4s cubic-bezier(.2,.8,.2,1)}
-.weeks{display:grid;gap:4px;height:clamp(150px,22vh,200px);align-items:end}
-.wk{display:flex;flex-direction:column-reverse;gap:2px;height:100%;cursor:default}
-.wk i{flex:1;border-radius:2px;background:#E4E4E7;transition:background-color .3s ease,transform .3s ease}
-.wk i.lg{background:var(--gold)}
-.wk:hover i.lg{background:var(--gold-soft)}
-.wk.off i,.wk.off i.lg{background:#ECECEE}
-.axis{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;font-weight:600;color:var(--slate)}
-.key{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:13px;font-weight:600;color:var(--muted)}
-.key span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--gold)}
-.key span.o::before{background:#E4E4E7}
-.total{margin-top:16px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}
-.total b{font-size:clamp(40px,5vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold-soft)}
-.total span{font-size:clamp(16px,1.6vw,19px);font-weight:700}
-.add{margin-top:14px;font-size:15px;font-weight:700;color:var(--slate)}
+.road{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:18px 0 6px}
+.leg{font:inherit;text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px 14px;cursor:pointer;transition:border-color .25s ease,background-color .25s ease,color .25s ease}
+.leg small{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.leg strong{display:block;font-size:clamp(16px,1.6vw,19px);font-weight:700;letter-spacing:-.01em;margin-top:2px}
+.leg[aria-pressed="true"]{border-color:var(--gold);background:var(--gold);color:#0A0A0A}
+.leg[aria-pressed="true"] small{color:#0A0A0A}
+.leg:focus-visible{outline:3px solid var(--gold-soft);outline-offset:2px}
+.quit{display:flex;flex-direction:column;align-items:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);white-space:nowrap}
+.quit i{display:block;width:3px;height:34px;background:var(--gold);border-radius:2px;margin-bottom:4px}
+.panel{margin-top:16px;transition:opacity .3s ease}
+.panel[hidden]{display:none}
+.panel h3{font-size:clamp(20px,2.1vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
+.later .chip{color:var(--slate)}
+.why{margin-top:16px;border-top:1px solid var(--line);padding-top:14px;font-size:clamp(16px,1.6vw,18px);font-weight:700;line-height:1.35}
+.why em{font-style:normal;color:var(--gold-soft)}
+.add{margin-top:12px;font-size:15px;font-weight:700;color:var(--slate)}
 .add em{font-style:normal;color:var(--gold-soft)}
-.still .flag.f,.still .run,.still .dot,.still .wk i{transition:none}
 @media (max-width:900px){.page{grid-template-columns:1fr;min-height:0;padding-top:24px;padding-bottom:16px}.facts{margin-top:18px}}
-@media (max-width:600px){.navtag{font-size:11px}.weeks{gap:2px;height:130px}.wk{gap:1px}.tog button{padding:7px 12px}}
-@media (prefers-reduced-motion:reduce){.flag.f,.lane .run,.lane .dot,.wk i,.tog button{transition:none}}
+@media (max-width:600px){.navtag{font-size:11px}.road{grid-template-columns:1fr;gap:6px}.quit{flex-direction:row;gap:8px}.quit i{width:28px;height:3px;margin:0}.chip{font-size:13px;padding:7px 12px}.fact b{min-width:84px}}
+@media (prefers-reduced-motion:reduce){.leg,.panel{transition:none}}
 </style>
 </head>
 <body>
@@ -72,27 +66,47 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--slate);font-s
 <div>
 <p class="eyebrow">Level 5 - Lead generation · Video 1</p>
 <h1>We are in a <span class="gold-t">sprint.</span></h1>
+<p class="sub">Scrappy, busy, all about inputs. Just until you can quit your job.</p>
 <div class="facts">
-<div class="fact"><b>3-6</b><span>months, all in</span></div>
-<div class="fact"><b>~10</b><span>hours a week</span></div>
-<div class="fact"><b>70%</b><span>on lead generation</span></div>
+<div class="fact"><b>£3-5k</b><span>a month: the finish line</span></div>
+<div class="fact"><b>6</b><span>months, all in</span></div>
+<div class="fact"><b>70%+</b><span>of your time on lead generation</span></div>
 </div>
 </div>
 
-<section class="track" aria-label="Sprint planner: every week is 10 hours, 7 of them on lead generation">
-<div class="top">
-<h2>Your sprint, week by week</h2>
-<div class="tog" role="group" aria-label="Sprint length">
-<button type="button" data-w="13" aria-pressed="true">3 months</button>
-<button type="button" data-w="26" aria-pressed="false">6 months</button>
+<section class="track" aria-label="Two lead generation strategies: the sprint now, evergreen after you quit">
+<div class="top"><h2>Two strategies. Pick the right one for now.</h2></div>
+<div class="road" role="group" aria-label="Choose a phase">
+<button type="button" class="leg" data-p="now" aria-pressed="true"><small>Now</small><strong>The sprint</strong></button>
+<span class="quit" aria-hidden="true"><i></i>Quit your job</span>
+<button type="button" class="leg" data-p="later" aria-pressed="false"><small>After you quit</small><strong>Evergreen</strong></button>
 </div>
+
+<div class="panel" id="p-now">
+<h3>Short-term strategies that win clients in the next 3 months.</h3>
+<div class="chips">
+<span class="chip">Intros from your phone contacts</span>
+<span class="chip">Door to door on the high street</span>
+<span class="chip">Referral partners</span>
+<span class="chip">Networking events</span>
+<span class="chip">Padel, run clubs, football</span>
 </div>
-<div class="lane" aria-hidden="true"><span class="flag s">Start</span><span class="flag f" id="flag">Finish</span><div class="rail"></div><div class="run" id="run"></div><div class="dot" id="dot"></div></div>
-<div class="weeks" id="weeks" aria-hidden="true"></div>
-<div class="axis" aria-hidden="true"><span>Week 1</span><span>Week 13</span><span>Week 26</span></div>
-<div class="key"><span>Lead generation: 7 hrs</span><span class="o">Everything else: 3 hrs</span></div>
-<div class="total"><b id="hrs">91</b><span>hours of lead generation</span></div>
-<p class="add"><em>Add yours:</em> your start date and your finish line</p>
+<p class="why">Quiet enough to do while you're employed. <em>Everything else gets fixed as it comes up.</em></p>
+</div>
+
+<div class="panel later" id="p-later" hidden>
+<h3>Long-term strategies you build properly once you can be public.</h3>
+<div class="chips">
+<span class="chip">Ads</span>
+<span class="chip">Social media</span>
+<span class="chip">LinkedIn</span>
+<span class="chip">YouTube</span>
+<span class="chip">SEO</span>
+</div>
+<p class="why">More sustainable, less exhausting. <em>Not yet: you're on the down low.</em></p>
+</div>
+
+<p class="add"><em>Add yours:</em> your protected lead gen hours each week, agreed with your partner</p>
 </section>
 </main>
 
@@ -101,33 +115,13 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-  var weeks=document.getElementById('weeks'),run=document.getElementById('run'),dot=document.getElementById('dot'),hrs=document.getElementById('hrs'),flag=document.getElementById('flag');
-  var btns=document.querySelectorAll('.tog button');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var TOTAL=26,cols=[];
-  weeks.style.gridTemplateColumns='repeat('+TOTAL+',minmax(0,1fr))';
-  for(var w=0;w<TOTAL;w++){
-    var col=document.createElement('div');col.className='wk';col.title='Week '+(w+1)+': 7 hours lead generation, 3 hours everything else';
-    for(var h=0;h<10;h++){var c=document.createElement('i');if(h<7)c.className='lg';col.appendChild(c);}
-    weeks.appendChild(col);cols.push(col);
+  var legs=document.querySelectorAll('.leg');
+  var panels={now:document.getElementById('p-now'),later:document.getElementById('p-later')};
+  function show(p){
+    for(var i=0;i<legs.length;i++)legs[i].setAttribute('aria-pressed',String(legs[i].getAttribute('data-p')===p));
+    for(var k in panels)panels[k].hidden=(k!==p);
   }
-  var timer=null;
-  function set(n){
-    for(var i=0;i<btns.length;i++)btns[i].setAttribute('aria-pressed',String(+btns[i].getAttribute('data-w')===n));
-    var pct=(n/TOTAL*100)+'%';
-    run.style.width=pct;dot.style.left=pct;
-    flag.style.left=pct;
-    for(var j=0;j<TOTAL;j++)cols[j].classList.toggle('off',j>=n);
-    var target=n*7;
-    if(timer)clearInterval(timer);
-    if(reduce){hrs.textContent=target;return;}
-    var cur=+hrs.textContent||0,steps=24,k=0,start=cur;
-    timer=setInterval(function(){k++;hrs.textContent=Math.round(start+(target-start)*k/steps);if(k>=steps){clearInterval(timer);timer=null;}},40);
-  }
-  for(var b=0;b<btns.length;b++)btns[b].addEventListener('click',function(){set(+this.getAttribute('data-w'));});
-  var card=document.querySelector('.track');card.classList.add('still');
-  var r0=reduce;reduce=true;set(13);reduce=r0;
-  setTimeout(function(){card.classList.remove('still');},60);
+  for(var j=0;j<legs.length;j++)legs[j].addEventListener('click',function(){show(this.getAttribute('data-p'));});
 })();
 </script>
 </body>
