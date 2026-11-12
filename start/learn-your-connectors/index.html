@@ -27,9 +27,9 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 /* Learn your connectors: golden question plugs into your service */
 .hero{padding-top:clamp(22px,3.4vh,40px)}
-.hero h1{font-size:clamp(38px,4.6vw,62px)}
+.hero h1{font-size:clamp(38px,4.2vw,56px)}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.board{margin-top:clamp(18px,2.8vh,32px);display:flex;flex-direction:column;gap:14px}
+.board{margin-top:clamp(16px,2.4vh,28px);display:flex;flex-direction:column;gap:12px}
 .bhead{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 18px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
 .play:hover{transform:translateY(-1px);background:var(--gold-soft)}
@@ -37,7 +37,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .q{background:#FFF8F3;border:1px solid var(--gold);border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .q:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
 .q .k{color:var(--gold-soft)}
-.q h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.q h2{font-size:clamp(19px,1.8vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
 .ask{align-self:flex-start;font-size:13px;font-weight:700;color:var(--gold-soft);border:1px solid var(--gold);border-radius:999px;padding:5px 12px;background:#fff}
 .on .ask{background:var(--gold);color:#fff;border-color:var(--gold)}
 .cable{position:relative;height:34px;align-self:center}
@@ -58,6 +58,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .on .sock .hid{display:block}
 .on .sock .qm{display:none}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:6px}
+.sock .sub{font-size:14px;font-weight:600;line-height:1.35;color:#3A2A1E}
+.when{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.when ol{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.when li{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;background:var(--card);border-radius:999px;padding:6px 14px 6px 6px}
+.when b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px}
 .give{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
 .give span{color:var(--gold-soft)}
 .you{border:2px dashed #C7C7CC;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;color:var(--slate)}
@@ -71,6 +76,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
  .board{gap:16px}
  .sock{min-height:0;padding:14px 18px}
  .q{padding:14px 18px;gap:8px}
+ .when li{font-size:13px}
  .navtag{font-size:11px}.pnav{font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){.q,.sock,.wire,.plug{transition:none}.q:hover,.on .sock:hover{transform:none}}
@@ -90,17 +96,18 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="bhead"><p class="k">My golden questions</p><button class="play" id="all" type="button">Plug both in</button></div>
 
 <div class="row" id="r1">
-<button class="q" type="button" aria-pressed="false" aria-controls="s1"><span class="k">Golden question 1</span><h2>"What does your current tax planning process look like?"</h2><span class="ask">Ask it</span></button>
+<button class="q" type="button" aria-pressed="false" aria-controls="s1"><span class="k">Golden question 1</span><h2>"What's your tax planning process with your current accountant? Do you have a pre year end call?"</h2><span class="ask">Ask it</span></button>
 <div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
-<div class="sock" id="s1" aria-live="polite"><p class="k">Connects to</p><h3 class="qm">?</h3><h3 class="hid">Your tax planning.</h3></div>
+<div class="sock" id="s1" aria-live="polite"><p class="k">Connects to</p><h3 class="qm">?</h3><h3 class="hid">Tax planning as standard.</h3><p class="hid sub">A pre year end call, 2 to 3 months before their year end.</p></div>
 </div>
 
 <div class="row" id="r2">
 <button class="q" type="button" aria-pressed="false" aria-controls="s2"><span class="k">Golden question 2</span><h2>"How do you communicate with your accountant currently? I assume you have a WhatsApp group?"</h2><span class="ask">Ask it</span></button>
 <div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
-<div class="sock" id="s2" aria-live="polite"><p class="k">Connects to</p><h3 class="qm">?</h3><h3 class="hid">Your WhatsApp group.</h3></div>
+<div class="sock" id="s2" aria-live="polite"><p class="k">Connects to</p><h3 class="qm">?</h3><h3 class="hid">One WhatsApp group.</h3><p class="hid sub">You, me and the team. A reply the same day or next day.</p></div>
 </div>
 
+<div class="when" aria-label="When to plug it in"><p class="k">When to plug it in</p><ol><li><b>1</b> Ask it in the first ten minutes</li><li><b>2</b> "That must be frustrating." Then move on</li><li><b>3</b> Plug it in when you explain how you work</li></ol></div>
 <div class="foot"><p class="give">They spot the gap. <span>You fill it.</span></p><p class="you">Add yours: your third connector</p></div>
 </div>
 </main>
