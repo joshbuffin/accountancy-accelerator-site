@@ -25,21 +25,18 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
 
-/* How should your content look: scrolled past vs watched */
-.hero{padding-top:clamp(20px,3vh,36px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+/* How should your content look: over-edited vs looks like Instagram */
+.hero{padding-top:clamp(18px,3vh,34px)}
 .hero h1{font-size:clamp(36px,4.4vw,58px)}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.ctrl{display:flex;align-items:center;gap:14px;flex:1;min-width:280px;max-width:520px}
+.ctrl{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;margin-top:12px}
+.ctrl p{font-size:15px;color:var(--muted)}
 .play{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:10px 20px;cursor:pointer;white-space:nowrap;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
 .play:hover{transform:translateY(-1px);background:var(--gold-soft)}
-.play:disabled{opacity:.55;cursor:default;transform:none}
-.tl{flex:1;position:relative;height:8px;border-radius:99px;background:var(--line)}
-.tl i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);border-radius:99px}
-.tl b{position:absolute;top:-3px;width:2px;height:14px;background:#C7C7CC;border-radius:2px}
-.tn{font-size:13px;font-weight:700;min-width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.play[aria-pressed="true"]{background:#111;box-shadow:none}
 
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,28px);padding:clamp(16px,2.4vh,26px) 0 4px}
-.side{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px);display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,26px);align-items:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .3s ease}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2.4vw,28px);padding:clamp(14px,2.2vh,24px) 0 4px}
+.side{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px);display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,26px);align-items:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .side:hover{transform:translateY(-3px)}
 .side.good{background:#FFF8F3;border-color:var(--gold)}
 .side.good:hover{box-shadow:0 16px 32px -20px rgba(242,107,29,.5)}
@@ -47,52 +44,57 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 .info{display:flex;flex-direction:column;gap:14px;min-width:0}
 .info h2{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
 .tags{list-style:none;display:flex;flex-direction:column;gap:8px}
-.tags li{display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.3vw,16px);font-weight:700;line-height:1.2;padding:8px 12px;border-radius:12px;background:#fff;border:1px solid var(--line);transition:background-color .3s ease,border-color .3s ease,transform .3s ease}
+.tags li{display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.3vw,16px);font-weight:700;line-height:1.2;padding:8px 12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
 .tags li span{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800}
 .bad .tags li{color:#3A3A3C}
 .bad .tags li span{background:#E5E5EA;color:#6E6E73}
 .good .tags li span{background:var(--gold);color:#fff}
-.good .tags li.on{border-color:var(--gold);background:#FFE9DB;transform:translateX(4px)}
-.watch{display:flex;align-items:baseline;gap:10px}
-.watch .n{font-size:clamp(30px,3.2vw,42px);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:#3A3A3C;line-height:1}
-.good .watch .n{color:var(--gold-soft)}
+.verdict{font-size:14px;font-weight:800;padding:8px 12px;border-radius:12px;opacity:0;transform:translateY(4px);transition:opacity .3s ease,transform .3s ease}
+.bad .verdict{background:#111;color:#fff}
+.good .verdict{background:var(--gold);color:#fff}
+.app-on .verdict{opacity:1;transform:none}
 
 /* Phones */
-.phone{width:clamp(150px,17vw,200px);aspect-ratio:9/16;border-radius:28px;border:7px solid #111;background:#000;position:relative;overflow:hidden;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
-.phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:34%;height:12px;border-radius:99px;background:#111;z-index:5}
-.fr{position:absolute;inset:0;opacity:0;transition:opacity .25s ease}
-.fr.on{opacity:1}
-.fr svg{position:absolute;inset:0;width:100%;height:100%}
-.cap{position:absolute;left:8%;right:8%;text-align:center;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.55);z-index:2}
-.pill{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:max-content;max-width:84%;text-align:center;line-height:1.2;background:var(--gold);color:#fff;font-size:clamp(9px,.9vw,11px);font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:12px;z-index:2}
-.c-b{bottom:16%;font-size:clamp(14px,1.5vw,18px)}
-.c-m{top:50%;transform:translateY(-50%);font-size:clamp(16px,1.8vw,22px)}
-.serif{font-family:Georgia,'Times New Roman',serif;color:#111;text-shadow:none;font-size:clamp(17px,1.9vw,23px);font-weight:700;letter-spacing:-.01em}
-.serif::after{content:"";display:block;width:60%;height:3px;background:var(--gold);margin:10px auto 0;border-radius:2px}
-/* Wrong phone */
-.land{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);aspect-ratio:16/9}
-.land svg{width:100%;height:100%;display:block}
-.mute{position:absolute;top:10%;right:9%;z-index:3}
-.lost{position:absolute;inset:0;display:grid;place-items:center;background:rgba(17,17,17,.72);color:#fff;font-weight:800;font-size:clamp(15px,1.6vw,19px);letter-spacing:-.01em;opacity:0;transition:opacity .35s ease;z-index:4;text-align:center}
-.lost small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C7C7CC;margin-bottom:6px}
-.bad.gone .lost{opacity:1}
-.bad.gone .scr{transform:translateY(-14%);transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.scr{position:absolute;inset:0}
+.phone{width:clamp(150px,17vw,200px);aspect-ratio:9/16;border-radius:28px;border:7px solid #111;background:#000;position:relative;overflow:hidden;box-shadow:0 18px 40px -24px rgba(0,0,0,.6);container-type:inline-size}
+.phone>svg{position:absolute;inset:0;width:100%;height:100%}
+.t{position:absolute;z-index:2;text-align:center;line-height:1.15}
+/* bad: banner, jazzy colours, text under the buttons */
+.banner{top:2.5%;left:6%;right:6%;padding:3% 0;border-radius:6px;font-size:7.5cqw;font-weight:900;letter-spacing:.06em;color:#111;background:linear-gradient(90deg,#FFD60A,#FF453A,#FFD60A);background-size:200% 100%;animation:shine 1.6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.jazz{bottom:6%;left:30%;right:2%;font-size:8.5cqw;font-weight:900;font-style:italic;color:#FFD60A;-webkit-text-stroke:.6px #C2410C;text-shadow:2px 2px 0 #FF453A}
+/* good: white box hook, simple subtitles */
+.hook{top:15%;left:9%;right:9%;padding:4% 5%;background:#fff;color:#111;border-radius:6px;font-size:7.6cqw;font-weight:700}
+.sub{top:56%;left:6%;right:20%;color:#fff;font-size:7.4cqw;font-weight:800;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+/* the app on top */
+.ui{position:absolute;inset:0;z-index:4;opacity:0;transition:opacity .35s ease;pointer-events:none}
+.app-on .ui{opacity:1}
+.ui .top{position:absolute;top:0;left:0;right:0;height:11%;background:rgba(17,17,17,.88);display:flex;align-items:flex-end;justify-content:space-between;padding:0 8% 3%;color:#fff;font-size:7cqw;font-weight:800}
+.ui .rt{position:absolute;right:3%;bottom:22%;width:14%;display:flex;flex-direction:column;gap:7cqw;align-items:center}
+.ui .rt i{display:block;width:11cqw;height:11cqw;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 0 0 2cqw rgba(17,17,17,.55)}
+.ui .bt{position:absolute;left:0;right:0;bottom:0;height:21%;background:linear-gradient(to top,rgba(17,17,17,.95),rgba(17,17,17,.75));padding:5% 7%;display:flex;flex-direction:column;gap:3cqw}
+.ui .bt b{display:flex;align-items:center;gap:3cqw;color:#fff;font-size:6cqw}
+.ui .bt b::before{content:"";width:8cqw;height:8cqw;border-radius:50%;background:#C7C7CC}
+.ui .bt s{display:block;height:3cqw;border-radius:3px;background:rgba(255,255,255,.55);text-decoration:none}
+
+.formats{display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap;padding:clamp(10px,1.6vh,16px) 0 0;font-size:14px;color:var(--muted)}
+.formats strong{color:var(--ink)}
+.formats ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.formats li{font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink)}
 
 @media (max-width:1000px){.side{grid-template-columns:1fr;justify-items:center}.info{width:100%}}
 @media (max-width:560px){
- .hero{display:block}.ctrl{margin-top:14px;min-width:0;max-width:none}
+ .ctrl p{font-size:13px}
  .duo{gap:10px}.side{padding:10px;gap:10px;border-radius:18px}
  .phone{width:100%;max-width:150px;border-width:5px;border-radius:22px}
  .info{gap:8px}.info h2{font-size:17px}
  .tags{gap:5px}.tags li{font-size:11.5px;padding:5px 7px;gap:6px;border-radius:9px}.tags li span{width:16px;height:16px;font-size:9px}
- .good .tags li.on{transform:none}
- .watch .n{font-size:26px}.k{font-size:9.5px;letter-spacing:.12em}
- .pill{font-size:8px;padding:3px 6px}.c-b{font-size:12px}.c-m{font-size:14px}.serif{font-size:16px}
+ .verdict{font-size:11.5px;padding:6px 8px;border-radius:9px}
+ .k{font-size:9.5px;letter-spacing:.12em}
+ .formats{font-size:12.5px}.formats li{font-size:11px;padding:3px 8px}
  .eyebrow{font-size:11.5px;letter-spacing:.12em}
  .navtag{font-size:11px}.pnav{font-size:14px}
 }
-@media (prefers-reduced-motion:reduce){.side,.tags li,.fr,.lost,.scr{transition:none!important}.side:hover{transform:none}.good .tags li.on{transform:none}}
+@media (prefers-reduced-motion:reduce){.side,.ui,.verdict,.play{transition:none!important}.side:hover{transform:none}.banner{animation:none}}
 </style>
 </head>
 <body>
@@ -102,77 +104,62 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <header class="wrap hero">
 <div>
 <p class="eyebrow">Level 5 - Lead generation · Video 14</p>
-<h1>Built for the <span class="gold-t">feed.</span></h1>
+<h1>Make it look like <span class="gold-t">Instagram.</span></h1>
 </div>
 <div class="ctrl">
-<button class="play" id="play" type="button">Play 15 seconds</button>
-<div class="tl" aria-hidden="true"><i id="tf"></i><b style="left:20%"></b><b style="left:40%"></b><b style="left:60%"></b><b style="left:80%"></b></div>
-<span class="tn" id="tn">0s</span>
+<p>Simple looks premium. Over-edited looks five years old.</p>
+<button class="play" id="app" type="button" aria-pressed="false">Put the app on top</button>
 </div>
 </header>
 
 <main class="wrap">
-<div class="duo">
+<div class="duo" id="duo">
 
-<section class="side bad" id="bad">
-<div class="phone" aria-label="A landscape video with black bars, no captions and a slow intro">
-<div class="scr">
-<div class="land"><svg viewBox="0 0 160 90" aria-hidden="true"><rect width="160" height="90" fill="#3A3A3C"/><rect x="0" y="62" width="160" height="28" fill="#2C2C2E"/><rect x="18" y="20" width="34" height="24" rx="2" fill="#48484A"/><circle cx="96" cy="38" r="11" fill="#8E8E93"/><path d="M74,90 Q74,54 96,54 Q118,54 118,90 Z" fill="#8E8E93"/></svg></div>
-<svg class="mute" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="#C7C7CC"/><path d="M16 9l5 6M21 9l-5 6" stroke="#C7C7CC" stroke-width="2" stroke-linecap="round"/></svg>
-</div>
-<div class="lost"><div><small>2 seconds in</small>Scrolled past.</div></div>
+<section class="side bad">
+<div class="phone" role="img" aria-label="An over-edited video: animated banner at the very top, yellow outlined text in the bottom corner, sat against a flat wall">
+<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="90" height="160" fill="#CFCFD4"/><rect width="90" height="160" fill="url(#hard)"/><defs><radialGradient id="hard" cx=".5" cy=".42" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><circle cx="45" cy="70" r="24" fill="#D6B9A4"/><path d="M-6,160 Q-6,96 45,96 Q96,96 96,160 Z" fill="#3A3A3C"/></svg>
+<p class="t banner">TAX TIPS!!!</p>
+<p class="t jazz">Have you heard of trivial benefits?</p>
+<div class="ui" aria-hidden="true"><div class="top"><span>Reels</span><span>&#9673;</span></div><div class="rt"><i></i><i></i><i></i></div><div class="bt"><b>yourname</b><s style="width:86%"></s><s style="width:60%"></s></div></div>
 </div>
 <div class="info">
-<p class="k">The wrong way</p>
-<h2>Scrolled past.</h2>
+<p class="k">Over-edited</p>
+<h2>Feels cheap.</h2>
 <ul class="tags">
-<li><span>&times;</span>Landscape, black bars</li>
-<li><span>&times;</span>No captions</li>
-<li><span>&times;</span>"Hi everyone, so today..."</li>
-<li><span>&times;</span>One shot, start to end</li>
+<li><span>&times;</span>Animated banner at the top</li>
+<li><span>&times;</span>Jazzy colours and effects</li>
+<li><span>&times;</span>Sat right against the wall</li>
+<li><span>&times;</span>Text where the app covers it</li>
 </ul>
-<div class="watch"><span class="n" id="wA">0s</span><span class="k">watched</span></div>
+<p class="verdict" aria-live="polite">The hook is hidden.</p>
 </div>
 </section>
 
-<section class="side good" id="good">
-<div class="phone" aria-label="A vertical video with captions, the audience named in the first 3 seconds and a new shot every 3 seconds">
-<div class="fr on" data-f="0">
-<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5A3A28"/><stop offset="1" stop-color="#1C1C1E"/></linearGradient></defs><rect width="90" height="160" fill="url(#g0)"/><circle cx="45" cy="70" r="17" fill="#D6B9A4"/><path d="M14,160 Q14,96 45,96 Q76,96 76,160 Z" fill="#2C2C2E"/></svg>
-<span class="pill">Limited company directors</span>
-<p class="cap c-b">Watch this before you pay yourself.</p>
-</div>
-<div class="fr" data-f="1">
-<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="90" height="160" fill="#20242B"/><rect x="12" y="46" width="66" height="44" rx="4" fill="#E5E5EA"/><rect x="18" y="52" width="54" height="5" rx="1" fill="#F26B1D"/><rect x="18" y="61" width="40" height="3" rx="1" fill="#AEAEB2"/><rect x="18" y="67" width="48" height="3" rx="1" fill="#AEAEB2"/><rect x="18" y="73" width="34" height="3" rx="1" fill="#AEAEB2"/><rect x="18" y="79" width="44" height="3" rx="1" fill="#AEAEB2"/><path d="M6,94 H84 L78,100 H12 Z" fill="#8E8E93"/></svg>
-<p class="cap c-b">Salary, dividends, or both?</p>
-</div>
-<div class="fr" data-f="2">
-<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="90" height="160" fill="#FFFFFF"/></svg>
-<p class="cap c-m serif">It depends on one number.</p>
-</div>
-<div class="fr" data-f="3">
-<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A3A3C"/><stop offset="1" stop-color="#5A3A28"/></linearGradient></defs><rect width="90" height="160" fill="url(#g3)"/><circle cx="45" cy="62" r="26" fill="#D6B9A4"/><path d="M0,160 Q0,98 45,98 Q90,98 90,160 Z" fill="#2C2C2E"/></svg>
-<p class="cap c-b">Here's how I'd work it out.</p>
-</div>
-<div class="fr" data-f="4">
-<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="90" height="160" fill="#F26B1D"/><path d="M33,104 h24 v20 l-12,-8 l-12,8 z" fill="#fff"/></svg>
-<p class="cap c-m">Save this for payday.</p>
-</div>
+<section class="side good">
+<div class="phone" role="img" aria-label="A simple video: white box with black hook text near the top, plain white subtitles in the middle, soft light, a lamp and a plant in the background">
+<svg viewBox="0 0 90 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="room" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3426"/><stop offset="1" stop-color="#1C1C1E"/></linearGradient><radialGradient id="lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFD9A8" stop-opacity=".85"/><stop offset="1" stop-color="#FFD9A8" stop-opacity="0"/></radialGradient></defs><rect width="90" height="160" fill="url(#room)"/><rect x="0" y="112" width="90" height="48" fill="#241A14"/><circle cx="16" cy="78" r="18" fill="url(#lamp)"/><path d="M11,72 h10 l-2,-7 h-6 z" fill="#F3E3C8"/><rect x="15.4" y="72" width="1.2" height="40" fill="#8E8E93"/><g fill="#3E5B3A"><ellipse cx="76" cy="92" rx="5" ry="11" transform="rotate(-20 76 92)"/><ellipse cx="82" cy="94" rx="4.5" ry="10" transform="rotate(18 82 94)"/><ellipse cx="79" cy="86" rx="4" ry="10"/></g><rect x="73" y="102" width="12" height="11" rx="2" fill="#6E5644"/><circle cx="45" cy="88" r="13" fill="#D6B9A4"/><path d="M20,160 Q20,104 45,104 Q70,104 70,160 Z" fill="#2C2C2E"/></svg>
+<p class="t hook">Did you know you can pay yourself tax free?</p>
+<p class="t sub">It's called trivial benefits.</p>
+<div class="ui" aria-hidden="true"><div class="top"><span>Reels</span><span>&#9673;</span></div><div class="rt"><i></i><i></i><i></i></div><div class="bt"><b>yourname</b><s style="width:86%"></s><s style="width:60%"></s></div></div>
 </div>
 <div class="info">
-<p class="k">The right way</p>
-<h2>Watched to the end.</h2>
-<ul class="tags" id="tags">
-<li data-t="v"><span>&#10003;</span>Vertical, full screen</li>
-<li data-t="c"><span>&#10003;</span>Captions on</li>
-<li data-t="w"><span>&#10003;</span>Who it's for, in 3 seconds</li>
-<li data-t="n"><span>&#10003;</span>Something new every 3-5 seconds</li>
+<p class="k">Looks like Instagram</p>
+<h2>Feels premium.</h2>
+<ul class="tags">
+<li><span>&#10003;</span>White box, black hook text, top</li>
+<li><span>&#10003;</span>Plain subtitles, middle or bottom</li>
+<li><span>&#10003;</span>Soft light, depth, a lamp or plant</li>
+<li><span>&#10003;</span>Crisp picture, crisp sound</li>
 </ul>
-<div class="watch"><span class="n" id="wB">0s</span><span class="k">watched</span></div>
+<p class="verdict">Still readable.</p>
 </div>
 </section>
 
 </div>
+
+<div class="formats"><strong>Any format works. Pick the one you're comfortable with:</strong>
+<ul><li>Talking head</li><li>Carousel</li><li>Text on screen</li><li>Whiteboard</li><li>Stills</li><li>Reviews</li><li>Memes</li></ul>
+<span>Homework: save 10 that look premium and write down why.</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/content-should-do-1-of-3-things/" style="text-decoration:none">&larr; Content should do 1 of 3 things</a><a href="/start/understanding-the-hook/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Understanding the hook &rarr;</a></div>
@@ -180,31 +167,13 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-var $=function(id){return document.getElementById(id)};
-var btn=$("play"),bad=$("bad"),frames=document.querySelectorAll("#good .fr"),tags=document.querySelectorAll("#tags li"),raf=0,DUR=15,LOST=2;
-function render(t){
- var f=Math.min(4,Math.floor(t/3));
- for(var i=0;i<frames.length;i++)frames[i].classList.toggle("on",i===f);
- $("tf").style.width=(t/DUR*100)+"%";
- $("tn").textContent=Math.floor(t)+"s";
- $("wA").textContent=Math.floor(Math.min(t,LOST))+"s";
- $("wB").textContent=Math.floor(t)+"s";
- bad.classList.toggle("gone",t>=LOST);
- var playing=t>0&&t<DUR,sinceCut=t%3;
- for(var j=0;j<tags.length;j++){var k=tags[j].getAttribute("data-t"),on=false;
-  if(playing){if(k==="v"||k==="c")on=t<1.5?(k==="v"):(t<3?k==="c"||k==="v":false);if(k==="w")on=t>=1.5&&t<3;if(k==="n")on=t>=3&&sinceCut<1.2;}
-  tags[j].classList.toggle("on",on)}
-}
-function play(){
- cancelAnimationFrame(raf);
- if(RM){render(DUR);btn.textContent="Replay";return}
- btn.disabled=true;var t0=null;
- (function step(ts){if(!t0)t0=ts;var t=Math.min(DUR,(ts-t0)/1000);render(t);
-  if(t<DUR)raf=requestAnimationFrame(step);else{btn.disabled=false;btn.textContent="Replay"}})(performance.now());
-}
-btn.addEventListener("click",play);
-render(0);
+var btn=document.getElementById("app"),duo=document.getElementById("duo");
+btn.addEventListener("click",function(){
+ var on=!duo.classList.contains("app-on");
+ duo.classList.toggle("app-on",on);
+ btn.setAttribute("aria-pressed",on?"true":"false");
+ btn.textContent=on?"Take the app off":"Put the app on top";
+});
 })();
 </script>
 </body>
