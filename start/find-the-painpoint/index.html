@@ -25,42 +25,53 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* Find the painpoint: golden question -> they talk -> pains noted */
+/* Find the painpoint: ask the golden question -> note the pain -> answer it later */
 .hero{padding-top:clamp(22px,3.4vh,40px)}
 .hero h1{font-size:clamp(38px,4.6vw,62px)}
-.fp{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(20px,3vw,36px);align-items:stretch;padding-top:clamp(18px,2.6vh,30px);padding-bottom:6px}
+.fp{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,3vw,36px);align-items:stretch;padding-top:clamp(18px,2.6vh,30px);padding-bottom:6px}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.hub{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.hub{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .hub:hover{transform:translateY(-3px);box-shadow:0 18px 34px -20px rgba(242,107,29,.7)}
 .hub .k{color:#3A2A1E}
-.hub h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.hub h2{font-size:clamp(23px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+.hub h2 mark{background:#0A0A0A;color:#fff;padding:0 6px;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .ask{font:inherit;font-size:15px;font-weight:700;color:#fff;background:#0A0A0A;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;align-self:flex-start;transition:transform .2s ease,background-color .2s ease}
 .ask:hover{transform:translateY(-1px);background:#2A2A2A}
 .ask:disabled{opacity:.6;cursor:default;transform:none}
-.talk{margin-top:auto;display:flex;flex-direction:column;gap:8px}
-.bar{display:flex;height:34px;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.3);font-size:13px;font-weight:800}
-.bar span{display:flex;align-items:center;padding:0 12px;white-space:nowrap;overflow:hidden;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
-.bar .them{background:#0A0A0A;color:#fff;width:50%}
-.bar .you{background:#fff;color:#0A0A0A;width:50%;justify-content:flex-end}
-.talk h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em}
+.stat{margin-top:auto;display:flex;align-items:baseline;gap:12px;border-top:1.5px solid rgba(0,0,0,.18);padding-top:14px}
+.stat b{white-space:nowrap;flex-shrink:0;font-size:clamp(40px,4.4vw,58px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stat h3{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
 
 .call{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:12px}
-.hd{display:grid;grid-template-columns:minmax(0,1.25fr) 26px minmax(0,1fr);gap:10px}
-.row{display:grid;grid-template-columns:minmax(0,1.25fr) 26px minmax(0,1fr);gap:10px;align-items:center;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.seg{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;align-self:flex-start}
+.seg button{font:inherit;font-size:13px;font-weight:700;color:var(--slate);background:transparent;border:0;border-radius:999px;padding:7px 14px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.seg button[aria-pressed="true"]{background:#0A0A0A;color:#fff}
+.hd,.row{display:grid;grid-template-columns:minmax(0,1.1fr) 26px minmax(0,1fr);gap:10px}
+.row{align-items:center;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
 .row.off{opacity:.18;transform:translateY(6px)}
-.say{background:#fff;border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:clamp(15px,1.45vw,18px);font-weight:700;letter-spacing:-.015em;line-height:1.25;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.say{background:#fff;border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:11px 15px;font-size:clamp(15px,1.4vw,17px);font-weight:700;letter-spacing:-.015em;line-height:1.25;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .say:hover{transform:translateY(-3px);box-shadow:0 14px 26px -18px rgba(0,0,0,.35)}
 .arr{color:var(--gold);font-weight:800;font-size:20px;text-align:center}
-.pain{background:#FFF8F3;border:1.5px solid var(--gold);border-radius:14px;padding:10px 14px;font-size:clamp(14px,1.35vw,17px);font-weight:800;color:var(--gold-soft);letter-spacing:-.01em;line-height:1.2;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.pain{background:#FFF8F3;border:1.5px solid var(--gold);border-radius:14px;padding:10px 14px;font-size:clamp(14px,1.3vw,16px);font-weight:800;color:var(--gold-soft);letter-spacing:-.01em;line-height:1.2;transition:background-color .35s ease,border-color .35s ease,color .35s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
 .pain:hover{transform:translateY(-3px)}
-.foot{margin-top:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding-top:4px}
-.later{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
-.later span{color:var(--gold-soft)}
+.later .pain{background:#FFF1A8;border-color:#E3C200;color:#111}
+.pain .fix{display:none}
+.later .pain .now{display:none}
+.later .pain .fix{display:inline}
+.script{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:12px 16px}
+.script p:not(.k){font-size:clamp(15px,1.45vw,18px);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-top:4px}
+.script .fix{display:none}
+.later .script .now{display:none}
+.later .script .fix{display:block}
+.later .script{border-left-color:#E3C200}
+.foot{margin-top:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding-top:2px}
+.new{font-size:13px;color:var(--muted);line-height:1.4;max-width:58ch}
+.new b{color:var(--ink)}
 .you-add{border:2px dashed #C7C7CC;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--slate)}
 
 @media (max-width:900px){.fp{grid-template-columns:1fr}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.hd,.row{grid-template-columns:minmax(0,1fr) 18px minmax(0,.8fr);gap:6px}.say{padding:10px 12px}.pain{padding:9px 10px}.hub{gap:12px}.bar span{padding:0 9px;font-size:12px}}
-@media (prefers-reduced-motion:reduce){.hub,.say,.pain,.row,.bar span{transition:none}.hub:hover,.say:hover,.pain:hover{transform:none}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.hd,.row{grid-template-columns:minmax(0,1fr) 18px minmax(0,.9fr);gap:6px}.say{padding:10px 12px}.pain{padding:9px 10px}.hub{gap:12px}.seg button{padding:7px 11px}}
+@media (prefers-reduced-motion:reduce){.hub,.say,.pain,.row,.seg button{transition:none}.hub:hover,.say:hover,.pain:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -77,21 +88,19 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <div class="hub">
 <p class="k">The golden question</p>
-<h2>"Tell me about your business and why you reached out today."</h2>
+<h2>"Tell me a bit about your business and <mark>why you reached out today.</mark>"</h2>
 <button class="ask" id="ask" type="button">Ask it</button>
-<div class="talk">
-<p class="k">Who talks</p>
-<div class="bar" aria-label="They talk 70% of the call, you talk 30%"><span class="them" id="them">Them</span><span class="you" id="you">You</span></div>
-<h3>They talk. You listen.</h3>
-</div>
+<div class="stat"><b>9 in 10</b><h3>tell you their pain in the answer. You never had to ask for it.</h3></div>
 </div>
 
-<div class="call">
-<div class="hd"><p class="k">What I heard everywhere</p><span></span><p class="k" style="color:var(--gold-soft)">The painpoint</p></div>
-<div class="row off"><p class="say">"My accountant takes a week to reply."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain">Slow replies</p></div>
-<div class="row off"><p class="say">"I just get passed between people."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain">No one owns my account</p></div>
-<div class="row off"><p class="say">"Nobody has ever done tax planning with me."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain">Reactive, not proactive</p></div>
-<div class="foot"><p class="later">Write it down. <span>Fix it later.</span></p><span class="you-add">Add yours: the complaint you hear most</span></div>
+<div class="call" id="call">
+<div class="seg" role="group" aria-label="When you deal with the pain"><button type="button" id="tNow" aria-pressed="true">On the call</button><button type="button" id="tLater" aria-pressed="false">After the scope</button></div>
+<div class="hd"><p class="k">What they say</p><span></span><p class="k" style="color:var(--gold-soft)"><span class="hdn">The painpoint</span></p></div>
+<div class="row off"><p class="say">"They never get back to me."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain"><span class="now">Slow replies</span><span class="fix">Agree how they want to be contacted. Reply fast.</span></p></div>
+<div class="row off"><p class="say">"I just get passed around the team."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain"><span class="now">No one owns their account</span><span class="fix">One point of contact who knows the business</span></p></div>
+<div class="row off"><p class="say">"They're purely reactive. Nothing proactive."</p><span class="arr" aria-hidden="true">&rarr;</span><p class="pain"><span class="now">No proactive advice</span><span class="fix">Monthly bookkeeping, so you spot things in real time</span></p></div>
+<div class="script"><p class="k"><span class="now">Don't fix it yet. Say this, note it, move on</span><span class="fix">Then give value back, one pain at a time</span></p><p class="now">"That must be really stressful. What impact is that having on you and the business?"</p><p class="fix">Answer each pain in how you work. Highlight it yellow on your template as you go.</p></div>
+<div class="foot"><p class="new"><b>Never had an accountant?</b> Their pain is not knowing what they need: the VAT threshold, payroll, National Insurance. Be the voice of reassurance.</p><span class="you-add">Add yours: the complaint you hear most</span></div>
 </div>
 
 </div>
@@ -103,20 +112,22 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <script>
 (function(){
 var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-var btn=document.getElementById("ask"),them=document.getElementById("them"),you=document.getElementById("you");
+var btn=document.getElementById("ask"),call=document.getElementById("call");
+var tNow=document.getElementById("tNow"),tLater=document.getElementById("tLater"),hdn=call.querySelector(".hdn");
 var rows=[].slice.call(document.querySelectorAll(".row")),timers=[];
-function bar(t){them.style.width=t+"%";you.style.width=(100-t)+"%";them.textContent=t>50?"Them "+t+"%":"Them";you.textContent=t>50?"You "+(100-t)+"%":"You"}
-function reset(){timers.forEach(clearTimeout);timers=[];rows.forEach(function(r){r.classList.add("off")});bar(50)}
+function setMode(later){call.classList.toggle("later",later);tNow.setAttribute("aria-pressed",later?"false":"true");tLater.setAttribute("aria-pressed",later?"true":"false");hdn.textContent=later?"How you answer it":"The painpoint";if(later){timers.forEach(clearTimeout);timers=[];rows.forEach(function(r){r.classList.remove("off")});btn.disabled=false;btn.textContent="Ask again"}}
 function done(){btn.disabled=false;btn.textContent="Ask again"}
 function run(){
- reset();
- if(RM){rows.forEach(function(r){r.classList.remove("off")});bar(70);done();return}
+ timers.forEach(clearTimeout);timers=[];setMode(false);
+ rows.forEach(function(r){r.classList.add("off")});
+ if(RM){rows.forEach(function(r){r.classList.remove("off")});done();return}
  btn.disabled=true;
- timers.push(setTimeout(function(){bar(70)},150));
- rows.forEach(function(r,i){timers.push(setTimeout(function(){r.classList.remove("off")},700+i*1100))});
- timers.push(setTimeout(done,700+rows.length*1100));
+ rows.forEach(function(r,i){timers.push(setTimeout(function(){r.classList.remove("off")},400+i*1000))});
+ timers.push(setTimeout(done,400+rows.length*1000));
 }
 btn.addEventListener("click",run);
+tNow.addEventListener("click",function(){setMode(false)});
+tLater.addEventListener("click",function(){setMode(true)});
 })();
 </script>
 </body>
