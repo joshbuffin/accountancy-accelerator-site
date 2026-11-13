@@ -53,12 +53,23 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .verdict{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em;line-height:1.1;opacity:.18;transition:opacity .4s ease}
 .verdict.on{opacity:1}
 .call.good .verdict{color:var(--gold-soft)}
-.add{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:14px;font-size:14px;font-weight:600}
-.add .k{margin-right:4px}
-.chip{border:1px dashed #C7C7CC;background:#fff;border-radius:999px;padding:6px 14px}
+.next{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;padding-top:14px}
+.nx{font-size:15px;color:var(--muted);font-weight:500}
+.nx b{color:var(--ink);font-weight:700}
+.qbtn{font:inherit;font-size:14px;font-weight:700;color:var(--gold-soft);background:#fff;border:1px solid var(--gold);border-radius:999px;padding:7px 16px;cursor:pointer;transition:background-color .2s ease}
+.qbtn:hover{background:#FFF8F3}
+dialog{margin:auto;border:0;border-radius:var(--radius);padding:24px 24px 20px;width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;color:var(--ink);box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(17,17,17,.45)}
+.dh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.dh h2{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.x{font:inherit;font-size:22px;line-height:1;background:none;border:0;color:var(--slate);cursor:pointer;padding:2px 6px}
+.ql{list-style:none;counter-reset:q;display:grid;gap:8px}
+.ql li{counter-increment:q;display:flex;gap:10px;font-size:15px;line-height:1.4}
+.ql li::before{content:counter(q);flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.dn{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 @media (max-width:760px){.calls{grid-template-columns:1fr}.call{padding:12px 12px}.ck{font-size:13px;padding:7px 8px;gap:6px}.ck i{width:20px;height:20px}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.bar{padding-bottom:10px}}
-@media (prefers-reduced-motion:reduce){.call,.ck,.ck i,.verdict,.play{transition:none}.call:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.call,.ck,.ck i,.verdict,.play,.qbtn{transition:none}.call:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -120,7 +131,21 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </div>
 
 </div>
-<div class="add"><span class="k">Add yours</span><span class="chip">Your interview questions</span><span class="chip">Your interview steps</span></div>
+<div class="next"><p class="nx"><b>Interview 10 to 20 people.</b> Trial the best 3 on 2 or 3 clients each.</p><button class="qbtn" id="qopen" type="button">My bookkeeper interview questions</button></div>
+
+<dialog id="qs" aria-labelledby="qsh">
+<div class="dh"><h2 id="qsh">My bookkeeper interview questions</h2><button class="x" id="qclose" type="button" aria-label="Close">&times;</button></div>
+<ol class="ql">
+<li>Talk me through your practice experience. How many clients at once, and where do your responsibilities end?</li>
+<li>Have your clients been UK based? Have you prepared UK VAT returns?</li>
+<li>How many years have you used Xero and Hubdoc?</li>
+<li>What problems come up most in the bookkeeping, and how do you fix them?</li>
+<li>A client has traded for years and is moving to us and onto Xero for the first time. Talk me through setting them up.</li>
+<li>Give me some transactions that go to the balance sheet, not the profit and loss.</li>
+<li>Are you okay not being client facing?</li>
+</ol>
+<p class="dn">Hire for the bookkeeping. You can train the admin and your software.</p>
+</dialog>
 </main>
 
 <div class="wrap pnav"><a href="/start/skills-test-and-video/" style="text-decoration:none">&larr; Skills test &amp; video</a><a href="/start/hire-slow-fire-fast/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Hire slow, fire fast! &rarr;</a></div>
@@ -144,6 +169,10 @@ function run(){reset();btn.disabled=true;
  later(function(){$("vA").classList.add("on");$("vB").classList.add("on");btn.disabled=false;btn.textContent="Replay"},500+3*700);
 }
 btn.addEventListener("click",run);
+var dlg=$("qs");
+$("qopen").addEventListener("click",function(){if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","")});
+$("qclose").addEventListener("click",function(){if(dlg.close)dlg.close();else dlg.removeAttribute("open")});
+dlg.addEventListener("click",function(e){if(e.target===dlg&&dlg.close)dlg.close()});
 if(RM)run();
 })();
 </script>
