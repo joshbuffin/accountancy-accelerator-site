@@ -49,7 +49,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 @media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
 
 /* One-page workbook layout */
-.wb-page{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 56px - 90px);padding:clamp(28px,4vw,48px) 24px}
+.wb-page{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 56px - 90px);padding:clamp(28px,4vw,48px) 24px}
 .wb-page h1{font-size:clamp(40px,5.6vw,76px)}
 .task{margin-top:28px;border-left:3px solid var(--gold);padding-left:16px;font-size:clamp(17px,1.7vw,20px);font-weight:600}
 .task b{color:var(--gold-soft)}
@@ -57,33 +57,35 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .win{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 30px 60px -30px rgba(17,17,17,.25);overflow:hidden}
 .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line)}
 .dot{width:11px;height:11px;border-radius:50%;background:#DADADA}.dot:first-child{background:var(--gold)}
-.url{flex:1;margin-left:8px;display:flex;align-items:center;gap:10px;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--slate);overflow:hidden}
+.url{flex:1;margin-left:8px;display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--slate);overflow:hidden}
 .url span.t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.sheet{padding:clamp(16px,2.2vw,26px);display:flex;flex-direction:column;gap:clamp(12px,1.6vw,18px)}
+.sheet{padding:clamp(16px,2.2vw,24px);display:flex;flex-direction:column;gap:clamp(12px,1.5vw,16px)}
 .lbl{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.loop{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:8px}
-.arrow{align-self:center;color:var(--gold);font-weight:700;font-size:22px}
-.cell,.field,.tab{transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.cell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:4px}
-.cell .n{font-size:12px;font-weight:700;color:var(--gold-soft);letter-spacing:.1em}
-.cell h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
-.cell.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}.cell.hot .n{color:#3A1A06}
-.cell:hover,.field:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 14px 30px -16px rgba(242,107,29,.5)}
-.cell:not(.hot):hover,.field:hover{background-color:#FFF8F3}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.field{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--paper)}
-.field h3{font-size:clamp(15px,1.4vw,17px);font-weight:700}
-.blank{margin-top:8px;height:34px;border:2px dashed var(--gold);border-radius:10px;display:flex;align-items:center;padding:0 12px;font-weight:700;color:var(--gold-soft);font-size:15px;letter-spacing:.04em;background:#FFF8F3}
-.addrow{display:flex;flex-wrap:wrap;gap:8px}
-.tabs{display:flex;gap:2px;padding:0 16px;background:var(--card);border-top:1px solid var(--line);overflow:hidden}
-.tab{padding:10px 16px;font-size:13px;font-weight:600;color:var(--slate);border-top:3px solid transparent;white-space:nowrap}
-.tab.on{background:var(--paper);color:var(--ink);border-top-color:var(--gold)}
-.tab:hover{color:var(--gold-soft)}
-.tab.add{color:var(--gold-soft);border-radius:0;border:none;border-top:3px dashed var(--gold);background:#FFF3EA;padding:10px 14px;font-size:11px;align-self:stretch;display:flex;align-items:center}
-@media (prefers-reduced-motion:reduce){.cell,.field,.tab{transition:none}.cell:hover,.field:hover{transform:none}}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.step .n{font-size:12px;font-weight:700;color:var(--gold-soft);letter-spacing:.1em}
+.step h3{font-size:clamp(15px,1.4vw,17px);font-weight:700;line-height:1.2;margin-top:2px}
+.step p{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.35}
+.step.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}.step.hot .n{color:#3A1A06}.step.hot p{color:#3A1A06}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.count{font-size:13px;font-weight:700;color:var(--gold-soft)}
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;list-style:none}
+.tabs button{width:100%;height:100%;display:flex;align-items:center;gap:8px;text-align:left;font:inherit;font-size:13px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:7px 10px;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .2s ease,background-color .2s ease}
+.tabs button:hover{border-color:var(--gold);background:#FFF8F3;transform:translateY(-2px)}
+.tabs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tabs .tk{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:11px;color:#fff;line-height:1}
+.tabs .tx{min-width:0;flex:1;display:flex;flex-direction:column}
+.tabs .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tabs .rv{font-size:10px;line-height:1.2;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-soft)}
+.tabs button.re{border-left:4px solid var(--gold)}
+.tabs button[aria-pressed="true"]{background:#F1FAF3;border-color:#2E9E4F}
+.tabs button[aria-pressed="true"] .tk{background:#2E9E4F;border-color:#2E9E4F}
+.tabs button[aria-pressed="true"] .nm{color:var(--slate)}
+.note{font-size:13px;color:var(--muted)}
+.note b{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.tabs button{transition:none}.tabs button:hover{transform:none}}
 @media (max-width:900px){.wb-page{grid-template-columns:1fr;min-height:0;padding:24px 16px}.wb-page h1{font-size:40px}.task{margin-top:16px}}
-@media (max-width:560px){.loop{grid-template-columns:1fr;gap:4px}.arrow{transform:rotate(90deg);justify-self:center;font-size:18px;line-height:1}.cell{padding:10px 12px}.fields,.duo{grid-template-columns:1fr 1fr;gap:8px}.blank{height:30px;font-size:13px}.wrap.links{padding:20px 16px!important;font-size:14px!important}.url{border-radius:12px;padding:6px 10px}.url span.t{display:none}.url .add{white-space:normal;font-size:10px;letter-spacing:.1em}.blank{font-size:11px;letter-spacing:0;padding:0 8px;white-space:nowrap}.loop .arrow{font-size:14px;margin:-2px 0}.field{padding:10px}.field h3{font-size:14px}}
+@media (max-width:560px){.steps{grid-template-columns:1fr;gap:6px}.step{padding:10px 12px}.tabs{grid-template-columns:1fr 1fr}.tabs button{font-size:12px;padding:7px 8px;gap:6px}.tabs .rv{display:none}.wrap.links{padding:20px 16px!important;font-size:14px!important}.url{border-radius:12px;padding:6px 10px}}
 </style>
 </head>
 <body>
@@ -94,37 +96,54 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <div>
 <p class="eyebrow">Level 1 - Sprint · Video 8</p>
 <h1>Your <span class="gold-t">workbook.</span></h1>
-<p class="lead">Every task in one place.</p>
-<p class="task"><b>Your task:</b> open it now and make your own copy.</p>
+<p class="lead">One sheet, not a document for every video. Every worksheet in the course lives in here, in the order you will come across it.</p>
+<p class="task"><b>Your task:</b> open the workbook, go File, Make a copy, and save it to your own Google Drive.</p>
 </div>
 
-<div class="win" role="img" aria-label="Your workbook: every video ends with a task, you do it here and track it here. Fill it in on pass 2 and bring it to group calls. Fill in your quit number and sprint dates first.">
+<div class="win">
 <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-<div class="url"><span class="t">Your workbook</span><span class="add">Add yours: Sheet, doc or Skool + link</span></div></div>
+<div class="url"><span class="t">The Workbook</span><span class="add">Add yours: link</span></div></div>
 <div class="sheet">
-<div class="loop">
-<div class="cell"><span class="n">01</span><h3>Every video ends with a task</h3></div>
-<span class="arrow" aria-hidden="true">&rarr;</span>
-<div class="cell hot"><span class="n">02</span><h3>Do it here</h3></div>
-<span class="arrow" aria-hidden="true">&rarr;</span>
-<div class="cell"><span class="n">03</span><h3>Track it here</h3></div>
+<div class="steps">
+<div class="step hot"><span class="n">01</span><h3>Make a copy</h3><p>You can't edit the master.</p></div>
+<div class="step"><span class="n">02</span><h3>Click All sheets</h3><p>Every tab, in course order.</p></div>
+<div class="step"><span class="n">03</span><h3>Tick it off</h3><p>A green tick when it's done.</p></div>
 </div>
-<div class="duo">
-<div class="cell"><span class="n">PASS 2</span><h3>Fill it in, task by task</h3></div>
-<div class="cell"><span class="n">GROUP CALLS</span><h3>Bring it with you</h3></div>
+<div class="head"><p class="lbl">The tabs, in order</p><p class="count" id="count" aria-live="polite">0 of 17 done</p></div>
+<ul class="tabs" id="tabs">
+<li><button type="button" aria-pressed="false" data-i="0"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Freedom Number</span></span></button></li>
+<li><button type="button" class="re" aria-pressed="false" data-i="1"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Scorecard</span><span class="rv">Quarterly</span></span></button></li>
+<li><button type="button" class="re" aria-pressed="false" data-i="2"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">KPI Tracker</span><span class="rv">Monthly</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="3"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Non-Negotiables</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="4"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Perfect Future Client</span></span></button></li>
+<li><button type="button" class="re" aria-pressed="false" data-i="5"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Lead Tracker</span><span class="rv">Every lead</span></span></button></li>
+<li><button type="button" class="re" aria-pressed="false" data-i="6"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Outreach Tracker</span><span class="rv">Weekly</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="7"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Baby Step Selling</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="8"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Social Planning Doc</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="9"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Content Calendar</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="10"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">YouTube Research</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="11"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">BSS (w/o socials)</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="12"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Referral Partners</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="13"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Painkiller Playbook</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="14"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Sales Call Template</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="15"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">Objection Handling</span></span></button></li>
+<li><button type="button" aria-pressed="false" data-i="16"><span class="tk" aria-hidden="true">&#10003;</span><span class="tx"><span class="nm">To Do List</span></span></button></li>
+</ul>
+<p class="note">Some tabs you do once or twice. The ones edged <b>in orange</b> you keep coming back to. Your quit number goes in the first tab.</p>
 </div>
-<p class="lbl">Fill in first</p>
-<div class="fields">
-<div class="field"><h3>Your quit number</h3><div class="blank">&pound;</div></div>
-<div class="field"><h3>Your sprint dates</h3><div class="blank">dd/mm/yy - dd/mm/yy</div></div>
-</div>
-<div class="addrow"><span class="add">Add yours: weekly fill-ins</span></div>
-</div>
-<div class="tabs"><span class="tab add">Add yours: each tab walked through</span></div>
 </div>
 </main>
 <div class="wrap links" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/how-to-work-through-the-resources/" style="text-decoration:none">&larr; How to work through the resources</a><a href="/start/milestones/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Milestones &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Your workbook</div></footer>
 
+<script>
+(function(){
+var K='aa-workbook-ticks',btns=document.querySelectorAll('#tabs button'),c=document.getElementById('count'),st=[];
+try{st=JSON.parse(localStorage.getItem(K)||'[]')||[]}catch(e){st=[]}
+function draw(){var n=0;for(var i=0;i<btns.length;i++){var on=st.indexOf(i)>-1;btns[i].setAttribute('aria-pressed',on?'true':'false');if(on)n++}c.textContent=n+' of '+btns.length+' done'}
+for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){var k=+this.getAttribute('data-i'),p=st.indexOf(k);if(p>-1)st.splice(p,1);else st.push(k);try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}draw()})}
+draw();
+})();
+</script>
 </body>
 </html>
