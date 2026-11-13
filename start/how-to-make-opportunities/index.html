@@ -28,6 +28,8 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 /* Page layout */
 .page{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:calc(100vh - 56px - 110px);padding:clamp(24px,4vw,40px) 24px}
 .ask{margin-top:28px;font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.15;border-left:4px solid var(--gold);padding-left:18px}
+.warm{margin-top:14px;font-size:clamp(15px,1.4vw,17px);color:var(--muted);padding-left:22px}
+.warm b{color:var(--ink)}
 .points{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:10px}
 .points li{font-size:clamp(17px,1.7vw,20px);font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
 .points li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--gold)}
@@ -77,6 +79,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
   .eyebrow{font-size:11px;margin-bottom:12px}
   h1{font-size:36px}
   .ask{margin-top:18px;font-size:23px}
+  .warm{font-size:14px;margin-top:10px}
   .points{margin-top:18px;gap:6px}
   .points li{font-size:16px}
   .stage{padding:16px;gap:12px}
@@ -99,9 +102,11 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <p class="eyebrow">Level 5 - Lead generation · Video 5</p>
 <h1>One question <span class="gold-t">opens the door.</span></h1>
 <p class="ask">"What do you do for work?"</p>
+<p class="warm">Warm up with <b>"How's your work week been?"</b> Never <b>"Do you need an accountant?"</b></p>
 <ul class="points">
-<li>Ask it everywhere</li>
-<li>50 conversations, 2 yeses</li>
+<li>Ask it everywhere you already go</li>
+<li>Your input: how many you ask each week</li>
+<li>50 conversations, 1 or 2 yeses</li>
 <li>One chaser, 2 weeks later</li>
 </ul>
 </div>
@@ -116,13 +121,13 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <div class="behind">
 <h2>Behind the door:<br>50 conversations</h2>
 <div class="grid" id="grid" aria-hidden="true"></div>
-<p class="key"><span style="--c:#DCDCDC"><b>45</b>&nbsp;no</span><span style="--c:#F8B98F"><b>3</b>&nbsp;maybe</span><span style="--c:#F26B1D"><b>2</b>&nbsp;yes</span></p>
+<p class="key"><span style="--c:#DCDCDC"><b>47</b>&nbsp;not now</span><span style="--c:#F8B98F"><b>1</b>&nbsp;interested now</span><span style="--c:#F26B1D"><b>2</b>&nbsp;yes within 12 months</span></p>
 <button class="btn" id="btn" type="button">Open the door</button>
 </div>
 </div>
 <div class="places">
 <h3>Where to ask it</h3>
-<span class="chip">The gym</span><span class="chip">Run club</span><span class="chip">The high street</span><span class="chip">Dinner club</span><span class="chip">Beach club</span><span class="chip add">Add yours: where you'll ask it this week</span>
+<span class="chip">Run club</span><span class="chip">Padel Americano</span><span class="chip">Spin class</span><span class="chip">Gym sauna</span><span class="chip">Co-working cafe</span><span class="chip">Dinner club</span><span class="chip">The high street</span><span class="chip add">Add yours: where you'll ask it this week</span>
 </div>
 </section>
 </main>
@@ -134,7 +139,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 (function(){
   var stage=document.getElementById('stage'),frame=document.getElementById('frame'),btn=document.getElementById('btn'),grid=document.getElementById('grid');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var maybes=[17,33,46],yeses=[28,41];
+  var maybes=[17],yeses=[28,41];
   for(var i=0;i<50;i++){
     var d=document.createElement('i');
     if(maybes.indexOf(i)>-1)d.className='m';
