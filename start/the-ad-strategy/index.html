@@ -29,7 +29,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .hero{padding-top:clamp(20px,3vh,36px)}
 .hero h1{font-size:clamp(36px,4.4vw,58px)}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.board{margin-top:clamp(16px,2.4vh,26px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);transition:background-color .4s ease,border-color .4s ease}
+.board{margin-top:clamp(10px,1.6vh,16px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);transition:background-color .4s ease,border-color .4s ease}
 .board.right{background:#FFF8F3;border-color:var(--gold)}
 .top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
 .seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
@@ -62,6 +62,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .3s ease}
 .chip:hover{transform:translateY(-2px)}
 .chip.sc{background:#fff;border-color:var(--gold);color:var(--gold-soft)}
+.strats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:clamp(12px,2vh,20px)}.strat{border:1px solid var(--line);border-radius:14px;padding:10px 16px;background:#fff}.strat h2{font-size:clamp(16px,1.4vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.2}.strat h2 b{color:var(--gold-soft);margin-right:6px}.strat p{font-size:13px;color:var(--muted);line-height:1.35;margin-top:2px}
+@media (max-width:700px){.strats{grid-template-columns:1fr}}
 @media (max-width:900px){.row{grid-template-columns:110px minmax(0,1fr)}.lv{grid-column:1/-1}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{font-size:13px;padding:8px 12px}.row{grid-template-columns:96px minmax(0,1fr);gap:8px 10px;padding:8px 12px}.bar{height:22px}.lv{font-size:13px}.board{padding:14px}.lessons{gap:6px 6px;font-size:13px}.chip{padding:5px 11px}.lessons .k{flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){.row,.chip,.bar i,.board,.tag{transition:none}.row:hover,.chip:hover{transform:none;box-shadow:none}}
@@ -77,6 +79,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </header>
 
 <main class="wrap">
+<div class="strats">
+<div class="strat"><h2><b>1</b>Boost what already works</h2><p>An organic video that landed with your target client, boosted with no call to action, then chat to close in DMs.</p></div>
+<div class="strat"><h2><b>2</b>Direct response</h2><p>One clear call to action to a form, aimed at one type of client. The topic picks who books.</p></div>
+</div>
 <section class="board" id="board" aria-live="polite">
 <div class="top">
 <div class="seg" role="group" aria-label="What the ad is optimised for">
