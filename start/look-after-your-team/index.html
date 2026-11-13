@@ -39,7 +39,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .cv.ok{background:#FFF8F3;border-color:var(--gold)}
 .cv.ok:hover{box-shadow:0 16px 32px -18px rgba(242,107,29,.45)}
 .cv.ok .k{color:var(--gold-soft)}
-.cv h2{font-size:clamp(24px,2.7vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-top:6px}
+.cv h2{font-size:clamp(22px,2.1vw,29px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-top:6px}
 .cv.no h2{color:#3A3A3C}
 .weeks{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
 .wk{display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -66,10 +66,17 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .fix .k{margin-right:4px}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .3s ease,border-color .3s ease}
 .chip:hover{transform:translateY(-2px);border-color:var(--gold)}
-.you{border:2px dashed #C7C7CC;border-radius:999px;padding:5px 14px;font-weight:700;color:var(--slate);margin-left:auto}
-@media (max-width:820px){.vs{grid-template-columns:1fr}.you{margin-left:0}}
+.eg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,18px);padding-top:clamp(12px,1.8vh,18px)}
+.egc{border:1px solid var(--line);border-radius:16px;padding:12px 16px;transition:transform .3s ease,border-color .3s ease}
+.egc:hover{transform:translateY(-2px);border-color:var(--gold)}
+.egc .k{color:var(--gold-soft);font-size:10px}
+.egt{font-size:14px;line-height:1.35;margin-top:4px;color:#3A3A3C}
+.egt b{color:var(--ink);font-weight:700}
+.egc.mc{background:var(--card)}
+.egc.mc .k{color:var(--slate)}
+@media (max-width:820px){.vs,.eg{grid-template-columns:1fr}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.weeks{gap:6px}.tile{border-radius:10px}.wl{font-size:10px}.bar .k{font-size:10px}.fix{font-size:13px}.chip{padding:5px 11px}}
-@media (prefers-reduced-motion:reduce){.cv,.tile,.tile svg,.res p,.chip{transition:none}.cv:hover,.chip:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.cv,.tile,.tile svg,.res p,.chip,.egc{transition:none}.cv:hover,.chip:hover,.egc:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -86,18 +93,24 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <div class="vs">
 <div class="cv no" id="cvA">
-<div><p class="k">Wrong way · Blame them</p><h2>&ldquo;Why did you do that?&rdquo;</h2></div>
+<div><p class="k">Wrong way · Blame them</p><h2>&ldquo;Why didn't they get it?&rdquo;</h2></div>
 <div class="weeks" id="wA"></div>
 <div class="res" id="rA"><p>Same mistake. Again.</p><div class="cnt"><span class="n" id="nA">0</span><span class="s">mistakes</span></div></div>
 </div>
 <div class="cv ok" id="cvB">
-<div><p class="k">Right way · Assume it's on you</p><h2>&ldquo;What did I miss?&rdquo;</h2></div>
+<div><p class="k">Right way · Assume it's on you</p><h2>&ldquo;Where was I unclear?&rdquo;</h2></div>
 <div class="weeks" id="wB"></div>
 <div class="res" id="rB"><p>Fixed. For good.</p><div class="cnt"><span class="n" id="nB">0</span><span class="s">mistakes</span></div></div>
 </div>
 </div>
 
-<div class="fix"><span class="k">Fix the process with</span><span class="chip">Checklist</span><span class="chip">Loom video</span><span class="chip">Template</span><span class="chip">SOP</span><span class="you">Add yours: a mistake you fixed</span></div>
+<div class="fix"><span class="k">Fix the process with</span><span class="chip">Checklist</span><span class="chip">Loom video</span><span class="chip">Template</span><span class="chip">Decision tree</span><span class="chip">SOP</span></div>
+
+<div class="eg">
+<div class="egc"><p class="k">My fix · Bookkeeper</p><p class="egt">Every task ticked off with a comment: <b>No problems</b> or <b>Problem found</b>.</p></div>
+<div class="egc"><p class="k">My fix · Video editor</p><p class="egt">One style guide for every video: <b>under 90 seconds</b>, set colours, <b>six songs</b> to pick from.</p></div>
+<div class="egc mc"><p class="k">Why it works</p><p class="egt">McDonald's runs on teenagers. <b>The system</b> makes the burger.</p></div>
+</div>
 </main>
 
 <div class="wrap pnav"><span></span><a href="/start/can-ai-do-this/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Can AI do this? &rarr;</a></div>
