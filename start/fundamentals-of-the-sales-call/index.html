@@ -51,13 +51,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .hub:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px rgba(242,107,29,.6)}
 .hub .k{color:#3A2A1E}
 .hub h2{font-size:clamp(24px,2.5vw,33px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.hub .then{border-top:1px solid rgba(10,10,10,.22);padding-top:12px;margin-top:4px;display:flex;flex-direction:column;gap:4px}
+.hub .then p:not(.k){font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.4}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
 .tile:hover{transform:translateY(-3px);border-color:var(--gold)}
-.tile .n{font-size:clamp(24px,2.4vw,30px);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--gold-soft)}
+.tile .n{font-size:clamp(17px,1.35vw,19px);white-space:nowrap;font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--gold-soft)}
 .tile .k{margin-top:4px;display:block}
 @media (max-width:900px){.sc{grid-template-columns:1fr}}
-@media (max-width:640px){.pie svg{max-width:340px}.pch{justify-content:center}.tg{width:100%}.tg button{flex:1;padding:8px 10px}.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:38px}}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}.pie svg{max-width:340px}.pch{justify-content:center}.tg{width:100%}.tg button{flex:1;padding:8px 10px}.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:38px}}
 @media (prefers-reduced-motion:reduce){.pc,.hub,.tile,#lbl,.tg button{transition:none}.pc:hover,.hub:hover,.tile:hover{transform:none}}
 </style>
 </head>
@@ -90,10 +92,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="hub">
 <p class="k">The golden question</p>
 <h2>"Tell me about your business and why you reached out today?"</h2>
+<div class="then"><p class="k">When they give you the pain</p><p>"That must be really stressful. What impact is that having on you and the business?" Then move on. Don't solve it yet.</p></div>
 </div>
 <div class="tiles">
-<div class="tile"><p class="n">30 mins</p><span class="k">Every call</span></div>
-<div class="tile"><p class="n">Start date</p><span class="k">Agreed on the call</span></div>
+<div class="tile"><p class="n">30 mins</p><span class="k">Plus 15 spare</span></div>
+<div class="tile"><p class="n">Full scope</p><span class="k">Before you leave</span></div>
+<div class="tile"><p class="n">Start date</p><span class="k">They pick it</span></div>
 </div>
 </div>
 
