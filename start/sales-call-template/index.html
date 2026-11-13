@@ -55,6 +55,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .row.on .tag.them{background:var(--gold);color:#0A0A0A}
 .row.on .tag.you{background:#3A3A3C;color:#fff}
 .sheet.run .row:not(.on):not(.past){opacity:.45}
+.sheet.hit .row[data-i="1"]{background:#FFF6B8}
+.sheet.hit .row[data-i="1"] .n{background:#FFEE80;color:#5C4A00}
 
 .side{display:flex;flex-direction:column;gap:12px}
 .stage{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;justify-content:space-between;gap:12px;flex:1;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
@@ -98,12 +100,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="sheet" id="sheet">
 <div class="bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="fname">Sales call template</span></div>
 <div class="cols" aria-hidden="true"><span></span><span>A</span><span>B</span></div>
-<div class="row" data-i="0" data-who="them"><span class="n">1</span><div class="c"><h3>The golden question</h3><div class="fields"><span class="f">Tell me about your business and why you reached out today</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
-<div class="row" data-i="1" data-who="them"><span class="n">2</span><div class="c"><h3>Pain points</h3><div class="fields"><span class="f">Note it. Don't fix it yet</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
-<div class="row" data-i="2" data-who="you"><span class="n">3</span><div class="c"><h3>Companies House lookup</h3><div class="fields"><span class="f">Company</span></div></div><div class="who"><span class="tag you">You check</span></div></div>
-<div class="row" data-i="3" data-who="them"><span class="n">4</span><div class="c"><h3>Scope of work</h3><div class="fields"><span class="f">Revenue</span><span class="f">Transactions</span><span class="f">Bank accounts</span><span class="f">Systems</span><span class="f">Loans</span><span class="f">VAT period and scheme</span><span class="f">Payroll</span><span class="f">Pension provider</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
-<div class="row" data-i="4" data-who="you"><span class="n">5</span><div class="c"><h3>Give value back</h3><div class="fields"><span class="f">Answer their pain points</span></div></div><div class="who"><span class="tag you">You talk</span></div></div>
-<div class="row" data-i="5" data-who="them"><span class="n">6</span><div class="c"><h3>Agree a start date</h3><div class="fields"><span class="f">They choose it</span></div></div><div class="who"><span class="tag them">They pick</span></div></div>
+<div class="row" data-i="0" data-who="them"><span class="n">1</span><div class="c"><h3>The golden question</h3><div class="fields"><span class="f">Tell me about your business and why you reached out today</span><span class="f">Notes: business, family, property</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="1" data-who="them"><span class="n">2</span><div class="c"><h3>Pain points</h3><div class="fields"><span class="f">Note it</span><span class="f">"That must be stressful"</span><span class="f">Don't fix it yet</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="2" data-who="you"><span class="n">3</span><div class="c"><h3>Companies House lookup</h3><div class="fields"><span class="f">Company name</span><span class="f">Deadlines due soon</span></div></div><div class="who"><span class="tag you">You check</span></div></div>
+<div class="row" data-i="3" data-who="them"><span class="n">4</span><div class="c"><h3>Scope of work</h3><div class="fields"><span class="f">Services</span><span class="f">Revenue</span><span class="f">Software</span><span class="f">Transactions</span><span class="f">Banks and cards</span><span class="f">Stripe, GoCardless</span><span class="f">Loans</span><span class="f">VAT period and scheme</span><span class="f">Payroll and staff</span><span class="f">Pension provider</span><span class="f">Gaps: mark X</span></div></div><div class="who"><span class="tag them">They talk</span></div></div>
+<div class="row" data-i="4" data-who="you"><span class="n">5</span><div class="c"><h3>Give value back</h3><div class="fields"><span class="f">"Can I tell you how we work?"</span><span class="f">Answer pain points</span><span class="f">Spot extras</span></div></div><div class="who"><span class="tag you">You talk</span></div></div>
+<div class="row" data-i="5" data-who="them"><span class="n">6</span><div class="c"><h3>Agree a start date</h3><div class="fields"><span class="f">They choose it</span><span class="f">You give the reason</span></div></div><div class="who"><span class="tag them">They pick</span></div></div>
 </div>
 
 <div class="side">
@@ -128,18 +130,19 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 var rows=[].slice.call(document.querySelectorAll(".row")),sheet=document.getElementById("sheet");
 var nx=document.getElementById("next"),rs=document.getElementById("reset"),k=document.getElementById("stepk"),h=document.getElementById("steph");
 var pT=document.getElementById("pThem"),pY=document.getElementById("pYou");
-var heads=["Ask it. Then listen.","Write them down. Don't solve them.","Look them up while they talk.","Get the full scope. Every box.","Now solve their pain points.","Let them pick the date."];
+var heads=["Ask it. Then listen.","Note it. Don't solve it yet.","Check their deadlines.","Every box. Gaps get an X.","Answer each pain point.","They pick the date."];
+var subs=["Step 1 of 6: after 30 seconds of small talk","Step 2 of 6","Step 3 of 6","Step 4 of 6","Step 5 of 6: turn each one yellow","Step 6 of 6: then send the proposal"];
 var cur=-1;
 function show(i){
  cur=i;sheet.classList.add("run");
  rows.forEach(function(r,j){r.classList.toggle("on",j===i);r.classList.toggle("past",j<i)});
  var who=rows[i].getAttribute("data-who");
  pT.classList.toggle("talk",who==="them");pY.classList.toggle("talk",who==="you");
- k.textContent="Step "+(i+1)+" of 6";h.textContent=heads[i];
+ k.textContent=subs[i];sheet.classList.toggle("hit",i>=4);h.textContent=heads[i];
  nx.textContent=i<5?"Next step":"Start again";rs.hidden=false;
 }
 function reset(){
- cur=-1;sheet.classList.remove("run");
+ cur=-1;sheet.classList.remove("run","hit");
  rows.forEach(function(r){r.classList.remove("on","past")});
  pT.classList.remove("talk");pY.classList.remove("talk");
  k.textContent="30-minute call";h.textContent="Six boxes. In this order.";
