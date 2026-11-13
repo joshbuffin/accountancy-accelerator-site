@@ -28,6 +28,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 /* How to send proposals: long PDF vs simple email */
 .hero{padding-top:clamp(22px,3.4vh,40px)}
 .hero h1{font-size:clamp(38px,4.6vw,62px)}
+.sub{margin-top:10px;font-size:clamp(16px,1.4vw,19px);color:var(--muted);font-weight:500}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
 .vs{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(16px,2.4vw,32px);padding-top:clamp(18px,2.6vh,30px);align-items:stretch}
 .cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
@@ -60,6 +61,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#0A0A0A;font-size:14px;font-weight:800;display:grid;place-items:center}
 .row h3{font-size:clamp(16px,1.5vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.15;flex:1;min-width:0}
 .ph{flex:none;font-size:13px;font-weight:700;color:var(--gold-soft);border:1.5px dashed #F4B48F;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.sign{padding:4px 12px 2px 46px;font-size:14px;font-style:italic;color:var(--muted)}
 .mfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px 12px;border-top:1px solid var(--line)}
 .status{font-size:14px;font-weight:700;color:var(--slate)}
 .status strong{color:var(--gold-soft)}
@@ -74,7 +76,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .chip.o{background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
 
 @media (max-width:900px){.vs{grid-template-columns:1fr}.pdf{min-height:0}.pdf svg{max-width:240px}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.wrap{padding:0 16px}.pnav{padding:16px}.cv{padding:14px}.mhead b{width:52px}.row{gap:10px;padding:7px 4px}.ph{font-size:12px;padding:3px 8px}.rows{padding:4px 6px 6px}.miss span{font-size:13px;padding:7px 10px}.pdf svg{max-width:150px}.row h3{font-size:15px}.mfoot{padding:10px 12px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.wrap{padding:0 16px}.pnav{padding:16px}.cv{padding:14px}.mhead b{width:52px}.row{gap:10px;padding:7px 4px}.ph{font-size:12px;padding:3px 8px}.rows{padding:4px 6px 6px}.miss span{font-size:13px;padding:7px 10px}.pdf svg{max-width:150px}.row h3{font-size:15px}.row{flex-wrap:wrap;row-gap:4px}.row h3{flex:1 1 calc(100% - 40px)}.row .ph{margin-left:38px}.sign{padding-left:44px}.sign{padding:4px 12px 2px 46px;font-size:14px;font-style:italic;color:var(--muted)}
+.mfoot{padding:10px 12px}}
 @media (prefers-reduced-motion:reduce){.cv,.row,.send,.send svg,.mail{transition:none}.cv:hover,.row:hover,.send:hover{transform:none}.sent .send svg{transform:none}}
 </style>
 </head>
@@ -85,6 +88,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <header class="wrap hero">
 <p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 8</p>
 <h1>Send it as a simple <span class="gold-t">email.</span></h1>
+<p class="sub">Ten lines with the key information. Not a ten page PDF.</p>
 </header>
 
 <main class="wrap">
@@ -100,11 +104,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <rect x="100" y="34" width="56" height="20" rx="5" fill="#AEAEB2"/>
 <text x="128" y="48" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">PDF</text>
 <g fill="#E5E5EA"><rect x="100" y="66" width="92" height="7" rx="3"/><rect x="100" y="80" width="84" height="7" rx="3"/><rect x="100" y="94" width="92" height="7" rx="3"/><rect x="100" y="108" width="70" height="7" rx="3"/><rect x="100" y="122" width="88" height="7" rx="3"/><rect x="100" y="136" width="92" height="7" rx="3"/><rect x="100" y="150" width="60" height="7" rx="3"/></g>
-<text x="146" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#8E8E93">Proposal_FINAL_v3.pdf</text>
+<text x="146" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#8E8E93">Proposal (6 pages).pdf</text>
 </svg>
 </div>
 <div class="miss" aria-label="What the PDF misses">
-<span>Pages to read</span><span>No start date</span><span>Everything bundled</span><span>No deposit</span>
+<span>An hour to make</span><span>Too long to read</span><span>Slows the sale</span><span>Looks low value</span>
 </div>
 </div>
 
@@ -114,13 +118,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="mbar" aria-hidden="true"><i></i><i></i><i></i><span>New message</span></div>
 <div class="mhead">
 <p><b>To</b><em>[Client name]</em></p>
-<p><b>Subject</b><em>Your proposal</em></p>
+<p><b>Subject</b><em>Your proposal - [Company] Ltd</em></p>
 </div>
 <div class="rows">
-<div class="row"><span class="num">1</span><h3>Your start date</h3><span class="ph">[Date]</span></div>
-<div class="row"><span class="num">2</span><h3>Your monthly fee</h3><span class="ph">£[Add yours]</span></div>
-<div class="row"><span class="num">3</span><h3>Add-ons, priced separately</h3><span class="ph">Self-assessment · Payroll</span></div>
-<div class="row"><span class="num">4</span><h3>Pay the deposit to start</h3><span class="ph">[Link]</span></div>
+<div class="row"><span class="num">1</span><h3>Monthly fee and start date</h3><span class="ph">£[Fee] from [date]</span></div>
+<div class="row"><span class="num">2</span><h3>What's included</h3><span class="ph">Access to [name]</span></div>
+<div class="row"><span class="num">3</span><h3>Extras, priced separately</h3><span class="ph">Self assessment · Catch-up</span></div>
+<div class="row"><span class="num">4</span><h3>Deposit to get started</h3><span class="ph">[Link]</span></div>
+<p class="sign">I'd appreciate you letting me know either way.</p>
 </div>
 <div class="mfoot">
 <p class="status" id="status" aria-live="polite">Ready to send.</p>
@@ -130,7 +135,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </div>
 
 </div>
-<div class="tpl"><span class="k">Do it once</span><span class="chip o">Save it as a Gmail template</span></div>
+<div class="tpl"><span class="k">Do it once</span><span class="chip o">Save it as a Gmail template</span><span class="chip">Same subject, every time</span><span class="chip">Send it at the end of the sales call</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/always-take-a-deposit/" style="text-decoration:none">&larr; Always take a deposit</a><a href="/start/do-not-chase-your-proposals/" style="text-decoration:none;color:var(--gold-soft);text-align:right">DO NOT CHASE YOUR PROPOSALS &rarr;</a></div>
