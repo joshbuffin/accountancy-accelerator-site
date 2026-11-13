@@ -55,7 +55,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .strap .one{font-size:clamp(26px,2.8vw,36px);font-weight:800;letter-spacing:-.04em;line-height:1}
 .strap .mid{font-size:clamp(17px,1.7vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .strap .save{background:#fff;border-radius:999px;padding:8px 16px;font-size:clamp(13px,1.2vw,15px);font-weight:800;white-space:nowrap}
-@media (max-width:820px){.duo{grid-template-columns:1fr}.strap{grid-template-columns:1fr;gap:8px}.strap .save{justify-self:start;white-space:normal}}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(12px,1.8vh,18px)}
+.why div{border-top:3px solid var(--gold);padding-top:10px}
+.why h3{font-size:clamp(16px,1.45vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.why p{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.45}
+@media (max-width:820px){.duo{grid-template-columns:1fr}.why{grid-template-columns:1fr}.strap{grid-template-columns:1fr;gap:8px}.strap .save{justify-self:start;white-space:normal}}
 @media (max-width:560px){.enh .k{font-size:10px;letter-spacing:.1em}.navtag{font-size:11px}.pnav{font-size:14px}.cv{padding:14px 16px 16px}.bar .k{font-size:10px}}
 @media (prefers-reduced-motion:reduce){.cv,.play,.eb i{transition:none}.cv:hover{transform:none}}
 </style>
@@ -88,6 +92,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </svg>
 <div class="en"><div class="enh"><span class="k">Energy left for lead generation</span><b id="lbB">Full tank</b></div><div class="eb"><i id="ebB"></i></div></div>
 </div>
+</div>
+
+<div class="why">
+<div><h3>Chasing kills future clients.</h3><p>Pestering damages trust and builds sales resistance. Someone ready in 3 or 6 months stops being a lead.</p></div>
+<div><h3>Tell them you won't keep chasing.</h3><p>Say it when you send the proposal. The decision is on them, and more people reply.</p></div>
+<div><h3>Months later, they come back.</h3><p>Nobody wants to talk to their accountant. Their next deadline jogs their memory, and they email you.</p></div>
 </div>
 
 <div class="strap"><span class="one">1x max.</span><span class="mid">They will come when they're ready.</span><span class="save">Save your energy for lead generation</span></div>
