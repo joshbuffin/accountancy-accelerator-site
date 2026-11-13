@@ -92,22 +92,23 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <p class="k">They say</p>
 <div class="bubble" id="bubble" aria-live="polite">"It's too expensive."</div>
 <div class="picks" role="group" aria-label="Pick an objection">
-<button class="pick" type="button" aria-pressed="true" data-q="&quot;It's too expensive.&quot;">Price</button>
-<button class="pick" type="button" aria-pressed="false" data-q="&quot;Let's wait till year-end.&quot;">Timing</button>
-<button class="pick" type="button" aria-pressed="false" data-q="&quot;I want my own access to Xero.&quot;">Xero access</button>
+<button class="pick" type="button" aria-pressed="true" data-i="0">Price</button>
+<button class="pick" type="button" aria-pressed="false" data-i="1">Timing</button>
+<button class="pick" type="button" aria-pressed="false" data-i="2">Xero access</button>
+<button class="pick" type="button" aria-pressed="false" data-i="3">In person</button>
 </div>
-<p class="you"><b>Add yours:</b> Josh's objection answers bank</p>
+<p class="you"><b>Your turn:</b> write 2 to 3 answers for every objection you dread. Build a story for each.</p>
 </div>
 
 <div class="board" id="board">
-<div class="bhead"><h2>Same 5 steps. Any objection.</h2><div class="btns"><button class="ghost" id="reset" type="button">Reset</button><button class="play" id="next" type="button">Next step</button></div></div>
+<div class="bhead"><h2>Same 5 steps. Josh's real answers.</h2><div class="btns"><button class="ghost" id="reset" type="button">Reset</button><button class="play" id="next" type="button">Next step</button></div></div>
 <div class="cols"><p class="k">Wrong way</p><span></span><p class="k">Right way</p></div>
 <div class="rows" id="rows">
 <div class="row"><div class="wr">Jump in</div><span class="vs">vs</span><div class="rt"><span class="n">1</span><span class="t"><b>Listen</b><span>Let them finish</span></span></div></div>
-<div class="row"><div class="wr">Get defensive</div><span class="vs">vs</span><div class="rt"><span class="n">2</span><span class="t"><b>Empathise</b><span>"That makes sense"</span></span></div></div>
-<div class="row"><div class="wr">Dodge it</div><span class="vs">vs</span><div class="rt"><span class="n">3</span><span class="t"><b>Handle</b><span>Answer it honestly</span></span></div></div>
-<div class="row"><div class="wr">"Trust me"</div><span class="vs">vs</span><div class="rt"><span class="n">4</span><span class="t"><b>Justify</b><span>A reason or a story</span></span></div></div>
-<div class="row"><div class="wr">Leave it hanging</div><span class="vs">vs</span><div class="rt"><span class="n">5</span><span class="t"><b>Progress</b><span>Ask a question</span></span></div></div>
+<div class="row"><div class="wr">Get defensive</div><span class="vs">vs</span><div class="rt"><span class="n">2</span><span class="t"><b>Empathise</b><span class="say">"That makes sense"</span></span></div></div>
+<div class="row"><div class="wr">Dodge it or fib</div><span class="vs">vs</span><div class="rt"><span class="n">3</span><span class="t"><b>Handle</b><span class="say">Answer it honestly</span></span></div></div>
+<div class="row"><div class="wr">"Trust me"</div><span class="vs">vs</span><div class="rt"><span class="n">4</span><span class="t"><b>Justify</b><span class="say">A reason or a story</span></span></div></div>
+<div class="row"><div class="wr">Leave it hanging</div><span class="vs">vs</span><div class="rt"><span class="n">5</span><span class="t"><b>Progress</b><span class="say">Ask a question</span></span></div></div>
 </div>
 <div class="res"><div class="out bad">Resistance goes up</div><span></span><div class="out good">They're back in control</div></div>
 </div>
@@ -120,11 +121,18 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var rows=document.querySelectorAll("#rows .row"),board=document.getElementById("board"),next=document.getElementById("next"),bubble=document.getElementById("bubble"),picks=document.querySelectorAll(".pick"),step=0;
+var O=[
+['"It\'s too expensive."','"Price is all you can judge us on so far."','"We\'re never the cheapest. We aim for best value."','"I once dropped my price to win clients. Wrong clients."','"Is price most important, or overall value?"'],
+['"Let\'s wait till year-end."','"That makes sense in theory."','"We can clean things up between now and then."','"A client waited. We found a VAT error. Cash flow hit."','"We do the heavy lifting. Does that make sense?"'],
+['"I want my own access to Xero."','"I completely understand why."','"We run Xero front to back. That\'s how we work."','"We tried it. Too many chefs, then errors."','"Try our way for a few months, then review?"'],
+['"Can we meet in person?"','"Awesome. I\'m just north of Manchester."','"Actually, we all work remotely."','"Co-founder in London, team in Nottingham."','"Where are you based?"']];
+var says=document.querySelectorAll("#rows .say"),rows=document.querySelectorAll("#rows .row"),board=document.getElementById("board"),next=document.getElementById("next"),bubble=document.getElementById("bubble"),picks=document.querySelectorAll(".pick"),step=0;
 function render(){for(var i=0;i<rows.length;i++)rows[i].classList.toggle("on",i<step);board.classList.toggle("done",step>=rows.length);next.textContent=step>=rows.length?"Replay":"Next step"}
 next.addEventListener("click",function(){step=step>=rows.length?1:step+1;render()});
 document.getElementById("reset").addEventListener("click",function(){step=0;render()});
-for(var j=0;j<picks.length;j++)picks[j].addEventListener("click",function(){for(var x=0;x<picks.length;x++)picks[x].setAttribute("aria-pressed",picks[x]===this?"true":"false");bubble.textContent=this.getAttribute("data-q");step=0;render()});
+for(var j=0;j<picks.length;j++)picks[j].addEventListener("click",function(){for(var x=0;x<picks.length;x++)picks[x].setAttribute("aria-pressed",picks[x]===this?"true":"false");show(+this.getAttribute("data-i"));step=0;render()});
+function show(i){bubble.textContent=O[i][0];for(var k=0;k<says.length;k++)says[k].textContent=O[i][k+1]}
+show(0);
 render();
 })();
 </script>
