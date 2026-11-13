@@ -68,7 +68,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .chip.ok{border:1px solid var(--gold);color:var(--gold-soft);background:#FFF1E8}
 .scope{flex-direction:column;align-items:stretch}
 .scope .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.add{align-self:flex-start;margin-top:12px;font-size:14px;font-weight:700;border:2px dashed #C7C7CC;border-radius:999px;padding:7px 14px;display:inline-block;color:var(--slate)}
+.tip{margin-top:12px;font-size:14px;font-weight:600;color:var(--muted);line-height:1.4}
+.tip::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:2px}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{padding:8px 13px;font-size:13px}.bar{gap:10px}.pane{padding:12px 14px 14px}.row{padding:8px 12px}}
 @media (prefers-reduced-motion:reduce){.pane,.pup,.ebar i,.row,.st,.chip,.kb,.typing,.rec,.seg button{transition:none}.pane:hover{transform:none}}
@@ -125,19 +126,20 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <circle cx="240" cy="252" r="5" fill="#3A3A3C"/><text x="252" y="256" font-size="11" font-weight="700" fill="#6E6E73">Camera</text>
 </svg>
 <div class="eye"><span class="k">Eye contact</span><div class="ebar"><i></i></div><span class="en" id="en">Lost</span></div>
+<p class="tip">Phone or WhatsApp call? Take it on your laptop. Granola still records it.</p>
 </div>
 
 <div class="pane">
 <div class="ph"><h2>Your notes</h2><p class="k" id="notesk">Written by you</p></div>
 <div class="notes" id="notes">
 <div class="row"><b>Background</b><span class="st">Half</span></div>
-<div class="row"><b>Pain points</b><span class="st">Missed</span></div>
 <div class="row scope"><div class="top"><b>Scope of work</b><span class="st">Gaps</span></div>
-<div class="chips"><span class="chip">Turnover</span><span class="chip">Transactions</span><span class="chip">Bank accounts</span><span class="chip">VAT</span><span class="chip">Payroll</span><span class="chip">Pension</span></div></div>
+<div class="chips"><span class="chip">Bookkeeping</span><span class="chip">Payroll</span><span class="chip">VAT</span><span class="chip">Annual accounts</span><span class="chip">Tax planning</span><span class="chip">Personal tax</span><span class="chip">Start date</span></div></div>
 <div class="row"><b>Price quoted</b><span class="st">Half</span></div>
-<div class="row"><b>Next steps</b><span class="st">Missed</span></div>
+<div class="row"><b>Action points</b><span class="st">Missed</span></div>
+<div class="row"><b>Pain points</b><span class="st">Missed</span></div>
 </div>
-<p class="add">Add yours: Josh's Granola note template</p>
+<p class="tip">Answer their pain points in the email with your proposal.</p>
 </div>
 </div>
 </main>
@@ -151,7 +153,7 @@ var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches
 var $=function(id){return document.getElementById(id)};
 var stage=$("stage"),bT=$("bType"),bG=$("bGran"),pup=$("pup"),mouth=$("mouth"),timers=[];
 var rows=[].slice.call(document.querySelectorAll("#notes .row")),chips=[].slice.call(document.querySelectorAll("#notes .chip"));
-var typed=[{s:"Half"},{s:"Missed"},{s:"Gaps",c:[0,3]},{s:"Half"},{s:"Missed"}];
+var typed=[{s:"Half"},{s:"Gaps"},{s:"Half"},{s:"Missed"},{s:"Missed"}];
 var NS="http://www.w3.org/2000/svg",wave=$("wave"),bars=[];
 for(var i=0;i<9;i++){var r=document.createElementNS(NS,"rect");r.setAttribute("x",77+i*9);r.setAttribute("y",160);r.setAttribute("width",5);r.setAttribute("height",10);r.setAttribute("rx",2.5);wave.appendChild(r);bars.push(r)}
 function drawWave(t){bars.forEach(function(b,i){var h=RM?6+(i%3)*5:4+Math.abs(Math.sin(t/260+i*0.9))*18;b.setAttribute("height",h);b.setAttribute("y",165-h/2)})}
@@ -171,7 +173,7 @@ function mode(g){
  $("verdict").innerHTML=g?"Eyes on them. <span>Every detail caught.</span>":"Eyes on the keyboard. <span>Details missed.</span>";
  if(!g){typed.forEach(function(t,i){setRow(i,false,t.s)});chips.forEach(function(c,i){c.classList.remove("ok");c.classList.toggle("got",i<3)});return}
  typed.forEach(function(t,i){setRow(i,false,t.s)});chips.forEach(function(c,i){c.classList.remove("ok");c.classList.toggle("got",i<3)});
- rows.forEach(function(r,i){later(function(){setRow(i,true,"Captured");if(i===2)chips.forEach(function(c){c.classList.add("ok")})},250+i*260)});
+ rows.forEach(function(r,i){later(function(){setRow(i,true,"Captured");if(i===1)chips.forEach(function(c){c.classList.add("ok")})},250+i*260)});
 }
 bT.addEventListener("click",function(){mode(false)});
 bG.addEventListener("click",function(){mode(true)});
