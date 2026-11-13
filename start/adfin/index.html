@@ -95,12 +95,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <p class="k">Your monthly fees · illustration</p>
 <div class="seg" role="group" aria-label="Show"><button type="button" id="bW" aria-pressed="true">Without Adfin</button><button type="button" id="bY" aria-pressed="false">With Adfin</button></div>
 </div>
-<div class="status"><h2 id="st">You invoice. You chase.</h2><div class="cnt"><span class="n" id="cn">9</span><span class="s">chases sent</span></div></div>
+<div class="status"><h2 id="st">You invoice. You chase.</h2></div>
 <div class="months" id="months"></div>
 </section>
 
 <aside class="journey">
-<div class="tile"><p class="k">What it's for</p><h3>Collecting your fees.</h3></div>
+<div class="tile"><p class="k">What it's for</p><h3>Direct debits and chasing.</h3></div>
 <div class="tile hot"><p class="k">Where it starts</p><h3>Set up at onboarding.</h3></div>
 <div class="tile add"><p class="k">Add yours</p><h3>When we switched it on.</h3></div>
 <div class="tile add"><p class="k">Add yours</p><h3>Our set-up and link.</h3></div>
@@ -133,19 +133,15 @@ names.forEach(function(n,i){
 });
 $("months").innerHTML=h;
 var board=$("board"),bW=$("bW"),bY=$("bY"),timers=[];
-function visTotal(){var n=(window.matchMedia&&matchMedia("(max-width:560px)").matches)?3:6;return chases.slice(0,n).reduce(function(a,b){return a+b},0)}
 function setMode(on){
  timers.forEach(clearTimeout);timers=[];
  board.classList.toggle("on",on);bW.setAttribute("aria-pressed",String(!on));bY.setAttribute("aria-pressed",String(on));
  $("st").textContent=on?"Collected. Every month.":"You invoice. You chase.";
- $("cn").textContent=on?"0":String(visTotal());
  var cs=board.querySelectorAll(on?".y .c":".w .c");
  if(RM)return;
  cs.forEach(function(c,i){c.classList.add("hide");timers.push(setTimeout(function(){c.classList.remove("hide")},60+i*(on?110:45)))});
 }
-$("cn").textContent=String(visTotal());
 if(location.hash==="#with")setMode(true);
-window.addEventListener("resize",function(){if(!board.classList.contains("on"))$("cn").textContent=String(visTotal())});
 bW.addEventListener("click",function(){setMode(false)});
 bY.addEventListener("click",function(){setMode(true)});
 })();
