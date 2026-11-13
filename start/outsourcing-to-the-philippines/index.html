@@ -56,9 +56,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .where{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
 .where .k{margin-right:4px}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
-.chip.add{border-style:dashed;border-color:var(--gold);background:#FFF8F3;color:var(--gold-soft)}
-@media (max-width:640px){.steps{grid-template-columns:1fr 1fr;gap:6px}.st{padding:8px 10px;border-radius:12px}.st h3{font-size:14px}.chk{gap:4px;margin-top:4px}.chk span{font-size:11px;padding:1px 7px}.sub{font-size:11.5px;margin-top:3px}.top h2{font-size:19px}.stage{padding:14px}.top{align-items:flex-start}.play{padding:9px 14px;font-size:13px}.navtag{font-size:11px}.pnav{font-size:14px}.where{font-size:13px}}
-@media (prefers-reduced-motion:reduce){.dot,.stage,.st,.chk span{transition:none}.stage:hover,.st:hover{transform:none}}
+button.chip{font:inherit;color:inherit;cursor:pointer;transition:border-color .2s ease,background-color .2s ease,color .2s ease}
+button.chip:hover{border-color:var(--gold)}
+.chip.on{border-color:var(--gold);background:#FFF8F3;color:var(--gold-soft)}
+.fact{font-size:15px;font-weight:500;color:var(--muted);padding-top:8px;max-width:760px;min-height:3em}
+@media (max-width:640px){.steps{grid-template-columns:1fr 1fr;gap:6px}.st{padding:8px 10px;border-radius:12px}.st h3{font-size:14px}.chk{gap:4px;margin-top:4px}.chk span{font-size:11px;padding:1px 7px}.sub{font-size:11.5px;margin-top:3px}.top h2{font-size:19px}.stage{padding:14px}.top{align-items:flex-start}.play{padding:9px 14px;font-size:13px}.navtag{font-size:11px}.pnav{font-size:14px}.where{font-size:13px}.fact{font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){.dot,.stage,.st,.chk span,button.chip{transition:none}.stage:hover,.st:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -72,9 +75,9 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <main class="wrap">
 <section class="stage">
-<div class="top"><div><p class="k">Your first bookkeeper</p><h2>Filter hard. <span>Start part-time.</span></h2></div><button class="play" id="play" type="button">Run the hire</button></div>
+<div class="top"><div><p class="k">Bookkeepers, admin, editors</p><h2>Filter hard. <span>Start part-time.</span></h2></div><button class="play" id="play" type="button">Run the hire</button></div>
 
-<svg class="fun" id="fun" viewBox="0 0 1000 250" role="img" aria-label="A hiring filter on OnlineJobs.ph: many applicants, fewer pass the skill test, three get a video interview, one is hired part-time">
+<svg class="fun" id="fun" viewBox="0 0 1000 250" role="img" aria-label="A hiring filter on OnlineJobs.ph: hundreds apply, fewer send a one-minute video, three go on trial, one is hired part-time">
 <defs>
 <linearGradient id="fg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#FFE6D5"/></linearGradient>
 <clipPath id="fc"><path d="M4,6 L996,92 L996,158 L4,244 Z"/></clipPath>
@@ -85,13 +88,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </svg>
 
 <div class="steps" id="steps">
-<div class="st" data-s="0"><b>1</b><h3>Post the job spec</h3><p class="sub">Bookkeeping spec</p></div>
-<div class="st" data-s="1"><b>2</b><h3>Skill test</h3><p class="sub">Bookkeeper test</p></div>
-<div class="st" data-s="2"><b>3</b><h3>Video interview</h3><div class="chk" id="chk"><span>Sound</span><span>Internet</span><span>Video</span></div></div>
-<div class="st" data-s="3"><b>4</b><h3>Hire part-time</h3><p class="sub" id="last">Then work up</p></div>
+<div class="st" data-s="0"><b>1</b><h3>Post on OnlineJobs.ph</h3><p class="sub">About £70 for a month. More credits spent, more serious.</p></div>
+<div class="st" data-s="1"><b>2</b><h3>One-minute video</h3><div class="chk" id="chk"><span>Sound</span><span>Internet</span><span>Video</span></div></div>
+<div class="st" data-s="2"><b>3</b><h3>Test, then trial three</h3><p class="sub">Skill test, then 2 to 3 clients each</p></div>
+<div class="st" data-s="3"><b>4</b><h3>Hire part-time</h3><p class="sub" id="last">Two hours a day, then work up</p></div>
 </div>
 </section>
-<div class="where"><span class="k">Add yours</span><span class="chip add">Why the Philippines</span><span class="chip add">The going rate</span></div>
+<div class="where" id="facts"><span class="k">Tap</span><button class="chip on" type="button" data-f="0" aria-pressed="true">Why the Philippines</button><button class="chip" type="button" data-f="1" aria-pressed="false">The going rate</button><button class="chip" type="button" data-f="2" aria-pressed="false">Hours</button></div>
+<p class="fact" id="fact" aria-live="polite">We tried Pakistan and India first. The Philippines won on communication, and our bookkeepers there now work as well as UK staff.</p>
 </main>
 
 <div class="wrap pnav"><a href="/start/setting-expectations-for-your-team/" style="text-decoration:none">&larr; Setting expectations</a><a href="/start/monitask/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Monitask &rarr;</a></div>
@@ -138,6 +142,11 @@ function run(){
 }
 build();
 btn.addEventListener("click",run);
+var F=["We tried Pakistan and India first. The Philippines won on communication, and our bookkeepers there now work as well as UK staff.",
+"Budget around £2,000 a month for a full-time bookkeeper and a full-time admin assistant together.",
+"Start with a couple of hours a day. Ask for an overlap of 8am to 12pm UK time and let the rest be flexible."];
+var chips=[].slice.call(document.querySelectorAll("#facts .chip")),fact=$("fact");
+chips.forEach(function(c){c.addEventListener("click",function(){chips.forEach(function(o){o.classList.remove("on");o.setAttribute("aria-pressed","false")});c.classList.add("on");c.setAttribute("aria-pressed","true");fact.textContent=F[+c.getAttribute("data-f")]})});
 if(RM)run();
 })();
 </script>
