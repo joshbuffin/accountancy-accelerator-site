@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Can AI do this? - Accountancy Accelerator</title>
-<meta name="description" content="Start, Level 9 Staffing: before you hire for a task, ask whether AI can do it.">
+<meta name="description" content="Start, Level 9 Staffing: before you hire for a task, ask whether AI can do it, then train it and check its work like a new starter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .play:hover{transform:translateY(-1px);background:var(--gold-soft)}
 .play:disabled{opacity:.55;cursor:default;transform:none}
 
-.flow{display:grid;min-height:390px;grid-template-columns:minmax(0,.9fr) auto minmax(0,1.5fr);gap:clamp(16px,2.4vw,34px);align-items:stretch}
+.flow{display:grid;min-height:426px;grid-template-columns:minmax(0,.9fr) auto minmax(0,1.5fr);gap:clamp(16px,2.4vw,34px);align-items:stretch}
 .col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .col:hover,.lane:hover{transform:translateY(-3px)}
 .col h2,.lane h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
@@ -68,13 +68,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .ai .ic{background:var(--gold)}
 .hire .ic{background:#fff;border:1.5px solid #8E8E93}
 .ai .k{color:var(--gold-soft)}
-.lane .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-height:44px}
-.lane .chip{font-size:14px;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px;white-space:nowrap}
+.lane .stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-height:44px}
+.lane .chip{font-size:14px;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 12px}
+.lane .chip small{white-space:normal}
 
-.end{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 20px;padding:16px 0 4px}
-.give{font-size:clamp(20px,2.1vw,26px);font-weight:800;letter-spacing:-.025em}
-.give span{color:var(--gold-soft)}
-.you{border:2px dashed rgba(0,0,0,.3);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:700}
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:14px 0 4px}
+.rule{display:flex;gap:10px;align-items:flex-start;border-top:2px solid var(--line);padding-top:10px}
+.rule .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.rule h3{font-size:16px;font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.rule p{font-size:13px;color:var(--muted);line-height:1.4;margin-top:2px}
 
 @media (max-width:900px){
  .flow{grid-template-columns:1fr;min-height:0}
@@ -87,6 +89,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
  .col .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
  .col .stack .chip{font-size:13px;padding:8px 10px}
  .lanes{grid-template-rows:auto}
+ .rules{grid-template-columns:1fr;gap:10px}
 }
 @media (max-width:560px){
  .navtag{font-size:11px}.pnav{font-size:14px}
@@ -122,11 +125,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <h2>On your plate.</h2>
 <div class="stack" id="todo">
 <div class="chip" data-ai="1">Meeting notes<small>Granola</small></div>
-<div class="chip" data-ai="0">Bookkeeping<small>Philippines bookkeeper</small></div>
-<div class="chip" data-ai="1">Proposals<small>AI proposal tool</small></div>
-<div class="chip" data-ai="0">Payroll<small>Outsource</small></div>
-<div class="chip" data-ai="1">Client chasing<small>AI onboarding tool</small></div>
-<div class="chip" data-ai="0">Video editing<small>Editor</small></div>
+<div class="chip" data-ai="0">Bookkeeping<small>Part-time bookkeeper</small></div>
+<div class="chip" data-ai="1">Onboarding<small>Contract, deposit link, invoice</small></div>
+<div class="chip" data-ai="1">Chaser emails<small>AI drafts, you press send</small></div>
+<div class="chip" data-ai="0">Complex clients<small>A person</small></div>
+<div class="chip" data-ai="1">Posting content<small>Scheduled for you</small></div>
 </div>
 </div>
 
@@ -138,7 +141,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <div class="lanes">
 <div class="lane ai">
-<div class="lh"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0A0A0A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="k">Yes</p><h2>Let AI do it.</h2></div></div>
+<div class="lh"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#0A0A0A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="k">Yes</p><h2>Let AI do it. You review it.</h2></div></div>
 <div class="stack sorted" id="laneAI"></div>
 </div>
 <div class="lane hire">
@@ -148,7 +151,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </div>
 </div>
 
-<div class="end"><p class="give">AI first. <span>Hire for the rest.</span></p><p class="you">Add yours: the tasks AI already does for you</p></div>
+<div class="rules">
+<div class="rule"><span class="n">1</span><div><h3>Train it like a new starter.</h3><p>Share your screen and talk it through. One easy client first, then harder ones.</p></div></div>
+<div class="rule"><span class="n">2</span><div><h3>Check everything it does.</h3><p>Watch it work. When it gets something wrong, stop it and tell it why.</p></div></div>
+<div class="rule"><span class="n">3</span><div><h3>Don't build it yourself yet.</h3><p>At Start your hours go on leads. Use ready-made tools or an AI consultant.</p></div></div>
+</div>
 </main>
 
 <div class="wrap pnav"><a href="/start/look-after-your-team/" style="text-decoration:none">&larr; Look after your team</a><a href="/start/understanding-your-value/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Understanding your value &rarr;</a></div>
