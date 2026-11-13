@@ -143,11 +143,11 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <aside class="prev" aria-label="Video preview">
 <p class="lbl">Every video has 3 parts</p>
 <div class="phone" aria-hidden="true"><div class="scr" id="scr">
-<div class="z hook" id="pHook">If you run a limited company, watch this</div>
-<div class="z look" id="pLook"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="none" stroke="#F26B1D" stroke-width="2"/><circle cx="23" cy="18" r="7" fill="#fff"/><path d="M10,37c2-8,7-11,13-11s11,3,13,11" fill="#fff"/></svg><span id="pLookT">Talking head</span></div>
-<div class="z topic" id="pTopic">Group structures</div>
+<div class="z hook" id="pHook">Your hook</div>
+<div class="z look" id="pLook"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="none" stroke="#F26B1D" stroke-width="2"/><circle cx="23" cy="18" r="7" fill="#fff"/><path d="M10,37c2-8,7-11,13-11s11,3,13,11" fill="#fff"/></svg><span id="pLookT">Your look</span></div>
+<div class="z topic" id="pTopic">Your topic</div>
 </div></div>
-<p class="vnum" id="vnum">Example video</p>
+<p class="vnum" id="vnum">Your video</p>
 <div class="parts" id="parts">
 <button class="part" type="button" data-z="look" aria-pressed="false"><b>Look</b><span>How it's filmed</span></button>
 <button class="part" type="button" data-z="hook" aria-pressed="false"><b>Hook</b><span>The first 3 seconds</span></button>
@@ -172,14 +172,8 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 (function(){
 var N=20,KEY="aa-research-task-v1",st=null;
 var LOOKS=["Talking head","Text on screen","Carousel","Whiteboard or prop","Still image","Testimonial screenshot","Meme","Other"];
-var PH=[
- ["Talking head","If you run a limited company, watch this","Group structures"],
- ["Text on screen","3 mistakes founders make with their accountant","Choosing an accountant"],
- ["Whiteboard or prop","This is how a holding company works","Holding companies"],
- ["Carousel","Salary or dividends?","Paying yourself"],
- ["Talking head","Why I started my own practice","My story"]
-];
-var EX={look:"Talking head",hook:"If you run a limited company, watch this",topic:"Group structures"};
+var PH=[];
+var EX={look:"Your look",hook:"Your hook",topic:"Your topic"};
 function blank(){return{look:"",hook:"",topic:""}}
 try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!Array.isArray(st))st=[];
@@ -200,7 +194,7 @@ function preview(i){
  var hook=r&&t(r.hook)?r.hook:(r?(p?p[1]:"Your hook"):EX.hook);
  var topic=r&&t(r.topic)?r.topic:(r?(p?p[2]:"Your topic"):EX.topic);
  $("pLookT").textContent=look;$("pHook").textContent=hook;$("pTopic").textContent=topic;
- $("vnum").innerHTML=i>=0?"Your video <b>#"+(i+1)+"</b>":"Example video";
+ $("vnum").innerHTML=i>=0?"Your video <b>#"+(i+1)+"</b>":"Your video";
 }
 var parts=$("parts").querySelectorAll(".part"),on="";
 function focusZone(z){
