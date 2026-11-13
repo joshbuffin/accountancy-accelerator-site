@@ -104,29 +104,29 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="pipe">
 <div class="st client" id="s0">
 <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
-<div class="txt"><p class="k">Your client</p><h3>Sends the receipt</h3><p class="do">App · email · upload</p></div>
+<div class="txt"><p class="k">Your client</p><h3>Sends the receipt</h3><p class="do">Drag and drop, app, email</p></div>
 </div>
 <div class="ln" id="l0"><span class="bar"><i></i></span></div>
 <div class="st" id="s1">
 <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div>
-<div class="txt"><p class="k">Hubdoc</p><h3>Captures it</h3><p class="do">Processes the invoice</p></div>
+<div class="txt"><p class="k">Hubdoc</p><h3>Captures it</h3><p class="do">Free, so no Dext or Apron</p></div>
 </div>
 <div class="ln key" id="l1"><span class="bar"><i></i></span><span class="tag">Connect once</span></div>
 <div class="st" id="s2">
 <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></div>
-<div class="txt"><p class="k">Xero</p><h3>Books it</h3><p class="do">Bookkeeping and VAT</p></div>
+<div class="txt"><p class="k">Xero</p><h3>Books it</h3><p class="do">Bank feeds, VAT, MTD</p></div>
 </div>
 <div class="ln" id="l2"><span class="bar"><i></i></span></div>
 <div class="st" id="s3">
 <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 2.5V8h5.5"/><path d="m8.5 14.5 2.3 2.3 4.7-4.8"/></svg></div>
-<div class="txt"><p class="k">XeroTax</p><h3>Year-end accounts</h3><p class="do">Accounts prep</p></div>
+<div class="txt"><p class="k">XeroTax</p><h3>Year-end accounts</h3><p class="do">Import TB, sense-check, generate</p></div>
 </div>
 </div>
 
 <p class="status" aria-live="polite"><i class="dot"></i><span id="msg">Press play to follow one receipt.</span></p>
 </section>
 
-<div class="where"><span class="k">When you need it</span><span class="chip now">Day one</span><span class="sep"></span><span class="chip add">Add yours: your Hubdoc set-up checklist</span><span class="chip add">Add yours: how clients send you receipts</span></div>
+<div class="where"><span class="k">When you need it</span><span class="chip now">Day one</span><span class="sep"></span><span class="chip">Payroll is BrightPay, not Xero</span></div>
 </main>
 
 <div class="wrap pnav"><a href="/start/gsuite/" style="text-decoration:none">&larr; GSuite</a><a href="/start/brightpay/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Brightpay &rarr;</a></div>
@@ -138,10 +138,10 @@ var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches
 var $=function(id){return document.getElementById(id)};
 var btn=$("play"),msg=$("msg"),timers=[];
 var steps=[
- {s:"s0",t:"Your client snaps a receipt."},
- {s:"s1",l:"l0",t:"Hubdoc captures it and processes the invoice."},
+ {s:"s0",t:"Your client sends a receipt by drag and drop, app or email."},
+ {s:"s1",l:"l0",t:"Hubdoc captures it. It is free, so no Dext or Apron."},
  {s:"s2",l:"l1",t:"Connected once, Hubdoc sends it straight to Xero."},
- {s:"s3",l:"l2",t:"Xero books it. XeroTax turns the year into accounts."}
+ {s:"s3",l:"l2",t:"Xero books it with bank feeds and VAT. XeroTax turns the year into accounts."}
 ];
 function reset(){timers.forEach(clearTimeout);timers=[];["s0","s1","s2","s3"].forEach(function(id){$(id).classList.remove("on")});["l0","l1","l2"].forEach(function(id){$(id).classList.remove("done")})}
 function show(i){var st=steps[i];if(st.l)$(st.l).classList.add("done");$(st.s).classList.add("on");msg.textContent=st.t}
