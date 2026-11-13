@@ -55,8 +55,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .q.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
 .q.hot .k{color:#3A2A1E}
 .q.hot:hover{box-shadow:0 14px 30px -16px rgba(242,107,29,.6)}
-.q.add{border:2px dashed #F4B48F;background:#FFF8F3}
-.q.add h2{color:var(--gold-soft)}
+.q .sub{font-size:14px;color:var(--muted);line-height:1.35}
+.q.hot .sub{color:#2A1A10}
 @media (max-width:900px){.se{grid-template-columns:1fr}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.chart{padding:14px 12px 12px}.seg button{padding:7px 11px;font-size:12px}.q{padding:12px 16px}}
 @media (prefers-reduced-motion:reduce){.chart,.q,#real,#gap,#marks,#rlab,#rline{transition:none}.chart:hover,.q:hover{transform:none}}
@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <button type="button" id="bE" aria-pressed="true">What you expect</button>
 <button type="button" id="bR" aria-pressed="false">What really happens</button>
 </div></div>
-<svg viewBox="-8 0 648 290" role="img" aria-label="Line chart. You expect a new hire to be perfect from day one. In reality they start lower and climb, with a few mistakes along the way; each mistake fixes your process and lifts the line until they are up to speed.">
+<svg viewBox="-8 0 648 290" role="img" aria-label="Line chart. You expect a new hire to be perfect from day one. In reality they start lower and climb, with a few mistakes along the way; each mistake goes back to them to fix, which lifts the line until they are up to speed.">
 <defs>
 <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F26B1D" stop-opacity=".16"/><stop offset="1" stop-color="#F26B1D" stop-opacity=".02"/></linearGradient>
 </defs>
@@ -103,7 +103,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <g transform="translate(612,50)"><circle r="8" fill="#F26B1D"/></g>
 </g>
 <g id="rlab" class="off">
-<text x="214" y="229" font-size="14" font-weight="700" fill="#C2410C">Mistake = fix the process</text>
+<text x="214" y="229" font-size="14" font-weight="700" fill="#C2410C">Mistake? Send it back.</text>
 <text x="480" y="168" text-anchor="middle" font-size="16" font-weight="800" fill="#C2410C">Each fix lifts the line</text>
 </g>
 </svg>
@@ -111,10 +111,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 </div>
 
 <div class="qs">
-<div class="q"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>How good should they be?</p><h2>Good enough to learn. Not perfect.</h2></div>
-<div class="q add"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>How long will it take?</p><h2>Add yours: how long until up to speed</h2></div>
-<div class="q hot"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4M12 17v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>When they make a mistake</p><h2>Assume it's your fault first.</h2></div>
-<div class="q"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h4v-4h4v-4h4V6h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hours</p><h2>Start part-time. Work up.</h2></div>
+<div class="q"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h4v-4h4v-4h4V6h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hours</p><h2>Start part-time. Work up.</h2><p class="sub">Month one: 4 hours a day, overlapping UK hours.</p></div>
+<div class="q"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Training</p><h2>Show it once. Then they do it.</h2><p class="sub">Review their work at 9am the next morning.</p></div>
+<div class="q hot"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 10v4M12 17v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>When they make a mistake</p><h2>Don't fix it. Send it back.</h2><p class="sub">If you fix it, you stay the expert.</p></div>
+<div class="q"><p class="k"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Every month</p><h2>A 10 to 15 minute review call.</h2><p class="sub">How it went, feedback both ways, next month's goals.</p></div>
 </div>
 
 </div>
