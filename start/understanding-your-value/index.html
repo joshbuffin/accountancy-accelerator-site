@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Understanding your value - Accountancy Accelerator</title>
-<meta name="description" content="Start, Level 9 Staffing: understanding your value.">
+<meta name="description" content="Start, Level 9 Staffing: understanding your value. Your monthly target divided by 180 hours is what your hour is worth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -31,9 +31,9 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .uv{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-top:clamp(18px,2.6vh,30px);padding-bottom:6px}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
 .side{display:flex;flex-direction:column;gap:12px}
-.val{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;gap:12px}
+.val{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(16px,1.9vw,22px);display:flex;flex-direction:column;gap:10px}
 .val .k{color:#3A2A1E}
-.val h2{font-size:clamp(24px,2.5vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.val h2{font-size:clamp(22px,2.1vw,27px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
 .rate{display:flex;align-items:center;gap:6px;background:#fff;border-radius:16px;padding:10px 14px;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.02em}
 .rate input{font:inherit;width:3.6em;border:0;border-bottom:2px dashed var(--gold);background:transparent;color:var(--gold-soft);text-align:center;padding:0 2px;outline:none;-moz-appearance:textfield}
 .rate input::-webkit-outer-spin-button,.rate input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
@@ -46,7 +46,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .myth h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:4px}
 .myth h3 s{display:block;color:var(--slate);font-weight:700;text-decoration-color:var(--gold);text-decoration-thickness:2px}
 .myth h3 span{color:var(--gold-soft)}
-.add{border:2px dashed #D4D4D8;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--slate);align-self:flex-start}
+.eq{font-size:clamp(17px,1.6vw,20px);font-weight:700;letter-spacing:-.01em}
+.eq b{font-weight:800}
+.eq small{display:block;font-size:13px;font-weight:600;color:#3A2A1E}
+.myth.proof h3{font-size:clamp(15px,1.4vw,18px)}
+.myth.proof h3 s{text-decoration:none;font-weight:600}
 .board{justify-content:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px);display:flex;flex-direction:column;gap:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .board:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(0,0,0,.35)}
 .zone{flex:1;display:flex;flex-direction:column;gap:10px;padding:10px 0;min-height:clamp(118px,15vh,150px)}
@@ -74,7 +78,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .next a{color:var(--gold-soft);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;transition:transform .2s ease}
 .next a:hover{transform:translateY(-2px)}
 @media (max-width:900px){.uv{grid-template-columns:1fr}.side{order:0}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.pill{padding:7px 11px}.zone{min-height:0}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.pill{padding:7px 11px}.zone{min-height:0;flex:none}}
 @media (prefers-reduced-motion:reduce){.board,.myth,.play,.next a{transition:none}.board:hover,.myth:hover,.next a:hover{transform:none}.line::before,.line b{transition:none}}
 </style>
 </head>
@@ -92,16 +96,20 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <div class="side">
 <div class="val">
-<p class="k">Step 1 - Your number</p>
-<h2>My time is worth</h2>
-<label class="rate">£<input id="rate" type="number" inputmode="numeric" min="1" step="1" placeholder="X" aria-label="Your hourly value in pounds"><small>an hour</small></label>
+<p class="k">Step 1 · Your hour</p>
+<h2>Monthly target &divide; 180</h2>
+<label class="rate">£<input id="target" type="number" inputmode="numeric" min="1" step="500" value="20000" aria-label="Your target monthly revenue in pounds"><small>a month</small></label>
+<p class="eq">= <b id="hour">£111</b> an hour <small>180 hours = 9 hours a day, 20 days a month</small></p>
 <button class="play" id="draw" type="button">Draw the line</button>
 </div>
 <div class="myth">
-<p class="k">The mistake</p>
-<h3><s>"I'm too small to outsource."</s> <span>You're too busy not to.</span></h3>
+<p class="k">Step 2 · The test</p>
+<h3>Someone can do it for under <span class="hr">£111</span> an hour? <span>Not a cost. A saving.</span></h3>
 </div>
-<p class="add">Add yours: what Josh's hour is worth</p>
+<div class="myth proof">
+<p class="k">Josh's example</p>
+<h3><s>Half a weekend of YouTube on Meta ads: over £1,000 of his time.</s> <span>One hour with an expert: £80.</span></h3>
+</div>
 </div>
 
 <div class="board" id="board">
@@ -120,7 +128,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Reviewing the work</span>
 </div>
 </div>
-<div class="line"><b id="lineLbl">Your hour: £X</b></div>
+<div class="line"><b id="lineLbl">Your hour: £111</b></div>
 <div class="zone below">
 <div class="zh"><h2 id="hB">Outsourced: nothing.</h2><span class="cnt" id="cB">0 jobs</span></div>
 <div class="pills" id="pB"><span class="empty" id="empty">Still all on you</span></div>
@@ -138,10 +146,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 (function(){
 var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 var $=function(id){return document.getElementById(id)};
-var board=$("board"),pA=$("pA"),pB=$("pB"),btn=$("draw"),rate=$("rate"),lbl=$("lineLbl"),empty=$("empty");
+var board=$("board"),pA=$("pA"),pB=$("pB"),btn=$("draw"),rate=$("target"),out=$("hour"),hrs=[].slice.call(document.querySelectorAll(".hr")),lbl=$("lineLbl"),empty=$("empty");
 var pills=[].slice.call(pA.querySelectorAll(".pill")),order=pills.slice(),drawn=false;
 var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
-function label(){var v=parseFloat(rate.value);lbl.textContent="Your hour: "+(v>0?gbp.format(v):"£X")}
+function label(){var t=parseFloat(rate.value),v=t>0?gbp.format(t/180):"£X";out.textContent=v;lbl.textContent="Your hour: "+v;hrs.forEach(function(h){h.textContent=v})}
 function counts(){var a=pA.querySelectorAll(".pill").length,b=pB.querySelectorAll(".pill").length;
  $("cA").textContent=a+(a==1?" job":" jobs");$("cB").textContent=b+(b==1?" job":" jobs");
  $("hA").textContent=drawn?"Above your hour: you.":"On you: everything.";
