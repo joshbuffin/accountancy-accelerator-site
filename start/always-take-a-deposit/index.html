@@ -35,7 +35,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .seg button[aria-pressed="true"]{background:var(--gold);color:#fff;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
 .seg button:not([aria-pressed="true"]):hover{color:var(--ink)}
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px);padding-top:14px}
-.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,24px);display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,22px);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
 .cv:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.25)}
 .cv.pt{background:#FFF8F3;border-color:var(--gold)}
 .cv.pt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.5)}
@@ -58,13 +58,18 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .foot{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em;margin-top:auto}
 .cv.pt .foot span{color:var(--gold-soft)}
 .cv:not(.pt) .foot{color:#3A3A3C}
-.rule{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;padding:16px 0 0}
+.rule{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;padding:14px 0 0}
 .rule p{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em}
 .rule p span{color:var(--gold-soft)}
 .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600}
 .chip.you{background:#fff;border:2px dashed var(--gold);color:var(--gold-soft)}
+.tip{font-size:14px;font-weight:600;color:var(--muted);min-height:1.5em}
+.tip b{color:var(--gold-soft)}
+.why{display:flex;flex-wrap:wrap;gap:8px;padding-top:10px}
+.say{font-size:clamp(14px,1.25vw,16px);color:var(--muted);padding-top:10px}
+.say b{color:var(--ink)}
 @media (max-width:760px){.cmp{grid-template-columns:1fr}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg button{padding:8px 14px}.ring{width:112px}.cv{gap:10px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.seg{flex-wrap:wrap;border-radius:18px}.seg button{padding:8px 12px}.ring{width:112px}.cv{gap:10px}}
 @media (prefers-reduced-motion:reduce){.cv,.ring .arc,.seg button{transition:none}.cv:hover{transform:none}}
 </style>
 </head>
@@ -80,9 +85,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <main class="wrap">
 <div class="bar">
 <p class="k">Cash in before you start the work</p>
-<div class="seg" role="group" aria-label="Client type">
-<button type="button" id="bM" aria-pressed="true">Monthly client</button>
-<button type="button" id="bP" aria-pressed="false">Project</button>
+<div class="seg" role="group" aria-label="Type of work">
+<button type="button" data-k="m" aria-pressed="true">Monthly client</button>
+<button type="button" data-k="c" aria-pressed="false">Catch-up work</button>
+<button type="button" data-k="p" aria-pressed="false">Accounts</button>
+<button type="button" data-k="f" aria-pressed="false">Accounts months away</button>
 </div>
 </div>
 
@@ -99,7 +106,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <li class="bad"><b>4</b>You wait. And chase.</li>
 </ol>
 </div>
-<p class="foot">All the risk sits with you.</p>
+<p class="foot">A contract won't stop them pulling out.</p>
 </div>
 
 <div class="cv pt">
@@ -114,14 +121,16 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <li><b>4</b><span id="rest">Then monthly as normal</span></li>
 </ol>
 </div>
+<p class="tip" id="tip"></p>
 <p class="foot" id="foot">Monthly: <span>first month up front.</span></p>
 </div>
 </div>
 
 <div class="rule">
-<p>Before the work. <span>Every time.</span></p>
-<span class="chip you">Add yours: the job you did without one</span>
+<p>Contracts don't lock clients in. <span>Deposits do.</span></p>
 </div>
+<div class="why"><span class="chip">Cash for ads and outsourcing</span><span class="chip">Paid clients send things faster</span><span class="chip">They're locked in</span></div>
+<p class="say"><b>Say:</b> "I limit how many clients I onboard each month. To save your slot, I just need a small deposit in the next 48 hours."</p>
 </main>
 
 <div class="wrap pnav"><a href="/start/pricing-calculator/" style="text-decoration:none">&larr; Pricing calculator</a><a href="/start/how-to-send-proposals/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to send proposals &rarr;</a></div>
@@ -130,19 +139,20 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <script>
 (function(){
 var $=function(id){return document.getElementById(id)};
-var C=314.16,bM=$("bM"),bP=$("bP");
+var C=314.16,btns=document.querySelectorAll(".seg button");
 var modes={
- m:{p:100,s:"month 1 up front",dep:"First month's fee paid",rest:"Then monthly as normal",foot:"Monthly: <span>first month up front.</span>"},
- p:{p:25,s:"paid up front",dep:"25% deposit paid",rest:"75% on completion",foot:"Projects: <span>25% deposit.</span>"}
+ m:{n:"100%",p:100,s:"month 1 up front",dep:"First month's fee paid",rest:"Then monthly as normal",tip:"Starting in three months? Take that first month <b>now</b>.",foot:"Monthly: <span>first month up front.</span>"},
+ c:{n:"50%",p:50,s:"paid up front",dep:"50% of the catch-up paid",rest:"50% once it's tidied up",tip:"Half up front shows they're <b>committed</b>.",foot:"Catch-up: <span>half before you start.</span>"},
+ p:{n:"25%",p:25,s:"paid up front",dep:"25% deposit paid",rest:"75% when you file",tip:"Not sure they'll follow through? Ask for <b>50%</b>.",foot:"Accounts: <span>25% deposit.</span>"},
+ f:{n:"\u00a3100",p:8,s:"holds their slot",dep:"\u00a3100 deposit paid",rest:"The rest when you file",tip:"Accounts not due for months? A small deposit still <b>locks them in</b>.",foot:"Months away: <span>\u00a3100 holds the slot.</span>"}
 };
-function set(k){var d=modes[k];
- bM.setAttribute("aria-pressed",k==="m");bP.setAttribute("aria-pressed",k==="p");
+function set(k){var d=modes[k]||modes.m;
+ for(var i=0;i<btns.length;i++)btns[i].setAttribute("aria-pressed",btns[i].getAttribute("data-k")===k);
  $("arc").setAttribute("stroke-dashoffset",(C*(1-d.p/100)).toFixed(2));
- $("pct").textContent=d.p+"%";$("pctS").textContent=d.s;$("dep").textContent=d.dep;$("rest").textContent=d.rest;$("foot").innerHTML=d.foot;
+ $("pct").textContent=d.n;$("pctS").textContent=d.s;$("dep").textContent=d.dep;$("rest").textContent=d.rest;$("tip").innerHTML=d.tip;$("foot").innerHTML=d.foot;
 }
-bM.addEventListener("click",function(){set("m")});
-bP.addEventListener("click",function(){set("p")});
-set(location.hash==="#project"?"p":"m");
+for(var i=0;i<btns.length;i++)btns[i].addEventListener("click",function(){set(this.getAttribute("data-k"))});
+var h=location.hash;set(h==="#project"||h==="#accounts"?"p":h==="#catch-up"?"c":"m");
 })();
 </script>
 </body>
