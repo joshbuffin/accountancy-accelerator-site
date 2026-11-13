@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Xama - Accountancy Accelerator</title>
-<meta name="description" content="Start, Level 3 Software: Xama for AML checks and risk assessments, LEGL later.">
+<meta name="description" content="Start, Level 3 Software: Xama for AML checks and risk assessments, Client Engager later.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -69,16 +69,16 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <header class="wrap hero">
 <p class="eyebrow">Level 3 - Software · Video 9</p>
-<h1>Xama now. <span class="gold-t">LEGL later.</span></h1>
+<h1>Xama now. <span class="gold-t">Client Engager later.</span></h1>
 </header>
 
 <main class="wrap">
-<section class="stage" aria-label="Client onboarding: Xama now versus LEGL later">
+<section class="stage" aria-label="Client onboarding: Xama now versus Client Engager later">
 <div class="top">
 <p class="k">Client journey · onboarding a new client</p>
 <div class="seg" role="group" aria-label="Choose stage">
 <button type="button" id="bNow" aria-pressed="true">Now · Xama</button>
-<button type="button" id="bLater" aria-pressed="false">Later · LEGL</button>
+<button type="button" id="bLater" aria-pressed="false">Later · Client Engager</button>
 </div>
 </div>
 
@@ -86,32 +86,32 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="bracket" id="bracket" aria-hidden="true"><span id="blabel">Xama</span></div>
 <div class="st on" data-now="1">
 <svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 L27 7 V15 C27 22 22 27 16 29 C10 27 5 22 5 15 V7 Z"/><path d="M11 16 L15 20 L21 12"/></svg>
-<h3>AML check</h3><span class="tag" data-a="Xama" data-b="LEGL">Xama</span>
+<h3>AML check</h3><span class="tag" data-a="Xama" data-b="Client Engager">Xama</span>
 </div>
 <div class="st">
 <svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 H20 L25 8 V29 H8 Z"/><path d="M12 22 C14 18 15 25 17 21 C18 19 19 23 21 21"/><path d="M12 13 H21"/></svg>
-<h3>Engagement letter</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+<h3>Engagement letter</h3><span class="tag" data-a="Separate tool" data-b="Client Engager">Separate tool</span>
 </div>
 <div class="st">
 <svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="20" height="25" rx="3"/><path d="M11 11 H21"/><path d="M11 17 H21"/><path d="M11 23 H17"/></svg>
-<h3>Client info form</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+<h3>Client info form</h3><span class="tag" data-a="Separate tool" data-b="Client Engager">Separate tool</span>
 </div>
 <div class="st">
 <svg viewBox="0 0 32 32" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="24" height="17" rx="3"/><path d="M4 14 H28"/><path d="M9 20 H14"/></svg>
-<h3>Deposit paid</h3><span class="tag" data-a="Separate tool" data-b="LEGL">Separate tool</span>
+<h3>Deposit paid</h3><span class="tag" data-a="Separate tool" data-b="Client Engager">Separate tool</span>
 </div>
 </div>
 
 <div class="say">
-<h2 id="say">Covers the <span>AML step.</span> Cheap to start.</h2>
-<p class="pill" id="pill">Start: <b>too early for LEGL</b></p>
+<h2 id="say">Covers the <span>AML step.</span> The cheaper option.</h2>
+<p class="pill" id="pill">Start: <b>AML and risk assessments</b></p>
 </div>
 </section>
 
 <div class="row">
 <div class="mini"><p class="k">What it's for</p><h3>AML checks and risk assessments.</h3></div>
 <div class="mini"><p class="k">When you need it</p><h3>Before you take on client one.</h3></div>
-<div class="mini add"><p class="k">Add yours</p><h3>When you switch to LEGL.</h3></div>
+<div class="mini"><p class="k">Later</p><h3>LEGL only if you're already on it.</h3></div>
 </div>
 </main>
 
@@ -123,8 +123,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 var $=function(id){return document.getElementById(id)};
 var steps=[].slice.call(document.querySelectorAll(".st")),br=$("bracket"),strip=$("strip");
 var copy={
- now:{label:"Xama",say:'Covers the <span>AML step.</span> Cheap to start.',pill:'Start: <b>too early for LEGL</b>'},
- later:{label:"LEGL · one flow, auto-chased",say:'The whole onboarding. <span>One flow.</span>',pill:'Later: <b>worth it once you grow</b>'}
+ now:{label:"Xama",say:'Covers the <span>AML step.</span> The cheaper option.',pill:'Start: <b>AML and risk assessments</b>'},
+ later:{label:"Client Engager · one flow",say:'The whole onboarding. <span>One flow.</span>',pill:'Later: <b>Client Engager replaces LEGL</b>'}
 };
 var mode="now";
 function size(){
