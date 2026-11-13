@@ -57,7 +57,7 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 @media (max-width:640px){
  .top{align-items:flex-start}.tab{font-size:13px;padding:7px 12px}
  .day{border-radius:10px;flex-wrap:wrap;align-content:center;height:58px}
- .dh{font-size:10px;letter-spacing:.06em}
+ .dh{font-size:9px;letter-spacing:0}
  .p.short{width:10px;height:20px}.p.long{width:34px;height:22px}
  .p.long::after{border-left-width:7px;border-top-width:5px;border-bottom-width:5px}
  .pnav{font-size:14px;padding:12px 16px}.wrap{padding:0 16px}
@@ -97,10 +97,10 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],WEEKS=4;
+var DAYS=["Day 1","Day 2","Day 3","Day 4","Day 5","Day 6","Day 7"],WEEKS=4;
 var MODES={
  short:{num:"5",unit:"a week",a:"Short form: 5 a week.",b:"20 a month.",per:function(d){return d<5?1:0},cls:"short"},
- long:{num:"1",unit:"a week",a:"Long form: 1 a week.",b:"4 a month.",per:function(d){return d===1?1:0},cls:"long"},
+ long:{num:"1",unit:"a week",a:"Long form: 1 a week.",b:"4 a month.",per:function(d){return d===0?1:0},cls:"long"},
  trap:{num:"2+",unit:"a day",a:"More than 1 a day: a trap.",b:"Consistency beats volume.",per:function(){return 2},cls:"short"}
 };
 var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
