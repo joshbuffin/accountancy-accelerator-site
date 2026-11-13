@@ -59,25 +59,25 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,2vw,24px);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
 .card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
 .lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
-.stairs{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:end}
-.step{border-radius:14px;padding:12px;display:flex;align-items:flex-end;font-weight:700;font-size:clamp(14px,1.35vw,17px);line-height:1.2;letter-spacing:-.01em;background:#fff;border:1px solid var(--line);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s}
-.step:hover{transform:translateY(-4px);border-color:var(--gold)}
-.step:nth-child(1){height:72px}.step:nth-child(2){height:104px}.step:nth-child(3){height:136px}
-.step.top{height:176px;background:var(--gold);border-color:var(--gold);color:#0A0A0A;flex-direction:column;align-items:flex-start;justify-content:space-between}
-.step.top em{font-style:normal;white-space:nowrap;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.03em}
-.streak{display:flex;flex-wrap:nowrap;gap:6px;align-items:center}
-.no,.yes{height:30px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.no{width:34px;flex:none;background:#ECEBE9;color:#8E8E93}
-.yes{padding:0 12px;flex:none;background:var(--gold);color:#0A0A0A;box-shadow:0 0 0 4px rgba(242,107,29,.18)}
-.big{margin-top:12px;font-size:clamp(20px,2.1vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tab{font:inherit;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background-color .25s,border-color .25s,color .25s}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.when{font-size:13px;font-weight:600;color:var(--slate);margin-bottom:10px;letter-spacing:0;text-transform:none;padding:0}
+.post{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 16px;display:flex;flex-direction:column}
+.post div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(14px,1.3vw,16px)}
+.post div:last-child{border-bottom:0}
+.post b{font-weight:700}
+.post span{color:var(--slate);text-align:right}
+.post div.hi b{color:var(--gold-soft)}
+.panel[hidden]{display:none}
+.big{margin-top:12px;font-size:clamp(16px,1.5vw,18px);font-weight:700;letter-spacing:-.01em;line-height:1.3}
 .big span{color:var(--gold-soft)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .row .card h3{font-size:clamp(17px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
-.add{border-style:dashed;border-color:var(--gold)}
-.add .lbl{color:var(--gold-soft)}
-@media (prefers-reduced-motion:reduce){.card,.step{transition:none}.card:hover,.step:hover{transform:none}}
-@media (max-width:900px){.win-page{grid-template-columns:minmax(0,1fr);min-height:0;gap:16px;padding:20px 16px}.win-page h1{font-size:40px}.lead{margin-top:14px;font-size:17px}.why{font-size:17px;gap:2px}.vis{gap:12px}.why,.task{margin-top:16px}.hidem{display:none}}
-@media (max-width:520px){.stairs{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:6px}.step,.step:nth-child(n){height:auto;padding:9px 12px;font-size:14px}.step:nth-child(1){width:52%}.step:nth-child(2){width:66%}.step:nth-child(3){width:80%}.step.top{width:100%;height:auto;flex-direction:row;align-items:center}.streak{gap:4px}.row{grid-template-columns:minmax(0,1fr)}.no{width:28px;font-size:10px}.yes{padding:0 9px;font-size:11px}.step.top em{font-size:15px}.gold-t{white-space:nowrap}}
+@media (prefers-reduced-motion:reduce){.card,.tab{transition:none}.card:hover{transform:none}}
+@media (max-width:900px){.win-page{grid-template-columns:minmax(0,1fr);min-height:0;gap:16px;padding:20px 16px}.win-page h1{font-size:40px}.lead{margin-top:14px;font-size:17px}.why{font-size:17px;gap:2px}.vis{gap:12px}.why,.task{margin-top:16px}}
+@media (max-width:520px){.row{grid-template-columns:minmax(0,1fr)}.post div{flex-direction:column;gap:2px}.post span{text-align:left}.gold-t{white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -88,39 +88,55 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <div>
 <p class="eyebrow">Level 1 - Sprint · Video 10</p>
 <h1>Wins and <span class="gold-t">cha-chings.</span></h1>
-<p class="lead">Every client signed gets celebrated. Out loud.</p>
-<p class="why">Most weekends end in nos.<span>The wins keep everyone going.</span></p>
-<p class="task"><b>Your task:</b> post your first win this week, however small.</p>
+<p class="lead">Two posts in the community. Monday wins every week, and a cha-ching every time a client signs.</p>
+<p class="why">Every approach to sales feels like it isn't working.<span>The wins show you it is.</span></p>
+<p class="task"><b>Your task:</b> post your Monday wins this week. The day you sign a client, post your cha-ching.</p>
 </div>
 
 <div class="vis">
 <div class="card">
-<p class="lbl">Small wins count</p>
-<div class="stairs" aria-label="Wins from small to big: a good conversation, a referral, a proposal sent, a client signed">
-<div class="step">Good conversation</div>
-<div class="step">Referral</div>
-<div class="step">Proposal sent</div>
-<div class="step top"><span>Client signed</span><em>Cha-ching!</em></div>
+<div class="tabs" role="tablist" aria-label="The two posts">
+<button class="tab" role="tab" id="t-wins" aria-controls="p-wins" aria-selected="true">Monday wins</button>
+<button class="tab" role="tab" id="t-ching" aria-controls="p-ching" aria-selected="false" tabindex="-1">Cha-ching</button>
 </div>
-<p class="big" style="font-size:clamp(16px,1.5vw,18px);margin-top:12px">Progress beats perfection.</p>
+<div class="panel" id="p-wins" role="tabpanel" aria-labelledby="t-wins">
+<p class="when">Every Monday. Copy these four questions.</p>
+<div class="post">
+<div><b>Biggest win from last week?</b><span>Anything counts</span></div>
+<div><b>Second biggest win?</b><span>A meeting booked, a website live</span></div>
+<div><b>Third biggest win?</b><span>Even a personal one</span></div>
+<div class="hi"><b>Main focus for the next 7 days?</b><span>We check it on the weekly call</span></div>
 </div>
-
-<div class="card">
-<p class="lbl">The feeling never gets old</p>
-<div class="streak" aria-label="Weeks of nos, then three yeses">
-<span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no">No</span><span class="no hidem">No</span><span class="no hidem">No</span><span class="yes">Yes</span><span class="yes">Yes</span><span class="yes">Yes</span>
 </div>
-<p class="big">3 yeses in 90 seconds <span>on the M65.</span></p>
+<div class="panel" id="p-ching" role="tabpanel" aria-labelledby="t-ching" hidden>
+<p class="when">The day a client signs. Four lines.</p>
+<div class="post">
+<div><b>Type of work</b><span>e.g. bookkeeping, payroll, VAT, accounts</span></div>
+<div><b>Total annual deal size</b><span>£ per year, and if it's paid monthly</span></div>
+<div><b>Total cash upfront</b><span>£0 is fine</span></div>
+<div class="hi"><b>Source</b><span>Referral, networking, socials, ads...</span></div>
+</div>
+</div>
 </div>
 
 <div class="row">
-<div class="card"><p class="lbl">Still today</p><h3>"Guess who's just signed with us."</h3></div>
-<div class="card add"><p class="lbl">Add yours</p><h3>Where to post a cha-ching + what to include</h3></div>
+<div class="card"><p class="lbl">Why the source matters</p><h3>Everyone can see which channels are actually winning clients.</h3></div>
+<div class="card"><p class="lbl">Why we post</p><h3>Proof the lessons are turning into cash. A flag in the ground.</h3></div>
 </div>
 </div>
 </main>
 <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;padding:32px 24px;font-size:15px;font-weight:600"><a href="/start/milestones/" style="text-decoration:none">&larr; Milestones</a><a href="/start/fix-the-bottleneck/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Fix the bottleneck &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sprint · Wins and cha-chings</div></footer>
 
+<script>
+(function(){
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+function show(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+tabs.forEach(function(t,i){
+t.addEventListener('click',function(){show(t);});
+t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];show(n);n.focus();e.preventDefault();}});
+});
+})();
+</script>
 </body>
 </html>
