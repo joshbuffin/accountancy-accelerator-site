@@ -34,6 +34,20 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .pts li::before{content:"";position:absolute;left:4px;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--gold)}
 .pts b{font-weight:800}
 .pts .hi{color:var(--gold-soft)}
+.ms-h{margin-top:clamp(36px,6vh,64px);font-size:clamp(26px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.ms-h span{color:var(--gold-soft)}
+.ms-sub{font-size:15px;font-weight:600;color:var(--slate);margin-top:6px}
+.chart{margin-top:22px;max-width:1000px}
+.row{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:10px 0;border-bottom:1px solid var(--line);cursor:default}
+.row .lab{display:flex;justify-content:space-between;gap:12px;font-size:clamp(15px,1.3vw,18px);font-weight:700;letter-spacing:-.01em}
+.row .lab b{color:var(--gold-soft);font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.track{height:14px;border-radius:999px;background:var(--card);overflow:hidden}
+.fill{height:100%;border-radius:999px;background:#F7B48A;transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1),background-color .25s}
+.chart.pre .fill{transform:scaleX(0)}
+.row:hover .fill,.row:focus .fill{background:var(--gold)}
+.row:focus{outline:none}.row:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
+.axis{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--slate);margin-top:8px;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
 main{padding-bottom:clamp(12px,2vh,24px)}
 </style>
 </head>
@@ -57,10 +71,25 @@ main{padding-bottom:clamp(12px,2vh,24px)}
 <li>On sales calls, we always push the prospect to a <b>monthly recurring package</b>, regardless of the size of the company.</li>
 <li>Everything else (deposits, catch-up fees, pieces of advice) is a <b>tool we use to drive MRR</b>.</li>
 </ul>
+
+<h2 class="ms-h">What your MRR <span>unlocks.</span></h2>
+<p class="ms-sub">Examples of the decisions we make at each level of MRR.</p>
+<div class="chart" id="chart">
+<div class="row" tabindex="0"><p class="lab">First part-time virtual assistant or bookkeeper<b>£3k a month</b></p><div class="track"><div class="fill" style="width:15%;transition-delay:0.00s"></div></div></div>
+<div class="row" tabindex="0"><p class="lab">Quit your job<b>£5k a month</b></p><div class="track"><div class="fill" style="width:25%;transition-delay:0.12s"></div></div></div>
+<div class="row" tabindex="0"><p class="lab">Make your first hire<b>£10k a month</b></p><div class="track"><div class="fill" style="width:50%;transition-delay:0.24s"></div></div></div>
+<div class="row" tabindex="0"><p class="lab">Commit £1,000 a month to ads<b>£12k a month</b></p><div class="track"><div class="fill" style="width:60%;transition-delay:0.36s"></div></div></div>
+<div class="row" tabindex="0"><p class="lab">Make your second hire<b>£20k a month</b></p><div class="track"><div class="fill" style="width:100%;transition-delay:0.48s"></div></div></div>
+<div class="axis"><span>£0</span><span>£5k</span><span>£10k</span><span>£15k</span><span>£20k</span></div>
+</div>
 </main>
 
 <div class="wrap pnav"><span></span><a href="/start/our-fee-structure/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Our fee structure &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · Your only KPI</div></footer>
 
+<script>
+(function(){var c=document.getElementById("chart");if(!("IntersectionObserver" in window)||(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))return;
+c.classList.add("pre");var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){c.classList.remove("pre");o.disconnect()}},{threshold:.3});o.observe(c)})();
+</script>
 </body>
 </html>
