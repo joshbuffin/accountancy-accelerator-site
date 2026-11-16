@@ -28,7 +28,8 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 /* Our fee structure: the profitable proposal */
 .hero{padding-top:clamp(16px,2.4vh,30px)}
 .hero h1{font-size:clamp(34px,4vw,54px)}
-.stage{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(16px,2.4vw,32px);margin-top:16px;align-items:start}
+.stage{display:flex;flex-direction:column;gap:clamp(16px,2.4vw,28px);margin-top:16px}
+.mail{max-width:820px;width:100%;margin:0 auto}
 .mail{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -32px rgba(0,0,0,.3)}
 .mhead{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--card);border-bottom:1px solid var(--line);font-size:12px;font-weight:700;color:var(--slate)}
 .mhead i{width:10px;height:10px;border-radius:50%;background:#D1D1D6;display:inline-block}
@@ -36,7 +37,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .body p{margin-top:8px}
 .body p:first-child{margin-top:0}
 .row{position:relative;border-radius:10px;padding:3px 8px 3px 36px;margin:8px -8px 0;transition:background-color .2s}
-.row .pin{position:absolute;left:8px;top:5px}
+.row>.pin{position:absolute;left:8px;top:5px}
 .row.on{background:#FFF1E6}
 .pin{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:1px 18px;list-style:none;margin:4px -8px 0;padding:4px 8px;border-radius:10px;transition:background-color .2s}
@@ -44,17 +45,18 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .inc li{position:relative;padding:1px 0 1px 14px;border-radius:6px;transition:background-color .2s}
 .inc li:before{content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--slate)}
 .inc li.on{background:#FFD9BF}
-.inc li .pin{margin-left:6px;width:18px;height:18px;font-size:11px;vertical-align:1px}
+.inc li .pin,.sd .pin{margin-left:6px;width:18px;height:18px;font-size:11px;vertical-align:1px}
+.sd{border-radius:6px;transition:background-color .2s}
+.sd.on{background:#FFD9BF}
 .inc li.full{grid-column:1/-1}
-.notes{display:flex;flex-direction:column;gap:8px;list-style:none}
+.notes{display:grid;align-items:start;grid-template-columns:minmax(0,1fr);gap:8px 12px;list-style:none;max-width:820px;width:100%;margin:0 auto}
 .note{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;align-items:start;background:var(--card);border:1px solid transparent;border-radius:14px;padding:10px 14px;font-size:15px;font-weight:600;line-height:1.35;transition:background-color .2s,border-color .2s}
 .note.on{background:#FFF1E6;border-color:#F4B48F}
-.note .pin.gen{background:var(--ink)}
 .give{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;margin-top:clamp(12px,2vh,18px)}
 .give span{color:var(--gold-soft)}
-@media (max-width:900px){.stage{grid-template-columns:1fr}}
+@media (max-width:700px){.notes{grid-template-columns:1fr}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.body{padding:14px 14px 16px;font-size:14px}.inc{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.row,.note,.inc,.inc li{transition:none}}
+@media (prefers-reduced-motion:reduce){.row,.note,.inc,.inc li,.sd{transition:none}}
 </style>
 </head>
 <body>
@@ -73,30 +75,30 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <div class="body">
 <p>Hi,</p>
 <p>Thanks again for your time. As discussed, please find below a breakdown of your proposal:</p>
-<div class="row" data-n="1"><span class="pin">1</span>The monthly fee will be <strong>£XXX + VAT</strong>. This will include:</div>
-<ul class="inc" data-n="2">
+<div class="row" data-n="1"><span class="pin">1</span>The monthly fee will be <strong>£XXX + VAT</strong> from <span class="sd" data-n="2">[start date]<span class="pin">2</span></span>. This will include:</div>
+<ul class="inc" data-n="3">
 <li>Monthly bookkeeping</li>
 <li>VAT returns</li>
 <li>Directors Payroll</li>
 <li>Year end accounts</li>
 <li>Corporation tax return</li>
-<li data-n="3">Confirmation statement<span class="pin">3</span></li>
+<li data-n="4">Confirmation statement<span class="pin">4</span></li>
 <li class="full">Ongoing tax planning advice</li>
 <li class="full">Direct access to Patrick and I via whatsapp, email and mobile.</li>
 </ul>
-<div class="row" data-n="4"><span class="pin">4</span>Self assessments can be purchased separately for <strong>£XXX + VAT</strong>, per filing.</div>
-<div class="row" data-n="5"><span class="pin">5</span>The cost to file your current accounts and tax return to bring everything up to date will be <strong>£XXX + VAT</strong>.</div>
+<div class="row" data-n="5"><span class="pin">5</span>Self assessments can be purchased separately for <strong>£XXX + VAT</strong>, per filing.</div>
+<div class="row" data-n="6"><span class="pin">6</span>The cost to file your current accounts and tax return to bring everything up to date will be <strong>£XXX + VAT</strong>.</div>
 <p>If I don't hear back I won't chase you but I always appreciate it if you can let me know your thoughts either way.</p>
 <p>Best,<br>Josh</p>
 </div>
 </div>
 <ol class="notes">
 <li class="note" data-n="1"><span class="pin">1</span><span>The main focus is the recurring monthly cost.</span></li>
-<li class="note" data-n="2"><span class="pin">2</span><span>Services are grouped, not priced separately, so they can't be picked apart.</span></li>
-<li class="note" data-n="3"><span class="pin">3</span><span>We don't pay for Xero fees and confirmation statement fees.</span></li>
-<li class="note" data-n="4"><span class="pin">4</span><span>Self assessment is billed as a separate line.</span></li>
-<li class="note" data-n="5"><span class="pin">5</span><span>We split out catch-up fees separately. We want the main focus to be on the recurring cost to them.</span></li>
-<li class="note" data-n="g"><span class="pin gen">+</span><span>Assign a start date to anchor the proposal to something. If they start late, it might affect the pricing.</span></li>
+<li class="note" data-n="2"><span class="pin">2</span><span>The start date anchors onboarding to a set date. It also gives you scope to change their monthly fee, or their annual fees, if they join later.</span></li>
+<li class="note" data-n="3"><span class="pin">3</span><span>Services are grouped, not priced separately, so they can't be picked apart.</span></li>
+<li class="note" data-n="4"><span class="pin">4</span><span>We don't pay for Xero fees and confirmation statement fees.</span></li>
+<li class="note" data-n="5"><span class="pin">5</span><span>Self assessment is billed as a separate line.</span></li>
+<li class="note" data-n="6"><span class="pin">6</span><span>We split out catch-up fees separately. We want the main focus to be on the recurring cost to them.</span></li>
 </ol>
 </div>
 <p class="give">Simple wins. <span>Complicated kills.</span></p>
