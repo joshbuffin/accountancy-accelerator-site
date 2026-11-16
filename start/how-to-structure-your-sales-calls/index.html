@@ -25,42 +25,67 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* Connecting sentences */
+/* Sales call structure: wrong way vs right way, 30-minute track */
 .hero{padding-top:clamp(22px,3.4vh,40px)}
 .hero h1{font-size:clamp(38px,4.6vw,62px)}
-.sub{margin-top:14px;font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:640px}
-.tabs{display:flex;gap:8px;margin-top:clamp(18px,2.6vh,28px);overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:0 0 auto;font:inherit;font-size:14px;font-weight:700;display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:9px 16px 9px 10px;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease}
-.tab:hover{border-color:var(--gold)}
-.tab .num{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:800}
-.tab[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
-.tab[aria-selected="true"] .num{background:#0A0A0A;border-color:#0A0A0A;color:#fff}
-.tab:focus-visible,.card:focus-visible{outline:3px solid var(--gold-soft);outline-offset:2px}
-.panel{margin-top:clamp(14px,2vh,22px)}
-.panel[hidden]{display:none}
-.stagehead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.stagehead h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
-.stagehead h2 span{color:var(--gold-soft)}
-.stagehead p{font-size:14px;color:var(--slate)}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
-.card{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;cursor:pointer;transition:border-color .3s ease,background-color .3s ease,box-shadow .35s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
-.card:hover,.card[aria-expanded="true"]{background:#FFF8F3;border-color:var(--gold);box-shadow:0 16px 34px -24px rgba(242,107,29,.6)}
-.card:hover{transform:translateY(-2px)}
-.cue{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px}
-.q{display:block;font-size:clamp(15px,1.25vw,17px);font-weight:600;line-height:1.4;letter-spacing:-.01em}
-.note{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
-.note>span{display:block;overflow:hidden;min-height:0;font-size:14px;color:var(--muted);line-height:1.5}
-.note b{display:inline-block;margin-top:10px;margin-right:6px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
-.card:hover .note,.card[aria-expanded="true"] .note{grid-template-rows:1fr}
-.framework{margin-top:clamp(18px,2.6vh,28px);border:1px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#fff}
-.framework .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.steps{display:flex;gap:8px;flex-wrap:wrap;list-style:none}
-.steps li{font-size:14px;font-weight:700;background:var(--card);border-radius:999px;padding:6px 14px}
-.steps li:last-child{background:var(--gold);color:#0A0A0A}
-.pnav{margin-top:8px}
-@media (max-width:760px){.cards{grid-template-columns:1fr}.navtag{font-size:11px}.pnav{font-size:14px}}
-@media (prefers-reduced-motion:reduce){.tab,.card,.note{transition:none}.card:hover{transform:none}}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.call{margin-top:clamp(18px,2.6vh,30px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.2vw,26px);transition:background-color .4s ease,border-color .4s ease,box-shadow .45s ease}
+.call.right{background:#FFF8F3;border-color:var(--gold);box-shadow:0 18px 40px -26px rgba(242,107,29,.55)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.top h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+.top h2 span{color:var(--gold-soft)}
+.tog{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.tog button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;background:transparent;color:var(--slate);transition:background-color .25s ease,color .25s ease,transform .2s ease}
+.tog button:hover{transform:translateY(-1px)}
+.tog button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
+.call.right .tog button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
+.track{display:flex;gap:6px;margin-top:clamp(14px,2vh,22px);height:clamp(150px,19vh,176px)}
+.seg{flex:0 0 auto;min-width:0;border-radius:16px;padding:12px 12px 10px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:width .7s cubic-bezier(.2,.8,.2,1),background-color .5s ease,color .5s ease,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.seg:hover{transform:translateY(-3px)}
+.seg.them{background:var(--gold);color:#0A0A0A}
+.seg.them:hover{box-shadow:0 14px 28px -16px rgba(242,107,29,.7)}
+.seg.you{background:#3A3A3C;color:#fff}
+.seg.you:hover{box-shadow:0 14px 28px -16px rgba(0,0,0,.6)}
+.seg .n{font-size:11px;font-weight:800;letter-spacing:.14em;opacity:.7}
+.seg h3{font-size:clamp(14px,1.45vw,18px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.seg .who{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.fade{transition:opacity .25s ease}
+.fade.out{opacity:0}
+.axis{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--slate);margin-top:8px;font-variant-numeric:tabular-nums}
+.bottom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(14px,2vw,24px);margin-top:clamp(14px,2vh,22px);align-items:stretch}
+.ratio{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.ratio:hover{transform:translateY(-3px)}
+.rnums{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.rn{line-height:1}
+.rn b{display:block;font-size:clamp(30px,3.2vw,42px);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.rn span{display:block;font-size:12px;font-weight:700;color:var(--slate);margin-top:6px;letter-spacing:.02em}
+.rn.t b{color:var(--gold-soft)}
+.rn.y{text-align:right}
+.rn.y b{color:#3A3A3C}
+.rbar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--line)}
+.rbar i{display:block;height:100%;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.rbar .rt{background:var(--gold)}
+.rbar .ry{background:#3A3A3C}
+.lines{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ln{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .4s ease}
+.ln:hover{transform:translateY(-3px)}
+.call.right .ln{border-color:#F6C3A3}
+.call.right .ln .k{color:var(--gold-soft)}
+.ln h3{font-size:clamp(15px,1.5vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:4px}
+@media (max-width:900px){.bottom{grid-template-columns:1fr}}
+@media (max-width:640px){
+ .track{flex-direction:column;height:auto;gap:5px}
+ .seg{width:100%!important;flex-direction:row;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;transition:background-color .5s ease,color .5s ease}
+ .seg .n{flex:none;width:18px}
+ .seg h3{flex:1;font-size:15px}
+ .seg .who{flex:none}
+ .axis{display:none}
+ .lines{grid-template-columns:1fr}
+ .ln{padding:11px 14px}
+ .navtag{font-size:11px}.pnav{font-size:14px}
+ .tog button{padding:8px 14px}
+}
+@media (prefers-reduced-motion:reduce){.call,.seg,.rbar i,.ratio,.ln,.fade,.tog button{transition:none}.seg:hover,.ratio:hover,.ln:hover,.tog button:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -69,17 +94,37 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <header class="wrap hero">
 <p class="eyebrow">Level 7 - Sales · Video 2</p>
-<h1>Connecting <span class="gold-t">sentences.</span></h1>
-<p class="sub">The lines that move a sales call forward. Find your own version of each. Hover or tap a line to see why.</p>
+<h1>They talk. Price comes <span class="gold-t">last.</span></h1>
 </header>
 
 <main class="wrap">
-<div class="tabs" role="tablist" aria-label="Call stages" id="tabs"></div>
-<div id="panels"></div>
-<aside class="framework" aria-label="Objection framework">
-<span class="k">When they object</span>
-<ol class="steps"><li>Acknowledge</li><li>Empathise</li><li>Handle</li><li>Explain with a story</li></ol>
-</aside>
+<section class="call" id="call" aria-label="A 30-minute sales call, wrong way versus right way">
+<div class="top">
+<h2 id="ttl" class="fade">The wrong way: <span>you do the talking.</span></h2>
+<div class="tog" role="group" aria-label="Show the call structure">
+<button type="button" id="bW" aria-pressed="true">Wrong way</button>
+<button type="button" id="bR" aria-pressed="false">Right way</button>
+</div>
+</div>
+
+<div class="track" id="track" aria-live="polite"></div>
+<div class="axis" aria-hidden="true"><span>0 min</span><span>One 30-minute call</span><span>30 min</span></div>
+
+<div class="bottom">
+<div class="ratio">
+<p class="k">Talk time</p>
+<div class="rnums">
+<div class="rn t"><b id="pT">30%</b><span>Them</span></div>
+<div class="rn y"><b id="pY">70%</b><span>You</span></div>
+</div>
+<div class="rbar" aria-hidden="true"><i class="rt" id="barT" style="width:30%"></i><i class="ry" id="barY" style="width:70%"></i></div>
+</div>
+<div class="lines">
+<div class="ln"><p class="k" id="k1">Price</p><h3 id="l1" class="fade">Given before they see the value.</h3></div>
+<div class="ln"><p class="k" id="k2">Ending</p><h3 id="l2" class="fade">"I'll have a think."</h3></div>
+</div>
+</div>
+</section>
 </main>
 
 <div class="wrap pnav"><a href="/start/fundamentals-of-the-sales-call/" style="text-decoration:none">&larr; The fundamentals of the sales call</a><a href="/start/learn-your-connectors/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Learn your connectors &rarr;</a></div>
@@ -87,68 +132,34 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var S=[
- {t:"Open",h:"Open and <span>find the pain</span>",d:"Get them talking and spot the reason they called.",c:[
-  ["","Tell me about your business and why you reached out today.","Why","\u201cWhy you reached out today\u201d is their pain point. Note it down; you\u2019ll link back to it later."],
-  ["","I appreciate you already have an accountant. How come you\u2019re on this call?","When","They haven\u2019t told you the pain yet. Ask it straight up."]]},
- {t:"Dig",h:"Dig into <span>the pain</span>",d:"Help them self-diagnose.",c:[
-  ["","What is your current tax planning process with your accountant? I assume you get together about two or three months before the year end to do tax planning.","Why","They may well not get this. Letting them say so helps them self-diagnose."],
-  ["","How does your current communication work with your accountant? I\u2019m guessing you have direct access to them via WhatsApp or phone.","Why","Same again: it surfaces the communication pain in their words."],
-  ["","Earlier you said your accountant was slow to get back to you. Is it a few hours, or more like a week?","Why","Sets up \u201cour response times are same day or next day\u201d."],
-  ["","I\u2019ve never understood that. If you\u2019re paying a monthly fee, you\u2019d assume it covers you for everything.","When","They feel billed for every minute. Get on their side, in a professional, friendly way."]]},
- {t:"How you work",h:"Move to <span>how you work</span>",d:"Answer what they care about, don\u2019t pitch.",c:[
-  ["","I appreciate I\u2019ve asked you a lot of questions. Is there anything in particular you want to know about how we work?","Why","They ask what they actually care about, so you\u2019re answering, not pitching."],
-  ["","I\u2019m not sure how much you already know about us. What would be most useful for me to talk about?","Why","Avoids an awkward, salesy \u201clet me tell you about us\u201d."],
-  ["","We offer all the usual services: bookkeeping, payroll, VAT. A few things worth zooming in on for you are...","Why","Talk only about what matters to them, based on their pain point. Don\u2019t list everything."],
-  ["","Do those points make sense? Does our way of working fit what you\u2019re looking for? Was anything I said unclear?","Why","Breaks up your talking and hands it back to them."]]},
- {t:"Price",h:"Packages <span>and price</span>",d:"Let them choose, then let the price sit.",c:[
-  ["","Based on our conversation, we have the comprehensive monthly package and the year end accounts package. Which feels like the best fit for you?","Why","Let them self-diagnose onto the comprehensive package."],
-  ["","Earlier you said what you\u2019re really looking for is someone proactive. I\u2019m happy to do the year end package, but if that\u2019s the big thing for you, I think the monthly package is the better fit.","Why","Use their own pain point as the upsell."],
-  ["After giving the price, pause and let it sit, then","Is that in line with what you were expecting, or have I misunderstood what you need?","Why","Don\u2019t jump in to justify the price. Find out how they really feel."]]},
- {t:"Close",h:"Keep control <span>and close</span>",d:"Protect your time and finish with a next step.",c:[
-  ["","I always stop calls at about 30 minutes, so let\u2019s keep this tight.","Why","Protects your time."],
-  ["At about 20 minutes","By the way, we\u2019ve got about 10 minutes left, so it\u2019s probably a good time to talk through how we work.","Why","Politely takes back control if they keep asking for free advice."],
-  ["If it\u2019s going well","Hold on, let me message my team and let them know I\u2019ll be a bit late for my next meeting.","Why","They feel valued, and know your time is valuable."],
-  ["","If we go ahead, what is your ideal start date?","Why","Anchors the proposal and gives you something to follow up on."],
-  ["","One last thing: would you mind letting me know where you came across us?","Why","Tells you which lead sources work."]]}
-];
-var tabs=document.getElementById("tabs"),panels=document.getElementById("panels");
-function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e}
-S.forEach(function(st,i){
- var b=el("button","tab");b.type="button";b.id="tab"+i;b.setAttribute("role","tab");b.setAttribute("aria-controls","pan"+i);
- b.appendChild(el("span","num",String(i+1)));b.appendChild(document.createTextNode(st.t));tabs.appendChild(b);
- var p=el("section","panel");p.id="pan"+i;p.setAttribute("role","tabpanel");p.setAttribute("aria-labelledby","tab"+i);
- var hd=el("div","stagehead");var h=el("h2");h.innerHTML=st.h;hd.appendChild(h);hd.appendChild(el("p","",st.d));p.appendChild(hd);
- var g=el("div","cards");
- st.c.forEach(function(c){
-  var k=el("button","card");k.type="button";k.setAttribute("aria-expanded","false");
-  if(c[0])k.appendChild(el("span","cue",c[0]));
-  k.appendChild(el("span","q","\u201c"+c[1]+"\u201d"));
-  var n=el("span","note"),inner=el("span"),lab=el("b","",c[2]);inner.appendChild(lab);inner.appendChild(document.createTextNode(c[3]));n.appendChild(inner);k.appendChild(n);
-  var pinned=false;
-  function set(o){k.setAttribute("aria-expanded",o?"true":"false")}
-  k.addEventListener("click",function(){pinned=!pinned;set(pinned)});
-  k.addEventListener("mouseenter",function(){set(true)});
-  k.addEventListener("mouseleave",function(){set(pinned)});
-  k.addEventListener("focus",function(){set(true)});
-  k.addEventListener("blur",function(){set(pinned)});
-  g.appendChild(k);
- });
- p.appendChild(g);panels.appendChild(p);
-});
-var bs=tabs.children,ps=panels.children;
-function pick(i,focus){
- for(var j=0;j<bs.length;j++){var on=j===i;bs[j].setAttribute("aria-selected",on);bs[j].tabIndex=on?0:-1;ps[j].hidden=!on}
- if(focus)bs[i].focus();
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id)};
+var D={
+ wrong:{title:'The wrong way: <span>you do the talking.</span>',them:30,
+  segs:[["you","Your pitch",20],["you","Price up front",14],["you","Fix every pain on the spot",36],["them","Rushed questions",16],["them","No start date",14]],
+  k1:"Price",l1:"Given before they see the value.",k2:"Ending",l2:"“I'll have a think.”"},
+ right:{title:'The right way: <span>they do the talking.</span>',them:70,
+  segs:[["them","The golden question",14],["them","Hear the pain. Don’t fix it yet.",20],["them","Scope of the work",32],["you","How we work: their pain, answered",20],["you","Start date, then price",14]],
+  k1:"Open with",l1:"“Tell me a bit more about your business and why you reached out today.”",k2:"Then hand it back",l2:"“Is there anything I’ve not covered about the way we work?”"}
+};
+var track=$("track"),call=$("call"),segs=[];
+for(var i=0;i<5;i++){var s=document.createElement("div");s.className="seg";s.innerHTML='<span class="n">0'+(i+1)+'</span><h3 class="fade"></h3><span class="who"></span>';track.appendChild(s);segs.push(s)}
+var cur=null,tm=null;
+function swapText(fn){var f=document.querySelectorAll(".fade");if(RM){fn();return}for(var j=0;j<f.length;j++)f[j].classList.add("out");clearTimeout(tm);tm=setTimeout(function(){fn();for(var j=0;j<f.length;j++)f[j].classList.remove("out")},250)}
+function show(mode){
+ if(mode===cur)return;var first=cur===null;cur=mode;var d=D[mode];
+ call.classList.toggle("right",mode==="right");
+ $("bW").setAttribute("aria-pressed",mode==="wrong");$("bR").setAttribute("aria-pressed",mode==="right");
+ for(var i=0;i<5;i++){var g=d.segs[i];segs[i].className="seg "+g[0];segs[i].style.width="calc("+g[2]+"% - 5px)"}
+ $("pT").textContent=d.them+"%";$("pY").textContent=(100-d.them)+"%";
+ $("barT").style.width=d.them+"%";$("barY").style.width=(100-d.them)+"%";
+ function txt(){$("ttl").innerHTML=d.title;$("k1").textContent=d.k1;$("l1").textContent=d.l1;$("k2").textContent=d.k2;$("l2").textContent=d.l2;
+  for(var i=0;i<5;i++){segs[i].querySelector("h3").textContent=d.segs[i][1];segs[i].querySelector(".who").textContent=d.segs[i][0]==="them"?"They talk":"You talk"}}
+ if(first)txt();else swapText(txt);
 }
-for(var i=0;i<bs.length;i++)(function(i){
- bs[i].addEventListener("click",function(){pick(i)});
- bs[i].addEventListener("keydown",function(e){
-  var n=i;if(e.key==="ArrowRight")n=(i+1)%bs.length;else if(e.key==="ArrowLeft")n=(i+bs.length-1)%bs.length;else if(e.key==="Home")n=0;else if(e.key==="End")n=bs.length-1;else return;
-  e.preventDefault();pick(n,true);
- });
-})(i);
-pick(0);
+$("bW").addEventListener("click",function(){show("wrong")});
+$("bR").addEventListener("click",function(){show("right")});
+show(location.hash==="#right"?"right":"wrong");
 })();
 </script>
 </body>
