@@ -25,42 +25,43 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* Fundamentals: who talks on the call */
-.hero{padding-top:clamp(22px,3.4vh,40px)}
-.hero h1{font-size:clamp(38px,4.6vw,62px)}
+/* Fundamentals */
+.hero{padding-top:clamp(18px,3vh,34px)}
+.hero h1{font-size:clamp(38px,4.4vw,60px)}
+.lesson{font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:var(--muted);max-width:760px;margin-top:14px}
+.lesson strong{color:var(--ink);font-weight:700}
 .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.sc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,3vw,40px);align-items:stretch;padding-top:clamp(16px,2.4vh,28px);padding-bottom:6px}
-.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
-.pc:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(0,0,0,.35)}
-.pch{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.tg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
-.tg button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:clamp(24px,4vw,56px);align-items:start;padding-top:clamp(18px,3vh,30px);padding-bottom:18px}
+.call>.k{margin-bottom:10px}
+.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:6px}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;transition:border-color .25s ease}
+.steps li:hover,.steps li.open{border-color:var(--gold)}
+.steps button{font:inherit;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:12px;padding:9px 14px;border-radius:14px;font-size:clamp(14px,1.1vw,16px);font-weight:600;line-height:1.3}
+.steps button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.steps button::before{content:counter(s);flex:none;width:24px;height:24px;border-radius:50%;background:var(--gold);color:#0A0A0A;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.steps button::after{content:"+";margin-left:auto;flex:none;color:var(--gold-soft);font-size:20px;font-weight:600;line-height:1}
+.steps li.open button::after{content:"\2212"}
+.pan{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.steps li.open .pan{grid-template-rows:1fr}
+.pan>div{overflow:hidden}
+.pan p{padding:0 14px 12px 50px;font-size:14px;line-height:1.5;color:var(--muted)}
+.pan p+p{margin-top:-4px}
+.pan em{font-style:normal;font-weight:600;color:var(--ink)}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px}
+.tg{display:flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
+.tg button{flex:1;font:inherit;font-size:12px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:6px 8px;cursor:pointer}
 .tg button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
-.tg button.r[aria-pressed="true"]{background:var(--gold);color:#0A0A0A;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
-.pie{display:flex;flex-direction:column;align-items:center;gap:10px}
-.pie svg{width:min(100%,370px);height:auto;display:block}
+.tg button.r[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
+.tg button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.pie svg{width:100%;max-width:200px;height:auto;display:block;margin:0 auto}
 .pie svg text{font-family:'Inter',Arial,sans-serif}
 #lbl{transition:opacity .25s ease}
-.verdict{text-align:center}
-.verdict h2{font-size:clamp(22px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08;transition:color .3s ease}
-.verdict h2 span{display:inline}
-.pc.right .verdict h2 span+span{color:var(--gold-soft)}
-.pc.wrong .verdict h2 span+span{color:#8E8E93}
-.side{display:flex;flex-direction:column;gap:12px}
-.hub{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
-.hub:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px rgba(242,107,29,.6)}
-.hub .k{color:#3A2A1E}
-.hub h2{font-size:clamp(24px,2.5vw,33px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
-.hub .then{border-top:1px solid rgba(10,10,10,.22);padding-top:12px;margin-top:4px;display:flex;flex-direction:column;gap:4px}
-.hub .then p:not(.k){font-size:clamp(15px,1.3vw,17px);font-weight:600;line-height:1.4}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.tile{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
-.tile:hover{transform:translateY(-3px);border-color:var(--gold)}
-.tile .n{font-size:clamp(17px,1.35vw,19px);white-space:nowrap;font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--gold-soft)}
-.tile .k{margin-top:4px;display:block}
-@media (max-width:900px){.sc{grid-template-columns:1fr}}
-@media (max-width:640px){.tiles{grid-template-columns:1fr}.pie svg{max-width:340px}.pch{justify-content:center}.tg{width:100%}.tg button{flex:1;padding:8px 10px}.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:38px}}
-@media (prefers-reduced-motion:reduce){.pc,.hub,.tile,#lbl,.tg button{transition:none}.pc:hover,.hub:hover,.tile:hover{transform:none}}
+.verdict{text-align:center;font-size:14px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.pc.right .verdict span+span{color:var(--gold-soft)}
+.pc.wrong .verdict span+span{color:#8E8E93}
+@media (max-width:860px){.grid{grid-template-columns:1fr}.pc{max-width:340px;margin:0 auto;width:100%}}
+@media (max-width:640px){.navtag{font-size:11px}.pnav{font-size:14px}.hero h1{font-size:38px}.pan p{padding-left:14px}}
+@media (prefers-reduced-motion:reduce){.pan,#lbl,.steps li,.tg button{transition:none}}
 </style>
 </head>
 <body>
@@ -70,36 +71,37 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <header class="wrap hero">
 <p class="eyebrow">Level 7 - Sales · Video 1</p>
 <h1>Let them <span class="gold-t">talk.</span></h1>
+<p class="lesson">You can't go onto a sales call and sell someone your services. They need to decide, on the call, that they <strong>like you and trust you</strong>. The only way to help someone trust you is to <strong>listen, ask intelligent questions and answer their questions</strong>. If you talk at them, it pushes them away, creates sales resistance, and they won't particularly trust or like you.</p>
 </header>
 
 <main class="wrap">
-<div class="sc">
+<div class="grid">
 
-<div class="pc wrong" id="pc">
-<div class="pch"><p class="k">Who talks on the call</p>
-<div class="tg" role="group" aria-label="Choose a sales call"><button type="button" id="bW" aria-pressed="true">The pitch</button><button type="button" class="r" id="bR" aria-pressed="false">The right way</button></div></div>
+<section class="call" aria-labelledby="ct">
+<p class="k" id="ct">The call, in order (tap a point to see why)</p>
+<ol class="steps" id="steps">
+<li><button type="button" aria-expanded="false">Our sales calls are 30 minutes.</button><div class="pan"><div><p>Keep it simple and focused.</p></div></div></li>
+<li><button type="button" aria-expanded="false">&ldquo;Tell me about your business and why you reached out today.&rdquo;</button><div class="pan"><div><p>&ldquo;Why you reached out today&rdquo; is their pain point. Recognise it, because that is what you link back to later in the call.</p></div></div></li>
+<li><button type="button" aria-expanded="false">Connector questions</button><div class="pan"><div><p>These are questions that help them think the pain point out. For example: <em>&ldquo;What is your current tax planning process with your current accountant?&rdquo;</em> (ask it knowing full well they might not have one) or <em>&ldquo;Why did you want a call with me today if you already have an accountant?&rdquo;</em></p><p>From the connectors lesson: <em>&ldquo;What's your tax planning process with your current accountant? Do you have a pre year end call?&rdquo;</em> and <em>&ldquo;How do you communicate with your accountant currently? I assume you have a WhatsApp group?&rdquo;</em></p></div></div></li>
+<li><button type="button" aria-expanded="false">Talk about the full scope.</button><div class="pan"><div><p>This is your chance to talk about what you do, but be selective. Keep it brief, only the important bits, and don't go on too much.</p></div></div></li>
+<li><button type="button" aria-expanded="false">&ldquo;Do you have any questions for me?&rdquo;</button><div class="pan"><div><p>Answering their questions builds trust. And once they have worked out their pain points, it gives us the opportunity to talk about what we do.</p></div></div></li>
+<li><button type="button" aria-expanded="false">&ldquo;Assuming our price is right for you, is there anything else you need to know about me and the company that would stop us working together?&rdquo;</button><div class="pan"><div><p>Ask this before giving the price.</p></div></div></li>
+<li><button type="button" aria-expanded="false">Price, last.</button><div class="pan"><div><p>Price comes at the end. If you feel comfortable, give the price on the call, gauge their reaction and handle the objection there and then. If not, give a range, or send it by email afterwards. Don't put too much pressure on this at the start.</p></div></div></li>
+</ol>
+</section>
+
+<aside class="pc wrong" id="pc">
+<p class="k">Who talks on the call</p>
+<div class="tg" role="group" aria-label="Choose a sales call"><button type="button" id="bW" aria-pressed="true">The pitch</button><button type="button" class="r" id="bR" aria-pressed="false">The right way</button></div>
 <div class="pie">
 <svg viewBox="0 0 400 400" role="img" id="pieSvg" aria-label="The pitch: you talk 70% of the call, they talk 30%">
 <path id="sThem" fill="#F26B1D" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
 <path id="sYou" fill="#3A3A3C" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
 <g id="lbl"></g>
 </svg>
-<div class="verdict" aria-live="polite"><h2 id="vd"><span>You pitch.</span> <span>They switch off.</span></h2></div>
 </div>
-</div>
-
-<div class="side">
-<div class="hub">
-<p class="k">The golden question</p>
-<h2>"Tell me about your business and why you reached out today?"</h2>
-<div class="then"><p class="k">When they give you the pain</p><p>"That must be really stressful. What impact is that having on you and the business?" Then move on. Don't solve it yet.</p></div>
-</div>
-<div class="tiles">
-<div class="tile"><p class="n">30 mins</p><span class="k">Plus 15 spare</span></div>
-<div class="tile"><p class="n">Full scope</p><span class="k">Before you leave</span></div>
-<div class="tile"><p class="n">Start date</p><span class="k">They pick it</span></div>
-</div>
-</div>
+<div class="verdict" aria-live="polite" id="vd"><span>You pitch.</span> <span>They switch off.</span></div>
+</aside>
 
 </div>
 </main>
@@ -113,19 +115,17 @@ var NS="http://www.w3.org/2000/svg",RM=window.matchMedia&&matchMedia("(prefers-r
 var $=function(id){return document.getElementById(id)};
 var CX=200,CY=200,R=192,cur=0.3,raf=0,tm=0,tm2=0;
 var MODES={
- wrong:{them:0.3,you:["You","70%","Pitching","Solving","Selling"],th:["Them","30%","Nodding"],v:["You pitch.","They switch off."],aria:"The pitch: you talk 70% of the call, they talk 30%"},
- right:{them:0.7,you:["You","30%","Golden question","Empathise","Start date"],th:["Them","70%","Their business","Their pain","Their scope"],v:["They talk.","You find the pain."],aria:"The right way: they talk 70% of the call, you talk 30%"}
+ wrong:{them:0.3,you:["You","70%"],th:["Them","30%"],v:["You pitch.","They switch off."],aria:"The pitch: you talk 70% of the call, they talk 30%"},
+ right:{them:0.7,you:["You","30%"],th:["Them","70%"],v:["They talk.","You build trust."],aria:"The right way: they talk 70% of the call, you talk 30%"}
 };
 function pt(a,r){return [CX+r*Math.cos(a),CY+r*Math.sin(a)]}
 function arc(a0,a1){var p0=pt(a0,R),p1=pt(a1,R),lg=(a1-a0)>Math.PI?1:0;return "M"+CX+","+CY+" L"+p0[0].toFixed(2)+","+p0[1].toFixed(2)+" A"+R+","+R+" 0 "+lg+" 1 "+p1[0].toFixed(2)+","+p1[1].toFixed(2)+" Z"}
 function draw(t){var top=-Math.PI/2,mid=top+t*2*Math.PI,end=top+2*Math.PI-0.0001;$("sThem").setAttribute("d",arc(top,mid));$("sYou").setAttribute("d",arc(mid,end))}
 function el(tag,at,txt){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);if(txt)e.textContent=txt;return e}
 function block(g,lines,t0,t1,big,ink,sub){
- var a=-Math.PI/2+((t0+t1)/2)*2*Math.PI,rr=big?R*0.48:R*0.6,p=pt(a,rr);
- var n=lines.length,lh=big?24:19,gap=big?42:34,h=gap+8+(n-2)*lh,y=p[1]-h/2+14;
- g.appendChild(el("text",{x:p[0],y:y,"text-anchor":"middle","font-size":15,"font-weight":700,fill:sub,"letter-spacing":"1.5"},lines[0].toUpperCase()));
- g.appendChild(el("text",{x:p[0],y:y+gap,"text-anchor":"middle","font-size":big?44:34,"font-weight":800,fill:ink,"letter-spacing":"-1.5"},lines[1]));
- for(var i=2;i<n;i++)g.appendChild(el("text",{x:p[0],y:y+gap+(i-1)*lh+2,"text-anchor":"middle","font-size":big?19:14.5,"font-weight":700,fill:ink},lines[i]));
+ var a=-Math.PI/2+((t0+t1)/2)*2*Math.PI,p=pt(a,R*(big?0.45:0.6));
+ g.appendChild(el("text",{x:p[0],y:p[1]-30,"text-anchor":"middle","font-size":big?26:22,"font-weight":700,fill:sub,"letter-spacing":"2"},lines[0].toUpperCase()));
+ g.appendChild(el("text",{x:p[0],y:p[1]+big*8+22,"text-anchor":"middle","font-size":big?72:56,"font-weight":800,fill:ink,"letter-spacing":"-2"},lines[1]));
 }
 function labels(m){var g=$("lbl"),d=MODES[m];g.innerHTML="";var t=d.them;
  block(g,d.th,0,t,t>0.5,"#0A0A0A","#3A2A1E");
@@ -147,6 +147,18 @@ function set(m){
 $("bW").addEventListener("click",function(){set("wrong")});
 $("bR").addEventListener("click",function(){set("right")});
 draw(cur);labels("wrong");
+
+/* Call steps: hover, click/tap, keyboard */
+var items=[].slice.call(document.querySelectorAll("#steps li")),canHover=window.matchMedia&&matchMedia("(hover: hover)").matches;
+function toggle(li,on){li.classList.toggle("open",on);li.querySelector("button").setAttribute("aria-expanded",on?"true":"false")}
+items.forEach(function(li){
+ var b=li.querySelector("button"),pinned=false;
+ b.addEventListener("click",function(){pinned=!li.classList.contains("open")||!pinned;toggle(li,pinned)});
+ if(canHover){
+  li.addEventListener("mouseenter",function(){toggle(li,true)});
+  li.addEventListener("mouseleave",function(){if(!pinned)toggle(li,false)});
+ }
+});
 })();
 </script>
 </body>
