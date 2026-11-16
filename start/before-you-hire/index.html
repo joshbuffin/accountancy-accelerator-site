@@ -76,6 +76,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .story{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.015em}
 .story span{color:var(--gold-soft)}
 .you{border:2px dashed #D1D1D6;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--slate)}
+.lesson{margin-top:clamp(16px,2.6vh,28px);background:#111;color:#fff;border-radius:var(--radius);padding:clamp(20px,3vw,32px) clamp(20px,3vw,36px)}
+.lesson .k{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.lesson h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-top:8px}
+.lesson h2 span{color:var(--gold)}
+.lesson .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-top:16px}
+.lesson .cols p{font-size:15px;line-height:1.5;color:#D1D1D6}
+.lesson .cols b{display:block;color:#fff;font-size:16px;margin-bottom:4px}
+@media (max-width:900px){.lesson .cols{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){
  .stage{grid-template-columns:1fr;gap:14px}
  .door svg{max-width:240px}
@@ -186,6 +194,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <p class="story">Systemise. Train. <span>Then hand it over.</span></p>
 <span class="you">Add yours: your template list</span>
 </div>
+<section class="lesson" aria-label="The overarching lesson">
+<p class="k">The overarching lesson</p>
+<h2>Be self-critical and honest <span>when you film your training.</span></h2>
+<div class="cols">
+<p><b>Spot the warning sign.</b>You're partway into a Loom and realise it isn't clear: sometimes it's A, sometimes B, sometimes C.</p>
+<p><b>Don't push on. Go back.</b>Go back to the start of that process and build a proper decision tree, or more precise training.</p>
+<p><b>Don't be lazy.</b>Iron the process out now and re-record. Assuming they'll work it out costs you more time in the long run. They won't.</p>
+</div>
+</section>
 </main>
 
 <div class="wrap pnav"><a href="/start/when-to-hire-a-bookkeeper/" style="text-decoration:none">&larr; When should you hire a bookkeeper and admin assistant?</a><a href="/start/setting-expectations-for-your-team/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Setting expectations &rarr;</a></div>
