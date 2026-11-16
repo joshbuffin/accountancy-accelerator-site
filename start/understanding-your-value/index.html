@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Understanding your value - Accountancy Accelerator</title>
-<meta name="description" content="Start, Level 9 Staffing: understanding your value. Your monthly target divided by 180 hours is what your hour is worth.">
+<meta name="description" content="Start, Level 9 Staffing: understanding your value. Your monthly target divided by the hours you work is what your hour is worth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -35,10 +35,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .val .k{color:#3A2A1E}
 .val h2{font-size:clamp(22px,2.1vw,27px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
 .rate{display:flex;align-items:center;gap:6px;background:#fff;border-radius:16px;padding:10px 14px;font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.02em}
-.rate input{font:inherit;width:3.6em;border:0;border-bottom:2px dashed var(--gold);background:transparent;color:var(--gold-soft);text-align:center;padding:0 2px;outline:none;-moz-appearance:textfield}
+.rate input{font:inherit;width:4em;border:0;border-bottom:2px dashed var(--gold);background:transparent;color:var(--gold-soft);text-align:center;padding:0 2px;outline:none;-moz-appearance:textfield}
 .rate input::-webkit-outer-spin-button,.rate input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .rate input:focus{border-bottom-style:solid}
-.rate small{font-size:14px;font-weight:700;color:var(--slate)}
+.rate small{line-height:1.2;font-size:14px;font-weight:700;color:var(--slate)}
 .play{font:inherit;font-size:15px;font-weight:700;color:#fff;background:#111;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;align-self:flex-start;box-shadow:0 10px 22px -12px rgba(0,0,0,.6);transition:transform .2s ease,background-color .2s ease}
 .play:hover{transform:translateY(-1px);background:#2A2A2A}
 .myth{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
@@ -64,6 +64,9 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 .pill.lo{color:#3A3A3C}
 .board.drawn .pill.lo{background:#fff;color:var(--slate);border-style:dashed}
 .board.drawn .pill.hi{background:var(--gold);color:#0A0A0A;border-color:var(--gold)}
+.chip{font-style:normal;font-size:11px;font-weight:800;color:var(--gold-soft);background:#FFF1E8;border-radius:999px;padding:2px 7px;white-space:nowrap}
+.pill[data-c]{cursor:pointer}.pill[data-c]:focus-visible,.pill.sel{outline:2px solid var(--gold);outline-offset:2px}
+.cmp{margin-top:6px;border-top:1px solid var(--line);padding-top:12px;font-size:clamp(14px,1.3vw,16px);font-weight:700;line-height:1.35;min-height:44px}
 .pill a{color:inherit;text-decoration:none}
 .empty{border:2px dashed #D4D4D8;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;color:#A1A1AA}
 .line{position:relative;height:30px;display:flex;align-items:center}
@@ -97,9 +100,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="side">
 <div class="val">
 <p class="k">Step 1 · Your hour</p>
-<h2>Monthly target &divide; 180</h2>
-<label class="rate">£<input id="target" type="number" inputmode="numeric" min="1" step="500" value="20000" aria-label="Your target monthly revenue in pounds"><small>a month</small></label>
-<p class="eq">= <b id="hour">£111</b> an hour <small>180 hours = 9 hours a day, 20 days a month</small></p>
+<h2>Monthly target &divide; your hours</h2>
+<label class="rate">£<input id="target" type="number" inputmode="numeric" min="1" max="1000000" step="100" value="4000" aria-label="Your target monthly revenue in pounds"><small>a month target</small></label>
+<label class="rate"><input id="weekly" type="number" inputmode="decimal" min="1" max="100" step="1" value="40" aria-label="Hours per week you have to work on the business"><small>hours a week on the business</small></label>
+<p class="eq">= <b id="hour">£23</b> an hour <small id="mh">173 hours a month (40 hours a week x 52 / 12)</small></p>
 <button class="play" id="draw" type="button">Draw the line</button>
 </div>
 <div class="myth">
@@ -116,15 +120,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="zone above">
 <div class="zh"><h2 id="hA">On you: everything.</h2><span class="cnt" id="cA">9 jobs</span></div>
 <div class="pills" id="pA">
-<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>Bookkeeping</span>
+<span class="pill lo" data-z="lo" tabindex="0" data-n="Bookkeeping" data-k="h" data-c="8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>Bookkeeping<em class="chip">£8/hr</em></span>
 <span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Sales calls</span>
 <span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/><path d="M9 11h6M9 15h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Invoice chasing</span>
 <span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M8 12h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><a href="/start/outsourcing-your-life/">Meal prep</a></span>
 <span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="2.2" fill="none"/><circle cx="16" cy="11" r="3" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>Client relationships</span>
-<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M4 10h16M9 3v4M15 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Payroll</span>
+<span class="pill lo" data-z="lo" tabindex="0" data-n="Payroll" data-k="h" data-c="8"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M4 10h16M9 3v4M15 3v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Payroll<em class="chip">£8/hr</em></span>
 <span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Tax planning</span>
-<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M16 10l5-3v10l-5-3" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Video editing</span>
-<span class="pill lo" data-z="lo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Onboarding admin</span>
+<span class="pill lo" data-z="lo" tabindex="0" data-n="Video editing" data-k="h" data-c="16"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2" stroke="currentColor" stroke-width="2.2" fill="none"/><path d="M16 10l5-3v10l-5-3" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Video editing<em class="chip">£16/hr</em></span>
+<span class="pill lo" data-z="lo" tabindex="0" data-n="Onboarding admin" data-k="m" data-c="70"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>Onboarding admin<em class="chip">£70/mo</em></span>
 <span class="pill hi" data-z="hi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Reviewing the work</span>
 </div>
 </div>
@@ -133,6 +137,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="zh"><h2 id="hB">Outsourced: nothing.</h2><span class="cnt" id="cB">0 jobs</span></div>
 <div class="pills" id="pB"><span class="empty" id="empty">Still all on you</span></div>
 </div>
+<p class="cmp" id="cmp" aria-live="polite"></p>
 </div>
 
 </div>
@@ -146,10 +151,20 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 (function(){
 var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
 var $=function(id){return document.getElementById(id)};
-var board=$("board"),pA=$("pA"),pB=$("pB"),btn=$("draw"),rate=$("target"),out=$("hour"),hrs=[].slice.call(document.querySelectorAll(".hr")),lbl=$("lineLbl"),empty=$("empty");
+var board=$("board"),pA=$("pA"),pB=$("pB"),btn=$("draw"),rate=$("target"),out=$("hour"),hrs=[].slice.call(document.querySelectorAll(".hr")),lbl=$("lineLbl"),empty=$("empty"),wk=$("weekly"),mh=$("mh"),cmp=$("cmp"),sel=null,val=0;
 var pills=[].slice.call(pA.querySelectorAll(".pill")),order=pills.slice(),drawn=false;
 var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
-function label(){var t=parseFloat(rate.value),v=t>0?gbp.format(t/180):"£X";out.textContent=v;lbl.textContent="Your hour: "+v;hrs.forEach(function(h){h.textContent=v})}
+function label(){var t=parseFloat(rate.value),w=parseFloat(wk.value),m=w>0?w*52/12:0;
+ val=(t>0&&m>0)?t/m:0;var v=val>0?gbp.format(val):"-";
+ mh.textContent=m>0?Math.round(m)+" hours a month ("+w+" hours a week x 52 / 12)":"Add your hours a week";
+ out.textContent=v;lbl.textContent="Your hour: "+v;hrs.forEach(function(h){h.textContent=v});compare()}
+function compare(){var p=sel;if(!p){cmp.textContent="";return}
+ var n=p.getAttribute("data-n"),k=p.getAttribute("data-k"),c=+p.getAttribute("data-c");
+ if(k=="m"){cmp.textContent=n+": £70 a month (Grok Bot) for all of it. Hand it over.";return}
+ var cs=gbp.format(c)+(n=="Video editing"?" (£8 per video, about 2 videos)":"");
+ if(!(val>0)){cmp.textContent=n+" costs "+cs+" an hour. Add your target and hours to compare it with your hour.";return}
+ cmp.textContent="You're worth "+gbp.format(val)+" an hour. "+n+" costs "+cs+" an hour: "+(c<val?"hand it over.":"for now, keep it, then revisit as your target grows.")}
+function pick(p){sel=p;pills.forEach(function(q){q.classList.toggle("sel",q===p)});compare()}
 function counts(){var a=pA.querySelectorAll(".pill").length,b=pB.querySelectorAll(".pill").length;
  $("cA").textContent=a+(a==1?" job":" jobs");$("cB").textContent=b+(b==1?" job":" jobs");
  $("hA").textContent=drawn?"Above your hour: you.":"On you: everything.";
@@ -176,7 +191,11 @@ function toggle(){
  btn.textContent=drawn?"Reset":"Draw the line";
 }
 btn.addEventListener("click",toggle);
-rate.addEventListener("input",label);
+rate.addEventListener("input",label);wk.addEventListener("input",label);
+pills.forEach(function(p){if(!p.hasAttribute("data-c"))return;
+ p.addEventListener("click",function(){pick(p)});p.addEventListener("focus",function(){pick(p)});p.addEventListener("mouseenter",function(){pick(p)});
+ p.addEventListener("keydown",function(e){if(e.key=="Enter"||e.key==" "){e.preventDefault();pick(p)}})});
+pick(pills[0]);
 label();counts();
 })();
 </script>
