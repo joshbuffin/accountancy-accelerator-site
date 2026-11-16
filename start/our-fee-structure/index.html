@@ -26,46 +26,35 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 
 /* Our fee structure: the profitable proposal */
-.hero{padding-top:clamp(20px,3vh,36px)}
-.hero h1{font-size:clamp(36px,4.4vw,60px)}
-.sub{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.015em;color:var(--slate);margin-top:6px}
-.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;margin-top:clamp(12px,2vh,20px)}
-.seg button{font:inherit;font-size:14px;font-weight:700;border:0;background:none;border-radius:999px;padding:8px 16px;cursor:pointer;color:var(--slate);transition:background-color .2s,color .2s}
-.seg button[aria-pressed="true"]{background:var(--gold);color:#0A0A0A}
-.seg button.old[aria-pressed="true"]{background:#3A3A3C;color:#fff}
-.stage{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);margin-top:12px;align-items:start}
+.hero{padding-top:clamp(16px,2.4vh,30px)}
+.hero h1{font-size:clamp(34px,4vw,54px)}
+.stage{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(16px,2.4vw,32px);margin-top:16px;align-items:start}
 .mail{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 50px -32px rgba(0,0,0,.3)}
-.mhead{display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--line);font-size:12px;font-weight:700;color:var(--slate)}
+.mhead{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--card);border-bottom:1px solid var(--line);font-size:12px;font-weight:700;color:var(--slate)}
 .mhead i{width:10px;height:10px;border-radius:50%;background:#D1D1D6;display:inline-block}
-.ln{display:grid;grid-template-columns:28px 108px minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px 16px;border-bottom:1px solid #EFEFF1;cursor:pointer;transition:background-color .2s}
-.ln:last-child{border-bottom:0}
-.ln:hover{background:#FFF8F3}
-.ln.sel{background:#FFF1E6}
-.pin{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.lab{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
-.val{font-size:clamp(15px,1.3vw,17px);font-weight:700;letter-spacing:-.01em;line-height:1.25}
-.val em{font-style:normal;color:var(--gold-soft);background:#FFF1E6;border:1px dashed #F4B48F;border-radius:6px;padding:0 6px}
-.tag{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 9px;white-space:nowrap}
-.tag.in{background:#E9E9EC;color:#3A3A3C}
-.tag.sep{background:var(--gold);color:#0A0A0A}
-.tag.bad{background:#3A3A3C;color:#fff}
-body.old .ln .pin{background:#8E8E93}
-body.old .ln.chg .val{color:#8E8E93;text-decoration:line-through;text-decoration-color:var(--gold);text-decoration-thickness:2px}
-body.old .ln.sel{background:#F2F2F4}
-.why{background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(20px,2.6vw,30px);min-height:260px;display:flex;flex-direction:column}
-.why .k{color:var(--gold)}
-.why h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-top:10px}
-.why p{font-size:clamp(15px,1.3vw,17px);color:#BDBDC2;margin-top:12px;line-height:1.45}
-.why .n{margin-top:auto;padding-top:16px;font-size:13px;font-weight:700;color:#8E8E93}
-body.old .why{background:#3A3A3C}
+.body{padding:14px 20px 16px;font-size:15px;line-height:1.45}
+.body p{margin-top:8px}
+.body p:first-child{margin-top:0}
+.row{position:relative;border-radius:10px;padding:3px 8px 3px 36px;margin:8px -8px 0;transition:background-color .2s}
+.row .pin{position:absolute;left:8px;top:5px}
+.row.on{background:#FFF1E6}
+.pin{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.inc{display:grid;grid-template-columns:1fr 1fr;gap:1px 18px;list-style:none;margin:4px -8px 0;padding:4px 8px;border-radius:10px;transition:background-color .2s}
+.inc.on{background:#FFF1E6}
+.inc li{position:relative;padding:1px 0 1px 14px;border-radius:6px;transition:background-color .2s}
+.inc li:before{content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--slate)}
+.inc li.on{background:#FFD9BF}
+.inc li .pin{margin-left:6px;width:18px;height:18px;font-size:11px;vertical-align:1px}
+.inc li.full{grid-column:1/-1}
+.notes{display:flex;flex-direction:column;gap:8px;list-style:none}
+.note{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;align-items:start;background:var(--card);border:1px solid transparent;border-radius:14px;padding:10px 14px;font-size:15px;font-weight:600;line-height:1.35;transition:background-color .2s,border-color .2s}
+.note.on{background:#FFF1E6;border-color:#F4B48F}
+.note .pin.gen{background:var(--ink)}
 .give{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;margin-top:clamp(12px,2vh,18px)}
 .give span{color:var(--gold-soft)}
-.fade{animation:fade .3s ease}
-@keyframes fade{from{opacity:.2}to{opacity:1}}
-@media (max-width:900px){.stage{grid-template-columns:1fr}.why{min-height:0}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.ln{grid-template-columns:24px minmax(0,1fr) auto;gap:8px;padding:9px 12px}.ln .lab{display:none}.pin{width:22px;height:22px}.seg button{font-size:13px;padding:7px 12px}.tag{font-size:10px;padding:3px 7px}}
-@media (prefers-reduced-motion:reduce){.fade{animation:none}.ln,.seg button{transition:none}}
+@media (max-width:900px){.stage{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.body{padding:14px 14px 16px;font-size:14px}.inc{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.row,.note,.inc,.inc li{transition:none}}
 </style>
 </head>
 <body>
@@ -75,24 +64,42 @@ body.old .why{background:#3A3A3C}
 <header class="wrap hero">
 <p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 2</p>
 <h1>The profitable <span class="gold-t">proposal.</span></h1>
-<p class="sub">One simple email. Every extra priced separately.</p>
 </header>
 
 <main class="wrap">
-<div class="seg" role="group" aria-label="Which proposal">
-<button type="button" id="bNow" aria-pressed="true">Our proposal now</button>
-<button type="button" id="bOld" class="old" aria-pressed="false">How we used to do it</button>
-</div>
-
 <div class="stage">
-<div class="mail" id="mail">
+<div class="mail">
 <div class="mhead"><i></i><i></i><i></i>&nbsp; New email</div>
-<div id="lines"></div>
+<div class="body">
+<p>Hi,</p>
+<p>Thanks again for your time. As discussed, please find below a breakdown of your proposal:</p>
+<div class="row" data-n="1"><span class="pin">1</span>The monthly fee will be <strong>£XXX + VAT</strong>. This will include:</div>
+<ul class="inc" data-n="2">
+<li>Monthly bookkeeping</li>
+<li>VAT returns</li>
+<li>Directors Payroll</li>
+<li>Year end accounts</li>
+<li>Corporation tax return</li>
+<li data-n="3">Confirmation statement<span class="pin">3</span></li>
+<li class="full">Ongoing tax planning advice</li>
+<li class="full">Direct access to Patrick and I via whatsapp, email and mobile.</li>
+</ul>
+<div class="row" data-n="4"><span class="pin">4</span>Self assessments can be purchased separately for <strong>£XXX + VAT</strong>, per filing.</div>
+<div class="row" data-n="5"><span class="pin">5</span>The cost to file your current accounts and tax return to bring everything up to date will be <strong>£XXX + VAT</strong>.</div>
+<p>If I don't hear back I won't chase you but I always appreciate it if you can let me know your thoughts either way.</p>
+<p>Best,<br>Josh</p>
 </div>
-<div class="why" aria-live="polite" id="why"></div>
 </div>
-
-<p class="give">Keep it simple. <span>Charge for every extra.</span></p>
+<ol class="notes">
+<li class="note" data-n="1"><span class="pin">1</span><span>The main focus is the recurring monthly cost.</span></li>
+<li class="note" data-n="2"><span class="pin">2</span><span>Services are grouped, not priced separately, so they can't be picked apart.</span></li>
+<li class="note" data-n="3"><span class="pin">3</span><span>We don't pay for Xero fees and confirmation statement fees.</span></li>
+<li class="note" data-n="4"><span class="pin">4</span><span>Self assessment is billed as a separate line.</span></li>
+<li class="note" data-n="5"><span class="pin">5</span><span>We split out catch-up fees separately. We want the main focus to be on the recurring cost to them.</span></li>
+<li class="note" data-n="g"><span class="pin gen">+</span><span>Assign a start date to anchor the proposal to something. If they start late, it might affect the pricing.</span></li>
+</ol>
+</div>
+<p class="give">Simple wins. <span>Complicated kills.</span></p>
 </main>
 
 <div class="wrap pnav"><a href="/start/your-only-kpi/" style="text-decoration:none">&larr; Your only KPI</a><a href="/start/package-types/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Package types &rarr;</a></div>
@@ -100,56 +107,14 @@ body.old .why{background:#3A3A3C}
 
 <script>
 (function(){
-var L=[
- {lab:"Subject",now:"Your proposal · <em>Company</em> LTD",nt:"",old:"Proposal attached (6 page PDF)",ot:"bad",
-  w:"Same subject, every time.",p:"Keeps it professional, and you can always search your inbox for what you quoted.",
-  ow:"An hour on every PDF.",op:"A long PDF slows the sale down. Prospects put off reading it. Just send the prices in an email."},
- {lab:"Monthly fee",now:"<em>£ fee</em> a month, starting <em>date</em>",nt:"",old:"Monthly fee, start whenever",ot:"bad",
-  w:"Price at the top. Always a start date.",p:"A start date holds the client to it once they say yes. It also tells you how much catch-up work to charge.",
-  ow:"No start date.",op:"Nothing to hold them to, and no way to know how much catch-up work there is."},
- {lab:"Included",now:"Monthly bookkeeping",nt:"in",old:null,
-  w:"Monthly for most clients.",p:"Some clients pay for weekly bookkeeping. Most are monthly."},
- {lab:"Included",now:"Payroll",nt:"in",old:"Payroll for every employee",ot:"bad",
-  w:"Payroll in the package.",p:"Employee payroll is quoted separately. Payroll isn't a profitable part of the business.",
-  ow:"All payroll bundled in.",op:"Five, six, seven, eight employees, all for the same monthly fee."},
- {lab:"Included",now:"Access to <em>name</em>",nt:"in",old:null,
-  w:"Name a real person.",p:"Put the name of who they'll deal with. A personal touch."},
- {lab:"Separately",now:"Self assessments <em>£</em>",nt:"sep",old:"Self assessments included",ot:"bad",
-  w:"Never bundle self assessments.",p:"Charge for them separately. A big spike of cash in April and May.",
-  ow:"Self assessments bundled in.",op:"Money left on the table for every client, every year."},
- {lab:"Separately",now:"Employee payroll <em>£</em>",nt:"sep",old:null,hideOld:1,
-  w:"A bolt-on service.",p:"Price payroll for employees separately. We're still testing this, and so far it's going well."},
- {lab:"Separately",now:"Catch-up work and accounts <em>£</em>, deposit",nt:"sep",old:"Catch-up work: free",ot:"bad",
-  w:"Charge for catch-up. Take a deposit.",p:"Joining part way through the year? Explain why catch-up is charged. Accounts due? Take the deposit up front.",
-  ow:"Afraid to charge for catch-up.",op:"We worried it would stop clients converting. Clients are happy to pay when they understand why."},
- {lab:"Software",now:"Client pays for their own Xero",nt:"",old:"We pay for their Xero",ot:"bad",
-  w:"Don't pay for their software.",p:"Keep it off your costs.",
-  ow:"£30 a month, per client.",op:"10 clients is £3,600 a year you're paying. That's another client's fees."},
- {lab:"Sign off",now:"Let me know either way. I won't chase.",nt:"",old:"I'll follow up next week",ot:"bad",
-  w:"Tell them you won't chase.",p:"Replies come faster when they know it's on them. If they're not ready now, chasing kills a future lead.",
-  ow:"Chasing everyone.",op:"Follow-up sequences took time and killed sales that would have come back later."}
-];
-var $=function(id){return document.getElementById(id)};
-var old=false,sel=1;
-function render(){
- document.body.classList.toggle("old",old);
- var h="";
- L.forEach(function(r,i){
-  if(old&&r.hideOld)return;
-  var chg=old&&r.old!=null, v=chg?r.old:r.now, t=chg?r.ot:r.nt;
-  var tg=t==="in"?'<span class="tag in">Included</span>':t==="sep"?'<span class="tag sep">Extra</span>':t==="bad"?'<span class="tag bad">Mistake</span>':'<span></span>';
-  h+='<div class="ln'+(i===sel?' sel':'')+(chg?' chg':'')+'" data-i="'+i+'" role="button" tabindex="0"><span class="pin">'+(i+1)+'</span><span class="lab">'+r.lab+'</span><span class="val">'+v+'</span>'+tg+'</div>';
- });
- $("lines").innerHTML=h;
- var r=L[sel],o=old&&r.old!=null;
- $("why").innerHTML='<div class="fade"><span class="k">'+(o?"Mistake we made":"Why")+'</span><h2>'+(o?r.ow:r.w)+'</h2><p>'+(o?r.op:r.p)+'</p></div><p class="n">'+(sel+1)+' of '+L.length+' · click any line</p>';
-}
-$("lines").addEventListener("click",function(e){var ln=e.target.closest(".ln");if(ln){sel=+ln.dataset.i;render()}});
-$("lines").addEventListener("keydown",function(e){var ln=e.target.closest(".ln");if(ln&&(e.key==="Enter"||e.key===" ")){e.preventDefault();sel=+ln.dataset.i;render();var n=$("lines").querySelector('[data-i="'+sel+'"]');n&&n.focus()}});
-function mode(o){old=o;$("bNow").setAttribute("aria-pressed",!o);$("bOld").setAttribute("aria-pressed",o);if(o&&(L[sel].old==null||L[sel].hideOld))sel=0;render()}
-$("bNow").addEventListener("click",function(){mode(false)});
-$("bOld").addEventListener("click",function(){mode(true)});
-render();
+var els=document.querySelectorAll("[data-n]");
+function set(n,on){for(var i=0;i<els.length;i++){if(els[i].dataset.n===n)els[i].classList.toggle("on",on)}}
+for(var i=0;i<els.length;i++){(function(e){var n=e.dataset.n;
+e.tabIndex=0;
+e.addEventListener("mouseenter",function(){set(n,true)});
+e.addEventListener("mouseleave",function(){set(n,false)});
+e.addEventListener("focus",function(){set(n,true)});
+e.addEventListener("blur",function(){set(n,false)});})(els[i])}
 })();
 </script>
 </body>
