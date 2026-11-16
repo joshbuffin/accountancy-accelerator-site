@@ -25,60 +25,28 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* How to send proposals: long PDF vs simple email */
-.hero{padding-top:clamp(22px,3.4vh,40px)}
+/* How to send proposals: keep it simple */
+.hero{padding-top:clamp(22px,4vh,48px);padding-bottom:clamp(20px,3vh,40px);display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,4vw,64px);align-items:center}
 .hero h1{font-size:clamp(38px,4.6vw,62px)}
-.sub{margin-top:10px;font-size:clamp(16px,1.4vw,19px);color:var(--muted);font-weight:500}
-.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.vs{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(16px,2.4vw,32px);padding-top:clamp(18px,2.6vh,30px);align-items:stretch}
-.cv{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .45s ease}
-.cv:hover{transform:translateY(-3px)}
-.cv.pt{background:#FFF8F3;border-color:var(--gold)}
-.cv.pt:hover{box-shadow:0 14px 30px -18px rgba(242,107,29,.45)}
-.cv.pt .k{color:var(--gold-soft)}
-.cv h2{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
-.cvt{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-
-/* Wrong way: PDF stack */
-.pdf{position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:200px}
-.pdf svg{width:100%;max-width:300px;height:auto;display:block}
-.pdf svg text{font-family:'Inter',Arial,sans-serif}
-.miss{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.miss span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:14px;font-weight:700;color:#6E6E73;text-decoration:line-through;text-decoration-color:#AEAEB2;text-decoration-thickness:2px}
-
-/* Right way: email */
-.mail{background:#fff;border:1px solid #F4D3BF;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px -28px rgba(194,65,12,.5);transition:box-shadow .4s ease}
-.mbar{display:flex;align-items:center;gap:6px;padding:9px 14px;background:#FBEADF;border-bottom:1px solid #F4D3BF}
-.mbar i{width:9px;height:9px;border-radius:50%;background:#F4B48F;display:block}
-.mbar span{margin-left:8px;font-size:12px;font-weight:700;color:var(--gold-soft);letter-spacing:.04em}
-.mhead{padding:10px 16px 8px;border-bottom:1px solid var(--line);display:grid;gap:3px;font-size:14px}
-.mhead p{display:flex;gap:10px}
-.mhead b{width:58px;flex:none;color:var(--slate);font-weight:600}
-.mhead em{font-style:normal;font-weight:700}
-.rows{padding:6px 10px 8px}
-.row{display:flex;align-items:center;gap:12px;padding:8px 6px;border-radius:12px;transition:background-color .25s ease,transform .25s ease}
-.row:hover{background:#FFF3EA;transform:translateX(2px)}
-.num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#0A0A0A;font-size:14px;font-weight:800;display:grid;place-items:center}
-.row h3{font-size:clamp(16px,1.5vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.15;flex:1;min-width:0}
-.ph{flex:none;font-size:13px;font-weight:700;color:var(--gold-soft);border:1.5px dashed #F4B48F;border-radius:999px;padding:3px 10px;white-space:nowrap}
-.sign{padding:4px 12px 2px 46px;font-size:14px;font-style:italic;color:var(--muted)}
-.mfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px 12px;border-top:1px solid var(--line)}
-.status{font-size:14px;font-weight:700;color:var(--slate)}
-.status strong{color:var(--gold-soft)}
-.send{font:inherit;font-size:14px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:9px 20px;cursor:pointer;box-shadow:0 8px 20px -10px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease;display:inline-flex;align-items:center;gap:8px}
-.send:hover{transform:translateY(-1px);background:var(--gold-soft)}
-.send svg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.sent .send{background:#fff;color:var(--gold-soft);box-shadow:none;border:1.5px solid var(--gold)}
-.sent .send svg{transform:translate(4px,-4px)}
-.sent .mail{box-shadow:0 0 0 3px rgba(242,107,29,.35),0 18px 40px -28px rgba(194,65,12,.5)}
-.tpl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 0 0;font-size:14px;font-weight:600}
-.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px}
-.chip.o{background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
-
-@media (max-width:900px){.vs{grid-template-columns:1fr}.pdf{min-height:0}.pdf svg{max-width:240px}}
-@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.wrap{padding:0 16px}.pnav{padding:16px}.cv{padding:14px}.mhead b{width:52px}.row{gap:10px;padding:7px 4px}.ph{font-size:12px;padding:3px 8px}.rows{padding:4px 6px 6px}.miss span{font-size:13px;padding:7px 10px}.pdf svg{max-width:150px}.row h3{font-size:15px}.row{flex-wrap:wrap;row-gap:4px}.row h3{flex:1 1 calc(100% - 40px)}.row .ph{margin-left:38px}.sign{padding-left:44px}.sign{padding:4px 12px 2px 46px;font-size:14px;font-style:italic;color:var(--muted)}
-.mfoot{padding:10px 12px}}
-@media (prefers-reduced-motion:reduce){.cv,.row,.send,.send svg,.mail{transition:none}.cv:hover,.row:hover,.send:hover{transform:none}.sent .send svg{transform:none}}
+.lines{margin-top:18px;display:grid;gap:12px;font-size:clamp(16px,1.35vw,18px);color:var(--muted);font-weight:500;max-width:34em}
+.lines strong{color:var(--ink);font-weight:700}
+.vs{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 10px;font-size:14px;font-weight:700}
+.vs span{border-radius:999px;padding:6px 14px;border:1px solid var(--line);background:var(--card);color:var(--slate);text-decoration:line-through;text-decoration-color:#AEAEB2}
+.vs span+span{text-decoration:none;background:#FFF8F3;border-color:var(--gold);color:var(--gold-soft)}
+.mailwrap{min-width:0}
+.mail{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2vw,28px);box-shadow:0 18px 40px -28px rgba(0,0,0,.35);font-size:15px;line-height:1.55}
+.mail p{margin:0 0 10px}
+.mail ul{list-style:none;margin:0 0 10px;padding:0}
+.hint{margin-top:12px;font-size:13px;font-weight:600;color:var(--slate)}
+.hint b{color:var(--gold-soft)}
+.hw{font:inherit;color:var(--gold-soft);background:#FFF1E8;border:0;border-bottom:2px solid var(--gold);border-radius:4px 4px 0 0;padding:0 3px;cursor:help;text-align:left;transition:background-color .2s ease}
+.hw:hover,.hw[aria-expanded="true"]{background:#FFE0CC}
+.hw:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#pop{position:fixed;z-index:50;left:0;top:0;width:min(300px,calc(100vw - 24px));background:#111;color:#fff;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.45;font-weight:500;box-shadow:0 16px 40px -12px rgba(0,0,0,.5);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility .18s}
+#pop.on{opacity:1;visibility:visible}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.wrap{padding:0 16px}.pnav{padding:16px}.mail{font-size:14px}}
+@media (prefers-reduced-motion:reduce){#pop,.hw{transition:none}}
 </style>
 </head>
 <body>
@@ -86,69 +54,76 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Pricing &amp; Proposals · How to send proposals</span></div></nav>
 
 <header class="wrap hero">
+<div>
 <p class="eyebrow">Level 6 - Pricing &amp; Proposals · Video 8</p>
-<h1>Send it as a simple <span class="gold-t">email.</span></h1>
-<p class="sub">Ten lines with the key information. Not a ten page PDF.</p>
+<h1>Keep it <span class="gold-t">simple.</span></h1>
+<div class="lines">
+<p>Put yourself in the founder's seat: successful, growth-focused and busy. They do not want to read through a long PDF.</p>
+<p><strong>A long PDF is too busy, and it adds sales friction.</strong> The whole point of the sales process is to reduce that friction. Proposals get lost in a long PDF.</p>
+</div>
+<p class="vs" aria-label="Long PDF versus one email"><span>Long PDF</span><span>One plain email</span></p>
+</div>
+
+<div class="mailwrap">
+<div class="mail">
+<p>Hi,</p>
+<p>Thanks again for your time. As discussed, please find below a breakdown of your proposal:</p>
+<p>The <button class="hw" type="button" data-n="0">monthly fee</button> will be £XXX + VAT from <button class="hw" type="button" data-n="1">[start date]</button>. This will include:</p>
+<ul>
+<li>Monthly bookkeeping</li>
+<li>VAT returns</li>
+<li>Directors Payroll</li>
+<li>Year end accounts</li>
+<li>Corporation tax return</li>
+<li>Confirmation statement</li>
+<li>Ongoing tax planning advice</li>
+<li>Direct access to Patrick and I via whatsapp, email and mobile.</li>
+</ul>
+<p><button class="hw" type="button" data-n="2">Self assessments can be purchased separately</button> for £XXX + VAT, per filing.</p>
+<p>The cost to file your current accounts and tax return <button class="hw" type="button" data-n="3">to bring everything up to date</button> will be £XXX + VAT.</p>
+<p><button class="hw" type="button" data-n="4">If I don't hear back I won't chase you</button> but I always appreciate it if you can let me know your thoughts either way.</p>
+<p style="margin:0">Best,<br>Josh</p>
+</div>
+<p class="hint"><b>Hover the orange words</b> (or tap them) to see why they are there.</p>
+</div>
 </header>
 
-<main class="wrap">
-<div class="vs" id="vs">
+<div id="pop" role="tooltip"></div>
 
-<div class="cv">
-<div><p class="k">Wrong way</p><h2>A long PDF.</h2></div>
-<div class="pdf">
-<svg viewBox="0 0 300 200" role="img" aria-label="A thick stack of PDF pages">
-<rect x="96" y="14" width="124" height="160" rx="8" fill="#fff" stroke="#D1D1D6" stroke-width="2" transform="rotate(7 158 94)"/>
-<rect x="90" y="16" width="124" height="160" rx="8" fill="#fff" stroke="#D1D1D6" stroke-width="2" transform="rotate(3 152 96)"/>
-<rect x="84" y="18" width="124" height="160" rx="8" fill="#fff" stroke="#C7C7CC" stroke-width="2"/>
-<rect x="100" y="34" width="56" height="20" rx="5" fill="#AEAEB2"/>
-<text x="128" y="48" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">PDF</text>
-<g fill="#E5E5EA"><rect x="100" y="66" width="92" height="7" rx="3"/><rect x="100" y="80" width="84" height="7" rx="3"/><rect x="100" y="94" width="92" height="7" rx="3"/><rect x="100" y="108" width="70" height="7" rx="3"/><rect x="100" y="122" width="88" height="7" rx="3"/><rect x="100" y="136" width="92" height="7" rx="3"/><rect x="100" y="150" width="60" height="7" rx="3"/></g>
-<text x="146" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#8E8E93">Proposal (6 pages).pdf</text>
-</svg>
-</div>
-<div class="miss" aria-label="What the PDF misses">
-<span>An hour to make</span><span>Too long to read</span><span>Slows the sale</span><span>Looks low value</span>
-</div>
-</div>
-
-<div class="cv pt" id="right">
-<div class="cvt"><div><p class="k">Right way</p><h2>One short email.</h2></div></div>
-<div class="mail">
-<div class="mbar" aria-hidden="true"><i></i><i></i><i></i><span>New message</span></div>
-<div class="mhead">
-<p><b>To</b><em>[Client name]</em></p>
-<p><b>Subject</b><em>Your proposal - [Company] Ltd</em></p>
-</div>
-<div class="rows">
-<div class="row"><span class="num">1</span><h3>Monthly fee and start date</h3><span class="ph">£[Fee] from [date]</span></div>
-<div class="row"><span class="num">2</span><h3>What's included</h3><span class="ph">Access to [name]</span></div>
-<div class="row"><span class="num">3</span><h3>Extras, priced separately</h3><span class="ph">Self assessment · Catch-up</span></div>
-<div class="row"><span class="num">4</span><h3>Deposit to get started</h3><span class="ph">[Link]</span></div>
-<p class="sign">I'd appreciate you letting me know either way.</p>
-</div>
-<div class="mfoot">
-<p class="status" id="status" aria-live="polite">Ready to send.</p>
-<button class="send" id="send" type="button"><span id="sendt">Send</span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 21 3l-7.5 18-2.6-7.4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></button>
-</div>
-</div>
-</div>
-
-</div>
-<div class="tpl"><span class="k">Do it once</span><span class="chip o">Save it as a Gmail template</span><span class="chip">Same subject, every time</span><span class="chip">Send it at the end of the sales call</span></div>
-</main>
-
-<div class="wrap pnav"><a href="/start/always-take-a-deposit/" style="text-decoration:none">&larr; Always take a deposit</a><a href="/start/do-not-chase-your-proposals/" style="text-decoration:none;color:var(--gold-soft);text-align:right">DO NOT CHASE YOUR PROPOSALS &rarr;</a></div>
+<div class="wrap pnav"><a href="/start/always-take-a-deposit/" style="text-decoration:none">&larr; Always take a deposit</a><a href="/start/do-not-chase-your-proposals/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Do not chase your proposals &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · How to send proposals</div></footer>
 
 <script>
 (function(){
-var right=document.getElementById("right"),btn=document.getElementById("send"),t=document.getElementById("sendt"),st=document.getElementById("status");
-btn.addEventListener("click",function(){
- var on=right.classList.toggle("sent");
- t.textContent=on?"Sent":"Send";
- st.innerHTML=on?"<strong>Sent.</strong> One chaser, 2 weeks later. Then stop.":"Ready to send.";
+var T=[
+"All the fees are grouped into one monthly fee, not priced separately, so they can't be picked apart. The focus stays on the recurring monthly cost.",
+"The start date anchors the proposal to something. If they start late, it might affect the pricing.",
+"Self assessments are billed as a separate line.",
+"The catch-up work is split out separately so the main focus stays on the recurring cost.",
+"We don't chase proposals."
+];
+var pop=document.getElementById("pop"),cur=null,btns=document.querySelectorAll(".hw");
+function show(b){
+ cur=b;pop.textContent=T[b.getAttribute("data-n")];
+ b.setAttribute("aria-describedby","pop");b.setAttribute("aria-expanded","true");
+ var r=b.getBoundingClientRect(),w=pop.offsetWidth,h=pop.offsetHeight;
+ var x=Math.max(12,Math.min(r.left+r.width/2-w/2,window.innerWidth-w-12));
+ var y=r.bottom+10;if(y+h>window.innerHeight-12)y=Math.max(12,r.top-h-10);
+ pop.style.left=x+"px";pop.style.top=y+"px";pop.classList.add("on");
+}
+function hide(){if(cur){cur.removeAttribute("aria-describedby");cur.setAttribute("aria-expanded","false");}cur=null;pop.classList.remove("on");}
+btns.forEach(function(b){
+ b.setAttribute("aria-expanded","false");
+ b.addEventListener("mouseenter",function(){show(b)});
+ b.addEventListener("mouseleave",hide);
+ b.addEventListener("focus",function(){show(b)});
+ b.addEventListener("blur",hide);
+ b.addEventListener("click",function(e){e.stopPropagation();if(cur===b&&document.activeElement!==b){hide()}else{show(b)}});
 });
+document.addEventListener("click",hide);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")hide()});
+window.addEventListener("scroll",hide,{passive:true});
+window.addEventListener("resize",hide);
 })();
 </script>
 </body>
