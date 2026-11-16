@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Their mistake? Your fault first. - Accountancy Accelerator</title>
+<meta name="description" content="Start, Level 9 Staffing: when your team makes a mistake, check your own brief before you blame them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
+
+/* Their mistake: flow + examples */
+.hero{padding-top:clamp(22px,3.4vh,40px)}
+.hero .eyebrow{margin-bottom:12px}
+.hero h1{font-size:clamp(34px,4.4vw,60px)}
+.grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);padding-top:clamp(16px,2.4vh,28px);align-items:stretch}
+.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(0,0,0,.35)}
+.flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.15fr);align-items:center;gap:8px;flex:1}
+.arrow{color:var(--slate);flex:none}
+.node{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px;display:flex;flex-direction:column;gap:6px;justify-content:center}
+.node h2{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.node .n{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.node.ask{border:2px solid var(--ink)}
+.branches{display:flex;flex-direction:column;gap:10px}
+.br{border-radius:18px;padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.br h3{font-size:clamp(15px,1.5vw,18px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.br p{font-size:13px;line-height:1.3}
+.br.no{background:var(--gold);color:#0A0A0A}
+.br.no .k{color:#3A2A1E}
+.br.no p{color:#2A1A10}
+.br.yes{background:#fff;border:1px solid var(--line)}
+.br.yes p{color:var(--muted)}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px;align-self:flex-start}
+.seg button{font:inherit;font-size:13px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:7px 14px;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#fff;box-shadow:0 6px 16px -8px rgba(242,107,29,.7)}
+.seg button:not([aria-pressed="true"]):hover{color:var(--ink)}
+.seg button:focus-visible,.card a:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px}
+.ex{display:flex;flex-direction:column;gap:10px;flex:1}
+.ex .box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 16px;display:flex;flex-direction:column;gap:3px}
+.ex .box h2{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.025em;line-height:1.2}
+.ex .box.hot{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.ex .box.hot .k{color:#3A2A1E}
+.ex .fade{animation:fin .35s ease}
+@keyframes fin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.test{font-size:clamp(17px,1.8vw,22px);font-weight:800;letter-spacing:-.025em;line-height:1.2;text-align:center}
+.test span{color:var(--gold-soft)}
+.pts{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);padding-top:clamp(12px,1.8vh,20px);padding-bottom:4px}
+.pt{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.pt:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.25)}
+.pt h2{font-size:clamp(19px,1.9vw,24px);font-weight:800;letter-spacing:-.025em;line-height:1.12}
+.pt h2 span{color:var(--gold-soft)}
+.pt p{font-size:14px;color:var(--muted);line-height:1.35}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+@media (max-width:700px){.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.pts{grid-template-columns:1fr}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.card{padding:14px 12px}.seg button{padding:7px 11px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){.card,.pt{transition:none}.card:hover,.pt:hover{transform:none}.ex .fade{animation:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Staffing · Their mistake? Your fault first.</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 9 - Staffing</p>
+<h1>Their mistake? <span class="gold-t">Your fault first.</span></h1>
+</header>
+
+<main class="wrap">
+<div class="grid">
+
+<div class="card">
+<p class="k">A mistake happened</p>
+<div class="flow">
+<div class="node"><span class="n">1</span><h2>Check your brief first</h2></div>
+<svg class="arrow" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="node ask"><span class="k">Ask yourself</span><h2>Was the brief perfect?</h2></div>
+<svg class="arrow" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="branches">
+<div class="br no"><span class="k">No</span><h3>It's on you. Fix the brief.</h3><p>Take ownership.</p></div>
+<div class="br yes"><span class="k">Yes</span><h3>Now look at the team.</h3><p>Only then.</p></div>
+</div>
+</div>
+<p class="test">Perfect brief, still wrong? <span>That's when you look at your team.</span></p>
+</div>
+
+<div class="card">
+<div class="seg" role="group" aria-label="Choose an example">
+<button type="button" id="bV" aria-pressed="true">Video editor</button>
+<button type="button" id="bB" aria-pressed="false">Bookkeeper</button>
+</div>
+<div class="ex" id="ex" aria-live="polite">
+<div class="box"><p class="k">What went wrong</p><h2 id="wrong"></h2></div>
+<div class="box hot"><p class="k">Ask of your brief</p><h2 id="ask"></h2></div>
+</div>
+</div>
+
+</div>
+
+<div class="pts">
+<div class="pt"><h2>Ownership <span>= control</span></h2><p>Blame puts control in other people's hands. Owning it keeps it with you.</p></div>
+<div class="pt"><h2>Time up front <span>saves time later</span></h2><p>Build a system to brief people. Brief badly because you're busy and it costs you more.</p></div>
+</div>
+</main>
+
+<div class="wrap pnav"><a href="/start/setting-expectations-for-your-team/" style="text-decoration:none">&larr; Setting expectations for your team</a><a href="/start/outsourcing-to-the-philippines/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Outsourcing to the Philippines &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Staffing · Their mistake? Your fault first.</div></footer>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+var data={
+ v:{wrong:"Text in the wrong position, colour or font. Chopped up too much, or not enough.",ask:"Did I say what colour the text should be, and where it goes?"},
+ b:{wrong:"You asked them to reconcile. The checks back to the bank statements weren't done.",ask:"Did I tell them to add checks back to the bank statements at every month end?"}
+};
+var bV=$("bV"),bB=$("bB"),ex=$("ex");
+function set(k){
+ bV.setAttribute("aria-pressed",String(k==="v"));bB.setAttribute("aria-pressed",String(k==="b"));
+ $("wrong").textContent=data[k].wrong;$("ask").textContent=data[k].ask;
+ ex.classList.remove("fade");void ex.offsetWidth;ex.classList.add("fade");
+}
+bV.addEventListener("click",function(){set("v")});
+bB.addEventListener("click",function(){set("b")});
+set("v");
+})();
+</script>
+</body>
+</html>
