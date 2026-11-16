@@ -34,8 +34,12 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .oth{margin-top:clamp(18px,2.8vh,30px)}
 .oth h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.02em}
 .rows{margin-top:8px;border-top:1px solid var(--line)}
-.r{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.6fr) 96px minmax(0,.75fr);gap:16px;align-items:center;padding:clamp(9px,1.45vh,14px) 4px;border-bottom:1px solid var(--line);transition:background-color .2s}
-.r:hover{background:var(--card)}
+.r{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.6fr) 96px minmax(0,.75fr);gap:16px;align-items:center;padding:clamp(9px,1.45vh,14px) 14px;border-bottom:1px solid var(--line);border-radius:12px;cursor:pointer;transition:background-color .2s,color .2s,transform .2s,box-shadow .2s}
+.r:hover,.r.sel{background:var(--gold);color:#fff;transform:translateX(6px);box-shadow:0 8px 22px rgba(242,107,29,.28)}
+.r:hover .w,.r.sel .w,.r:hover .p,.r.sel .p{color:#fff}
+.r:hover .t,.r.sel .t{background:#fff;color:var(--gold-soft);border-color:#fff}
+.r:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.r.sel{box-shadow:0 8px 22px rgba(242,107,29,.28),inset 0 0 0 2px var(--ink)}
 .r .n{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em}
 .r .w{font-size:clamp(14px,1.25vw,16px);color:var(--muted)}
 .t{justify-self:start;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 10px;background:var(--card);color:var(--slate);border:1px solid var(--line)}
@@ -43,7 +47,7 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 .r .p{font-size:clamp(15px,1.4vw,18px);font-weight:800;text-align:right;color:var(--gold-soft)}
 @media (max-width:760px){.r{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}.r .w{grid-column:1/-1;order:3}.r .t{grid-row:1;grid-column:2;justify-self:end}.r .p{grid-column:1/-1;order:4;text-align:left}.r .p:empty{display:none}}
 @media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}}
-@media (prefers-reduced-motion:reduce){.r{transition:none}}
+@media (prefers-reduced-motion:reduce){.r{transition:none}.r:hover,.r.sel{transform:none}}
 </style>
 </head>
 <body>
@@ -68,12 +72,12 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <div class="oth">
 <h3>Other revenue streams</h3>
 <div class="rows">
-<div class="r"><span class="n">One-off accounts</span><span class="w">Accounts that just need doing once</span><span class="t">One-off</span><span class="p"></span></div>
-<div class="r"><span class="n">Catch-up and clean-up</span><span class="w">Getting historic books up to date and right</span><span class="t">One-off</span><span class="p"></span></div>
-<div class="r"><span class="n">Alignment fees</span><span class="w">Joins partway through the year, e.g. 6 weeks of bookkeeping to bring them in line</span><span class="t">One-off</span><span class="p"></span></div>
-<div class="r"><span class="n">Self-assessments</span><span class="w">Always billed separately</span><span class="t">Annual</span><span class="p"></span></div>
-<div class="r"><span class="n">Restructuring</span><span class="w">Setting up the right structure for the business</span><span class="t">One-off</span><span class="p">About £2,000+</span></div>
-<div class="r"><span class="n">Virtual office</span><span class="w">A registered address for the business</span><span class="t mo">Monthly</span><span class="p">£10 a month</span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">One-off accounts</span><span class="w">Accounts that just need doing once</span><span class="t">One-off</span><span class="p"></span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">Catch-up and clean-up</span><span class="w">Getting historic books up to date and right</span><span class="t">One-off</span><span class="p"></span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">Alignment fees</span><span class="w">Joins partway through the year, e.g. 6 months of bookkeeping to bring them in line</span><span class="t">One-off</span><span class="p"></span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">Self-assessments</span><span class="w">Always billed separately</span><span class="t">Annual</span><span class="p"></span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">Restructuring</span><span class="w">Setting up the right structure for the business</span><span class="t">One-off</span><span class="p">About £2,000+</span></div>
+<div class="r" tabindex="0" role="button" aria-pressed="false"><span class="n">Virtual office</span><span class="w">A registered address for the business</span><span class="t mo">Monthly</span><span class="p">£10 a month</span></div>
 </div>
 </div>
 </main>
@@ -81,5 +85,12 @@ footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-s
 <div class="wrap pnav"><a href="/start/our-fee-structure/" style="text-decoration:none">&larr; Our fee structure</a><a href="/start/start-with-your-minimum-fees/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Start with your minimum fees &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Pricing &amp; Proposals · Package types</div></footer>
 
+<script>
+(function(){
+var rows=[].slice.call(document.querySelectorAll('.r'));
+function pick(r){var on=!r.classList.contains('sel');rows.forEach(function(x){x.classList.remove('sel');x.setAttribute('aria-pressed','false')});if(on){r.classList.add('sel');r.setAttribute('aria-pressed','true')}}
+rows.forEach(function(r){r.addEventListener('click',function(){pick(r)});r.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(r)}})});
+})();
+</script>
 </body>
 </html>
