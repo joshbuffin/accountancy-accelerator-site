@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Following up - Accountancy Accelerator</title>
-<meta name="description" content="Start, Level 7 Sales: following up. You can't force a client to buy. One chaser, 2 weeks later, then stop and be there when they're ready.">
+<meta name="description" content="Start, Level 7 Sales: following up. Follow up once, then let go. Chasing loses more leads than it wins, so spend your time on lead generation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
@@ -25,49 +25,21 @@ h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-size:13px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:18px 24px;font-size:15px;font-weight:600}
 
-/* Following up: keep chasing vs chase once */
+/* Following up */
 .hero{padding-top:clamp(22px,3.4vh,40px)}
 .hero h1{font-size:clamp(38px,4.6vw,62px)}
-.fu{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.85fr);gap:clamp(18px,2.6vw,32px);align-items:stretch;padding-top:clamp(14px,2vh,22px);padding-bottom:6px}
-.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.board{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,1.8vw,22px);display:flex;flex-direction:column;justify-content:space-between;gap:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .3s ease,background-color .3s ease}
-.board:hover{transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(0,0,0,.35)}
-.board.once{background:#FFF8F3;border-color:var(--gold)}
-.board.once:hover{box-shadow:0 18px 36px -22px rgba(242,107,29,.45)}
-.bh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.bh h2{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
-.bh h2 span{color:var(--gold-soft)}
-.tog{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
-.tog button{font:inherit;font-size:14px;font-weight:700;border:0;background:transparent;color:var(--slate);border-radius:999px;padding:8px 16px;cursor:pointer;transition:background-color .2s ease,color .2s ease}
-.tog button[aria-pressed="true"]{background:#3A3A3C;color:#fff}
-.board.once .tog button[aria-pressed="true"]{background:var(--gold);color:#fff;box-shadow:0 8px 20px -10px rgba(242,107,29,.7)}
-.tog button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.board svg{width:100%;height:auto;display:block}
-.board svg text{font-family:'Inter',Arial,sans-serif}
-.verdict{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.02em}
-.verdict span{color:var(--gold-soft)}
-.rule{background:var(--gold);color:#0A0A0A;border-radius:var(--radius);padding:clamp(18px,2.2vw,26px);display:flex;flex-direction:column;gap:12px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
-.rule:hover{transform:translateY(-3px);box-shadow:0 18px 36px -20px rgba(242,107,29,.6)}
-.rule .k{color:#3A2A1E}
-.rule h2{font-size:clamp(24px,2.3vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
-.steps{display:flex;flex-direction:column;gap:7px;list-style:none}
-.st{background:rgba(255,255,255,.22);border:1px solid rgba(0,0,0,.12);border-radius:14px;padding:8px 14px;display:flex;align-items:center;gap:12px;font-size:clamp(15px,1.35vw,18px);font-weight:800;letter-spacing:-.01em;line-height:1.2}
-.st b{flex:none;width:28px;height:28px;border-radius:50%;background:#0A0A0A;color:#fff;display:grid;place-items:center;font-size:13px}
-.st.stop b{background:#fff;color:var(--gold-soft)}
-.st.go{background:#fff;border-color:#fff}
-.st.go b{background:var(--gold);color:#fff}
-.lede{margin-top:8px;font-size:clamp(16px,1.45vw,19px);color:var(--muted)}
-.you{background:#0A0A0A;color:#fff;border-radius:16px;padding:10px 14px;font-size:14px;font-weight:600;line-height:1.35;margin-top:auto}
-.you b{color:#FFB37A}
-.also{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-top:10px}
-.also div{border:1px solid var(--line);border-radius:16px;padding:10px 14px;transition:border-color .3s ease}
-.also div:hover{border-color:var(--gold)}
-.also h3{font-size:15px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
-.also h3 span{color:var(--gold-soft)}
-.also p{font-size:13px;color:var(--muted);line-height:1.35;margin-top:2px}
-@media (max-width:900px){.fu,.also{grid-template-columns:1fr}}
-@media (max-width:560px){.st{padding:8px 12px}.steps{gap:6px}.navtag{font-size:11px}.pnav{font-size:14px}.tog button{padding:7px 12px;font-size:13px}.you{border-radius:16px}}
-@media (prefers-reduced-motion:reduce){.board,.rule,.tog button,.also div{transition:none}.board:hover,.rule:hover{transform:none}}
+.lede{margin-top:10px;font-size:clamp(16px,1.45vw,19px);color:var(--muted)}
+.lede a{color:var(--gold-soft);font-weight:600}
+.pts{list-style:none;display:flex;flex-direction:column;gap:clamp(8px,1.4vh,14px);padding-top:clamp(16px,2.4vh,26px);counter-reset:p}
+.pts li{counter-increment:p;display:flex;gap:14px;align-items:baseline;font-size:clamp(16px,1.4vw,19px);line-height:1.4;color:var(--muted)}
+.pts li::before{content:counter(p);flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center;transform:translateY(4px)}
+.pts b{color:var(--ink);font-weight:700}
+.note{margin-top:clamp(16px,2.4vh,26px);margin-bottom:8px;border:1.5px solid var(--gold);border-radius:var(--radius);padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px)}
+.note .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.note p{font-size:clamp(15px,1.3vw,17px);color:var(--muted);line-height:1.45;margin-top:6px}
+.note p b{color:var(--ink)}
+.note blockquote{margin-top:8px;font-size:clamp(15px,1.3vw,17px);font-weight:600;color:var(--ink);line-height:1.45;border-left:3px solid var(--gold);padding-left:14px}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}}
 </style>
 </head>
 <body>
@@ -76,88 +48,27 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <header class="wrap hero">
 <p class="eyebrow">Level 7 - Sales · Video 8</p>
-<h1>You can't force <span class="gold-t">a yes.</span></h1>
-<p class="lede">Show them how good you are. Then give them space, and be there when they're ready.</p>
+<h1>Follow up once. <span class="gold-t">Then let go.</span></h1>
+<p class="lede">A reminder of the lesson from <a href="/start/do-not-chase-your-proposals/">Do not chase your proposals</a>.</p>
 </header>
 
 <main class="wrap">
-<div class="fu">
-
-<section class="board" id="board" aria-label="Keep chasing versus chase once">
-<div class="bh"><h2 id="bt">Keep chasing.</h2>
-<div class="tog" role="group" aria-label="Choose an approach"><button type="button" id="bChase" aria-pressed="true">Keep chasing</button><button type="button" id="bOnce" aria-pressed="false">Chase once</button></div></div>
-<svg viewBox="0 0 640 262" role="img" id="chart" aria-labelledby="cdesc">
-<desc id="cdesc">Timeline over 12 weeks after the sales call.</desc>
-<g font-size="17" font-weight="700" fill="#6E6E73">
-<text x="0" y="56">Them</text><text x="0" y="132">Chasers</text><text x="0" y="208">New leads</text>
-</g>
-<g stroke="#E2E2E2" stroke-width="2"><line x1="112" y1="51" x2="624" y2="51"/><line x1="112" y1="127" x2="624" y2="127"/><line x1="112" y1="203" x2="624" y2="203"/></g>
-<g id="ticks" font-size="14" font-weight="600" fill="#8E8E93" text-anchor="middle"></g>
-<g id="lay"></g>
-</svg>
-<p class="verdict" id="verdict" aria-live="polite">More pressure. <span>Less trust. More sales resistance.</span></p>
-</section>
-
-<aside class="rule">
-<p class="k">My rule</p>
-<h2>One chaser. Then stop.</h2>
-<ol class="steps">
-<li class="st"><b>1</b>Send the proposal</li>
-<li class="st"><b>2</b>Give them 2 weeks</li>
-<li class="st"><b>3</b>One chaser to jog them</li>
-<li class="st stop"><b>4</b>Stop</li>
-<li class="st go"><b>5</b>Go create new leads</li>
+<ol class="pts">
+<li><span><b>Chasing kills leads.</b> It is more likely to lose you the lead than win it. If someone wants to buy from you, they'll buy from you anyway.</span></li>
+<li><span><b>Tell them you won't keep chasing.</b> It puts you in a stronger position because you're not desperate, and you start to see yourself as a valuable accountant, not someone needy.</span></li>
+<li><span><b>Spend your time on your inputs.</b> That's lead generation: more marketing, more networking events, more social posts, better ads. Not chasing people.</span></li>
+<li><span><b>Tie your emotions to your inputs, not to the yeses.</b> Don't tie them to things you can't control.</span></li>
+<li><span><b>They will come back.</b> Every client has deadlines: their year end, a return, a self assessment, or the accountant they don't like messing something up.</span></li>
 </ol>
-<p class="you">Chased, no reply. <b>8 months later:</b> "Hi Josh, sorry I never came back to you."</p>
-</aside>
 
-</div>
-<div class="also">
-<div><h3><span>Never:</span> "Just following up again"</h3><p>Pestering damages trust.</p></div>
-<div><h3><span>Fine:</span> a budget update to everyone</h3><p>A touch point, not a chaser.</p></div>
-<div><h3><span>Big client gone quiet?</span> Ask me</h3><p>Post it in the community.</p></div>
-</div>
+<section class="note" aria-label="Josh's one follow-up">
+<p class="k">Josh's one follow-up</p>
+<p>Follow up <b>once</b>, about two weeks after sending the proposal, and only for the ones you really care about. Anchor it to the start date they gave you on the call. Calling via WhatsApp is the best way to catch them.</p>
+<blockquote>"I know you said your ideal onboarding date was [date], which is six weeks away now. Just checking, is that something we're working towards?"</blockquote>
+</section>
 </main>
 
 <div class="wrap pnav"><a href="/start/objection-handling/" style="text-decoration:none">&larr; Objection handling</a><span></span></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Sales · Following up</div></footer>
-
-<script>
-(function(){
-var NS="http://www.w3.org/2000/svg",RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
-var $=function(id){return document.getElementById(id)};
-var lay=$("lay"),board=$("board"),timers=[];
-var X0=128,DX=40.5;function wx(w){return X0+w*DX}
-var Y1=51,Y2=127,Y3=203;
-function el(tag,at,txt){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;return e}
-(function(){var t=$("ticks");for(var w=0;w<=12;w+=2)t.appendChild(el("text",{x:wx(w),y:250},w===0?"Call":"Wk "+w))})();
-function pop(node,delay){node.style.opacity=RM?1:0;lay.appendChild(node);if(RM)return;timers.push(setTimeout(function(){node.style.transition="opacity .35s ease";node.style.opacity=1},delay))}
-function env(x,y,fill,stroke){var g=el("g",{transform:"translate("+x+","+y+")"});g.appendChild(el("rect",{x:-13,y:-10,width:26,height:20,rx:4,fill:fill,stroke:stroke,"stroke-width":2}));g.appendChild(el("path",{d:"M-13,-8 L0,3 L13,-8",fill:"none",stroke:stroke,"stroke-width":2,"stroke-linejoin":"round"}));return g}
-function call(){var g=el("g",{});g.appendChild(el("circle",{cx:wx(0),cy:Y1,r:11,fill:"#111"}));return g}
-function draw(mode){
- timers.forEach(clearTimeout);timers=[];lay.innerHTML="";
- var once=mode==="once";board.classList.toggle("once",once);
- $("bChase").setAttribute("aria-pressed",!once);$("bOnce").setAttribute("aria-pressed",once);
- $("bt").innerHTML=once?"Chase once. <span>Then create.</span>":"Keep chasing.";
- $("verdict").innerHTML=once?"Your time goes on <span>new leads.</span>":"More pressure. <span>Less trust. More sales resistance.</span>";
- $("cdesc").textContent=once?"After the call, wait 2 weeks and send one chaser, then stop. Every week after that goes on creating new leads, and the prospect comes back in their own time.":"After the call, a chaser goes out every week. The prospect goes quiet and no new leads get created.";
- lay.appendChild(call());
- if(!once){
-  var q=el("path",{d:"M"+(wx(0)+14)+","+Y1+" L"+wx(12)+","+Y1,stroke:"#AEAEB2","stroke-width":3,"stroke-dasharray":"4 8",fill:"none"});pop(q,0);
-  for(var w=1;w<=12;w++)pop(env(wx(w),Y2,"#fff","#8E8E93"),w*110);
-  pop(el("text",{x:wx(12),y:Y1-18,"text-anchor":"end","font-size":16,"font-weight":800,fill:"#6E6E73"},"Gone quiet"),1350);
-  pop(el("text",{x:wx(6),y:Y3+5,"text-anchor":"middle","font-size":17,"font-weight":800,fill:"#AEAEB2"},"No time left"),1450);
- }else{
-  pop(env(wx(2),Y2,"#F26B1D","#F26B1D"),150);
-  var s=el("g",{});s.appendChild(el("line",{x1:wx(2)+28,y1:Y2-18,x2:wx(2)+28,y2:Y2+18,stroke:"#111","stroke-width":3,"stroke-linecap":"round"}));s.appendChild(el("text",{x:wx(2)+40,y:Y2+5,"font-size":17,"font-weight":800,fill:"#111"},"Stop"));pop(s,450);
-  for(var i=3;i<=12;i++){pop(el("circle",{cx:wx(i),cy:Y3,r:10,fill:"#F26B1D"}),450+(i-2)*110)}
-  var r=el("g",{});r.appendChild(el("path",{d:"M"+wx(8)+","+Y1+" L"+(wx(12)+2)+","+Y1,stroke:"#F26B1D","stroke-width":3,fill:"none","stroke-linecap":"round"}));r.appendChild(el("path",{d:"M"+(wx(12)-6)+","+(Y1-7)+" L"+(wx(12)+4)+","+Y1+" L"+(wx(12)-6)+","+(Y1+7),stroke:"#F26B1D","stroke-width":3,fill:"none","stroke-linejoin":"round","stroke-linecap":"round"}));r.appendChild(el("text",{x:wx(12),y:Y1-18,"text-anchor":"end","font-size":16,"font-weight":800,fill:"#C2410C"},"Back when they're ready"));pop(r,1700);
- }
-}
-$("bChase").addEventListener("click",function(){draw("chase")});
-$("bOnce").addEventListener("click",function(){draw("once")});
-draw(location.hash==="#once"?"once":"chase");
-})();
-</script>
 </body>
 </html>
