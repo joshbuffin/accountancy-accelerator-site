@@ -93,7 +93,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <main class="wrap">
 <div class="board">
-<div class="bhead"><p class="k">My golden questions</p><button class="play" id="all" type="button">Plug both in</button></div>
+<div class="bhead"><p class="k">My golden questions</p><button class="play" id="all" type="button">Plug all in</button></div>
 
 <div class="row" id="r1">
 <button class="q" type="button" aria-pressed="false" aria-controls="s1"><span class="k">Golden question 1</span><h2>"What's your tax planning process with your current accountant? Do you have a pre year end call?"</h2><span class="ask">Ask it</span></button>
@@ -107,6 +107,36 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 <div class="sock" id="s2" aria-live="polite"><p class="k">Connects to</p><h3 class="qm">?</h3><h3 class="hid">One WhatsApp group.</h3><p class="hid sub">You, me and the team. A reply the same day or next day.</p></div>
 </div>
 
+<div class="row" id="r3">
+<button class="q" type="button" aria-pressed="false" aria-controls="s3"><span class="k">Golden question 3</span><h2>"How come you're asking me, and not your existing accountant?"</h2><span class="ask">Ask it</span></button>
+<div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
+<div class="sock" id="s3" aria-live="polite"><p class="k">Why it works</p><h3 class="qm">?</h3><h3 class="hid">When they ask you a question their accountant should be answering.</h3><p class="hid sub">It surfaces the pain in their own words.</p></div>
+</div>
+
+<div class="row" id="r4">
+<button class="q" type="button" aria-pressed="false" aria-controls="s4"><span class="k">Golden question 4</span><h2>"I appreciate you already have an accountant. How come you're on this call?"</h2><span class="ask">Ask it</span></button>
+<div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
+<div class="sock" id="s4" aria-live="polite"><p class="k">Why it works</p><h3 class="qm">?</h3><h3 class="hid">When they haven't told you why they reached out.</h3><p class="hid sub">Let them say it, in their own words.</p></div>
+</div>
+
+<div class="row" id="r5">
+<button class="q" type="button" aria-pressed="false" aria-controls="s5"><span class="k">Golden question 5</span><h2>"Earlier you said your accountant was slow to get back to you. Is it a few hours, or more like a week?"</h2><span class="ask">Ask it</span></button>
+<div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
+<div class="sock" id="s5" aria-live="polite"><p class="k">Why it works</p><h3 class="qm">?</h3><h3 class="hid">Sets up your response times.</h3><p class="hid sub">Same day or next day.</p></div>
+</div>
+
+<div class="row" id="r6">
+<button class="q" type="button" aria-pressed="false" aria-controls="s6"><span class="k">Golden question 6</span><h2>"I've never understood that. If you're paying a monthly fee, you'd assume it covers you for everything."</h2><span class="ask">Ask it</span></button>
+<div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
+<div class="sock" id="s6" aria-live="polite"><p class="k">Why it works</p><h3 class="qm">?</h3><h3 class="hid">When they feel billed for every minute.</h3><p class="hid sub">Get on their side, in a professional, friendly way.</p></div>
+</div>
+
+<div class="row" id="r11">
+<button class="q" type="button" aria-pressed="false" aria-controls="s11"><span class="k">Golden question 7</span><h2>"Earlier you said what you're really looking for is someone proactive. I'm happy to do the year end package, but if that's the big thing for you, I think the monthly package is the better fit."</h2><span class="ask">Ask it</span></button>
+<div class="cable" aria-hidden="true"><i class="wire"></i><i class="plug"></i></div>
+<div class="sock" id="s11" aria-live="polite"><p class="k">Why it works</p><h3 class="qm">?</h3><h3 class="hid">Use their own pain point as the upsell.</h3><p class="hid sub">Their words, your recommendation.</p></div>
+</div>
+
 <div class="when" aria-label="When to plug it in"><p class="k">When to plug it in</p><ol><li><b>1</b> Ask it in the first ten minutes</li><li><b>2</b> "That must be frustrating." Then move on</li><li><b>3</b> Plug it in when you explain how you work</li></ol></div>
 <div class="foot"><p class="give">They spot the gap. <span>You fill it.</span></p><p class="you">Add yours: your third connector</p></div>
 </div>
@@ -117,11 +147,11 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:var(--slate);font-s
 
 <script>
 (function(){
-var rows=[document.getElementById("r1"),document.getElementById("r2")],all=document.getElementById("all");
+var rows=Array.prototype.slice.call(document.querySelectorAll(".row")),all=document.getElementById("all");
 function set(r,on){r.classList.toggle("on",on);var b=r.querySelector(".q");b.setAttribute("aria-pressed",on?"true":"false");r.querySelector(".ask").textContent=on?"Connected":"Ask it"}
-function sync(){var n=rows.filter(function(r){return r.classList.contains("on")}).length;all.textContent=n===2?"Unplug":"Plug both in"}
+function sync(){var n=rows.filter(function(r){return r.classList.contains("on")}).length;all.textContent=n===rows.length?"Unplug":"Plug all in"}
 rows.forEach(function(r){r.querySelector(".q").addEventListener("click",function(){set(r,!r.classList.contains("on"));sync()})});
-all.addEventListener("click",function(){var on=all.textContent!=="Unplug";rows.forEach(function(r,i){if(on)setTimeout(function(){set(r,true)},i*350);else set(r,false)});all.textContent=on?"Unplug":"Plug both in"});
+all.addEventListener("click",function(){var on=all.textContent!=="Unplug";rows.forEach(function(r,i){if(on)setTimeout(function(){set(r,true)},i*350);else set(r,false)});all.textContent=on?"Unplug":"Plug all in"});
 })();
 </script>
 </body>
