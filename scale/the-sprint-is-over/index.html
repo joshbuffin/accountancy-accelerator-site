@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The sprint is over - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: The sprint is over. You've done the hard part.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:16px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+
+.hero{padding-top:clamp(20px,3.5vh,40px)}
+.hero h1{font-size:clamp(34px,4vw,54px);text-wrap:balance}
+.sub{font-size:clamp(16px,1.5vw,19px);font-weight:600;letter-spacing:-.01em;color:var(--slate);margin-top:8px}
+main{padding-bottom:clamp(8px,1.5vh,16px)}
+
+/* Mountain scene */
+.scene{max-width:980px;margin:clamp(6px,1.5vh,16px) auto 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
+.scene svg{display:block;width:100%;height:auto;overflow:visible}
+.scene text{font-family:'Inter',Arial,sans-serif}
+.lbl{font-size:13px;font-weight:700;fill:#555555;letter-spacing:-.01em}
+.lbl-main{font-size:15px;font-weight:800;fill:#C2410C}
+.far{fill:#F0F0F1}
+.mid{fill:#FDE6D5}
+.front{fill:#F9C9A6}
+.ridge{fill:none;stroke:#F26B1D;stroke-width:1;stroke-opacity:.45;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.ground{stroke:#E2E2E2;stroke-width:1}
+.trail{fill:none;stroke:#C2410C;stroke-width:3;stroke-linecap:round;stroke-dasharray:.1 7}
+.trail-mask{fill:none;stroke:#fff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.pole{stroke:#111;stroke-width:1.6;stroke-linecap:round}
+.flag{fill:#F26B1D}
+.dot{fill:#F26B1D}
+.tick{stroke:#C9C9CC;stroke-width:1}
+
+/* transitions (final state is the default) */
+.anim .layer{transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.anim .trail-mask{transition:stroke-dashoffset 2s cubic-bezier(.45,.05,.3,1) .7s}
+.anim .flagg{transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .25s;transition-delay:2.75s;transform-box:fill-box;transform-origin:50% 100%}
+.anim .lab{transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.anim.pre .layer{opacity:0;transform:translateY(34px)}
+.anim.pre .trail-mask{stroke-dashoffset:1}
+.anim.pre .flagg{opacity:0;transform:scale(.1)}
+.anim.pre .lab{opacity:0;transform:translateY(8px)}
+.trail-mask{stroke-dasharray:1;stroke-dashoffset:0}
+
+/* Points */
+.pts3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(12px,2.2vh,22px)}
+.pt{background:var(--card);border-radius:var(--radius);padding:16px 20px}
+.pt h3{font-size:clamp(16px,1.4vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.pt p{font-size:15px;font-weight:500;color:var(--muted);margin-top:4px;line-height:1.4}
+
+/* What's next */
+.nx-h{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-top:clamp(14px,2.6vh,26px)}
+.steps{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;margin-top:10px}
+.step{border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;display:flex;gap:14px;align-items:flex-start;height:100%}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:clamp(16px,1.4vw,19px);font-weight:800;letter-spacing:-.02em;line-height:1.25;padding-top:3px}
+.step p{font-size:14px;font-weight:500;color:var(--muted);margin-top:2px;line-height:1.4}
+.arr{color:var(--gold);font-size:22px;font-weight:700}
+.close{margin-top:clamp(14px,2.6vh,26px);font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.close span{color:var(--gold-soft)}
+
+@media (max-width:900px){.scene{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 90%,transparent 100%)}.scene svg{width:175%;max-width:none}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}
+.pts3{grid-template-columns:1fr}
+.steps{grid-template-columns:minmax(0,1fr);gap:6px}.arr{text-align:center;transform:rotate(90deg);line-height:1}
+.lbl-hide{display:none}.lbl-main{font-size:26px}}
+@media (prefers-reduced-motion:reduce){.anim *{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · The sprint is over</span></div></nav>
+
+<header class="wrap hero">
+<p class="eyebrow">Level 1 - Shift · Video 1</p>
+<h1>The sprint is over. <span class="gold-t">You've done the hard part.</span></h1>
+<p class="sub">There are a hundred other mountains to climb, and that is all part of the fun.</p>
+</header>
+
+<main class="wrap">
+<div class="scene" id="scene">
+<svg id="mtn" class="anim" viewBox="0 0 1000 285" role="img" aria-label="A dotted path climbs the first peak, marked with a flag labelled The sprint. Many more peaks rise behind it, including Lead generation, Hiring, and Systemise, operate, automate.">
+<script>(function(){var s=document.getElementById("mtn");if("IntersectionObserver" in window&&!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))s.setAttribute("class","anim pre")})();</script>
+<g class="layer" style="--d:3.1s">
+<path class="far" d="M0,260 L60,200 L110,225 L200,150 L260,190 L340,115 L420,170 L500,72 L580,150 L650,102 L740,170 L830,52 L910,140 L960,100 L1000,130 L1000,260 Z"/>
+<path class="ridge" d="M0,260 L60,200 L110,225 L200,150 L260,190 L340,115 L420,170 L500,72 L580,150 L650,102 L740,170 L830,52 L910,140 L960,100 L1000,130"/>
+</g>
+<g class="layer" style="--d:3.5s">
+<path class="mid" d="M200,260 L330,98 L430,205 L520,132 L600,212 L690,78 L790,205 L880,118 L1000,235 L1000,260 Z"/>
+<path class="ridge" d="M200,260 L330,98 L430,205 L520,132 L600,212 L690,78 L790,205 L880,118 L1000,235"/>
+<circle class="dot" cx="330" cy="98" r="3"/><circle class="dot" cx="520" cy="132" r="3"/><circle class="dot" cx="690" cy="78" r="3"/>
+</g>
+<line class="ground" x1="0" y1="260" x2="1000" y2="260"/>
+<g class="layer" style="--d:0s">
+<path class="front" d="M-10,260 L170,110 L350,260 Z"/>
+<path class="ridge" d="M-10,260 L170,110 L350,260"/>
+</g>
+<path id="trail" class="trail" d="M44,258 C70,246 86,236 100,226 C116,216 118,206 130,194 C142,182 140,172 152,158 C160,148 164,136 170,116"/>
+<mask id="tm" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="285"><path class="trail-mask" pathLength="1" d="M44,258 C70,246 86,236 100,226 C116,216 118,206 130,194 C142,182 140,172 152,158 C160,148 164,136 170,116"/></mask>
+<script>document.getElementById("trail").setAttribute("mask","url(#tm)");</script>
+<g class="flagg"><line class="pole" x1="170" y1="112" x2="170" y2="80"/><path class="flag" d="M170,80 L196,88 L170,97 Z"/></g>
+<text class="lbl lbl-main lab" style="--d:3.1s" x="170" y="64" text-anchor="middle">The sprint</text>
+<text class="lbl lbl-hide lab" style="--d:4s" x="330" y="82" text-anchor="middle">Lead generation</text>
+<text class="lbl lbl-hide lab" style="--d:4.3s" x="520" y="118" text-anchor="middle">Hiring</text>
+<text class="lbl lbl-hide lab" style="--d:4.6s" x="690" y="62" text-anchor="middle">Systemise, operate, automate</text>
+</svg>
+</div>
+
+<div class="pts3">
+<div class="pt"><h3>Choose your mountains</h3><p>You don't have to go to the top. We choose which mountains to climb.</p></div>
+<div class="pt"><h3>From survival mode to fun</h3><p>The sprint becomes enjoyable. Problems become fun challenges.</p></div>
+<div class="pt"><h3>Stay motivated</h3><p>That is what we need to do now.</p></div>
+</div>
+
+<p class="nx-h">What's next</p>
+<div class="steps">
+<div class="step"><span class="num">1</span><div><h3>Lead generation</h3><p>Until you're pre-overwhelmed.</p></div></div>
+<span class="arr" aria-hidden="true">&rarr;</span>
+<div class="step"><span class="num">2</span><div><h3>Hiring</h3><p>A new problem and a new skill to learn.</p></div></div>
+<span class="arr" aria-hidden="true">&rarr;</span>
+<div class="step"><span class="num">3</span><div><h3>Systemise, operate, automate</h3><p>Another level to go.</p></div></div>
+</div>
+
+<p class="close">Then do it again. <span>And again.</span></p>
+</main>
+
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · The sprint is over</div></footer>
+
+<script>
+(function(){var s=document.getElementById("mtn");if(!s.classList.contains("pre"))return;
+var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.remove("pre");o.disconnect()}},{threshold:.4});o.observe(s)})();
+</script>
+</body>
+</html>
