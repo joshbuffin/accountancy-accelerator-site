@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How to communicate fee increases to your clients - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 6 Pricing &amp; Proposals: Communicating fee increases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px 16px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc .hd{display:flex;align-items:center;gap:10px}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.nc h2{font-size:clamp(18px,1.6vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.nc li{position:relative;padding-left:16px;font-size:14px;color:var(--muted);line-height:1.4}
+.nc li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.nc li b{color:var(--ink)}
+.nc li a{color:var(--gold-soft);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chipc{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.ex{margin-top:14px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.ex .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.ex h2{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em}
+.ex p{font-size:15px;color:var(--muted);flex:1 1 200px}
+.ex p b{color:var(--ink)}
+.tr{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:14px 0 8px}
+.btn{padding:9px 20px!important}
+.btn{display:inline-block;font-size:15px;font-weight:700;color:#0A0A0A;background:var(--gold);border-radius:999px;padding:12px 24px;text-decoration:none;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px -16px rgba(242,107,29,.7)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.cap{font-size:12.5px;font-weight:600;color:var(--slate);margin-bottom:6px}
+.gsheet{border:1px solid #DADCE0;border-radius:6px;background:#fff;overflow:hidden;box-shadow:0 22px 44px -30px rgba(0,0,0,.4);font-family:Arial,'Inter',sans-serif;min-width:0}
+.gbar{display:flex;align-items:center;gap:10px;padding:6px 10px;background:#F9FBFD;border-bottom:1px solid #DADCE0;font-size:12px;color:#5F6368}
+.gbar .ico{width:16px;height:20px;background:#0F9D58;border-radius:2px;flex:none;position:relative}
+.gbar .ico::after{content:"";position:absolute;left:3px;right:3px;top:7px;bottom:4px;border:1.5px solid #fff;border-radius:1px}
+.gbar b{font-size:13px;font-weight:400;color:#202124}
+.scroll{overflow-x:auto;background:#fff}
+.gs{width:100%;border-collapse:collapse;table-layout:fixed;font-size:11px;color:#202124;background:#fff}
+.gs th,.gs td{border:1px solid #E1E3E6;height:22px;padding:0 5px;overflow:hidden;white-space:nowrap;text-align:left;font-weight:400}
+.gs th.h{background:#FDD9BF;color:#4A2308;font-weight:700;font-size:10.5px;line-height:1.2;height:34px;white-space:normal;vertical-align:middle}
+.gs th.rn{background:#F8F9FA;color:#5F6368;font-size:11px;text-align:center;padding:0}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;border-radius:10px;padding:1px 6px 1px 8px;line-height:16px}
+.chip.y{background:#FDD9BF;color:#4A2308}
+.chip.n{background:#EDEDED;color:#444}
+.chip i{width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;display:block}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:12px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.nc,.ex,.btn{transition:none}.nc:hover,.ex:hover,.btn:hover{transform:none}}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.gs{min-width:1040px}}
+@media (max-width:560px){.navtag{font-size:11px}.pnav{font-size:14px}.ex{padding:16px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Pricing &amp; Proposals · Communicating fee increases</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals</p>
+<h1>Raise your fees. <span class="gold-t">One client at a time.</span></h1>
+</div>
+</div>
+
+<p class="lab">Our fundamentals</p>
+<div class="cards">
+<div class="nc"><div class="hd"><span class="num">1</span><h2>Review</h2></div>
+<ul>
+<li>Download all your clients' fees into <b>Client Engager</b>. If they aren't there, add them as you do this.</li>
+<li>Compare them to your <a href="/scale/re-establishing-your-minimum-fees/">minimum fee structure</a> and look for key discrepancies.</li>
+<li>Use <b>Xero</b> to see how revenue or transactions have changed over the last year.</li>
+<li>Decide what each client's fee should be.</li>
+</ul></div>
+<div class="nc"><div class="hd"><span class="num">2</span><h2>Schedule</h2></div>
+<ul>
+<li>Decide when you'll increase each client's fees.</li>
+<li><b>Batches, not all in one go.</b></li>
+<li>Anyone whose fees increase gets <b>3 months' notice.</b></li>
+</ul></div>
+<div class="nc"><div class="hd"><span class="num">3</span><h2>Communicate</h2></div>
+<div class="chips"><span class="chipc">Email</span><span class="chipc">Phone call</span><span class="chipc">Voice note</span><span class="chipc">WhatsApp</span></div>
+<ul>
+<li><b>Justification?</b> Some need it, some don't. Unique to each client.</li>
+</ul></div>
+</div>
+
+<div class="ex">
+<span class="tag">While you're at it</span>
+<h2>Get everyone onto direct debit</h2>
+<p><b>One big task,</b> done together with the fee increases.</p>
+</div>
+
+<div class="tr">
+<p class="lab" style="margin:0">Track it</p>
+<a class="btn" href="https://docs.google.com/spreadsheets/d/1sLGROFmrgvLLdPfv3o5Lt6vwWUuR_XrTwFnBDSL8TmA/copy" target="_blank" rel="noopener">Make your copy</a>
+</div>
+<div>
+<p class="cap">AA Fee Increase Tracker (Google Sheet)</p>
+<div class="gsheet">
+<div class="gbar"><span class="ico" aria-hidden="true"></span><b>AA Fee Increase Tracker</b></div>
+<div class="scroll"><table class="gs"><colgroup><col style="width:32px"><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup><thead><tr><th class="rn"></th><th class="h">Client name</th><th class="h">Package</th><th class="h">Current monthly fee</th><th class="h">Minimum monthly fee</th><th class="h">What their fee should be</th><th class="h">Difference</th><th class="h">Fee increase needed?</th><th class="h">Increase date</th><th class="h">Communicate by</th><th class="h">How to communicate</th><th class="h">Justification needed?</th><th class="h">Price communicated?</th><th class="h">Direct debit signed?</th></tr></thead><tbody><tr><th class="rn">2</th><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="chip y">Yes<i></i></span></td><td></td><td></td><td><span class="chip n">Email<i></i></span></td><td><span class="chip y">Yes<i></i></span></td><td><span class="chip n">No<i></i></span></td><td><span class="chip y">Yes<i></i></span></td></tr><tr><th class="rn">3</th><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="chip n">No<i></i></span></td><td></td><td></td><td><span class="chip n">Phone call<i></i></span></td><td><span class="chip n">No<i></i></span></td><td><span class="chip n">No<i></i></span></td><td><span class="chip n">No<i></i></span></td></tr><tr><th class="rn">4</th><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="chip y">Yes<i></i></span></td><td></td><td></td><td><span class="chip n">WhatsApp<i></i></span></td><td><span class="chip y">Yes<i></i></span></td><td><span class="chip y">Yes<i></i></span></td><td><span class="chip n">No<i></i></span></td></tr></tbody></table></div>
+</div>
+</div>
+</main>
+<div class="wrap pnav"><a href="/scale/re-establishing-your-minimum-fees/" style="text-decoration:none;color:var(--gold-soft)">&larr; (Re)establishing your minimum fees</a><a href="/scale/put-your-fees-in-client-engager/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Put your fees in Client Engager &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Pricing &amp; Proposals · Communicating fee increases</div></footer>
+</body>
+</html>
