@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Identify as a higher level operator - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: Identify as a higher level operator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(16px,2.4vh,24px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.shift{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,40px);margin-top:clamp(16px,3vh,28px);flex-wrap:wrap}
+.sb{border-radius:var(--radius);padding:clamp(14px,2vh,20px) clamp(20px,3vw,36px);font-size:clamp(18px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;text-align:center}
+.from{background:var(--card);border:1px solid var(--line);color:#A1A1A6;transition:opacity .9s ease,filter .9s ease}
+.to{background:#FFF8F3;border:2px solid var(--gold);color:var(--gold-soft);transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s ease,box-shadow .8s ease}
+.arrow{width:clamp(60px,8vw,110px);height:auto;overflow:visible}
+.arrow path{stroke-dasharray:140;stroke-dashoffset:0;transition:stroke-dashoffset .8s ease}
+.js .shift:not(.in) .from{opacity:0;filter:blur(2px)}
+.js .shift:not(.in) .arrow path{stroke-dashoffset:140}
+.js .shift:not(.in) .to{opacity:0;transform:translateY(14px)}
+.shift.in .to{box-shadow:0 18px 40px -22px rgba(242,107,29,.55)}
+.js .shift .arrow path{transition-delay:.5s}.js .shift .to{transition-delay:1.2s}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 16px;display:flex;flex-direction:column;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.nc:focus-within,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc .n{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.nc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc label{font-size:14px;color:var(--muted);line-height:1.4;flex:1}
+.nc input{display:block;width:100%;font:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:0}
+.nc input::placeholder{color:#A1A1A6}
+.nc input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,107,29,.15)}
+.tools{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px}
+.copy{font:inherit;font-size:13px;font-weight:700;color:#fff;background:var(--ink);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.copy:hover{background:var(--gold-soft)}
+.toast{font-size:13px;color:var(--gold-soft);font-weight:600;min-width:60px}
+.ex{margin-top:clamp(14px,2.4vh,22px);background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 24px;text-align:center;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.ex span{color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.nc,.ex,.from,.to,.arrow path{transition:none!important}.nc:hover,.nc:focus-within,.ex:hover{transform:none}.js .shift:not(.in) .from,.js .shift:not(.in) .to{opacity:1;filter:none;transform:none}.js .shift:not(.in) .arrow path{stroke-dashoffset:0}}
+@media (max-width:1000px){.cards{grid-template-columns:1fr 1fr}.cards .nc:last-child{grid-column:1/-1}}
+@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.arrow{transform:rotate(90deg);width:60px;height:40px}.sb{width:100%}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · Identify as a higher level operator</span></div></nav>
+
+<main class="wrap page">
+<p class="eyebrow">Level 1 - Shift</p>
+<h1>Operate at the next level. <span class="gold-t">Opportunities follow.</span></h1>
+
+<div class="shift" id="shift">
+<div class="sb from">Stop thinking small</div>
+<svg class="arrow" viewBox="0 0 110 24" aria-hidden="true"><path d="M2 12h100M92 3l12 9-12 9" fill="none" stroke="#F26B1D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="sb to">Think like a £20k a month owner</div>
+</div>
+
+<p class="lab">Ask yourself how a £20k a month owner...</p>
+<div class="cards" id="cards"></div>
+<div class="tools"><button class="copy" id="copy" type="button">Copy my answers</button><span class="toast" id="toast" aria-live="polite"></span></div>
+
+<p class="ex">As soon as you start to do this, <span>you'll come across opportunities.</span></p>
+</main>
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · Identify as a higher level operator</div></footer>
+
+<script>
+(function(){
+document.documentElement.className+=" js";
+var Q=[["Operates","How do they operate?"],["Lives their life","How do they live their life?"],["Spends their time","Where do they spend their time?"],["Values themselves","How do they value themselves?"],["Values their time","How do they value their time?"]];
+var KEY="aa-scale-identify-operator",st={};
+try{st=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){st={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var box=document.getElementById("cards");
+Q.forEach(function(q,i){
+ var d=document.createElement("div");d.className="nc";
+ d.innerHTML='<span class="n">0'+(i+1)+'</span><h2>'+q[0]+'</h2><label for="q'+i+'">'+q[1]+'</label><input type="text" id="q'+i+'" placeholder="Your answer" autocomplete="off">';
+ var inp=d.querySelector("input");inp.value=st[i]||"";
+ inp.addEventListener("input",function(){st[i]=inp.value;save()});
+ box.appendChild(d);
+});
+var toast=document.getElementById("toast");
+function say(t){toast.textContent=t;setTimeout(function(){toast.textContent=""},2000)}
+document.getElementById("copy").addEventListener("click",function(){
+ var txt=Q.map(function(q){return q[1]+"\n"+(st[Q.indexOf(q)]||"")}).join("\n\n");
+ function fallback(){var t=document.createElement("textarea");t.value=txt;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");say("Copied")}catch(e){say("Select and copy")}document.body.removeChild(t)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){say("Copied")},fallback)}else fallback();
+});
+var s=document.getElementById("shift");
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add("in");io.disconnect()}},{threshold:.3});io.observe(s)}else s.classList.add("in");
+})();
+</script>
+</body>
+</html>
