@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Find the goose - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: Find the goose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.sub{margin-top:10px;font-size:clamp(16px,1.6vw,20px);color:var(--muted);font-weight:500}
+.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:clamp(14px,2vh,20px);align-items:stretch}
+.funnel{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center}
+.fn{border-radius:var(--radius);padding:12px 20px;display:flex;align-items:baseline;justify-content:center;gap:10px;text-align:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line)}
+.fn b{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.05}
+.fn span{font-size:15px;color:var(--muted);font-weight:500}
+.fn.a{width:100%}
+.fn.b{width:76%;background:#FFF8F3;border-color:#F8C9A8}
+.fn.b b{color:var(--gold-soft)}
+.fn.c{width:54%;background:var(--gold);border-color:var(--gold)}
+.fn.c b,.fn.c span{color:#fff}
+.fn.c span{font-weight:600}
+.arrow{width:14px;height:14px;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(45deg);margin:-6px 0 0}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px;display:flex;align-items:center;justify-content:center}
+.stage svg{width:100%;max-width:300px;height:auto;display:block}
+.egg{fill:var(--gold);opacity:0;animation:drop 3.6s cubic-bezier(.45,0,.9,.6) infinite}
+.egg.e2{animation-delay:1.2s}.egg.e3{animation-delay:2.4s}
+@keyframes drop{0%{transform:translateY(0);opacity:0}8%{opacity:1}70%{transform:translateY(96px);opacity:1}78%{transform:translateY(96px);opacity:0}100%{transform:translateY(96px);opacity:0}}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px 14px;display:flex;align-items:center;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc svg{width:48px;height:48px;flex:none;overflow:visible}
+.nc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.nc.send h2 span{color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.ex{margin-top:clamp(14px,2vh,18px);background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 24px;text-align:center;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em}
+.ex span{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.egg{animation:none;opacity:1}.egg.e1{transform:translateY(24px)}.egg.e2{transform:translateY(60px)}.egg.e3{transform:translateY(92px)}}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.ex{padding:16px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Lead generation · Find the goose</span></div></nav>
+
+<main class="wrap page">
+<p class="eyebrow">Level 5 - Lead generation</p>
+<h1>Find the goose that lays the <span class="gold-t">golden eggs.</span></h1>
+<p class="sub">A referral partner who sends you clients over and over again.</p>
+
+<div class="hero">
+<div class="funnel">
+<div class="fn a"><b>50+</b><span>people spoken to</span></div>
+<div class="arrow"></div>
+<div class="fn b"><b>4 or 5</b><span>key referral partners</span></div>
+<div class="arrow"></div>
+<div class="fn c"><b>2, 3, 4</b><span>The same people, over and over</span></div>
+</div>
+<div class="stage">
+<svg viewBox="0 0 300 230" role="img" aria-label="A referral partner repeatedly sending clients down to your firm, shown as golden eggs">
+<circle cx="150" cy="38" r="30" fill="#fff" stroke="#F26B1D" stroke-width="4"/>
+<circle cx="150" cy="30" r="8" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M134 54c2-9 8-13 16-13s14 4 16 13" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">Referral partner</text>
+<line x1="150" y1="104" x2="150" y2="170" stroke="#F4B48F" stroke-width="2" stroke-dasharray="3 6"/>
+<g transform="translate(150,106)"><ellipse class="egg e1" cx="0" cy="0" rx="8" ry="10"/><ellipse class="egg e2" cx="0" cy="0" rx="8" ry="10"/><ellipse class="egg e3" cx="0" cy="0" rx="8" ry="10"/></g>
+<rect x="85" y="186" width="130" height="38" rx="19" fill="#111"/>
+<text x="150" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Your firm</text>
+</svg>
+</div>
+</div>
+
+<p class="lab">What they send</p>
+<div class="two">
+<div class="nc send"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#F26B1D" stroke-width="4"/><path d="M15 25l7 7 12-14" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Good quality clients, <span>every single month</span></h2></div>
+<div class="nc send"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="none" stroke="#F26B1D" stroke-width="4"/><path d="M31 15c-2-2-5-3-8-2-4 1-5 5-4 9l1 4c1 3 0 5-3 7h18M16 26h12" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Thousands of pounds in <span>recurring work</span></h2></div>
+</div>
+
+<p class="lab">Where to look</p>
+<div class="three">
+<div class="nc"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#fff" stroke="#E2E2E2" stroke-width="2"/><path d="M30 14c-2-2-5-3-8-2-4 1-5 5-4 9l1 4c1 3 0 5-3 7h18M15 25h12" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>An IFA</h2></div>
+<div class="nc"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#fff" stroke="#E2E2E2" stroke-width="2"/><circle cx="24" cy="18" r="6" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 38c1-7 6-10 12-10s11 3 12 10" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>A mentor in a particular industry</h2></div>
+<div class="nc"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#fff" stroke="#E2E2E2" stroke-width="2"/><circle cx="18" cy="24" r="8" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="24" r="8" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>A personal connection</h2></div>
+</div>
+
+<p class="ex">Find these people and <span>winning clients gets easy.</span> Go and find them.</p>
+</main>
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Lead generation · Find the goose</div></footer>
+</body>
+</html>
