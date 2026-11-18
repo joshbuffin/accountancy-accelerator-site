@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimising for our perfect future client - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 4 Niche: Optimising for our perfect future client.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1240px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.hero{padding:clamp(18px,3vh,32px) 0 clamp(10px,1.6vh,18px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+
+.grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:20px;align-items:start}
+
+
+.lead{margin-top:8px;font-size:clamp(16px,1.5vw,19px);font-weight:600;color:var(--slate)}
+.col{display:flex;flex-direction:column;gap:12px}
+.shift{list-style:none;margin-top:6px}
+.shift li{padding:7px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.35}
+.shift li:first-child{border-top:0}
+.shift b{display:block;font-size:15px}
+.shift span{color:var(--muted);font-size:13.5px}
+.strip{grid-column:1/-1;margin-bottom:-4px}
+.have{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.strip .pill{background:var(--card);padding:8px 14px}
+.have .pill b{font-size:14px}
+.tr2{display:flex;flex-wrap:wrap;gap:4px 14px}
+
+/* Left: profile + where they are */
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease}
+.box:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.box h2{font-size:clamp(17px,1.6vw,21px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.profile{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.profile .lbl{color:#3A1A06}
+.profile h2{font-size:clamp(20px,2vw,26px)}
+.tr{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-top:7px}
+.tr i{flex:none;width:18px;height:18px;border-radius:50%;background:#0A0A0A;position:relative}
+.tr i::after{content:"";position:absolute;left:6px;top:3px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.profile .sub{margin-top:10px;font-size:14px;font-weight:700;color:#3A1A06}
+.arrow{display:flex;justify-content:center;padding:6px 0;color:var(--gold);font-size:22px;line-height:1}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+.pill b{display:block;font-size:14px}
+.pill span{display:block;font-size:12.5px;color:var(--slate);line-height:1.3;margin-top:2px}
+.plus{text-align:center;font-size:22px;font-weight:300;color:var(--slate);line-height:1;padding:4px 0}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;font-size:12.5px;font-weight:600;color:var(--gold-soft);text-decoration:none;border:1px solid var(--gold);border-radius:999px;padding:4px 10px;background:#fff}
+.chip:hover{background:#FFF8F3}
+
+/* Right: the task */
+.task{background:#fff;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;max-height:calc(100vh - 56px - 250px);min-height:0}
+.thead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.thead h2{font-size:clamp(19px,1.9vw,25px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.tools{display:flex;align-items:center;gap:10px}
+.prog{font-size:13px;font-weight:700;color:var(--slate);white-space:nowrap}
+.bar{width:90px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s ease}
+.copy{font:inherit;font-size:13px;font-weight:700;color:#fff;background:var(--ink);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.copy:hover{background:var(--gold-soft)}
+
+/* Worksheet: tabs + people/place tables */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tab{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 6px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .2s ease,background-color .2s ease}
+.tab .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.tab.done .n{background:var(--gold)}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:#FFF1E8;border-color:var(--gold);color:var(--gold-soft)}
+.pane{margin-top:10px;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.pane .tip{font-size:13px;font-weight:600;color:var(--gold-soft);margin-bottom:8px}
+.rows{overflow:auto;min-height:0;padding:2px;display:flex;flex-direction:column;gap:6px}
+.rw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) 30px;gap:6px;align-items:center}
+.rw.head{position:sticky;top:0;background:#fff;z-index:1;padding-bottom:2px}
+.rw.head span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);line-height:1.2}
+.cell{min-width:0}
+.cell .cl{display:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:3px}
+.cell input,.cell select,.show textarea{display:block;width:100%;font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 9px;min-width:0}
+.cell select{appearance:none;-webkit-appearance:none;cursor:pointer}
+.cell input::placeholder,.show textarea::placeholder{color:#A1A1A6}
+.cell input:focus,.cell select:focus,.show textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(242,107,29,.15)}
+.rw.filled .cell input,.rw.filled .cell select{background:#FFF8F3;border-color:#F6C9AE}
+.rdel{width:30px;height:30px;border:0;background:none;color:var(--slate);font-size:20px;line-height:1;border-radius:8px;cursor:pointer}
+.rdel:hover{color:var(--gold-soft);background:#FFF1E8}
+.addrow{align-self:flex-start;margin-top:8px;font:inherit;font-size:13.5px;font-weight:700;color:var(--gold-soft);background:none;border:1px dashed var(--gold);border-radius:10px;padding:6px 12px;cursor:pointer}
+.addrow:hover{background:#FFF8F3}
+.show{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.show label{display:block;font-size:14px;font-weight:700;margin-bottom:5px}
+.show textarea{min-height:110px;resize:vertical;line-height:1.4}
+.toast{font-size:13px;font-weight:700;color:var(--gold-soft);min-width:60px}
+
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
+
+@media (max-width:980px){
+ .grid{grid-template-columns:minmax(0,1fr)}
+ .grid>*{min-width:0}
+ .q textarea{min-height:56px}
+ .task{max-height:none}
+ .rows{overflow:visible}
+}
+@media (max-width:760px){.have{grid-template-columns:1fr}}
+@media (max-width:560px){
+ .rw.head{display:none}
+ .rw{grid-template-columns:1fr;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;position:relative}
+ .rw .cell input,.rw .cell select{background:#fff}
+ .cell .cl{display:block}
+ .rdel{position:absolute;top:4px;right:4px}
+ .show{grid-template-columns:1fr}
+ .pair{grid-template-columns:1fr}
+ .thead{flex-direction:column;align-items:flex-start}
+ .tools{flex-wrap:wrap;width:100%}
+ .copy{margin-left:auto}
+}
+@media (prefers-reduced-motion:reduce){.box,.tab,.bar i{transition:none}.box:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Niche · Optimising for our perfect future client</span></div></nav>
+
+<header class="hero"><div class="wrap">
+<p class="eyebrow">Level 4 - Niche</p>
+<h1>You're an established owner now. <span class="gold-t">Act like one.</span></h1>
+<p class="lead">Time to re-establish who you are.</p>
+</div></header>
+
+<main class="wrap grid">
+<div class="strip"><p class="lbl">You now have</p>
+<div class="have">
+<div class="pill"><b>More capacity</b><span>For networking events.</span></div>
+<div class="pill"><b>More flexibility in the day</b><span>To arrange dinners.</span></div>
+<div class="pill"><b>A wider network</b><span>And it keeps growing.</span></div>
+</div></div>
+<div class="col">
+<div class="box"><p class="lbl">The shift</p>
+<ul class="shift">
+<li><b>See yourself as one of them.</b><span>A founder too, not below them.</span></li>
+<li><b>Respect yourself more.</b><span>Recognise the type of person you are.</span></li>
+<li><b>Go after more established founders.</b><span>Bigger businesses.</span></li>
+<li><b>Be more selective.</b><span>Choose who you want to work with.</span></li>
+</ul></div>
+<div class="box profile"><p class="lbl">Same founder, more established</p>
+<h2>The founder, not the industry.</h2>
+<div class="tr2"><p class="tr"><i></i>Great communicator</p>
+<p class="tr"><i></i>Ambitious</p>
+<p class="tr"><i></i>Values good service</p></div>
+</div>
+</div>
+
+<section class="task" aria-labelledby="taskh">
+<div class="thead">
+<div><p class="lbl" style="margin-bottom:2px">Your task</p><h2 id="taskh">Where can you get access to more established founders?</h2></div>
+<div class="tools"><span class="prog" id="prog">0 of 4 done</span><span class="bar" aria-hidden="true"><i id="bar"></i></span><span class="toast" id="toast" aria-live="polite"></span><button class="copy" id="copy" type="button">Copy my answers</button></div>
+</div>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="pane" id="pane" role="tabpanel"></div>
+</section>
+</main>
+
+<div class="wrap pnav"><a href="/scale/finding-the-opportunities-within-niches/" style="text-decoration:none">&larr; Finding the opportunities within niches</a><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Niche · Optimising for our perfect future client</div></footer>
+
+<script>
+(function(){
+var S=[
+ {k:"network",t:"Your wider network",add:"+ Add a person",tip:"Your network is getting wider. Who in it is a more established founder?",
+  c:["Who","What they do","Where they go","How you'll reach them"],
+  ph:["Name","Their business","Events, rooms, dinners","Your first step"]},
+ {k:"events",t:"Networking events",add:"+ Add an event",tip:"You have more capacity now. Which events will you go to?",
+  c:["Event","Who goes","When you'll go","Who you'll aim to meet"],
+  ph:["Event name","Established founders, bigger businesses","Date","Name or type of founder"]},
+ {k:"dinners",t:"Dinners",add:"+ Add a dinner",tip:"You have more flexibility in the day. Arrange dinners.",
+  c:["Who to invite","Their business","When and where","Who else you'll bring"],
+  ph:["Name","Their business","Date and place","Someone from your wider network"]},
+ {k:"show",t:"How you'll show up",tip:"You're a founder too. How will you introduce yourself now?",show:1}
+];
+var KEY="aa-scale-pfc-access-v1",st;
+function blank(){return["","","",""]}
+function five(){return[blank(),blank(),blank(),blank(),blank()]}
+function fresh(){var o={};S.forEach(function(x){o[x.k]=x.show?{intro:"",why:""}:five()});return o}
+try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!st||typeof st!=="object")st=fresh();
+S.forEach(function(x){if(x.show){if(!st.show||typeof st.show!=="object")st.show={intro:"",why:""}}else{if(!Array.isArray(st[x.k]))st[x.k]=five();while(st[x.k].length<5)st[x.k].push(blank())}});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+var tabs=document.getElementById("tabs"),pane=document.getElementById("pane"),prog=document.getElementById("prog"),bar=document.getElementById("bar"),toast=document.getElementById("toast"),cur=0;
+function filledRow(r){return r.some(function(v){return v&&String(v).trim()})}
+function done(x){return x.show?!!((st.show.intro||"").trim()||(st.show.why||"").trim()):st[x.k].some(filledRow)}
+function update(){
+ var n=0;S.forEach(function(x,i){var d=done(x);if(d)n++;tabs.children[i].classList.toggle("done",d)});
+ prog.textContent=n+" of "+S.length+" done";bar.style.width=(n/S.length*100)+"%";save();
+}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
+S.forEach(function(x,i){
+ var b=el("button","tab");b.type="button";b.setAttribute("role","tab");b.id="tab-"+x.k;
+ var n=el("span","n",String(i+1));b.appendChild(n);b.appendChild(el("span",null,x.t));
+ b.addEventListener("click",function(){open(i)});
+ b.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();var j=(i+(e.key==="ArrowRight"?1:-1)+S.length)%S.length;open(j);tabs.children[j].focus()}});
+ tabs.appendChild(b);
+});
+function open(i){
+ cur=i;var x=S[i];
+ for(var j=0;j<tabs.children.length;j++){tabs.children[j].setAttribute("aria-selected",j===i?"true":"false");tabs.children[j].tabIndex=j===i?0:-1}
+ pane.setAttribute("aria-labelledby","tab-"+x.k);pane.innerHTML="";
+ pane.appendChild(el("p","tip",x.tip));
+ if(x.show){
+  var g=el("div","show");
+  [["intro","How I'll introduce myself","Who you are as an established owner."],["why","My why","Why you do what you do."]].forEach(function(f){
+   var w=el("div");var id="show-"+f[0];var l=el("label",null,f[1]);l.htmlFor=id;
+   var ta=el("textarea");ta.id=id;ta.placeholder=f[2];ta.value=st.show[f[0]]||"";
+   ta.addEventListener("input",function(){st.show[f[0]]=ta.value;update()});
+   w.appendChild(l);w.appendChild(ta);g.appendChild(w)});
+  pane.appendChild(g);update();return;
+ }
+ var rows=el("div","rows");
+ var hd=el("div","rw head");x.c.forEach(function(c){hd.appendChild(el("span",null,c))});hd.appendChild(el("span"));rows.appendChild(hd);
+ st[x.k].forEach(function(r,ri){rows.appendChild(row(x,r,ri))});
+ pane.appendChild(rows);
+ var add=el("button","addrow",x.add);add.type="button";
+ add.addEventListener("click",function(){st[x.k].push(blank());open(cur);var rs=pane.querySelectorAll(".rw:not(.head)");var last=rs[rs.length-1];if(last){last.querySelector("input,select").focus();last.scrollIntoView({block:"nearest"})}});
+ pane.appendChild(add);update();
+}
+function row(x,r,ri){
+ var rw=el("div","rw");if(filledRow(r))rw.classList.add("filled");
+ x.c.forEach(function(c,ci){
+  var cell=el("div","cell");var cl=el("span","cl",c);cell.appendChild(cl);
+  var inp;
+  if(x.sel&&ci===1){inp=el("select");[["","Physical or online?"],["Physical","Physical"],["Online","Online"]].forEach(function(o){var op=el("option",null,o[1]);op.value=o[0];inp.appendChild(op)});inp.value=r[ci]||"";inp.addEventListener("change",ch)}
+  else{inp=el("input");inp.type="text";inp.value=r[ci]||"";if(x.ph[ci])inp.placeholder=x.ph[ci];inp.addEventListener("input",ch)}
+  inp.setAttribute("aria-label",c+", row "+(ri+1));
+  function ch(){r[ci]=inp.value;rw.classList.toggle("filled",filledRow(r));update()}
+  cell.appendChild(inp);rw.appendChild(cell);
+ });
+ var d=el("button","rdel");d.type="button";d.innerHTML="&times;";d.setAttribute("aria-label","Remove row "+(ri+1));
+ d.addEventListener("click",function(){st[x.k].splice(ri,1);if(!st[x.k].length)st[x.k].push(blank());open(cur)});
+ rw.appendChild(d);return rw;
+}
+open(0);
+document.getElementById("copy").addEventListener("click",function(){
+ var out=["Where can I get access to more established founders?",""];
+ S.forEach(function(x,i){
+  out.push((i+1)+". "+x.t);
+  if(x.show){out.push("How I'll introduce myself: "+((st.show.intro||"").trim()||"-"));out.push("My why: "+((st.show.why||"").trim()||"-"))}
+  else{var rs=st[x.k].filter(filledRow);if(!rs.length)out.push("-");rs.forEach(function(r){out.push(x.c.map(function(c,ci){return c+": "+((r[ci]||"").trim()||"-")}).join(" | "))})}
+  out.push("");
+ });
+ var txt=out.join("\n").trim();
+ function ok(){toast.textContent="Copied";setTimeout(function(){toast.textContent=""},1800)}
+ function fallback(){var t=document.createElement("textarea");t.value=txt;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(e){toast.textContent="Select and copy"}document.body.removeChild(t)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback)}else{fallback()}
+});
+})();
+</script>
+</body>
+</html>
