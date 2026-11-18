@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>You are the sum of the 5 people you spend the most time with - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: You are the sum of the 5 people you spend the most time with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:none}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(32px,3.6vw,50px);max-width:760px}
+.eyebrow{margin-bottom:14px}
+.lab{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.mid{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:center;margin-top:clamp(12px,2vh,20px)}
+#viz{width:100%;height:auto;max-height:300px;overflow:visible}
+#viz circle{fill:#fff;stroke:#111;stroke-width:3}
+#viz .you circle{fill:var(--gold);stroke:var(--gold)}
+#viz text{font-family:'Inter',Arial,sans-serif;font-weight:700;font-size:15px;fill:#111}
+#viz .you text{fill:#fff;font-size:20px}
+#viz .ln{stroke:var(--gold);stroke-width:3;stroke-linecap:round}
+#viz.anim .pc,#viz.anim .you{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6)}
+#viz.anim .ln{stroke-dasharray:100;stroke-dashoffset:100}
+#viz.go .pc,#viz.go .you{opacity:1;transform:scale(1);transition:opacity .6s ease var(--d,0s),transform .6s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+#viz.go .ln{stroke-dashoffset:0;transition:stroke-dashoffset .7s ease var(--d)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.nc p{font-size:14px;color:var(--muted);line-height:1.45}
+.nc p b{color:var(--ink)}
+.ex{margin-top:14px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.ex .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.ex h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
+.ex p{font-size:15px;color:var(--muted);flex:1 1 320px}
+.ex p b{color:var(--ink)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{text-wrap:balance;margin-top:clamp(12px,2vh,18px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.nc,.ex{transition:none}.nc:hover,.ex:hover{transform:none}#viz *{transition:none!important}}
+@media (max-width:900px){.mid{grid-template-columns:1fr}#viz{max-width:260px;margin:0 auto;display:block}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.ex{padding:16px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · The 5 people you spend time with</span></div></nav>
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 1 - Shift</p>
+<h1>You are the sum of the <span class="gold-t">5 people</span> you spend the most time with.</h1>
+</div>
+<p class="take">So choose them. <span>And choose where you spend your time.</span></p>
+</div>
+
+<div class="mid">
+<svg id="viz" viewBox="0 0 300 300" role="img" aria-label="You at the centre, surrounded by the 5 people you spend the most time with"><line class="ln" style="--d:1.2s" x1="150.0" y1="74.0" x2="150.0" y2="110.0"/><line class="ln" style="--d:1.3499999999999999s" x1="222.3" y1="126.5" x2="188.0" y2="137.6"/><line class="ln" style="--d:1.5s" x1="194.7" y1="211.5" x2="173.5" y2="182.4"/><line class="ln" style="--d:1.65s" x1="105.3" y1="211.5" x2="126.5" y2="182.4"/><line class="ln" style="--d:1.7999999999999998s" x1="77.7" y1="126.5" x2="112.0" y2="137.6"/><g class="pc" style="--d:0.1s"><circle cx="150.0" cy="50.0" r="24"/><text x="150.0" y="55.0" text-anchor="middle">1</text></g><g class="pc" style="--d:0.25s"><circle cx="245.1" cy="119.1" r="24"/><text x="245.1" y="124.1" text-anchor="middle">2</text></g><g class="pc" style="--d:0.4s"><circle cx="208.8" cy="230.9" r="24"/><text x="208.8" y="235.9" text-anchor="middle">3</text></g><g class="pc" style="--d:0.5499999999999999s"><circle cx="91.2" cy="230.9" r="24"/><text x="91.2" y="235.9" text-anchor="middle">4</text></g><g class="pc" style="--d:0.7s"><circle cx="54.9" cy="119.1" r="24"/><text x="54.9" y="124.1" text-anchor="middle">5</text></g><g class="you"><circle cx="150" cy="150" r="40"/><text x="150" y="156" text-anchor="middle">You</text></g></svg>
+<div>
+<p class="lab">Upgrade your rooms</p>
+<div class="cards"><div class="nc"><h2>Location</h2><p>If I go to Dubai, I win way more work. Entrepreneurs there all want to work together. My local village is more closed minded. Not everyone can move to Dubai.</p></div><div class="nc"><h2>Your coffee</h2><p>Is this cafe the best one from a business perspective? <b>Drive the extra five minutes</b> to the nice part of town and have the conversation there.</p></div><div class="nc"><h2>Your gym</h2><p>You might not afford Soho House. <b>Can you afford David Lloyd rather than PureGym?</b></p></div><div class="nc"><h2>Your events</h2><p>Look at the networking events you go to. <b>Choose the rooms</b> where the best entrepreneurs are.</p></div></div>
+</div>
+</div>
+
+<div class="ex">
+<span class="tag">In the room</span>
+<h2>Never sell</h2>
+<p>When I meet someone at an event, I only want them to <b>like me, trust me, and know a little about what I do.</b> I'm never trying to sell.</p>
+</div>
+
+<p class="close">For the first three months, nothing happened. Four years on, people come to me constantly. <span>It compounds.</span></p>
+</main>
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · The 5 people you spend time with</div></footer>
+<script>
+(function(){
+var v=document.getElementById("viz");
+if(window.matchMedia("(prefers-reduced-motion:reduce)").matches||!("IntersectionObserver" in window))return;
+v.classList.add("anim");
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){v.classList.add("go");io.disconnect()}},{threshold:.3});
+io.observe(v);
+})();
+</script>
+</body>
+</html>
