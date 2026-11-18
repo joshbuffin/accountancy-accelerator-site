@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>My hiring shortcut - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 9 Staffing: My hiring shortcut.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.maths{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.maths:hover,.opt:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.row{display:grid;grid-template-columns:230px 1fr 110px;align-items:center;gap:16px}
+.row+.row{margin-top:16px}
+.row h2{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.row small{display:block;font-size:13px;font-weight:400;color:var(--muted);margin-top:2px}
+.track{display:flex;height:40px;width:100%}
+.seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.seg span{opacity:0;transition:opacity .4s ease .8s}
+.in .seg{transform:scaleX(1)}.in .seg span{opacity:1}
+.seg.i{background:#111;border-radius:8px 0 0 8px}.seg.p{background:#6E6E73}.seg.p:last-child{border-radius:0 8px 8px 0}
+.seg.f{background:var(--gold);border-radius:8px}
+.seg+.seg{margin-left:2px}
+.tot{white-space:nowrap;font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:-.02em;text-align:right}
+.tot.o{color:var(--gold-soft)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opt{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;display:flex;flex-direction:column;gap:6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.opt.hi{background:#FFF8F3;border:2px solid var(--gold)}
+.opt .tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.opt.hi .tag{color:#fff;background:var(--gold);border-color:var(--gold)}
+.opt h2{font-size:clamp(17px,1.6vw,20px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.opt p{font-size:15px;color:var(--muted);line-height:1.4}
+.opt p b{color:var(--ink)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(14px,2vh,20px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+@media (prefers-reduced-motion:reduce){.maths,.opt{transition:none}.maths:hover,.opt:hover{transform:none}.seg,.seg span{transition:none;transform:scaleX(1);opacity:1}}
+@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.row{grid-template-columns:1fr auto;gap:8px 12px}.row .track{grid-column:1/-1;order:3}.opts{grid-template-columns:1fr}.maths{padding:16px}.seg{font-size:11px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Hiring within the UK · My hiring shortcut</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 9 - Staffing · Hiring within the UK</p>
+<h1>Filter before <span class="gold-t">the full interview.</span></h1>
+</div>
+<p class="take">I usually know <span>within 2 minutes.</span></p>
+</div>
+
+<p class="lab">The time maths</p>
+<div class="maths" id="maths">
+<div class="row">
+<h2>Full interview, two of us<small>45 + 45 interviewing, 15 + 15 prep</small></h2>
+<div class="track" style="max-width:100%">
+<div class="seg i" style="width:37.5%"><span>45 min</span></div>
+<div class="seg i" style="width:37.5%;border-radius:0"><span>45 min</span></div>
+<div class="seg p" style="width:12.5%"><span>15</span></div>
+<div class="seg p" style="width:12.5%"><span>15</span></div>
+</div>
+<div class="tot">2 hours</div>
+</div>
+<div class="row">
+<h2>10-minute video call first<small>Saves you so much time</small></h2>
+<div class="track"><div class="seg f" style="width:8.33%;min-width:44px"><span>10</span></div></div>
+<div class="tot o">10 min</div>
+</div>
+</div>
+
+<p class="lab">Two ways to filter</p>
+<div class="opts">
+<div class="opt">
+<span class="tag">Option 1</span>
+<h2>A 1-minute video to camera</h2>
+<p>Even better, <b>but videos can add friction</b> when it comes to getting applicants.</p>
+</div>
+<div class="opt hi">
+<span class="tag">Option 2 · The game changer</span>
+<h2>A 10-minute video call</h2>
+<p>Just have a discussion about <b>literally anything.</b></p>
+</div>
+</div>
+
+<p class="close">Only the right people get <span>the 45 minutes.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/what-to-look-for-in-a-candidate/" style="text-decoration:none;color:var(--gold-soft)">&larr; What to look for in a candidate</a><span></span></div>
+<footer><div class="wrap">Scale · Hiring within the UK · My hiring shortcut</div></footer>
+
+<script>
+(function(){
+var m=document.getElementById("maths");
+function go(){m.classList.add("in")}
+if(!("IntersectionObserver" in window)){go();return}
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){go();io.disconnect()}},{threshold:.3});
+io.observe(m);
+})();
+</script>
+</body>
+</html>
