@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimising for views - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: Optimising for views.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+
+/* One-page layout */
+.page{padding:clamp(16px,2.2vw,24px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:12px}
+.lab{margin:clamp(12px,1.8vh,16px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--slate)}
+.st b{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:13px;flex:none}
+.st.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.st.on b{background:#fff;color:var(--gold-soft);border-color:#fff}
+.flow{display:flex;align-items:stretch;gap:10px}
+.script{flex:0 0 150px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:700;font-size:15px;line-height:1.25}
+.script small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-top:4px}
+.arrow{align-self:center;flex:none}
+.settings{flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cards{display:grid;gap:14px}
+.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc svg{width:44px;height:auto;overflow:visible}
+.nc h2{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc p{font-size:14px;color:var(--muted);line-height:1.4}
+.set{padding:10px 12px}
+.set h2{font-size:15px}
+.ex{margin-top:12px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.ex .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.ex h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
+.ex p{font-size:15px;color:var(--muted);flex:1 1 320px}
+.ex p b{color:var(--ink)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(10px,1.6vh,16px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .nc.rv.in:hover,.js .ex.rv.in:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.nc,.ex{transition:none}.nc:hover,.ex:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}}
+@media (max-width:900px){.cards.four,.ladder{grid-template-columns:1fr 1fr;gap:10px}.settings{grid-template-columns:1fr 1fr}.flow{flex-direction:column}.arrow{transform:rotate(90deg)}.script{flex:none;padding:14px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:480px){.st{font-size:12px;padding:8px 10px;gap:6px}.nc{padding:14px 10px}.nc h2{font-size:15px}.nc p{font-size:13px}.ex{padding:16px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · Optimising for views</span></div></nav>
+<main class="wrap page">
+<div class="top"><div><p class="eyebrow">Level 5 - Lead generation · Paid ads</p><h1>Stage 1. Get leads <span class="gold-t">through the door.</span></h1></div><p class="take">Don't over-engineer it. <span>Just get views and leads coming in.</span></p></div>
+<p class="lab">There is always a bottleneck</p><div class="ladder"><div class="st rv on"><b>1</b>Not enough leads</div><div class="st rv"><b>2</b>Leads not good enough</div><div class="st rv"><b>3</b>Leads don't show up</div><div class="st rv"><b>4</b>They show but don't buy</div></div>
+<p class="lab">Meta wants variety</p><div class="flow rv"><div class="script">One script<small>Same words</small></div><svg class="arrow" width="34" height="20" viewBox="0 0 34 20" aria-hidden="true"><path d="M2 10h28M22 3l8 7-8 7" fill="none" stroke="#F26B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="settings"><div class="nc set"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="24" y="30" width="52" height="40" rx="5" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 70v8M62 70v8M32 78h36" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Professional setting</h2></div><div class="nc set"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="52" cy="26" r="8" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M52 36v24M52 44l-14 10M52 44l14 8M52 60l-12 22M52 60l14 22" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Walking down the street</h2></div><div class="nc set"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 62l8-20h44l8 20v12H20z" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="74" r="6" fill="#fff" stroke="#111" stroke-width="5"/><circle cx="66" cy="74" r="6" fill="#fff" stroke="#111" stroke-width="5"/></svg><h2>In the car</h2></div><div class="nc set"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="20" y="24" width="60" height="44" rx="4" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 54l12-14 10 8 14-14" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 80h28" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>At a whiteboard</h2></div></div></div>
+<p class="lab">Targeting and testing</p><div class="cards four"><div class="nc rv"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="30" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="16" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="3" fill="#F26B1D"/></svg><h2>Keep targeting broad</h2><p>Give Meta as much data as you can. Think entrepreneurship and business owners.</p></div><div class="nc rv"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M24 74V46M42 74V30M60 74V54M78 74V38" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 78h64" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Age and gender</h2><p>Start with a view, such as 25 to 45. Then let your own data decide.</p></div><div class="nc rv"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 78C26 60 22 44 32 34c8-8 16-4 18 4 2-8 10-12 18-4 10 10 6 26-18 44z" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 78C26 60 22 44 32 34" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Retarget warm people</h2><p>Aim ads at people who liked, shared, followed or commented. Warmer leads are cheaper and easier to close.</p></div><div class="nc rv"><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="20" y="30" width="26" height="40" rx="4" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="54" y="30" width="26" height="40" rx="4" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 42l8 8-8 8z" stroke="#F26B1D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Static vs video</h2><p>Test your best video as a static. Like for like.</p></div></div>
+<div class="ex rv"><span class="tag">Watch out</span><h2>Good views only</h2><p><b>Quality beats vanity.</b> Views from random non-followers can train the algorithm on the wrong people, so be careful with trial reels.</p></div>
+<p class="close">Make every ad <span>as different as you can.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/ad-strategy/" style="text-decoration:none;color:var(--gold-soft)">&larr; The ad strategy</a><a href="/scale/improve-your-show-rate/" style="text-decoration:none;color:var(--gold-soft);text-align:right">How to improve your show rate &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Paid ads · Optimising for views</div></footer>
+<script>
+(function(){
+var d=document.documentElement,els=document.querySelectorAll(".rv");
+if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion:reduce)").matches){return}
+d.classList.add("js");
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+els.forEach(function(el,i){el.style.transitionDelay=(i%4)*0.08+"s";io.observe(el)});
+})();
+</script>
+</body>
+</html>

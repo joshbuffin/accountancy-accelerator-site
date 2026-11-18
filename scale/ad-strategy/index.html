@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The strategy - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: The ad strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(16px,2.2vw,24px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:420px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(32px,3.8vw,50px)}
+.eyebrow{margin-bottom:12px}
+.lab{margin:clamp(12px,1.8vh,16px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.s1{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.s1:hover,.card:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.s1 h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
+.s1 p{font-size:15px;color:var(--muted);flex:1 1 320px}
+.s1 p b{color:var(--ink)}
+.stairs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end}
+.stair{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px 14px;display:flex;flex-direction:column;gap:6px;border-bottom:5px solid var(--gold);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.stair:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.stair:nth-child(1){min-height:104px}.stair:nth-child(2){min-height:140px}.stair:nth-child(3){min-height:176px}.stair:nth-child(4){min-height:212px}
+.stair .n{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.stair h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.stair p{font-size:14px;color:var(--muted);line-height:1.4}
+.stair .lk{margin-top:auto;font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:2px}
+.arrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);text-align:center;margin:8px 0 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;display:flex;flex-direction:column;gap:4px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card h3{font-size:clamp(15px,1.4vw,17px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.card h3 span{color:var(--gold-soft)}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.4}
+.split{display:flex;height:10px;border-radius:999px;overflow:hidden;margin-top:4px;background:var(--line)}
+.split i{display:block;height:100%}
+.split .a{width:85%;background:var(--gold)}.split .b{width:15%;background:#111}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(10px,1.6vh,16px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .stair.rv.in:hover,.js .s1.rv.in:hover,.js .card.rv.in:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.s1,.stair,.card{transition:none}.s1:hover,.stair:hover,.card:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}}
+@media (max-width:900px){.stairs{grid-template-columns:1fr 1fr;align-items:stretch}.stair:nth-child(n){min-height:0}.cards{grid-template-columns:1fr 1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:560px){.stairs,.cards{grid-template-columns:1fr}.s1{padding:16px}.take{max-width:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · The ad strategy</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
+<h1>Always a bottleneck. <span class="gold-t">Fix one at a time.</span></h1>
+</div>
+<p class="take">Video content, <span>built to get calls booked.</span></p>
+</div>
+
+<p class="lab">Stage 1</p>
+<div class="s1 rv">
+<span class="tag">Start here</span>
+<h2>Get leads through the door</h2>
+<p>Just <b>optimise for views and getting leads in.</b> Do not over-engineer it. Tweak over time.</p>
+</div>
+
+<p class="lab">Then fix the bottlenecks, one at a time</p>
+<div class="stairs">
+<div class="stair rv" style="transition-delay:.05s"><span class="n">1</span><h3>Not enough leads</h3><p>Get more eyes on the ad.</p><span class="lk"><a href="/scale/optimising-for-views/" style="text-decoration:none;color:var(--gold-soft)">Optimising for views &rarr;</a></span></div>
+<div class="stair rv" style="transition-delay:.2s"><span class="n">2</span><h3>Leads not good enough</h3><p>The right people, not just more people.</p><span class="lk"><a href="/scale/higher-quality-clients/" style="text-decoration:none;color:var(--gold-soft)">Higher quality clients &rarr;</a></span></div>
+<div class="stair rv" style="transition-delay:.35s"><span class="n">3</span><h3>Leads do not show</h3><p>A no-show costs you twice.</p><span class="lk"><a href="/scale/improve-your-show-rate/" style="text-decoration:none;color:var(--gold-soft)">Improve your show rate &rarr;</a></span></div>
+<div class="stair rv" style="transition-delay:.5s"><span class="n">4</span><h3>They show but do not buy</h3><p>Filter for what they actually want.</p><span class="lk"><a href="/scale/high-intent-buyers/" style="text-decoration:none;color:var(--gold-soft)">High intent buyers &rarr;</a><a href="/scale/qualifying-prospects/" style="text-decoration:none;color:var(--gold-soft)">Qualifying prospects &rarr;</a></span></div>
+</div>
+
+<p class="lab">The rules of the game</p>
+<div class="cards">
+<div class="card rv"><h3>Cost per lead is a <span>vanity metric</span></h3><p>Track cost per call showed and cost per client.</p></div>
+<div class="card rv" style="transition-delay:.08s"><h3>Test <span>one thing</span> at a time</h3><p>Do not decide too early. £100 per variation.</p></div>
+<div class="card rv" style="transition-delay:.16s"><h3>Go in with a <span>hypothesis</span></h3><p>Leave it alone while it runs. Write down what you learned.</p></div>
+<div class="card rv"><h3>Friction: <span>low, then higher</span></h3><p>Low at the start. Add more as you get busier.</p></div>
+<div class="card rv" style="transition-delay:.08s"><h3>Track every lead <span>to its ad</span></h3><p>Google Sheet first. GoHighLevel later.</p></div>
+<div class="card rv" style="transition-delay:.16s"><h3><span>85%</span> proven, <span>15%</span> experiments</h3><p>Most budget on the proven topic.</p><div class="split" aria-hidden="true"><i class="a"></i><i class="b"></i></div></div>
+</div>
+
+<p class="close">Fix one bottleneck. <span>The next one shows up.</span></p>
+</main>
+<div class="wrap pnav"><span></span><a href="/scale/optimising-for-views/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Optimising for views &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Paid ads · The ad strategy</div></footer>
+
+<script>
+(function(){
+document.documentElement.classList.add("js");
+var els=document.querySelectorAll(".rv");
+if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion:reduce)").matches){els.forEach(function(e){e.classList.add("in")});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

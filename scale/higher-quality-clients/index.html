@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimising for higher quality clients - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: Optimising for higher quality clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(16px,2vw,22px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:none}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(32px,3.8vw,50px)}
+.eyebrow{margin-bottom:12px}
+.lab{margin:14px 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.row{display:grid;gap:14px}
+.row.two{grid-template-columns:1.3fr 1fr 1fr}
+.row.cmp{grid-template-columns:1fr auto 1fr;align-items:stretch}
+.c{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.c:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.c h2{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:4px}
+.c p{font-size:14px;color:var(--muted);line-height:1.4}
+.c.hi{background:#FFF8F3;border:2px solid var(--gold)}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:4px 10px;margin-bottom:6px;background:#fff;border:1px solid var(--line);color:var(--slate)}
+.hi .badge{background:var(--gold);border-color:var(--gold);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:13px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.hi .chip{border-color:var(--gold);color:var(--gold-soft)}
+.arrow{align-self:center;font-size:26px;font-weight:700;color:var(--gold)}
+.aim{display:flex;gap:14px;align-items:center}
+.aim svg{width:96px;flex:none;height:auto}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
+.st{position:relative}
+.st .n{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;align-items:center;justify-content:center;margin-bottom:6px}
+.st:not(:last-child)::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translate(50%,-50%);font-weight:700;color:var(--gold);font-size:20px;z-index:1}
+.row.three{grid-template-columns:1fr 1fr}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:14px;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.in.c:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.c{transition:none}.c:hover{transform:none}.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:900px){.row.two,.row.three,.steps{grid-template-columns:1fr}.row.cmp{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.st:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-14px;transform:translate(-50%,50%)}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · Higher quality clients</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
+<h1>The topic picks your clients. <span class="gold-t">Pick better.</span></h1>
+</div>
+<p class="take">Fix lead quality at the source: <span>what your video is about.</span></p>
+</div>
+
+<p class="lab">1 &middot; The video topic drives lead quality</p>
+<div class="row cmp">
+<div class="c rv"><span class="badge">Lower quality</span><h2>Pain point topics</h2><p>Talk about a problem and the wrong people stop.</p><div class="chips"><span class="chip">Why your accountant is bad</span></div></div>
+<div class="arrow" aria-hidden="true">&rarr;</div>
+<div class="c hi rv"><span class="badge">Higher quality</span><h2>Higher value topics</h2><p>Better leads, straight away.</p><div class="chips"><span class="chip">Holding companies</span><span class="chip">EBITDA</span><span class="chip">Exit planning</span><span class="chip">Group structures</span></div></div>
+</div>
+
+<div class="row two" style="margin-top:14px">
+<div class="c rv aim">
+<svg viewBox="0 0 100 100" role="img" aria-label="Target"><circle cx="50" cy="50" r="46" fill="#fff" stroke="#E2E2E2" stroke-width="4"/><circle cx="50" cy="50" r="30" fill="#fff" stroke="#F26B1D" stroke-width="4" opacity=".55"/><circle cx="50" cy="50" r="14" fill="#F26B1D"/></svg>
+<div><h2>Shoot above your comfort zone</h2><p>Aim at 7-figure owners. You still attract people on five or six figures who want to get there, and you filter out the price sensitive.</p></div>
+</div>
+<div class="c rv"><h2>Cost per lead nearly lied to us</h2><p>Two topics cost about the same per lead. One was far more expensive per proposal. <b>Judge on qualified calls, not leads.</b></p></div>
+<div class="c hi rv"><h2>Add the questionnaire to your ad form</h2><p>A few questions so the wrong people can't book, or get routed. Starting out, remove friction. As you get busier, add it.</p></div>
+</div>
+
+<p class="lab">2 &middot; Teach Meta who a good lead is</p>
+<div class="steps">
+<div class="c st rv"><span class="n">1</span><h2>Take the call</h2><p>Every lead gets a verdict after the call.</p></div>
+<div class="c st rv"><span class="n">2</span><h2>Mark qualified yes or no</h2><p>Do it in GoHighLevel. A yes needs all three:</p><div class="chips"><span class="chip">Wants the comprehensive package</span><span class="chip">I like the person</span><span class="chip">Good company fit</span></div></div>
+<div class="c hi st rv"><span class="n">3</span><h2>Meta learns</h2><p>It pushes ads to people like your yeses and away from your nos.</p></div>
+</div>
+
+<p class="close">Better topic. Better yeses. <span>Better clients.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/improve-your-show-rate/" style="text-decoration:none;color:var(--gold-soft)">&larr; How to improve your show rate</a><a href="/scale/high-intent-buyers/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Optimising for high intent buyers &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Paid ads · Higher quality clients</div></footer>
+
+<script>
+(function(){
+var els=document.querySelectorAll(".rv");
+if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});
+els.forEach(function(e,i){e.style.transitionDelay=(i%4)*80+"ms";io.observe(e)});
+})();
+</script>
+</body>
+</html>

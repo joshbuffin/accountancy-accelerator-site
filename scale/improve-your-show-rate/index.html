@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How to improve your show rate - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: How to improve your show rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.cost{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cost .pill{background:#FFF8F3;border:2px solid var(--gold);border-radius:999px;padding:8px 18px;font-weight:700;font-size:16px}
+.cost .plus{font-size:22px;font-weight:700;color:var(--gold-soft)}
+.cost .eq{font-weight:700;font-size:16px;color:var(--gold-soft)}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;position:relative}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.step:not(:last-child)::after{content:"\2192";position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:2;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step.alt{background:#FFF8F3;border:2px solid var(--gold)}
+.step h2,.nc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.step p,.nc p{font-size:14px;color:var(--muted);line-height:1.4}
+.step .tagline{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.cards{display:grid;gap:14px}
+.cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.nc svg{width:46px;height:auto}
+.step,.nc,.cost .pill{transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.step:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(12px,2vh,18px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.in:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.step,.nc,.cost .pill{transition:none}.nc:hover,.step:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}.js .rv.in:hover{transform:none}}
+@media (max-width:900px){.cards.three{grid-template-columns:1fr}.cards.four,.flow{grid-template-columns:1fr 1fr;gap:12px}.step:not(:last-child)::after{display:none}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:480px){.nc,.step{padding:14px 10px}.nc h2,.step h2{font-size:15px}.nc p,.step p{font-size:13px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · How to improve your show rate</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
+<h1>A no-show costs you twice. <span class="gold-t">Plug the leak.</span></h1>
+</div>
+<p class="take">Booked is not the same as <span>turned up.</span></p>
+</div>
+
+<p class="lab">The cost</p>
+<div class="cost rv"><span class="pill">The ad spend</span><span class="plus">+</span><span class="pill">The diary slot you kept free</span><span class="eq">Gone, for nothing</span></div>
+
+<p class="lab">The reminder system</p>
+<div class="flow">
+<div class="step rv"><span class="n">1</span><h2>They type their email</h2><p>No auto-fill. Reminders reach a live inbox.</p></div>
+<div class="step rv"><span class="n">2</span><h2>WhatsApp, day before</h2><p>Automatic reminder via WAGHL.</p></div>
+<div class="step rv"><span class="n">3</span><h2>WhatsApp, 1 hour before</h2><p>Second automatic nudge.</p></div>
+<div class="step alt rv"><span class="n">4</span><h2>Not joined? Call them</h2><p>Ring straight from the WhatsApp thread.</p></div>
+</div>
+
+<p class="lab">Three more levers</p>
+<div class="cards three">
+<div class="nc rv"><h2>WAGHL roughly doubled our show rate</h2><p>WhatsApp plus GoHighLevel. Pay someone around £150 to £300 to set it up.</p></div>
+<div class="nc rv"><h2>Book 3 to 4 days ahead</h2><p>Leads booked weeks out forget who you are. Calendar full? Pause the ads.</p></div>
+<div class="nc rv"><h2>The topic decides who turns up</h2><p>Higher level topics, like holding companies, got a far better show rate.</p></div>
+</div>
+
+<p class="close">Filling in the form is not the finish line. <span>Turn up is.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/optimising-for-views/" style="text-decoration:none;color:var(--gold-soft)">&larr; Optimising for views</a><a href="/scale/higher-quality-clients/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Getting higher quality clients &rarr;</a></div>
+<footer><div class="wrap">Scale · Paid ads · How to improve your show rate</div></footer>
+
+<script>
+(function(){
+document.documentElement.classList.add("js");
+var els=document.querySelectorAll(".rv");
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(reduce||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.15});
+els.forEach(function(e,i){e.style.transitionDelay=(i%4)*90+"ms";io.observe(e)});
+})();
+</script>
+</body>
+</html>

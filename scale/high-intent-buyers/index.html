@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Optimising for high intent buyers - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: optimising for high intent buyers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(14px,2vh,20px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.q{margin:0 auto;max-width:560px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 24px;text-align:center}
+.q small{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.q h2{font-size:clamp(18px,1.9vw,24px);font-weight:700;letter-spacing:-.02em}
+.fan{display:block;width:100%;height:46px}
+.fan path{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1) .2s}
+.in .fan path,.fan.in path{stroke-dashoffset:0}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc svg{width:46px;height:auto}
+.nc h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc p{font-size:14px;color:var(--muted);line-height:1.4}
+.nc p b{color:var(--ink)}
+.why{white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.top3{border:2px solid var(--gold);background:#FFF8F3}
+.top3 .why{background:var(--gold);color:#fff;border-color:var(--gold)}
+.num{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(14px,2vh,20px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.in.nc:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}.fan path{stroke-dashoffset:0;transition:none}}
+@media (max-width:900px){.cards{grid-template-columns:1fr;gap:12px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.fan{display:none}.q{margin-bottom:12px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · High intent buyers</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
+<h1>Not every call is <span class="gold-t">worth taking.</span></h1>
+</div>
+<p class="take">Ask what they want, <span>before they book.</span></p>
+</div>
+
+<p class="lab">One question on the ad form</p>
+<div class="q rv"><small>The intent question</small><h2>What do you want from the call?</h2></div>
+<svg class="fan rv" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0V16M500 16C500 16 166 14 166 46M500 16V46M500 16C500 16 834 14 834 46" vector-effect="non-scaling-stroke"/></svg>
+
+<div class="cards">
+<div class="nc rv"><span class="why">Advice</span>
+<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M24 30h52v32H46L32 76V62H24z" fill="none" stroke="#111" stroke-width="5" stroke-linejoin="round"/></svg>
+<h3>Just looking for advice</h3><p>Sent to the <b>free resources page</b> on the website.</p></div>
+<div class="nc rv"><span class="why">One-off project</span>
+<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="28" y="24" width="44" height="52" rx="5" fill="none" stroke="#111" stroke-width="5"/><path d="M38 42h24M38 54h24" stroke="#111" stroke-width="4" stroke-linecap="round"/></svg>
+<h3>A one-off project</h3><p>Worth a conversation, <b>but not the priority.</b></p></div>
+<div class="nc rv top3"><span class="why">Top priority</span>
+<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M70 40a22 22 0 1 0 2 22" fill="none" stroke="#F26B1D" stroke-width="6" stroke-linecap="round"/><path d="M74 24v18H56" fill="none" stroke="#F26B1D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<h3>Ongoing monthly support</h3><p><b>This is who we want more of.</b></p></div>
+</div>
+
+<p class="lab">How we run it</p>
+<div class="cards">
+<div class="nc rv"><span class="num">1</span><h3>Why we added it</h3><p>Our holding company ads brought in <b>too many one-off project enquiries.</b></p></div>
+<div class="nc rv"><span class="num">2</span><h3>Advice calls, for now</h3><p>Advice only people <b>still get a call</b>, to test how easily they convert to a monthly package.</p></div>
+<div class="nc rv"><span class="num">3</span><h3>Add friction as you grow</h3><p>No clients yet? Remove friction. <b>Busier? Add more questions.</b></p></div>
+</div>
+
+<p class="close">Fewer calls. <span>Better calls.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/higher-quality-clients/" style="text-decoration:none;color:var(--gold-soft)">&larr; Higher quality clients</a><a href="/scale/qualifying-prospects/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Qualifying prospects &rarr;</a></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Paid ads · High intent buyers</div></footer>
+
+<script>
+(function(){
+var d=document.documentElement;d.classList.add("js");
+var els=document.querySelectorAll(".rv");
+var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(rm||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=Array.prototype.indexOf.call(els,e.target);e.target.style.transitionDelay=(i%4)*0.12+"s";e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
