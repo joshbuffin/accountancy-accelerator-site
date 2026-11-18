@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Qualifying prospects - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: qualifying prospects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:14px}
+.lab{margin:clamp(14px,2vh,20px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.q{margin:0 auto;max-width:560px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 24px;text-align:center}
+.q small{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.q h2{font-size:clamp(18px,1.9vw,24px);font-weight:700;letter-spacing:-.02em}
+.fan{display:block;width:100%;height:46px}
+.fan path{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1) .2s}
+.in .fan path,.fan.in path{stroke-dashoffset:0}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover,.ex:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.nc svg{width:46px;height:auto}
+.nc h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc p{font-size:14px;color:var(--muted);line-height:1.4}
+.nc p b{color:var(--ink)}
+.why{white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.top3{border:2px solid var(--gold);background:#FFF8F3}
+.top3 .why{background:var(--gold);color:#fff;border-color:var(--gold)}
+.num{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.close{margin-top:clamp(14px,2vh,20px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
+.close span{color:var(--gold-soft)}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.in.nc:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}.fan path{stroke-dashoffset:0;transition:none}}
+@media (max-width:900px){.cards{grid-template-columns:1fr;gap:12px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.fan{display:none}.q{margin-bottom:12px}}
+
+.grids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.grp .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grp .fan{height:34px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.flow{display:grid;grid-template-columns:1fr auto 2.2fr auto 1fr;gap:12px;align-items:stretch}
+.arr{display:flex;align-items:center;color:var(--gold);font-size:28px;font-weight:300}
+.crit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.crit .nc{padding:14px 10px;justify-content:center}.crit .nc h3{font-size:clamp(15px,1.3vw,17px)}
+.flow>.nc{justify-content:center}
+.ck{width:26px;height:26px;border-radius:7px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.fric{margin-top:clamp(12px,1.8vh,18px);display:flex;justify-content:center}
+.fric .why{white-space:normal;text-align:center;font-size:12px;padding:8px 16px}
+.nc svg.s{width:34px}
+@media (max-width:900px){.grids,.grp .cards,.crit{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.arr{justify-content:center;height:24px}.arr span{display:inline-block;transform:rotate(90deg)}.grp .fan{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Paid ads · Qualifying prospects</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
+<h1>Can't book <span class="gold-t">unless&hellip;</span></h1>
+</div>
+<p class="take">Let the form do the filtering, <span>before anyone gets in the diary.</span></p>
+</div>
+
+<p class="lab">Two questions on the form decide who books, and where</p>
+<div class="grids">
+<div class="grp">
+<div class="q rv"><small>Question 1</small><h2>Have you heard of us before?</h2></div>
+<svg class="fan rv" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0V16M500 16C500 16 250 14 250 46M500 16C500 16 750 14 750 46" vector-effect="non-scaling-stroke"/></svg>
+<div class="cards">
+<div class="nc rv "><span class="why">Yes</span><svg class="s" viewBox="0 0 100 100" aria-hidden="true"><rect x="22" y="28" width="56" height="48" rx="6" fill="none" stroke="#111" stroke-width="5"/><path d="M22 44h56M38 20v14M62 20v14" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg><h3>Seen the founder</h3><p>Seen on Instagram or YouTube. Books into <b>the founder's calendar.</b></p></div>
+<div class="nc rv top3"><span class="why">No</span><svg class="s" viewBox="0 0 100 100" aria-hidden="true"><rect x="22" y="28" width="56" height="48" rx="6" fill="none" stroke="#F26B1D" stroke-width="5"/><path d="M22 44h56M38 20v14M62 20v14" stroke="#F26B1D" stroke-width="5" stroke-linecap="round"/></svg><h3>Not heard of us</h3><p>Books into <b>a team member's calendar.</b></p></div>
+</div>
+<p class="note-s rv" style="margin-top:10px;font-size:14px;color:var(--muted);text-align:center">The aim: ads <b style="color:var(--ink)">anyone in the team can close.</b> On our small data set, a team member closed about as many as the founder.</p>
+</div>
+<div class="grp">
+<div class="q rv"><small>Question 2</small><h2>What do you want from the call?</h2></div>
+<svg class="fan rv" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0V16M500 16C500 16 250 14 250 46M500 16C500 16 750 14 750 46" vector-effect="non-scaling-stroke"/></svg>
+<div class="cards">
+<div class="nc rv "><span class="why">Advice only</span><svg class="s" viewBox="0 0 100 100" aria-hidden="true"><path d="M24 30h52v32H46L32 76V62H24z" fill="none" stroke="#111" stroke-width="5" stroke-linejoin="round"/></svg><h3>Just advice</h3><p>Routed to the <b>free resources page.</b></p></div>
+<div class="nc rv top3"><span class="why">Ongoing support</span><svg class="s" viewBox="0 0 100 100" aria-hidden="true"><path d="M70 40a22 22 0 1 0 2 22" fill="none" stroke="#F26B1D" stroke-width="6" stroke-linecap="round"/><path d="M74 24v18H56" fill="none" stroke="#F26B1D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Monthly support</h3><p><b>Top priority.</b> These are the calls we want.</p></div>
+</div>
+<p class="note-s rv" style="margin-top:10px;font-size:14px;color:var(--muted);text-align:center">Keep the sales call template and notes as normal.</p>
+</div>
+</div>
+
+<p class="lab">After every call</p>
+<div class="flow">
+<div class="nc rv"><span class="why">Mark it</span><h3>Qualified: yes or no</h3><p>Marked after each call.</p></div>
+<div class="arr rv" aria-hidden="true"><span>&rarr;</span></div>
+<div class="crit">
+<div class="nc rv"><span class="ck"></span><h3>Comprehensive package</h3></div>
+<div class="nc rv"><span class="ck"></span><h3>Likes the person</h3></div>
+<div class="nc rv"><span class="ck"></span><h3>Good company fit</h3></div>
+</div>
+<div class="arr rv" aria-hidden="true"><span>&rarr;</span></div>
+<div class="nc rv top3"><span class="why">Fed back to Meta</span><h3>More of the yeses</h3><p>Meta pushes ads to people like the yeses, <b>away from the nos.</b></p></div>
+</div>
+
+<p class="close">More clients? <span>Add more friction.</span> Starting out? <span>Remove it.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/high-intent-buyers/" style="text-decoration:none;color:var(--gold-soft)">&larr; High intent buyers</a><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Paid ads · Qualifying prospects</div></footer>
+
+<script>
+(function(){
+var d=document.documentElement;d.classList.add("js");
+var els=document.querySelectorAll(".rv");
+var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(rm||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=Array.prototype.indexOf.call(els,e.target);e.target.style.transitionDelay=(i%4)*0.12+"s";e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
