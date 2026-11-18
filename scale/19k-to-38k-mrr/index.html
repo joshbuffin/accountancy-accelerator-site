@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The strategies that took us from £19k to £38k MRR in 9 months - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 5 Lead generation: the strategies that took us from £19k to £38k MRR in 9 months.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px}
+h1{font-size:clamp(34px,4vw,54px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+.page{padding:clamp(18px,2.4vw,26px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
+.take span{color:var(--gold-soft)}
+.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+
+/* MRR jump */
+.jump{display:flex;align-items:flex-end;justify-content:center;gap:clamp(16px,4vw,48px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 24px}
+.mb{display:flex;align-items:flex-end;gap:14px}
+.mb .col{width:56px;border-radius:10px 10px 4px 4px;transform-origin:bottom}
+.mb.a .col{height:46px;background:#D9D9DC}
+.mb.b .col{height:92px;background:var(--gold)}
+.mb .n{font-size:clamp(28px,3.4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.mb.b .n{color:var(--gold-soft)}
+.mb .s{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-top:6px}
+.arrow{display:flex;flex-direction:column;align-items:center;gap:4px;padding-bottom:20px}
+.arrow b{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.arrow svg{width:clamp(70px,12vw,150px);height:20px}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 18px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.nc:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.num{width:34px;height:34px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.nc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.nc p{font-size:14px;color:var(--muted);line-height:1.4}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+
+/* split */
+.split{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px 18px}
+.sbar{display:flex;gap:4px;height:44px}
+.seg{flex:1 1 0;border-radius:8px;min-width:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;overflow:hidden;white-space:nowrap}
+.sbar.soon .seg{background:#D9D9DC}
+.sbar.pre .seg{width:0!important;flex:0 0 0!important}
+.sbar.animate .seg{transition:flex-basis 1s cubic-bezier(.2,.8,.2,1)}
+.legend{display:flex;gap:4px;margin-top:8px}
+.legend span{flex:1 1 0;min-width:0;font-size:13px;font-weight:600;color:var(--muted);line-height:1.3;padding:0 2px}
+.status{margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.sbar.animate .seg{transition:none}}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr;gap:12px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.jump{padding:16px 12px;gap:10px}.mb .col{width:36px}.arrow svg{width:56px}.arrow b{font-size:10px;padding:4px 8px}.mb{gap:8px}.legend span{font-size:11px}.split{padding:14px}}
+@media (max-width:480px){.nc{padding:14px 12px}.nc h2{font-size:15px}.nc p{font-size:13px}.chip{font-size:10px;letter-spacing:.1em;padding:4px 8px}.mb .s{font-size:10px;letter-spacing:.1em}.legend span{font-size:10px;padding:0}.legend{gap:4px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Lead generation · £19k to £38k MRR</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 5 - Lead generation</p>
+<h1>£19k to <span class="gold-t">£38k MRR.</span> In 9 months.</h1>
+</div>
+<p class="take">The four strategies that <span>doubled our MRR.</span></p>
+</div>
+
+<p class="lab">The jump</p>
+<div class="jump" aria-label="MRR went from £19k to £38k in 9 months">
+<div class="mb a"><div class="col"></div><div><div class="n">£19k</div><div class="s">MRR</div></div></div>
+<div class="arrow"><b>9 months</b><svg viewBox="0 0 150 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10h132" stroke="#F26B1D" stroke-width="4" stroke-linecap="round"/><path d="M124 2l14 8-14 8" fill="none" stroke="#F26B1D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="mb b"><div class="col"></div><div><div class="n">£38k</div><div class="s">MRR</div></div></div>
+</div>
+
+<p class="lab">Four options</p>
+<div class="cards">
+<div class="nc"><span class="num">1</span><h2>Ads</h2><p>Paid ads</p></div>
+<div class="nc"><span class="num">2</span><h2>Key referral partners</h2><p>Bringing in key referral partners</p></div>
+<div class="nc"><span class="num">3</span><h2>Social media</h2><p>A mix of Instagram and LinkedIn</p><div class="chips"><span class="chip">Instagram</span><span class="chip">LinkedIn</span></div></div>
+<div class="nc"><span class="num">4</span><h2>My network</h2><p>My network</p></div>
+</div>
+
+<p class="lab">Where it came from</p>
+<div class="split">
+<div class="sbar" id="sbar"></div>
+<div class="legend" id="legend"></div>
+<p class="status" id="status"></p>
+</div>
+</main>
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Lead generation · £19k to £38k MRR</div></footer>
+
+<script>
+(function(){
+var SPLIT = {ads: null, referrals: null, social: null, network: null};
+var CH=[
+ {key:"ads",name:"Ads",color:"#C2410C"},
+ {key:"referrals",name:"Key referral partners",color:"#F26B1D"},
+ {key:"social",name:"Social media (Instagram and LinkedIn)",color:"#F89A5C"},
+ {key:"network",name:"My network",color:"#FBC49C",dark:true}
+];
+var bar=document.getElementById("sbar"),leg=document.getElementById("legend"),st=document.getElementById("status");
+var ready=CH.every(function(c){return typeof SPLIT[c.key]==="number"&&isFinite(SPLIT[c.key])});
+var total=ready?CH.reduce(function(a,c){return a+SPLIT[c.key]},0):0;
+var segs=[];
+CH.forEach(function(c){
+ var s=document.createElement("div");s.className="seg";
+ if(ready){var p=SPLIT[c.key];s.style.background=c.color;if(c.dark)s.style.color="#111";s.dataset.w=(total>0?p/total*100:25)+"%";s.textContent=p+"%";s.style.flexBasis=s.dataset.w}
+ bar.appendChild(s);segs.push(s);
+ var l=document.createElement("span");l.textContent=c.name;if(ready)l.style.flexBasis=s.dataset.w;leg.appendChild(l);
+});
+if(!ready){bar.className="sbar soon";st.textContent="Split coming soon";bar.setAttribute("aria-label","Split coming soon")}
+else{
+ st.textContent="Share of the growth by channel";
+ var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ if("IntersectionObserver" in window&&!reduce){
+  bar.className="sbar pre";
+  var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){bar.classList.add("animate");requestAnimationFrame(function(){requestAnimationFrame(function(){bar.classList.remove("pre")})});o.disconnect()}},{threshold:.3});
+  o.observe(bar);
+ } else bar.className="sbar";
+}
+})();
+</script>
+</body>
+</html>
