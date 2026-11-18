@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>(Re)establishing your minimum fees - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 6 Pricing & Proposals: (Re)establishing your minimum fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+h1{font-size:clamp(32px,3.6vw,48px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:8px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:10px 0;color:var(--slate);font-size:13px}
+
+.page{padding-top:clamp(10px,1.6vh,16px);padding-bottom:4px}
+.sub{font-size:clamp(15px,1.4vw,18px);font-weight:700;color:var(--slate);margin-top:6px;letter-spacing:-.01em}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:clamp(8px,1.4vh,14px) 0}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 18px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.pc:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.pc.hl{background:#FFF8F3;border:2px solid var(--gold);padding:9px 17px}
+.pc h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.pc h2 span{color:var(--gold-soft)}
+.lab{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.strict{margin-top:clamp(8px,1.4vh,14px);display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap}
+.give{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.give span{color:var(--gold-soft)}
+.small{font-size:14px;font-weight:600;color:var(--gold-soft);text-decoration:none}
+.small:hover{text-decoration:underline}
+/* Minimum fees table */
+.sub{font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--slate);margin-top:6px;letter-spacing:-.01em}
+.tbl td small{display:block;font-size:12px;margin-top:-2px;font-weight:600;color:var(--slate);line-height:1.3}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:clamp(2px,.35vh,4px) 18px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl thead th{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);border-bottom:2px solid var(--ink);padding-top:0}
+.tbl .num{text-align:right;width:22%}
+.tbl thead th.mo{color:var(--gold-soft);border-bottom-color:var(--gold)}
+.tbl td{font-size:clamp(15px,1.25vw,17px);font-weight:600}
+.tbl td.num{font-size:clamp(17px,1.4vw,20px);font-weight:800;letter-spacing:-.02em}
+.tbl td.mo{background:#FFF8F3;color:var(--gold-soft)}
+.tbl thead th.mo{background:#FFF8F3;border-radius:14px 14px 0 0}
+.tbl td.dash{color:#AEAEB2;font-size:14px;font-weight:700;letter-spacing:0}
+.tbl tr.grp td{background:transparent!important;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-top:clamp(6px,1vh,10px);padding-bottom:2px;border-bottom:0}
+.tbl tr.grp td span{color:var(--slate);letter-spacing:.06em;text-transform:none;font-weight:700;margin-left:8px;font-size:13px}
+.tbl tbody tr.r{transition:background-color .2s}
+.tbl tbody tr.r:hover td{background:#FFF3EA}
+.tbl tbody tr.r:hover td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+.tbl tr.last td.mo{border-radius:0 0 14px 14px}
+@media (max-width:640px){.navtag{font-size:11px}.pnav{font-size:14px}
+ .tbl th,.tbl td{padding:9px 8px}.tbl .num{width:auto}.tbl td{font-size:14px}.tbl td.num{font-size:16px}.tbl td.dash{font-size:12px}.tbl thead th{font-size:10px;letter-spacing:.1em}
+ .tbl tr.grp td span{display:block;margin:4px 0 0}
+ .paths{grid-template-columns:1fr}.wrap{padding-left:16px;padding-right:16px}.pnav{padding-left:16px;padding-right:16px}}
+@media (prefers-reduced-motion:reduce){.tbl tbody tr.r,.pc{transition:none}.pc:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Pricing &amp; Proposals · (Re)establishing your minimum fees</span></div></nav>
+
+<main class="wrap page">
+<p class="eyebrow">Level 6 - Pricing &amp; Proposals</p>
+<h1>(Re)establish your <span class="gold-t">minimum fees.</span></h1>
+<p class="sub">The sprint is over. You're levelling up how you operate.</p>
+
+<div class="paths">
+<div class="pc"><h2>No minimum fees yet? <span>Establish them now.</span></h2></div>
+<div class="pc hl"><h2>Already have them? <span>Re-establish them now.</span></h2></div>
+</div>
+
+<p class="lab">Our minimum fee structure</p>
+<table class="tbl" aria-label="Our minimum fee structure">
+<thead><tr><th>Service</th><th class="num">Billed annually</th><th class="num mo">Billed monthly</th></tr></thead>
+<tbody>
+<tr class="grp"><td colspan="3">Comprehensive monthly package<span>Monthly only</span></td></tr>
+<tr class="r"><td>Non-VAT registered</td><td class="num dash">Monthly only</td><td class="num mo">£180</td></tr>
+<tr class="r"><td>Flat rate VAT or one-man band</td><td class="num dash">Monthly only</td><td class="num mo">£210</td></tr>
+<tr class="r"><td>VAT registered</td><td class="num dash">Monthly only</td><td class="num mo">£240</td></tr>
+<tr class="grp"><td colspan="3">Accounts<span>Billed annually, or spread monthly</span></td></tr>
+<tr class="r"><td>Dormant company accounts</td><td class="num">£250</td><td class="num mo">£20.83</td></tr>
+<tr class="r"><td>Holding company accounts</td><td class="num">£495</td><td class="num mo">£41.25</td></tr>
+<tr class="r"><td>Property Ltd</td><td class="num">£800</td><td class="num mo">£66.67</td></tr>
+<tr class="r"><td>Company accounts (under £90k)</td><td class="num">£800</td><td class="num mo">£66.67</td></tr>
+<tr class="r"><td>Company accounts (over £90k)</td><td class="num">£1,200</td><td class="num mo">£100</td></tr>
+<tr class="grp"><td colspan="3">Sole traders</td></tr>
+<tr class="r"><td>Sole trader accounts</td><td class="num">£600</td><td class="num mo">£50</td></tr>
+<tr class="r last"><td>Sole trader with MTD submissions<small>Includes their subsequent self assessment</small></td><td class="num">£1,440</td><td class="num mo">£120</td></tr>
+</tbody>
+</table>
+
+<div class="strict">
+<p class="give">Be strict. <span>Not everyone and anyone.</span></p>
+<a class="small" href="/scale/clients-to-avoid/">Won't meet your minimum fees? See clients to avoid &rarr;</a>
+</div>
+</main>
+
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Pricing &amp; Proposals · (Re)establishing your minimum fees</div></footer>
+
+</body>
+</html>
