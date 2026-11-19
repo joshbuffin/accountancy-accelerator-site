@@ -26,34 +26,60 @@ h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 
 /* One-page layout */
-.page{padding:clamp(16px,2.2vw,24px) 24px}
+.page{padding:clamp(14px,2vw,22px) 24px}
 .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:420px}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:460px}
 .take span{color:var(--gold-soft)}
-h1{font-size:clamp(32px,3.8vw,50px)}
-.eyebrow{margin-bottom:12px}
+h1{font-size:clamp(28px,3vw,40px)}
+.eyebrow{margin-bottom:10px}
 .lab{margin:clamp(12px,1.8vh,16px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.s1{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:12px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
-.s1:hover,.card:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
-.s1 h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
-.s1 p{font-size:15px;color:var(--muted);flex:1 1 320px}
-.s1 p b{color:var(--ink)}
-.stairs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end}
-.stair{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px 14px;display:flex;flex-direction:column;gap:6px;border-bottom:5px solid var(--gold);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.stair:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.stair:nth-child(1){min-height:104px}.stair:nth-child(2){min-height:140px}.stair:nth-child(3){min-height:176px}.stair:nth-child(4){min-height:212px}
-.stair .n{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
-.stair h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.stair p{font-size:14px;color:var(--muted);line-height:1.4}
-.stair .lk{margin-top:auto;font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:2px}
-.arrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);text-align:center;margin:8px 0 0}
-.cards{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;display:flex;flex-direction:column;gap:4px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card h3{font-size:clamp(15px,1.4vw,17px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.ctrl{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap;margin:10px 0 6px}
+.count{font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.dots{display:flex;gap:5px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);transition:background-color .3s ease}
+.dots i.on{background:var(--gold)}
+.status{flex:1 1 260px;font-size:14px;color:var(--muted);min-height:21px}
+.fix{appearance:none;border:0;cursor:pointer;font:inherit;font-size:16px;font-weight:700;color:#fff;background:var(--gold);border-radius:999px;padding:12px 26px;box-shadow:0 10px 24px -12px rgba(242,107,29,.7);transition:transform .2s ease,background-color .2s ease}
+.fix:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.fix:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.fix.reset{background:#fff;color:var(--gold-soft);box-shadow:inset 0 0 0 2px var(--gold)}
+.fix.reset:hover{background:#FFF8F3}
+.flowwrap{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:18px;align-items:stretch}
+.flowcol{min-width:0}
+.flowgrid{display:block}
+#flow{display:block;width:100%;height:auto}
+.labels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.lc{margin:6px 10px 0 0;background:var(--card);border:1px solid var(--line);border-bottom:4px solid var(--line);border-radius:16px;padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;transition:border-color .3s ease,background-color .3s ease,box-shadow .3s ease}
+.lc:last-child{margin-right:0}
+.lc.on{border-bottom-color:var(--gold);background:#FFF8F3}
+.lc .hd{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px}
+.lc .n{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
+.lc .ok{display:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:3px 9px}
+.lc.on .ok{display:inline-block}
+.lc h3{font-size:clamp(14px,1.25vw,16px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.lc p{font-size:13px;color:var(--muted);line-height:1.4}
+.lc .lk{margin-top:auto;padding-top:2px;font-size:13px;font-weight:600;display:flex;flex-direction:column;gap:1px}
+.lc .lk a{text-decoration:none;color:var(--gold-soft)}
+.lc .lk a:hover{text-decoration:underline}
+.endcol{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.endcol .qh{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.qbar{height:12px;border-radius:999px;background:var(--line);overflow:hidden}
+.qbar i{display:block;height:100%;width:21%;background:var(--gold);border-radius:999px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.endcol .mh{margin-top:8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft)}
+.meter{display:flex;gap:14px;align-items:stretch;flex:1;min-height:110px}
+.mtrack{width:34px;border-radius:12px;background:#fff;border:1px solid var(--line);position:relative;overflow:hidden;flex:none}
+.mtrack i{position:absolute;left:0;right:0;bottom:0;height:100%;background:var(--gold);border-radius:0 0 11px 11px;transition:height .9s cubic-bezier(.2,.8,.2,1)}
+.mlab{display:flex;flex-direction:column;justify-content:space-between;font-size:13px;font-weight:600;color:var(--muted)}
+.falls{color:var(--line);font-weight:700;transition:color .3s ease}
+.falls.on{color:var(--gold-soft)}
+.endcol .note{font-size:11px;color:var(--slate)}
+.cards{display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:9px 14px;display:flex;flex-direction:column;gap:2px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.card h3{font-size:clamp(14px,1.3vw,16px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
 .card h3 span{color:var(--gold-soft)}
-.card p{font-size:13.5px;color:var(--muted);line-height:1.4}
-.split{display:flex;height:10px;border-radius:999px;overflow:hidden;margin-top:4px;background:var(--line)}
+.card p{font-size:13px;color:var(--muted);line-height:1.35}
+.split{display:flex;height:8px;border-radius:999px;overflow:hidden;margin-top:3px;background:var(--line)}
 .split i{display:block;height:100%}
 .split .a{width:85%;background:var(--gold)}.split .b{width:15%;background:#111}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
@@ -61,10 +87,20 @@ h1{font-size:clamp(32px,3.8vw,50px)}
 .close span{color:var(--gold-soft)}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
 .js .rv.in{opacity:1;transform:none}
-.js .stair.rv.in:hover,.js .s1.rv.in:hover,.js .card.rv.in:hover{transform:translateY(-6px)}
-@media (prefers-reduced-motion:reduce){.s1,.stair,.card{transition:none}.s1:hover,.stair:hover,.card:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}}
-@media (max-width:900px){.stairs{grid-template-columns:1fr 1fr;align-items:stretch}.stair:nth-child(n){min-height:0}.cards{grid-template-columns:1fr 1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
-@media (max-width:560px){.stairs,.cards{grid-template-columns:1fr}.s1{padding:16px}.take{max-width:none}}
+.js .card.rv.in:hover{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){.card,.lc,.qbar i,.mtrack i,.fix,.dots i,.falls{transition:none}.card:hover,.fix:hover{transform:none}.js .rv{opacity:1;transform:none;transition:none}}
+@media (max-width:900px){.flowwrap{grid-template-columns:1fr}.meter{min-height:90px}.cards{grid-template-columns:1fr 1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:700px){
+.flowgrid{display:grid;grid-template-columns:var(--zone) minmax(0,1fr);--zone:156px;gap:0 8px}
+#flow{width:var(--zone);height:calc(var(--zone)*4)}
+.labels{grid-template-columns:1fr;grid-auto-rows:var(--zone)}
+.lc{margin:0 0 6px;height:calc(var(--zone) - 6px);padding:8px 10px;overflow:hidden;gap:2px}
+.lc p{font-size:12px;line-height:1.3}
+.lc h3{font-size:14px}
+.lc .lk{font-size:12px}
+.take{max-width:none}.fix{width:100%}
+}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -77,22 +113,34 @@ h1{font-size:clamp(32px,3.8vw,50px)}
 <p class="eyebrow">Level 5 - Lead generation · Paid ads</p>
 <h1>Always a bottleneck. <span class="gold-t">Fix one at a time.</span></h1>
 </div>
-<p class="take">Video content, <span>built to get calls booked.</span></p>
+<p class="take">We only care about one number:<br><span>cost per qualified lead.</span></p>
 </div>
 
-<p class="lab">Stage 1</p>
-<div class="s1 rv">
-<span class="tag">Start here</span>
-<h2>Get leads through the door</h2>
-<p>Just <b>optimise for views and getting leads in.</b> Do not over-engineer it. Tweak over time.</p>
+<div class="ctrl">
+<div class="count"><span id="count">Bottlenecks fixed: 0 of 4</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+<p class="status" id="status" role="status" aria-live="polite">Leads drop off at every gate, so cost per qualified lead is high.</p>
+<button type="button" class="fix" id="fix">Fix the next bottleneck</button>
 </div>
 
-<p class="lab">Then fix the bottlenecks, one at a time</p>
-<div class="stairs">
-<div class="stair rv" style="transition-delay:.05s"><span class="n">1</span><h3>Not enough leads</h3><p>Get more eyes on the ad.</p><span class="lk"><a href="/scale/optimising-for-views/" style="text-decoration:none;color:var(--gold-soft)">Optimising for views &rarr;</a></span></div>
-<div class="stair rv" style="transition-delay:.2s"><span class="n">2</span><h3>Leads not good enough</h3><p>The right people, not just more people.</p><span class="lk"><a href="/scale/higher-quality-clients/" style="text-decoration:none;color:var(--gold-soft)">Higher quality clients &rarr;</a></span></div>
-<div class="stair rv" style="transition-delay:.35s"><span class="n">3</span><h3>Leads do not show</h3><p>A no-show costs you twice.</p><span class="lk"><a href="/scale/improve-your-show-rate/" style="text-decoration:none;color:var(--gold-soft)">Improve your show rate &rarr;</a></span></div>
-<div class="stair rv" style="transition-delay:.5s"><span class="n">4</span><h3>They show but do not buy</h3><p>Filter for what they actually want.</p><span class="lk"><a href="/scale/high-intent-buyers/" style="text-decoration:none;color:var(--gold-soft)">High intent buyers &rarr;</a><a href="/scale/qualifying-prospects/" style="text-decoration:none;color:var(--gold-soft)">Qualifying prospects &rarr;</a></span></div>
+<div class="flowwrap">
+<div class="flowcol"><div class="flowgrid">
+<svg id="flow" viewBox="0 0 880 220" role="img" aria-label="Illustrative flow of leads moving left to right through four stages. Grey streams peel away at each gate where leads drop off. Each fix thins a drop-off stream and widens the flow.">
+<g id="root"><g id="streams"></g><path id="pipe" fill="#FFE7D8"/><g id="gates"></g><g id="dots"></g></g>
+</svg>
+<div class="labels" id="labels">
+<article class="lc" data-k="0"><div class="hd"><span class="n">1</span><span class="ok">&#10003; Optimised</span></div><h3>Leads coming in</h3><p>Optimise for views and getting leads in. Do not over-engineer it.</p><span class="lk"><a href="/scale/optimising-for-views/">Optimising for views &rarr;</a></span></article>
+<article class="lc" data-k="1"><div class="hd"><span class="n">2</span><span class="ok">&#10003; Optimised</span></div><h3>Not showing up</h3><p>A no-show costs you twice.</p><span class="lk"><a href="/scale/improve-your-show-rate/">Improve your show rate &rarr;</a></span></article>
+<article class="lc" data-k="2"><div class="hd"><span class="n">3</span><span class="ok">&#10003; Optimised</span></div><h3>Showing up, but not high enough quality</h3><p>The right people, not just more people.</p><span class="lk"><a href="/scale/higher-quality-clients/">Higher quality clients &rarr;</a></span></article>
+<article class="lc" data-k="3"><div class="hd"><span class="n">4</span><span class="ok">&#10003; Optimised</span></div><h3>Good quality, but not ready to buy</h3><p>Filter for what they actually want.</p><span class="lk"><a href="/scale/high-intent-buyers/">High intent buyers &rarr;</a><a href="/scale/qualifying-prospects/">Qualifying prospects &rarr;</a></span></article>
+</div>
+</div></div>
+<aside class="endcol" aria-label="Result">
+<div class="qh">Qualified leads</div>
+<div class="qbar" aria-hidden="true"><i id="qfill"></i></div>
+<div class="mh">Cost per qualified lead</div>
+<div class="meter"><div class="mtrack" aria-hidden="true"><i id="mfill"></i></div><div class="mlab"><span>High</span><span class="falls" id="falls">&darr; Falls</span><span>Low</span></div></div>
+<p class="note">Illustrative only.</p>
+</aside>
 </div>
 
 <p class="lab">The rules of the game</p>
@@ -114,9 +162,109 @@ h1{font-size:clamp(32px,3.8vw,50px)}
 (function(){
 document.documentElement.classList.add("js");
 var els=document.querySelectorAll(".rv");
-if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion:reduce)").matches){els.forEach(function(e){e.classList.add("in")});return;}
+if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion:reduce)").matches){els.forEach(function(e){e.classList.add("in")});}
+else{
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.15});
 els.forEach(function(e){io.observe(e)});
+}
+
+/* Illustrative flow. No real figures: heights are relative only. */
+var NS="http://www.w3.org/2000/svg",W=880,TY=34,G=[220,440,660],V=80;
+var reduce=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+var svg=document.getElementById("flow"),root=document.getElementById("root"),pipe=document.getElementById("pipe");
+var gStreams=document.getElementById("streams"),gGates=document.getElementById("gates"),gDots=document.getElementById("dots");
+var btn=document.getElementById("fix"),statusEl=document.getElementById("status"),countEl=document.getElementById("count");
+var dotsI=document.querySelectorAll(".dots i"),cards=document.querySelectorAll(".lc");
+var mfill=document.getElementById("mfill"),qfill=document.getElementById("qfill"),falls=document.getElementById("falls");
+var MSG=["Leads drop off at every gate, so cost per qualified lead is high.",
+"Leads coming in optimised. More leads enter the flow.",
+"Show rate improved. Fewer leads drop off at the second gate.",
+"Lead quality improved. Fewer leads drop off at the third gate.",
+"Buying intent improved. More qualified leads, and the lowest cost per qualified lead."];
+var fixed=0,h=[70,38.5,21.2,11.7],tg=h.slice(),parts=[],acc=0;
+var BASE=70*.55*.55*.55,MAXEND=90*.85*.85*.85;
+
+function targets(){var i=fixed>=1?90:70,t=[i];for(var k=0;k<3;k++){t.push(t[k]*(fixed>=k+2?.85:.55))}return t}
+var streams=[],blocks=[];
+for(var k=0;k<3;k++){
+var s=document.createElementNS(NS,"path");s.setAttribute("fill","none");s.setAttribute("stroke","#E4E4E4");gStreams.appendChild(s);streams.push(s);
+var cap=document.createElementNS(NS,"rect");cap.setAttribute("x",G[k]-2.5);cap.setAttribute("y",TY-12);cap.setAttribute("width",5);cap.setAttribute("height",12);cap.setAttribute("rx",2);cap.setAttribute("fill","#111");gGates.appendChild(cap);
+var b=document.createElementNS(NS,"rect");b.setAttribute("x",G[k]-2.5);b.setAttribute("width",5);b.setAttribute("rx",2);b.setAttribute("fill","#111");gGates.appendChild(b);blocks.push(b);
+}
+function draw(){
+var Y=h.map(function(v){return TY+v});
+var d="M0,"+TY+" H"+W+" V"+Y[3];
+for(var k=3;k>=1;k--){var gx=G[k-1];d+=" H"+(gx+16)+" C"+gx+","+Y[k]+" "+gx+","+Y[k-1]+" "+(gx-16)+","+Y[k-1]}
+d+=" H0 Z";pipe.setAttribute("d",d);
+for(k=1;k<=3;k++){
+gx=G[k-1];var t=Y[k-1]-Y[k],c=(Y[k-1]+Y[k])/2,st=streams[k-1];
+st.setAttribute("stroke-width",Math.max(t,0.1));
+st.setAttribute("d","M"+(gx-30)+","+c+" H"+(gx+8)+" Q"+(gx+55)+","+c+" "+(gx+55)+","+(c+47)+" V235");
+var bl=blocks[k-1];bl.setAttribute("y",Y[k]);bl.setAttribute("height",Math.max(t+8,2));
+}
+}
+function mkDot(x,y,mode,gx,off){
+var el=document.createElementNS(NS,"circle");el.setAttribute("r",2.8);el.setAttribute("fill",mode?"#8E8E93":"#F26B1D");gDots.appendChild(el);
+return {x:x,y:y,m:mode,g:gx||0,o:off||0,el:el};
+}
+function zone(x){return x<G[0]?0:x<G[1]?1:x<G[2]?2:3}
+function step(dt,paint){
+acc+=h[0]*.3*dt;
+while(acc>=1){acc-=1;parts.push(mkDot(0,Math.random()*h[0],0))}
+for(var i=parts.length-1;i>=0;i--){
+var p=parts[i];
+if(!p.m){
+var px=p.x;p.x+=V*dt;
+for(var k=0;k<3;k++){if(px<G[k]&&p.x>=G[k]){if(p.y>h[k+1]){p.m=1;p.g=G[k];p.o=(Math.random()-.5)*.7*(h[k]-h[k+1]);p.el.setAttribute("fill","#8E8E93");}}}
+if(!p.m){var z=zone(p.x);if(p.y>h[z]-3)p.y=Math.max(h[z]-3,1);}
+if(p.x>W+6){p.el.remove();parts.splice(i,1);continue}
+}else{
+var tx=p.g+55+p.o,rel=p.x-p.g;
+p.x+=V*Math.max(0,(tx-p.x)/(tx-p.g))*dt;
+p.y+=(25+95*Math.min(1,Math.max(0,rel)/40))*dt;
+if(TY+p.y>232){p.el.remove();parts.splice(i,1);continue}
+}
+if(paint){p.el.setAttribute("cx",p.x);p.el.setAttribute("cy",TY+p.y)}
+}
+}
+function paintAll(){parts.forEach(function(p){p.el.setAttribute("cx",p.x);p.el.setAttribute("cy",TY+p.y)})}
+function reseed(){
+parts.forEach(function(p){p.el.remove()});parts=[];acc=0;
+for(var i=0;i<150;i++)step(.1,false);
+paintAll();
+}
+var last=0;
+function frame(ts){
+var dt=last?Math.min((ts-last)/1000,.05):0;last=ts;
+var f=1-Math.exp(-dt*4),moving=false;
+for(var k=0;k<4;k++){var dlt=tg[k]-h[k];if(Math.abs(dlt)>.05){h[k]+=dlt*f}else h[k]=tg[k]}
+draw();step(dt,true);
+requestAnimationFrame(frame);
+}
+function layout(){
+var v=window.matchMedia("(max-width:700px)").matches;
+svg.setAttribute("viewBox",v?"0 0 220 880":"0 0 880 220");
+root.setAttribute("transform",v?"translate(220,0) rotate(90)":"");
+}
+function update(){
+tg=targets();
+if(reduce){h=tg.slice();draw();reseed();}
+var ratio=BASE/tg[3];
+mfill.style.height=Math.round(ratio*100)+"%";
+qfill.style.width=Math.round(tg[3]/MAXEND*100)+"%";
+falls.className="falls"+(fixed>0?" on":"");
+countEl.textContent="Bottlenecks fixed: "+fixed+" of 4";
+statusEl.textContent=MSG[fixed];
+for(var i=0;i<4;i++){dotsI[i].className=i<fixed?"on":"";cards[i].className="lc"+(i<fixed?" on":"")}
+btn.textContent=fixed>=4?"Reset":"Fix the next bottleneck";
+btn.className="fix"+(fixed>=4?" reset":"");
+}
+btn.addEventListener("click",function(){fixed=fixed>=4?0:fixed+1;update()});
+var mq=window.matchMedia("(max-width:700px)");
+if(mq.addEventListener)mq.addEventListener("change",layout);
+layout();
+h=targets();tg=h.slice();draw();reseed();update();
+if(!reduce)requestAnimationFrame(frame);
 })();
 </script>
 </body>
