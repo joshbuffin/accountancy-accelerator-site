@@ -48,6 +48,82 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
  .g3,.g4{grid-template-columns:1fr;gap:10px}.card{padding:12px 16px}
 }
 @media (prefers-reduced-motion:reduce){.card,.ex{transition:none}.card:hover,.ex:hover{transform:none}}
+
+/* corridor of doors */
+.lab{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.lab em{font-style:normal;font-weight:600;letter-spacing:.04em;text-transform:none;font-size:13px;color:var(--slate)}
+.stage{position:relative;height:330px;perspective:700px;perspective-origin:50% 50%;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.corr{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.floor,.ceil{position:absolute;left:-550px;width:1100px;height:2200px;transform-origin:50% 0;transform:translateZ(300px) rotateX(-90deg)}
+.floor{top:140px;background:
+ linear-gradient(90deg,transparent 36%,rgba(242,107,29,.13) 36% 64%,transparent 64%),
+ repeating-linear-gradient(to bottom,transparent 0 189px,rgba(0,0,0,.07) 189px 191px),
+ linear-gradient(to bottom,#DDDDE1,#F0F0F2 55%,#FFDCC2)}
+.ceil{top:-230px;background:linear-gradient(to bottom,#F4F4F6,#FAFAFB 55%,#FFEBDC)}
+.ceil::before{content:"";position:absolute;left:38%;width:24%;top:0;bottom:0;background:repeating-linear-gradient(to bottom,#fff 0 40px,transparent 40px 300px);box-shadow:0 0 30px rgba(255,255,255,.9)}
+.far{position:absolute;left:-550px;top:-230px;width:1100px;height:370px;transform:translateZ(-1900px);background:radial-gradient(ellipse at 50% 62%,#fff 0,#FFF1E6 18%,#FFB27A 52%,#F26B1D 120%)}
+.wall{position:absolute;top:-230px;width:2200px;height:370px;transform-style:preserve-3d}
+.wl{left:-550px;transform-origin:0 50%;transform:translateZ(300px) rotateY(90deg);background:
+ linear-gradient(to top,#D6D6DB 0 14px,transparent 14px),
+ linear-gradient(to bottom,transparent 0 196px,rgba(0,0,0,.06) 196px 198px,transparent 198px),
+ linear-gradient(to right,#EEEEF1,#F7F7F8 55%,#FFE6D3)}
+.wr{left:-1650px;transform-origin:100% 50%;transform:translateZ(300px) rotateY(-90deg);background:
+ linear-gradient(to top,#D6D6DB 0 14px,transparent 14px),
+ linear-gradient(to bottom,transparent 0 196px,rgba(0,0,0,.06) 196px 198px,transparent 198px),
+ linear-gradient(to left,#EEEEF1,#F7F7F8 55%,#FFE6D3)}
+.slot{position:absolute;left:var(--l);top:120px;width:160px;height:250px;transform-style:preserve-3d;box-shadow:0 0 0 5px #DADADF;animation:dIn .8s ease backwards;animation-delay:calc(.15s + var(--i)*.16s)}
+.slot.qd{box-shadow:0 0 0 5px rgba(242,107,29,.55)}
+.slot.open{box-shadow:0 0 0 5px #DADADF,0 0 60px 10px rgba(242,107,29,.55)}
+.slot.qd.open{box-shadow:0 0 0 5px rgba(242,107,29,.55),0 0 60px 10px rgba(242,107,29,.55)}
+.in{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,#FFF1E6 0,#FFC08F 45%,#F26B1D 125%);box-shadow:inset 0 14px 24px rgba(120,40,0,.35),inset 10px 0 18px rgba(120,40,0,.2)}
+.in-t,.in-p,.lt,.q{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.leaf{position:absolute;inset:0;display:block;width:100%;height:100%;border:1px solid #CFCFD5;padding:0;margin:0;font:inherit;color:var(--ink);cursor:pointer;background:linear-gradient(90deg,#FFFFFF,#F4F4F6);transform-origin:0 50%;transform:translateZ(1px);transition:transform .8s cubic-bezier(.2,.8,.2,1);-webkit-appearance:none;appearance:none}
+.leaf::before{content:"";position:absolute;left:14%;right:14%;top:9%;height:38%;border:1px solid #E2E2E6;border-radius:3px;box-shadow:inset 0 0 0 5px #fff,inset 0 0 0 6px #ECECEF}
+.leaf::after{content:"";position:absolute;right:11%;top:52%;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px #fff}
+.qd .leaf{background:linear-gradient(90deg,#FFF4EC,#FFE6D3);border-color:rgba(242,107,29,.55)}
+.slot.open .leaf{transform:translateZ(1px) rotateY(-100deg)}
+.leaf:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.sign{position:absolute;pointer-events:none;z-index:2;transform:translate(-50%,-100%);animation:dIn .8s ease backwards;animation-delay:calc(.15s + var(--i)*.16s)}
+.sign span{display:inline-block;background:#fff;border:1px solid rgba(242,107,29,.55);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.2;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.sign .sq{width:28px;height:28px;font-size:17px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;border:0;font-weight:800}
+.glow{position:absolute;left:50%;top:50%;width:300px;height:220px;margin:-110px 0 0 -150px;background:radial-gradient(ellipse,rgba(255,170,110,.6),rgba(255,170,110,0) 70%);pointer-events:none;animation:pulse 4s ease-in-out infinite}
+.caps{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;pointer-events:none;z-index:5}
+.cap{background:#fff;border:1px solid var(--gold);border-radius:14px;padding:9px 14px;max-width:310px;box-shadow:0 12px 30px -12px rgba(242,107,29,.55);animation:capIn .35s ease}
+.cap[hidden]{display:none}
+.cap b{display:block;font-size:15px;letter-spacing:-.01em;line-height:1.25}
+.cap span{display:block;margin-top:2px;font-size:13.5px;font-weight:500;color:var(--muted);line-height:1.35}
+@keyframes dIn{from{opacity:0}to{opacity:1}}
+@keyframes capIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:.75}50%{opacity:1}}
+@media (max-width:760px){
+ .lab{flex-direction:column;gap:2px}
+ .stage{height:auto;perspective:none;overflow:visible;border:0;border-radius:0;background:none}
+ .corr{position:static;width:auto;height:auto;transform:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ .floor,.ceil,.far,.glow,.caps,.sign{display:none}
+ .wall{display:contents}
+ .slot{position:relative;left:auto;top:auto;width:auto;height:170px;order:var(--o);perspective:700px;transform-style:flat;box-shadow:0 0 0 4px #DADADF}
+ .slot.qd{box-shadow:0 0 0 4px rgba(242,107,29,.55)}
+ .slot.open,.slot.qd.open{box-shadow:0 0 0 4px #FFC08F,0 0 24px 4px rgba(242,107,29,.45)}
+ .in{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:10px 12px;background:linear-gradient(#FFD9BC,#FF9F5E)}
+ .in-t,.in-p{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
+ .in-t{font-size:14px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+ .in-p{font-size:12px;font-weight:500;line-height:1.35}
+ .leaf{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:0 8px 14px;text-align:center}
+ .leaf::before{top:7%;height:34%;left:12%;right:12%}
+ .leaf::after{top:48%;right:9%}
+ .slot.r .leaf{transform-origin:100% 50%}
+ .slot .leaf{transform:none}
+ .slot.open .leaf{transform:rotateY(-82deg)}
+ .slot.r.open .leaf{transform:rotateY(82deg)}
+ .lt,.q{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;position:relative;z-index:1}
+ .lt{font-size:13px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+ .q{font-size:30px;font-weight:800;color:var(--gold-soft);line-height:1;margin-bottom:2px}
+ .qd .lt{font-size:11.5px}
+}
+@media (prefers-reduced-motion:reduce){
+ .slot,.sign,.glow,.cap{animation:none}
+ .leaf{transition:none}
+}
 </style>
 </head>
 <body>
@@ -62,11 +138,54 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 
 <main class="wrap">
 <section class="sec">
-<p class="lab">Niches that appeared for us</p>
-<div class="grid g3">
-<div class="card"><h2>Property</h2><p>Experts in property, winning a lot of property clients.</p></div>
-<div class="card"><h2>Online influencers &amp; coaches</h2><p>A lot of clients who are online influencers and coaches.</p></div>
-<div class="card"><h2>Airbnb management</h2><p>Came from my connections in Dubai, travelling a lot and being a mentor myself.</p></div>
+<p class="lab"><span>Niches that appeared for us</span><em>Hover or tap a door to open it</em></p>
+<div class="stage" role="group" aria-label="A corridor of doors, each one a niche">
+<div class="corr">
+<div class="floor"></div><div class="ceil"></div><div class="far"></div>
+<div class="wall wl">
+<div class="slot l" style="--l:420px;--i:0;--o:1">
+<div class="in" id="d1-in"><span class="in-t">Property</span><span class="in-p">Experts in property, winning a lot of property clients.</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d1-in" data-k="1"><span class="lt">Property</span></button>
+</div>
+<div class="slot l" style="--l:920px;--i:2;--o:3">
+<div class="in" id="d3-in"><span class="in-t">Airbnb management</span><span class="in-p">Came from my connections in Dubai, travelling a lot and being a mentor myself.</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d3-in" data-k="3"><span class="lt">Airbnb management</span></button>
+</div>
+<div class="slot l qd" style="--l:1420px;--i:4;--o:5">
+<div class="in" id="d5-in"><span class="in-t">New niche to be unlocked</span><span class="in-p">New niche to be found</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d5-in" data-k="5"><span class="q">?</span><span class="lt">New niche to be unlocked</span></button>
+</div>
+</div>
+<div class="wall wr">
+<div class="slot r" style="--l:1370px;--i:1;--o:2">
+<div class="in" id="d2-in"><span class="in-t">Online mentors</span><span class="in-p">A lot of clients who are online influencers and coaches.</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d2-in" data-k="2"><span class="lt">Online mentors</span></button>
+</div>
+<div class="slot r qd" style="--l:870px;--i:3;--o:4">
+<div class="in" id="d4-in"><span class="in-t">New niche to be unlocked</span><span class="in-p">New niche to be found</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d4-in" data-k="4"><span class="q">?</span><span class="lt">New niche to be unlocked</span></button>
+</div>
+<div class="slot r qd" style="--l:370px;--i:5;--o:6">
+<div class="in" id="d6-in"><span class="in-t">New niche to be unlocked</span><span class="in-p">New niche to be found</span></div>
+<button class="leaf" type="button" aria-expanded="false" aria-controls="d6-in" data-k="6"><span class="q">?</span><span class="lt">New niche to be unlocked</span></button>
+</div>
+</div>
+</div>
+<div class="glow"></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + -427.8px);top:calc(50% + -91.6px);--i:0"><span>Property</span></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + 334.8px);top:calc(50% + -73.0px);--i:1"><span>Online mentors</span></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + -289.0px);top:calc(50% + -61.0px);--i:2"><span>Airbnb management</span></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + 233.3px);top:calc(50% + -52.7px);--i:3"><span class="sq">?</span></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + -202.6px);top:calc(50% + -46.5px);--i:4"><span class="sq">?</span></div>
+<div class="sign" aria-hidden="true" style="left:calc(50% + 179.1px);top:calc(50% + -41.8px);--i:5"><span class="sq">?</span></div>
+<div class="caps" aria-hidden="true">
+<div class="cap" data-k="1" hidden><b>Property</b><span>Experts in property, winning a lot of property clients.</span></div>
+<div class="cap" data-k="2" hidden><b>Online mentors</b><span>A lot of clients who are online influencers and coaches.</span></div>
+<div class="cap" data-k="3" hidden><b>Airbnb management</b><span>Came from my connections in Dubai, travelling a lot and being a mentor myself.</span></div>
+<div class="cap" data-k="4" hidden><b>New niche to be unlocked</b><span>New niche to be found</span></div>
+<div class="cap" data-k="5" hidden><b>New niche to be unlocked</b><span>New niche to be found</span></div>
+<div class="cap" data-k="6" hidden><b>New niche to be unlocked</b><span>New niche to be found</span></div>
+</div>
 </div>
 </section>
 
@@ -87,6 +206,26 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 
 <div class="wrap pnav"><span></span><a href="/scale/perfect-future-client/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Optimising for our perfect future client &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Scale · Niche · Finding the opportunities within niches</div></footer>
+
+<script>
+(function(){
+var st={};
+function apply(k){var o=st[k],open=((o.hov||o.foc)&&!o.sup)||o.pin;
+var slot=document.getElementById('d'+k+'-in').parentNode;slot.classList.toggle('open',open);
+slot.querySelector('.leaf').setAttribute('aria-expanded',open?'true':'false');
+var c=document.querySelector('.cap[data-k="'+k+'"]');if(c)c.hidden=!open;}
+document.querySelectorAll('.leaf').forEach(function(b){
+var k=b.getAttribute('data-k'),slot=b.parentNode;st[k]={hov:false,foc:false,pin:false,sup:false};
+slot.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse'){st[k].hov=true;apply(k);}});
+slot.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'){st[k].hov=false;st[k].sup=false;apply(k);}});
+b.addEventListener('focus',function(){try{if(b.matches(':focus-visible')){st[k].foc=true;apply(k);}}catch(x){}});
+b.addEventListener('blur',function(){st[k].foc=false;st[k].sup=false;apply(k);});
+b.addEventListener('click',function(){var o=st[k];
+if(o.pin){o.pin=false;o.sup=true;}else{o.pin=true;o.sup=false;}apply(k);});
+b.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=st[k];o.pin=false;o.sup=true;apply(k);}});
+});
+})();
+</script>
 
 </body>
 </html>
