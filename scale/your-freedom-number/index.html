@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your freedom number - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: Your freedom number.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+h1{font-size:clamp(34px,3.6vw,46px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.lead{font-size:clamp(16px,1.5vw,18px);color:var(--muted);max-width:760px;margin-top:6px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+.page{padding:clamp(14px,1.8vw,20px) 24px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2vw,22px)}
+.panel h2{font-size:clamp(17px,1.6vw,19px);font-weight:700;letter-spacing:-.02em}
+.panel .hint{color:var(--muted);font-size:14px;margin-top:2px}
+.shared{margin-top:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:14px;align-items:stretch}
+.f label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.f .note{font-size:12px;color:var(--slate);margin-top:5px;line-height:1.35}
+.money{position:relative}
+.money::before{content:"£";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:16px;pointer-events:none}
+.money input{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:8px 14px 8px 28px;background:var(--paper);color:var(--ink);width:100%;min-width:0;text-align:right;transition:border-color .2s ease,box-shadow .2s ease}
+.money input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(242,107,29,.15)}
+.result{background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(16px,2vw,20px) clamp(18px,2.4vw,24px);display:flex;flex-direction:column}
+.result .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.result h2{font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.result .sum{font-size:13px;color:#B0B0B5;margin-top:2px}
+.result .f{margin-top:10px}
+.result .f label{color:#fff}
+.result .f .note{color:#B0B0B5}
+.result .label{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#B0B0B5;margin-top:12px}
+.result .big{font-size:clamp(40px,4.4vw,52px);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--gold);margin-top:8px}
+.result .per{color:#B0B0B5;font-size:12px;margin-top:4px}
+.bar{height:10px;border-radius:999px;background:#2C2C2E;margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);border-radius:999px;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.lines{margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.lines div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #2C2C2E;padding-top:6px}
+.lines span:last-child{font-weight:600}
+.lines .gap span:last-child{color:var(--gold)}
+.reset{margin-top:22px;font:inherit;font-size:14px;color:#B0B0B5;background:none;border:1px solid #3A3A3C;border-radius:10px;padding:8px 14px;cursor:pointer}
+.reset:hover{color:#fff;border-color:var(--gold)}
+.ph{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ph .reset{margin:0;padding:5px 12px;color:var(--muted);border-color:var(--line)}
+.ph .reset:hover{color:var(--gold-soft);border-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.two{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · Your freedom number</span></div></nav>
+
+<main class="wrap page">
+<p class="eyebrow">Level 1 - Shift</p>
+<h1>Your freedom <span class="gold-t">number.</span></h1>
+<p class="lead">Two numbers: when you can hire, and when you're free.</p>
+
+<div class="panel shared">
+<div class="ph"><h2>Where you are now</h2><button class="reset" id="reset" type="button">Start again</button></div>
+<div class="grid3">
+<div class="f"><label for="mrr">Current monthly revenue (MRR)</label><div class="money"><input id="mrr" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="costs">Monthly business costs</label><div class="money"><input id="costs" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Software, outsourcing, ads, etc.</p></div>
+<div class="f"><label for="pay">What you pay yourself each month</label><div class="money"><input id="pay" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Your quit number from Start</p></div>
+</div>
+</div>
+
+<div class="two" aria-live="polite">
+<section class="result">
+<p class="tag">Number 1</p>
+<h2>Your hire number</h2>
+<div class="f"><label for="hire">Full cost of your first UK hire per month</label><div class="money"><input id="hire" type="text" inputmode="decimal" placeholder="4000"></div><p class="note">Salary plus all the costs of employing them</p></div>
+<p class="label">Your hire number</p>
+<p class="big" id="hireN">£0</p>
+<p class="per">a month in revenue (business costs + what you pay yourself + hire cost)</p>
+<div class="bar"><i id="hireBar"></i></div>
+<div class="lines">
+<div><span>Current MRR</span><span id="hMrr">£0</span></div>
+<div class="gap"><span>Gap to your hire number</span><span id="hGap">£0</span></div>
+</div>
+</section>
+
+<section class="result">
+<p class="tag">Number 2</p>
+<h2>Your freedom number</h2>
+<div class="f"><label for="cm">Client manager cost per month</label><div class="money"><input id="cm" type="text" inputmode="decimal" placeholder="4000"></div><p class="note">Follows your hire cost until you change it</p></div>
+<div class="f"><label for="profit">Profit you want left over each month for the life you want</label><div class="money"><input id="profit" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Your profit left over is what you take home, so it replaces what you pay yourself.</p></div>
+<p class="label">Your freedom number</p>
+<p class="big" id="freeN">£0</p>
+<p class="per">a month in revenue (business costs + client manager + profit wanted)</p>
+<div class="bar"><i id="freeBar"></i></div>
+<div class="lines">
+<div><span>Current MRR</span><span id="fMrr">£0</span></div>
+<div class="gap"><span>Gap to your freedom number</span><span id="fGap">£0</span></div>
+</div>
+</section>
+</div>
+</main>
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · Your freedom number</div></footer>
+
+<script>
+(function(){
+var KEY="aa-freedom-number-v1",state;
+function fresh(){return{mrr:"",costs:"",pay:"",hire:"4000",cm:"4000",cmEdited:false,profit:""}}
+try{state=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!state||typeof state!=="object"||state.hire===undefined)state=fresh();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
+function num(v){var x=parseFloat(String(v).replace(/[^0-9.]/g,""));return isFinite(x)?x:0}
+function $(id){return document.getElementById(id)}
+var ids=["mrr","costs","pay","hire","cm","profit"];
+function out(prefix,need,mrr,anyIn){
+$(prefix+"N").textContent=anyIn?gbp.format(need):"£0";
+var p=need>0?Math.min(100,mrr/need*100):0;
+$(prefix+"Bar").style.width=p+"%";
+var short=prefix==="hire"?"h":"f",g=$(short+"Gap");
+$(short+"Mrr").textContent=gbp.format(mrr);
+if(!anyIn||need<=0)g.textContent="£0";
+else if(mrr>=need)g.textContent="You're there";
+else g.textContent=gbp.format(need-mrr)}
+function calc(){
+var mrr=num(state.mrr),costs=num(state.costs),pay=num(state.pay),hire=num(state.hire),cm=num(state.cm),profit=num(state.profit);
+var hn=costs+pay+hire,fn=costs+cm+profit;
+out("hire",hn,mrr,costs+pay+hire>0&&(state.costs!==""||state.pay!==""));
+out("free",fn,mrr,state.costs!==""||state.profit!=="");
+save()}
+function fill(){ids.forEach(function(k){$(k).value=state[k]})}
+ids.forEach(function(k){$(k).oninput=function(){
+state[k]=$(k).value;
+if(k==="cm")state.cmEdited=true;
+if(k==="hire"&&!state.cmEdited){state.cm=state.hire;$("cm").value=state.cm}
+calc()}});
+$("reset").onclick=function(){state=fresh();fill();calc()};
+fill();calc();
+})();
+</script>
+</body>
+</html>
