@@ -49,8 +49,46 @@ h1{font-size:clamp(32px,3.8vw,52px)}
 .ex .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
 .ex h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em;flex:1 1 320px}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
-@media (prefers-reduced-motion:reduce){.nc,.ex,.st,.ar{transition:none}.st,.ar{opacity:1;transform:none}.nc:hover,.ex:hover,.st:hover{transform:none}}
-@media (max-width:900px){.cards{grid-template-columns:1fr;gap:12px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.story{grid-template-columns:1fr}.ar{transform:rotate(90deg);justify-self:center;line-height:1}}
+/* Handover visual */
+.viz{margin-top:clamp(10px,1.6vh,16px);background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:8px 14px 12px}
+.viz svg{display:block;width:100%;height:auto}
+.viz .m{display:none}
+.vz-cap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:10px;align-items:center;margin-top:4px}
+.cp{font-size:clamp(12px,1.15vw,14px);font-weight:600;color:var(--slate);line-height:1.25;padding:7px 12px;border-radius:14px;border:1px solid var(--line);background:var(--card);transition:background-color .5s ease,border-color .5s ease,color .5s ease}
+.cp i{font-style:normal;display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1px}
+.viz[data-s="1"] .c1,.viz[data-s="2"] .c2,.viz[data-s="3"] .c3,.viz[data-s="3"] .c4{background:#FFF8F3;border-color:var(--gold);color:var(--ink)}
+.viz[data-s="3"] .c4{transition-delay:1.8s}
+.viz[data-s="1"] .c1 i,.viz[data-s="2"] .c2 i,.viz[data-s="3"] .c3 i,.viz[data-s="3"] .c4 i{color:var(--gold-soft)}
+.play{font:inherit;font-size:15px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:12px 24px;cursor:pointer;white-space:nowrap;box-shadow:0 10px 24px -12px rgba(242,107,29,.8);transition:transform .25s ease,background-color .25s ease}
+.play:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.play:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.play[disabled]{opacity:.6;cursor:default;transform:none}
+.mv{transition:transform 1.8s cubic-bezier(.45,.05,.25,1)}
+.tk{opacity:0;transition:opacity .5s ease,transform 1.5s cubic-bezier(.45,.05,.25,1)}
+.tk.t2{transition-delay:.3s}.tk.t3{transition-delay:.6s}
+.viz[data-s="2"] .tk,.viz[data-s="3"] .tk{opacity:1}
+.d .tk{--tx:300px;--ty:0px}.m .tk{--tx:90px;--ty:0px}
+.viz[data-s="2"] .tk,.viz[data-s="3"] .tk{transform:translate(var(--tx),var(--ty))}
+.d .you .mv{--ox:700px;--oy:0px}.m .you .mv{--ox:100px;--oy:200px}
+.viz[data-s="3"] .you .mv{transform:translate(var(--ox),var(--oy))}
+.bub,.run,.else-i{transition:opacity .6s ease}
+.viz:not([data-s="1"]) .bub{opacity:0}
+.run,.else-i{opacity:0}
+.viz[data-s="3"] .run,.viz[data-s="3"] .else-i{opacity:1;transition-delay:1.8s}
+.viz.noanim *{transition:none!important;animation:none!important}
+.viz.walking .walk{animation:bob .45s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.grp{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin-top:clamp(8px,1.4vh,14px)}
+.grp .lab{margin:0 0 6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:clamp(13px,1.15vw,15px);font-weight:600;letter-spacing:-.01em;line-height:1.2;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.pill:hover{transform:translateY(-3px);border-color:var(--gold);background:#FFF8F3}
+.pill svg{width:22px;height:22px;flex:none}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;margin:0 3px}
+.ex{padding:10px 20px;margin-top:clamp(10px,1.4vh,14px)}
+.ex h2{font-size:clamp(16px,1.5vw,19px)}
+@media (prefers-reduced-motion:reduce){.mv,.tk,.bub,.run,.else-i,.cp{transition:none!important}.viz.walking .walk{animation:none}.nc,.ex,.st,.ar{transition:none}.st,.ar{opacity:1;transform:none}.nc:hover,.ex:hover,.st:hover{transform:none}}
+@media (max-width:900px){.cards{grid-template-columns:1fr;gap:12px}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.viz .d{display:none}.viz .m{display:block;max-width:420px;margin:0 auto}.vz-cap{grid-template-columns:1fr 1fr}.vz-cap .play{grid-column:1/-1;order:-1}.grp{grid-template-columns:1fr;gap:12px}.story{grid-template-columns:1fr}.ar{transform:rotate(90deg);justify-self:center;line-height:1}}
 </style>
 </head>
 <body>
@@ -66,23 +104,58 @@ h1{font-size:clamp(32px,3.8vw,52px)}
 </div>
 <h1>Your client manager <span class="gold-t">unlocks freedom.</span></h1>
 
-<p class="lab">Your right-hand person</p>
-<div class="cards">
-<div class="nc"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 22c-14 0-24 10-24 23 0 8 4 14 10 18v9h28v-9c6-4 10-10 10-18 0-13-10-23-24-23z" fill="none" stroke="#111" stroke-width="5" stroke-linejoin="round"/></svg><h2>Thinks like you</h2></div>
-<div class="nc"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="12" fill="none" stroke="#111" stroke-width="5"/><path d="M50 22v10M50 68v10M22 50h10M68 50h10M30 30l7 7M63 63l7 7M70 30l-7 7M37 63l-7 7" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg><h2>Operates like you</h2></div>
-<div class="nc"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M26 52l16 16 32-34" fill="none" stroke="#F26B1D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg><h2>Can do everything you do</h2></div>
+<div class="viz" id="viz" data-s="1">
+<svg class="d" viewBox="0 0 1000 272" role="img" aria-label="Animation: you and your client manager think alike, you give them responsibility, then you step out of the business to work on something else.">
+<rect x="14" y="12" width="560" height="248" rx="22" fill="#FFF8F3" stroke="#F26B1D" stroke-width="2.5"/>
+<text x="38" y="42" font-size="13" font-weight="700" letter-spacing="2.2" fill="#C2410C">THE BUSINESS</text>
+<rect x="640" y="12" width="346" height="248" rx="22" fill="#F5F5F7" stroke="#B8B8BD" stroke-width="2.5" stroke-dasharray="9 8"/>
+<text x="664" y="42" font-size="13" font-weight="700" letter-spacing="2.2" fill="#6E6E73">WORKING ON SOMETHING ELSE</text>
+<g class="else-i"><path transform="translate(930 90)" d="M0-14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#F26B1D"/><path transform="translate(960 120)" d="M0-14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#F26B1D"/><circle cx="945" cy="62" r="4" fill="#F26B1D"/></g>
+<g class="bub"><ellipse cx="265" cy="72" rx="64" ry="34" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/><g transform="translate(265 70) scale(1)"><path d="M0-16c-9 0-15 6-15 14 0 5 2 8 6 11v6h18v-6c4-3 6-6 6-11 0-8-6-14-15-14z" fill="#FFF3EA" stroke="#F26B1D" stroke-width="3" stroke-linejoin="round"/><path d="M-5 20h10" stroke="#F26B1D" stroke-width="3" stroke-linecap="round"/></g><circle cx="222" cy="112" r="7" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="190" cy="124" r="5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="160" cy="131" r="3.5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="308" cy="112" r="7" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="340" cy="124" r="5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="370" cy="131" r="3.5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/></g>
+<g class="tk t1"><rect x="168" y="52" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="210" y="68.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Clients</text></g><g class="tk t2"><rect x="168" y="80" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="210" y="96.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Team</text></g><g class="tk t3"><rect x="168" y="108" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="210" y="124.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Decisions</text></g>
+<g class="you" transform="translate(110 165)"><g class="mv"><g class="walk"><circle cx="0" cy="-22" r="21" fill="#F26B1D"/><path d="M-34 62v-18a34 34 0 0 1 68 0v18z" fill="#F26B1D"/></g><text y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#111">You</text></g></g>
+<g class="cm" transform="translate(420 165)"><g class="mv"><g class="walk"><circle cx="0" cy="-22" r="21" fill="#FFC9A3"/><path d="M-34 62v-18a34 34 0 0 1 68 0v18z" fill="#FFC9A3"/></g><text y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Client manager</text></g></g>
+<g class="run"><text x="290" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">Running the business</text></g>
+</svg>
+<svg class="m" viewBox="0 0 360 480" role="img" aria-label="Animation: you and your client manager think alike, you give them responsibility, then you step out of the business to work on something else.">
+<rect x="8" y="8" width="344" height="246" rx="20" fill="#FFF8F3" stroke="#F26B1D" stroke-width="2.5"/>
+<text x="24" y="34" font-size="12" font-weight="700" letter-spacing="2" fill="#C2410C">THE BUSINESS</text>
+<rect x="8" y="282" width="344" height="190" rx="20" fill="#F5F5F7" stroke="#B8B8BD" stroke-width="2.5" stroke-dasharray="9 8"/>
+<text x="24" y="308" font-size="12" font-weight="700" letter-spacing="2" fill="#6E6E73">WORKING ON SOMETHING ELSE</text>
+<g class="else-i"><path transform="translate(300 350)" d="M0-14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#F26B1D"/><path transform="translate(325 380)" d="M0-14l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#F26B1D"/><circle cx="315" cy="328" r="4" fill="#F26B1D"/></g>
+<g class="bub"><ellipse cx="180" cy="72" rx="52" ry="30" fill="#fff" stroke="#F26B1D" stroke-width="2.5"/><g transform="translate(180 70) scale(0.9)"><path d="M0-16c-9 0-15 6-15 14 0 5 2 8 6 11v6h18v-6c4-3 6-6 6-11 0-8-6-14-15-14z" fill="#FFF3EA" stroke="#F26B1D" stroke-width="3" stroke-linejoin="round"/><path d="M-5 20h10" stroke="#F26B1D" stroke-width="3" stroke-linecap="round"/></g><circle cx="142" cy="96" r="6" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="118" cy="108" r="4.5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="98" cy="118" r="3" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="218" cy="96" r="6" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="242" cy="108" r="4.5" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/><circle cx="262" cy="118" r="3" fill="#FFF3EA" stroke="#F26B1D" stroke-width="2"/></g>
+<g class="tk t1"><rect x="132" y="34" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="174" y="50.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Clients</text></g><g class="tk t2"><rect x="132" y="62" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="174" y="78.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Team</text></g><g class="tk t3"><rect x="132" y="90" width="84" height="24" rx="12" fill="#fff" stroke="#F26B1D" stroke-width="2"/><text x="174" y="106.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#C2410C">Decisions</text></g>
+<g class="you" transform="translate(80 160)"><g class="mv"><g class="walk"><circle cx="0" cy="-22" r="21" fill="#F26B1D"/><path d="M-34 62v-18a34 34 0 0 1 68 0v18z" fill="#F26B1D"/></g><text y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#111">You</text></g></g>
+<g class="cm" transform="translate(270 160)"><g class="mv"><g class="walk"><circle cx="0" cy="-22" r="21" fill="#FFC9A3"/><path d="M-34 62v-18a34 34 0 0 1 68 0v18z" fill="#FFC9A3"/></g><text y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Client manager</text></g></g>
+<g class="run"><text x="115" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#C2410C">Running the business</text></g>
+</svg>
+<div class="vz-cap">
+<div class="cp c1"><i>Step 1</i>Thinks like you</div>
+<div class="cp c2"><i>Step 2</i>Give them responsibility</div>
+<div class="cp c3"><i>Step 3</i>Remove yourself from the business</div>
+<div class="cp c4"><i>Step 4</i>Work on something else</div>
+<button class="play" id="play" type="button">Show the handover</button>
+</div>
+</div>
+
+<div class="grp">
+<div><p class="lab">Your right-hand person</p>
+<div class="pills">
+<span class="pill"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 22c-14 0-24 10-24 23 0 8 4 14 10 18v9h28v-9c6-4 10-10 10-18 0-13-10-23-24-23z" fill="none" stroke="#111" stroke-width="7" stroke-linejoin="round"/></svg>Thinks like you</span>
+<span class="pill"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="12" fill="none" stroke="#111" stroke-width="7"/><path d="M50 22v10M50 68v10M22 50h10M68 50h10M30 30l7 7M63 63l7 7M70 30l-7 7M37 63l-7 7" stroke="#111" stroke-width="7" stroke-linecap="round"/></svg>Operates like you</span>
+<span class="pill"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M26 52l16 16 32-34" fill="none" stroke="#F26B1D" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>Can do everything you do</span>
+</div></div>
+<div><p class="lab">With the right person</p>
+<div class="pills">
+<span class="pill"><span class="dot" aria-hidden="true"></span>A more enjoyable business</span>
+<span class="pill"><span class="dot" aria-hidden="true"></span>You work on what you want to</span>
+<span class="pill"><span class="dot" aria-hidden="true"></span>You grow faster than ever before</span>
+</div></div>
 </div>
 
 <div class="ex">
 <span class="tag">Do not compromise</span>
 <h2>Don't drop your standards because you can't find someone. This hire is crucial.</h2>
-</div>
-
-<p class="lab">With the right person</p>
-<div class="cards">
-<div class="nc"><h2>A more enjoyable business</h2></div>
-<div class="nc"><h2>You work on what you want to</h2></div>
-<div class="nc"><h2>You grow faster than ever before</h2></div>
 </div>
 </main>
 <div class="wrap pnav"><span></span><a href="/scale/do-not-skip-this-video/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Get HR support &rarr;</a></div>
@@ -95,6 +168,26 @@ var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce
 if(reduce||!("IntersectionObserver" in window)){s.classList.add("in");return;}
 var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){s.classList.add("in");io.disconnect();}},{threshold:.2});
 io.observe(s);
+})();
+
+(function(){
+var v=document.getElementById("viz"),b=document.getElementById("play");
+if(!v||!b)return;
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var t=[],busy=false,done=false;
+function clear(){while(t.length)clearTimeout(t.pop());}
+function set(n){v.setAttribute("data-s",n);}
+function reset(){clear();v.classList.add("noanim");v.classList.remove("walking");set(1);void v.offsetWidth;v.classList.remove("noanim");}
+function finish(){clear();v.classList.remove("walking");set(3);busy=false;done=true;b.disabled=false;b.textContent="Replay";}
+b.addEventListener("click",function(){
+if(busy)return;
+if(reduce){if(done){reset();done=false;b.textContent="Show the handover";}else{v.classList.add("noanim");set(3);void v.offsetWidth;v.classList.remove("noanim");done=true;b.textContent="Replay";}return;}
+busy=true;b.disabled=true;reset();
+t.push(setTimeout(function(){set(2);},500));
+t.push(setTimeout(function(){set(3);v.classList.add("walking");},2900));
+t.push(setTimeout(function(){v.classList.remove("walking");},4800));
+t.push(setTimeout(finish,6000));
+});
 })();
 </script>
 </body>
