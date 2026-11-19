@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Think bigger - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: Think bigger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(16px,2.2vw,24px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+h1{font-size:clamp(40px,5.2vw,72px)}
+.eyebrow{margin-bottom:12px}
+.sub{margin-top:10px;font-size:clamp(16px,1.6vw,20px);font-weight:600;color:var(--muted);letter-spacing:-.01em}
+.btn{font:inherit;font-size:15px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:13px 26px;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,background-color .3s ease;box-shadow:0 10px 24px -10px rgba(242,107,29,.7)}
+.btn:hover{transform:translateY(-3px);background:var(--gold-soft)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.stage{--h:326px;--drop:calc(var(--h) - 52px);position:relative;height:var(--h);margin-top:clamp(12px,2vh,18px);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.post{position:absolute;top:0;bottom:0;width:6px;background:var(--line)}
+.post.l{left:22px}.post.r{right:22px}
+.ghost{position:absolute;left:22px;right:22px;bottom:28px;border-top:3px dashed #B5B5BA}
+.ghost span{position:absolute;left:18px;top:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.rbar{position:absolute;left:22px;right:22px;top:26px;height:14px;border-radius:999px;background:var(--gold);box-shadow:0 8px 22px -6px rgba(242,107,29,.7);transition:transform 1.5s cubic-bezier(.2,.9,.2,1)}
+.low .rbar{transform:translateY(var(--drop))}
+.targets{position:absolute;left:58px;right:58px;top:64px;display:grid;grid-template-columns:1fr 1fr;gap:24px;transition:opacity .8s ease .7s,transform .8s cubic-bezier(.2,.8,.2,1) .7s}
+.low .targets{opacity:0;transform:translateY(14px);transition:none}
+.big{font-weight:800;letter-spacing:-.05em;line-height:.95;color:var(--ink)}
+.big.o{color:var(--gold)}
+.t1 .big{font-size:clamp(64px,9vw,128px)}
+.t2 .big{font-size:clamp(44px,5.8vw,80px)}
+.cap{margin-top:10px;font-size:clamp(15px,1.6vw,20px);font-weight:700;letter-spacing:-.01em}
+.cap.o{color:var(--gold-soft)}
+.row{display:grid;grid-template-columns:1fr 1.15fr;gap:14px;margin-top:14px}
+.quote{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:18px 24px;position:relative}
+.quote:before{content:"\201C";position:absolute;right:18px;top:-4px;font-size:80px;font-weight:800;line-height:1;color:var(--gold);opacity:.35}
+.quote p{padding-right:44px;font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+.quote p+p{margin-top:8px;color:var(--gold-soft)}
+.quote small{display:block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.long{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 24px 18px}
+.lab{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.tl{position:relative;display:flex;justify-content:space-between;margin:16px 6px 0}
+.tl:before{content:"";position:absolute;left:0;right:0;top:11px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--line),var(--gold))}
+.mk{position:relative;text-align:center;min-width:56px}
+.mk i{display:block;width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--gold);margin:0 auto 6px}
+.mk.n i{border-color:#B5B5BA}
+.mk:last-child i{background:var(--gold)}
+.mk b{font-size:clamp(15px,1.5vw,18px);font-weight:800;letter-spacing:-.02em}
+.mk.n b{color:var(--slate)}
+.long .line{margin-top:12px;font-size:clamp(15px,1.5vw,18px);font-weight:700;letter-spacing:-.01em;line-height:1.35}
+.long .line span{color:var(--gold-soft)}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.rbar,.targets,.btn{transition:none}.btn:hover{transform:none}}
+@media (max-width:900px){.page{padding:24px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.row{grid-template-columns:1fr}}
+@media (max-width:700px){.stage{--h:400px}.targets{grid-template-columns:1fr;gap:18px;left:44px;right:44px}.post.l{left:14px}.post.r{right:14px}.ghost,.rbar{left:14px;right:14px}.t1 .big{font-size:76px}.t2 .big{font-size:50px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · Think bigger</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 1 - Shift</p>
+<h1>Think <span class="gold-t">bigger.</span></h1>
+<p class="sub">Set the bar higher. It's more realistic than you think.</p>
+</div>
+<button class="btn" id="go" type="button">Raise the bar</button>
+</div>
+
+<div class="stage" id="stage" role="img" aria-label="A bar rising from where you might be aiming to £25k profit a month and a firm worth seven figures">
+<div class="post l"></div><div class="post r"></div>
+<div class="ghost"><span>Where you might be aiming</span></div>
+<div class="rbar"></div>
+<div class="targets">
+<div class="t1"><div class="big o">&pound;25k</div><p class="cap o">profit a month</p></div>
+<div class="t2"><div class="big">Seven figures</div><p class="cap">A firm worth seven figures when you sell</p></div>
+</div>
+</div>
+
+<div class="row">
+<div class="quote">
+<p>It might seem unrealistic. I can assure you it's absolutely realistic.</p>
+<p>Every single person in here can do this.</p>
+<small>Your mentor</small>
+</div>
+<div class="long">
+<p class="lab">Decide for the long term</p>
+<div class="tl">
+<div class="mk n"><i></i><b>Now</b></div>
+<div class="mk"><i></i><b>2 years</b></div>
+<div class="mk"><i></i><b>3 years</b></div>
+<div class="mk"><i></i><b>5 years</b></div>
+</div>
+<p class="line">Make decisions that are right for the business now, <span>and right for it longer term.</span></p>
+</div>
+</div>
+</main>
+<div class="wrap pnav"><a href="/scale/business-comes-in-seasons/" style="text-decoration:none;color:var(--gold-soft)">&larr; Business comes in seasons</a><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · Think bigger</div></footer>
+
+<script>
+(function(){
+var s=document.getElementById("stage"),b=document.getElementById("go");
+var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+var done=false,t;
+function up(){if(done)return;done=true;s.classList.remove("low")}
+function replay(){
+ if(rm)return;
+ clearTimeout(t);
+ s.classList.add("low");
+ void s.offsetWidth;
+ t=setTimeout(function(){s.classList.remove("low")},500);
+}
+b.addEventListener("click",replay);
+if(!rm){
+ s.classList.add("low");
+ if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();setTimeout(up,400)}},{threshold:.3});
+  io.observe(s);
+ }
+ setTimeout(up,2500);
+}
+})();
+</script>
+</body>
+</html>
