@@ -26,46 +26,67 @@ h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 
 /* One-page layout */
-.page{padding:clamp(14px,1.6vw,18px) 24px}
+.page{padding:clamp(12px,1.4vw,16px) 24px}
 .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.take{margin-bottom:6px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:none}
+.take{margin-bottom:6px;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px}
 .take span{color:var(--gold-soft)}
 h1{font-size:clamp(32px,3.6vw,48px)}
-.eyebrow{margin-bottom:10px}
-.lab{margin:clamp(10px,1.6vh,14px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 16px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.card h2,.card h3{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
-.card p{font-size:14px;color:var(--muted);line-height:1.4;margin-top:4px}
-.k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
-.prog{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.2fr);gap:14px;align-items:stretch}
-.arrow{align-self:center;font-size:26px;font-weight:800;color:var(--gold-soft)}
-.card.sc{background:#FFF8F3;border:2px solid var(--gold)}
-.card.sc .k{color:var(--gold-soft)}
-.card ul{list-style:none;margin-top:4px}
-.card li{font-size:15px;font-weight:600;line-height:1.35;padding:2px 0}
-.card.sc li{font-weight:700}
-.card.sc li span{color:var(--gold-soft)}
+.eyebrow{margin-bottom:8px}
+.lab{margin:12px 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.net{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:14px;margin-top:12px}
+.pcol{display:flex;flex-direction:column;align-items:center;min-width:0}
+.pcard{width:100%;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;text-align:center}
+.pcol.big .pcard{background:#FFF8F3;border:2px solid var(--gold)}
+.pcard h2{font-size:clamp(16px,1.5vw,19px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.pcard .r{font-size:14px;font-weight:600;color:var(--muted);margin-top:4px}
+.pcard .v{font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;color:var(--gold-soft);line-height:1.1;margin-top:2px}
+.pcol.big .v{font-size:clamp(28px,3vw,40px)}
+.pcard .v small{font-size:13px;font-weight:600;letter-spacing:0;color:var(--slate)}
+.lane{position:relative;flex:1;width:100%;min-height:96px;display:flex;justify-content:center;align-items:center;padding:10px 0}
+.lane:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:linear-gradient(var(--line),var(--gold));opacity:.7}
+.dots{position:relative;display:grid;gap:5px;background:var(--paper);padding:6px 8px;border-radius:12px}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--gold);opacity:1;transform:none}
+.pcol.big .dot{background:var(--gold-soft)}
+.js .dot{opacity:0;transform:translateY(-28px)}
+.js .go .dot{animation:fall .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*55ms)}
+@keyframes fall{to{opacity:1;transform:none}}
+.firm{margin-top:0;background:var(--ink);color:#fff;border-radius:var(--radius);padding:12px 20px;text-align:center;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em}
+.firm span{color:var(--gold)}
+.built{margin-top:10px;text-align:center;font-size:clamp(15px,1.5vw,18px);font-weight:700}
+.built span{color:var(--gold-soft)}
+.ba{display:grid;grid-template-columns:1fr 1.6fr;gap:14px;margin-top:8px}
+.bp{border-radius:var(--radius);padding:10px 20px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.bp .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.bp.before{background:var(--card);border:2px dashed #C9C9CE;color:var(--slate)}
+.bp.before h3{font-size:16px;font-weight:700;color:var(--muted)}
+.bp.before p:not(.k){font-size:14px}
+.ghosts{display:flex;gap:8px;margin:4px 0}
+.ghosts i{width:22px;height:22px;border-radius:50%;border:2px dashed #C9C9CE}
+.bp.now{background:#FFF8F3;border:2px solid var(--gold);text-align:center}
+.bp.now .k{color:var(--gold-soft)}
+.total{font-size:clamp(18px,2vw,26px);font-weight:800;letter-spacing:-.02em}
+.total span{color:var(--gold-soft)}
 .cards{display:grid;gap:14px}
-.cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 .cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-.cards .card .n{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 16px}
+.card h3{font-size:clamp(15px,1.4vw,18px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.card p{font-size:14px;color:var(--muted);line-height:1.35;margin-top:2px}
+.card .n{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-right:6px}
 .never{margin-top:10px;background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:8px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .never .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;white-space:nowrap}
 .never h2{font-size:clamp(18px,1.8vw,22px);font-weight:700;letter-spacing:-.02em}
 .never p{font-size:15px;color:var(--muted);flex:1 1 320px}
 .never p b{color:var(--ink)}
-.slots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
-.slot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
-.slot input,.slot select{font:inherit;font-size:13px;width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;color:var(--ink)}
-.slot input:focus,.slot select:focus{outline:2px solid var(--gold);outline-offset:0}
-.slot .k{margin:0}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
-.close{margin-top:clamp(12px,2vh,18px);font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em;text-align:center}
-.close span{color:var(--gold-soft)}
-@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
-@media (max-width:900px){.cards.four{grid-template-columns:1fr 1fr;gap:12px}.cards.three{grid-template-columns:1fr}.slots{grid-template-columns:1fr 1fr}.prog{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
-@media (max-width:480px){.cards.four{grid-template-columns:1fr}.slots{grid-template-columns:1fr}.never{padding:16px}}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:12px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.js .dot{opacity:1;transform:none}.js .go .dot{animation:none}}
+@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}
+.net{grid-template-columns:1fr;gap:10px}
+.pcol{flex-direction:row;align-items:stretch;gap:10px}
+.pcard{flex:1 1 55%;text-align:left}
+.lane{flex:1 1 45%;min-height:0;padding:0}
+.lane:before{display:none}
+.dots{background:none;padding:0}
+.cards.three{grid-template-columns:1fr}.ba{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -81,62 +102,48 @@ h1{font-size:clamp(32px,3.6vw,48px)}
 <p class="take">An <span>evergreen strategy.</span> Key partners refer time after time.</p>
 </div>
 
-<p class="lab">Start vs Scale</p>
-<div class="prog">
-<div class="card"><p class="k">What Start taught</p>
-<ul><li>Give value to a group.</li><li>Members trust you, then become clients.</li><li>A partner keeps paying. A one-off referral pays once.</li></ul></div>
-<div class="arrow" aria-hidden="true">&rarr;</div>
-<div class="card sc"><p class="k">What changes at Scale</p>
-<ul><li>Fewer, <span>deeper partners.</span></li><li>Quality over quantity.</li><li>I spoke to 50+ people who could send me work. Now <span>4 or 5 key partners</span> send good clients every month: thousands of pounds in recurring work, from the same 2, 3, 4 people.</li></ul></div>
+<div class="net go-wrap" id="net">
+<div class="pcol big"><div class="pcard"><h2>Evolve Property Group</h2><p class="r"><b data-n="20">20</b> referrals</p><p class="v">&pound;<b data-n="60">60</b>k <small>a year</small></p></div><div class="lane"><div class="dots" style="grid-template-columns:repeat(7,11px)" aria-label="20 clients referred"><i class="dot" style="--i:0"></i><i class="dot" style="--i:1"></i><i class="dot" style="--i:2"></i><i class="dot" style="--i:3"></i><i class="dot" style="--i:4"></i><i class="dot" style="--i:5"></i><i class="dot" style="--i:6"></i><i class="dot" style="--i:7"></i><i class="dot" style="--i:8"></i><i class="dot" style="--i:9"></i><i class="dot" style="--i:10"></i><i class="dot" style="--i:11"></i><i class="dot" style="--i:12"></i><i class="dot" style="--i:13"></i><i class="dot" style="--i:14"></i><i class="dot" style="--i:15"></i><i class="dot" style="--i:16"></i><i class="dot" style="--i:17"></i><i class="dot" style="--i:18"></i><i class="dot" style="--i:19"></i></div></div></div>
+<div class="pcol "><div class="pcard"><h2>Creator Club</h2><p class="r"><b data-n="9">9</b> referrals</p><p class="v">&pound;<b data-n="40">40</b>k <small>a year</small></p></div><div class="lane"><div class="dots" style="grid-template-columns:repeat(4,11px)" aria-label="9 clients referred"><i class="dot" style="--i:0"></i><i class="dot" style="--i:1"></i><i class="dot" style="--i:2"></i><i class="dot" style="--i:3"></i><i class="dot" style="--i:4"></i><i class="dot" style="--i:5"></i><i class="dot" style="--i:6"></i><i class="dot" style="--i:7"></i><i class="dot" style="--i:8"></i></div></div></div>
+<div class="pcol "><div class="pcard"><h2>Ryan Cresswell</h2><p class="r"><b data-n="6">6</b> referrals</p><p class="v">&pound;<b data-n="36">36</b>k <small>a year</small></p></div><div class="lane"><div class="dots" style="grid-template-columns:repeat(3,11px)" aria-label="6 clients referred"><i class="dot" style="--i:0"></i><i class="dot" style="--i:1"></i><i class="dot" style="--i:2"></i><i class="dot" style="--i:3"></i><i class="dot" style="--i:4"></i><i class="dot" style="--i:5"></i></div></div></div>
+<div class="pcol "><div class="pcard"><h2>An IFA</h2><p class="r"><b data-n="8">8</b> referrals</p><p class="v">&pound;<b data-n="16">16</b>k <small>a year</small></p></div><div class="lane"><div class="dots" style="grid-template-columns:repeat(4,11px)" aria-label="8 clients referred"><i class="dot" style="--i:0"></i><i class="dot" style="--i:1"></i><i class="dot" style="--i:2"></i><i class="dot" style="--i:3"></i><i class="dot" style="--i:4"></i><i class="dot" style="--i:5"></i><i class="dot" style="--i:6"></i><i class="dot" style="--i:7"></i></div></div></div>
 </div>
-
-<p class="lab">Where to find them</p>
-<div class="cards four">
-<div class="card"><h3>An IFA</h3></div>
-<div class="card"><h3>A mentor in a particular industry</h3></div>
-<div class="card"><h3>A personal connection</h3></div>
-<div class="card"><h3>Communities</h3><p>Our niches grew through them.</p></div>
+<div class="firm">Into <span>my firm</span></div>
+<p class="built">All four relationships were built in <span>2026, starting in January.</span></p>
+<div class="ba">
+<div class="bp before"><p class="k">Before January 2026</p><div class="ghosts" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>No key referral partners</h3><p>0 referrals from these partners.</p></div>
+<div class="bp now"><p class="k">Now</p><p class="total"><span data-n="4">4</span> partners. <span data-n="43">43</span> referrals. <span>&pound;<b data-n="152">152</b>k</span> a year.</p></div>
 </div>
 
 <p class="lab">How to treat them</p>
 <div class="cards three">
-<div class="card"><span class="n">1</span><h3>They like you</h3><p>The only aim when you meet them.</p></div>
-<div class="card"><span class="n">2</span><h3>They trust you</h3><p>Give value, as at Start.</p></div>
-<div class="card"><span class="n">3</span><h3>They know a little of what you do</h3><p>Never sell.</p></div>
+<div class="card"><h3><span class="n">1</span>They like you</h3><p>The only aim when you meet them.</p></div>
+<div class="card"><h3><span class="n">2</span>They trust you</h3><p>Give value, as at Start.</p></div>
+<div class="card"><h3><span class="n">3</span>They know a little of what you do</h3><p>Never sell.</p></div>
 </div>
 <div class="never">
 <span class="tag">Never sell</span>
 <h2>It compounds.</h2>
-<p>The first three months, <b>nothing happened.</b> Four years on, <b>people come to me constantly.</b> As you scale, your network widens and you have more time for events and dinners.</p>
+<p>The first three months, <b>nothing happened.</b> Four years on, <b>people come to me constantly.</b></p>
 </div>
-
-<p class="lab">Your key partners</p>
-<div class="slots" id="slots"></div>
-
-<p class="close">Who are your <span>2, 3, 4 people?</span></p>
 </main>
 <div class="wrap pnav"><a href="/scale/find-the-goose/" style="text-decoration:none">&larr; Find the goose</a><span></span></div>
 <footer><div class="wrap">Accountancy Accelerator · Scale · Lead generation · Referral partners</div></footer>
 
 <script>
 (function(){
-var KEY="aa_scale_referral_partners_v1",TYPES=["Where from?","IFA","Industry mentor","Personal connection","Other"];
-var data=[];
-try{data=JSON.parse(localStorage.getItem(KEY)||"[]")||[]}catch(e){data=[]}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
-var box=document.getElementById("slots");
-for(var i=0;i<5;i++)(function(i){
- var d=data[i]||{name:"",type:0};data[i]=d;
- var s=document.createElement("div");s.className="slot";
- var k=document.createElement("p");k.className="k";k.textContent="Partner "+(i+1);
- var inp=document.createElement("input");inp.type="text";inp.placeholder="Name";inp.value=d.name||"";inp.setAttribute("aria-label","Partner "+(i+1)+" name");
- var sel=document.createElement("select");sel.setAttribute("aria-label","Partner "+(i+1)+" source");
- TYPES.forEach(function(t,j){var o=document.createElement("option");o.value=j;o.textContent=t;sel.appendChild(o)});
- sel.value=d.type||0;
- inp.addEventListener("input",function(){d.name=inp.value;save()});
- sel.addEventListener("change",function(){d.type=+sel.value;save()});
- s.appendChild(k);s.appendChild(inp);s.appendChild(sel);box.appendChild(s);
-})(i);
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+var net=document.getElementById("net");
+if(reduce||!("IntersectionObserver" in window))return;
+document.documentElement.classList.add("js");
+var nums=document.querySelectorAll("[data-n]");
+nums.forEach(function(e){e.textContent="0"});
+function count(e){var t=+e.getAttribute("data-n"),st=null;
+ function f(ts){if(!st)st=ts;var p=Math.min((ts-st)/1600,1);e.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}
+ requestAnimationFrame(f);setTimeout(function(){e.textContent=t},2000)}
+var done=false;
+function run(){if(done)return;done=true;net.classList.add("go");nums.forEach(count)}
+new IntersectionObserver(function(en){if(en[0].isIntersecting)run()},{threshold:.25}).observe(net);
 })();
 </script>
 </body>
