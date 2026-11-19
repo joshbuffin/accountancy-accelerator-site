@@ -26,28 +26,38 @@ h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 
 /* One-page layout */
-.page{padding:clamp(18px,2.4vw,26px) 24px}
-h1{font-size:clamp(34px,4vw,54px)}
-.eyebrow{margin-bottom:14px}
-.sub{margin-top:10px;font-size:clamp(16px,1.6vw,20px);color:var(--muted);font-weight:500}
-.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:clamp(14px,2vh,20px);align-items:stretch}
-.funnel{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center}
-.fn{border-radius:var(--radius);padding:12px 20px;display:flex;align-items:baseline;justify-content:center;gap:10px;text-align:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line)}
-.fn b{font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.05}
-.fn span{font-size:15px;color:var(--muted);font-weight:500}
-.fn.a{width:100%}
-.fn.b{width:76%;background:#FFF8F3;border-color:#F8C9A8}
-.fn.b b{color:var(--gold-soft)}
-.fn.c{width:54%;background:var(--gold);border-color:var(--gold)}
-.fn.c b,.fn.c span{color:#fff}
-.fn.c span{font-weight:600}
-.arrow{width:14px;height:14px;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(45deg);margin:-6px 0 0}
-.stage{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px;display:flex;align-items:center;justify-content:center}
-.stage svg{width:100%;max-width:300px;height:auto;display:block}
-.egg{fill:var(--gold);opacity:0;animation:drop 3.6s cubic-bezier(.45,0,.9,.6) infinite}
-.egg.e2{animation-delay:1.2s}.egg.e3{animation-delay:2.4s}
-@keyframes drop{0%{transform:translateY(0);opacity:0}8%{opacity:1}70%{transform:translateY(96px);opacity:1}78%{transform:translateY(96px);opacity:0}100%{transform:translateY(96px);opacity:0}}
+.page{padding:clamp(14px,2vh,22px) 24px}
+h1{font-size:clamp(32px,3.8vw,50px)}
+.eyebrow{margin-bottom:10px}
+.sub{margin-top:8px;font-size:clamp(16px,1.6vw,19px);color:var(--muted);font-weight:500}
+.lab{margin:clamp(10px,1.6vh,16px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.field{position:relative;margin-top:clamp(12px,1.8vh,18px);height:clamp(230px,31vh,300px);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;--gw:56px;background:#EAF5DD}
+.field>svg.bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.goose{position:absolute;width:calc(var(--gw)*var(--s));aspect-ratio:64/56;transform:translate(-50%,-92%);transition:opacity .5s ease}
+.goose svg{width:100%;height:100%;display:block;overflow:visible;transform-origin:50% 90%}
+.goose.l svg{scale:-1 1}
+.bob1 svg{animation:bob 3.4s ease-in-out var(--d) infinite}
+.bob2 svg{animation:peck 4.2s ease-in-out var(--d) infinite}
+.bob3 svg{animation:bob 5s ease-in-out var(--d) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes peck{0%,70%,100%{transform:rotate(0)}78%{transform:rotate(9deg) translateY(1px)}86%{transform:rotate(0)}92%{transform:rotate(7deg)}}
+.tag{position:absolute;left:50%;bottom:92%;transform:translate(-50%,4px) scale(.8);white-space:nowrap;font-size:11px;font-weight:700;color:#7A5200;background:#FFF6D6;border:1px solid #E0A100;border-radius:99px;padding:2px 9px;opacity:0;pointer-events:none;transition:opacity .4s ease,transform .4s ease}
+.field.on .goose:not(.gold){opacity:.4}
+.field.on .gold{--gb:#F2B705;--gw2:#E0A100;--gs:#B07A00}
+.field.on .gold svg{filter:drop-shadow(0 0 7px rgba(242,183,5,.95)) drop-shadow(0 0 14px rgba(242,183,5,.6));animation:shimmer 1.8s ease-in-out infinite}
+.field.on .gold .tag{opacity:1;transform:translate(-50%,0) scale(1)}
+@keyframes shimmer{0%,100%{filter:drop-shadow(0 0 5px rgba(242,183,5,.8)) drop-shadow(0 0 10px rgba(242,183,5,.45)) brightness(1)}50%{filter:drop-shadow(0 0 10px rgba(255,214,60,1)) drop-shadow(0 0 20px rgba(242,183,5,.8)) brightness(1.12)}}
+.under{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px}
+.cap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;color:var(--muted);font-weight:500}
+.cap .it{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 13px}
+.cap .it b{color:var(--ink);font-size:16px;letter-spacing:-.02em}
+.cap .it.c{background:#FFF8F3;border-color:#F8C9A8}
+.cap .it.c b{color:var(--gold-soft)}
+.cap .ar{color:var(--gold);font-weight:700;font-size:18px}
+.btn{flex:none;font:inherit;font-size:16px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:99px;padding:12px 24px;cursor:pointer;box-shadow:0 10px 24px -12px rgba(242,107,29,.8);transition:transform .2s ease,background-color .2s ease}
+.btn:hover{background:#E05A0F;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid #111;outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .nc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px 14px;display:flex;align-items:center;gap:14px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
@@ -58,12 +68,14 @@ h1{font-size:clamp(34px,4vw,54px)}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 .ex{margin-top:clamp(14px,2vh,18px);background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 24px;text-align:center;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.01em}
 .ex span{color:var(--gold-soft)}
-@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.egg{animation:none;opacity:1}.egg.e1{transform:translateY(24px)}.egg.e2{transform:translateY(60px)}.egg.e3{transform:translateY(92px)}}
-@media (max-width:900px){.hero{grid-template-columns:1fr}.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.ex{padding:16px}}
+@media (prefers-reduced-motion:reduce){.nc{transition:none}.nc:hover{transform:none}.goose,.tag,.btn{transition:none}.goose svg,.field.on .gold svg{animation:none!important}.field.on .gold svg{filter:drop-shadow(0 0 8px rgba(242,183,5,.95))}.btn:hover{transform:none}}
+@media (max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.ex{padding:16px}.under{flex-direction:column;align-items:stretch}.cap{justify-content:center}.btn{width:100%}}
+@media (max-width:600px){.field{height:430px;--gw:40px}.tag{font-size:10px;padding:2px 7px}.cap .ar{display:none}.cap{flex-direction:column;align-items:stretch;text-align:center}}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><style>.gb{fill:var(--gb,#fff);stroke:var(--gs,#B9BEC6);stroke-width:1.4;stroke-linejoin:round}.gn{fill:none;stroke:var(--gb,#fff)}.gno{fill:none;stroke:var(--gs,#B9BEC6)}.gwg{fill:var(--gw2,#E3E6EB);stroke:var(--gs,#B9BEC6);stroke-width:1}</style><symbol id="g" viewBox="0 0 64 56"><path d="M27 40v10M35 40v10M22 50.5h8M30 50.5h8" stroke="#F26B1D" stroke-width="2.6" stroke-linecap="round" fill="none"/><path class="gb" d="M9 30L1 20l15 6z"/><ellipse class="gb" cx="28" cy="33" rx="20" ry="11"/><path class="gno" d="M38 29C47 27 43 21 46 14" stroke-width="9.5" stroke-linecap="round" fill="none"/><path class="gn" d="M38 29C47 27 43 21 46 14" stroke-width="7" stroke-linecap="round" fill="none"/><circle class="gb" cx="48" cy="10" r="6"/><path d="M53 8.5l10 3.5-10 3z" fill="#F26B1D"/><circle cx="50" cy="8.6" r="1.3" fill="#111"/><ellipse class="gwg" cx="25" cy="32" rx="13" ry="6" transform="rotate(-8 25 32)"/></symbol></defs></svg>
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Lead generation · Find the goose</span></div></nav>
 
 <main class="wrap page">
@@ -71,26 +83,64 @@ h1{font-size:clamp(34px,4vw,54px)}
 <h1>Find the goose that lays the <span class="gold-t">golden eggs.</span></h1>
 <p class="sub">A referral partner who sends you clients over and over again.</p>
 
-<div class="hero">
-<div class="funnel">
-<div class="fn a"><b>50+</b><span>people spoken to</span></div>
-<div class="arrow"></div>
-<div class="fn b"><b>4 or 5</b><span>key referral partners</span></div>
-<div class="arrow"></div>
-<div class="fn c"><b>2, 3, 4</b><span>The same people, over and over</span></div>
+<div class="field" id="field" role="img" aria-label="A field of 50 geese">
+<svg class="bg" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3FAFF"/><stop offset="1" stop-color="#FFF9F1"/></linearGradient><linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFE8B5"/><stop offset="1" stop-color="#B5D98F"/></linearGradient></defs><rect width="1000" height="300" fill="url(#sky)"/><path d="M0 80C150 55 300 90 480 70S820 50 1000 75V300H0Z" fill="#DCEEC8"/><path d="M0 105C200 85 380 118 560 100S860 88 1000 104V300H0Z" fill="url(#gr)"/><g fill="none" stroke="#A3CC7B" stroke-width="3" stroke-linecap="round"><path d="M60 150q6-12 12 0M200 230q6-12 12 0M330 170q6-12 12 0M470 260q6-12 12 0M610 160q6-12 12 0M760 240q6-12 12 0M900 180q6-12 12 0M130 270q6-12 12 0M690 285q6-12 12 0M540 135q6-12 12 0M860 130q6-12 12 0M30 210q6-12 12 0"/></g></svg>
+<div class="goose" style="left:73.3%;top:36.7%;--s:0.73;--d:1.5s;z-index:367"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:51.7%;top:38.6%;--s:0.77;--d:0.9s;z-index:386"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:22.0%;top:39.8%;--s:0.74;--d:0.5s;z-index:398"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:34.7%;top:40.1%;--s:0.78;--d:1.2s;z-index:401"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob1" style="left:10.1%;top:40.4%;--s:0.77;--d:0.1s;z-index:404"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:28.1%;top:40.6%;--s:0.82;--d:0.8s;z-index:406"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:90.6%;top:40.8%;--s:0.81;--d:2.8s;z-index:408"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:46.5%;top:42.1%;--s:0.84;--d:2.0s;z-index:421"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob1" style="left:60.5%;top:42.2%;--s:0.8;--d:2.2s;z-index:422"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:84.0%;top:43.3%;--s:0.75;--d:0.5s;z-index:433"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob2" style="left:8.1%;top:48.5%;--s:0.83;--d:0.4s;z-index:485"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:19.4%;top:48.8%;--s:0.84;--d:1.6s;z-index:488"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:25.9%;top:50.1%;--s:0.9;--d:1.4s;z-index:501"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob3" style="left:71.7%;top:50.4%;--s:0.84;--d:1.9s;z-index:504"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:33.7%;top:51.7%;--s:0.87;--d:0.2s;z-index:517"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose gold" style="left:54.5%;top:53.0%;--s:0.88;--d:2.2s;z-index:1530"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg><span class="tag" aria-hidden="true">&#10022; Golden goose</span></div>
+<div class="goose" style="left:63.2%;top:53.2%;--s:0.9;--d:1.1s;z-index:532"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:91.9%;top:53.5%;--s:0.9;--d:1.3s;z-index:535"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:45.2%;top:54.5%;--s:0.92;--d:1.9s;z-index:545"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:84.1%;top:55.6%;--s:0.89;--d:0.2s;z-index:556"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose gold" style="left:17.8%;top:60.9%;--s:0.96;--d:2.2s;z-index:1609"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg><span class="tag" aria-hidden="true">&#10022; Golden goose</span></div>
+<div class="goose" style="left:51.1%;top:61.9%;--s:0.94;--d:1.3s;z-index:619"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:9.2%;top:62.1%;--s:0.99;--d:0.1s;z-index:621"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob3" style="left:91.5%;top:62.3%;--s:0.97;--d:0.3s;z-index:623"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:39.1%;top:63.2%;--s:0.99;--d:2.7s;z-index:632"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:29.8%;top:63.3%;--s:0.95;--d:1.6s;z-index:633"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:75.2%;top:63.3%;--s:0.99;--d:1.5s;z-index:633"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob3" style="left:65.9%;top:63.8%;--s:0.94;--d:1.3s;z-index:638"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:77.9%;top:64.9%;--s:1.01;--d:1.2s;z-index:649"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob2" style="left:48.7%;top:66.5%;--s:1.0;--d:1.1s;z-index:665"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob2" style="left:34.1%;top:72.8%;--s:1.08;--d:2.5s;z-index:728"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:47.6%;top:73.7%;--s:1.01;--d:2.5s;z-index:737"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:25.4%;top:74.2%;--s:1.04;--d:2.1s;z-index:742"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:87.7%;top:74.3%;--s:1.09;--d:0.8s;z-index:743"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob2" style="left:7.6%;top:74.8%;--s:1.07;--d:0.9s;z-index:748"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob2 gold" style="left:78.2%;top:75.4%;--s:1.09;--d:0.6s;z-index:1754"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg><span class="tag" aria-hidden="true">&#10022; Golden goose</span></div>
+<div class="goose l" style="left:54.8%;top:75.6%;--s:1.09;--d:2.4s;z-index:756"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob3" style="left:69.5%;top:77.0%;--s:1.13;--d:2.0s;z-index:770"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:61.1%;top:77.7%;--s:1.11;--d:0.6s;z-index:777"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l bob2" style="left:22.3%;top:77.9%;--s:1.08;--d:1.6s;z-index:779"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:70.6%;top:84.9%;--s:1.1;--d:1.6s;z-index:849"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:52.5%;top:86.3%;--s:1.2;--d:0.5s;z-index:863"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob2" style="left:65.0%;top:86.8%;--s:1.19;--d:2.8s;z-index:868"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:26.1%;top:87.2%;--s:1.19;--d:1.9s;z-index:872"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:78.1%;top:88.6%;--s:1.22;--d:2.6s;z-index:886"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:87.9%;top:88.7%;--s:1.21;--d:2.0s;z-index:887"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:39.2%;top:89.0%;--s:1.15;--d:1.9s;z-index:890"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose l" style="left:13.5%;top:90.2%;--s:1.21;--d:2.9s;z-index:902"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose" style="left:17.9%;top:90.8%;--s:1.24;--d:1.0s;z-index:908"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
+<div class="goose bob1" style="left:42.9%;top:91.5%;--s:1.24;--d:0.1s;z-index:915"><svg viewBox="0 0 64 56" aria-hidden="true"><use href="#g"/></svg></div>
 </div>
-<div class="stage">
-<svg viewBox="0 0 300 230" role="img" aria-label="A referral partner repeatedly sending clients down to your firm, shown as golden eggs">
-<circle cx="150" cy="38" r="30" fill="#fff" stroke="#F26B1D" stroke-width="4"/>
-<circle cx="150" cy="30" r="8" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M134 54c2-9 8-13 16-13s14 4 16 13" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="150" y="92" text-anchor="middle" font-size="13" font-weight="700" fill="#C2410C">Referral partner</text>
-<line x1="150" y1="104" x2="150" y2="170" stroke="#F4B48F" stroke-width="2" stroke-dasharray="3 6"/>
-<g transform="translate(150,106)"><ellipse class="egg e1" cx="0" cy="0" rx="8" ry="10"/><ellipse class="egg e2" cx="0" cy="0" rx="8" ry="10"/><ellipse class="egg e3" cx="0" cy="0" rx="8" ry="10"/></g>
-<rect x="85" y="186" width="130" height="38" rx="19" fill="#111"/>
-<text x="150" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Your firm</text>
-</svg>
+<div class="under">
+<div class="cap"><span class="it"><b>50+</b> people spoken to</span><span class="ar" aria-hidden="true">&rarr;</span><span class="it"><b>4 or 5</b> key referral partners</span><span class="ar" aria-hidden="true">&rarr;</span><span class="it c">The same <b>2, 3, 4</b> people, over and over</span></div>
+<button type="button" class="btn" id="btn" aria-pressed="false">Find the golden geese</button>
 </div>
-</div>
+<p class="sr" id="live" role="status" aria-live="polite"></p>
 
 <p class="lab">What they send</p>
 <div class="two">
@@ -109,5 +159,9 @@ h1{font-size:clamp(34px,4vw,54px)}
 </main>
 <div class="wrap pnav"><span></span><a href="/scale/referral-partners/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Referral partners &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Scale · Lead generation · Find the goose</div></footer>
+<script>
+(function(){var f=document.getElementById('field'),b=document.getElementById('btn'),l=document.getElementById('live');
+b.addEventListener('click',function(){var on=!f.classList.contains('on');f.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?'Reset':'Find the golden geese';l.textContent=on?'3 golden geese found among the 50.':'Geese reset.';f.setAttribute('aria-label',on?'A field of 50 geese, 3 of them golden':'A field of 50 geese')})})();
+</script>
 </body>
 </html>
