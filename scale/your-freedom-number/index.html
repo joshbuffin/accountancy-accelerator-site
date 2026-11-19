@@ -55,13 +55,24 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .lines div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #2C2C2E;padding-top:6px}
 .lines span:last-child{font-weight:600}
 .lines .gap span:last-child{color:var(--gold)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+.takehome{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:14px}
+.calcbtn{font:inherit;font-size:15px;font-weight:700;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:10px 24px;cursor:pointer;transition:background .2s ease}
+.calcbtn:hover{background:var(--gold-soft)}
+.calcbtn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(242,107,29,.25)}
+.thout{font-size:clamp(17px,1.6vw,19px);font-weight:700;letter-spacing:-.02em}
+.thout b{color:var(--gold-soft)}
+.linkbtn{font:inherit;font-size:12px;color:#B0B0B5;background:none;border:0;text-decoration:underline;cursor:pointer;padding:0;margin-left:6px}
+.linkbtn:hover{color:var(--gold)}
+.money input[readonly]{background:#F0F0F2;color:var(--muted)}
+.result .money input[readonly]{background:#E9E9EC}
 .reset{margin-top:22px;font:inherit;font-size:14px;color:#B0B0B5;background:none;border:1px solid #3A3A3C;border-radius:10px;padding:8px 14px;cursor:pointer}
 .reset:hover{color:#fff;border-color:var(--gold)}
 .ph{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .ph .reset{margin:0;padding:5px 12px;color:var(--muted);border-color:var(--line)}
 .ph .reset:hover{color:var(--gold-soft);border-color:var(--gold)}
 @media (prefers-reduced-motion:reduce){.bar i{transition:none}}
-@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.two{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
+@media (max-width:900px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.two{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -74,7 +85,23 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <p class="lead">Two numbers: when you can hire, and when you're free.</p>
 
 <div class="panel shared">
-<div class="ph"><h2>Where you are now</h2><button class="reset" id="reset" type="button">Start again</button></div>
+<div class="ph"><h2>What do you want to take home each month?</h2><button class="reset" id="reset" type="button">Start again</button></div>
+<p class="hint">Put in what you want to spend each month on the life you want.</p>
+<div class="grid4">
+<div class="f"><label for="l_rent">Rent or mortgage</label><div class="money"><input id="l_rent" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_car">Car</label><div class="money"><input id="l_car" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_electric">Electric</label><div class="money"><input id="l_electric" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_meals">Meals out</label><div class="money"><input id="l_meals" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_clothes">Clothes</label><div class="money"><input id="l_clothes" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_exp">Experiences</label><div class="money"><input id="l_exp" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_hol">Holidays (monthly amount)</label><div class="money"><input id="l_hol" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="l_other">Anything else</label><div class="money"><input id="l_other" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
+</div>
+<div class="takehome"><button class="calcbtn" id="calcBtn" type="button">Calculate</button><p class="thout" id="thOut" aria-live="polite">You want to take home <b>£0</b> a month</p></div>
+</div>
+
+<div class="panel shared">
+<div class="ph"><h2>Where you are now</h2></div>
 <div class="grid3">
 <div class="f"><label for="mrr">Current monthly revenue (MRR)</label><div class="money"><input id="mrr" type="text" inputmode="decimal" placeholder="0"></div></div>
 <div class="f"><label for="costs">Monthly business costs</label><div class="money"><input id="costs" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Software, outsourcing, ads, etc.</p></div>
@@ -101,7 +128,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <p class="tag">Number 2</p>
 <h2>Your freedom number</h2>
 <div class="f"><label for="cm">Client manager cost per month</label><div class="money"><input id="cm" type="text" inputmode="decimal" placeholder="4000"></div><p class="note">Follows your hire cost until you change it</p></div>
-<div class="f"><label for="profit">Profit you want left over each month for the life you want</label><div class="money"><input id="profit" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Your profit left over is what you take home, so it replaces what you pay yourself.</p></div>
+<div class="f"><label for="profit">Profit you want left over each month for the life you want</label><div class="money"><input id="profit" type="text" inputmode="decimal" placeholder="0"></div><p class="note" id="profitNote">From your take-home list above.<button class="linkbtn" id="profitToggle" type="button">Edit manually</button></p></div>
 <p class="label">Your freedom number</p>
 <p class="big" id="freeN">£0</p>
 <p class="per">a month in revenue (business costs + client manager + profit wanted)</p>
@@ -119,9 +146,11 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <script>
 (function(){
 var KEY="aa-freedom-number-v1",state;
-function fresh(){return{mrr:"",costs:"",pay:"",hire:"4000",cm:"4000",cmEdited:false,profit:""}}
+var LIFE=["l_rent","l_car","l_electric","l_meals","l_clothes","l_exp","l_hol","l_other"];
+function fresh(){var s={mrr:"",costs:"",pay:"",hire:"4000",cm:"4000",cmEdited:false,profit:"",profitManual:false};LIFE.forEach(function(k){s[k]=""});return s}
 try{state=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!state||typeof state!=="object"||state.hire===undefined)state=fresh();
+else{var d0=fresh();Object.keys(d0).forEach(function(k){if(state[k]===undefined)state[k]=d0[k]})}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
 var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
 function num(v){var x=parseFloat(String(v).replace(/[^0-9.]/g,""));return isFinite(x)?x:0}
@@ -136,13 +165,23 @@ $(short+"Mrr").textContent=gbp.format(mrr);
 if(!anyIn||need<=0)g.textContent="£0";
 else if(mrr>=need)g.textContent="You're there";
 else g.textContent=gbp.format(need-mrr)}
+function lifeTotal(){return LIFE.reduce(function(t,k){return t+num(state[k])},0)}
+function showTotal(){$("thOut").innerHTML="You want to take home <b>"+gbp.format(lifeTotal())+"</b> a month"}
+function syncProfit(){
+var p=$("profit"),t=$("profitToggle");
+if(state.profitManual){p.readOnly=false;p.value=state.profit;t.textContent="Use my list"}
+else{var any=LIFE.some(function(k){return state[k]!==""});state.profit=any?String(lifeTotal()):"";p.readOnly=true;p.value=state.profit;t.textContent="Edit manually"}}
 function calc(){
+showTotal();syncProfit();
 var mrr=num(state.mrr),costs=num(state.costs),pay=num(state.pay),hire=num(state.hire),cm=num(state.cm),profit=num(state.profit);
 var hn=costs+pay+hire,fn=costs+cm+profit;
 out("hire",hn,mrr,costs+pay+hire>0&&(state.costs!==""||state.pay!==""));
 out("free",fn,mrr,state.costs!==""||state.profit!=="");
 save()}
-function fill(){ids.forEach(function(k){$(k).value=state[k]})}
+function fill(){ids.concat(LIFE).forEach(function(k){$(k).value=state[k]})}
+LIFE.forEach(function(k){$(k).oninput=function(){state[k]=$(k).value;calc()}});
+$("calcBtn").onclick=function(){calc()};
+$("profitToggle").onclick=function(){state.profitManual=!state.profitManual;calc()};
 ids.forEach(function(k){$(k).oninput=function(){
 state[k]=$(k).value;
 if(k==="cm")state.cmEdited=true;
