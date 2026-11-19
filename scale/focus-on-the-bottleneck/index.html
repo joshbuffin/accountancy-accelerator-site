@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Focus on the bottleneck - Accountancy Accelerator</title>
+<meta name="description" content="Scale, Level 1 Shift: Focus on the bottleneck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+
+/* One-page layout */
+.page{padding:clamp(16px,2.2vw,24px) 24px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.take{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.01em;border-left:3px solid var(--gold);padding-left:16px;max-width:460px}
+.take span{color:var(--gold-soft)}
+h1{font-size:clamp(34px,4vw,54px)}
+.eyebrow{margin-bottom:12px}
+.lab{margin:14px 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);display:flex;align-items:center;gap:14px}
+.play{font:inherit;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--gold);border:0;border-radius:999px;padding:8px 18px;cursor:pointer}
+.play:hover{background:var(--gold-soft)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px 14px}
+.pan.good{background:#FFF8F3;border:2px solid var(--gold)}
+.pan h2{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em}
+.sub{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin:2px 0 10px}
+.good .sub{color:var(--gold-soft)}
+.row{display:grid;grid-template-columns:96px 1fr 62px;align-items:center;gap:12px;margin:8px 0;font-size:14px;font-weight:600}
+.trk{height:16px;background:#E8E8EA;border-radius:999px;overflow:hidden}
+.good .trk{background:#fff;border:1px solid var(--line)}
+.fl{height:100%;width:0;border-radius:999px;background:#9A9AA0;transition:width 2.2s cubic-bezier(.3,.6,.3,1)}
+.good .fl{background:var(--gold);transition:width 1s cubic-bezier(.3,.6,.3,1)}
+.st{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);opacity:0;transition:opacity .3s}
+.good .st{color:var(--gold-soft)}
+.st.on{opacity:1}
+.row.cur .nm{color:var(--gold-soft)}
+.cap{font-size:15px;font-weight:700;letter-spacing:-.01em;margin-top:10px}
+.cap span{color:var(--gold-soft)}
+.day{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 20px}
+.strip{display:grid;grid-template-columns:2.2fr 1.4fr .5fr 1.6fr 1.2fr;gap:6px;margin-top:6px}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:12px;font-weight:600;color:var(--slate);line-height:1.3}
+.blk b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:2px}
+.blk.hot{background:var(--gold);border-color:var(--gold);color:#fff;font-size:13px;box-shadow:0 14px 30px -14px rgba(242,107,29,.7)}
+.blk.hot b{color:#fff}
+.dnote{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;margin-top:10px;font-size:15px;font-weight:700;letter-spacing:-.01em}
+.dnote span{color:var(--gold-soft)}
+.dnote small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+.fol{margin-top:12px;display:flex;gap:10px 24px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.fol a{color:var(--gold-soft);font-weight:700;text-decoration:none}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.fl,.st{transition:none}}
+@media (max-width:900px){.cmp{grid-template-columns:1fr}.page{padding:24px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.take{max-width:none}}
+@media (max-width:480px){.row{grid-template-columns:78px 1fr 54px;gap:8px;font-size:13px}.strip{grid-template-columns:1fr 1fr;}.blk{padding:10px 6px}.lab{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Shift · Focus on the bottleneck</span></div></nav>
+
+<main class="wrap page">
+<div class="top">
+<div>
+<p class="eyebrow">Level 1 - Shift</p>
+<h1>One bottleneck <span class="gold-t">at a time.</span></h1>
+</div>
+<p class="take">The slowest way to make progress is to try and <span>fix multiple different things.</span></p>
+</div>
+
+<p class="lab">Same four problems. Two ways to tackle them. <button class="play" id="play" type="button">Play</button></p>
+<div class="cmp" id="cmp">
+<div class="pan">
+<h2>Fixing everything at once</h2>
+<p class="sub">The slowest way to make progress</p>
+<div id="L"></div>
+<p class="cap">Everything creeps. <span>Nothing finishes.</span></p>
+</div>
+<div class="pan good">
+<h2>One at a time</h2>
+<p class="sub">Fix one. Move to the next.</p>
+<div id="R"></div>
+<p class="cap">One done. <span>Then the next.</span></p>
+</div>
+</div>
+
+<p class="lab">Every morning</p>
+<div class="day">
+<div class="strip">
+<div class="blk hot"><b>Morning</b>One bottleneck. Nothing else.</div>
+<div class="blk"><b>Day</b>Rest of the day</div>
+<div class="blk"><b>Lunch</b></div>
+<div class="blk"><b>Afternoon</b></div>
+<div class="blk"><b>Evening</b>Protect family time</div>
+</div>
+<p class="dnote"><span>Block out time every morning. Relentlessly focus on one bottleneck.</span><small>From Start, my own week: 5am - 8am on the business, Mon - Wed. Your best hours go to the business.</small></p>
+</div>
+
+<p class="fol"><span>Follows on from <a href="/scale/setting-expectations/">Setting expectations</a>: things break, you fix it, grow, and it breaks again.</span><span>Start idea: wear one hat at a time. Pick one. Fix it. Move on.</span></p>
+</main>
+<div class="wrap pnav"><a href="/scale/think-bigger/" style="text-decoration:none;color:var(--gold-soft)">&larr; Think bigger</a><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Scale · Shift · Focus on the bottleneck</div></footer>
+
+<script>
+(function(){
+var NAMES=["Leads","Onboarding","Deadlines","Hiring"];
+var LW=[[14,22],[10,17],[18,26],[8,13]];
+var cmp=document.getElementById("cmp"),L=document.getElementById("L"),R=document.getElementById("R");
+function rows(el,txt){el.innerHTML=NAMES.map(function(n){return '<div class="row"><span class="nm">'+n+'</span><div class="trk"><div class="fl"></div></div><span class="st">'+txt+'</span></div>'}).join("")}
+rows(L,"Stalled");rows(R,"Done");
+var lf=[].slice.call(L.querySelectorAll(".fl")),ls=[].slice.call(L.querySelectorAll(".st")),
+    rf=[].slice.call(R.querySelectorAll(".fl")),rs=[].slice.call(R.querySelectorAll(".st")),rr=[].slice.call(R.querySelectorAll(".row"));
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+var timers=[];
+function T(f,ms){timers.push(setTimeout(f,ms))}
+function clear(){timers.forEach(clearTimeout);timers=[]}
+function reset(){lf.concat(rf).forEach(function(b){b.style.transition="none";b.style.width="0%"});
+ ls.concat(rs).forEach(function(s){s.classList.remove("on")});rr.forEach(function(r){r.classList.remove("cur")});
+ void cmp.offsetWidth;lf.concat(rf).forEach(function(b){b.style.transition=""})}
+function final(){lf.forEach(function(b,i){b.style.transition="none";b.style.width=LW[i][1]+"%"});
+ rf.forEach(function(b){b.style.transition="none";b.style.width="100%"});
+ ls.concat(rs).forEach(function(s){s.classList.add("on")});rr.forEach(function(r){r.classList.remove("cur")})}
+function play(){
+ clear();reset();
+ if(reduce){final();return}
+ T(function(){lf.forEach(function(b,i){b.style.width=LW[i][0]+"%"})},60);
+ T(function(){lf.forEach(function(b,i){b.style.width=LW[i][1]+"%"})},2600);
+ T(function(){ls.forEach(function(s){s.classList.add("on")})},4800);
+ rf.forEach(function(b,i){
+  T(function(){rr.forEach(function(r){r.classList.remove("cur")});rr[i].classList.add("cur");b.style.width="100%"},300+i*1200);
+  T(function(){rs[i].classList.add("on");rr[i].classList.remove("cur")},300+i*1200+1000);
+ });
+ T(final,300+4*1200+200);
+}
+document.getElementById("play").addEventListener("click",play);
+var started=false;
+function once(){if(started)return;started=true;play()}
+if("IntersectionObserver" in window){
+ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){once();io.disconnect()}})},{threshold:.3});
+ io.observe(cmp);
+ setTimeout(once,1500);
+}else{once()}
+})();
+</script>
+</body>
+</html>
