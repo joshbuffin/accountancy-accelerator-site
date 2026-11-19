@@ -25,38 +25,79 @@ h1{font-size:clamp(34px,4vw,54px);font-weight:700;letter-spacing:-.035em;line-he
 .gold-t{color:var(--gold-soft)}
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 
-.page{padding:clamp(18px,2.4vw,26px) 24px}
-.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;display:flex;flex-direction:column;gap:6px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.box:hover,.note:hover,.elliot:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.box .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
-.box h2{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.25;color:var(--muted)}
-.box.hot{background:#FFF8F3;border:2px solid var(--gold)}
-.box.hot .k{color:var(--gold-soft)}
-.box.hot h2{color:var(--ink)}
-.box.hot h2 span{color:var(--gold-soft)}
-.box.dim{opacity:.85}
-.box.big h2{font-size:clamp(19px,2vw,24px)}
-.bottom{display:grid;grid-template-columns:1fr 1.4fr;gap:14px;margin-top:clamp(14px,2vh,18px);align-items:stretch}
-.note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;font-size:15px;color:var(--muted);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.page{padding:clamp(16px,2vw,24px) 24px}
+.lab{margin:clamp(12px,1.8vh,16px) 0 8px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fig{display:flex;flex-direction:column;gap:10px}
+.cap{display:flex;flex-direction:column;gap:2px}
+.cap .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.cap h2{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:-.02em;line-height:1.25;color:var(--muted)}
+.cap.hot .k{color:var(--gold-soft)}
+.cap.hot h2{color:var(--ink)}
+.cap.hot h2 span{color:var(--gold-soft)}
+.mock{height:218px;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.board{background:var(--card);border:1px solid var(--line);padding:12px 16px;gap:8px;opacity:.9}
+.bar{display:flex;align-items:center;gap:6px}
+.bar i{width:9px;height:9px;border-radius:50%;background:#CFCFD3}
+.search{flex:1;margin-left:8px;height:24px;border-radius:999px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 10px;font-size:11px;color:var(--slate)}
+.search svg{width:12px;height:12px;flex:none}
+.seeker{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:5px 10px;font-size:12px;font-weight:600;color:var(--slate)}
+.seeker b{width:20px;height:20px;border-radius:50%;background:#D8D8DC;flex:none}
+.seeker u{margin-left:auto;width:42px;height:6px;border-radius:3px;background:#E4E4E7}
+.inbox{background:#FFF8F3;border:2px solid var(--gold);padding:14px 16px;flex-direction:row;align-items:center;gap:16px;position:relative}
+.cand{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-soft);text-align:center;width:84px}
+.av{position:relative;width:64px;height:64px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px #fff,0 0 0 7px var(--gold)}
+.av svg.p{position:absolute;inset:0;width:100%;height:100%}
+.star{position:absolute;right:-8px;top:-8px;width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.star svg{width:14px;height:14px}
+.dms{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}
+.dm{position:relative;background:var(--gold);color:#fff;border-radius:14px 14px 4px 14px;padding:8px 34px 8px 12px;display:flex;flex-direction:column;gap:5px;box-shadow:0 8px 18px -10px rgba(242,107,29,.7)}
+.dm:nth-child(2){margin-left:18px}.dm:nth-child(3){margin-left:8px}
+.dm span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.dm em{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.55);width:78%}
+.dm em+em{width:50%}
+.dm .dot{position:absolute;right:10px;top:50%;margin-top:-8px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--gold-soft)}
+.js .dm{opacity:0;transform:translateX(46px) scale(.92)}
+.js .in .dm{opacity:1;transform:none;transition:opacity .5s ease,transform .6s cubic-bezier(.2,1.2,.3,1)}
+.js .in .dm:nth-child(1){transition-delay:.3s}.js .in .dm:nth-child(2){transition-delay:.9s}.js .in .dm:nth-child(3){transition-delay:1.5s}
+.js .in .dm .dot{animation:pulse 1.8s ease-in-out 2s infinite}
+@keyframes pulse{50%{transform:scale(1.25)}}
+.weigh{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:16px;align-items:center}
+.weigh .cap{padding:0 4px}
+.weigh .cap.r{text-align:left}
+.scale{width:100%;height:auto;display:block;overflow:visible}
+.scale .beam,.scale .pl,.scale .pr{transform-box:view-box}
+.scale .beam{transform-origin:300px 40px}
+.js .scale .beam,.js .scale .pl,.js .scale .pr{transition:transform 1.8s cubic-bezier(.3,1.4,.4,1) .2s}
+.scale .beam{transform:rotate(7deg)}
+.scale .pl{transform:translateY(-29px)}
+.scale .pr{transform:translateY(29px)}
+.js .weigh:not(.in) .scale .beam{transform:rotate(0)}
+.js .weigh:not(.in) .scale .pl,.js .weigh:not(.in) .scale .pr{transform:none}
+.bottom{display:grid;grid-template-columns:1fr 1.4fr;gap:16px;margin-top:clamp(14px,2vh,18px);align-items:stretch}
+.note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;font-size:15px;color:var(--muted)}
 .note b{color:var(--ink);font-size:16px}
 .note a{color:var(--gold-soft);font-weight:600}
-.elliot{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
-.elliot .txt{flex:1 1 220px}
-.elliot h2{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.25}
-.elliot p{font-size:14px;color:var(--muted);margin-top:4px;word-break:break-word}
+.bcard{background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);border-radius:8px;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;box-shadow:0 14px 30px -16px rgba(0,0,0,.28),0 2px 0 var(--line);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.bcard:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 20px 40px -16px rgba(242,107,29,.5)}
+.ini{flex:none;width:52px;height:52px;border-radius:50%;background:var(--gold);color:#fff;font-weight:700;font-size:18px;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
+.bcard .txt{flex:1 1 200px;min-width:0}
+.bcard .k{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.bcard h2{font-size:clamp(17px,1.7vw,21px);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-top:2px}
+.bcard .co{font-size:14px;font-weight:600;color:var(--muted)}
+.bcard p{font-size:13px;color:var(--slate);margin-top:3px;word-break:break-word}
 .btn{display:inline-block;background:var(--gold);color:#fff;font-weight:700;font-size:14px;text-decoration:none;border-radius:999px;padding:11px 20px;white-space:nowrap;transition:background-color .3s ease}
 .btn:hover{background:var(--gold-soft)}
 .pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
 .rv{opacity:0;transform:translateY(14px);animation:rv .7s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes rv{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.box,.note,.elliot{transition:none}.box:hover,.note:hover,.elliot:hover{transform:none}.rv{animation:none;opacity:1;transform:none}}
-@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.pair,.bottom{grid-template-columns:1fr}}
-@media (max-width:480px){.box,.note,.elliot{padding:16px}}
+@media (prefers-reduced-motion:reduce){.bcard{transition:none}.bcard:hover{transform:none}.rv{animation:none;opacity:1;transform:none}.js .dm{opacity:1;transform:none;transition:none}.js .in .dm .dot{animation:none}.js .scale .beam,.js .scale .pl,.js .scale .pr{transition:none}.js .weigh:not(.in) .scale .beam{transform:rotate(7deg)}.js .weigh:not(.in) .scale .pl{transform:translateY(-29px)}.js .weigh:not(.in) .scale .pr{transform:translateY(29px)}}
+@media (max-width:900px){.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.split,.bottom{grid-template-columns:1fr}.weigh{grid-template-columns:1fr 1fr}.weigh .scale{grid-column:1/-1;grid-row:1}}
+@media (max-width:480px){.note,.bcard{padding:16px}.mock{height:auto;min-height:218px}.inbox{padding:12px}.cand{width:70px;font-size:10px}.weigh{grid-template-columns:1fr}.weigh .scale{grid-column:auto}}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js')</script>
 
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Hiring within the UK · Why I recommend recruiters</span></div></nav>
 
@@ -65,26 +106,79 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <h1>The best people <span class="gold-t">aren't on Indeed.</span></h1>
 
 <p class="lab">Where the best people really are</p>
-<div class="pair">
-<div class="box dim rv" style="animation-delay:.1s"><span class="k">Indeed</span><h2>People looking for jobs</h2></div>
-<div class="box hot rv" style="animation-delay:.25s"><span class="k">LinkedIn DMs</span><h2><span>Recruiters chasing the best people</span></h2></div>
+<div class="split" id="where">
+<div class="fig rv" style="animation-delay:.1s">
+<div class="mock board" aria-hidden="true">
+<div class="bar"><i></i><i></i><i></i><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="#6E6E73" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg>Search jobs</div></div>
+<div class="seeker"><b></b>Job seeker<u></u></div>
+<div class="seeker"><b></b>Job seeker<u></u></div>
+<div class="seeker"><b></b>Job seeker<u></u></div>
+<div class="seeker"><b></b>Job seeker<u></u></div>
+</div>
+<div class="cap"><span class="k">Job boards like Indeed</span><h2>People looking for jobs</h2></div>
+</div>
+<div class="fig rv" style="animation-delay:.25s">
+<div class="mock inbox" aria-hidden="true">
+<div class="cand"><div class="av"><svg class="p" viewBox="0 0 64 64"><circle cx="32" cy="25" r="10" fill="#fff"/><path d="M12 56c2-12 10-18 20-18s18 6 20 18z" fill="#fff"/></svg><div class="star"><svg viewBox="0 0 24 24" fill="#F26B1D"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18l-6.5 4 1.7-7.4-5.7-5L9 8.9z"/></svg></div></div>Standout candidate</div>
+<div class="dms">
+<div class="dm"><span>Recruiter</span><em></em><em></em><i class="dot"></i></div>
+<div class="dm"><span>Recruiter</span><em></em><em></em><i class="dot"></i></div>
+<div class="dm"><span>Recruiter</span><em></em><em></em><i class="dot"></i></div>
+</div>
+</div>
+<div class="cap hot"><span class="k">LinkedIn DMs</span><h2><span>Recruiters chasing the best people</span></h2></div>
+</div>
 </div>
 
 <p class="lab">The cost</p>
-<div class="pair">
-<div class="box big dim rv" style="animation-delay:.4s"><span class="k">What it feels like</span><h2>Around £6,000 for a £45k role feels expensive.</h2></div>
-<div class="box big hot rv" style="animation-delay:.55s"><span class="k">What it really costs</span><h2><span>Hiring the wrong person costs even more.</span></h2></div>
+<div class="weigh rv" id="cost" style="animation-delay:.4s">
+<div class="cap"><span class="k">Recruiter fee</span><h2>Around £6,000 for a £45k role feels expensive.</h2></div>
+<svg class="scale" viewBox="0 0 600 175" role="img" aria-label="Scales: the recruiter fee is outweighed by the cost of a wrong hire">
+<path d="M300 40V150" stroke="#CFCFD3" stroke-width="6" stroke-linecap="round"/>
+<path d="M250 160h100l-14-14H264z" fill="#E4E4E7"/>
+<g class="beam"><rect x="56" y="36" width="488" height="8" rx="4" fill="#6E6E73"/></g>
+<g class="pl">
+<path d="M60 40L14 112M60 40L106 112" stroke="#6E6E73" stroke-width="2" fill="none"/>
+<g fill="#D8D8DC" stroke="#9A9AA0" stroke-width="2"><ellipse cx="46" cy="104" rx="20" ry="6"/><ellipse cx="46" cy="97" rx="20" ry="6"/><ellipse cx="46" cy="90" rx="20" ry="6"/><ellipse cx="78" cy="104" rx="16" ry="5"/></g>
+<text x="46" y="94" text-anchor="middle" font-size="9" font-weight="700" fill="#555" font-family="Inter,Arial">£</text>
+<path d="M2 112h116a58 24 0 0 1-116 0z" fill="#9A9AA0"/>
+</g>
+<g class="pr">
+<path d="M540 40L494 112M540 40L586 112" stroke="#F26B1D" stroke-width="2" fill="none"/>
+<rect x="500" y="48" width="80" height="64" rx="8" fill="#F26B1D"/>
+<path d="M500 60h80" stroke="#fff" stroke-opacity=".35"/>
+<text x="540" y="92" text-anchor="middle" font-size="40" font-weight="800" fill="#fff" font-family="Inter,Arial">!</text>
+<path d="M482 112h116a58 24 0 0 1-116 0z" fill="#C2410C"/>
+</g>
+<circle cx="300" cy="40" r="9" fill="#F26B1D" stroke="#fff" stroke-width="3"/>
+</svg>
+<div class="cap hot"><span class="k">The wrong hire</span><h2><span>Hiring the wrong person costs even more.</span></h2></div>
 </div>
 
 <div class="bottom">
 <div class="note rv" style="animation-delay:.7s"><b>The caveat to hiring friends</b><span>It's why you need recruiters for the top staff. <a href="/scale/hiring-friends/">Read about hiring friends</a></span></div>
-<div class="elliot rv" style="animation-delay:.85s">
-<div class="txt"><h2>We use Elliot Waylen at Alba Talent Partners</h2><p>elliot@albatalentpartners.co.uk</p></div>
+<div class="bcard rv" style="animation-delay:.85s">
+<div class="ini" aria-hidden="true">EW</div>
+<div class="txt"><span class="k">We use</span><h2>Elliot Waylen</h2><div class="co">Alba Talent Partners</div><p>elliot@albatalentpartners.co.uk</p></div>
 <a class="btn" href="mailto:elliot@albatalentpartners.co.uk">Email Elliot</a>
 </div>
 </div>
 </main>
 <div class="wrap pnav"><a href="/scale/hiring-friends/" style="text-decoration:none;color:var(--gold-soft)">&larr; Hiring friends</a><span></span></div>
 <footer><div class="wrap">Scale · Hiring within the UK · Why I recommend recruiters</div></footer>
+<script>
+(function(){
+var els=[document.getElementById('where'),document.getElementById('cost')];
+function go(e){if(e)e.classList.add('in')}
+function all(){els.forEach(go)}
+try{
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){go(x.target);io.unobserve(x.target)}})},{threshold:.35});
+els.forEach(function(e){io.observe(e)});
+}else{all()}
+}catch(e){all()}
+setTimeout(all,2500);
+})();
+</script>
 </body>
 </html>
