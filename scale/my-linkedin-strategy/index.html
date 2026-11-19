@@ -26,43 +26,63 @@ h1{font-size:clamp(40px,5.6vw,76px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
 
 /* One-page layout */
-.page{padding:clamp(18px,2.4vw,26px) 24px}
-h1{font-size:clamp(34px,4.4vw,60px)}
-.eyebrow{margin-bottom:14px}
-.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap}
-.pill{font-size:13px;font-weight:600;color:var(--gold-soft);background:#FFF8F3;border:1px solid var(--gold);border-radius:999px;padding:8px 16px}
-.lab{margin:clamp(14px,2vh,18px) 0 10px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
-.row{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
-.card:hover,.hl:hover{transform:translateY(-6px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
-.card h2{font-size:clamp(17px,1.6vw,20px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.card p{font-size:15px;color:var(--muted)}
+.page{padding:clamp(16px,2.2vw,24px) 24px}
+h1{font-size:clamp(32px,3.5vw,48px);line-height:1.06}
+.eyebrow{margin-bottom:12px}
+.grid{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:20px 32px;align-items:start}
+.sub{font-size:clamp(16px,1.4vw,19px);color:var(--muted);margin:12px 0 14px;line-height:1.4}
+.sub b{color:var(--ink)}
+.pill{display:inline-block;font-size:13px;font-weight:600;color:var(--gold-soft);background:#FFF8F3;border:1px solid var(--gold);border-radius:999px;padding:8px 16px;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;margin-bottom:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.card:hover,.hl:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.card p{font-size:14px;color:var(--muted)}
 .vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-.no,.yes{border-radius:14px;padding:12px 14px;font-size:15px;font-weight:600;line-height:1.35}
+.no,.yes{border-radius:14px;padding:10px 12px;font-size:14px;font-weight:600;line-height:1.3}
 .no{background:#fff;border:1px solid var(--line);color:#8a8a8f;text-decoration:line-through;text-decoration-color:#b5b5ba}
 .yes{background:#fff;border:2px solid var(--gold);color:var(--gold-soft)}
 .no small,.yes small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;text-decoration:none}
-.no small{display:block}
-.hl{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:18px 22px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
-.hl .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:6px 12px;margin-bottom:10px}
-.hl h2{font-size:clamp(20px,2vw,26px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
-.hl p{font-size:15px;color:var(--muted)}
+.hl{background:#FFF8F3;border:2px solid var(--gold);border-radius:var(--radius);padding:14px 18px;margin-bottom:10px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1)}
+.hl .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:999px;padding:5px 12px;margin-bottom:8px}
+.hl h2{font-size:clamp(18px,1.7vw,22px);font-weight:700;letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.hl p{font-size:14px;color:var(--muted)}
 .hl p b{color:var(--ink)}
-.flow{display:flex;align-items:stretch;gap:10px}
-.step{flex:1;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;text-align:center;opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(.2s + var(--i)*.35s)}
-.step b{display:block;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em}
-.step span{font-size:14px;color:var(--muted)}
-.step.on{background:#FFF8F3;border:2px solid var(--gold)}
-.step.on b{color:var(--gold-soft)}
-.arr{align-self:center;font-size:26px;font-weight:700;color:var(--gold);opacity:0;animation:rise .7s ease forwards;animation-delay:calc(.35s + var(--i)*.35s)}
-@keyframes rise{to{opacity:1;transform:none}}
-.demo{margin-top:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.demo{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .demo .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap}
 .demo b{color:var(--ink)}
-.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
-@media (prefers-reduced-motion:reduce){.card,.hl{transition:none}.card:hover,.hl:hover{transform:none}.step,.arr{animation:none;opacity:1;transform:none}}
-@media (max-width:900px){.row{grid-template-columns:1fr}.page{padding:28px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
-@media (max-width:600px){.flow{flex-direction:column}.arr{transform:rotate(90deg);animation:none;opacity:1}.vs{grid-template-columns:1fr}.card,.hl{padding:16px}}
+/* Mock post */
+.stage{padding-left:190px;position:relative}
+.cap{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin:0 0 10px -190px}
+.post{background:#fff;border:1px solid #D0D0D0;border-radius:12px;padding:14px 16px 6px;box-shadow:0 1px 2px rgba(0,0,0,.06);max-width:520px}
+.ph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.av{width:44px;height:44px;border-radius:50%;background:#D9D9D9;flex:none}
+.ph b{display:block;font-size:14px;font-weight:600;color:#191919;line-height:1.25}
+.ph span{display:block;font-size:12px;color:#666;line-height:1.3}
+.reg{position:relative;border-radius:8px;outline:2px solid transparent;outline-offset:4px;transition:outline-color .2s,background-color .2s;cursor:default;margin-bottom:10px}
+.reg:focus{outline:2px solid var(--gold)}
+.reg:hover,.reg:focus,.reg.on{outline:2px solid var(--gold);background:#FFF1E8}
+.reg .t{position:absolute;right:calc(100% + 22px);top:0;width:168px;text-align:right;pointer-events:none}
+.reg .t b{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);background:#fff;border:1px dashed #F2B58F;border-radius:999px;padding:4px 11px;opacity:.55;transition:all .2s}
+.reg .t i{display:block;font-style:normal;font-size:12px;line-height:1.35;color:var(--muted);margin-top:6px;max-height:0;opacity:0;overflow:hidden;transition:opacity .2s,max-height .2s}
+.reg:hover .t b,.reg:focus .t b,.reg.on .t b{opacity:1;color:#fff;background:var(--gold);border:1px solid var(--gold)}
+.reg:hover .t i,.reg:focus .t i,.reg.on .t i{opacity:1;max-height:60px}
+.hook{font-size:16px;font-weight:700;color:#191919;line-height:1.35}
+.story p{font-size:14px;color:#333;line-height:1.45}
+.story p+p{margin-top:6px}
+.val p{font-size:14px;color:#333;line-height:1.45}
+.vis{height:clamp(96px,16vh,140px);background:#E9E9E9;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#666;text-align:center;padding:0 12px}
+.stats{display:flex;justify-content:space-between;font-size:12px;color:#666;padding:8px 0;border-bottom:1px solid #E6E6E6}
+.acts{display:flex;justify-content:space-around;font-size:13px;font-weight:600;color:#666;padding:8px 0}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:10px 24px;font-size:15px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.card,.hl,.reg,.reg .t b,.reg .t i{transition:none}.card:hover,.hl:hover{transform:none}}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+@media (max-width:900px){.page{padding:24px 16px}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}.stage{padding-left:0}.cap{margin-left:0}.post{max-width:none}}
+@media (max-width:700px){
+.reg{margin-bottom:14px}
+.reg .t{position:static;width:auto;text-align:left;margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.reg .t i{display:inline;max-height:none;opacity:.8;margin:0;font-size:12px}
+.reg:hover .t i,.reg:focus .t i,.reg.on .t i{opacity:1}
+}
+@media (max-width:600px){.vs{grid-template-columns:1fr}.card,.hl{padding:14px}}
 </style>
 </head>
 <body>
@@ -70,16 +90,12 @@ h1{font-size:clamp(34px,4.4vw,60px)}
 <nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Scale · Lead generation · My LinkedIn strategy</span></div></nav>
 
 <main class="wrap page">
-<div class="top">
+<div class="grid">
 <div>
 <p class="eyebrow">Level 5 - Lead generation</p>
-<h1>Write for the <span class="gold-t">lonely founder.</span></h1>
-</div>
+<h1>Who is actually reading your content <span class="gold-t">on LinkedIn?</span></h1>
+<p class="sub">Customise your posts for that audience. <b>For me, that's 7-figure founders.</b></p>
 <span class="pill">I'm just getting into LinkedIn. Not an expert yet.</span>
-</div>
-
-<p class="lab">Who I'm targeting</p>
-<div class="row">
 <div class="card">
 <div class="vs">
 <div class="no"><small>Not</small>Businesses doing £250k a year</div>
@@ -92,18 +108,24 @@ h1{font-size:clamp(34px,4.4vw,60px)}
 <h2>Grown to 7 figures. No one to talk to.</h2>
 <p>Their problems aren't relatable to most people. <b>Speak to the emotion.</b></p>
 </div>
-</div>
-
-<p class="lab">Every post</p>
-<div class="flow">
-<div class="step on" style="--i:0"><b>Story</b><span>Most posts start here</span></div>
-<span class="arr" style="--i:0" aria-hidden="true">&rarr;</span>
-<div class="step" style="--i:1"><b>Value</b><span>The story leads into it</span></div>
-<span class="arr" style="--i:1" aria-hidden="true">&rarr;</span>
-<div class="step" style="--i:2"><b>Visual</b><span>Always attached, ideally a photo</span></div>
-</div>
-
 <div class="demo"><span class="tag">Watch the demo</span><span><b>My research approach:</b> on-screen demo in the video.</span></div>
+</div>
+<div class="stage">
+<p class="cap">Every post</p>
+<div class="post" aria-label="Example LinkedIn post, annotated">
+<div class="ph"><div class="av" aria-hidden="true"></div><div><b>Your name</b><span>Your headline · 1st</span><span>2h · Public</span></div></div>
+<div class="reg hook" tabindex="0"><div class="t"><b>Hook</b><i>The one line people see first</i></div>Your one-line hook goes here. It's all they see before "see more".</div>
+<div class="reg story" tabindex="0"><div class="t"><b>Story</b><i>Most posts start with a story</i></div>
+<p>Start with a story. A moment, a problem, a founder you met.</p>
+<p>Keep it short and human. Placeholder text for the middle of the post.</p>
+<p>Speak to the emotion, not just the facts.</p></div>
+<div class="reg val" tabindex="0"><div class="t"><b>Value</b><i>The story leads into a value piece</i></div><p>Then the lesson. What the reader can take and use.</p></div>
+<div class="reg" tabindex="0"><div class="t"><b>Visual</b><i>Every post has a visual, ideally a photo</i></div><div class="vis">Always a visual. Ideally a photo.</div></div>
+<div class="stats"><span>Likes</span><span>Comments · Reposts</span></div>
+<div class="acts"><span>Like</span><span>Comment</span><span>Repost</span><span>Send</span></div>
+</div>
+</div>
+</div>
 </main>
 <div class="wrap pnav"><span></span><span></span></div>
 <footer><div class="wrap">Accountancy Accelerator · Scale · Lead generation · My LinkedIn strategy</div></footer>
