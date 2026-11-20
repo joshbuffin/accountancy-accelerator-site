@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>VAT - Accountancy Accelerator</title>
+<meta name="description" content="Client Engager service: phases and checklist for VAT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.hero{padding:clamp(72px,11vw,140px) 0 clamp(40px,6vw,72px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+.hero.tight{padding:clamp(24px,4vh,48px) 0 clamp(20px,3vh,32px)}
+.hero.tight h1{font-size:clamp(36px,5vw,60px)}
+.hero.tight .eyebrow{margin-bottom:10px}
+.hero.tight .lead{margin-top:16px;font-size:clamp(16px,2vw,20px)}
+.sec-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 14px}
+.heads{display:grid;gap:14px;padding-bottom:8px}
+.heads.cols-1{grid-template-columns:minmax(0,1fr);max-width:360px}
+.heads.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.heads.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.heads.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.heads .box{padding:18px 20px;display:flex;align-items:center;gap:12px;min-height:76px;text-decoration:none;color:inherit}
+.heads .box h2{font-size:clamp(16px,1.5vw,20px);line-height:1.2}
+.heads .n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.checks{display:flex;flex-direction:column;gap:20px;padding:32px 0 48px}
+.checks .box:hover{transform:none;box-shadow:none;border-color:var(--line);background-color:var(--card)}
+.phase-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.assigned{display:inline-flex;align-items:center;margin-top:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--gold-soft);font-size:13px;font-weight:600;line-height:1.3;max-width:100%}
+.points-h{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:22px 0 4px}
+.points{display:flex;flex-direction:column}
+.point{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;padding:16px 0;border-top:1px solid var(--line)}
+.txt{display:flex;gap:12px;flex:1 1 220px;min-width:0;align-items:flex-start}
+.qnum{flex:0 0 22px;font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;padding-top:1px}
+.txt p{color:var(--muted);font-size:clamp(16px,1.7vw,18px);line-height:1.5}
+.pills{display:flex;gap:8px;flex:0 0 auto;border:0;margin:0;padding:0;min-width:0}
+.pill{position:relative;display:inline-flex}
+.pill input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+.pill span{display:inline-flex;align-items:center;justify-content:center;min-width:52px;min-height:36px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+.pill:hover span{border-color:var(--gold);background:#FFF8F3}
+.pill input:checked+span{background:var(--gold);border-color:var(--gold);color:#fff}
+.pill input:focus-visible+span{box-shadow:0 0 0 4px rgba(242,107,29,.25)}
+.foot-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;padding-top:4px}
+.clear{font:inherit;font-size:14px;font-weight:600;color:var(--gold-soft);background:none;border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+.clear:hover{border-color:var(--gold);background:#FFF8F3}
+.clear:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(242,107,29,.25)}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:14px 0 32px;font-size:15px;font-weight:600}
+.pn a{text-decoration:none}
+.pn .next{color:var(--gold-soft);text-align:right;margin-left:auto}
+.pn .prev{margin-right:auto}
+footer.slim{padding:16px 0}
+@media (max-width:900px){.heads.cols-3,.heads.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}.heads .box{min-height:0;padding:14px 16px}}
+@media (max-width:640px){
+  nav .wrap{height:auto;min-height:56px;padding-top:10px;padding-bottom:10px;flex-direction:column;align-items:flex-start;gap:4px}
+  .navtag{font-size:12px;line-height:1.35;text-align:left;max-width:100%}
+  .hero.tight{padding:20px 0 16px}
+  .heads{gap:8px}
+  .heads.cols-2,.heads.cols-3,.heads.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .heads .box h2{font-size:15px}
+  .checks{padding:24px 0 40px;gap:12px}
+  .checks .box h2{font-size:22px}
+  .point{align-items:flex-start}
+  .pills{width:100%}
+  .pn{font-size:14px;padding:12px 0 24px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Client Engager · Services · VAT</span></div></nav>
+
+<header class="hero tight"><div class="wrap">
+<p class="eyebrow">Client Engager · Services, phases and checklists</p>
+<h1>VAT.</h1>
+</div></header>
+
+<main>
+<section class="wrap" aria-labelledby="phases-label">
+<h2 class="sec-label" id="phases-label">Phases</h2>
+<div class="heads cols-4">
+<a class="box" href="#preparation"><span class="n">1</span><h2>Preparation</h2></a><a class="box" href="#review"><span class="n">2</span><h2>Review</h2></a><a class="box" href="#sign-off"><span class="n">3</span><h2>Sign off</h2></a><a class="box" href="#filing"><span class="n">4</span><h2>Filing</h2></a>
+</div>
+</section>
+
+<section class="wrap checks" aria-label="Checklist">
+
+<article class="box" id="preparation">
+<p class="phase-label">Phase 1</p>
+<h2>Preparation</h2>
+<p class="assigned">Assigned to: Bookkeeper/admin assistant</p>
+<h3 class="points-h">Checklist points</h3>
+<div class="points">
+<div class="point">
+<div class="txt"><span class="qnum">1</span><p>All transactions have been reconciled prior to the period-end date.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="All transactions have been reconciled prior to the period-end date.">
+<label class="pill"><input type="radio" name="q-1-1" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-1-1" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-1-1" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">2</span><p>All receipts have been processed prior to the period-end date (Hubdoc).</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="All receipts have been processed prior to the period-end date (Hubdoc).">
+<label class="pill"><input type="radio" name="q-1-2" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-1-2" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-1-2" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">3</span><p>Review bills awaiting payment for any duplicates or any that have already been paid.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="Review bills awaiting payment for any duplicates or any that have already been paid.">
+<label class="pill"><input type="radio" name="q-1-3" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-1-3" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-1-3" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">4</span><p>Any unusual transactions have been highlighted to the reviewer.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="Any unusual transactions have been highlighted to the reviewer.">
+<label class="pill"><input type="radio" name="q-1-4" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-1-4" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-1-4" value="na"><span>N/A</span></label>
+</fieldset>
+</div>
+</div>
+</article><article class="box" id="review">
+<p class="phase-label">Phase 2</p>
+<h2>Review</h2>
+<p class="assigned">Assigned to: Client manager</p>
+<h3 class="points-h">Checklist points</h3>
+<div class="points">
+<div class="point">
+<div class="txt"><span class="qnum">1</span><p>VAT return has been scanned for any anomalies.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="VAT return has been scanned for any anomalies.">
+<label class="pill"><input type="radio" name="q-2-1" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-2-1" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-2-1" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">2</span><p>The top 5 largest amounts reclaimed have been checked for date and amount back to the invoice.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="The top 5 largest amounts reclaimed have been checked for date and amount back to the invoice.">
+<label class="pill"><input type="radio" name="q-2-2" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-2-2" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-2-2" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">3</span><p>Run a find and recode report for any sales without VAT included in the period.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="Run a find and recode report for any sales without VAT included in the period.">
+<label class="pill"><input type="radio" name="q-2-3" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-2-3" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-2-3" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">4</span><p>Flat rate percentage has been reviewed for accuracy (including the 1% first-year rule).</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="Flat rate percentage has been reviewed for accuracy (including the 1% first-year rule).">
+<label class="pill"><input type="radio" name="q-2-4" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-2-4" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-2-4" value="na"><span>N/A</span></label>
+</fieldset>
+</div><div class="point">
+<div class="txt"><span class="qnum">5</span><p>If on the flat rate scheme, VAT reclaimed for expenditure over £2,000.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="If on the flat rate scheme, VAT reclaimed for expenditure over £2,000.">
+<label class="pill"><input type="radio" name="q-2-5" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-2-5" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-2-5" value="na"><span>N/A</span></label>
+</fieldset>
+</div>
+</div>
+</article><article class="box" id="sign-off">
+<p class="phase-label">Phase 3</p>
+<h2>Sign off</h2>
+<p class="assigned">Assigned to: Client manager</p>
+<h3 class="points-h">Checklist points</h3>
+<div class="points">
+<div class="point">
+<div class="txt"><span class="qnum">1</span><p>PDF VAT return sent to the client to approve using the email template.</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="PDF VAT return sent to the client to approve using the email template.">
+<label class="pill"><input type="radio" name="q-3-1" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-3-1" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-3-1" value="na"><span>N/A</span></label>
+</fieldset>
+</div>
+</div>
+</article><article class="box" id="filing">
+<p class="phase-label">Phase 4</p>
+<h2>Filing</h2>
+<p class="assigned">Assigned to: Client manager</p>
+<h3 class="points-h">Checklist points</h3>
+<div class="points">
+<div class="point">
+<div class="txt"><span class="qnum">1</span><p>VAT return has been filed in Xero (check the VAT amount has not changed between sending for approval and filing).</p></div>
+<fieldset class="pills" role="radiogroup" aria-label="VAT return has been filed in Xero (check the VAT amount has not changed between sending for approval and filing).">
+<label class="pill"><input type="radio" name="q-4-1" value="yes"><span>Yes</span></label>
+<label class="pill"><input type="radio" name="q-4-1" value="no"><span>No</span></label>
+<label class="pill"><input type="radio" name="q-4-1" value="na"><span>N/A</span></label>
+</fieldset>
+</div>
+</div>
+</article>
+
+<div class="foot-row">
+<button class="clear" id="clear" type="button">Clear answers</button>
+</div>
+</section>
+</main>
+
+<div class="wrap pn"><a class="prev" href="../self-assessment/">&larr; Self-assessment</a><a class="next" href="../cis/">CIS &rarr;</a></div>
+<footer class="slim"><div class="wrap">Accountancy Accelerator · Client Engager · Services · VAT</div></footer>
+
+<script>
+(function(){
+var KEY="aa-ce-vat-v1";
+function load(){
+  try{return JSON.parse(localStorage.getItem(KEY))||{}}
+  catch(e){return {}}
+}
+function save(state){
+  try{localStorage.setItem(KEY,JSON.stringify(state))}
+  catch(e){}
+}
+function apply(state){
+  document.querySelectorAll('.pills input[type=radio]').forEach(function(input){
+    input.checked=state[input.name]===input.value;
+  });
+}
+var state=load();
+apply(state);
+document.querySelector('.checks').addEventListener('change',function(e){
+  var input=e.target;
+  if(!input||input.type!=='radio')return;
+  state[input.name]=input.value;
+  save(state);
+});
+document.getElementById('clear').addEventListener('click',function(){
+  state={};
+  save(state);
+  document.querySelectorAll('.pills input[type=radio]').forEach(function(input){input.checked=false});
+});
+})();
+</script>
+
+</body>
+</html>
