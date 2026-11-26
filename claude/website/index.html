@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Build and launch your firm&#x27;s website - Accountancy Accelerator</title>
+<meta name="description" content="Have Claude Code design, write, build and launch your firm&#x27;s website on your own domain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+.lead+p.lead{margin-top:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+footer.slim{padding:16px 0}
+@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+.hero.tight{padding:clamp(24px,4vh,48px) 0 clamp(20px,3vh,32px)}
+.hero.tight h1{font-size:clamp(36px,5vw,60px)}
+.hero.tight .eyebrow{margin-bottom:10px}
+.hero.tight .lead{margin-top:16px;font-size:clamp(16px,2vw,20px)}
+.sec-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 14px}
+.heads{display:grid;gap:14px;padding-bottom:8px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.heads .box{padding:18px 20px;display:flex;align-items:center;gap:12px;min-height:76px;text-decoration:none;color:inherit}
+.heads .box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.heads .box h2{font-size:clamp(16px,1.5vw,20px);line-height:1.2}
+.n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.guide{display:flex;flex-direction:column;gap:20px;padding-top:32px;padding-bottom:48px}
+.guide .box{scroll-margin-top:72px}
+.phase-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.intro{color:var(--muted);font-size:clamp(16px,1.7vw,18px);margin-top:12px;max-width:820px}
+.items{display:flex;flex-direction:column;margin-top:18px}
+.item{display:flex;gap:12px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+.item .n{margin-top:1px}
+.item .dot{flex:0 0 28px;display:flex;justify-content:center;padding-top:9px}
+.item .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.item p{color:var(--muted);font-size:clamp(16px,1.7vw,18px);line-height:1.5}
+.item p strong{color:var(--ink);font-weight:700}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink);white-space:nowrap}
+.note{margin-top:18px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-size:clamp(15px,1.6vw,17px)}
+.note strong{color:var(--ink)}
+.chip{display:inline-flex;align-items:center;margin-top:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--gold-soft);font-size:13px;font-weight:600;line-height:1.3;max-width:100%}
+.prompt-box{border:2px solid var(--gold);background:#FFF8F3}
+.prompt-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px}
+.copy{font:inherit;font-size:15px;font-weight:700;color:#fff;background:var(--gold);border:1px solid var(--gold);border-radius:12px;padding:12px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.copy:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.copy:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(242,107,29,.3)}
+.copy.done{background:#1F7A3A;border-color:#1F7A3A}
+.marker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:20px 0 8px}
+.marker.end{margin:8px 0 0}
+pre.prompt{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.5vw,24px);max-height:640px;overflow:auto;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.6;color:var(--ink)}
+pre.prompt .ph{font-weight:700;color:var(--gold-soft)}
+.copy-status{font-size:14px;color:var(--muted);margin-top:10px;min-height:1.4em}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:14px 0 32px;font-size:15px;font-weight:600}
+.pn a{text-decoration:none}
+.pn .next{color:var(--gold-soft);text-align:right;margin-left:auto}
+@media (max-width:900px){.heads{grid-template-columns:repeat(2,minmax(0,1fr))}.heads .box{min-height:0;padding:14px 16px}}
+@media (max-width:640px){
+  nav .wrap{height:auto;min-height:56px;padding-top:10px;padding-bottom:10px;flex-direction:column;align-items:flex-start;gap:4px}
+  .navtag{font-size:12px;line-height:1.35;text-align:left;max-width:100%}
+  .hero.tight{padding:20px 0 16px}
+  .heads{gap:8px}
+  .heads .box h2{font-size:15px}
+  .guide{padding-top:24px;padding-bottom:40px;gap:12px}
+  .guide .box h2{font-size:22px}
+  .box{padding:20px 18px}
+  .copy{width:100%;justify-content:center}
+  pre.prompt{font-size:13px;max-height:520px}
+  code,.mono{white-space:normal}
+  .pn{font-size:14px;padding:12px 0 24px}
+}.item .sq{flex:0 0 28px;display:flex;justify-content:center;padding-top:4px}
+.item .sq::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid var(--gold);background:var(--paper)}
+.sub-h{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:26px 0 4px}
+.cmds{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.cmd{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 10px 10px 16px}
+.cmd code{background:none;border:0;padding:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.5;flex:1 1 auto;min-width:0}
+.copy.sm{font-size:13px;padding:7px 12px;border-radius:9px;flex:0 0 auto;width:auto}
+.cmd-desc{color:var(--muted);font-size:clamp(15px,1.6vw,17px);margin:6px 0 0 2px}
+.item .cmds{margin-top:10px}
+.item > div{min-width:0;flex:1 1 auto}
+.item > div > p + p{margin-top:8px}
+.modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.mode{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.mode.rec{border:2px solid var(--gold)}
+.mode h3{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.mode p{color:var(--muted);font-size:16px;margin-top:8px}
+.mode .chip{margin-top:0;margin-bottom:10px}
+.stages{counter-reset:none}
+.pn .prev{margin-right:auto}
+@media (max-width:900px){.modes{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.copy.sm{width:auto}.cmd{padding:8px 8px 8px 12px}.cmd code{font-size:14px}}
+
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Claude · Creating a website</span></div></nav>
+
+<header class="hero tight"><div class="wrap">
+<p class="eyebrow">Using Claude in your practice · Guide 4 of 4</p>
+<h1>Build and launch your firm's website.</h1>
+<p class="lead">This prompt has Claude Code design, write, build and launch a professional website for your firm, on your own domain, without a web designer, a page builder or a monthly platform fee.</p>
+<p class="lead">You provide the brief, your branding, your photos and videos, and the websites you like. Claude does the design, copywriting, coding, mobile optimisation and technical set-up, and walks you through the parts only you can do, such as logging into your domain provider. Once it's live, you keep editing it with Claude by typing what you want changed. No developer needed.</p>
+</div></header>
+
+<main>
+<section class="wrap" aria-labelledby="jump-label">
+<h2 class="sec-label" id="jump-label">On this page</h2>
+<div class="heads">
+<a class="box" href="#how-it-works"><span class="n">1</span><h2>How it works</h2></a><a class="box" href="#before"><span class="n">2</span><h2>Before you start</h2></a><a class="box" href="#prompt"><span class="n">3</span><h2>Copy the prompt</h2></a><a class="box" href="#domain"><span class="n">4</span><h2>Your domain</h2></a>
+</div>
+</section>
+
+<section class="wrap guide" aria-label="Guide">
+
+<article class="box" id="how-it-works">
+<p class="phase-label">Overview</p>
+<h2>How it works</h2>
+<p class="intro">Claude works through ten stages and stops after each one so you can check and give feedback:</p>
+<div class="items">
+<div class="item"><span class="n">1</span><p><strong>Plan.</strong> Claude reads your brief, studies the websites you like and writes a plan: every page, what goes on it, the design direction and the Google search terms to target.</p></div>
+<div class="item"><span class="n">2</span><p><strong>Prepare assets.</strong> Your logo, photos and videos are resized and compressed for the web, and a favicon and social sharing image are created.</p></div>
+<div class="item"><span class="n">3</span><p><strong>Choose a design.</strong> Claude builds 2 or 3 different homepage designs for you to choose from.</p></div>
+<div class="item"><span class="n">4</span><p><strong>Build.</strong> Every page is built and written in your tone of voice, including a working contact form, booking link and legal pages.</p></div>
+<div class="item"><span class="n">5</span><p><strong>Make it look good.</strong> Claude screenshots every page and refines spacing, alignment, typography and imagery with you.</p></div>
+<div class="item"><span class="n">6</span><p><strong>Optimise for mobile.</strong> Every page is tested and fixed at phone and tablet sizes.</p></div>
+<div class="item"><span class="n">7</span><p><strong>Tidy up.</strong> The code is cleaned up, and links, Google (SEO), speed, accessibility and analytics are checked and fixed.</p></div>
+<div class="item"><span class="n">8</span><p><strong>Put it live.</strong> The site goes onto free hosting at a temporary address, and you test everything, including a real form submission.</p></div>
+<div class="item"><span class="n">9</span><p><strong>Connect your domain.</strong> Claude walks you through pointing your domain at the new site, without breaking your email.</p></div>
+<div class="item"><span class="n">10</span><p><strong>After launch.</strong> Google Search Console, Google Business Profile, where to update your link, and three commands for editing, checking and publishing the site from then on.</p></div>
+</div>
+<p class="note"><strong>Allow a weekend, or a few evenings.</strong> Most of the time goes into your feedback on design and wording, which is time well spent.</p>
+</article>
+
+<article class="box" id="before">
+<p class="phase-label">Preparation</p>
+<h2>Before you start: things to have ready</h2>
+<div class="items">
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Do Guide 1 first.</strong> You've completed <a href="/claude/firm-context/">Teach Claude about your firm</a>, and you're in the Claude desktop app's Code tab with the same Firm AI folder open. Claude uses what you set up in Guide 1 for your services, pricing, ideal client and tone of voice.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Node.js will be needed.</strong> If you don't have it, Claude will walk you through installing it.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Your domain login.</strong> The login for wherever your domain name is registered (for example GoDaddy, 123-reg, Namecheap or IONOS). If you don't own a domain yet, buy one first.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Your email provider.</strong> Know who provides your email (Google Workspace, Microsoft 365, etc.). This matters when connecting the domain.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Websites you like.</strong> 3 to 5 of them, and what you like about each. Screenshots of the bits you love are even better.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Your logo,</strong> ideally as an SVG or a high-resolution PNG with a transparent background.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Your brand colours and fonts</strong> (hex codes if you have them).</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Photos.</strong> Team headshots (consistent style), team and working photos. Real photos of your team beat stock photos every time.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Videos, if you have them.</strong> A short homepage clip, an about-us video, testimonial videos, or YouTube links.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Real testimonials and reviews,</strong> with permission to use the client's name.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>Your firm's details</strong> for the footer and legal pages: company number, registered office, VAT number, ICO registration number and professional body details.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p><strong>A booking link</strong> if you use one (for example Calendly).</p></div>
+</div>
+</article>
+
+<article class="box" id="assets">
+<p class="phase-label">Preparation</p>
+<h2>Set up your assets folder</h2>
+<p class="intro">In the folder you use for Claude, create a folder called <span class="mono">website</span>, and inside it a folder called <span class="mono">assets-inbox</span>. Inside <span class="mono">assets-inbox</span>, create these folders:</p>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong><span class="mono">logo</span></strong> for logo files</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong><span class="mono">photos</span></strong> for headshots, team and office photos</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong><span class="mono">video</span></strong> for video files</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong><span class="mono">inspiration</span></strong> for screenshots of websites you like</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong><span class="mono">documents</span></strong> for downloadable guides, privacy policy, complaints procedure and brand guidelines</p></div>
+</div>
+<p class="note"><strong>Don't worry about file sizes or names.</strong> Claude will process everything, and your originals are never changed.</p>
+</article>
+
+<article class="box" id="how-to-use">
+<p class="phase-label">Step by step</p>
+<h2>How to use the prompt</h2>
+<div class="items">
+<div class="item"><span class="n">1</span><p><strong>Copy the prompt.</strong> Press <strong>Copy prompt</strong> below. It copies everything between the START and END markers. Paste it into a Word or Google Doc.</p></div>
+<div class="item"><span class="n">2</span><p><strong>Fill in Part 2.</strong> Part 2 is your website brief. Sections C (inspiration), F (pages) and G (wording) make the biggest difference to the result. Leave Part 1 exactly as it is.</p></div>
+<div class="item"><span class="n">3</span><p><strong>Paste it into Claude.</strong> Paste the whole thing into the message box in the Code tab and press Enter. If the paste is awkward, save the completed brief as a plain text file in your folder (for example <span class="mono">website-brief.txt</span>) and type: "Read website-brief.txt and follow the instructions in it."</p></div>
+<div class="item"><span class="n">4</span><p><strong>Work through the stages.</strong> After each stage Claude stops and explains what it's done. Look at it properly, give feedback, then type "continue". Be as picky as you like about the design and wording: it's much quicker to change things now.</p></div>
+<div class="item"><span class="n">5</span><p><strong>Approve each step.</strong> Claude will never publish, deploy or change your domain without asking you first. When it needs you to do something (create an account, change a setting at your domain provider), it will walk you through it step by step.</p></div>
+</div>
+</article>
+
+<article class="box prompt-box" id="prompt">
+<div class="prompt-top">
+<div>
+<p class="phase-label">Copy and fill in</p>
+<h2>The prompt</h2>
+<p class="intro">Copy this into a Word or Google Doc, fill in Part 2, then paste the whole thing into Claude.</p>
+</div>
+<button type="button" class="copy" data-copy="prompt-main" data-status="status-main">Copy prompt</button>
+</div>
+<p class="marker">▼ Start copying here</p>
+<pre class="prompt" id="prompt-main"><span class="ph"># FIRM WEBSITE: BUILD AND LAUNCH BRIEF FOR CLAUDE CODE</span>
+
+<span class="ph">## PART 1: INSTRUCTIONS FOR CLAUDE (do not edit this part)</span>
+
+I want you to design, build and launch a professional website for my accountancy practice, and set it up so I can keep updating it with you afterwards. My brief, branding, content and practical details are in Part 2. My images, logo and videos are in website/assets-inbox/ (if that folder doesn't exist yet, tell me to create it and what to put in it).
+
+You already know my firm from CLAUDE.md and the context/ folder. Use it for services, pricing, ideal client, tone of voice and differentiators, so I don't have to repeat myself. If those files don't exist, tell me and suggest I run the firm setup prompt first, but carry on if I say so.
+
+Work through the stages below in order. At the end of each stage, stop, explain in plain English what you've done and what I should look at, and wait for me to say "continue". I may not be technical: when I need to do something myself (create an account, log into my domain provider, approve something), walk me through it one step at a time and wait for me to confirm before moving on.
+
+<span class="ph">### NON-NEGOTIABLE PRINCIPLES (apply to every stage)</span>
+1. Truthful content only. Never invent testimonials, reviews, client names, statistics, awards, qualifications, team members or case studies. If I haven't given you something, use a clearly marked placeholder (for example [TESTIMONIAL NEEDED]) and add it to a missing-content list. No claims that can't be backed up ("the UK's best accountants", "guaranteed tax savings"), in line with UK advertising rules.
+2. No fake people. Never use AI-generated or stock photos presented as our team or our clients. Stock or abstract imagery is fine for backgrounds if I've approved it.
+3. Ask before anything goes public. Never deploy, publish or make the site live without my explicit "yes" each time. Never change DNS, domain or email settings yourself: tell me exactly what to change and where, and I'll do it.
+4. Protect my email. When we connect the domain, never tell me to change or delete MX, SPF, DKIM or DMARC records, or anything else my email depends on. Only add or change the records the website needs. Before I change anything, have me screenshot or copy my current DNS records as a backup.
+5. Don't lose my existing site. If I already have a website, capture its content and page addresses before replacing it, and set up redirects from old page addresses to the new ones, so links and Google rankings aren't lost.
+6. Keep it simple and fast. Build a static site in plain HTML, CSS and a small amount of JavaScript: no heavy frameworks, no page builders, no paid plugins. It must be fast, secure, cheap or free to host, and easy for you to edit later.
+7. Use my voice. Follow context/tone-of-voice.md and Part 2, section G. UK English throughout.
+8. Respect professional rules. Use professional body names, designations and logos, and software partner badges, only as I've confirmed I'm entitled to, and flag anything I should check against my professional body's or partner programme's rules.
+
+<span class="ph">### STAGE 1: BRIEF, RESEARCH AND PLAN</span>
+1. Read CLAUDE.md, the context/ files and Part 2.
+2. Look at every inspiration website in Part 2, section C. Visit each one if you can fetch web pages, and look at any screenshots I've saved in website/assets-inbox/inspiration/. For each, note what specifically works (layout, typography, use of colour and photography, how the homepage leads to a call to action, how services are presented). Take inspiration from patterns; never copy their wording, images or design wholesale.
+3. If I have an existing website, list its pages and content, and note what to keep, rewrite or drop.
+4. Write website/brief.md containing:
+   - the site's goal, main call to action and target visitor (from Part 2)
+   - the sitemap: every page, its purpose and its address (for example /services/bookkeeping)
+   - a page-by-page content plan: the sections on each page, in order, with what each section must achieve
+   - the design direction: mood, layout style, colour use, typography, photo and video style, with the reasons it suits my ideal client
+   - the SEO plan: the main search terms and locations to target, and which page targets which term
+   - the contact and lead capture plan (form fields, booking link, where submissions go)
+   - an asset list: everything I've provided, and everything still missing
+5. Ask me about any gaps one question at a time, most important first. Then summarise the plan in plain English and wait for my approval.
+
+<span class="ph">### STAGE 2: PREPARE THE ASSETS</span>
+1. Logo: produce the versions the site needs: full logo for the header, a version that works on dark backgrounds if needed, a square mark, a favicon set (browser tab icon, Apple touch icon) and a social sharing image (1200x630) for when the site is shared on LinkedIn, WhatsApp and so on. Prefer SVG for the logo. If I've only provided a low-quality image, tell me and ask for a better file rather than using a blurry logo.
+2. Photos: resize each one to the largest size it will actually display at, convert to WebP (keeping a JPG fallback only where needed), compress them, and give them clear descriptive filenames (team-jane-smith.webp, not IMG_4432.jpg). Check headshots are consistently cropped. Tell me if any photo is too low-resolution or poorly lit to use.
+3. Videos: compress each one for the web (MP4, H.264, sensible bitrate; a background hero video should ideally be under about 5 MB and 10 to 20 seconds long, muted and looping), and create a poster image for each video so something shows while it loads. If you need a tool such as ffmpeg, walk me through installing it.
+4. Save processed assets in website/site/img/ and website/site/video/. Keep my originals untouched in assets-inbox.
+5. Update the asset list in brief.md and show me anything missing or unusable.
+
+<span class="ph">### STAGE 3: DESIGN DIRECTION</span>
+1. Create 2 or 3 different design directions as working homepage mock-ups (the top of the homepage: navigation, hero section, the first two sections and a call to action), using my real logo, colours, fonts and imagery. Save them as separate HTML files I can open, and open them for me.
+2. Explain the difference between them in one or two sentences each, and tell me which you'd recommend and why.
+3. Once I pick one (or a mix), turn it into a design system in a single shared stylesheet: colour tokens, font sizes, spacing scale, buttons, cards, section styles, form styles, and how images and video are treated. Every page must use this system, so the whole site stays consistent and a colour change happens in one place.
+
+<span class="ph">### STAGE 4: BUILD ALL THE PAGES</span>
+1. Build every page in the sitemap in website/site/, with a shared header, navigation and footer on every page. Navigation: logo, the main pages, and a clear call-to-action button (for example "Book a free call") always visible.
+2. Write the copy for every page using my answers in Part 2 and my context files, in my tone of voice. For each page: a clear headline that says what we do and for whom, benefit-led sections (what the client gets, not just what we do), proof (real testimonials, reviews, numbers I've confirmed), answers to the common objections and FAQs, and a call to action at the end of every page. Keep paragraphs short and scannable.
+3. Contact page, and contact points across the site:
+   - a contact form with the fields I've listed in Part 2, section H, including "How did you hear about us?" so we can track where leads come from
+   - the form must work on a static site: set it up with a form service (Formspree, Netlify Forms or similar, whichever suits my hosting) so that submissions are emailed to me, with spam protection (a honeypot field, plus a captcha if needed), clear validation messages, and a thank-you message or page after sending
+   - booking link or embedded calendar if I have one, plus click-to-call phone, click-to-email and a WhatsApp link if I use it
+   - office or registered address, opening hours and expected response time
+4. Legal and compliance pages and details:
+   - privacy policy (UK GDPR) covering the contact form, analytics and cookies, based on the details I give in section I. Mark it as a draft for me to check, and say so clearly.
+   - cookie notice and consent banner, if we use any non-essential cookies (analytics, Meta pixel): nothing non-essential loads before consent
+   - complaints procedure and terms, if I've provided them
+   - a footer on every page with the registered company name, company number, registered office, place of registration (for example "Registered in England and Wales"), VAT number if I want it shown, and the regulatory statement for my professional body
+5. Also build: a friendly 404 "page not found" page, and redirects from my old site's page addresses (if I have one).
+6. Then open the site locally for me to click through, and give me the missing-content list (placeholders still to replace).
+
+<span class="ph">### STAGE 5: MAKE IT LOOK GOOD (DESIGN POLISH)</span>
+1. Take screenshots of every page at desktop (1440px wide), tablet (768px) and mobile (390px) widths, for example with Puppeteer, and actually look at them.
+2. Review each screenshot against this checklist and fix what you find:
+   - consistent spacing between sections, and nothing cramped or floating
+   - alignment on a clear grid: edges line up, and no stray off-centre elements
+   - type: a clear hierarchy (one H1 per page), comfortable line lengths (roughly 60 to 75 characters), no orphaned single words on headlines where avoidable
+   - colour: the brand colours used deliberately, with text contrast meeting WCAG AA
+   - images: correctly cropped (no cut-off heads), consistent styles, nothing stretched or pixelated
+   - buttons and links: consistent style, an obvious primary action, hover and focus states
+   - the page has visual rhythm: alternate layouts and backgrounds so long pages don't feel like a wall of text
+   - subtle, tasteful motion only (gentle fade-ins), respecting "reduce motion" settings
+3. Show me before and after screenshots of the main changes, then ask for my feedback. Expect several rounds; make each change in the shared design system wherever possible.
+
+<span class="ph">### STAGE 6: OPTIMISE FOR MOBILE</span>
+Most visitors arrive from a phone (often from social media), so treat mobile as the main experience, not an afterthought:
+- a working mobile menu (hamburger menu), with the call-to-action button reachable at all times
+- no sideways scrolling on any page at 360px width
+- body text at least 16px; buttons and links at least 44px tall and easy to tap, with space between them
+- forms easy to fill in on a phone: the right keyboard for each field (email, phone), large inputs, no tiny checkboxes
+- click-to-call and WhatsApp links work
+- hero videos: a poster image on mobile and for data-saver settings, so the page never waits for a large video
+- images sized for mobile, so phones don't download desktop-sized files
+- test at 360px, 390px and 430px wide plus tablet, screenshot each page, and fix anything that breaks
+Show me the mobile screenshots of every page.
+
+<span class="ph">### STAGE 7: TIDY THE CODE AND TECHNICAL QUALITY</span>
+1. Code tidy-up: remove unused CSS, JavaScript, images and test files; consistent formatting and indentation; clear comments where useful; one shared stylesheet and script; no inline styles scattered through pages; valid HTML.
+2. Links: check every internal and external link and every image path, and fix anything broken.
+3. Search engine optimisation:
+   - a unique title (under about 60 characters) and meta description (under about 155 characters) for every page, targeting the terms in the SEO plan
+   - one H1 per page and a logical heading structure
+   - descriptive alt text on every meaningful image
+   - structured data (schema.org AccountingService or LocalBusiness) with the firm name, address, phone, opening hours and links to our social profiles
+   - sitemap.xml, robots.txt and canonical links
+   - Open Graph and social tags, so shared links show the right title, description and image
+4. Speed: lazy-load images and videos below the fold, preload the main font and hero image, set image width and height to stop the layout jumping, and keep JavaScript small. Run a Lighthouse audit (for example with npx lighthouse) on the homepage and two other pages, on mobile, and aim for 90+ in Performance, Accessibility, Best Practices and SEO. Show me the scores and fix the main issues.
+5. Accessibility: form labels, keyboard navigation, visible focus states, a skip-to-content link, captions or transcripts where videos include speech, and sufficient colour contrast.
+6. Analytics: add the analytics I chose in section J (only after cookie consent where required), and set up tracking for form submissions and booking clicks as conversions, so I can see how many enquiries the site generates.
+
+<span class="ph">### STAGE 8: PUT IT LIVE (HOSTING)</span>
+Recommend a host based on Part 2, section K. Unless I've chosen otherwise, use Netlify (free plan, simple, works well for static sites and forms). Then:
+1. Walk me through creating the hosting account, one step at a time.
+2. Deploy the site to a temporary address on the host (for example something.netlify.app). Ask me before deploying.
+3. On the temporary address, run a full pre-launch test with me:
+   - every page loads, on desktop and on my actual phone
+   - send a real test enquiry through the contact form, and check it arrives in my inbox (not spam)
+   - booking link, phone, email and WhatsApp links all work
+   - analytics records the visit and the form conversion
+   - the cookie banner works
+   - the 404 page shows for a made-up address
+4. Fix anything that fails, then ask me for the final go-ahead to connect my domain.
+
+<span class="ph">### STAGE 9: CONNECT MY DOMAIN</span>
+1. Find out where my domain is registered and where its DNS is managed (Part 2, section A). If I'm not sure, help me find out (for example with a WHOIS lookup or checking my billing emails).
+2. Before anything changes: have me copy or screenshot every existing DNS record, especially the MX, SPF (TXT), DKIM and DMARC records that my email relies on.
+3. Add the domain in the hosting dashboard, then tell me exactly which records to add or change at my domain provider, using the values the host shows: typically an A record or ALIAS for the root domain and a CNAME for www. Explain each record in plain English. Never ask me to touch email records.
+4. Choose one main address (with or without www) and redirect the other to it.
+5. Make sure HTTPS (the padlock) is switched on and that http:// redirects to https://.
+6. Explain that DNS changes can take from a few minutes up to 48 hours to work everywhere. Then check the domain is live, the padlock works, both www and non-www addresses go to the right place, my old page addresses redirect properly, and email still works (send and receive a test email).
+7. If my old website was on a paid platform (Wix, Squarespace, WordPress hosting), remind me not to cancel it until the new site has been live and working for a week or two, then tell me what to cancel.
+
+<span class="ph">### STAGE 10: AFTER LAUNCH</span>
+1. Google Search Console: walk me through verifying the domain, submitting sitemap.xml, and requesting indexing of the main pages.
+2. Google Business Profile: tell me to update the website link, and check our name, address and phone match the website exactly.
+3. Give me a list of everywhere else to update the link: social media bios, email signatures, LinkedIn company page, directories, my professional body's listing, software partner directories (such as the Xero advisor directory).
+4. Version history: set the site up in git (and optionally GitHub, connected to the host so publishing is automatic), so that every change is saved and any mistake can be undone. Explain how this works in plain English.
+5. Create Claude Code slash commands in .claude/commands/ so I never need to paste this brief again:
+   - /site-edit: make a change to the website (content, design or a new page), preview it locally with desktop and mobile screenshots, and wait for my approval
+   - /site-check: re-run the quality checks (broken links, mobile screenshots, Lighthouse, SEO tags, missing alt text) and report what needs fixing
+   - /site-publish: show me a summary of what has changed since the last publish, ask for my explicit yes, then deploy and confirm the live site has updated
+6. Write website/README.md: a plain-English guide to the site (folders, how to edit, how to publish, where the form submissions go, which accounts and logins are involved, and how to roll back a mistake). Add a short "Website" section to CLAUDE.md pointing to the commands and these principles.
+7. Finish with a summary of what's live, the remaining missing-content list, and the 5 most valuable improvements to make over the next month (for example adding real testimonials, a service page for a key search term, a lead magnet download).
+
+---
+
+<span class="ph">## PART 2: MY WEBSITE BRIEF (fill this in)</span>
+
+Answer in your own words. Bullet points and rough notes are fine. If you don't know an answer, leave it blank and Claude will ask you or suggest something. The more detail you give, especially in sections C, F and G, the better the result.
+
+<span class="ph">### A. The basics</span>
+- Firm name as it should appear on the website:
+- Domain name I own (e.g. myfirm.co.uk), or the one I want to buy:
+- Where the domain is registered (e.g. GoDaddy, 123-reg, Namecheap, IONOS, Cloudflare, Squarespace Domains; "not sure" is fine):
+- Do I have the login for it? (Yes / No / Someone else manages it, who?):
+- My email is provided by (Google Workspace / Microsoft 365 / my domain provider / other):
+- Do I have a website already? If so, its address and what it's built on (Wix, Squarespace, WordPress, other):
+- What I like and dislike about my current website:
+- Any deadline for launch:
+
+<span class="ph">### B. Goals</span>
+- The main job of the website (e.g. generate enquiries, give credibility to people who find us on social media, recruit staff, rank on Google locally):
+- The ONE action I want visitors to take (e.g. book a free call / fill in the contact form / message us on WhatsApp):
+- Who the main visitor is (link to my ideal client: type of business, size, stage, what they're worried about):
+- Where they mostly come from (social media, Google search, referrals, ads):
+- Locations to target, if any (e.g. "UK-wide, fully remote" or "Leeds and West Yorkshire"):
+- How I'll know the website is working (e.g. number of enquiries per month):
+
+<span class="ph">### C. Inspiration</span>
+(This is the most useful thing you can give Claude. Include accountancy websites AND websites from other industries.)
+- Websites I like, and what specifically I like about each (e.g. "the big video on the homepage", "how they show pricing", "clean and lots of white space", "the team page"):
+  1.
+  2.
+  3.
+  4.
+  5.
+- Websites I don't like, and why:
+- Competitor or peer firms' websites, and how I want to be different:
+- (Optional) Save screenshots of pages or sections you love in website/assets-inbox/inspiration/ and list the filenames here:
+
+<span class="ph">### D. Branding</span>
+- Logo: which files I've saved in website/assets-inbox/logo/ (ideally SVG, or a high-resolution PNG with a transparent background, plus any white or reversed version):
+- Brand colours (hex codes if known, e.g. #1A2B45, otherwise describe them):
+- Fonts (names, if I have brand fonts; otherwise describe the feel, e.g. "elegant serif headings, clean modern body text"):
+- Brand guidelines document, if I have one (save it in assets-inbox and give the filename):
+- Three words that describe how the site should feel (e.g. premium, approachable, modern):
+- Things to avoid (e.g. "no corporate stock photos", "not too salesy", "no bright colours"):
+
+<span class="ph">### E. Images and video</span>
+(Save everything in website/assets-inbox/ in folders: logo/, photos/, video/, documents/. List what you've provided below, and what each is for.)
+- Team headshots (who, and are they consistent in style?):
+- Team or "behind the scenes" photos:
+- Office or working photos:
+- Client photos or logos (only with the client's permission):
+- Homepage hero video or image:
+- Other videos (about-us, testimonials, explainer videos, social media clips; or YouTube links to embed):
+- Badges and logos I'm entitled to use (professional body, software partners such as Xero or QuickBooks, awards, review platforms):
+- Downloads to offer (e.g. a free guide, sample management accounts, a checklist, as PDFs):
+- Am I happy for Claude to use tasteful stock or abstract imagery where I have no photo? (Yes / No / Backgrounds only):
+
+<span class="ph">### F. Pages and content</span>
+(Tick the pages you want, and note anything specific for each. Claude will draft the wording from your context files and these notes.)
+- [ ] Home: the key message, the main sections, what to highlight first:
+- [ ] About us: our story (why we started the firm), our values, what makes us different:
+- [ ] Team: name, role, qualifications, a short bio and a fun fact for each person:
+- [ ] Services overview:
+- [ ] A separate page for each main service (good for Google). For each: who it's for, what's included, the outcome for the client, "from" price if I want to show one, and FAQs:
+  - Service 1:
+  - Service 2:
+  - Service 3:
+- [ ] Pricing (show "from" prices? a packages table? or "every quote is bespoke"?):
+- [ ] Who we help / industries or niches:
+- [ ] Reviews, testimonials and case studies (paste real testimonials with the client's name and business, if they've agreed, or link to Google reviews):
+- [ ] Free resources (guides, downloads, blog posts, YouTube videos, tax calendar, calculators):
+- [ ] Social media page (links or embedded videos):
+- [ ] Careers / join the team:
+- [ ] Starting a business / new company formation offer:
+- [ ] Contact:
+- [ ] Book a call:
+- [ ] Other pages:
+
+<span class="ph">### G. Wording and messaging</span>
+- Tone of voice for the site (or "use my tone-of-voice file"):
+- Headline ideas or phrases I already use (e.g. from my social media):
+- Our key messages: the 3 to 5 things every visitor should come away believing:
+- Proof I can back up (number of clients, years in business, reviews and star rating, awards, qualifications, response times). Only include what is true and current:
+- Common objections or worries prospects have, and how we answer them (e.g. "will I get a dedicated accountant?", "what if I'm switching from another accountant?"):
+- FAQs I get asked most:
+- Search terms people might use to find a firm like mine (e.g. "accountant for limited companies", "accountant in Manchester", "contractor accountant"):
+- Words or phrases to use, and to avoid:
+- How much text: punchy and minimal, or detailed and thorough:
+- Who writes the first draft: Claude drafts everything from my context / I'll provide some copy (list which pages):
+
+<span class="ph">### H. Contact and lead capture</span>
+- Email address where form enquiries should go:
+- Phone number to show (or none):
+- WhatsApp number or link (or none):
+- Booking link (e.g. Calendly, Google Calendar appointment page, HubSpot meetings), if any:
+- Address to show (office, registered office, or "fully remote, registered office only"):
+- Opening hours and how quickly we promise to respond:
+- Contact form fields I want (e.g. name, email, phone, business name, business type (limited company / sole trader / other), approximate turnover, services needed, current accountant (yes / no), how did you hear about us, message):
+- What should happen after someone submits (a thank-you message, a thank-you page, an auto-reply email, a link to book a call straight away):
+- Email newsletter sign-up? Which platform (e.g. Kit, Mailchimp), and the incentive (e.g. a free guide):
+- Do I want enquiries sent into a CRM later (e.g. HubSpot, GoHighLevel, Pipedrive)?
+
+<span class="ph">### I. Legal and compliance details</span>
+- Registered company name:
+- Company number:
+- Registered office address:
+- Registered in (England and Wales / Scotland / Northern Ireland):
+- VAT number (and whether to show it):
+- Professional body, and the exact regulatory wording I'm required or allowed to use (check your body's guidance on describing your firm and using its logo):
+- Professional indemnity insurance details, if my body requires them to be available or shown:
+- ICO registration number (data protection):
+- Complaints procedure (paste it, or say "draft one for me to check"):
+- Existing privacy policy or terms (save them in assets-inbox/documents/), or "draft them for me to check":
+
+<span class="ph">### J. Tracking and integrations</span>
+- Analytics (Google Analytics 4 / Plausible / none / "recommend"):
+- Meta (Facebook / Instagram) pixel for ads? (Yes / No / later):
+- Google Business Profile: do I have one, and what's the link?
+- Review platform to show (Google / Trustpilot / Feefo / other), and the link:
+- Social media profile links (Instagram, TikTok, LinkedIn, YouTube, Facebook, X):
+- Anything else to connect (live chat, a client portal login link, a pricing calculator, a lead magnet):
+
+<span class="ph">### K. Hosting and technical comfort</span>
+- Hosting preference (Netlify / Cloudflare Pages / Vercel / "recommend the simplest"):
+- Happy to create free accounts on the hosting platform, a form service and GitHub? (Yes / No / ask me each time):
+- Budget for ongoing costs (free tiers are usually enough to start; domains cost a small yearly fee):
+- My comfort with technology (beginner / comfortable / technical):
+- Who else needs access to update the site (e.g. a marketing assistant):
+
+<span class="ph">### L. Anything else</span>
+- Anything else Claude should know about the website you want:
+-</pre>
+<p class="marker end">▲ End copying here</p>
+<p class="copy-status" id="status-main" role="status" aria-live="polite"></p>
+</article>
+
+<article class="box" id="checklist">
+<p class="phase-label">Check</p>
+<h2>Pre-launch checklist</h2>
+<p class="intro">Claude runs through this with you at Stage 8, but it's worth knowing what "ready to launch" looks like:</p>
+<div class="items">
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Every page loads, and looks right on a desktop and on your own phone.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>No placeholder text left (search for "[" and "TODO").</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>A real test enquiry through the contact form arrives in your inbox, not spam.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>The booking link, phone, email and WhatsApp links all work on a phone.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Company name, number, registered office and regulatory wording are in the footer.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Privacy policy and cookie banner are in place, and you've read the privacy policy yourself.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Every testimonial and statistic is real, current and approved.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Each page has its own title and description (check by sending a link to yourself on WhatsApp).</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>Analytics records a visit and a form submission.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>A made-up address (<span class="mono">yoursite.co.uk/test123</span>) shows your 404 page.</p></div>
+<div class="item"><span class="sq" aria-hidden="true"></span><p>You've copied your existing DNS records before changing anything at your domain provider.</p></div>
+</div>
+</article>
+
+<article class="box" id="domain">
+<p class="phase-label">Your domain</p>
+<h2>Connecting your domain: what to expect</h2>
+<p class="intro">This is the part people worry about most. It's straightforward if you know what's happening:</p>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>What DNS is.</strong> Your domain name (for example myfirm.co.uk) is registered with a company like GoDaddy or 123-reg. Its "DNS records" are like signposts: one set tells the internet where your website lives, another tells it where your email goes.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>What you'll change.</strong> You change only the website signposts (usually an A record and a CNAME record) to point at your new host. The email signposts (MX, SPF, DKIM and DMARC records) stay exactly as they are. Claude will tell you precisely what to add or change.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Back up first.</strong> Copy or screenshot your existing records before you change anything, so you can always put them back.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Be patient.</strong> Changes can work within minutes, but can take up to 48 hours to reach everyone. If the new site isn't showing straight away, that's normal.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Don't cancel the old site yet.</strong> If you're moving from Wix, Squarespace or similar, keep it running until the new site has been live for a week or two, then cancel.</p></div>
+</div>
+</article>
+
+<article class="box" id="after-launch">
+<p class="phase-label">After launch</p>
+<h2>Making changes after launch</h2>
+<p class="intro">Claude sets up three commands so you never need the big prompt again.</p>
+<h3 class="sub-h">Make a change</h3>
+<div class="cmds"><div class="cmd"><code id="cmd-1">/site-edit</code><button type="button" class="copy sm" data-copy="cmd-1" aria-label="Copy: /site-edit">Copy</button></div></div>
+<p class="cmd-desc">Describe the change. Claude makes it, shows you desktop and mobile previews and waits for your approval. For example:</p>
+<div class="cmds">
+<div class="cmd"><code id="cmd-2">Add a testimonial from Sarah at Bloom Florists to the homepage.</code><button type="button" class="copy sm" data-copy="cmd-2" aria-label="Copy: Add a testimonial from Sarah at Bloom Florists to the homepage.">Copy</button></div>
+<div class="cmd"><code id="cmd-3">Create a new service page for property landlords, targeting "landlord accountant".</code><button type="button" class="copy sm" data-copy="cmd-3" aria-label="Copy: Create a new service page for property landlords, targeting &quot;landlord accountant&quot;.">Copy</button></div>
+<div class="cmd"><code id="cmd-4">Swap the team photo for the new one in assets-inbox/photos.</code><button type="button" class="copy sm" data-copy="cmd-4" aria-label="Copy: Swap the team photo for the new one in assets-inbox/photos.">Copy</button></div>
+<div class="cmd"><code id="cmd-5">Add a banner announcing our new free guide to MTD for Income Tax.</code><button type="button" class="copy sm" data-copy="cmd-5" aria-label="Copy: Add a banner announcing our new free guide to MTD for Income Tax.">Copy</button></div>
+</div>
+<h3 class="sub-h">Check the site</h3>
+<div class="cmds"><div class="cmd"><code id="cmd-6">/site-check</code><button type="button" class="copy sm" data-copy="cmd-6" aria-label="Copy: /site-check">Copy</button></div></div>
+<p class="cmd-desc">Checks for broken links, mobile issues, missing SEO details and speed problems. Worth running once a month.</p>
+<h3 class="sub-h">Publish your changes</h3>
+<div class="cmds"><div class="cmd"><code id="cmd-7">/site-publish</code><button type="button" class="copy sm" data-copy="cmd-7" aria-label="Copy: /site-publish">Copy</button></div></div>
+<p class="cmd-desc">Shows you what's changed, asks for your yes, then makes it live.</p>
+</article>
+
+<article class="box" id="lessons">
+<p class="phase-label">Good to know</p>
+<h2>Lessons we learned building ours</h2>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Design for the phone first.</strong> Most visitors arrive from social media on a phone. Judge every page on your phone first.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Real faces convert.</strong> Real team photos and short real videos build far more trust than stock imagery. A simple, well-lit headshot session is one of the best investments you can make.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Compress your videos.</strong> Large hero videos are the most common reason a site feels slow. Keep them short, muted and compressed, with a still image for mobile.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Track where leads come from.</strong> Asking "How did you hear about us?" on the contact form is the easiest way to start tracking which marketing actually brings in clients.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>One clear call to action.</strong> A generic "Contact us" form underperforms. A specific next step ("Book a free 15-minute call") with a promised response time works better.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Keep claims honest.</strong> Only show reviews, numbers and awards you can back up. It matters for trust, and for advertising rules.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Iterate.</strong> The design comes together in the review rounds. Don't accept the first version: tell Claude exactly what feels off, even if it's just "this section feels cramped".</p></div>
+</div>
+</article>
+
+<article class="box" id="troubleshooting">
+<p class="phase-label">Check</p>
+<h2>If something goes wrong</h2>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>The domain isn't showing the new site.</strong> DNS can take up to 48 hours. Check the records match what Claude gave you exactly, then wait. Ask Claude to check the domain for you.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Email has stopped working.</strong> Stop and put your email records back from your backup straight away, then ask Claude to help work out what changed.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Form enquiries aren't arriving.</strong> Check your spam folder and the form service's dashboard, then ask Claude to run a test.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>The phone shows an old version.</strong> Your phone may be showing a saved older version. Refresh the page or try a private browsing tab.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>You made a change you regret.</strong> Every change is saved in version history. Ask Claude: "Undo the last change to the website and republish."</p></div>
+</div>
+</article>
+
+<article class="box" id="next">
+<p class="phase-label">What comes next</p>
+<h2>Build on it</h2>
+<p class="intro">If you haven't already, set up <a href="/claude/sales-call-follow-up/">your post-sales-call process</a> (Guide 3), so the enquiries your new website generates turn into clients. With your firm context, management accounts, sales follow-up and website in place, the same approach works across the rest of your practice: SOPs, client emails, year-end information chasers, and reporting on your own numbers.</p>
+</article>
+
+</section>
+
+<div class="wrap pn"><a class="prev" href="/claude/sales-call-follow-up/">← Previous: Sales call follow-up</a></div>
+</main>
+
+<footer class="slim"><div class="wrap">Accountancy Accelerator · Claude · Creating a website</div></footer>
+
+<script>
+(function(){
+  function fallback(text){
+    var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');
+    ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();
+    var ok=false;try{ok=document.execCommand('copy');}catch(e){}
+    document.body.removeChild(ta);return ok;
+  }
+  document.querySelectorAll('button[data-copy]').forEach(function(btn){
+    var label=btn.textContent,status=btn.getAttribute('data-status')?document.getElementById(btn.getAttribute('data-status')):null;
+    function done(ok){
+      if(ok){btn.textContent='Copied \u2713';btn.classList.add('done');if(status)status.textContent='Prompt copied. Paste it into a Word or Google Doc.';}
+      else if(status){status.textContent='Copy didn\'t work. Select the text in the box and copy it instead.';}
+      setTimeout(function(){btn.textContent=label;btn.classList.remove('done');if(status&&ok)status.textContent='';},2500);
+    }
+    btn.addEventListener('click',function(){
+      var text=document.getElementById(btn.getAttribute('data-copy')).textContent;
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(fallback(text));});
+      }else{done(fallback(text));}
+    });
+  });
+})();
+</script>
+</body>
+</html>
