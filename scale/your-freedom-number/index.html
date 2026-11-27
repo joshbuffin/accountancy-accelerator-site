@@ -39,7 +39,7 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 .money::before{content:"£";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--slate);font-size:16px;pointer-events:none}
 .money input{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:8px 14px 8px 28px;background:var(--paper);color:var(--ink);width:100%;min-width:0;text-align:right;transition:border-color .2s ease,box-shadow .2s ease}
 .money input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(242,107,29,.15)}
-.result{background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(16px,2vw,20px) clamp(18px,2.4vw,24px);display:flex;flex-direction:column}
+.result{margin-top:16px;background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(16px,2vw,20px) clamp(18px,2.4vw,24px);display:flex;flex-direction:column}
 .result .tag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .result h2{font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;margin-top:4px}
 .result .sum{font-size:13px;color:#B0B0B5;margin-top:2px}
@@ -82,113 +82,36 @@ footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-s
 <main class="wrap page">
 <p class="eyebrow">Level 1 - Shift</p>
 <h1>Your freedom <span class="gold-t">number.</span></h1>
-<p class="lead">Two numbers: when you can hire, and when you're free.</p>
+<p class="lead">Three numbers, added together.</p>
 
 <div class="panel shared">
-<div class="ph"><h2>What do you want to take home each month?</h2><button class="reset" id="reset" type="button">Start again</button></div>
-<p class="hint">Put in what you want to spend each month on the life you want.</p>
-<div class="grid4">
-<div class="f"><label for="l_rent">Rent or mortgage</label><div class="money"><input id="l_rent" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_car">Car</label><div class="money"><input id="l_car" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_electric">Electric</label><div class="money"><input id="l_electric" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_meals">Meals out</label><div class="money"><input id="l_meals" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_clothes">Clothes</label><div class="money"><input id="l_clothes" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_exp">Experiences</label><div class="money"><input id="l_exp" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_hol">Holidays (monthly amount)</label><div class="money"><input id="l_hol" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="l_other">Anything else</label><div class="money"><input id="l_other" class="life" type="text" inputmode="decimal" placeholder="0"></div></div>
-</div>
-<div class="takehome"><button class="calcbtn" id="calcBtn" type="button">Calculate</button><p class="thout" id="thOut" aria-live="polite">You want to take home <b>£0</b> a month</p></div>
-</div>
-
-<div class="panel shared">
-<div class="ph"><h2>Where you are now</h2></div>
 <div class="grid3">
-<div class="f"><label for="mrr">Current monthly revenue (MRR)</label><div class="money"><input id="mrr" type="text" inputmode="decimal" placeholder="0"></div></div>
-<div class="f"><label for="costs">Monthly business costs</label><div class="money"><input id="costs" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Software, outsourcing, ads, etc.</p></div>
-<div class="f"><label for="pay">What you pay yourself each month</label><div class="money"><input id="pay" type="text" inputmode="decimal" placeholder="0"></div><p class="note">Your quit number from Start</p></div>
+<div class="f"><label for="pay">What you want to pay yourself each month</label><div class="money"><input id="pay" type="text" inputmode="decimal" placeholder="0"></div></div>
+<div class="f"><label for="costs">Monthly business costs</label><div class="money"><input id="costs" type="text" inputmode="decimal" placeholder="1000"></div></div>
+<div class="f"><label for="hire">Monthly cost to hire a member of staff</label><div class="money"><input id="hire" type="text" inputmode="decimal" placeholder="4000"></div></div>
 </div>
 </div>
 
-<div class="two" aria-live="polite">
-<section class="result">
-<p class="tag">Number 1</p>
-<h2>Your hire number</h2>
-<div class="f"><label for="hire">Full cost of your first UK hire per month</label><div class="money"><input id="hire" type="text" inputmode="decimal" placeholder="4000"></div><p class="note">Salary plus all the costs of employing them</p></div>
-<p class="label">Your hire number</p>
-<p class="big" id="hireN">£0</p>
-<p class="per">a month in revenue (business costs + what you pay yourself + hire cost)</p>
-<div class="bar"><i id="hireBar"></i></div>
-<div class="lines">
-<div><span>Current MRR</span><span id="hMrr">£0</span></div>
-<div class="gap"><span>Gap to your hire number</span><span id="hGap">£0</span></div>
-</div>
-</section>
-
-<section class="result">
-<p class="tag">Number 2</p>
-<h2>Your freedom number</h2>
-<div class="f"><label for="cm">Client manager cost per month</label><div class="money"><input id="cm" type="text" inputmode="decimal" placeholder="4000"></div><p class="note">Follows your hire cost until you change it</p></div>
-<div class="f"><label for="profit">Profit you want left over each month for the life you want</label><div class="money"><input id="profit" type="text" inputmode="decimal" placeholder="0"></div><p class="note" id="profitNote">From your take-home list above.<button class="linkbtn" id="profitToggle" type="button">Edit manually</button></p></div>
+<section class="result" aria-live="polite">
 <p class="label">Your freedom number</p>
 <p class="big" id="freeN">£0</p>
-<p class="per">a month in revenue (business costs + client manager + profit wanted)</p>
-<div class="bar"><i id="freeBar"></i></div>
-<div class="lines">
-<div><span>Current MRR</span><span id="fMrr">£0</span></div>
-<div class="gap"><span>Gap to your freedom number</span><span id="fGap">£0</span></div>
-</div>
+<p class="per">a month in revenue (what you pay yourself + business costs + cost to hire)</p>
 </section>
-</div>
 </main>
 <div class="wrap pnav"><span></span><a href="/scale/setting-expectations/" style="text-decoration:none;color:var(--gold-soft);text-align:right">Setting expectations &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Scale · Shift · Your freedom number</div></footer>
 
 <script>
 (function(){
-var KEY="aa-freedom-number-v1",state;
-var LIFE=["l_rent","l_car","l_electric","l_meals","l_clothes","l_exp","l_hol","l_other"];
-function fresh(){var s={mrr:"",costs:"",pay:"",hire:"4000",cm:"4000",cmEdited:false,profit:"",profitManual:false};LIFE.forEach(function(k){s[k]=""});return s}
-try{state=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!state||typeof state!=="object"||state.hire===undefined)state=fresh();
-else{var d0=fresh();Object.keys(d0).forEach(function(k){if(state[k]===undefined)state[k]=d0[k]})}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+var KEY="aa-freedom-number-v2",ids=["pay","costs","hire"],state={};
+try{state=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){state={}}
 var gbp=new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP",maximumFractionDigits:0});
-function num(v){var x=parseFloat(String(v).replace(/[^0-9.]/g,""));return isFinite(x)?x:0}
-function $(id){return document.getElementById(id)}
-var ids=["mrr","costs","pay","hire","cm","profit"];
-function out(prefix,need,mrr,anyIn){
-$(prefix+"N").textContent=anyIn?gbp.format(need):"£0";
-var p=need>0?Math.min(100,mrr/need*100):0;
-$(prefix+"Bar").style.width=p+"%";
-var short=prefix==="hire"?"h":"f",g=$(short+"Gap");
-$(short+"Mrr").textContent=gbp.format(mrr);
-if(!anyIn||need<=0)g.textContent="£0";
-else if(mrr>=need)g.textContent="You're there";
-else g.textContent=gbp.format(need-mrr)}
-function lifeTotal(){return LIFE.reduce(function(t,k){return t+num(state[k])},0)}
-function showTotal(){$("thOut").innerHTML="You want to take home <b>"+gbp.format(lifeTotal())+"</b> a month"}
-function syncProfit(){
-var p=$("profit"),t=$("profitToggle");
-if(state.profitManual){p.readOnly=false;p.value=state.profit;t.textContent="Use my list"}
-else{var any=LIFE.some(function(k){return state[k]!==""});state.profit=any?String(lifeTotal()):"";p.readOnly=true;p.value=state.profit;t.textContent="Edit manually"}}
+function num(v){var x=parseFloat(String(v||"").replace(/[^0-9.]/g,""));return isFinite(x)?x:0}
 function calc(){
-showTotal();syncProfit();
-var mrr=num(state.mrr),costs=num(state.costs),pay=num(state.pay),hire=num(state.hire),cm=num(state.cm),profit=num(state.profit);
-var hn=costs+pay+hire,fn=costs+cm+profit;
-out("hire",hn,mrr,costs+pay+hire>0&&(state.costs!==""||state.pay!==""));
-out("free",fn,mrr,state.costs!==""||state.profit!=="");
-save()}
-function fill(){ids.concat(LIFE).forEach(function(k){$(k).value=state[k]})}
-LIFE.forEach(function(k){$(k).oninput=function(){state[k]=$(k).value;calc()}});
-$("calcBtn").onclick=function(){calc()};
-$("profitToggle").onclick=function(){state.profitManual=!state.profitManual;calc()};
-ids.forEach(function(k){$(k).oninput=function(){
-state[k]=$(k).value;
-if(k==="cm")state.cmEdited=true;
-if(k==="hire"&&!state.cmEdited){state.cm=state.hire;$("cm").value=state.cm}
-calc()}});
-$("reset").onclick=function(){state=fresh();fill();calc()};
-fill();calc();
+document.getElementById("freeN").textContent=gbp.format(ids.reduce(function(t,k){return t+num(state[k])},0));
+try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+ids.forEach(function(k){var el=document.getElementById(k);el.value=state[k]||"";el.oninput=function(){state[k]=el.value;calc()}});
+calc();
 })();
 </script>
 </body>
