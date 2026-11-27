@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Tax Audit Cheat Sheet - Accountancy Accelerator</title>
+<meta name="description" content="Year-end adjustments, profit extraction, company purchases and structuring: the quick wins to check in a client tax audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+.lead+p.lead{margin-top:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,3vw,36px);position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease}
+.box h2{font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+footer.slim{padding:16px 0}
+@media (prefers-reduced-motion:reduce){.box{transition:none}.box:hover{transform:none}}
+
+.hero.tight{padding:clamp(24px,4vh,48px) 0 clamp(20px,3vh,32px)}
+.hero.tight h1{font-size:clamp(36px,5vw,60px)}
+.hero.tight .eyebrow{margin-bottom:10px}
+.hero.tight .lead{margin-top:16px;font-size:clamp(16px,2vw,20px)}
+.sec-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 14px}
+.heads{display:grid;gap:14px;padding-bottom:8px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.heads .box{padding:18px 20px;display:flex;align-items:center;gap:12px;min-height:76px;text-decoration:none;color:inherit}
+.heads .box:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.heads .box h2{font-size:clamp(16px,1.5vw,20px);line-height:1.2}
+.n{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.guide{display:flex;flex-direction:column;gap:20px;padding-top:32px;padding-bottom:48px}
+.guide .box{scroll-margin-top:72px}
+.phase-label{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.intro{color:var(--muted);font-size:clamp(16px,1.7vw,18px);margin-top:12px;max-width:820px}
+.items{display:flex;flex-direction:column;margin-top:18px}
+.item{display:flex;gap:12px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+.item .n{margin-top:1px}
+.item .dot{flex:0 0 28px;display:flex;justify-content:center;padding-top:9px}
+.item .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.item p{color:var(--muted);font-size:clamp(16px,1.7vw,18px);line-height:1.5}
+.item p strong{color:var(--ink);font-weight:700}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink);white-space:nowrap}
+.note{margin-top:18px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-size:clamp(15px,1.6vw,17px)}
+.note strong{color:var(--ink)}
+.chip{display:inline-flex;align-items:center;margin-top:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--gold-soft);font-size:13px;font-weight:600;line-height:1.3;max-width:100%}
+.prompt-box{border:2px solid var(--gold);background:#FFF8F3}
+.prompt-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px}
+.copy{font:inherit;font-size:15px;font-weight:700;color:#fff;background:var(--gold);border:1px solid var(--gold);border-radius:12px;padding:12px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.copy:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.copy:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(242,107,29,.3)}
+.copy.done{background:#1F7A3A;border-color:#1F7A3A}
+.marker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:20px 0 8px}
+.marker.end{margin:8px 0 0}
+pre.prompt{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.5vw,24px);max-height:640px;overflow:auto;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.6;color:var(--ink)}
+pre.prompt .ph{font-weight:700;color:var(--gold-soft)}
+.copy-status{font-size:14px;color:var(--muted);margin-top:10px;min-height:1.4em}
+.pn{display:flex;justify-content:space-between;gap:16px;padding:14px 0 32px;font-size:15px;font-weight:600}
+.pn a{text-decoration:none}
+.pn .next{color:var(--gold-soft);text-align:right;margin-left:auto}
+@media (max-width:900px){.heads{grid-template-columns:repeat(2,minmax(0,1fr))}.heads .box{min-height:0;padding:14px 16px}}
+@media (max-width:640px){
+  nav .wrap{height:auto;min-height:56px;padding-top:10px;padding-bottom:10px;flex-direction:column;align-items:flex-start;gap:4px}
+  .navtag{font-size:12px;line-height:1.35;text-align:left;max-width:100%}
+  .hero.tight{padding:20px 0 16px}
+  .heads{gap:8px}
+  .heads .box h2{font-size:15px}
+  .guide{padding-top:24px;padding-bottom:40px;gap:12px}
+  .guide .box h2{font-size:22px}
+  .box{padding:20px 18px}
+  .copy{width:100%;justify-content:center}
+  pre.prompt{font-size:13px;max-height:520px}
+  code,.mono{white-space:normal}
+  .pn{font-size:14px;padding:12px 0 24px}
+}.item .sq{flex:0 0 28px;display:flex;justify-content:center;padding-top:4px}
+.item .sq::before{content:"";width:16px;height:16px;border-radius:4px;border:2px solid var(--gold);background:var(--paper)}
+.sub-h{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin:26px 0 4px}
+.cmds{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.cmd{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 10px 10px 16px}
+.cmd code{background:none;border:0;padding:0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.5;flex:1 1 auto;min-width:0}
+.copy.sm{font-size:13px;padding:7px 12px;border-radius:9px;flex:0 0 auto;width:auto}
+.cmd-desc{color:var(--muted);font-size:clamp(15px,1.6vw,17px);margin:6px 0 0 2px}
+.item .cmds{margin-top:10px}
+.item > div{min-width:0;flex:1 1 auto}
+.item > div > p + p{margin-top:8px}
+.modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.mode{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.mode.rec{border:2px solid var(--gold)}
+.mode h3{font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.mode p{color:var(--muted);font-size:16px;margin-top:8px}
+.mode .chip{margin-top:0;margin-bottom:10px}
+.stages{counter-reset:none}
+.pn .prev{margin-right:auto}
+@media (max-width:900px){.modes{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.copy.sm{width:auto}.cmd{padding:8px 8px 8px 12px}.cmd code{font-size:14px}}
+
+.heads.stages{grid-template-columns:repeat(4,minmax(0,1fr))}
+.loom{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.loom-frame{position:relative;width:100%;aspect-ratio:4/3;background:#000}
+.loom-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.loom-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;padding:12px 16px;font-size:15px}
+.loom-cap strong{font-weight:700}
+.loom-cap span{color:var(--slate);font-size:13px}
+.loom-cap a{color:var(--gold-soft);font-weight:600;text-decoration:none;font-size:13px}
+.videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:4px}
+.videos .loom{margin-top:10px}
+.file{display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit;transition:border-color .2s ease,background-color .2s ease}
+.file:hover{border-color:var(--gold);background:#FFF8F3}
+.file .ic{flex:0 0 44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff}
+.file .ic.docx{background:#2B579A}.file .ic.xlsx{background:#217346}.file .ic.xlsm{background:#185C37}.file .ic.pdf{background:#B42318}.file .ic.gsheet{background:#188038}
+.file .meta{flex:1 1 auto;min-width:0}
+.file .meta strong{display:block;font-size:16px;line-height:1.3}
+.file .meta span{display:block;color:var(--slate);font-size:13px;margin-top:2px}
+.file .dl{flex:0 0 auto;font-size:14px;font-weight:700;color:var(--gold-soft)}
+.ref{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:12px 16px;border:1px dashed var(--gold);border-radius:14px;background:#FFF8F3;font-size:15px;color:var(--muted)}
+.ref a{color:var(--gold-soft);font-weight:700}
+.warn{display:inline-flex;margin-top:10px;padding:5px 12px;border-radius:999px;background:#FDECEC;border:1px solid #F3B4B4;color:#B42318;font-size:13px;font-weight:700}
+.qs{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.qs p{color:var(--muted);font-size:clamp(15px,1.6vw,17px)}
+.ticks{margin-top:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ticks span{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px;color:var(--ink)}
+.stage-meta{color:var(--slate);font-size:15px;margin-top:6px}
+@media (max-width:900px){.heads.stages{grid-template-columns:repeat(2,minmax(0,1fr))}.videos{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.ticks{grid-template-columns:repeat(2,minmax(0,1fr))}.file .dl{display:none}.loom-cap{padding:10px 12px}}
+.sop-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sop-card{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+.sop-card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.sop-card h2{font-size:clamp(20px,2.2vw,26px)}
+.sop-card p{color:var(--muted);font-size:16px}
+.sop-card .go{margin-top:auto;padding-top:6px;color:var(--gold-soft);font-weight:700;font-size:15px}
+@media (max-width:700px){.sop-list{grid-template-columns:minmax(0,1fr)}}
+.tpl{margin-top:12px;border:1px solid var(--line,#E5E5EA);border-radius:14px;background:#fff;overflow:hidden}
+.tpl summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;gap:12px}
+.tpl summary::-webkit-details-marker{display:none}
+.tpl summary::after{content:"Show ▾";color:var(--gold-soft);font-weight:600;font-size:14px;white-space:nowrap}
+.tpl[open] summary::after{content:"Hide ▴"}
+.tpl .tpl-body{padding:0 18px 16px;font-size:15px;line-height:1.6;color:var(--ink);overflow-wrap:anywhere}
+.tpl .tpl-body p{margin:0 0 10px}
+.tpl .tpl-body ul{margin:0 0 10px 18px;padding:0}
+.ticklist{margin-top:10px}
+
+
+.qs{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.qs p{color:var(--muted);font-size:clamp(15px,1.6vw,17px)}
+.heads.stages{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:clamp(15px,1.6vw,17px)}
+.tbl th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:#FFF8F3;padding:12px 16px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 16px;border-top:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl tbody tr:first-child td{border-top:0}
+.tbl td:last-child,.tbl th:last-child{text-align:right;white-space:nowrap}
+.tbl td strong{color:var(--ink)}
+@media (max-width:900px){.heads.stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.tbl td,.tbl th{padding:10px 12px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Resources · Tax audit cheat sheet</span></div></nav>
+
+<header class="hero tight"><div class="wrap">
+<p class="eyebrow">Resources · Tax audit</p>
+<h1>Tax audit cheat sheet.</h1>
+<p class="lead">The quick wins to look for when you review a client's tax position. Figures are for the 2026/27 tax year, checked on gov.uk on 27/11/2026.</p>
+</div></header>
+
+<main>
+<section class="wrap" aria-labelledby="stages-label">
+<h2 class="sec-label" id="stages-label">Sections</h2>
+<div class="heads stages">
+<a class="box" href="#year-end"><span class="n">1</span><h2>Year-end journal adjustments</h2></a><a class="box" href="#excess-profits"><span class="n">2</span><h2>Excess profits</h2></a><a class="box" href="#purchases"><span class="n">3</span><h2>Company purchases</h2></a><a class="box" href="#payments"><span class="n">4</span><h2>Payment efficiencies</h2></a><a class="box" href="#structuring"><span class="n">5</span><h2>Structuring</h2></a>
+</div>
+</section>
+
+<section class="wrap guide" aria-label="Tax audit cheat sheet">
+
+<article class="box" id="year-end">
+<p class="phase-label">Section 1</p>
+<h2>Year-end journal adjustments</h2>
+<p class="intro">Quick wins you can usually put through at year-end.</p>
+
+<h3 class="sub-h">Mileage (own car used for business)</h3>
+<div class="qs"><p>Use HMRC's Approved Mileage Allowance Payments (AMAP):</p></div>
+<table class="tbl">
+<thead><tr><th>Vehicle</th><th>Rate per business mile</th></tr></thead>
+<tbody>
+<tr><td>Cars and vans: first 10,000 miles in the tax year</td><td><strong>55p</strong></td></tr>
+<tr><td>Cars and vans: every mile after 10,000</td><td><strong>25p</strong></td></tr>
+<tr><td>Motorcycles</td><td><strong>24p</strong></td></tr>
+<tr><td>Bicycles</td><td><strong>20p</strong></td></tr>
+<tr><td>Each colleague carried as a passenger on the same business trip</td><td><strong>5p</strong></td></tr>
+</tbody>
+</table>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Keep a mileage log showing the <strong>date, purpose, from/to and miles travelled</strong>.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>AMAP already covers fuel, insurance and wear and tear, so <strong>do not also claim actual running costs</strong>.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Example:</strong> 12,000 business miles in a car = (10,000 × 55p) + (2,000 × 25p) = £5,500 + £500 = <strong>£6,000 claim</strong>.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Reviewing an earlier year?</strong> The 55p rate applies from 06/04/2026. Up to 05/04/2026 the first 10,000 miles were 45p.</p></div>
+</div>
+<p class="note"><strong>Company cars are different.</strong> Use HMRC's quarterly Advisory Fuel Rates or Advisory Electricity Rates instead of AMAP.</p>
+
+<h3 class="sub-h">Working from home (directors or employees)</h3>
+<div class="qs"><p>Two straightforward options:</p></div>
+<div class="items">
+<div class="item"><span class="n">1</span><p><strong>Flat rate.</strong> The company can pay £6 per week (£312 per year) tax-free with no receipts if the employee works regularly from home. This is simple and needs very little admin.</p></div>
+<div class="item"><span class="n">2</span><p><strong>Actual costs (apportionment).</strong> If costs are higher than £6 per week, reimburse the extra household costs that come from homeworking (such as heat, light, metered water and business calls) using a reasonable split based on rooms and time. Keep the bills and calculations, and only claim the additional cost.</p></div>
+</div>
+<p class="note"><strong>Changed from 06/04/2026:</strong> employees can no longer claim the £6 a week relief themselves through their tax return. The tax-free payment now has to come from the employer, so put it through the company.</p>
+</article>
+
+<article class="box" id="excess-profits">
+<p class="phase-label">Section 2</p>
+<h2>What to do with excess profits</h2>
+
+<h3 class="sub-h">ISAs</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Allowance: £20,000 per adult each tax year.</strong> This can be split across Cash, Stocks and Shares, and Innovative Finance ISAs.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Lifetime ISA: up to £4,000 a year</strong>, which counts towards the £20,000 allowance. Open it before 40 and pay in until 50; the government adds a 25% bonus (up to £1,000 a year).</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Since April 2024 you can pay into <strong>more than one ISA of the same type</strong> in a single tax year, if the provider allows it.</p></div>
+</div>
+<p class="note">Returns and interest inside an ISA are tax-free, so future dividends or interest will not eat into the client's other allowances.</p>
+
+<h3 class="sub-h">Pensions</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Company (employer) contributions</strong> are usually deductible for Corporation Tax if they are wholly and exclusively for the purposes of the business.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Annual allowance: generally £60,000</strong> (can be tapered for high incomes). You can carry forward three years of unused allowance.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>The Lifetime Allowance has been abolished.</strong> Tax-free lump sums are now limited by the Lump Sum Allowance, normally <strong>£268,275</strong>, and the Lump Sum and Death Benefit Allowance, normally <strong>£1,073,100</strong>.</p></div>
+</div>
+<p class="note">For owner-managed companies, employer pension contributions are often a very tax-efficient way to take profits out, within the allowance rules.</p>
+</article>
+
+<article class="box" id="purchases">
+<p class="phase-label">Section 3</p>
+<h2>Company purchases</h2>
+
+<h3 class="sub-h">Electric car (company-provided)</h3>
+<table class="tbl">
+<thead><tr><th>Tax year</th><th>Benefit in kind rate (zero-emission cars)</th></tr></thead>
+<tbody>
+<tr><td>2026/27</td><td><strong>4%</strong></td></tr>
+<tr><td>2027/28</td><td><strong>5%</strong></td></tr>
+<tr><td>2028/29</td><td><strong>7%</strong></td></tr>
+<tr><td>2029/30</td><td><strong>9%</strong></td></tr>
+</tbody>
+</table>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>The employer pays <strong>Class 1A National Insurance (15%)</strong> on the benefit.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Capital allowances:</strong> new, unused zero-emission cars qualify for a <strong>100% first-year allowance</strong> if bought before 01/04/2027. EV charge points qualify too.</p></div>
+</div>
+<p class="note">Salary sacrifice for electric cars can work very well because the benefit in kind is so low compared with petrol or diesel.</p>
+
+<h3 class="sub-h">Qualifying capital expenditure (non-car equipment)</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Annual Investment Allowance (AIA):</strong> claim 100% up to <strong>£1 million</strong> on most plant and machinery.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Full expensing (companies only):</strong> 100% for new main-rate plant and machinery and 50% for new special-rate assets. Cars are excluded. Assets must be new and not for leasing.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>40% first-year allowance:</strong> for new main-rate plant and machinery bought on or after 01/01/2026, including assets bought to lease to others (which full expensing does not cover). Not cars.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Writing-down allowances:</strong> the main pool rate fell from 18% to <strong>14%</strong> from April 2026. The special rate pool stays at 6%.</p></div>
+</div>
+<p class="note">Time significant purchases before year-end to bring the relief forward, where cash flow allows.</p>
+</article>
+
+<article class="box" id="payments">
+<p class="phase-label">Section 4</p>
+<h2>Payment efficiencies</h2>
+
+<h3 class="sub-h">Personal allowance for salary</h3>
+<div class="qs">
+<p>For most director-owners in England, Wales and Northern Ireland, a common approach is to set gross salary at the Personal Allowance (<strong style="color:var(--ink)">£12,570</strong>) and take the rest as dividends.</p>
+<p>The best salary depends on Employment Allowance eligibility and National Insurance thresholds:</p>
+</div>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Employer National Insurance:</strong> 15% on pay above £5,000 a year.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Employment Allowance:</strong> up to £10,500 off the employer NI bill. Single-director companies with no other employees cannot claim it.</p></div>
+</div>
+
+<h3 class="sub-h">Dividends</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>£500 tax-free dividend allowance</strong> in 2026/27.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Dividends above this are taxed at <strong>10.75%</strong> (basic rate), <strong>35.75%</strong> (higher rate) and <strong>39.35%</strong> (additional rate). The basic and higher rates went up by 2 points from 06/04/2026.</p></div>
+</div>
+
+<h3 class="sub-h">Savings allowance</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Personal Savings Allowance:</strong> £1,000 for basic-rate taxpayers, £500 for higher-rate taxpayers and £0 for additional-rate taxpayers.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Clients with low earnings may also get the <strong>£5,000 starting rate for savings</strong> (available in full if their other taxable income is below £17,570).</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Coming up:</strong> from 06/04/2027 the tax rates on savings income are due to rise by 2 points, to 22%, 42% and 47%.</p></div>
+</div>
+
+<h3 class="sub-h">Trivial benefits</h3>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Give small, non-cash benefits, such as a £40 gift card, that are <strong>not in return for work</strong> performed.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Per-item cap: £50.</strong></p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Close-company directors:</strong> annual cap of £300 in total per director.</p></div>
+</div>
+<p class="note">Keep receipts and a simple log.</p>
+
+<h3 class="sub-h">Staff entertainment</h3>
+<div class="qs"><p>The annual function exemption lets you provide staff events tax-free if:</p></div>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>the event is <strong>annual</strong> (such as a Christmas party)</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>it is <strong>open to all staff</strong>, or all staff at one location</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>the cost is <strong>no more than £150 per head</strong>, including VAT, travel and accommodation</p></div>
+</div>
+<p class="note"><strong>Go over £150 per head by even £1 and the whole event becomes taxable.</strong> You can split the £150 across several events, as long as the combined total per head stays within £150.</p>
+</article>
+
+<article class="box" id="structuring">
+<p class="phase-label">Section 5</p>
+<h2>Structuring</h2>
+
+<h3 class="sub-h">Employing a spouse</h3>
+<div class="qs">
+<p>This is legitimate if it is for real work at a commercial rate. Put them on PAYE, pay at or above the National Minimum Wage (<strong style="color:var(--ink)">£12.71 an hour</strong> for those aged 21 and over from 01/04/2026) unless a specific exemption applies, keep timesheets or a job description, and pay them through payroll like any other employee.</p>
+<p>HMRC looks for evidence that the pay is for genuine work.</p>
+</div>
+
+<h3 class="sub-h">Employing children</h3>
+<div class="qs">
+<p>Follow the child employment rules on minimum age, permits and hours. Pay a reasonable market rate through payroll. Under-13s generally cannot be employed, and strict working-hours rules apply until school-leaving age.</p>
+</div>
+
+<h3 class="sub-h">Holding companies</h3>
+<p class="marker">Advantages</p>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Receive most intra-group dividends <strong>tax-exempt</strong>.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p><strong>Ring-fence</strong> cash and assets.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Potentially sell a trading subsidiary <strong>free of Corporation Tax on the gain</strong> under the Substantial Shareholding Exemption, if the conditions are met.</p></div>
+</div>
+<p class="marker">Points to watch</p>
+<div class="items">
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Extra administration.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>You need transfer-pricing or management-charge evidence.</p></div>
+<div class="item"><span class="dot" aria-hidden="true"></span><p>Check the Substantial Shareholding Exemption conditions before relying on it: the holding company must have held at least 10% of the shares for a <strong>continuous 12 months</strong> within the 6 years before the sale, and the subsidiary must be a trading company.</p></div>
+</div>
+</article>
+
+<p class="note" style="margin-top:4px">Figures checked on gov.uk on 27/11/2026 for the 2026/27 tax year. Rates change every Budget, so check the current figure before you advise a client.</p>
+
+</section>
+</main>
+
+<footer class="slim"><div class="wrap">Accountancy Accelerator · Resources · Tax audit cheat sheet</div></footer>
+
+</body>
+</html>
