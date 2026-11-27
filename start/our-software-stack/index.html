@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Our software stack - Accountancy Accelerator</title>
+<meta name="description" content="Level 3, Software: our software stack.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFFFF;--card:#F5F5F7;--ink:#111111;--muted:#555555;--slate:#6E6E73;--line:#E2E2E2;--gold:#F26B1D;--gold-soft:#C2410C;--radius:22px;--container:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.brand{font-size:13px;font-weight:700;letter-spacing:.18em;text-decoration:none}
+.navtag{font-size:13px;color:var(--slate);text-align:right}
+.hero{padding:clamp(56px,9vw,110px) 0 clamp(28px,4vw,48px)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:20px}
+h1{font-size:clamp(44px,8vw,96px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.gold-t{color:var(--gold-soft)}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--muted);max-width:760px;margin-top:24px}
+.ctl{position:sticky;top:56px;z-index:9;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.ctl .wrap{display:flex;gap:12px;align-items:center;padding-top:12px;padding-bottom:12px}
+.btn{font:inherit;font-size:16px;font-weight:700;border-radius:999px;padding:12px 28px;cursor:pointer;border:2px solid var(--gold);transition:background-color .2s ease,transform .2s ease}
+.btn.next{background:var(--gold);color:#fff}
+.btn.next:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn.reset{background:#fff;color:var(--gold-soft)}
+.btn.reset:hover{background:#FFF8F3}
+.btn:focus-visible,.card:focus-visible,.tool a:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+.pos{font-size:14px;font-weight:600;color:var(--slate);margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:clamp(28px,4vw,44px) 0 clamp(64px,9vw,110px)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;cursor:pointer;display:flex;flex-direction:column;gap:16px;scroll-margin-top:140px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s cubic-bezier(.2,.8,.2,1),border-color .3s ease,background-color .3s ease,opacity .3s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 18px 40px -18px rgba(242,107,29,.45)}
+.cat{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.tool{display:flex;align-items:center;gap:14px}
+.tool img{width:48px;height:48px;border-radius:12px;object-fit:cover;background:#fff;border:1px solid var(--line);flex:none}
+.tn{display:flex;flex-direction:column;min-width:0}
+.tn b{font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.tn a{font-size:14px;font-weight:600;color:var(--gold-soft);text-decoration:none}
+.tn a:hover{text-decoration:underline}
+.grid.spot .card{opacity:.35}
+.grid.spot .card.on{opacity:1;transform:scale(1.04);border-color:var(--gold);background-color:#FFF8F3;box-shadow:0 0 0 4px rgba(242,107,29,.22),0 24px 48px -18px rgba(242,107,29,.5);position:relative;z-index:2}
+.pnav{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--slate);font-size:13px}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr}.wrap{padding-left:16px;padding-right:16px}.navtag{font-size:12px}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.btn{padding:12px 22px}.pos{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}.grid.spot .card.on{transform:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="brand" href="/">ACCOUNTANCY ACCELERATOR</a><span class="navtag">Start · Software · Our software stack</span></div></nav>
+
+<header class="hero"><div class="wrap">
+<p class="eyebrow">Level 3 · Software</p>
+<h1>Our software <span class="gold-t">stack.</span></h1>
+<p class="lead">The software we run the practice on, at a glance. Each tool has its own lesson if you want the detail.</p>
+</div></header>
+
+<div class="ctl"><div class="wrap">
+<button type="button" class="btn next" id="next">Next</button>
+<button type="button" class="btn reset" id="reset">Show all</button>
+<span class="pos" id="pos" aria-live="polite"></span>
+</div></div>
+
+<main class="wrap">
+<section class="grid" id="grid">
+<article class="card" tabindex="0"><p class="cat">1. CRM</p><div class="tool"><img src="icons/client-engager.png" alt="Client Engager" width="48" height="48"><div class="tn"><b>Client Engager</b><a href="https://engager.app/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">2. Bookkeeping</p><div class="tool"><img src="icons/xero.png" alt="Xero" width="48" height="48"><div class="tn"><b>Xero</b><a href="https://www.xero.com/uk/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">3. Accounts prep</p><div class="tool"><img src="icons/xero.png" alt="Xero Tax" width="48" height="48"><div class="tn"><b>Xero Tax</b><a href="https://www.xero.com/uk/xero-tax/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">4. Invoice capturing</p><div class="tool"><img src="icons/hubdoc.png" alt="Hubdoc" width="48" height="48"><div class="tn"><b>Hubdoc</b><a href="https://www.hubdoc.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">5. Payroll</p><div class="tool"><img src="icons/brightpay.png" alt="BrightPay" width="48" height="48"><div class="tn"><b>BrightPay</b><a href="https://www.brightpay.co.uk/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">6. Direct debits</p><div class="tool"><img src="icons/adfin.png" alt="Adfin" width="48" height="48"><div class="tn"><b>Adfin</b><a href="https://adfin.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">7. Internal communications</p><div class="tool"><img src="icons/slack.png" alt="Slack" width="48" height="48"><div class="tn"><b>Slack</b><a href="https://slack.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">8. Meeting notes</p><div class="tool"><img src="icons/granola.png" alt="Granola" width="48" height="48"><div class="tn"><b>Granola</b><a href="https://www.granola.ai/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div><div class="tool"><img src="icons/wispr-flow.png" alt="Wispr Flow" width="48" height="48"><div class="tn"><b>Wispr Flow</b><a href="https://wisprflow.ai/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">9. AI</p><div class="tool"><img src="icons/claude.png" alt="Claude" width="48" height="48"><div class="tn"><b>Claude</b><a href="https://claude.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div><div class="tool"><img src="icons/grok.png" alt="Grok" width="48" height="48"><div class="tn"><b>Grok</b><a href="https://grok.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+<article class="card" tabindex="0"><p class="cat">10. Onboarding</p><div class="tool"><img src="icons/legl.png" alt="Legl" width="48" height="48"><div class="tn"><b>Legl</b><a href="https://legl.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div><div class="tool"><img src="icons/xama.png" alt="Xama" width="48" height="48"><div class="tn"><b>Xama</b><a href="https://xamatech.com/" target="_blank" rel="noopener">Visit site &rarr;</a></div></div></article>
+</section>
+</main>
+
+<div class="wrap pnav"><span></span><span></span></div>
+<footer><div class="wrap">Accountancy Accelerator · Start · Software · Our software stack</div></footer>
+
+<script>
+(function(){
+var grid=document.getElementById('grid');
+var cards=Array.prototype.slice.call(grid.querySelectorAll('.card'));
+var pos=document.getElementById('pos');
+var cur=-1;
+var reduce=false;
+try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+function show(i){
+  cur=i;
+  for(var k=0;k<cards.length;k++){cards[k].classList.toggle('on',k===i);}
+  if(i<0){grid.classList.remove('spot');pos.textContent='';return;}
+  grid.classList.add('spot');
+  pos.textContent=(i+1)+' of '+cards.length;
+  try{cards[i].scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}catch(e){cards[i].scrollIntoView();}
+}
+document.getElementById('next').addEventListener('click',function(){show(cur+1>=cards.length?-1:cur+1);});
+document.getElementById('reset').addEventListener('click',function(){show(-1);});
+cards.forEach(function(c,i){
+  c.addEventListener('click',function(e){if(e.target.closest('a'))return;show(i);});
+  c.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target===c){e.preventDefault();show(i);}});
+});
+})();
+</script>
+
+</body>
+</html>
