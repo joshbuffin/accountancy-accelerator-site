@@ -28,7 +28,7 @@ h1{font-size:clamp(32px,3.8vw,50px);font-weight:700;letter-spacing:-.035em;line-
 footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-size:13px}
 
 /* Layout */
-.grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,2fr);gap:20px;align-items:start}
+.grid{display:grid;grid-template-columns:minmax(0,.5fr) minmax(0,2.4fr);gap:20px;align-items:start}
 .grid>*{min-width:0}
 
 /* Left: the phone preview */
@@ -46,7 +46,7 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 .scr.f-look .z.look,.scr.f-hook .z.hook,.scr.f-topic .z.topic{opacity:1;box-shadow:0 0 0 3px var(--gold)}
 .vnum{font-size:13px;font-weight:700;color:var(--slate)}
 .vnum b{color:var(--gold-soft)}
-.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
+.parts{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;width:100%}
 .part{font:inherit;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:7px 8px;cursor:pointer;transition:border-color .2s ease,transform .2s ease,background-color .2s ease}
 .part:hover{border-color:var(--gold);transform:translateY(-2px)}
 .part[aria-pressed="true"]{background:#FFF1E8;border-color:var(--gold)}
@@ -71,7 +71,7 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 .steps span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
 .steps i{font-style:normal;color:var(--gold);font-weight:800}
 .rows{margin-top:10px;overflow:auto;min-height:0;padding:2px;display:flex;flex-direction:column;gap:6px}
-.rw{display:grid;grid-template-columns:30px minmax(0,1fr) minmax(0,1.7fr) minmax(0,1.2fr);gap:6px;align-items:center}
+.rw{display:grid;grid-template-columns:28px minmax(0,.9fr) minmax(0,.9fr) minmax(0,1fr) minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,1.4fr);gap:6px;align-items:center}
 .rw.head{position:sticky;top:0;background:#fff;z-index:1;padding-bottom:2px}
 .rw.head span{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);line-height:1.2}
 .num{width:26px;height:26px;border-radius:50%;background:var(--card);border:1px solid var(--line);font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
@@ -122,12 +122,18 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
  .copy{margin-left:auto}
  .rw.head{display:none}
  .rw{grid-template-columns:26px minmax(0,1fr);gap:5px 8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px}
+ .cell .cl{display:block}
  .rw .cell{grid-column:2}
  .rw .num{grid-row:1}
  .rw .cell input,.rw .cell select{background-color:#fff;padding:6px 8px}
  .pnav{padding:12px 16px;font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){.prev,.part,.z,.dots i{transition:none}.prev:hover,.part:hover{transform:none}}
+.tpl{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-top:20px;padding:18px 20px;background:#FFF8F3;border:1px solid #F6C9AE;border-radius:var(--radius)}
+.tpl b{display:block;font-size:17px;letter-spacing:-.01em}
+.tpl span{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.tpl a{font-size:15px;font-weight:700;color:#fff;background:var(--gold);border-radius:999px;padding:10px 18px;text-decoration:none;white-space:nowrap}
+.tpl a:hover{background:var(--gold-soft)}
 </style>
 </head>
 <body>
@@ -143,14 +149,14 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <aside class="prev" aria-label="Video preview">
 <p class="lbl">Every video has 3 parts</p>
 <div class="phone" aria-hidden="true"><div class="scr" id="scr">
-<div class="z hook" id="pHook">Your hook</div>
-<div class="z look" id="pLook"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="none" stroke="#F26B1D" stroke-width="2"/><circle cx="23" cy="18" r="7" fill="#fff"/><path d="M10,37c2-8,7-11,13-11s11,3,13,11" fill="#fff"/></svg><span id="pLookT">Your look</span></div>
+<div class="z hook" id="pHook">Verbal hook</div>
+<div class="z look" id="pLook"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="none" stroke="#F26B1D" stroke-width="2"/><circle cx="23" cy="18" r="7" fill="#fff"/><path d="M10,37c2-8,7-11,13-11s11,3,13,11" fill="#fff"/></svg><span id="pLookT">Visual hook</span></div>
 <div class="z topic" id="pTopic">Your topic</div>
 </div></div>
 <p class="vnum" id="vnum">Your video</p>
 <div class="parts" id="parts">
-<button class="part" type="button" data-z="look" aria-pressed="false"><b>Look</b><span>How it's filmed</span></button>
-<button class="part" type="button" data-z="hook" aria-pressed="false"><b>Hook</b><span>The first 3 seconds</span></button>
+<button class="part" type="button" data-z="look" aria-pressed="false"><b>Visual hook</b><span>What you see first</span></button>
+<button class="part" type="button" data-z="hook" aria-pressed="false"><b>Verbal hook</b><span>What's said first</span></button>
 <button class="part" type="button" data-z="topic" aria-pressed="false"><b>Topic</b><span>What it's about</span></button>
 </div>
 </aside>
@@ -160,28 +166,28 @@ footer{border-top:1px solid var(--line);padding:14px 0;color:var(--slate);font-s
 <div><p class="lbl" style="margin-bottom:2px">Your task</p><h2 id="taskh">Research what works, then make it yours.</h2></div>
 <div class="tools"><span class="prog" id="prog"><b>0</b>/20 ready</span><span class="dots" id="dots" aria-hidden="true"></span><span class="toast" id="toast" aria-live="polite"></span><button class="copy" id="copy" type="button">Copy my answers</button></div>
 </div>
-<div class="steps" aria-label="How to do it"><span>Study the look</span><i>&rarr;</i><span>Keep what worked and fits your client</span><i>&rarr;</i><span>Make it for your niche</span><i>&rarr;</i><span>Highlight your first 10</span></div>
+<div class="steps" aria-label="How to do it"><span>Find posts that work</span><i>&rarr;</i><span>Keep what worked and fits your client</span><i>&rarr;</i><span>Make it for your niche</span><i>&rarr;</i><span>Highlight your first 10</span></div>
 <div class="rows" id="rows"></div>
 </section>
 </main>
+
+<div class="wrap"><div class="tpl"><div><b>Prefer a spreadsheet?</b><span>Make your own copy of the Google Sheet template with the same columns and start filling it in.</span></div><a href="https://docs.google.com/spreadsheets/d/1UF9GcntZ1M9IIj_W6JG_YQI8th_p-46pcimlQXoJ2q4/copy" target="_blank" rel="noopener">Copy the Google Sheet &#8599;</a></div></div>
 
 <div class="wrap pnav"><a href="/start/understanding-the-topics/" style="text-decoration:none">&larr; Understanding the topics</a><a href="/start/the-ad-strategy/" style="text-decoration:none;color:var(--gold-soft);text-align:right">The ad strategy &rarr;</a></div>
 <footer><div class="wrap">Accountancy Accelerator · Start · Lead generation · Research task</div></footer>
 
 <script>
 (function(){
-var N=20,KEY="aa-research-task-v1",st=null;
-var LOOKS=["Talking head","Text on screen","Carousel","Whiteboard or prop","Still image","Testimonial screenshot","Meme","Other"];
-var PH=[];
-var EX={look:"Your look",hook:"Your hook",topic:"Your topic"};
-function blank(){return{look:"",hook:"",topic:""}}
+var N=20,KEY="aa-research-task-v2",OLD="aa-research-task-v1",st=null;
+var F=[["creator","Creator","Who posted it"],["link","Link to post","https://"],["topic","Topic","What it's about"],["verbal","Verbal hook","What's said first"],["visual","Visual hook","What you see first"],["why","Why you liked the post","What made it work"]];
+function blank(){var r={};F.forEach(function(f){r[f[0]]=""});return r}
 try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-if(!Array.isArray(st))st=[];
-for(var i=0;i<N;i++){var r=st[i];if(!r||typeof r!=="object")st[i]=blank();else{st[i]={look:String(r.look||""),hook:String(r.hook||""),topic:String(r.topic||"")}}}
+if(!Array.isArray(st)){st=[];try{var o=JSON.parse(localStorage.getItem(OLD));if(Array.isArray(o))o.forEach(function(r,i){if(r&&typeof r==="object"){var b=blank();b.topic=String(r.topic||"");b.verbal=String(r.hook||"");b.visual=String(r.look||"");st[i]=b}})}catch(e){}}
+for(var i=0;i<N;i++){var r=st[i],b=blank();if(r&&typeof r==="object")F.forEach(function(f){b[f[0]]=String(r[f[0]]||"")});st[i]=b}
 st.length=N;
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function t(v){return String(v||"").trim()}
-function ready(r){return !!(t(r.look)&&t(r.hook)&&t(r.topic))}
+function ready(r){return F.every(function(f){return !!t(r[f[0]])})}
 function el(tag,c,txt){var e=document.createElement(tag);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
 var $=function(id){return document.getElementById(id)};
 var rows=$("rows"),dots=$("dots"),prog=$("prog"),scr=$("scr"),cur=-1,rowEls=[];
@@ -189,12 +195,11 @@ for(var d=0;d<N;d++)dots.appendChild(el("i"));
 
 /* Phone preview */
 function preview(i){
- var r=i>=0?st[i]:null,p=i>=0&&i<PH.length?PH[i]:null;
- var look=r&&t(r.look)?r.look:(r?(p?p[0]:"Your look"):EX.look);
- var hook=r&&t(r.hook)?r.hook:(r?(p?p[1]:"Your hook"):EX.hook);
- var topic=r&&t(r.topic)?r.topic:(r?(p?p[2]:"Your topic"):EX.topic);
- $("pLookT").textContent=look;$("pHook").textContent=hook;$("pTopic").textContent=topic;
- $("vnum").innerHTML=i>=0?"Your video <b>#"+(i+1)+"</b>":"Your video";
+ var r=i>=0?st[i]:null;
+ $("pLookT").textContent=r&&t(r.visual)?r.visual:"Visual hook";
+ $("pHook").textContent=r&&t(r.verbal)?r.verbal:"Verbal hook";
+ $("pTopic").textContent=r&&t(r.topic)?r.topic:"Topic";
+ $("vnum").innerHTML=i>=0?"Post <b>#"+(i+1)+"</b>"+(r&&t(r.creator)?" · "+t(r.creator).replace(/[<>&]/g,""):""):"Your video";
 }
 var parts=$("parts").querySelectorAll(".part"),on="";
 function focusZone(z){
@@ -217,23 +222,15 @@ function setCur(i){
 }
 
 /* Worksheet */
-var hd=el("div","rw head");["#","Look","Hook","Topic"].forEach(function(c){hd.appendChild(el("span",null,c))});rows.appendChild(hd);
+var hd=el("div","rw head");hd.appendChild(el("span",null,"#"));F.forEach(function(f){hd.appendChild(el("span",null,f[1]))});rows.appendChild(hd);
 st.forEach(function(r,i){
- var rw=el("div","rw"),p=PH[i];
+ var rw=el("div","rw");
  rw.appendChild(el("span","num",String(i+1)));
- var c1=el("div","cell");c1.appendChild(el("span","cl","Look"));
- var s=el("select");
- var o0=el("option",null,p?"e.g. "+p[0]:"Pick a look");o0.value="";s.appendChild(o0);
- LOOKS.forEach(function(l){var o=el("option",null,l);o.value=l;s.appendChild(o)});
- s.value=LOOKS.indexOf(r.look)>-1?r.look:"";s.classList.toggle("empty",!s.value);
- s.setAttribute("aria-label","Look, video "+(i+1));
- s.addEventListener("change",function(){r.look=s.value;s.classList.toggle("empty",!s.value);update();preview(i)});
- c1.appendChild(s);rw.appendChild(c1);
- [["hook","Hook",1],["topic","Topic",2]].forEach(function(f){
+ F.forEach(function(f){
   var c=el("div","cell");c.appendChild(el("span","cl",f[1]));
-  var inp=el("input");inp.type="text";inp.value=r[f[0]];inp.maxLength=140;
-  inp.placeholder=p?"e.g. "+p[f[2]]:(f[0]==="hook"?"The first 3 seconds":"What it's about");
-  inp.setAttribute("aria-label",f[1]+", video "+(i+1));
+  var inp=el("input");inp.type=f[0]==="link"?"url":"text";inp.value=r[f[0]];inp.maxLength=f[0]==="link"?500:200;
+  inp.placeholder=f[2];
+  inp.setAttribute("aria-label",f[1]+", post "+(i+1));
   inp.addEventListener("input",function(){r[f[0]]=inp.value;update();preview(i)});
   c.appendChild(inp);rw.appendChild(c);
  });
@@ -245,8 +242,8 @@ update();preview(-1);
 /* Copy */
 var toast=$("toast");
 $("copy").addEventListener("click",function(){
- var out=["My 20 videos: look, hook, topic",""];
- st.forEach(function(r,i){out.push((i+1)+". Look: "+(t(r.look)||"-")+" | Hook: "+(t(r.hook)||"-")+" | Topic: "+(t(r.topic)||"-"))});
+ var out=["My research: creator, link, topic, verbal hook, visual hook, why I liked it",""];
+ st.forEach(function(r,i){out.push((i+1)+". "+F.map(function(f){return f[1]+": "+(t(r[f[0]])||"-")}).join(" | "))});
  var txt=out.join("\n");
  function ok(){toast.textContent="Copied";setTimeout(function(){toast.textContent=""},1800)}
  function fallback(){var a=document.createElement("textarea");a.value=txt;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(e){toast.textContent="Select and copy"}document.body.removeChild(a)}
